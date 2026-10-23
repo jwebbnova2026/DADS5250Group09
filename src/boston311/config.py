@@ -205,9 +205,23 @@ SCENARIOS: tuple[str, ...] = ("base", "plus20", "minus20", "spike")
 # ---------------------------------------------------------------------------
 # Catalog and routing (DEFAULT, spec section 5.6)
 # ---------------------------------------------------------------------------
-# If one queue handled at least this share of a type's 2023-2024 requests, the
-# type -> queue mapping is nominated for human review.
+# Two-tier mapping rule (DECIDED 2026-10-22, spec 5.6). Shares are computed
+# over ALL of a type's 2023-2024 requests, in every department.
+#   Tier 1: if one in-scope department handled at least this share, the
+#           type -> department mapping is nominated for human review.
+#   Tier 2: if one queue of that department handled at least this share, the
+#           type -> queue mapping is nominated too.
 MAPPING_SHARE_THRESHOLD = 0.90
+# A type without a queue mapping is labeled "assigned_by_location" when at
+# least this share of its requests went to district or region queues (queue
+# names containing one of these words), else "assigned_by_department".
+LOCATION_QUEUE_SHARE = 0.50
+LOCATION_QUEUE_WORDS: tuple[str, ...] = ("District", "Region")
+# Mapping review statuses recorded in data/catalog/catalog.json. For this
+# build Claude provisionally approved every nomination; the team replaces
+# "provisional" with "approved" or "rejected" after review. Routing treats
+# "provisional" as approved only while this flag is True.
+ACCEPT_PROVISIONAL_APPROVALS = True
 # Historical service statistics are shown only if a type has at least this many
 # relevant requests; otherwise the response says "unavailable".
 MIN_STATS_SAMPLE = 30
@@ -220,6 +234,12 @@ RETRIEVAL_TOP_K = 8  # how many candidate types the classifier is shown
 LLM_PROVIDER = "openai"  # DECIDED (Q4)
 LLM_MODEL = "gpt-6.1-sol"  # chosen by the team on 2026-10-22
 LLM_REASONING_EFFORT = "low"
+# gpt-6.1-sol is a reasoning model: it rejects any temperature other than the
+# default (checked 2026-10-22), so we cannot set temperature=0. A fixed seed is
+# accepted and makes answers *more* repeatable, but OpenAI does not guarantee
+# identical output. Exact reproducibility comes from offline mode, which
+# replays the recorded answers.
+LLM_SEED = 5250
 LLM_TIMEOUT_SECONDS = 60
 # Bounded retries for timeouts and rate limits before the request goes to TRIAGE.
 LLM_MAX_TRANSIENT_RETRIES = 2

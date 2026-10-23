@@ -1,0 +1,66 @@
+"""Build data/catalog/catalog.json from the processed tables.
+
+Usage (repository root, virtual environment active):
+
+    python scripts/build_catalog.py             # mappings only; keeps existing aliases and reviews
+    python scripts/build_catalog.py --aliases   # also draft missing aliases with the LLM (live, needs a key)
+
+Drafted aliases are saved with alias_status "provisional". A person (for this
+build, Claude acting as provisional reviewer) then reads every one, edits as
+needed in catalog.json, and records the review in docs/decisions.md.
+"""
+
+from __future__ import annotations
+
+import argparse
+
+from pydantic import BaseModel, Field
+
+from boston311 import catalog, config
+from boston311.llm import LiveModel, RecordingStore, read_prompt
+
+
+class AliasDraft(BaseModel):
+    type_id: str = Field(description="The type_id exactly as given")
+    description: str = Field(description="One neutral sentence describing what this type covers")
+    aliases: list[str] = Field(description="3 to 5 short resident-style phrasings")
+
+
+class AliasBatch(BaseModel):
+    items: list[AliasDraft]
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--aliases", action="store_true", help="draft missing aliases with the live LLM")
+    args = parser.parse_args()
+
+    entries = catalog.build_mappings()
+    if catalog.CATALOG_PATH.exists():
+        entries = catalog.merge_reviews(entries, list(catalog.load_catalog().values()))
+
+    if args.aliases:
+        model = LiveModel(RecordingStore())
+        system = read_prompt("aliases_system")
+        by_id = {e.type_id: e for e in entries}
+        for batch in catalog.alias_batches(entries):
+            out = model.ask("aliases", system, catalog.alias_prompt_input(batch), AliasBatch)
+            for item in out.items:
+                e = by_id.get(item.type_id)
+                if e is None or e not in batch:
+                    continue  # ignore any ID the model made up
+                e.description = item.description.strip()
+                e.aliases = [a.strip() for a in item.aliases if a.strip()][:5]
+                e.alias_status = "provisional"
+                e.alias_source = f"llm:{config.LLM_MODEL}/{config.ALIAS_PROMPT_VERSION}"
+            print(f"drafted aliases for {len(out.items)} types")
+
+    catalog.save_catalog(entries)
+    mapped = sum(e.department is not None for e in entries)
+    exact = sum(e.queue is not None for e in entries)
+    print(f"{len(entries)} types; {mapped} department mappings; {exact} exact queue mappings")
+    print(f"wrote {catalog.CATALOG_PATH} and {catalog.REVIEW_CSV_PATH}")
+
+
+if __name__ == "__main__":
+    main()
