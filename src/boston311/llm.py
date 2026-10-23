@@ -11,12 +11,21 @@ Offline mode makes no network calls and needs no API key. It replays the
 recorded answers. A message that was never recorded cannot be classified
 offline; the assistant then sends it to TRIAGE and says why.
 
-Recording keys
---------------
+Recording keys and provenance
+-----------------------------
 Each answer is stored under a key computed from everything that determines
-it: the model name, the prompt version, the catalog version, and the exact
-text sent to the model. If any of these change, old recordings no longer
-match, so offline mode can never silently replay a stale answer.
+it:
+* the **generation settings**: model name, reasoning effort, and seed;
+* the prompt version and catalog version;
+* the **response schema** the model was forced to follow (its name plus a
+  hash of its JSON schema);
+* the exact text sent to the model.
+
+If any of these change, old recordings no longer match. Offline mode then
+reports "no recording" and live mode calls the model again, so a stale answer
+can never be replayed silently. Each recording also stores those settings
+next to the answer, so its provenance can be checked without trusting the
+current configuration.
 
 Failure handling (spec 6)
 -------------------------
@@ -91,10 +100,44 @@ def read_prompt(name: str) -> str:
     return (config.PROMPTS_DIR / f"{name}.txt").read_text(encoding="utf-8")
 
 
-def recording_key(kind: str, system: str, user: str) -> str:
-    """A stable fingerprint of one model request (see module docstring)."""
-    version = config.PROMPT_VERSION if kind == "classify" else config.ALIAS_PROMPT_VERSION
-    blob = json.dumps([config.LLM_MODEL, version, config.CATALOG_VERSION, kind, system, user], ensure_ascii=False)
+def generation_settings() -> dict:
+    """The settings passed to the model with every request (from config)."""
+    return {"model": config.LLM_MODEL, "reasoning_effort": config.LLM_REASONING_EFFORT, "seed": config.LLM_SEED}
+
+
+def schema_id(schema: type[BaseModel]) -> str:
+    """Identify a structured-output schema: class name + short hash of its JSON schema.
+
+    The JSON schema is what is actually sent to the model, including field
+    descriptions (and class docstrings), so editing any of them changes this id.
+    """
+    text = json.dumps(schema.model_json_schema(), sort_keys=True, ensure_ascii=False)
+    return f"{schema.__name__}:{hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]}"
+
+
+def prompt_version(kind: str) -> str:
+    return config.PROMPT_VERSION if kind == "classify" else config.ALIAS_PROMPT_VERSION
+
+
+def recording_key(kind: str, system: str, user: str, schema: type[BaseModel], settings: dict | None = None) -> str:
+    """A stable fingerprint of one model request (see module docstring).
+
+    ``settings`` defaults to the current :func:`generation_settings`.
+    """
+    settings = generation_settings() if settings is None else settings
+    blob = json.dumps(
+        {
+            **settings,
+            "prompt_version": prompt_version(kind),
+            "catalog_version": config.CATALOG_VERSION,
+            "kind": kind,
+            "schema": schema_id(schema),
+            "system": system,
+            "user": user,
+        },
+        sort_keys=True,
+        ensure_ascii=False,
+    )
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
 
 
@@ -118,12 +161,16 @@ class RecordingStore:
     def get(self, key: str) -> dict | None:
         return self._load().get(key)
 
-    def put(self, key: str, kind: str, user: str, output: dict, usage: dict | None) -> None:
+    def put(
+        self, key: str, kind: str, user: str, output: dict, usage: dict | None, *, settings: dict, schema: type[BaseModel]
+    ) -> None:
+        """Append one answer, with the settings and schema it was generated with."""
         rec = {
             "key": key,
             "kind": kind,
-            "model": config.LLM_MODEL,
-            "prompt_version": config.PROMPT_VERSION if kind == "classify" else config.ALIAS_PROMPT_VERSION,
+            **settings,  # model, reasoning_effort, seed actually sent to the model
+            "schema": schema_id(schema),
+            "prompt_version": prompt_version(kind),
             "catalog_version": config.CATALOG_VERSION,
             "input": user,
             "output": output,
@@ -134,16 +181,22 @@ class RecordingStore:
         with self.path.open("a", encoding="utf-8", newline="\n") as fh:
             fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
-    def prune(self, systems: dict[str, str]) -> tuple[int, int]:
+    def prune(self, systems: dict[str, tuple[str, type[BaseModel]]]) -> tuple[int, int]:
         """Drop recordings that can no longer be replayed.
 
         A recording stays only if its key still equals the key computed with
-        the *current* model, prompt versions, catalog version, and system
-        prompt (``systems`` maps kind -> system prompt text). Returns
-        (kept, dropped).
+        the *current* settings, versions, system prompt, and schema
+        (``systems`` maps kind -> (system prompt text, schema class)).
+        Returns (kept, dropped).
         """
         records = self._load()
-        keep = {k: r for k, r in records.items() if r["kind"] in systems and recording_key(r["kind"], systems[r["kind"]], r["input"]) == k}
+        keep = {}
+        for k, r in records.items():
+            if r["kind"] not in systems:
+                continue
+            system, schema = systems[r["kind"]]
+            if recording_key(r["kind"], system, r["input"], schema) == k:
+                keep[k] = r
         self._cache = keep
         with self.path.open("w", encoding="utf-8", newline="\n") as fh:
             for r in keep.values():
@@ -167,7 +220,9 @@ class OfflineModel:
     mode: str = "offline"
 
     def ask(self, kind: str, system: str, user: str, schema: type[T]) -> T:
-        rec = self.store.get(recording_key(kind, system, user))
+        # The key uses the configured settings: offline mode replays only
+        # answers that were generated with exactly these settings.
+        rec = self.store.get(recording_key(kind, system, user, schema))
         if rec is None:
             raise ClassifierFailure("no_recording", "offline mode has no recorded answer for this exact input")
         return schema.model_validate(rec["output"])
@@ -180,6 +235,10 @@ class LiveModel:
 
     def __init__(self, store: RecordingStore, *, llm=None):
         self.store = store
+        # Capture the settings once, so the model client, the recording key,
+        # and the stored provenance always describe the same request even if
+        # the configuration is changed while this object exists.
+        self.settings = generation_settings()
         if llm is None:
             load_dotenv(config.REPO_ROOT / ".env")
             if not os.environ.get("OPENAI_API_KEY"):
@@ -190,9 +249,9 @@ class LiveModel:
             from langchain_openai import ChatOpenAI  # imported here so offline mode never needs it
 
             llm = ChatOpenAI(
-                model=config.LLM_MODEL,
-                reasoning_effort=config.LLM_REASONING_EFFORT,
-                seed=config.LLM_SEED,
+                model=self.settings["model"],
+                reasoning_effort=self.settings["reasoning_effort"],
+                seed=self.settings["seed"],
                 timeout=config.LLM_TIMEOUT_SECONDS,
                 max_retries=0,  # we do our own bounded retries below
             )
@@ -201,7 +260,7 @@ class LiveModel:
     def ask(self, kind: str, system: str, user: str, schema: type[T]) -> T:
         # Reuse a recording if this exact request was already answered, so
         # rerunning live mode does not pay twice for the same question.
-        key = recording_key(kind, system, user)
+        key = recording_key(kind, system, user, schema, self.settings)
         rec = self.store.get(key)
         if rec is not None:
             return schema.model_validate(rec["output"])
@@ -246,7 +305,10 @@ class LiveModel:
                 malformed_left -= 1
                 continue
             usage = getattr(out.get("raw"), "usage_metadata", None)
-            self.store.put(key, kind, user, parsed.model_dump(mode="json"), dict(usage) if usage else None)
+            self.store.put(
+                key, kind, user, parsed.model_dump(mode="json"), dict(usage) if usage else None,
+                settings=self.settings, schema=schema,
+            )
             return parsed
 
 

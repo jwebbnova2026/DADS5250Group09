@@ -448,6 +448,62 @@ def test_real_wrapper_truncation_ends_in_triage_not_a_crash(tmp_path, catalog, r
     assert r.decision is Decision.TRIAGE and "malformed" in r.triage_reason
 
 
+# --- Recording identity and provenance (R4) ---
+
+
+def test_recording_key_depends_on_generation_settings_and_schema(monkeypatch):
+    from boston311.schemas import AliasBatch
+
+    base = llm.recording_key("classify", "sys", "user", ClassificationProposal)
+    assert llm.recording_key("classify", "sys", "user", ClassificationProposal) == base  # stable
+    assert llm.recording_key("classify", "sys", "user", AliasBatch) != base  # schema matters
+    monkeypatch.setattr(config, "LLM_SEED", config.LLM_SEED + 1)
+    assert llm.recording_key("classify", "sys", "user", ClassificationProposal) != base
+    monkeypatch.undo()
+    monkeypatch.setattr(config, "LLM_REASONING_EFFORT", "high")
+    assert llm.recording_key("classify", "sys", "user", ClassificationProposal) != base
+
+
+def test_changed_seed_is_a_cache_miss(tmp_path, monkeypatch):
+    good = {"parsed": proposal("T082"), "parsing_error": None, "raw": None}
+    store = RecordingStore(tmp_path / "r.jsonl")
+    first = FakeStructured([good])
+    LiveModel(store, llm=FakeChat(first)).ask("classify", "sys", "user", ClassificationProposal)
+    same = FakeStructured([good])
+    LiveModel(store, llm=FakeChat(same)).ask("classify", "sys", "user", ClassificationProposal)
+    assert (first.calls, same.calls) == (1, 0)  # identical settings replay without a call
+    monkeypatch.setattr(config, "LLM_SEED", config.LLM_SEED + 1)
+    changed = FakeStructured([good])
+    LiveModel(store, llm=FakeChat(changed)).ask("classify", "sys", "user", ClassificationProposal)
+    assert changed.calls == 1  # a changed seed must call the model again
+
+
+def test_record_stores_the_settings_used(tmp_path):
+    good = {"parsed": proposal("T082"), "parsing_error": None, "raw": None}
+    store = RecordingStore(tmp_path / "r.jsonl")
+    LiveModel(store, llm=FakeChat(FakeStructured([good]))).ask("classify", "sys", "user", ClassificationProposal)
+    rec = json.loads((tmp_path / "r.jsonl").read_text(encoding="utf-8").splitlines()[0])
+    assert rec["seed"] == config.LLM_SEED and rec["reasoning_effort"] == config.LLM_REASONING_EFFORT
+    assert rec["model"] == config.LLM_MODEL and rec["schema"] == llm.schema_id(ClassificationProposal)
+
+
+def test_committed_recordings_have_verifiable_provenance():
+    """Every committed recording states the settings it was made with, and its
+    key re-computes from those settings, the current prompt, and its schema."""
+    from boston311.schemas import AliasBatch
+
+    schemas = {"classify": ClassificationProposal, "aliases": AliasBatch}
+    systems = {"classify": llm.read_prompt("classify_system"), "aliases": llm.read_prompt("aliases_system")}
+    lines = llm.RECORDINGS_PATH.read_text(encoding="utf-8").splitlines()
+    assert lines
+    for line in lines:
+        rec = json.loads(line)
+        settings = {k: rec[k] for k in ("model", "reasoning_effort", "seed")}
+        assert settings == llm.generation_settings(), rec["key"]
+        assert rec["schema"] == llm.schema_id(schemas[rec["kind"]])
+        assert rec["key"] == llm.recording_key(rec["kind"], systems[rec["kind"]], rec["input"], schemas[rec["kind"]])
+
+
 def test_missing_api_key_message(monkeypatch):
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     monkeypatch.setattr(llm, "load_dotenv", lambda *a, **k: None)  # do not read the real .env

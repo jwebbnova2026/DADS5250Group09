@@ -14,20 +14,9 @@ from __future__ import annotations
 
 import argparse
 
-from pydantic import BaseModel, Field
-
 from boston311 import catalog, config
 from boston311.llm import LiveModel, RecordingStore, read_prompt
-
-
-class AliasDraft(BaseModel):
-    type_id: str = Field(description="The type_id exactly as given")
-    description: str = Field(description="One neutral sentence describing what this type covers")
-    aliases: list[str] = Field(description="5 to 8 short, varied resident-style phrasings")
-
-
-class AliasBatch(BaseModel):
-    items: list[AliasDraft]
+from boston311.schemas import AliasBatch
 
 
 def main() -> None:

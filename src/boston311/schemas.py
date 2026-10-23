@@ -124,6 +124,23 @@ class ClassificationProposal(BaseModel):
     reason: str = Field(description="One short sentence explaining the choice. Do not promise any action or timing.")
 
 
+# The model's draft description and aliases for one official type, used only
+# when building the catalog (scripts/build_catalog.py). These two classes live
+# here so recorded alias answers can be identified by their schema.
+#
+# NOTE: no docstrings on these two classes. Pydantic copies a class docstring
+# into the JSON schema sent to the model, so adding one would change the schema
+# the committed alias recordings were made with (see llm.schema_id).
+class AliasDraft(BaseModel):
+    type_id: str = Field(description="The type_id exactly as given")
+    description: str = Field(description="One neutral sentence describing what this type covers")
+    aliases: list[str] = Field(description="5 to 8 short, varied resident-style phrasings")
+
+
+class AliasBatch(BaseModel):  # one model call drafts about ten types
+    items: list[AliasDraft]
+
+
 class Decision(str, Enum):
     """What the intake assistant does with a message."""
 
