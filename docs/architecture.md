@@ -299,12 +299,15 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 ### 5.6 Request-type catalog and retrieval
 
 - **Routing targets come from official values only.** Each target is an official type with its observed department and queue from 2023 to 2024.
-- **Two-tier mapping rule (DECIDED 2026-10-22, replacing the single-queue rule; see docs/decisions.md):** The data audit found that about 18% of in-scope volume goes to queues chosen by the request's district or region, for example `PWDx_District 1C: Downtown`. Text alone cannot determine those queues. Shares below are computed over all of a type's 2023 to 2024 requests, in every department, so a type mostly handled outside the four departments is never mapped into them.
-  - **Department mapping (tier 1):** if at least 90% of a type's requests went to one of the four in-scope departments, a type-to-department mapping is nominated for review.
-  - **Queue mapping (tier 2):** a type with a department mapping gets an exact queue only if one queue of that department handled at least 90% of the type's requests.
+- **Two-tier mapping rule (DECIDED 2026-10-22, replacing the single-queue rule; see docs/decisions.md):** The data audit found that about 18% of in-scope volume goes to queues chosen by the request's district or region, for example `PWDx_District 1C: Downtown`. Text alone cannot determine those queues.
+  - **Handled requests (DECIDED 2026-10-22):** shares are computed over a type's 2023 to 2024 requests in every department, except the 311 center's own INFO queues. Those queues refer requests to agencies outside the city (MassDOT, DCR, MBTA, Eversource, Massport), depending on who owns the location, or hold "Reallocation From Dept" resubmissions. No department does the work there, so they are left out of the denominator.
+  - **Department mapping (tier 1):** a type-to-department mapping is nominated for review only if both hold:
+    - one of the four in-scope departments handled at least 90% of the type's handled requests;
+    - that department also handled at least 50% of all the type's requests, INFO included. This guard ensures a type mostly referred elsewhere is never mapped into the four departments.
+  - **Queue mapping (tier 2):** a type with a department mapping gets an exact queue only if one queue of that department handled at least 90% of the type's handled requests.
   - **Queue status:** every type with a department mapping gets exactly one status.
     - `exact`: it has a queue mapping.
-    - `assigned_by_location`: no queue mapping, and at least 50% of its requests went to district or region queues (queue names containing "District" or "Region").
+    - `assigned_by_location`: no queue mapping, and at least 50% of its handled requests went to district or region queues (queue names containing "District" or "Region").
     - `assigned_by_department`: any other type with no queue mapping.
   - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. For this build, nominations are provisionally approved by Claude and await team review. Each one is marked with that status and listed for review.
   - Only types with an approved department mapping auto-route. Types without one go to clarification or triage. Historical exceptions may reflect legitimate contextual routing or changes over time, so they are not silently overridden.
@@ -551,7 +554,7 @@ Hand-calculated examples (each becomes a unit test):
 
 - Capture the page's "Things to watch for in this data" section and its column list.
 - Confirm the 2023 and 2024 files share the same 30 columns and department codes.
-- List nominated mappings (90% or more) and exceptions (under 90%) for review and approval. Done 2026-10-22: 86 of 163 types qualify for a single queue, covering 60% of in-scope volume. A department mapping covers 79%. This led to the two-tier rule in section 5.6.
+- List nominated mappings (90% or more) and exceptions (under 90%) for review and approval. Done 2026-10-22: 86 of 163 types qualify for a single queue, covering 60% of in-scope volume. A department mapping covers 79%. This led to the two-tier rule in section 5.6. Leaving out the INFO referral queues gives 132 department mappings (92% of volume) and 90 exact queues. Request for Pothole Repair stays unmapped: Public Works handles 84% of its handled requests and the Water and Sewer Commission 14%.
 - Measure target classes per type and department: valid, missing, and invalid_ordering counts, and the window distribution, including long windows.
 - Check whether the 2025 file is available for the stretch holdout.
 

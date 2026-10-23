@@ -212,6 +212,16 @@ SCENARIOS: tuple[str, ...] = ("base", "plus20", "minus20", "spike")
 #   Tier 2: if one queue of that department handled at least this share, the
 #           type -> queue mapping is nominated too.
 MAPPING_SHARE_THRESHOLD = 0.90
+# Departments left out of the share denominator (DECIDED 2026-10-22). INFO is
+# the 311 center itself; its queues are referrals to agencies outside the city
+# (MassDOT, DCR, MBTA, Eversource, Massport) chosen by who owns the location,
+# or "Reallocation From Dept" resubmissions. Neither is a department doing the
+# work, so counting them would dilute the share of the department that does.
+ROUTING_EXCLUDED_DEPARTMENTS: tuple[str, ...] = ("INFO",)
+# Guard: the mapped department must ALSO have handled at least this share of
+# ALL the type's requests (INFO included), so a type that is mostly referred
+# elsewhere is never mapped into our four departments.
+MIN_ALL_REQUESTS_SHARE = 0.50
 # A type without a queue mapping is labeled "assigned_by_location" when at
 # least this share of its requests went to district or region queues (queue
 # names containing one of these words), else "assigned_by_department".

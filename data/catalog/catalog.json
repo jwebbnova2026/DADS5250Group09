@@ -40,12 +40,12 @@
           "share": 0.0045
         }
       ],
-      "location_queue_share": 0.0107,
+      "location_queue_share": 0.0109,
       "department": "BTDT",
-      "department_share": 0.9728,
+      "department_share": 0.9878,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.8766,
+      "queue_share": 0.8901,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Reports of abandoned bicycles, scooters, or mopeds.",
@@ -67,7 +67,9 @@
         "on_time": 0,
         "closed": 1475,
         "median_days_to_close": 3.05
-      }
+      },
+      "department_share_all": 0.9728,
+      "referral_share": 0.0151
     },
     {
       "type_id": "T002",
@@ -107,12 +109,12 @@
           "share": 0.0184
         }
       ],
-      "location_queue_share": 0.0061,
+      "location_queue_share": 0.0062,
       "department": "ISD",
-      "department_share": 0.9202,
+      "department_share": 0.9259,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.4663,
+      "queue_share": 0.4691,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Reports of buildings that appear to be abandoned.",
@@ -132,7 +134,9 @@
         "on_time": 95,
         "closed": 152,
         "median_days_to_close": 2.95
-      }
+      },
+      "department_share_all": 0.9202,
+      "referral_share": 0.0061
     },
     {
       "type_id": "T003",
@@ -177,10 +181,10 @@
       ],
       "location_queue_share": 0.0047,
       "department": "BTDT",
-      "department_share": 0.9873,
+      "department_share": 0.9928,
       "department_status": "provisional",
       "queue": "BTDT_AVRS Interface Queue",
-      "queue_share": 0.97,
+      "queue_share": 0.9754,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Reports of abandoned vehicles, including cars, motorcycles, scooters, mopeds, RVs, and trailers.",
@@ -207,7 +211,9 @@
         "on_time": 2448,
         "closed": 9269,
         "median_days_to_close": 37.8
-      }
+      },
+      "department_share_all": 0.9873,
+      "referral_share": 0.0055
     },
     {
       "type_id": "T004",
@@ -247,9 +253,9 @@
           "share": 0.0003
         }
       ],
-      "location_queue_share": 0.0016,
+      "location_queue_share": 0.55,
       "department": null,
-      "department_share": 0.9971,
+      "department_share": 0.65,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -273,7 +279,9 @@
         "on_time": 0,
         "closed": 18,
         "median_days_to_close": 0.71
-      }
+      },
+      "department_share_all": 0.0019,
+      "referral_share": 0.9971
     },
     {
       "type_id": "T005",
@@ -316,7 +324,7 @@
       ],
       "location_queue_share": 0.0,
       "department": null,
-      "department_share": 0.9741,
+      "department_share": 0.9789,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -340,7 +348,9 @@
         "on_time": 0,
         "closed": 7,
         "median_days_to_close": 11.66
-      }
+      },
+      "department_share_all": 0.9741,
+      "referral_share": 0.0049
     },
     {
       "type_id": "T006",
@@ -380,7 +390,7 @@
       ],
       "location_queue_share": 0.0,
       "department": null,
-      "department_share": 0.9583,
+      "department_share": 0.9877,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -401,7 +411,9 @@
         "on_time": 0,
         "closed": 2,
         "median_days_to_close": 1.5
-      }
+      },
+      "department_share_all": 0.9583,
+      "referral_share": 0.0298
     },
     {
       "type_id": "T007",
@@ -451,7 +463,9 @@
         "on_time": 145,
         "closed": 204,
         "median_days_to_close": 11.76
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T008",
@@ -513,7 +527,9 @@
         "on_time": 24,
         "closed": 25,
         "median_days_to_close": 2.9
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T009",
@@ -554,7 +570,9 @@
         "on_time": 3,
         "closed": 3,
         "median_days_to_close": 0.32
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T010",
@@ -583,13 +601,13 @@
         }
       ],
       "location_queue_share": 0.0,
-      "department": null,
-      "department_share": 0.8571,
-      "department_status": "not_nominated",
-      "queue": null,
-      "queue_share": 0.0,
-      "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "department": "PWDx",
+      "department_share": 0.9474,
+      "department_status": "provisional",
+      "queue": "PWDx_Bridge Maintenance",
+      "queue_share": 0.9474,
+      "queue_status_review": "provisional",
+      "queue_status": "exact",
       "description": "Reports of bridge damage or maintenance problems.",
       "aliases": [
         "bridge needs repair",
@@ -608,7 +626,9 @@
         "on_time": 0,
         "closed": 18,
         "median_days_to_close": 3.88
-      }
+      },
+      "department_share_all": 0.8571,
+      "referral_share": 0.0952
     },
     {
       "type_id": "T011",
@@ -652,10 +672,10 @@
       ],
       "location_queue_share": 0.0008,
       "department": "ISD",
-      "department_share": 0.9748,
+      "department_share": 0.9901,
       "department_status": "provisional",
       "queue": "ISD_Building (INTERNAL)",
-      "queue_share": 0.9122,
+      "queue_share": 0.9265,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Requests for inspection of a building's condition or safety.",
@@ -676,7 +696,9 @@
         "on_time": 467,
         "closed": 1198,
         "median_days_to_close": 10.8
-      }
+      },
+      "department_share_all": 0.9748,
+      "referral_share": 0.0154
     },
     {
       "type_id": "T012",
@@ -722,12 +744,12 @@
           "share": 0.0549
         }
       ],
-      "location_queue_share": 0.9727,
+      "location_queue_share": 0.9799,
       "department": "PWDx",
-      "department_share": 0.9896,
+      "department_share": 0.9968,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.2809,
+      "queue_share": 0.2829,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_location",
       "description": "Public Works collection requests logged under the 'CE Collection' category; the data does not define the category further.",
@@ -745,7 +767,9 @@
         "on_time": 33048,
         "closed": 33269,
         "median_days_to_close": 0.08
-      }
+      },
+      "department_share_all": 0.9896,
+      "referral_share": 0.0073
     },
     {
       "type_id": "T013",
@@ -785,7 +809,9 @@
         "on_time": 0,
         "closed": 2,
         "median_days_to_close": 174.11
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T014",
@@ -827,7 +853,9 @@
         "on_time": 9,
         "closed": 14,
         "median_days_to_close": 9.47
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T015",
@@ -869,7 +897,7 @@
       ],
       "location_queue_share": 0.0017,
       "department": null,
-      "department_share": 0.9677,
+      "department_share": 0.9823,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -894,7 +922,9 @@
         "on_time": 0,
         "closed": 11,
         "median_days_to_close": 9.22
-      }
+      },
+      "department_share_all": 0.9677,
+      "referral_share": 0.0149
     },
     {
       "type_id": "T016",
@@ -941,7 +971,9 @@
         "on_time": 34,
         "closed": 58,
         "median_days_to_close": 2.37
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T017",
@@ -998,7 +1030,9 @@
         "on_time": 357,
         "closed": 470,
         "median_days_to_close": 10.26
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T018",
@@ -1030,9 +1064,9 @@
           "share": 0.0476
         }
       ],
-      "location_queue_share": 0.0476,
+      "location_queue_share": 1.0,
       "department": null,
-      "department_share": 0.9524,
+      "department_share": 1.0,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -1054,7 +1088,9 @@
         "on_time": 0,
         "closed": 1,
         "median_days_to_close": 0.05
-      }
+      },
+      "department_share_all": 0.0476,
+      "referral_share": 0.9524
     },
     {
       "type_id": "T019",
@@ -1098,10 +1134,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "PWDx",
-      "department_share": 0.9604,
+      "department_share": 0.9652,
       "department_status": "provisional",
       "queue": "PWDx_Code Enforcement",
-      "queue_share": 0.9431,
+      "queue_share": 0.9478,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Construction debris left or accumulated in an area.",
@@ -1122,7 +1158,9 @@
         "on_time": 386,
         "closed": 398,
         "median_days_to_close": 0.12
-      }
+      },
+      "department_share_all": 0.9604,
+      "referral_share": 0.005
     },
     {
       "type_id": "T020",
@@ -1166,9 +1204,9 @@
           "share": 0.0353
         }
       ],
-      "location_queue_share": 0.0095,
+      "location_queue_share": 0.0098,
       "department": null,
-      "department_share": 0.843,
+      "department_share": 0.8695,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -1192,7 +1230,9 @@
         "on_time": 1341,
         "closed": 2216,
         "median_days_to_close": 2.15
-      }
+      },
+      "department_share_all": 0.843,
+      "referral_share": 0.0304
     },
     {
       "type_id": "T021",
@@ -1238,10 +1278,10 @@
       ],
       "location_queue_share": 0.0035,
       "department": "ISD",
-      "department_share": 0.9221,
+      "department_share": 0.9373,
       "department_status": "provisional",
       "queue": "ISD_Building (INTERNAL)",
-      "queue_share": 0.9156,
+      "queue_share": 0.9308,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Complaints about contractors or their work.",
@@ -1261,7 +1301,9 @@
         "on_time": 1957,
         "closed": 1978,
         "median_days_to_close": 10.07
-      }
+      },
+      "department_share_all": 0.9221,
+      "referral_share": 0.0163
     },
     {
       "type_id": "T022",
@@ -1311,7 +1353,9 @@
         "on_time": 135,
         "closed": 216,
         "median_days_to_close": 21.01
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T023",
@@ -1352,10 +1396,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9551,
+      "department_share": 0.9605,
       "department_status": "provisional",
       "queue": "ISD_Building (INTERNAL)",
-      "queue_share": 0.9157,
+      "queue_share": 0.9209,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Blocked, obstructed, or otherwise unsafe ways out of a building.",
@@ -1376,7 +1420,9 @@
         "on_time": 152,
         "closed": 164,
         "median_days_to_close": 17.57
-      }
+      },
+      "department_share_all": 0.9551,
+      "referral_share": 0.0056
     },
     {
       "type_id": "T024",
@@ -1433,7 +1479,9 @@
         "on_time": 479,
         "closed": 1232,
         "median_days_to_close": 18.88
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T025",
@@ -1475,9 +1523,9 @@
           "share": 0.0787
         }
       ],
-      "location_queue_share": 0.711,
+      "location_queue_share": 0.75,
       "department": null,
-      "department_share": 0.8377,
+      "department_share": 0.8837,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -1510,7 +1558,9 @@
         "on_time": 5191,
         "closed": 5445,
         "median_days_to_close": 0.1
-      }
+      },
+      "department_share_all": 0.8377,
+      "referral_share": 0.052
     },
     {
       "type_id": "T026",
@@ -1558,14 +1608,14 @@
           "share": 0.1196
         }
       ],
-      "location_queue_share": 0.0614,
-      "department": null,
-      "department_share": 0.8337,
-      "department_status": "not_nominated",
+      "location_queue_share": 0.0707,
+      "department": "PARK",
+      "department_share": 0.9595,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.1865,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_department",
       "description": "Damaged or malfunctioning equipment in parks or other city facilities.",
       "aliases": [
         "broken park equipment",
@@ -1593,7 +1643,9 @@
         "on_time": 3779,
         "closed": 4985,
         "median_days_to_close": 2.08
-      }
+      },
+      "department_share_all": 0.8337,
+      "referral_share": 0.1311
     },
     {
       "type_id": "T027",
@@ -1634,10 +1686,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9384,
+      "department_share": 0.958,
       "department_status": "provisional",
       "queue": "ISD_Building (INTERNAL)",
-      "queue_share": 0.9247,
+      "queue_share": 0.9441,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Work or activity that goes beyond the scope or conditions of a permit.",
@@ -1658,7 +1710,9 @@
         "on_time": 125,
         "closed": 283,
         "median_days_to_close": 10.66
-      }
+      },
+      "department_share_all": 0.9384,
+      "referral_share": 0.0205
     },
     {
       "type_id": "T028",
@@ -1705,7 +1759,9 @@
         "on_time": 59,
         "closed": 76,
         "median_days_to_close": 0.91
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T029",
@@ -1744,7 +1800,9 @@
         "on_time": 0,
         "closed": 1,
         "median_days_to_close": 0.0
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T030",
@@ -1768,10 +1826,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9979,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": "ISD_Health (INTERNAL)",
-      "queue_share": 0.9979,
+      "queue_share": 1.0,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "A confirmed food safety alert involving a food product or food establishment.",
@@ -1791,7 +1849,9 @@
         "on_time": 379,
         "closed": 479,
         "median_days_to_close": 1.07
-      }
+      },
+      "department_share_all": 0.9979,
+      "referral_share": 0.0021
     },
     {
       "type_id": "T031",
@@ -1815,10 +1875,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9963,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": "ISD_Health (INTERNAL)",
-      "queue_share": 0.9963,
+      "queue_share": 1.0,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Reports of suspected food safety problems or unsanitary conditions involving food.",
@@ -1841,7 +1901,9 @@
         "on_time": 211,
         "closed": 272,
         "median_days_to_close": 1.19
-      }
+      },
+      "department_share_all": 0.9963,
+      "referral_share": 0.0037
     },
     {
       "type_id": "T032",
@@ -1883,9 +1945,9 @@
           "share": 0.0245
         }
       ],
-      "location_queue_share": 0.0646,
+      "location_queue_share": 0.067,
       "department": null,
-      "department_share": 0.6125,
+      "department_share": 0.6351,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -1915,7 +1977,9 @@
         "on_time": 0,
         "closed": 360,
         "median_days_to_close": 0.69
-      }
+      },
+      "department_share_all": 0.6125,
+      "referral_share": 0.0356
     },
     {
       "type_id": "T033",
@@ -1961,9 +2025,9 @@
           "share": 0.0399
         }
       ],
-      "location_queue_share": 0.0519,
+      "location_queue_share": 0.0533,
       "department": null,
-      "department_share": 0.4709,
+      "department_share": 0.4839,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -1996,7 +2060,9 @@
         "on_time": 909,
         "closed": 1262,
         "median_days_to_close": 0.96
-      }
+      },
+      "department_share_all": 0.4709,
+      "referral_share": 0.0268
     },
     {
       "type_id": "T034",
@@ -2039,10 +2105,10 @@
       ],
       "location_queue_share": 0.001,
       "department": "PWDx",
-      "department_share": 0.9702,
+      "department_share": 0.9897,
       "department_status": "provisional",
       "queue": "PWDx_Street Light_General Lighting Request",
-      "queue_share": 0.9438,
+      "queue_share": 0.9627,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "General requests or concerns about outdoor public lighting.",
@@ -2072,7 +2138,9 @@
         "on_time": 1666,
         "closed": 1999,
         "median_days_to_close": 0.16
-      }
+      },
+      "department_share_all": 0.9702,
+      "referral_share": 0.0197
     },
     {
       "type_id": "T035",
@@ -2112,12 +2180,12 @@
           "share": 0.0195
         }
       ],
-      "location_queue_share": 0.0033,
+      "location_queue_share": 0.0034,
       "department": "BTDT",
-      "department_share": 0.9186,
+      "department_share": 0.9495,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.5928,
+      "queue_share": 0.6128,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "General requests or concerns about traffic flow and street traffic design.",
@@ -2138,7 +2206,9 @@
         "on_time": 162,
         "closed": 253,
         "median_days_to_close": 4.93
-      }
+      },
+      "department_share_all": 0.9186,
+      "referral_share": 0.0326
     },
     {
       "type_id": "T036",
@@ -2181,7 +2251,7 @@
       ],
       "location_queue_share": 0.0023,
       "department": null,
-      "department_share": 0.9684,
+      "department_share": 0.9869,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -2205,7 +2275,9 @@
         "on_time": 30,
         "closed": 50,
         "median_days_to_close": 25.81
-      }
+      },
+      "department_share_all": 0.9684,
+      "referral_share": 0.0188
     },
     {
       "type_id": "T037",
@@ -2252,14 +2324,14 @@
           "share": 0.0949
         }
       ],
-      "location_queue_share": 0.7214,
-      "department": null,
-      "department_share": 0.807,
-      "department_status": "not_nominated",
+      "location_queue_share": 0.8581,
+      "department": "PARK",
+      "department_share": 0.9598,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.2032,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_location",
       "description": "Maintenance concerns involving park grounds or other outdoor grounds.",
       "aliases": [
         "park grounds need upkeep",
@@ -2287,7 +2359,9 @@
         "on_time": 5856,
         "closed": 6670,
         "median_days_to_close": 0.98
-      }
+      },
+      "department_share_all": 0.807,
+      "referral_share": 0.1592
     },
     {
       "type_id": "T038",
@@ -2349,7 +2423,9 @@
         "on_time": 1283,
         "closed": 1415,
         "median_days_to_close": 1.22
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T039",
@@ -2390,9 +2466,9 @@
           "share": 0.014
         }
       ],
-      "location_queue_share": 0.0084,
+      "location_queue_share": 0.0086,
       "department": null,
-      "department_share": 0.4804,
+      "department_share": 0.4943,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -2416,7 +2492,9 @@
         "on_time": 320,
         "closed": 342,
         "median_days_to_close": 0.96
-      }
+      },
+      "department_share_all": 0.4804,
+      "referral_share": 0.0279
     },
     {
       "type_id": "T040",
@@ -2462,12 +2540,12 @@
           "share": 0.005
         }
       ],
-      "location_queue_share": 0.0452,
+      "location_queue_share": 0.0454,
       "department": "PWDx",
-      "department_share": 0.9902,
+      "department_share": 0.9953,
       "department_status": "provisional",
       "queue": "PWDx_Code Enforcement",
-      "queue_share": 0.9429,
+      "queue_share": 0.9477,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Reports of trash or other materials dumped in unauthorized locations.",
@@ -2489,7 +2567,9 @@
         "on_time": 6041,
         "closed": 6102,
         "median_days_to_close": 0.1
-      }
+      },
+      "department_share_all": 0.9902,
+      "referral_share": 0.005
     },
     {
       "type_id": "T041",
@@ -2528,10 +2608,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.99,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.855,
+      "queue_share": 0.8636,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Suspected occupancy of a building or space in violation of housing or building requirements.",
@@ -2552,7 +2632,9 @@
         "on_time": 59,
         "closed": 169,
         "median_days_to_close": 34.91
-      }
+      },
+      "department_share_all": 0.99,
+      "referral_share": 0.01
     },
     {
       "type_id": "T042",
@@ -2593,9 +2675,9 @@
           "share": 0.0097
         }
       ],
-      "location_queue_share": 0.0194,
+      "location_queue_share": 0.0198,
       "department": null,
-      "department_share": 0.8592,
+      "department_share": 0.8762,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -2619,7 +2701,9 @@
         "on_time": 177,
         "closed": 194,
         "median_days_to_close": 0.21
-      }
+      },
+      "department_share_all": 0.8592,
+      "referral_share": 0.0194
     },
     {
       "type_id": "T043",
@@ -2659,10 +2743,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9892,
+      "department_share": 0.9946,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.8387,
+      "queue_share": 0.8432,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Suspected operation of a rooming house without required approval.",
@@ -2683,7 +2767,9 @@
         "on_time": 39,
         "closed": 171,
         "median_days_to_close": 143.28
-      }
+      },
+      "department_share_all": 0.9892,
+      "referral_share": 0.0054
     },
     {
       "type_id": "T044",
@@ -2724,12 +2810,12 @@
           "share": 0.0084
         }
       ],
-      "location_queue_share": 0.0084,
+      "location_queue_share": 0.0085,
       "department": "PWDx",
-      "department_share": 0.9412,
+      "department_share": 0.9573,
       "department_status": "provisional",
       "queue": "PWDx_Code Enforcement",
-      "queue_share": 0.9412,
+      "queue_share": 0.9573,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Suspected selling of goods in public places without required authorization.",
@@ -2750,7 +2836,9 @@
         "on_time": 341,
         "closed": 345,
         "median_days_to_close": 0.32
-      }
+      },
+      "department_share_all": 0.9412,
+      "referral_share": 0.0168
     },
     {
       "type_id": "T045",
@@ -2797,12 +2885,12 @@
           "share": 0.0024
         }
       ],
-      "location_queue_share": 0.0239,
+      "location_queue_share": 0.024,
       "department": "PWDx",
-      "department_share": 0.9905,
+      "department_share": 0.9951,
       "department_status": "provisional",
       "queue": "PWDx_Code Enforcement",
-      "queue_share": 0.9622,
+      "queue_share": 0.9667,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Trash or trash barrels stored improperly, including uncovered containers or loose trash around barrels.",
@@ -2824,7 +2912,9 @@
         "on_time": 39587,
         "closed": 39680,
         "median_days_to_close": 0.13
-      }
+      },
+      "department_share_all": 0.9905,
+      "referral_share": 0.0046
     },
     {
       "type_id": "T046",
@@ -2864,12 +2954,12 @@
       ],
       "location_queue_share": 0.0,
       "department": "PWDx",
-      "department_share": 0.9123,
+      "department_share": 0.9811,
       "department_status": "provisional",
-      "queue": null,
-      "queue_share": 0.8421,
-      "queue_status_review": "not_nominated",
-      "queue_status": "assigned_by_department",
+      "queue": "PWDx_Street Light_Install New Lighting",
+      "queue_share": 0.9057,
+      "queue_status_review": "provisional",
+      "queue_status": "exact",
       "description": "Requests for new outdoor public lighting where lighting is not currently installed.",
       "aliases": [
         "need a new streetlight",
@@ -2889,7 +2979,9 @@
         "on_time": 22,
         "closed": 42,
         "median_days_to_close": 54.42
-      }
+      },
+      "department_share_all": 0.9123,
+      "referral_share": 0.0702
     },
     {
       "type_id": "T047",
@@ -2936,7 +3028,9 @@
         "on_time": 9,
         "closed": 22,
         "median_days_to_close": 1.13
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T048",
@@ -2974,12 +3068,12 @@
           "share": 0.0063
         }
       ],
-      "location_queue_share": 0.0158,
+      "location_queue_share": 0.0159,
       "department": "PWDx",
-      "department_share": 0.9464,
+      "department_share": 0.9524,
       "department_status": "provisional",
       "queue": "PWDx_Street Light Knockdown Replacement",
-      "queue_share": 0.9211,
+      "queue_share": 0.927,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "A streetlight pole has been knocked down and needs replacement.",
@@ -3006,7 +3100,9 @@
         "on_time": 189,
         "closed": 293,
         "median_days_to_close": 10.45
-      }
+      },
+      "department_share_all": 0.9464,
+      "referral_share": 0.0063
     },
     {
       "type_id": "T049",
@@ -3048,7 +3144,9 @@
         "on_time": 12,
         "closed": 23,
         "median_days_to_close": 113.94
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T050",
@@ -3087,12 +3185,12 @@
           "share": 0.0098
         }
       ],
-      "location_queue_share": 0.1073,
+      "location_queue_share": 0.114,
       "department": "PWDx",
-      "department_share": 0.922,
+      "department_share": 0.9793,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.8146,
+      "queue_share": 0.8653,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Public litter baskets that need emptying, cleaning, or repair.",
@@ -3113,7 +3211,9 @@
         "on_time": 0,
         "closed": 192,
         "median_days_to_close": 0.11
-      }
+      },
+      "department_share_all": 0.922,
+      "referral_share": 0.0585
     },
     {
       "type_id": "T051",
@@ -3154,10 +3254,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9711,
+      "department_share": 0.9818,
       "department_status": "provisional",
       "queue": "ISD_Building (INTERNAL)",
-      "queue_share": 0.9097,
+      "queue_share": 0.9197,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Maintenance problems in an owner-occupied home.",
@@ -3177,7 +3277,9 @@
         "on_time": 87,
         "closed": 256,
         "median_days_to_close": 27.4
-      }
+      },
+      "department_share_all": 0.9711,
+      "referral_share": 0.0108
     },
     {
       "type_id": "T052",
@@ -3220,10 +3322,10 @@
       ],
       "location_queue_share": 0.001,
       "department": "ISD",
-      "department_share": 0.98,
+      "department_share": 0.9819,
       "department_status": "provisional",
       "queue": "ISD_Housing (INTERNAL)",
-      "queue_share": 0.96,
+      "queue_share": 0.9618,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Problems with the maintenance or condition of a residential building or dwelling.",
@@ -3253,7 +3355,9 @@
         "on_time": 648,
         "closed": 766,
         "median_days_to_close": 7.81
-      }
+      },
+      "department_share_all": 0.98,
+      "referral_share": 0.0019
     },
     {
       "type_id": "T053",
@@ -3293,10 +3397,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "PWDx",
-      "department_share": 0.9384,
+      "department_share": 0.9946,
       "department_status": "provisional",
       "queue": "PWDx_Major System Failure",
-      "queue_share": 0.9058,
+      "queue_share": 0.9601,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "A major system failure logged by Public Works staff; some case titles mention gas leaks.",
@@ -3319,7 +3423,9 @@
         "on_time": 453,
         "closed": 551,
         "median_days_to_close": 0.12
-      }
+      },
+      "department_share_all": 0.9384,
+      "referral_share": 0.0565
     },
     {
       "type_id": "T054",
@@ -3367,7 +3473,9 @@
         "on_time": 2,
         "closed": 36546,
         "median_days_to_close": 5.21
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T055",
@@ -3413,7 +3521,9 @@
         "on_time": 5,
         "closed": 21,
         "median_days_to_close": 109.1
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T056",
@@ -3480,7 +3590,9 @@
         "on_time": 536,
         "closed": 645,
         "median_days_to_close": 9.82
-      }
+      },
+      "department_share_all": 0.9987,
+      "referral_share": 0.0
     },
     {
       "type_id": "T057",
@@ -3527,7 +3639,9 @@
         "on_time": 0,
         "closed": 5,
         "median_days_to_close": 1.22
-      }
+      },
+      "department_share_all": 0.96,
+      "referral_share": 0.0
     },
     {
       "type_id": "T058",
@@ -3567,10 +3681,10 @@
       ],
       "location_queue_share": 0.0004,
       "department": "PWDx",
-      "department_share": 0.9991,
+      "department_share": 0.9996,
       "department_status": "provisional",
       "queue": "PWDx_Missed Trash\\Recycling\\Yard Waste\\Bulk Item",
-      "queue_share": 0.9893,
+      "queue_share": 0.9898,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Trash, recycling, yard waste, or bulk items left uncollected during a scheduled pickup.",
@@ -3601,7 +3715,9 @@
         "on_time": 22632,
         "closed": 23169,
         "median_days_to_close": 0.51
-      }
+      },
+      "department_share_all": 0.9991,
+      "referral_share": 0.0005
     },
     {
       "type_id": "T059",
@@ -3641,12 +3757,12 @@
           "share": 0.0286
         }
       ],
-      "location_queue_share": 0.1599,
+      "location_queue_share": 0.164,
       "department": "BTDT",
-      "department_share": 0.9642,
+      "department_share": 0.989,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.7315,
+      "queue_share": 0.7503,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "A missing traffic or parking sign.",
@@ -3667,7 +3783,9 @@
         "on_time": 515,
         "closed": 802,
         "median_days_to_close": 6.8
-      }
+      },
+      "department_share_all": 0.9642,
+      "referral_share": 0.0251
     },
     {
       "type_id": "T060",
@@ -3708,7 +3826,7 @@
       ],
       "location_queue_share": 0.0,
       "department": null,
-      "department_share": 0.625,
+      "department_share": 0.8824,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -3732,7 +3850,9 @@
         "on_time": 15,
         "closed": 16,
         "median_days_to_close": 0.83
-      }
+      },
+      "department_share_all": 0.625,
+      "referral_share": 0.2917
     },
     {
       "type_id": "T061",
@@ -3796,7 +3916,9 @@
         "on_time": 14,
         "closed": 24,
         "median_days_to_close": 5.41
-      }
+      },
+      "department_share_all": 0.8276,
+      "referral_share": 0.0
     },
     {
       "type_id": "T062",
@@ -3838,7 +3960,7 @@
       ],
       "location_queue_share": 0.0004,
       "department": null,
-      "department_share": 0.9982,
+      "department_share": 0.9993,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -3862,7 +3984,9 @@
         "on_time": 0,
         "closed": 13,
         "median_days_to_close": 0.86
-      }
+      },
+      "department_share_all": 0.9982,
+      "referral_share": 0.001
     },
     {
       "type_id": "T063",
@@ -3905,12 +4029,12 @@
           "share": 0.0279
         }
       ],
-      "location_queue_share": 0.0284,
+      "location_queue_share": 0.0297,
       "department": "BTDT",
-      "department_share": 0.9196,
+      "department_share": 0.9615,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.6887,
+      "queue_share": 0.7202,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Requests for a new traffic sign, crosswalk, or pavement marking.",
@@ -3931,7 +4055,9 @@
         "on_time": 1048,
         "closed": 1623,
         "median_days_to_close": 5.75
-      }
+      },
+      "department_share_all": 0.9196,
+      "referral_share": 0.0436
     },
     {
       "type_id": "T064",
@@ -3973,12 +4099,12 @@
       ],
       "location_queue_share": 0.0006,
       "department": "PARK",
-      "department_share": 0.9877,
+      "department_share": 0.9951,
       "department_status": "provisional",
-      "queue": null,
-      "queue_share": 0.894,
-      "queue_status_review": "not_nominated",
-      "queue_status": "assigned_by_department",
+      "queue": "PARK_New Tree Requests",
+      "queue_share": 0.9006,
+      "queue_status_review": "provisional",
+      "queue_status": "exact",
       "description": "Requests for a new tree to be planted.",
       "aliases": [
         "request a new tree",
@@ -3998,7 +4124,9 @@
         "on_time": 4533,
         "closed": 4777,
         "median_days_to_close": 146.82
-      }
+      },
+      "department_share_all": 0.9877,
+      "referral_share": 0.0074
     },
     {
       "type_id": "T065",
@@ -4040,7 +4168,9 @@
         "on_time": 2,
         "closed": 3,
         "median_days_to_close": 0.72
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T066",
@@ -4082,7 +4212,9 @@
         "on_time": 2,
         "closed": 10,
         "median_days_to_close": 3.29
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T067",
@@ -4124,7 +4256,9 @@
         "on_time": 5,
         "closed": 5,
         "median_days_to_close": 1.9
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T068",
@@ -4166,7 +4300,9 @@
         "on_time": 19,
         "closed": 19,
         "median_days_to_close": 1.85
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T069",
@@ -4213,7 +4349,9 @@
         "on_time": 3,
         "closed": 7,
         "median_days_to_close": 2.99
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T070",
@@ -4255,7 +4393,9 @@
         "on_time": 24,
         "closed": 31,
         "median_days_to_close": 0.84
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T071",
@@ -4301,7 +4441,9 @@
         "on_time": 89,
         "closed": 95,
         "median_days_to_close": 1.6
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T072",
@@ -4330,10 +4472,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9655,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": "ISD_Housing (INTERNAL)",
-      "queue_share": 0.931,
+      "queue_share": 0.9643,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Lack of gas service in a residential dwelling.",
@@ -4353,7 +4495,9 @@
         "on_time": 17,
         "closed": 22,
         "median_days_to_close": 2.0
-      }
+      },
+      "department_share_all": 0.9655,
+      "referral_share": 0.0345
     },
     {
       "type_id": "T073",
@@ -4405,7 +4549,9 @@
         "on_time": 160,
         "closed": 191,
         "median_days_to_close": 1.65
-      }
+      },
+      "department_share_all": 0.9866,
+      "referral_share": 0.0
     },
     {
       "type_id": "T074",
@@ -4444,9 +4590,9 @@
           "share": 0.0803
         }
       ],
-      "location_queue_share": 0.7299,
+      "location_queue_share": 0.7463,
       "department": null,
-      "department_share": 0.708,
+      "department_share": 0.7239,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -4469,7 +4615,9 @@
         "on_time": 101,
         "closed": 122,
         "median_days_to_close": 0.4
-      }
+      },
+      "department_share_all": 0.708,
+      "referral_share": 0.0219
     },
     {
       "type_id": "T075",
@@ -4509,10 +4657,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9427,
+      "department_share": 0.961,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.4459,
+      "queue_share": 0.4545,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Notifications concerning fires, sanitary sewer overflows, water main breaks, or water main shutoffs.",
@@ -4537,7 +4685,9 @@
         "on_time": 0,
         "closed": 7,
         "median_days_to_close": 2.47
-      }
+      },
+      "department_share_all": 0.9427,
+      "referral_share": 0.0191
     },
     {
       "type_id": "T076",
@@ -4585,7 +4735,9 @@
         "on_time": 5,
         "closed": 15,
         "median_days_to_close": 18.97
-      }
+      },
+      "department_share_all": 0.9412,
+      "referral_share": 0.0
     },
     {
       "type_id": "T077",
@@ -4624,7 +4776,9 @@
         "on_time": 0,
         "closed": 1,
         "median_days_to_close": 3.1
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T078",
@@ -4671,7 +4825,9 @@
         "on_time": 32,
         "closed": 43,
         "median_days_to_close": 9.73
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T079",
@@ -4711,7 +4867,7 @@
       ],
       "location_queue_share": 0.0,
       "department": null,
-      "department_share": 0.7455,
+      "department_share": 0.7523,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -4735,7 +4891,9 @@
         "on_time": 215,
         "closed": 222,
         "median_days_to_close": 0.81
-      }
+      },
+      "department_share_all": 0.7455,
+      "referral_share": 0.0089
     },
     {
       "type_id": "T080",
@@ -4776,9 +4934,9 @@
           "share": 0.0561
         }
       ],
-      "location_queue_share": 0.4119,
+      "location_queue_share": 0.47,
       "department": null,
-      "department_share": 0.6846,
+      "department_share": 0.781,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -4806,7 +4964,9 @@
         "on_time": 1587,
         "closed": 2185,
         "median_days_to_close": 1.87
-      }
+      },
+      "department_share_all": 0.6846,
+      "referral_share": 0.1235
     },
     {
       "type_id": "T081",
@@ -4846,12 +5006,12 @@
           "share": 0.0072
         }
       ],
-      "location_queue_share": 0.0096,
+      "location_queue_share": 0.0098,
       "department": "PARK",
-      "department_share": 0.9688,
+      "department_share": 0.9902,
       "department_status": "provisional",
       "queue": "PARK_Park Improvement Requests",
-      "queue_share": 0.9017,
+      "queue_share": 0.9216,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Requests for improvements to parks and park features.",
@@ -4881,7 +5041,9 @@
         "on_time": 0,
         "closed": 396,
         "median_days_to_close": 31.57
-      }
+      },
+      "department_share_all": 0.9688,
+      "referral_share": 0.0216
     },
     {
       "type_id": "T082",
@@ -4928,10 +5090,10 @@
       ],
       "location_queue_share": 0.0005,
       "department": "BTDT",
-      "department_share": 0.9973,
+      "department_share": 0.9978,
       "department_status": "provisional",
       "queue": "BTDT_Parking Enforcement",
-      "queue_share": 0.9926,
+      "queue_share": 0.9931,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Reports of vehicles parked in violation of parking rules.",
@@ -4952,7 +5114,9 @@
         "on_time": 67876,
         "closed": 104735,
         "median_days_to_close": 0.71
-      }
+      },
+      "department_share_all": 0.9973,
+      "referral_share": 0.0006
     },
     {
       "type_id": "T083",
@@ -4994,7 +5158,9 @@
         "on_time": 7,
         "closed": 7,
         "median_days_to_close": 0.7
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T084",
@@ -5033,9 +5199,9 @@
           "share": 0.0113
         }
       ],
-      "location_queue_share": 0.0085,
+      "location_queue_share": 0.0086,
       "department": null,
-      "department_share": 0.7465,
+      "department_share": 0.7637,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -5059,7 +5225,9 @@
         "on_time": 301,
         "closed": 330,
         "median_days_to_close": 0.14
-      }
+      },
+      "department_share_all": 0.7465,
+      "referral_share": 0.0225
     },
     {
       "type_id": "T085",
@@ -5102,9 +5270,9 @@
           "share": 0.0563
         }
       ],
-      "location_queue_share": 0.3675,
+      "location_queue_share": 0.4286,
       "department": null,
-      "department_share": 0.7252,
+      "department_share": 0.8456,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -5129,7 +5297,9 @@
         "on_time": 0,
         "closed": 246,
         "median_days_to_close": 1.97
-      }
+      },
+      "department_share_all": 0.7252,
+      "referral_share": 0.1424
     },
     {
       "type_id": "T086",
@@ -5172,9 +5342,9 @@
           "share": 0.0449
         }
       ],
-      "location_queue_share": 0.0044,
+      "location_queue_share": 0.0054,
       "department": null,
-      "department_share": 0.4398,
+      "department_share": 0.5432,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -5207,7 +5377,9 @@
         "on_time": 455,
         "closed": 677,
         "median_days_to_close": 2.41
-      }
+      },
+      "department_share_all": 0.4398,
+      "referral_share": 0.1904
     },
     {
       "type_id": "T087",
@@ -5246,12 +5418,12 @@
           "share": 0.0453
         }
       ],
-      "location_queue_share": 0.4563,
+      "location_queue_share": 0.4684,
       "department": "BTDT",
-      "department_share": 0.9579,
+      "department_share": 0.9834,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.4563,
+      "queue_share": 0.4684,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Requests for inspection of pavement markings.",
@@ -5272,7 +5444,9 @@
         "on_time": 168,
         "closed": 288,
         "median_days_to_close": 4.9
-      }
+      },
+      "department_share_all": 0.9579,
+      "referral_share": 0.0259
     },
     {
       "type_id": "T088",
@@ -5319,7 +5493,9 @@
         "on_time": 1,
         "closed": 14,
         "median_days_to_close": 420.48
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T089",
@@ -5363,10 +5539,10 @@
       ],
       "location_queue_share": 0.0009,
       "department": "ISD",
-      "department_share": 0.9133,
+      "department_share": 0.9207,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.5767,
+      "queue_share": 0.5813,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Pest infestations in residential buildings or homes.",
@@ -5396,7 +5572,9 @@
         "on_time": 3116,
         "closed": 3219,
         "median_days_to_close": 2.44
-      }
+      },
+      "department_share_all": 0.9133,
+      "referral_share": 0.0081
     },
     {
       "type_id": "T090",
@@ -5437,7 +5615,9 @@
         "on_time": 0,
         "closed": 23,
         "median_days_to_close": 0.78
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T091",
@@ -5482,14 +5662,14 @@
           "share": 0.0802
         }
       ],
-      "location_queue_share": 0.8739,
-      "department": null,
-      "department_share": 0.8577,
-      "department_status": "not_nominated",
+      "location_queue_share": 0.9545,
+      "department": "PWDx",
+      "department_share": 0.9368,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.1334,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_location",
       "description": "Requests to pick up a dead animal.",
       "aliases": [
         "dead animal needs pickup",
@@ -5517,7 +5697,9 @@
         "on_time": 13457,
         "closed": 13744,
         "median_days_to_close": 0.05
-      }
+      },
+      "department_share_all": 0.8577,
+      "referral_share": 0.0844
     },
     {
       "type_id": "T092",
@@ -5558,7 +5740,9 @@
         "on_time": 0,
         "closed": 7,
         "median_days_to_close": 0.16
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T093",
@@ -5598,9 +5782,9 @@
           "share": 0.0233
         }
       ],
-      "location_queue_share": 0.0465,
+      "location_queue_share": 0.069,
       "department": null,
-      "department_share": 0.5116,
+      "department_share": 0.7586,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -5624,7 +5808,9 @@
         "on_time": 25,
         "closed": 27,
         "median_days_to_close": 0.72
-      }
+      },
+      "department_share_all": 0.5116,
+      "referral_share": 0.3256
     },
     {
       "type_id": "T094",
@@ -5687,7 +5873,9 @@
         "on_time": 22,
         "closed": 30,
         "median_days_to_close": 1.94
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T095",
@@ -5744,7 +5932,9 @@
         "on_time": 18,
         "closed": 128,
         "median_days_to_close": 354.65
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T096",
@@ -5790,7 +5980,9 @@
         "on_time": 67,
         "closed": 78,
         "median_days_to_close": 7.08
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T097",
@@ -5838,10 +6030,10 @@
       ],
       "location_queue_share": 0.0042,
       "department": "PWDx",
-      "department_share": 0.9862,
+      "department_share": 0.9921,
       "department_status": "provisional",
       "queue": "PWDx_Code Enforcement",
-      "queue_share": 0.9733,
+      "queue_share": 0.9791,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Concerns about poorly maintained or unclean property conditions.",
@@ -5863,7 +6055,9 @@
         "on_time": 16792,
         "closed": 16852,
         "median_days_to_close": 0.11
-      }
+      },
+      "department_share_all": 0.9862,
+      "referral_share": 0.0059
     },
     {
       "type_id": "T098",
@@ -5898,10 +6092,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9545,
+      "department_share": 0.9844,
       "department_status": "provisional",
       "queue": "ISD_Housing (INTERNAL)",
-      "queue_share": 0.9091,
+      "queue_share": 0.9375,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Problems with inadequate ventilation or air circulation in a building.",
@@ -5922,7 +6116,9 @@
         "on_time": 43,
         "closed": 58,
         "median_days_to_close": 9.43
-      }
+      },
+      "department_share_all": 0.9545,
+      "referral_share": 0.0303
     },
     {
       "type_id": "T099",
@@ -5964,7 +6160,9 @@
         "on_time": 1,
         "closed": 1,
         "median_days_to_close": 2.03
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T100",
@@ -6006,7 +6204,9 @@
         "on_time": 4,
         "closed": 8,
         "median_days_to_close": 1.65
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T101",
@@ -6049,10 +6249,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9532,
+      "department_share": 0.9751,
       "department_status": "provisional",
       "queue": "ISD_Building (INTERNAL)",
-      "queue_share": 0.9382,
+      "queue_share": 0.9598,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Concerns about protecting neighboring property from damage during construction or demolition.",
@@ -6072,7 +6272,9 @@
         "on_time": 171,
         "closed": 466,
         "median_days_to_close": 20.05
-      }
+      },
+      "department_share_all": 0.9532,
+      "referral_share": 0.0225
     },
     {
       "type_id": "T102",
@@ -6119,14 +6321,14 @@
           "share": 0.0376
         }
       ],
-      "location_queue_share": 0.1415,
-      "department": null,
-      "department_share": 0.8534,
-      "department_status": "not_nominated",
+      "location_queue_share": 0.1508,
+      "department": "PWDx",
+      "department_share": 0.9097,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.3881,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_department",
       "description": "General Public Works requests that do not fit a more specific type.",
       "aliases": [
         "general public works help",
@@ -6149,7 +6351,9 @@
         "on_time": 0,
         "closed": 1129,
         "median_days_to_close": 0.77
-      }
+      },
+      "department_share_all": 0.8534,
+      "referral_share": 0.0619
     },
     {
       "type_id": "T103",
@@ -6195,7 +6399,9 @@
         "on_time": 32,
         "closed": 32,
         "median_days_to_close": 0.86
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T104",
@@ -6251,7 +6457,9 @@
         "on_time": 847,
         "closed": 7632,
         "median_days_to_close": 14.92
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T105",
@@ -6298,7 +6506,9 @@
         "on_time": 15,
         "closed": 24,
         "median_days_to_close": 21.58
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T106",
@@ -6336,12 +6546,12 @@
           "share": 0.0119
         }
       ],
-      "location_queue_share": 0.0397,
+      "location_queue_share": 0.0408,
       "department": "PWDx",
-      "department_share": 0.9325,
+      "department_share": 0.9592,
       "department_status": "provisional",
       "queue": "PWDx_Request for Litter Basket Installation",
-      "queue_share": 0.9286,
+      "queue_share": 0.9551,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Requests for installation of a public litter basket.",
@@ -6362,7 +6572,9 @@
         "on_time": 237,
         "closed": 245,
         "median_days_to_close": 0.93
-      }
+      },
+      "department_share_all": 0.9325,
+      "referral_share": 0.0278
     },
     {
       "type_id": "T107",
@@ -6407,9 +6619,9 @@
           "share": 0.0589
         }
       ],
-      "location_queue_share": 0.4821,
+      "location_queue_share": 0.5349,
       "department": null,
-      "department_share": 0.7541,
+      "department_share": 0.8365,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -6441,7 +6653,9 @@
         "on_time": 8068,
         "closed": 14325,
         "median_days_to_close": 1.05
-      }
+      },
+      "department_share_all": 0.7541,
+      "referral_share": 0.0986
     },
     {
       "type_id": "T108",
@@ -6493,7 +6707,9 @@
         "on_time": 7586,
         "closed": 8276,
         "median_days_to_close": 12.12
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T109",
@@ -6535,12 +6751,12 @@
           "share": 0.0966
         }
       ],
-      "location_queue_share": 0.8719,
+      "location_queue_share": 0.8994,
       "department": "PWDx",
-      "department_share": 0.9589,
+      "department_share": 0.9892,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.1587,
+      "queue_share": 0.1637,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_location",
       "description": "Requests for snow plowing on streets.",
@@ -6561,7 +6777,9 @@
         "on_time": 983,
         "closed": 1008,
         "median_days_to_close": 0.11
-      }
+      },
+      "department_share_all": 0.9589,
+      "referral_share": 0.0306
     },
     {
       "type_id": "T110",
@@ -6598,12 +6816,12 @@
           "share": 0.098
         }
       ],
-      "location_queue_share": 0.8627,
+      "location_queue_share": 0.9167,
       "department": "PWDx",
-      "department_share": 0.9412,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.1569,
+      "queue_share": 0.1667,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_location",
       "description": "Requests for snow plowing related to emergency responder access.",
@@ -6624,7 +6842,9 @@
         "on_time": 0,
         "closed": 48,
         "median_days_to_close": 0.08
-      }
+      },
+      "department_share_all": 0.9412,
+      "referral_share": 0.0588
     },
     {
       "type_id": "T111",
@@ -6662,14 +6882,14 @@
           "share": 0.0833
         }
       ],
-      "location_queue_share": 0.0833,
-      "department": null,
-      "department_share": 0.8333,
-      "department_status": "not_nominated",
+      "location_queue_share": 0.0909,
+      "department": "BTDT",
+      "department_share": 0.9091,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.4545,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_department",
       "description": "Requests for changes to traffic direction or roadway layout.",
       "aliases": [
         "change street traffic direction",
@@ -6688,7 +6908,9 @@
         "on_time": 0,
         "closed": 10,
         "median_days_to_close": 1.07
-      }
+      },
+      "department_share_all": 0.8333,
+      "referral_share": 0.0833
     },
     {
       "type_id": "T112",
@@ -6739,14 +6961,14 @@
           "share": 0.0624
         }
       ],
-      "location_queue_share": 0.7643,
-      "department": null,
-      "department_share": 0.8952,
-      "department_status": "not_nominated",
+      "location_queue_share": 0.8279,
+      "department": "PWDx",
+      "department_share": 0.9697,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.1442,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_location",
       "description": "Requests to clean streets with litter, debris, weeds, or other accumulated waste.",
       "aliases": [
         "street needs cleaning",
@@ -6774,7 +6996,9 @@
         "on_time": 39024,
         "closed": 40433,
         "median_days_to_close": 0.1
-      }
+      },
+      "department_share_all": 0.8952,
+      "referral_share": 0.0768
     },
     {
       "type_id": "T113",
@@ -6815,12 +7039,12 @@
           "share": 0.033
         }
       ],
-      "location_queue_share": 0.0135,
+      "location_queue_share": 0.0144,
       "department": "BTDT",
-      "department_share": 0.9234,
+      "department_share": 0.9848,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.72,
+      "queue_share": 0.7678,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Requests to study or review traffic signals, including their timing or placement.",
@@ -6841,7 +7065,9 @@
         "on_time": 757,
         "closed": 1072,
         "median_days_to_close": 7.01
-      }
+      },
+      "department_share_all": 0.9234,
+      "referral_share": 0.0623
     },
     {
       "type_id": "T114",
@@ -6882,12 +7108,12 @@
           "share": 0.0147
         }
       ],
-      "location_queue_share": 0.0061,
+      "location_queue_share": 0.0062,
       "department": "PWDx",
-      "department_share": 0.9474,
+      "department_share": 0.9651,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.601,
+      "queue_share": 0.6122,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Damage or deterioration of the roadway surface requiring repair.",
@@ -6908,7 +7134,9 @@
         "on_time": 0,
         "closed": 224,
         "median_days_to_close": 0.6
-      }
+      },
+      "department_share_all": 0.9474,
+      "referral_share": 0.0184
     },
     {
       "type_id": "T115",
@@ -6952,12 +7180,12 @@
           "share": 0.0037
         }
       ],
-      "location_queue_share": 0.0168,
+      "location_queue_share": 0.0169,
       "department": "ISD",
-      "department_share": 0.932,
+      "department_share": 0.9385,
       "department_status": "provisional",
       "queue": "ISD_Environmental Services (INTERNAL)",
-      "queue_share": 0.9259,
+      "queue_share": 0.9324,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Signs of rodent activity, including sightings, burrows, or droppings.",
@@ -6979,7 +7207,9 @@
         "on_time": 8765,
         "closed": 8781,
         "median_days_to_close": 0.93
-      }
+      },
+      "department_share_all": 0.932,
+      "referral_share": 0.0069
     },
     {
       "type_id": "T116",
@@ -7008,7 +7238,7 @@
       ],
       "location_queue_share": 0.0,
       "department": null,
-      "department_share": 0.9672,
+      "department_share": 1.0,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -7030,7 +7260,9 @@
         "on_time": 0,
         "closed": 0,
         "median_days_to_close": null
-      }
+      },
+      "department_share_all": 0.0328,
+      "referral_share": 0.9672
     },
     {
       "type_id": "T117",
@@ -7072,7 +7304,9 @@
         "on_time": 1,
         "closed": 4,
         "median_days_to_close": 2.87
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T118",
@@ -7114,7 +7348,9 @@
         "on_time": 18,
         "closed": 28,
         "median_days_to_close": 1.04
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T119",
@@ -7148,10 +7384,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "PWDx",
-      "department_share": 0.9999,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": "PWDx_Schedule a Bulk Item Pickup",
-      "queue_share": 0.9998,
+      "queue_share": 0.9999,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Requests to schedule collection of large household items.",
@@ -7172,7 +7408,9 @@
         "on_time": 0,
         "closed": 12319,
         "median_days_to_close": 4.18
-      }
+      },
+      "department_share_all": 0.9999,
+      "referral_share": 0.0001
     },
     {
       "type_id": "T120",
@@ -7214,7 +7452,9 @@
         "on_time": 1,
         "closed": 4433,
         "median_days_to_close": 4.38
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T121",
@@ -7272,7 +7512,9 @@
         "on_time": 61,
         "closed": 72,
         "median_days_to_close": 3.24
-      }
+      },
+      "department_share_all": 0.9348,
+      "referral_share": 0.0
     },
     {
       "type_id": "T122",
@@ -7314,7 +7556,9 @@
         "on_time": 2,
         "closed": 4,
         "median_days_to_close": 1.04
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T123",
@@ -7356,14 +7600,14 @@
           "share": 0.0259
         }
       ],
-      "location_queue_share": 0.0319,
-      "department": null,
-      "department_share": 0.8743,
-      "department_status": "not_nominated",
+      "location_queue_share": 0.0342,
+      "department": "ISD",
+      "department_share": 0.9359,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.6752,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_department",
       "description": "Concerns about a property being used as a short-term rental.",
       "aliases": [
         "problem with a short term rental",
@@ -7383,7 +7627,9 @@
         "on_time": 300,
         "closed": 383,
         "median_days_to_close": 8.02
-      }
+      },
+      "department_share_all": 0.8743,
+      "referral_share": 0.0659
     },
     {
       "type_id": "T124",
@@ -7424,9 +7670,9 @@
           "share": 0.0053
         }
       ],
-      "location_queue_share": 0.0036,
+      "location_queue_share": 0.0038,
       "department": null,
-      "department_share": 0.8897,
+      "department_share": 0.9615,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -7450,7 +7696,9 @@
         "on_time": 0,
         "closed": 16,
         "median_days_to_close": 4.77
-      }
+      },
+      "department_share_all": 0.8897,
+      "referral_share": 0.0747
     },
     {
       "type_id": "T125",
@@ -7490,10 +7738,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "PWDx",
-      "department_share": 0.9801,
+      "department_share": 0.9933,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.6689,
+      "queue_share": 0.6779,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Damaged or deteriorated sidewalks in need of repair.",
@@ -7514,7 +7762,9 @@
         "on_time": 55,
         "closed": 59,
         "median_days_to_close": 1.81
-      }
+      },
+      "department_share_all": 0.9801,
+      "referral_share": 0.0132
     },
     {
       "type_id": "T126",
@@ -7562,9 +7812,9 @@
           "share": 0.0168
         }
       ],
-      "location_queue_share": 0.1095,
+      "location_queue_share": 0.1158,
       "department": null,
-      "department_share": 0.85,
+      "department_share": 0.8993,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -7597,7 +7847,9 @@
         "on_time": 2475,
         "closed": 5399,
         "median_days_to_close": 2.74
-      }
+      },
+      "department_share_all": 0.85,
+      "referral_share": 0.0548
     },
     {
       "type_id": "T127",
@@ -7644,12 +7896,12 @@
           "share": 0.0348
         }
       ],
-      "location_queue_share": 0.1954,
+      "location_queue_share": 0.2112,
       "department": "BTDT",
-      "department_share": 0.9036,
+      "department_share": 0.9766,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.6709,
+      "queue_share": 0.7251,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Damaged, missing, loose, or unreadable traffic and parking signs.",
@@ -7671,7 +7923,9 @@
         "on_time": 7416,
         "closed": 10076,
         "median_days_to_close": 5.83
-      }
+      },
+      "department_share_all": 0.9036,
+      "referral_share": 0.0748
     },
     {
       "type_id": "T128",
@@ -7710,7 +7964,9 @@
         "on_time": 1,
         "closed": 1,
         "median_days_to_close": 0.06
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T129",
@@ -7755,7 +8011,9 @@
         "on_time": 2,
         "closed": 2,
         "median_days_to_close": 0.04
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T130",
@@ -7795,12 +8053,12 @@
           "share": 0.0506
         }
       ],
-      "location_queue_share": 0.8449,
+      "location_queue_share": 0.8558,
       "department": "PWDx",
-      "department_share": 0.9589,
+      "department_share": 0.9712,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.1962,
+      "queue_share": 0.1987,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_location",
       "description": "Objects placed in street parking spaces to reserve them.",
@@ -7821,7 +8079,9 @@
         "on_time": 0,
         "closed": 293,
         "median_days_to_close": 0.17
-      }
+      },
+      "department_share_all": 0.9589,
+      "referral_share": 0.0127
     },
     {
       "type_id": "T131",
@@ -7862,10 +8122,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9517,
+      "department_share": 0.9583,
       "department_status": "provisional",
       "queue": "ISD_Housing (INTERNAL)",
-      "queue_share": 0.9241,
+      "queue_share": 0.9306,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Severely unsanitary or filthy conditions inside a residence.",
@@ -7887,7 +8147,9 @@
         "on_time": 92,
         "closed": 123,
         "median_days_to_close": 9.01
-      }
+      },
+      "department_share_all": 0.9517,
+      "referral_share": 0.0069
     },
     {
       "type_id": "T132",
@@ -7928,7 +8190,9 @@
         "on_time": 4617,
         "closed": 4666,
         "median_days_to_close": 0.57
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T133",
@@ -7968,13 +8232,13 @@
         }
       ],
       "location_queue_share": 0.0,
-      "department": null,
-      "department_share": 0.8507,
-      "department_status": "not_nominated",
+      "department": "PWDx",
+      "department_share": 0.9353,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.8798,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_department",
       "description": "Street lights or street light poles that have been knocked down.",
       "aliases": [
         "street light knocked down",
@@ -7997,7 +8261,9 @@
         "on_time": 797,
         "closed": 859,
         "median_days_to_close": 0.1
-      }
+      },
+      "department_share_all": 0.8507,
+      "referral_share": 0.0904
     },
     {
       "type_id": "T134",
@@ -8043,10 +8309,10 @@
       ],
       "location_queue_share": 0.0008,
       "department": "PWDx",
-      "department_share": 0.9052,
+      "department_share": 0.9746,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.7803,
+      "queue_share": 0.8401,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Street lights that are out or not illuminating properly.",
@@ -8076,7 +8342,9 @@
         "on_time": 4684,
         "closed": 8013,
         "median_days_to_close": 4.51
-      }
+      },
+      "department_share_all": 0.9052,
+      "referral_share": 0.0712
     },
     {
       "type_id": "T135",
@@ -8113,12 +8381,12 @@
           "share": 0.0066
         }
       ],
-      "location_queue_share": 0.0363,
+      "location_queue_share": 0.0367,
       "department": "PWDx",
-      "department_share": 0.9901,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.8317,
+      "queue_share": 0.84,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Work orders concerning street light poles.",
@@ -8141,7 +8409,9 @@
         "on_time": 35,
         "closed": 56,
         "median_days_to_close": 3.42
-      }
+      },
+      "department_share_all": 0.9901,
+      "referral_share": 0.0099
     },
     {
       "type_id": "T136",
@@ -8182,9 +8452,9 @@
           "share": 0.0157
         }
       ],
-      "location_queue_share": 0.0502,
+      "location_queue_share": 0.0656,
       "department": null,
-      "department_share": 0.6865,
+      "department_share": 0.8975,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -8207,7 +8477,9 @@
         "on_time": 226,
         "closed": 228,
         "median_days_to_close": 0.12
-      }
+      },
+      "department_share_all": 0.6865,
+      "referral_share": 0.2351
     },
     {
       "type_id": "T137",
@@ -8249,7 +8521,9 @@
         "on_time": 4,
         "closed": 4,
         "median_days_to_close": 18.54
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T138",
@@ -8292,14 +8566,14 @@
           "share": 0.0268
         }
       ],
-      "location_queue_share": 0.0091,
-      "department": null,
-      "department_share": 0.8496,
-      "department_status": "not_nominated",
+      "location_queue_share": 0.0106,
+      "department": "BTDT",
+      "department_share": 0.9857,
+      "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.0,
+      "queue_share": 0.7388,
       "queue_status_review": "not_nominated",
-      "queue_status": null,
+      "queue_status": "assigned_by_department",
       "description": "Requests for inspection of traffic signals.",
       "aliases": [
         "check the traffic signal",
@@ -8317,7 +8591,9 @@
         "on_time": 5160,
         "closed": 6804,
         "median_days_to_close": 0.33
-      }
+      },
+      "department_share_all": 0.8496,
+      "referral_share": 0.1381
     },
     {
       "type_id": "T139",
@@ -8358,9 +8634,9 @@
           "share": 0.0583
         }
       ],
-      "location_queue_share": 0.0951,
+      "location_queue_share": 0.1206,
       "department": null,
-      "department_share": 0.6012,
+      "department_share": 0.7626,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -8385,7 +8661,9 @@
         "on_time": 226,
         "closed": 231,
         "median_days_to_close": 0.93
-      }
+      },
+      "department_share_all": 0.6012,
+      "referral_share": 0.2117
     },
     {
       "type_id": "T140",
@@ -8429,10 +8707,10 @@
       ],
       "location_queue_share": 0.0076,
       "department": "BTDT",
-      "department_share": 0.9569,
+      "department_share": 0.9618,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.799,
+      "queue_share": 0.8031,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "General transportation-related questions, concerns, or requests.",
@@ -8453,7 +8731,9 @@
         "on_time": 0,
         "closed": 575,
         "median_days_to_close": 133.83
-      }
+      },
+      "department_share_all": 0.9569,
+      "referral_share": 0.0051
     },
     {
       "type_id": "T141",
@@ -8492,9 +8772,9 @@
           "share": 0.0171
         }
       ],
-      "location_queue_share": 0.0171,
+      "location_queue_share": 0.0182,
       "department": null,
-      "department_share": 0.735,
+      "department_share": 0.7818,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -8518,7 +8798,9 @@
         "on_time": 108,
         "closed": 109,
         "median_days_to_close": 0.94
-      }
+      },
+      "department_share_all": 0.735,
+      "referral_share": 0.0598
     },
     {
       "type_id": "T142",
@@ -8560,10 +8842,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "PARK",
-      "department_share": 0.9739,
+      "department_share": 0.9976,
       "department_status": "provisional",
       "queue": "PARK_Tree Emergencies",
-      "queue_share": 0.9479,
+      "queue_share": 0.9709,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Trees or tree limbs posing an immediate danger.",
@@ -8584,7 +8866,9 @@
         "on_time": 1589,
         "closed": 1681,
         "median_days_to_close": 0.08
-      }
+      },
+      "department_share_all": 0.9739,
+      "referral_share": 0.0238
     },
     {
       "type_id": "T143",
@@ -8630,12 +8914,12 @@
           "share": 0.0124
         }
       ],
-      "location_queue_share": 0.0075,
+      "location_queue_share": 0.0077,
       "department": "PARK",
-      "department_share": 0.9297,
+      "department_share": 0.9583,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.7969,
+      "queue_share": 0.8214,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Routine tree care and maintenance concerns.",
@@ -8658,7 +8942,9 @@
         "on_time": 14892,
         "closed": 15033,
         "median_days_to_close": 19.71
-      }
+      },
+      "department_share_all": 0.9297,
+      "referral_share": 0.0298
     },
     {
       "type_id": "T144",
@@ -8697,10 +8983,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "PARK",
-      "department_share": 0.9927,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.7956,
+      "queue_share": 0.8015,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Concerns or requests about trees located in parks.",
@@ -8730,7 +9016,9 @@
         "on_time": 115,
         "closed": 125,
         "median_days_to_close": 6.78
-      }
+      },
+      "department_share_all": 0.9927,
+      "referral_share": 0.0073
     },
     {
       "type_id": "T145",
@@ -8759,7 +9047,7 @@
       ],
       "location_queue_share": 0.0,
       "department": null,
-      "department_share": 0.9944,
+      "department_share": 1.0,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -8781,7 +9069,9 @@
         "on_time": 0,
         "closed": 1,
         "median_days_to_close": 24.76
-      }
+      },
+      "department_share_all": 0.0056,
+      "referral_share": 0.9944
     },
     {
       "type_id": "T146",
@@ -8805,10 +9095,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9375,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": "ISD_Weights and Measures (INTERNAL)",
-      "queue_share": 0.9375,
+      "queue_share": 1.0,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Missing or incorrect unit pricing on products offered for sale.",
@@ -8829,7 +9119,9 @@
         "on_time": 6,
         "closed": 15,
         "median_days_to_close": 1.85
-      }
+      },
+      "department_share_all": 0.9375,
+      "referral_share": 0.0625
     },
     {
       "type_id": "T147",
@@ -8871,10 +9163,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9517,
+      "department_share": 0.9727,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.8728,
+      "queue_share": 0.8921,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Unsafe or dangerous physical conditions in a building or on a property.",
@@ -8895,7 +9187,9 @@
         "on_time": 130,
         "closed": 698,
         "median_days_to_close": 12.82
-      }
+      },
+      "department_share_all": 0.9517,
+      "referral_share": 0.0216
     },
     {
       "type_id": "T148",
@@ -8937,7 +9231,9 @@
         "on_time": 80,
         "closed": 97,
         "median_days_to_close": 0.93
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T149",
@@ -8977,10 +9273,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.989,
+      "department_share": 0.9966,
       "department_status": "provisional",
       "queue": "ISD_Health (INTERNAL)",
-      "queue_share": 0.9738,
+      "queue_share": 0.9813,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Unsanitary conditions in the premises or equipment of a food establishment.",
@@ -9001,7 +9297,9 @@
         "on_time": 916,
         "closed": 1175,
         "median_days_to_close": 1.18
-      }
+      },
+      "department_share_all": 0.989,
+      "referral_share": 0.0076
     },
     {
       "type_id": "T150",
@@ -9066,7 +9364,9 @@
         "on_time": 336,
         "closed": 435,
         "median_days_to_close": 1.68
-      }
+      },
+      "department_share_all": 0.9908,
+      "referral_share": 0.0
     },
     {
       "type_id": "T151",
@@ -9110,10 +9410,10 @@
       ],
       "location_queue_share": 0.0008,
       "department": "ISD",
-      "department_share": 0.9881,
+      "department_share": 0.9902,
       "department_status": "provisional",
       "queue": "ISD_Housing (INTERNAL)",
-      "queue_share": 0.9776,
+      "queue_share": 0.9797,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Unhealthy, unsafe, or poorly maintained conditions inside a home.",
@@ -9143,7 +9443,9 @@
         "on_time": 3487,
         "closed": 4203,
         "median_days_to_close": 8.9
-      }
+      },
+      "department_share_all": 0.9881,
+      "referral_share": 0.0021
     },
     {
       "type_id": "T152",
@@ -9215,7 +9517,9 @@
         "on_time": 304,
         "closed": 377,
         "median_days_to_close": 6.02
-      }
+      },
+      "department_share_all": 0.9915,
+      "referral_share": 0.0
     },
     {
       "type_id": "T153",
@@ -9256,12 +9560,12 @@
           "share": 0.0029
         }
       ],
-      "location_queue_share": 0.0257,
+      "location_queue_share": 0.0259,
       "department": "PWDx",
-      "department_share": 0.9755,
+      "department_share": 0.9825,
       "department_status": "provisional",
       "queue": "PWDx_Code Enforcement",
-      "queue_share": 0.9634,
+      "queue_share": 0.9703,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Snow or ice left uncleared on a sidewalk.",
@@ -9282,7 +9586,9 @@
         "on_time": 3716,
         "closed": 4168,
         "median_days_to_close": 0.55
-      }
+      },
+      "department_share_all": 0.9755,
+      "referral_share": 0.0071
     },
     {
       "type_id": "T154",
@@ -9321,10 +9627,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "PWDx",
-      "department_share": 0.9322,
+      "department_share": 1.0,
       "department_status": "provisional",
       "queue": null,
-      "queue_share": 0.8305,
+      "queue_share": 0.8909,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
       "description": "Requests to improve or upgrade existing street lighting.",
@@ -9345,7 +9651,9 @@
         "on_time": 24,
         "closed": 50,
         "median_days_to_close": 66.32
-      }
+      },
+      "department_share_all": 0.9322,
+      "referral_share": 0.0678
     },
     {
       "type_id": "T155",
@@ -9386,7 +9694,9 @@
         "on_time": 3,
         "closed": 3,
         "median_days_to_close": 0.0
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T156",
@@ -9425,9 +9735,9 @@
           "share": 0.0227
         }
       ],
-      "location_queue_share": 0.0032,
+      "location_queue_share": 0.0035,
       "department": null,
-      "department_share": 0.6266,
+      "department_share": 0.6784,
       "department_status": "not_nominated",
       "queue": null,
       "queue_share": 0.0,
@@ -9452,7 +9762,9 @@
         "on_time": 0,
         "closed": 379,
         "median_days_to_close": 38.69
-      }
+      },
+      "department_share_all": 0.6266,
+      "referral_share": 0.0763
     },
     {
       "type_id": "T157",
@@ -9494,7 +9806,9 @@
         "on_time": 2,
         "closed": 2,
         "median_days_to_close": 0.35
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T158",
@@ -9535,7 +9849,9 @@
         "on_time": 0,
         "closed": 5,
         "median_days_to_close": 0.95
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T159",
@@ -9575,7 +9891,9 @@
         "on_time": 1,
         "closed": 2,
         "median_days_to_close": 0.6
-      }
+      },
+      "department_share_all": 1.0,
+      "referral_share": 0.0
     },
     {
       "type_id": "T160",
@@ -9616,14 +9934,14 @@
           "share": 0.012
         }
       ],
-      "location_queue_share": 0.0024,
+      "location_queue_share": 0.0025,
       "department": "PWDx",
-      "department_share": 0.9135,
+      "department_share": 0.9314,
       "department_status": "provisional",
-      "queue": null,
-      "queue_share": 0.8894,
-      "queue_status_review": "not_nominated",
-      "queue_status": "assigned_by_department",
+      "queue": "PWDx_Work Hours-Loud Noise Complaints",
+      "queue_share": 0.9069,
+      "queue_status_review": "provisional",
+      "queue_status": "exact",
       "description": "Complaints about loud work noise or the hours when work is occurring.",
       "aliases": [
         "loud construction noise",
@@ -9643,7 +9961,9 @@
         "on_time": 170,
         "closed": 392,
         "median_days_to_close": 8.32
-      }
+      },
+      "department_share_all": 0.9135,
+      "referral_share": 0.0192
     },
     {
       "type_id": "T161",
@@ -9685,10 +10005,10 @@
       ],
       "location_queue_share": 0.0006,
       "department": "ISD",
-      "department_share": 0.9415,
+      "department_share": 0.9893,
       "department_status": "provisional",
       "queue": "ISD_Building (INTERNAL)",
-      "queue_share": 0.9364,
+      "queue_share": 0.9839,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Construction or renovation work taking place without a required permit.",
@@ -9709,7 +10029,9 @@
         "on_time": 544,
         "closed": 1674,
         "median_days_to_close": 6.1
-      }
+      },
+      "department_share_all": 0.9415,
+      "referral_share": 0.0482
     },
     {
       "type_id": "T162",
@@ -9752,10 +10074,10 @@
       ],
       "location_queue_share": 0.0,
       "department": "ISD",
-      "department_share": 0.9766,
+      "department_share": 0.9902,
       "department_status": "provisional",
       "queue": "ISD_Building (INTERNAL)",
-      "queue_share": 0.9725,
+      "queue_share": 0.9861,
       "queue_status_review": "provisional",
       "queue_status": "exact",
       "description": "Construction or renovation work taking place outside permitted working hours.",
@@ -9776,7 +10098,9 @@
         "on_time": 1215,
         "closed": 1218,
         "median_days_to_close": 3.98
-      }
+      },
+      "department_share_all": 0.9766,
+      "referral_share": 0.0137
     },
     {
       "type_id": "T163",
@@ -9835,7 +10159,9 @@
         "on_time": 27,
         "closed": 69,
         "median_days_to_close": 16.84
-      }
+      },
+      "department_share_all": 0.971,
+      "referral_share": 0.0
     }
   ]
 }

@@ -63,10 +63,10 @@ class CatalogEntry:
     top_queues: list[dict]  # up to 5 of {"queue", "department", "share"}, largest first
     location_queue_share: float  # share that went to district/region queues
     department: str | None  # tier-1 mapping (None if not nominated)
-    department_share: float  # share of the top department
+    department_share: float  # top handling department's share of HANDLED requests (INFO excluded)
     department_status: str
     queue: str | None  # tier-2 mapping (None if not nominated)
-    queue_share: float  # share of the top queue of the mapped department
+    queue_share: float  # top queue of the mapped department, share of HANDLED requests
     queue_status_review: str  # review status of the tier-2 mapping
     queue_status: str | None  # QueueStatus value, or None if no department mapping
     description: str = ""
@@ -75,6 +75,8 @@ class CatalogEntry:
     alias_source: str = ""  # e.g. "llm:gpt-6.1-sol/aliases-v1, reviewed by Claude"
     top_titles: list[str] = field(default_factory=list)
     stats: dict = field(default_factory=dict)
+    department_share_all: float = 0.0  # same department's share of ALL requests (guard: >= 50%)
+    referral_share: float = 0.0  # share sent to 311 referral/reallocation queues (INFO)
 
     # -- routing helpers ---------------------------------------------------
 
@@ -128,25 +130,42 @@ def build_mappings() -> list[CatalogEntry]:
     for type_id, name in types.itertuples(index=False):
         rows = qc[qc["type_id"] == type_id]
         total = int(rows["requests"].sum())
+        # Evidence kept for reviewers: shares over ALL departments.
         dept_shares = (rows.groupby("department")["requests"].sum() / total).sort_values(ascending=False)
-        queue_counts = rows.groupby(["queue", "department"])["requests"].sum().sort_values(ascending=False)
+        queue_counts_all = rows.groupby(["queue", "department"])["requests"].sum().sort_values(ascending=False)
         top_queues = [
-            {"queue": q, "department": d, "share": round(n / total, 4)} for (q, d), n in queue_counts.head(5).items()
+            {"queue": q, "department": d, "share": round(n / total, 4)} for (q, d), n in queue_counts_all.head(5).items()
         ]
-        location_share = float(rows.loc[rows["queue"].map(_is_location_queue), "requests"].sum() / total)
 
-        # Tier 1: department mapping. The largest department must be in scope
-        # and hold at least 90% of the type's requests (ties: alphabetical).
-        top_dept = sorted(dept_shares.items(), key=lambda kv: (-kv[1], kv[0]))[0]
-        dept, dept_share = top_dept
-        dept_ok = dept in config.DEPT_CODES and dept_share >= config.MAPPING_SHARE_THRESHOLD
+        # The mapping rule works on the requests some department actually
+        # handled: 311 referral / reallocation queues (department INFO) are
+        # left out of the denominator (DECIDED 2026-10-22, spec 5.6).
+        handled_rows = rows[~rows["department"].isin(config.ROUTING_EXCLUDED_DEPARTMENTS)]
+        handled = int(handled_rows["requests"].sum())
+        referral_share = 1 - handled / total
+        if handled:
+            handled_shares = handled_rows.groupby("department")["requests"].sum() / handled
+            queue_counts = handled_rows.groupby(["queue", "department"])["requests"].sum().sort_values(ascending=False)
+            location_share = float(handled_rows.loc[handled_rows["queue"].map(_is_location_queue), "requests"].sum() / handled)
+            # Tier 1: the largest handling department (ties: alphabetical).
+            dept, dept_share = sorted(handled_shares.items(), key=lambda kv: (-kv[1], kv[0]))[0]
+        else:  # every request was referred elsewhere: nothing to map
+            dept, dept_share, location_share, queue_counts = None, 0.0, 0.0, queue_counts_all.iloc[:0]
+        dept_share_all = float(dept_shares.get(dept, 0.0)) if dept else 0.0
+        # It must be in scope, hold >= 90% of handled requests, AND >= 50% of
+        # all requests (so a type mostly referred elsewhere is never mapped).
+        dept_ok = (
+            dept in config.DEPT_CODES
+            and dept_share >= config.MAPPING_SHARE_THRESHOLD
+            and dept_share_all >= config.MIN_ALL_REQUESTS_SHARE
+        )
 
-        # Tier 2: queue mapping within the mapped department.
+        # Tier 2: queue mapping within the mapped department, same denominator.
         queue, queue_share = None, 0.0
         if dept_ok:
             in_dept = queue_counts[queue_counts.index.get_level_values("department") == dept]
             best_queue, best_n = in_dept.index[0][0], int(in_dept.iloc[0])
-            queue_share = best_n / total
+            queue_share = best_n / handled
             if queue_share >= config.MAPPING_SHARE_THRESHOLD:
                 queue = best_queue
         if not dept_ok:
@@ -169,6 +188,8 @@ def build_mappings() -> list[CatalogEntry]:
                 location_queue_share=round(location_share, 4),
                 department=dept if dept_ok else None,
                 department_share=round(float(dept_share), 4),
+                department_share_all=round(dept_share_all, 4),
+                referral_share=round(float(referral_share), 4),
                 department_status=PROVISIONAL if dept_ok else NOT_NOMINATED,
                 queue=queue,
                 queue_share=round(float(queue_share), 4),
@@ -230,6 +251,8 @@ def save_catalog(entries: list[CatalogEntry]) -> None:
                 "top_department": next(iter(e.department_shares)),
                 "department": e.department or "",
                 "department_share": e.department_share,
+                "department_share_all": e.department_share_all,
+                "referral_share": e.referral_share,
                 "department_status": e.department_status,
                 "queue": e.queue or "",
                 "queue_share": e.queue_share,
