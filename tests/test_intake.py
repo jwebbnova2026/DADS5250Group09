@@ -524,6 +524,33 @@ def test_offline_replay_covers_every_eval_item(name, catalog, retriever):
     assert missing.empty, f"no recording for {missing['id'].tolist()}"
 
 
+def eval_item(item_id, message, answer=None, expected_decision="ROUTE"):
+    """A minimal evaluation item in the data/eval/*.jsonl format."""
+    return {
+        "id": item_id, "category": "test", "message": message, "clarification_answer": answer,
+        "expected_type_id": "T082", "acceptable_type_ids": ["T082"], "expected_department": "BTDT",
+        "expected_queue": "BTDT_Parking Enforcement", "expected_decision": expected_decision,
+        "acceptable_decisions": [expected_decision], "acceptable_departments": ["BTDT"],
+        "acceptable_queues": ["BTDT_Parking Enforcement"],
+    }
+
+
+@pytest.mark.parametrize(
+    "answers, clarification_answer, expected_count",
+    [
+        ([proposal("T082")], None, 0),  # routed directly: no question
+        ([proposal(None, ambiguous=True)], None, 1),  # asked, never answered (final CLARIFY)
+        ([proposal(None, ambiguous=True), proposal("T082")], "A car in my driveway", 1),  # asked, then ROUTE
+        ([proposal(None, ambiguous=True), proposal(None, ambiguous=True)], "Not sure", 1),  # asked, then TRIAGE
+    ],
+)
+def test_clarification_rate_counts_questions_asked(catalog, retriever, answers, clarification_answer, expected_count):
+    a = assistant(catalog, retriever, FakeModel(*answers))
+    df = evaluate.run_set(a, [eval_item("x1", "A car is blocking my driveway", clarification_answer)])
+    m = {x.name: (x.correct, x.total) for x in evaluate.metrics(df)}
+    assert m["clarification rate"] == (expected_count, 1)
+
+
 def test_metrics_on_a_tiny_frame():
     import pandas as pd
 

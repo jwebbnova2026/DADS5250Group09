@@ -120,6 +120,7 @@ class IntakeAssistant:
                     decision=Decision.CLARIFY,
                     message=message,
                     clarifying_question=turn.question,
+                    questions_asked=1,  # a question was asked, though never answered
                     response_text=turn.question,
                 )
             turn = self.answer(turn.thread_id, clarification_answer)

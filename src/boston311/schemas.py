@@ -169,7 +169,11 @@ class IntakeResult(BaseModel):
     queue: str | None = Field(default=None, description="Exact queue name, only when queue_status is 'exact'")
     queue_status: QueueStatus | None = None
     clarifying_question: str | None = None
-    clarifications_used: int = 0
+    # Two different counts: questions the assistant ASKED, and answers it
+    # RECEIVED. They differ when the assistant asks and the conversation ends
+    # before the resident replies (final decision CLARIFY).
+    questions_asked: int = 0
+    clarifications_used: int = Field(default=0, description="Clarification answers received (0 or 1)")
     triage_reason: str | None = None
     response_text: str = Field(description="The templated reply shown to the resident")
     proposal: ClassificationProposal | None = None

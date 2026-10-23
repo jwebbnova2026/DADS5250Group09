@@ -173,6 +173,9 @@ class Nodes:
             decision=decision,
             message=message,
             clarifications_used=state.get("clarifications_used", 0),
+            # The graph only reaches respond after a question if the resident
+            # answered it, so here questions asked == answers received.
+            questions_asked=state.get("clarifications_used", 0),
             proposal=proposal,
             candidate_ids=[c["type_id"] for c in state.get("candidates", [])],
             top_retrieval_score=state.get("top_score"),

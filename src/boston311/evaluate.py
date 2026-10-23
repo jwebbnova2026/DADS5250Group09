@@ -18,7 +18,9 @@ Metrics (counts and percentages, labeled as a demonstration evaluation):
   routed to an acceptable type and department.
 * **auto-route coverage** - of the items that should route, the share it did
   route (correctly or not).
-* **clarification rate** and **triage rate** - share of all items.
+* **clarification rate** - share of items where the assistant asked a
+  clarifying question (answered or not).
+* **triage rate** - share of items that ended in TRIAGE.
 """
 
 from __future__ import annotations
@@ -61,7 +63,9 @@ def run_set(assistant: IntakeAssistant, items: list[dict]) -> pd.DataFrame:
                 "department": res.department,
                 "expected_queue": item["expected_queue"],
                 "queue": queue_or_label,
-                "clarified": res.clarifications_used > 0,
+                # Counted when the assistant ASKS, whether or not an answer came
+                # back, so over-asking on clear messages always shows up.
+                "clarified": res.questions_asked > 0,
                 "triage_reason": res.triage_reason,
                 "top_score": res.top_retrieval_score,
                 "decision_ok": res.decision.value in item["acceptable_decisions"],
