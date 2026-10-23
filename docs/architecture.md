@@ -525,7 +525,7 @@ Hand-calculated examples (each becomes a unit test):
 | Q2 | Which spike scenario: snowstorm, heat wave, or both? | Snowstorm only |
 | Q3 | Which "other consideration": neighborhood equity or employee vs resident requests? | Neighborhood equity |
 | Q4 | Which provider and model (OpenAI or Gemini), and does everyone have access? | OpenAI |
-| Q5 | Who owns each component (data, simulator and staffing, catalog and intake, evaluation, report, README and video)? | Andrew & Nicholas are doing report and video. Andrew and John are doing tech build pieces |
+| Q5 | Who owns each component (data, simulator and staffing, catalog and intake, evaluation, report, README and video)? | Andrew & Nicholas are doing report and video. John and Adam are doing tech build pieces |
 | Q6 | Is Nicholas's topic sign-up confirmed? Building waits on it. | Yes |
 
 ### 10.2 Defaults for team review (not blocking)
