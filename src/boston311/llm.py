@@ -36,8 +36,10 @@ Failure handling (spec 6)
   :class:`ClassifierFailure` ("transient").
 * Malformed structured output: retried ``config.LLM_MAX_MALFORMED_RETRIES``
   time, then :class:`ClassifierFailure` ("malformed"). This covers a reply the
-  parser rejects *and* the SDK exceptions raised before any parser result
-  exists (truncated reply, content filter, refusal).
+  parser rejects *and* the exceptions raised inside the model call before any
+  parser result exists: a truncated reply, the content filter, a refusal, or
+  a complete reply that is not valid JSON for the schema (pydantic
+  ``ValidationError``). A corrupt *recorded* answer is not retried.
 * Any other API error (bad request, bad key, unknown model, context too
   long): no retry, :class:`ClassifierFailure` ("api_error").
 The intake agent turns every :class:`ClassifierFailure` into a TRIAGE.
@@ -78,6 +80,12 @@ MALFORMED_ERRORS: tuple[type[Exception], ...] = (
     openai.LengthFinishReasonError,  # reply cut off at the length limit: truncated JSON
     openai.ContentFilterFinishReasonError,  # reply stopped by the content filter
     OpenAIRefusalError,  # the model refused to answer in the schema
+    # A complete reply whose content is not JSON, or not a valid instance of
+    # the schema: the SDK validates it with pydantic inside the call and raises
+    # this before LangChain can return a parser result (review finding R1a).
+    # It is caught ONLY around the model call (see LiveModel.ask), so a
+    # corrupt *recorded* answer is never retried as if it were a fresh reply.
+    ValidationError,
 )
 # Anything else from the API (400 bad request, 401 bad key, 404 unknown model,
 # context too long, ...) is caught as openai.APIError: retrying cannot help.

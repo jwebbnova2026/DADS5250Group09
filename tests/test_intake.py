@@ -16,6 +16,7 @@ import json
 import httpx
 import openai
 import pytest
+from pydantic import ValidationError
 
 from boston311 import config, evaluate, llm
 from boston311.agent import IntakeAssistant
@@ -440,6 +441,43 @@ def test_every_langchain_openai_error_class_is_handled():
                  "OpenAIAPIContextOverflowError", "OpenAIInvalidRequestError", "OpenAIModelNotFoundError",
                  "OpenAIPermissionDeniedError", "OpenAIRateLimitError", "OpenAIRefusalError", "OpenAITimeoutError"):
         assert issubclass(getattr(base, name), handled), name
+
+
+# R1a: a complete reply (finish_reason "stop") whose content is not valid JSON,
+# or not a valid ClassificationProposal, makes the SDK raise pydantic's
+# ValidationError inside the model call. It must get the one malformed retry.
+NOT_JSON = lambda: completion("not JSON")  # noqa: E731
+SCHEMA_INVALID = lambda: completion("{}")  # noqa: E731
+
+
+@pytest.mark.parametrize("bad", [NOT_JSON, SCHEMA_INVALID], ids=["invalid-json", "schema-invalid"])
+def test_real_wrapper_invalid_reply_then_valid_recovers(tmp_path, bad):
+    model, calls = mocked_live_model(tmp_path, [bad, VALID])
+    out = model.ask("classify", "sys", "user", ClassificationProposal)
+    assert out.type_id == "T082" and calls["n"] == 2
+
+
+@pytest.mark.parametrize("bad", [NOT_JSON, SCHEMA_INVALID], ids=["invalid-json", "schema-invalid"])
+def test_real_wrapper_repeated_invalid_reply_fails_as_malformed(tmp_path, bad, catalog, retriever):
+    model, calls = mocked_live_model(tmp_path, [bad, bad])
+    with pytest.raises(ClassifierFailure) as exc:
+        model.ask("classify", "sys", "user", ClassificationProposal)
+    assert exc.value.kind == "malformed" and calls["n"] == 1 + config.LLM_MAX_MALFORMED_RETRIES
+    # The same through the whole intake graph: TRIAGE, after exactly two attempts.
+    model, calls = mocked_live_model(tmp_path, [bad, bad])
+    r = assistant(catalog, retriever, model).run("A car is blocking my driveway")
+    assert r.decision is Decision.TRIAGE and "malformed" in r.triage_reason and calls["n"] == 2
+
+
+def test_corrupt_recording_is_not_retried_as_a_fresh_reply(tmp_path, catalog, retriever):
+    """A stored answer that no longer fits the schema is a data problem, not a
+    model reply: no API call is made to 'retry' it, and the intake triages."""
+    model, calls = mocked_live_model(tmp_path, [VALID])
+    key = llm.recording_key("classify", "sys", "user", ClassificationProposal, model.settings)
+    model.store.put(key, "classify", "user", {"type_id": 123}, None, settings=model.settings, schema=ClassificationProposal)
+    with pytest.raises(ValidationError):
+        model.ask("classify", "sys", "user", ClassificationProposal)
+    assert calls["n"] == 0
 
 
 def test_real_wrapper_truncation_ends_in_triage_not_a_crash(tmp_path, catalog, retriever):
