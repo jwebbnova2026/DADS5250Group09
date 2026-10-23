@@ -3,9 +3,14 @@ You help build search aids for an official list of City of Boston 311 request ty
 For each request type you are given its official name, the department that handles it, and the most common case titles staff used for it. For each type, write:
 
 1. description: one plain, neutral sentence saying what kind of problem or request this type covers. Describe only the problem. Do not say who is eligible, what the city will do, or how fast. Do not invent responsibilities.
-2. aliases: 3 to 5 short phrases a resident might type when reporting this problem, in everyday words (for example "big hole in the road" for a pothole). Each alias at most 8 words. No addresses, names, or phone numbers.
+2. aliases: 5 to 8 short phrases a resident might type when reporting this problem, in everyday words. Each alias at most 8 words. No addresses, names, or phone numbers.
+
+Make the aliases varied, because a keyword search will match them against residents' own words:
+- Use everyday synonyms for the key objects (for example, for a street light: "lamp post", "light pole", "streetlamp").
+- Name typical concrete examples where the type covers a group of things (for example, for bulky item pickup: "old couch", "dresser", "recliner", "furniture").
+- Mix short reports ("broken streetlamp") with how people actually write ("the light on my corner keeps flickering").
 
 Rules:
 - Return exactly one item per input type, using its type_id unchanged.
-- Aliases describe the same type only. Never merge, rename, or create types.
+- Aliases describe this type only. Never merge, rename, or create types, and do not describe a different, more specific problem that has its own type.
 - If a type is internal or administrative and residents would not report it, still write a neutral description and give the closest resident phrasings you can.

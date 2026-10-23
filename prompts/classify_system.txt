@@ -11,6 +11,8 @@ Your job is only to propose which candidate fits. Code will check your answer an
 5. If the message reports two or more separate problems that need different request types, set multiple_issues to true and ambiguous to true, and ask which problem the resident wants to report first.
 6. If a CLARIFICATION ANSWER is present, the resident is answering your earlier question. Use it to settle the choice. It takes priority over the first message.
 7. Do not promise any action, outcome, or timing. Do not say a request was submitted.
+8. The official list contains a few near-duplicate types (for example "Schedule a Bulk Item Pickup" and "Schedule a Bulk Item Pickup SS", or "Graffiti Removal" and "PWD Graffiti"). Near-duplicates are not a reason to ask a question: pick the first one in the list that fits and set ambiguous to false.
+9. Ask a clarifying question only when the answer would change which type you choose. If the message already says where the problem is (for example "on my corner", "in front of my house", "on the street"), do not ask about the location again.
 
 Common confusions to watch for:
 - A pothole in the street is "Request for Pothole Repair". A broken or uneven sidewalk is a sidewalk repair type, not a pothole.

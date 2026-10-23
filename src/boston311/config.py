@@ -240,6 +240,11 @@ MIN_STATS_SAMPLE = 30
 # Retrieval and LLM (DEFAULT, spec sections 5.6, 5.7, 6)
 # ---------------------------------------------------------------------------
 RETRIEVAL_TOP_K = 8  # how many candidate types the classifier is shown
+# Retrieval gate (spec 5.7): auto-route only if the best retrieval score is at
+# least this. Below it, the message shares too few words with any official
+# type to trust, so the assistant asks for more detail instead. Tuned on the
+# dev set only (see docs/decisions.md); never on the test set.
+RETRIEVAL_GATE_MIN_SCORE = 0.15
 
 LLM_PROVIDER = "openai"  # DECIDED (Q4)
 LLM_MODEL = "gpt-6.1-sol"  # chosen by the team on 2026-10-22
@@ -258,9 +263,9 @@ LLM_MAX_MALFORMED_RETRIES = 1
 
 # Version labels recorded in the run manifest so a reader can tell exactly
 # which prompt and catalog produced a result. Bump them when you edit those.
-PROMPT_VERSION = "classify-v1"
-ALIAS_PROMPT_VERSION = "aliases-v1"
-CATALOG_VERSION = "catalog-v1"
+PROMPT_VERSION = "classify-v2"
+ALIAS_PROMPT_VERSION = "aliases-v2"
+CATALOG_VERSION = "catalog-v2"
 
 # Demo modes (spec section 5.9). "live" calls the model API and records the
 # answers; "offline" replays the recorded answers with no network or key.

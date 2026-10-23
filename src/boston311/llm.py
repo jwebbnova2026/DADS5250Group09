@@ -93,11 +93,36 @@ class RecordingStore:
         return self._load().get(key)
 
     def put(self, key: str, kind: str, user: str, output: dict, usage: dict | None) -> None:
-        rec = {"key": key, "kind": kind, "model": config.LLM_MODEL, "input": user, "output": output, "usage": usage}
+        rec = {
+            "key": key,
+            "kind": kind,
+            "model": config.LLM_MODEL,
+            "prompt_version": config.PROMPT_VERSION if kind == "classify" else config.ALIAS_PROMPT_VERSION,
+            "catalog_version": config.CATALOG_VERSION,
+            "input": user,
+            "output": output,
+            "usage": usage,
+        }
         self._load()[key] = rec
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self.path.open("a", encoding="utf-8", newline="\n") as fh:
             fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+    def prune(self, systems: dict[str, str]) -> tuple[int, int]:
+        """Drop recordings that can no longer be replayed.
+
+        A recording stays only if its key still equals the key computed with
+        the *current* model, prompt versions, catalog version, and system
+        prompt (``systems`` maps kind -> system prompt text). Returns
+        (kept, dropped).
+        """
+        records = self._load()
+        keep = {k: r for k, r in records.items() if r["kind"] in systems and recording_key(r["kind"], systems[r["kind"]], r["input"]) == k}
+        self._cache = keep
+        with self.path.open("w", encoding="utf-8", newline="\n") as fh:
+            for r in keep.values():
+                fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+        return len(keep), len(records) - len(keep)
 
 
 class StructuredModel(Protocol):

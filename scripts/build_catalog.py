@@ -23,7 +23,7 @@ from boston311.llm import LiveModel, RecordingStore, read_prompt
 class AliasDraft(BaseModel):
     type_id: str = Field(description="The type_id exactly as given")
     description: str = Field(description="One neutral sentence describing what this type covers")
-    aliases: list[str] = Field(description="3 to 5 short resident-style phrasings")
+    aliases: list[str] = Field(description="5 to 8 short, varied resident-style phrasings")
 
 
 class AliasBatch(BaseModel):
@@ -33,12 +33,16 @@ class AliasBatch(BaseModel):
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--aliases", action="store_true", help="draft missing aliases with the live LLM")
+    parser.add_argument("--redraft", action="store_true", help="with --aliases: redraft every type, replacing existing aliases")
     args = parser.parse_args()
 
     entries = catalog.build_mappings()
     if catalog.CATALOG_PATH.exists():
         entries = catalog.merge_reviews(entries, list(catalog.load_catalog().values()))
 
+    if args.aliases and args.redraft:
+        for e in entries:
+            e.alias_status = "missing"
     if args.aliases:
         model = LiveModel(RecordingStore())
         system = read_prompt("aliases_system")
@@ -50,7 +54,7 @@ def main() -> None:
                 if e is None or e not in batch:
                     continue  # ignore any ID the model made up
                 e.description = item.description.strip()
-                e.aliases = [a.strip() for a in item.aliases if a.strip()][:5]
+                e.aliases = [a.strip() for a in item.aliases if a.strip()][:8]
                 e.alias_status = "provisional"
                 e.alias_source = f"llm:{config.LLM_MODEL}/{config.ALIAS_PROMPT_VERSION}"
             print(f"drafted aliases for {len(out.items)} types")
