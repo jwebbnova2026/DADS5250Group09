@@ -1,0 +1,18 @@
+# Normalize line endings: LF in the repo and in every working copy,
+# regardless of each teammate's core.autocrlf setting.
+* text=auto eol=lf
+
+# Windows-only scripts keep CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files: never convert or diff as text.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.parquet binary
+*.pkl binary
+*.zip binary
