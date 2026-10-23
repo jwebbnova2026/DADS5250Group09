@@ -74,6 +74,21 @@ REQUIRED_COLUMNS: tuple[str, ...] = (
     "source",
 )
 
+# Neighborhood labels are not fully consistent in the source data: a few
+# requests use a sub-area ("Allston") where most use the combined area
+# ("Allston / Brighton"). For the neighborhood equity analysis only (spec
+# deliverable 6) we merge those into the combined label, and treat a blank or
+# the citywide label "Boston" as "Unspecified". DEFAULT, documented in
+# docs/decisions.md. Labels not listed here are kept exactly as they are.
+NEIGHBORHOOD_ALIASES: dict[str, str] = {
+    "Allston": "Allston / Brighton",
+    "Brighton": "Allston / Brighton",
+    "South Boston": "South Boston / South Boston Waterfront",
+    "Mattapan": "Greater Mattapan",
+    "Boston": "Unspecified",
+}
+UNSPECIFIED_NEIGHBORHOOD = "Unspecified"
+
 # ---------------------------------------------------------------------------
 # Departments (GIVEN, spec section 2)
 # ---------------------------------------------------------------------------

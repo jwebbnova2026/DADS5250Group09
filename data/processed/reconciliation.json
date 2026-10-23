@@ -1,0 +1,90 @@
+{
+  "by_year": {
+    "2023": {
+      "rows_read": 307791,
+      "duplicates_removed": 0,
+      "unparseable_open_dt_removed": 0,
+      "opened_outside_file_year_removed": 0,
+      "rows_after_cleaning": 307791,
+      "out_of_scope_departments_excluded": 25545,
+      "in_scope_rows": 282246,
+      "in_scope_by_department": {
+        "PWDx": 171268,
+        "BTDT": 75314,
+        "PARK": 17541,
+        "ISD": 18123
+      },
+      "target_classes": {
+        "valid": 231524,
+        "missing": 50722,
+        "invalid_ordering": 0
+      }
+    },
+    "2024": {
+      "rows_read": 306756,
+      "duplicates_removed": 0,
+      "unparseable_open_dt_removed": 0,
+      "opened_outside_file_year_removed": 0,
+      "rows_after_cleaning": 306756,
+      "out_of_scope_departments_excluded": 30339,
+      "in_scope_rows": 276417,
+      "in_scope_by_department": {
+        "PWDx": 157610,
+        "BTDT": 81447,
+        "PARK": 18736,
+        "ISD": 18624
+      },
+      "target_classes": {
+        "valid": 244996,
+        "missing": 31421,
+        "invalid_ordering": 0
+      }
+    }
+  },
+  "page_check_2024": {
+    "PWDx": {
+      "page": 157610,
+      "ours": 157610,
+      "match": true
+    },
+    "BTDT": {
+      "page": 81447,
+      "ours": 81447,
+      "match": true
+    },
+    "PARK": {
+      "page": 18736,
+      "ours": 18736,
+      "match": true
+    },
+    "ISD": {
+      "page": 18624,
+      "ours": 18624,
+      "match": true
+    }
+  },
+  "sources": [
+    {
+      "year": 2023,
+      "resource_id": "e6013a93-1321-4f2a-bf91-8d8a02f1e62f",
+      "url": "https://data.boston.gov/dataset/8048697b-ad64-4bfc-b090-ee00169f2323/resource/e6013a93-1321-4f2a-bf91-8d8a02f1e62f/download/lagan_311_open_data_2023_rvsd3.csv",
+      "path": "data/raw/311_2023.csv",
+      "size_bytes": 184129946,
+      "md5": "beb0947323226eb7d9a6abd2207e4635",
+      "sha256": "9f647c5ddb20d161c0f04d56985eae597b367fa8d8e0ccc8ca133f68ed34212b",
+      "last_modified": "2026-09-18T01:27:26.805931",
+      "retrieved_at": "2026-10-23T03:17:44+00:00"
+    },
+    {
+      "year": 2024,
+      "resource_id": "dff4d804-5031-443a-8409-8344efd0e5c8",
+      "url": "https://data.boston.gov/dataset/8048697b-ad64-4bfc-b090-ee00169f2323/resource/dff4d804-5031-443a-8409-8344efd0e5c8/download/lagan_311_open_data_2024_rvsd3.csv",
+      "path": "data/raw/311_2024.csv",
+      "size_bytes": 182147317,
+      "md5": "99da78a9b838728d35d52658b7011a15",
+      "sha256": "a3f80f43cc03e00a87fcb26bf2c66bc9ed63dc7ee349b8d3aa803ebac288502d",
+      "last_modified": "2026-09-18T01:27:27.630670",
+      "retrieved_at": "2026-10-23T03:17:52+00:00"
+    }
+  ]
+}
