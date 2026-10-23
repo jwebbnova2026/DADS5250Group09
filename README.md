@@ -27,11 +27,13 @@ python -m pip install -r requirements.lock
 python -m pip install -e . --no-deps
 ```
 
-Register the environment as a Jupyter kernel named `boston311`, which is the kernel the notebook uses:
+Register the environment as a Jupyter kernel named `boston311`, which is the kernel the notebook uses. With the virtual environment still active:
 
 ```bash
-python -m ipykernel install --sys-prefix --name boston311 --display-name "Python (boston311)"
+python -m ipykernel install --user --name boston311 --display-name "Python (boston311)"
 ```
+
+`--user` makes the kernel visible to any Jupyter on your machine, for example one from Anaconda/Miniconda, as well as to VS Code. When you open `demo.ipynb`, check that the kernel shown at the top right is **Python (boston311)**. If it isn't, choose *Kernel > Change Kernel > Python (boston311)*. Running the notebook on any other Python fails with "No module named 'boston311'", because the package is only installed in `.venv`.
 
 ### Run it
 
