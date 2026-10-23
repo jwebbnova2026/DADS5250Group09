@@ -214,11 +214,17 @@ The planning function receives no evaluation workload and no evaluation queue.
 
 **Order of decisions at the start of month t:**
 1. **Apply scheduled changes.** Hires ordered in month t-1 start. Releases noticed in month t-1 leave.
-2. **Parks seasonal crews (April to October only).**
-   - S_t is the smallest number of seasonal crews for which a one-month projection of month t has no more overdue events than the same projection with unlimited capacity.
-   - Some requests are unavoidably overdue, such as same-day targets arriving on non-service days.
+2. **Parks seasonal crews (April to October only). Service-floor rule, DECIDED 2026-10-23; see docs/decisions.md.**
+   - S_t is the smallest number of seasonal crews for which a one-month projection of month t keeps the on-time rate of requests due in month t at or above 93%. That is Parks' own 2024 on-time rate (GIVEN).
+     - A due request has its target day in month t. It is on time if it closes on or before that day.
+   - If even unlimited capacity cannot reach 93% in a month, the target for that month becomes the best rate unlimited capacity reaches. Some requests are unavoidably overdue, such as same-day targets arriving on non-service days.
    - This rule is deadline-based. It does not guarantee that all arriving work is cleared; long-deadline and no-target work can still accumulate.
    - No cap (DEFAULT; the page states none).
+   - Replaced rule: the original rule added crews until no avoidable overdue request remained (equivalent to a 100% target).
+     - On the base evaluation workload it bought 95 seasonal crew-months for 97.8% Parks on-time at $2.44M.
+     - The 93% floor buys 42 crew-months for 95.4% at $1.86M.
+     - A purely cost-minimizing rule was also tested and rejected: it kept Parks on-time near 32%, and service matters as much as cost.
+     - The full cost-versus-service frontier is in `outputs/parks_seasonal_frontier.csv`.
 3. **Hiring decision**, only if t is October or earlier:
    - Project months t through t+2 with the scheduled workforce, no new hires or releases, and the seasonal rule applied to future Parks in-season months.
    - For each productive month m = t+1 and m = t+2, compute shortage_m = ceil(max(0, open at start of m + arrivals in m - capacity in m) / C), using the actual projected residual workload after seasonal crews.
@@ -236,7 +242,7 @@ The planning function receives no evaluation workload and no evaluation queue.
 **Plain-language rules for the report and video:**
 - We hire only when there is a capacity shortfall in both projected productive months, and we hire the smaller shortfall.
 - We release crews only if the remaining workforce keeps up with new and accumulated work for the next four months and the release actually saves money after severance and any extra seasonal staffing.
-- Parks covers its April to October peak with seasonal crews and does not start new permanent crews in season.
+- Parks covers its April to October peak with seasonal crews, buying just enough each month to stay at or above its 2024 on-time rate of 93%. It does not start new permanent crews in season.
 
 **Cost derivations:**
 - **Hire then release:** let k be all productive paid months of a new crew, including its notice month. Training month + k productive months + 3 months of severance = k + 4 months of crew cost. For a one-month need (k = 1), that is 5 months of cost for 1 productive month.
@@ -504,7 +510,7 @@ Hand-calculated examples (each becomes a unit test):
 
 **E15. Planner isolation.** The planning function's inputs contain no evaluation workload or evaluation queue. Changing the evaluation stream leaves the frozen plan identical; scored results may change. The planner also runs successfully, producing the same frozen plan, when no evaluation data exist at all.
 
-**E16. Long-deadline workload.** A Parks month has more arrivals than regular capacity, all with targets in 2026. The seasonal rule adds 0 crews, because no overdue events are avoidable. The hiring rule sees the residual volume, and the Parks restriction blocks any permanent hire starting in season. The work carries forward and appears in month-end open counts.
+**E16. Long-deadline workload.** A Parks month has more arrivals than regular capacity, all with targets in 2026. The seasonal rule adds 0 crews, because no request is due within the month, so there is no on-time rate to protect. The hiring rule sees the residual volume, and the Parks restriction blocks any permanent hire starting in season. The work carries forward and appears in month-end open counts.
 
 **E17. Scenario coupling.**
 - Subset: every request in the minus 20% workload appears in the base workload with identical attributes.
@@ -545,7 +551,7 @@ Hand-calculated examples (each becomes a unit test):
 - **No-target requests:** consume capacity, no penalties.
 - **Hiring:** two-month persistence, hire the smaller shortage, no orders after the start of October.
 - **Release:** four-month projected look-ahead requiring no added overdue events, no added projected cost, and no added end-of-horizon backlog; no notices after the start of August; at least 1 crew.
-- **Seasonal:** the deadline-based Parks rule adds crews until there are no avoidable overdue requests in the month, with no cap. Parks permanent hires never start April to October.
+- **Seasonal:** the Parks service-floor rule uses the fewest crews that keep the month's due requests at least 93% on time, or the best reachable rate if 93% is impossible, with no cap. Parks permanent hires never start April to October.
 - **Routing:** a 90% department share nominates a department mapping and a 90% queue share nominates a queue mapping, both for human approval. Types without a queue mapping are labeled assigned by location or assigned by department.
 - **Retrieval:** TF-IDF first.
 - **Sensitivity:** coupled workloads; the frozen plan and baseline are replayed; snowstorm spike.

@@ -230,32 +230,59 @@ class Projector:
         result = simulate(self.requests, head, first, last, capacity)
         return period_stats(result, first, last), result.head_end
 
+    def month_on_time_rate(self, head: int, month: int, crews: int) -> float | None:
+        """Projected on-time rate of the requests *due* in ``month``.
+
+        "Due in the month" means a valid target day inside the month. A due
+        request is on time if it closes on or before its target day. Requests
+        already closed before the month started (positions below ``head``)
+        closed before their target, so they count as on time; every overdue
+        one shows up as an overdue event of the one-month projection.
+        Returns None if nothing is due in the month.
+        """
+        first, last = self.calendar.month_first_day[month], self.calendar.month_last_day[month]
+        req = self.requests
+        due = int(np.count_nonzero(req.has_target & (req.target_day >= first) & (req.target_day <= last)))
+        if due == 0:
+            return None
+        overdue = self.run_month(head, month, crews)[0].overdue_events
+        return 1 - overdue / due
+
     def seasonal_needed(self, head: int, month: int, regular: int) -> int:
-        """Spec 5.4 step 2: the smallest seasonal crew count S for month t such
-        that a one-month projection with ``regular + S`` crews has no more
-        penalty events than the same projection with unlimited capacity.
+        """Spec 5.4 step 2 (service-floor rule, DECIDED 2026-10-23): Parks
+        seasonal crews for month t.
 
-        Some events cannot be avoided even with unlimited capacity (for
-        example a same-day target that arrives on a non-service day), which is
-        why we compare against the unlimited projection rather than against 0.
+        Use the fewest seasonal crews S such that the projected on-time rate
+        of requests due in month t is at least ``config.SEASONAL_ON_TIME_TARGET``
+        (93%, Parks' own 2024 on-time rate). In plain words: buy service up to
+        last year's standard, as cheaply as possible, and no further.
 
-        More crews never increase penalty events (requests can only close
-        earlier), so a binary search over S finds the smallest S quickly.
-        Upper bound: with daily capacity at least everything open at the start
-        of the month plus all of the month's arrivals, every service day clears
-        the whole queue, which is exactly what unlimited capacity does.
+        If even unlimited capacity cannot reach the target in a month (for
+        example because some same-day targets arrive on non-service days),
+        the target for that month becomes the best rate unlimited capacity
+        can reach, i.e. remove every avoidable miss and stop there.
+
+        More crews never lower the on-time rate (requests can only close
+        earlier), so a binary search finds the smallest S. Upper bound: once
+        daily capacity covers everything open at the start of the month plus
+        all of the month's arrivals, every service day clears the whole queue,
+        which is exactly what unlimited capacity does.
         """
         if self.dept != config.SEASONAL_DEPT or month not in config.SEASONAL_MONTHS:
             return 0
-        target = self.run_month(head, month, None)[0].penalty_events
         first, last = self.calendar.month_first_day[month], self.calendar.month_last_day[month]
         workload_bound = open_at_start(self.requests, head, first) + (
             self.requests.arrived_through(last) - self.requests.arrived_through(first - 1)
         )
-        lo, hi = 0, max(0, math.ceil(workload_bound / self.cap) - regular)
-        while lo < hi:  # invariant: hi always satisfies the rule
+        upper = max(0, math.ceil(workload_bound / self.cap) - regular)
+        best_possible = self.month_on_time_rate(head, month, regular + upper)
+        if best_possible is None:  # nothing due this month: no seasonal crews
+            return 0
+        target = min(config.SEASONAL_ON_TIME_TARGET, best_possible)
+        lo, hi = 0, upper
+        while lo < hi:  # invariant: hi always meets the target
             mid = (lo + hi) // 2
-            if self.run_month(head, month, regular + mid)[0].penalty_events <= target:
+            if self.month_on_time_rate(head, month, regular + mid) >= target:
                 hi = mid
             else:
                 lo = mid + 1
@@ -617,6 +644,52 @@ def summarize(rows: pd.DataFrame, year_ends: list[YearEnd]) -> pd.DataFrame:
     }
     total["on_time_rate"] = float((df["on_time_rate"] * df["due_in_2025"]).sum() / df["due_in_2025"].sum())
     return pd.concat([df, pd.DataFrame([total])], ignore_index=True)
+
+
+FRONTIER_TARGETS: tuple[float, ...] = (0.50, 0.70, 0.80, 0.85, 0.90, 0.93, 0.95, 0.97, 1.00)
+
+
+def seasonal_frontier(workloads: dict[str, Workload], targets: tuple[float, ...] = FRONTIER_TARGETS) -> pd.DataFrame:
+    """Parks cost vs. on-time for a range of seasonal service targets.
+
+    This is the evidence behind ``config.SEASONAL_ON_TIME_TARGET``. For each
+    target, the whole plan is re-made on the planning workload (so later
+    hiring reacts to the different seasonal choice) and Parks is scored on
+    the base evaluation workload. A target of 1.00 means "remove every
+    avoidable miss", the spec's original seasonal rule. The first row is the
+    fixed-crew baseline.
+
+    ``cost_per_extra_point`` is the extra Parks cost for each extra
+    percentage point of annual on-time rate, compared with the row above: it
+    shows where buying more service starts to get expensive.
+    """
+    def parks_row(label: str, plan: Plan) -> dict:
+        rows, year_ends = score_plan(plan, workloads["base"], "base")
+        s = summarize(rows, year_ends).set_index("department").loc[config.SEASONAL_DEPT]
+        pf = plan.to_frame().query("department == @config.SEASONAL_DEPT")
+        return {
+            "rule": label,
+            "parks_total_cost": float(s["total_cost"]),
+            "parks_on_time_rate": float(s["on_time_rate"]),
+            "seasonal_crew_months": int(pf["seasonal_crews"].sum()),
+            "permanent_hires": int(pf["hires_ordered"].sum()),
+        }
+
+    out = [parks_row("baseline (January crews)", baseline_plan())]
+    saved = config.SEASONAL_ON_TIME_TARGET
+    try:
+        for target in targets:
+            config.SEASONAL_ON_TIME_TARGET = target
+            label = "every avoidable miss" if target >= 1 else f"floor {target:.0%}"
+            out.append(parks_row(label, make_plan(workloads["planning"])))
+    finally:
+        config.SEASONAL_ON_TIME_TARGET = saved  # never leave the global changed
+    df = pd.DataFrame(out)
+    d_cost = df["parks_total_cost"].diff()
+    d_points = df["parks_on_time_rate"].diff() * 100
+    df["cost_per_extra_point"] = (d_cost / d_points).where(d_points > 0)
+    df["chosen"] = df["rule"] == f"floor {saved:.0%}"
+    return df
 
 
 # ---------------------------------------------------------------------------

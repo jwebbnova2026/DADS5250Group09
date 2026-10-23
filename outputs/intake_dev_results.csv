@@ -16,4 +16,4 @@ d14,missing_context,I need help with my apartment.,ROUTE,ROUTE,T017,T017,Chronic
 d15,multiple_issues,The street light is out and the sidewalk is broken.,ROUTE,TRIAGE,T125,T126,Sidewalk Repair (Make Safe),PWDx,,assigned_by_department,,True,"""Sidewalk Repair (Make Safe)"" is not handled consistently by one department (most often Public Works), so a person needs to route it",0.2654443443801577,True,True,False,False,label
 d16,out_of_scope,I lost my wallet on the Red Line this morning.,TRIAGE,TRIAGE,,,,,,,,False,"out of scope: not a request for Public Works, Transportation, Parks & Recreation, or Inspectional Services",0.10131767269774229,True,,,,
 d17,out_of_scope,What time does City Hall open on Saturdays?,TRIAGE,TRIAGE,,,,,,,,False,"out of scope: not a request for Public Works, Transportation, Parks & Recreation, or Inspectional Services",0.1143893471059367,True,,,,
-d18,empty,,REJECTED,REJECTED,,,,,,,,False,empty input,,True,,,,
+d18,empty,,REJECTED,REJECTED,,,,,,,,False,empty input,0.0,True,,,,

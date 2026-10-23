@@ -66,6 +66,8 @@ def main() -> None:
     summary = pd.concat(summaries, ignore_index=True)
     save(rows, "staffing_rows.csv")
     save(summary, "scenario_summary.csv")
+    # Evidence for the Parks seasonal target (re-plans once per target; ~20 s).
+    save(staffing.seasonal_frontier(wl), "parks_seasonal_frontier.csv")
 
     # 4. Intake evaluation.
     assistant = IntakeAssistant(mode=args.mode)

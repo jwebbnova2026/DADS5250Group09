@@ -37,5 +37,5 @@ t35,out_of_scope,Someone broke into my car last night and stole my laptop.,TRIAG
 t36,out_of_scope,My water bill seems way too high this month.,TRIAGE,TRIAGE,,,,,,,,False,"out of scope: not a request for Public Works, Transportation, Parks & Recreation, or Inspectional Services",0.21656748372814855,True,,,,
 t37,out_of_scope,The 39 bus has been late every day this week.,TRIAGE,TRIAGE,,,,,,,,False,"out of scope: not a request for Public Works, Transportation, Parks & Recreation, or Inspectional Services",0.07457231756131855,True,,,,
 t38,out_of_scope,How do I register to vote in Boston?,TRIAGE,TRIAGE,,,,,,,,False,"out of scope: not a request for Public Works, Transportation, Parks & Recreation, or Inspectional Services",0.12354273762365123,True,,,,
-t39,empty,,REJECTED,REJECTED,,,,,,,,False,empty input,,True,,,,
-t40,empty,   ,REJECTED,REJECTED,,,,,,,,False,empty input,,True,,,,
+t39,empty,,REJECTED,REJECTED,,,,,,,,False,empty input,0.0,True,,,,
+t40,empty,   ,REJECTED,REJECTED,,,,,,,,False,empty input,0.0,True,,,,

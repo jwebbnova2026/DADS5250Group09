@@ -9,12 +9,12 @@ We built a month-by-month 2025 crew plan for Public Works (PWDx), Transportation
 
 | | Frozen plan | January crews all year |
 |---|---|---|
-| Total 2025 cost (crews + severance + penalties) | **$16.97M** | $19.47M |
-| Share of requests due in 2025 closed on time | **89.6%** | 22.4% |
-| Requests still open on December 31 | 1,444 | 27,579 |
+| Total 2025 cost (crews + severance + penalties) | **$16.39M** | $19.47M |
+| Share of requests due in 2025 closed on time | **89.5%** | 22.4% |
+| Requests still open on December 31 | 1,441 | 27,579 |
 
-* **What the plan does:** hires 20 Public Works, 8 Transportation, and 9 Inspectional Services crews, with every hire ordered by August.
-* **Parks:** covers its April-to-October peak with 95 seasonal crew-months and no permanent hires.
+* **What the plan does:** hires 20 Public Works, 8 Transportation, 9 Inspectional Services, and 1 Parks crew, with every hire ordered by August.
+* **Parks:** covers its April-to-October peak with 42 seasonal crew-months. They are sized to keep each month's due requests at least 93% on time, Parks' own 2024 rate, and Parks reaches 95.4% on time for $1.86M.
 * **Releases:** none, because the release test never passes.
 * **Transportation**, the department the project page singles out, goes from 12% to 89% on time, and its cost falls from $6.79M to $2.91M because penalties shrink.
 
@@ -67,7 +67,7 @@ The ±20% sensitivity scenarios bracket these errors.
 
 At the start of each month the planner projects its own queue forward and decides, in this order:
 
-1. **Seasonal crews (Parks, April to October):** the fewest crews that avoid every overdue request that unlimited capacity could avoid.
+1. **Seasonal crews (Parks, April to October):** the fewest crews that keep the month's due requests at least 93% on time, or the best rate unlimited capacity could reach if 93% is impossible. See section 5a for why.
 2. **Hire** only if a shortage is projected in *both* of the next two months, and then only the smaller shortage.
    * *Why two months:* a hire costs a paid training month plus three months of severance if released (k + 4 months of pay for k productive months), so one-month spikes are not worth a permanent crew.
    * Hiring stops after October. Parks never starts a permanent crew in season, because seasonal crews are cheaper over any in-season span (1.3k < k + 4 for k ≤ 7).
@@ -82,20 +82,44 @@ At the start of each month the planner projects its own queue forward and decide
 * Public Works runs at 58–69% utilisation in October to December, and Inspectional Services at 59–60% in November and December.
 * This is the price of the "no notices after August" terminal rule combined with a 25% severance.
 
+## 5a. Balancing cost and service: the Parks seasonal target
+
+This is a public service: timely delivery matters as much as cost, or more. Minimizing cost alone does not reflect that. The challenge's $20 overdue penalty is small next to a $13,000 seasonal crew-month, so a cost-only rule simply accepts most misses. We tested two such rules and rejected both:
+* **"Add a crew only while it saves more than it costs."** No single crew ever saves that much, so the rule bought no seasonal crews. Later, 27 permanent crews were hired in October to clear the backlog. Parks came to $2.57M with 29% on time.
+* **"Minimize seasonal cost plus penalties."** Parks came to $1.82M with 32% on time.
+
+We therefore set a **service target first and let cost decide only how to meet it**. The target is Parks' own 2024 on-time rate, 93%: no worse than last year.
+
+The frontier below re-makes the whole plan for each target and scores Parks on the base evaluation workload:
+
+| Seasonal rule | Parks cost | Parks on-time | Seasonal crew-months |
+|---|---|---|---|
+| January crews all year | $1.75M | 21.3% | 0 |
+| Floor 50% | $1.78M | 73.1% | 33 |
+| Floor 90% | $1.84M | 93.7% | 40 |
+| **Floor 93% (chosen)** | **$1.86M** | **95.4%** | **42** |
+| Floor 95% | $1.95M | 96.7% | 49 |
+| Floor 97% | $2.13M | 97.2% | 71 |
+| Remove every avoidable miss (original spec rule) | $2.44M | 97.8% | 95 |
+
+* **Up to 93%,** service is cheap: going from 21% to 95% on time costs about $117K more than doing nothing.
+* **Beyond 93%,** each extra point costs $69K to $480K.
+* **The 93% floor gives up 2.4 on-time points** against the original rule and saves $575K.
+
 ## 6. Sensitivity
 
 The frozen plan, without re-planning, replayed on each scenario:
 
 | Scenario | Plan cost | Plan on-time | Baseline cost | Baseline on-time |
 |---|---|---|---|---|
-| Base | $16.97M | 89.6% | $19.47M | 22.4% |
-| Demand +20% | $21.17M | 14.6% | $33.20M | 7.9% |
-| Demand −20% | $16.69M | 94.5% | $13.09M | 75.4% |
-| Snowstorm (PWDx ×3, Feb 10–12) | $17.33M | 81.8% | $20.36M | 15.7% |
+| Base | $16.39M | 89.5% | $19.47M | 22.4% |
+| Demand +20% | $20.85M | 12.2% | $33.20M | 7.9% |
+| Demand −20% | $16.12M | 94.5% | $13.09M | 75.4% |
+| Snowstorm (PWDx ×3, Feb 10–12) | $16.76M | 81.7% | $20.36M | 15.7% |
 
 * **+20%:** the frozen plan cannot keep up. Backlogs push most short-deadline requests past target, although cost stays well below the baseline's.
 * **−20%:** the frozen plan is overstaffed, and keeping January's crews would have been cheaper.
-* **Snowstorm:** the extra Public Works volume lowers its on-time rate from 89% to 75% for the year, while costing only $0.36M more.
+* **Snowstorm:** the extra Public Works volume lowers its on-time rate from 89% to 75% for the year, while costing only $0.37M more.
 
 Both directions argue for reactive re-planning, which is a stretch item.
 
@@ -146,9 +170,8 @@ This is descriptive, not causal: reporting channels and employee-generated reque
 
 * **Challenge model.** Capacities, costs, starting crews, and penalties are assignment assumptions, and the calendar is synthetic.
 * **Scoring workloads are synthetic.** The plan is scored on synthetic workloads, not real 2025 requests. A 2025 holdout is stretch.
-* **The seasonal rule is not cost-aware (open question for the team).**
-  * The spec's rule buys up to 32 seasonal crews in August, because short-deadline Parks requests queue behind year-long ones. Parks then costs $2.44M under the plan against $1.75M under the baseline, including the baseline's $0.55M in penalties.
-  * A cost-aware rule would add seasonal crews only while each extra crew saves more in penalties than its $13,000 cost.
+* **The 93% Parks target is a policy choice, not an optimum.** Another target moves along the frontier in section 5a. The frontier itself depends on the challenge's assumed costs and penalties.
+* **Hiring looks at volume, not deadlines.** The hiring rule counts every arriving request, including Parks requests with year-long deadlines. Where the seasonal rule leaves a backlog, the rule can still order permanent crews in October, as the rejected cost-only rule showed.
 * **Pending review.** Mappings and aliases are provisionally approved by Claude, and the eval messages are AI-written.
 * **Synthetic workload contents.** No-target requests use capacity but carry no penalty, as a labelled assumption. Synthetic requests have no neighborhood, so equity is analysed historically only.
 

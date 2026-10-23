@@ -178,6 +178,70 @@ def test_e7_seasonal_capacity_and_cost():
     assert may.seasonal_cost == 0 and may.severance_cost == 0  # nothing charged when they end
 
 
+# ---------------------------------------------------------------------------
+# Parks seasonal service floor (spec 5.4 step 2, decided 2026-10-23)
+# ---------------------------------------------------------------------------
+
+
+def april_requests(per_day: int, window: int, saturday_same_day: int = 0) -> Requests:
+    """Parks-style requests arriving every day of April 2025.
+
+    ``per_day`` requests a day with a ``window``-day target, plus optionally
+    ``saturday_same_day`` requests each Saturday due the same day (Saturdays
+    are not service days in April, so those can never be on time).
+    """
+    cal = build_calendar()
+    arrivals, targets = [], []
+    for d in cal.month_days(4):
+        arrivals += [d] * per_day
+        targets += [d + window] * per_day
+        if cal.dates[d].weekday() == 5:
+            arrivals += [d] * saturday_same_day
+            targets += [d] * saturday_same_day
+    order = sorted(range(len(arrivals)), key=lambda i: arrivals[i])
+    return Requests.from_lists([arrivals[i] for i in order], [targets[i] for i in order])
+
+
+def test_seasonal_floor_uses_fewest_crews_meeting_target():
+    proj = Projector("PARK", april_requests(per_day=90, window=2), build_calendar())
+    s = proj.seasonal_needed(0, 4, 10)
+    assert s > 0  # 10 crews (60/service day) cannot keep up with 90 arrivals a day
+    assert proj.month_on_time_rate(0, 4, 10 + s) >= config.SEASONAL_ON_TIME_TARGET
+    assert proj.month_on_time_rate(0, 4, 10 + s - 1) < config.SEASONAL_ON_TIME_TARGET
+
+
+def test_seasonal_floor_falls_back_to_best_possible_rate():
+    # Many same-day Saturday requests: even unlimited capacity misses them,
+    # so the best reachable rate is below 93% and the rule stops there.
+    proj = Projector("PARK", april_requests(per_day=10, window=2, saturday_same_day=40), build_calendar())
+    s = proj.seasonal_needed(0, 4, 10)
+    best = proj.month_on_time_rate(0, 4, 10 + 1000)
+    assert best < config.SEASONAL_ON_TIME_TARGET
+    assert proj.month_on_time_rate(0, 4, 10 + s) == pytest.approx(best)
+    if s > 0:
+        assert proj.month_on_time_rate(0, 4, 10 + s - 1) < best
+
+
+def test_seasonal_frontier_is_ordered_and_restores_config(workloads):
+    df = staffing.seasonal_frontier(workloads, targets=(0.5, 0.93, 1.0))
+    assert config.SEASONAL_ON_TIME_TARGET == 0.93  # the global setting is restored
+    assert df["rule"].tolist() == ["baseline (January crews)", "floor 50%", "floor 93%", "every avoidable miss"]
+    assert df["chosen"].tolist() == [False, False, True, False]
+    # For widely spaced targets, a higher target buys more seasonal crew-months
+    # and a higher on-time rate. (Between close targets the full re-plan can
+    # wobble, because later hiring reacts to the seasonal choice.)
+    floors = df.iloc[1:]
+    assert floors["seasonal_crew_months"].is_monotonic_increasing
+    assert floors["parks_on_time_rate"].is_monotonic_increasing
+
+
+def test_seasonal_rule_only_for_parks_in_season():
+    req = april_requests(per_day=200, window=1)
+    cal = build_calendar()
+    assert Projector("PWDx", req, cal).seasonal_needed(0, 4, 1) == 0
+    assert Projector("PARK", req, cal).seasonal_needed(0, 3, 1) == 0  # March is out of season
+
+
 def test_invalid_staffing_input_names_parameter():
     with pytest.raises(StaffingInputError, match="hires_ordered"):
         plan_with("ISD", m2=MonthDecision(2, hires_ordered=-1))
@@ -245,7 +309,7 @@ def test_e16_long_deadline_parks_work_carries_forward():
     req = Requests.from_lists(arrival_day=sorted(arrivals), target_day=targets)
     proj = Projector("PARK", req, cal)
     head = 0
-    # Seasonal rule: no overdue events are avoidable, so 0 seasonal crews.
+    # Seasonal rule: nothing is due in 2025, so no on-time rate to protect: 0 crews.
     assert proj.seasonal_needed(head, 4, 10) == 0
     # Hiring rule sees the residual volume but the Parks restriction blocks it.
     hires, note = staffing._hire_decision(proj, head, 4, 10, 0)

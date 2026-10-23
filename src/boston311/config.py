@@ -172,6 +172,13 @@ RELEASE_LOOKAHEAD_MONTHS = 4
 MIN_REGULAR_CREWS = 1
 # Parks orders no permanent hire whose first productive month is April-October.
 PARKS_BLOCK_IN_SEASON_PERMANENT_HIRES = True
+# Parks seasonal crews (DECIDED 2026-10-23, spec 5.4 step 2): each in-season
+# month, use the fewest seasonal crews that keep the projected on-time rate of
+# that month's due requests at or above this target. 0.93 is Parks' own 2024
+# on-time rate from the project page ("no worse than last year"). The
+# cost-vs-service frontier behind this choice is in
+# outputs/parks_seasonal_frontier.csv (scripts/seasonal_frontier.py).
+SEASONAL_ON_TIME_TARGET = 0.93
 
 # ---------------------------------------------------------------------------
 # Workload generation (DEFAULT, spec section 5.3)

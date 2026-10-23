@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-23T04:35:54+00:00",
+  "created_utc": "2026-10-23T12:47:30+00:00",
   "mode": "offline",
   "sources": [
     {
@@ -243,6 +243,7 @@
       9,
       10
     ],
+    "SEASONAL_ON_TIME_TARGET": 0.93,
     "SERVICE_DAYS_PER_MONTH": 21,
     "SEVERANCE_FRACTION": 0.25,
     "SPIKE_DATES": [
@@ -290,7 +291,7 @@
       "langgraph": "1.2.16",
       "openai": "3.37.0"
     },
-    "git_commit": "58c311a4377f7d8e5ce3242476524ff82f59edba-dirty"
+    "git_commit": "afd931fdb2d43f23b24566228e9a77fddff3ffe8-dirty"
   },
   "outputs": [
     "outputs/forecast_2025.csv",
@@ -299,6 +300,7 @@
     "outputs/staffing_plan_log.txt",
     "outputs/staffing_rows.csv",
     "outputs/scenario_summary.csv",
+    "outputs/parks_seasonal_frontier.csv",
     "outputs/intake_dev_results.csv",
     "outputs/intake_test_results.csv",
     "outputs/intake_metrics.csv",
