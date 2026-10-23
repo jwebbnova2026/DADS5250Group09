@@ -70,6 +70,9 @@ These are choices made where the spec was silent. None changes a GIVEN rule or a
 - **Neighborhoods:** for the equity analysis only, "Allston", "Brighton", "South Boston" and "Mattapan" are merged into their combined labels, and blank or citywide "Boston" becomes "Unspecified" (`config.NEIGHBORHOOD_ALIASES`).
 - **Added module:** `src/boston311/equity.py`, for deliverable 6, which the spec's layout did not list. `scripts/` holds `build_data.py`, `build_catalog.py`, `build_eval_sets.py`, and `run_all.py`.
 - **Not used:** the GenAI_Agents reference notebooks were not consulted or copied in this build.
+- **Repairs after Astra's review (2026-10-23):** findings R1–R6 were fixed on branch `repair/astra-review` with no change to the spec or to any published number. See `docs/review_guide.md` section 7.
+  - **Run manifests:** each run writes `outputs/manifests/run_<timestamp>.json`, which is gitignored. Only `reference_run_all.json`, the manifest of the run that produced the committed outputs, is tracked.
+  - **Recordings:** the recording key now covers model, reasoning effort, seed, and response schema. Existing recordings were migrated with provenance backfilled from git evidence (`scripts/migrate_recordings_v2.py`).
 
 ## Spec changes
 

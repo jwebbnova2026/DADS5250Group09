@@ -22,7 +22,8 @@ Northeastern's Academic Integrity and Use of AI policy asks us to mark AI-genera
 | 2025 planning year, package-plus-notebook design, reference notebooks | John | Done |
 | Fixed challenge assumptions, deliverables | Teaching team (project page) | GIVEN |
 | Architecture spec v5.1 and its later changes | Claude, reviewed by Codex; changes decided by John | See `docs/decisions.md` |
-| `src/boston311/` package, `scripts/`, `tests/` | Claude | Pending review by Astra and the team |
+| `src/boston311/` package, `scripts/`, `tests/` | Claude | Reviewed by Astra (`docs/code_review_2026-10-23.md`); findings repaired by Claude; second review and team review pending |
+| Code review of `d1d1c7d` | Astra (Codex) | Done 2026-10-23 |
 | Catalog mappings (`data/catalog/`) | Computed by code from city data; provisionally approved by Claude | Pending team review |
 | Type descriptions and aliases | Drafted by gpt-6.1-sol; reviewed and edited by Claude | Pending team review |
 | Dev and test message sets (`data/eval/`) | Claude | Pending team review |
