@@ -242,6 +242,46 @@ def test_seasonal_rule_only_for_parks_in_season():
     assert Projector("PARK", req, cal).seasonal_needed(0, 3, 1) == 0  # March is out of season
 
 
+# ---------------------------------------------------------------------------
+# Terminal rules apply to EVERY plan, not only the heuristic's (R3)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize("month", [11, 12])
+def test_hire_orders_after_october_are_rejected(month):
+    with pytest.raises(StaffingInputError, match="hires_ordered"):
+        plan_with("PWDx", **{f"m{month}": MonthDecision(month, hires_ordered=1)})
+
+
+@pytest.mark.parametrize("month", [9, 10, 11, 12])
+def test_release_notices_after_august_are_rejected(month):
+    with pytest.raises(StaffingInputError, match="releases_noticed"):
+        plan_with("PWDx", **{f"m{month}": MonthDecision(month, releases_noticed=1)})
+
+
+def test_last_allowed_months_are_valid():
+    dp = plan_with("PWDx", m10=MonthDecision(10, hires_ordered=1), m8=MonthDecision(8, releases_noticed=1))
+    assert dp.regular_crews()[11] == 50  # 50 - 1 (left in September) + 1 (started in November)
+
+
+def test_plan_cannot_be_edited_after_validation():
+    dp = plan_with("PWDx")
+    with pytest.raises(TypeError):  # decisions are an immutable tuple
+        dp.decisions[10] = MonthDecision(11, hires_ordered=1)
+    with pytest.raises(AttributeError):  # the plan object itself is frozen
+        dp.decisions = tuple(MonthDecision(m, hires_ordered=1) for m in range(1, 13))
+
+
+def test_scoring_revalidates_the_plan(calendar):
+    """Defense in depth: scoring re-checks the plan even if validation was bypassed."""
+    dp = plan_with("PWDx")
+    bad = list(dp.decisions)
+    bad[10] = MonthDecision(11, hires_ordered=1)
+    object.__setattr__(dp, "decisions", tuple(bad))  # deliberately bypass the frozen dataclass
+    with pytest.raises(StaffingInputError, match="hires_ordered"):
+        score_department(dp, tiny_requests(), "test", "base", calendar)
+
+
 def test_invalid_staffing_input_names_parameter():
     with pytest.raises(StaffingInputError, match="hires_ordered"):
         plan_with("ISD", m2=MonthDecision(2, hires_ordered=-1))

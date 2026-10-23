@@ -32,7 +32,7 @@ Spec section 5.4. Read this module in three parts:
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import numpy as np
 import pandas as pd
@@ -100,31 +100,33 @@ class MonthDecision:
     seasonal_crews: int = 0
 
 
-@dataclass
+@dataclass(frozen=True)
 class DepartmentPlan:
     """A department's 12 monthly decisions plus a human-readable log.
 
     ``log`` explains every non-trivial decision (for the report and for
     reviewers checking the heuristic by hand).
+
+    The plan is validated when it is created and cannot be changed
+    afterwards: the class is frozen, and ``decisions`` and ``log`` are stored
+    as tuples. A list passed in is converted. So a plan that passed
+    validation can never be edited into an invalid one. :func:`score_department`
+    re-validates anyway, as a second line of defense.
     """
 
     department: str
-    decisions: list[MonthDecision]
-    log: list[str] = field(default_factory=list)
+    decisions: tuple[MonthDecision, ...]
+    log: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
-        if [d.month for d in self.decisions] != list(range(1, 13)):
-            raise StaffingInputError("decisions", "must contain exactly one decision per month, January to December")
-        for d in self.decisions:
-            if d.hires_ordered < 0:
-                raise StaffingInputError("hires_ordered", f"cannot be negative (month {d.month})")
-            if d.releases_noticed < 0:
-                raise StaffingInputError("releases_noticed", f"cannot be negative (month {d.month})")
-            check_seasonal(self.department, d.month, d.seasonal_crews)
-        # The crew path must never go below the minimum.
-        crews = self.regular_crews()
-        if min(crews.values()) < config.MIN_REGULAR_CREWS:
-            raise StaffingInputError("releases_noticed", f"would leave fewer than {config.MIN_REGULAR_CREWS} crew(s)")
+        # Frozen dataclasses cannot assign normally; this is the documented way
+        # to normalise fields during construction.
+        object.__setattr__(self, "decisions", tuple(self.decisions))
+        object.__setattr__(self, "log", tuple(self.log))
+        validate_department_plan(self)
+
+    def decision(self, month: int) -> MonthDecision:
+        return self.decisions[month - 1]
 
     def decision(self, month: int) -> MonthDecision:
         return self.decisions[month - 1]
@@ -142,6 +144,46 @@ class DepartmentPlan:
             prev = self.decision(t - 1)
             crews[t] = crews[t - 1] + prev.hires_ordered - prev.releases_noticed
         return crews
+
+
+def validate_department_plan(plan: DepartmentPlan) -> None:
+    """Check a plan against every rule that applies to *any* plan.
+
+    Raises :class:`StaffingInputError` naming the offending field. The rules:
+
+    * exactly one decision per month, January to December;
+    * no negative hires, notices, or seasonal crews;
+    * seasonal crews only for Parks, April to October (spec 6);
+    * **terminal rules** (spec 5.4, "applied to every plan"): no hire orders
+      after the start of October, no release notices after the start of
+      August;
+    * never fewer than ``config.MIN_REGULAR_CREWS`` regular crews.
+
+    The heuristic's own policies (two-month persistence, Parks' in-season hire
+    block, no release in a month with a hire) are *not* checked here. They
+    describe how our planner decides, not what a valid plan is.
+    """
+    if [d.month for d in plan.decisions] != list(range(1, 13)):
+        raise StaffingInputError("decisions", "must contain exactly one decision per month, January to December")
+    for d in plan.decisions:
+        if d.hires_ordered < 0:
+            raise StaffingInputError("hires_ordered", f"cannot be negative (month {d.month})")
+        if d.releases_noticed < 0:
+            raise StaffingInputError("releases_noticed", f"cannot be negative (month {d.month})")
+        if d.hires_ordered and d.month > config.LAST_HIRE_ORDER_MONTH:
+            raise StaffingInputError(
+                "hires_ordered", f"no hire orders after the start of month {config.LAST_HIRE_ORDER_MONTH} (got month {d.month})"
+            )
+        if d.releases_noticed and d.month > config.LAST_RELEASE_NOTICE_MONTH:
+            raise StaffingInputError(
+                "releases_noticed",
+                f"no release notices after the start of month {config.LAST_RELEASE_NOTICE_MONTH} (got month {d.month})",
+            )
+        check_seasonal(plan.department, d.month, d.seasonal_crews)
+    # The crew path must never go below the minimum.
+    crews = plan.regular_crews()
+    if min(crews.values()) < config.MIN_REGULAR_CREWS:
+        raise StaffingInputError("releases_noticed", f"would leave fewer than {config.MIN_REGULAR_CREWS} crew(s)")
 
 
 @dataclass
@@ -508,6 +550,9 @@ def score_department(
     dept_plan: DepartmentPlan, requests: Requests, plan_name: str, scenario: str, calendar: Calendar
 ) -> tuple[list[StaffingRow], YearEnd]:
     """Replay one department's frozen decisions on a workload for all of 2025."""
+    # Second line of defense: never score a plan that breaks the rules, even
+    # if it was built in a way that skipped construction-time validation.
+    validate_department_plan(dept_plan)
     dept = config.DEPARTMENTS[dept_plan.department]
     crews = dept_plan.regular_crews()
     working = {m: crews[m] + dept_plan.decision(m).seasonal_crews for m in range(1, 13)}
