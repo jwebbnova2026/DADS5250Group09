@@ -299,11 +299,15 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 ### 5.6 Request-type catalog and retrieval
 
 - **Routing targets come from official values only.** Each target is an official type with its observed department and queue from 2023 to 2024.
-- **Mapping rule (DEFAULT):**
-  - If one queue handled at least 90% of a type's 2023 to 2024 requests, that mapping is nominated for review.
-  - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file.
-  - Only approved mappings auto-route.
-  - Types with no approved mapping go to clarification or triage. Historical exceptions may reflect legitimate contextual routing or changes over time, so they are not silently overridden.
+- **Two-tier mapping rule (DECIDED 2026-10-22, replacing the single-queue rule; see docs/decisions.md):** The data audit found that about 18% of in-scope volume goes to queues chosen by the request's district or region, for example `PWDx_District 1C: Downtown`. Text alone cannot determine those queues. Shares below are computed over all of a type's 2023 to 2024 requests, in every department, so a type mostly handled outside the four departments is never mapped into them.
+  - **Department mapping (tier 1):** if at least 90% of a type's requests went to one of the four in-scope departments, a type-to-department mapping is nominated for review.
+  - **Queue mapping (tier 2):** a type with a department mapping gets an exact queue only if one queue of that department handled at least 90% of the type's requests.
+  - **Queue status:** every type with a department mapping gets exactly one status.
+    - `exact`: it has a queue mapping.
+    - `assigned_by_location`: no queue mapping, and at least 50% of its requests went to district or region queues (queue names containing "District" or "Region").
+    - `assigned_by_department`: any other type with no queue mapping.
+  - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. For this build, nominations are provisionally approved by Claude and await team review. Each one is marked with that status and listed for review.
+  - Only types with an approved department mapping auto-route. Types without one go to clarification or triage. Historical exceptions may reflect legitimate contextual routing or changes over time, so they are not silently overridden.
 - **Aliases (core, small):** each official type gets a short description and a few resident-style aliases, drafted by the LLM with structured output or written by a person. A team member reviews every one.
   - Aliases attach to official types. They never create, merge, or rename categories.
   - Aliases never assert service eligibility or responsibilities the data does not support.
@@ -316,19 +320,20 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 
 - Retrieve candidates, classify once, validate in code, then route, clarify, or triage.
 - **LLM owns:** selected type ID or none, ambiguity flag, missing detail, clarifying question, evidence IDs, short reason.
-- **Code owns:** checking the type against candidates and catalog, assigning department and queue, and choosing the decision.
+- **Code owns:** checking the type against candidates and catalog, assigning the department and, where the type has an `exact` status, the queue, and choosing the decision.
 - **Clarification:** at most one, via a LangGraph interrupt with a checkpointer and stable thread ID. API calls stay outside the part of the node that re-runs on resume.
-- **Auto-route requires:** a valid candidate, a reviewer-approved mapping, no unresolved ambiguity, and passing the dev-tuned retrieval gate.
-- **Response:** templated. Shows the route and historical statistics labeled as historical, or "unavailable" for small samples.
+- **Auto-route requires:** a valid candidate, an approved department mapping, no unresolved ambiguity, and passing the dev-tuned retrieval gate.
+- **Response:** templated. It shows the type and department, plus one of: the exact queue; "queue assigned by location (district or region)"; or "queue assigned by the department". It also shows historical statistics labeled as historical, or "unavailable" for small samples.
 
 ### 5.8 Evaluation
 
-- **Test set:** 30 to 50 team-written messages with expected type and queue (GIVEN size).
+- **Test set:** 30 to 50 team-written messages with expected type, department, and queue (GIVEN size). The expected queue is the exact queue, or the label `assigned_by_location` or `assigned_by_department`. For this build the messages are written by Claude and labeled AI-authored, pending team review.
 - **Dev set:** 15 to 20 separate messages for prompt and gate tuning (DEFAULT).
 - Test messages are never used for tuning or as retrieval aliases.
 - **Coverage:** clear requests, paraphrases, confusions, missing context, out-of-scope requests, multiple issues, and empty input.
 - **Metrics:**
-  - type, queue, and department accuracy
+  - type and department accuracy on every message
+  - queue accuracy, scored as exact-queue match for `exact` types and as correct queue status for the other two statuses, reported separately
   - auto-route precision and coverage
   - clarification rate and triage rate
 - Report counts with percentages, and label results as a demonstration evaluation.
@@ -429,7 +434,7 @@ General checks:
 3. Each scenario yields 48 StaffingRows; arrivals equal closed plus change in open; costs sum to total_cost.
 4. The same seed and scenario produce identical workloads across plans.
 5. Forecasting never reads past December 2024.
-6. Intake routes only through reviewer-approved official mappings.
+6. Intake routes only through approved official department mappings, and names a queue only through approved queue mappings.
 7. Every condition in section 6 produces its typed outcome.
 8. **Full-dataset reconciliation**, run on every scenario and plan, not just fixtures. The hand-calculated examples establish only the behaviors they exercise; these checks cover the full run.
    - **Request flow:** for each department-month, start open + arrivals = closed + end open. Annual arrivals equal the workload total.
@@ -538,7 +543,7 @@ Hand-calculated examples (each becomes a unit test):
 - **Hiring:** two-month persistence, hire the smaller shortage, no orders after the start of October.
 - **Release:** four-month projected look-ahead requiring no added overdue events, no added projected cost, and no added end-of-horizon backlog; no notices after the start of August; at least 1 crew.
 - **Seasonal:** the deadline-based Parks rule adds crews until there are no avoidable overdue requests in the month, with no cap. Parks permanent hires never start April to October.
-- **Routing:** 90% queue share nominates a mapping for human approval.
+- **Routing:** a 90% department share nominates a department mapping and a 90% queue share nominates a queue mapping, both for human approval. Types without a queue mapping are labeled assigned by location or assigned by department.
 - **Retrieval:** TF-IDF first.
 - **Sensitivity:** coupled workloads; the frozen plan and baseline are replayed; snowstorm spike.
 
@@ -546,7 +551,7 @@ Hand-calculated examples (each becomes a unit test):
 
 - Capture the page's "Things to watch for in this data" section and its column list.
 - Confirm the 2023 and 2024 files share the same 30 columns and department codes.
-- List nominated mappings (90% or more) and exceptions (under 90%) for review and approval.
+- List nominated mappings (90% or more) and exceptions (under 90%) for review and approval. Done 2026-10-22: 86 of 163 types qualify for a single queue, covering 60% of in-scope volume. A department mapping covers 79%. This led to the two-tier rule in section 5.6.
 - Measure target classes per type and department: valid, missing, and invalid_ordering counts, and the window distribution, including long windows.
 - Check whether the 2025 file is available for the stretch holdout.
 
