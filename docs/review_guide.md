@@ -39,7 +39,7 @@ Everything below runs offline, with no API key and no network, from the reposito
 python -m pytest -q
 ```
 
-Expected: `136 passed` (about 30 seconds).
+Expected: `141 passed` (about 30 seconds).
 
 ```bash
 python scripts/run_all.py
@@ -119,7 +119,7 @@ Code paths are under `src/boston311/`. Tests are under `tests/`.
 |---|---|---|
 | Missing API key | `llm.py` `LiveModel.__init__` | `test_missing_api_key_message` |
 | Timeout, rate limit, or server error (HTTP 5xx) → bounded retries → TRIAGE | `llm.py` `TRANSIENT_ERRORS`, `LiveModel.ask`; `nodes.classify` | `test_transient_errors_retry_then_fail`, `test_real_wrapper_server_error_is_retried_as_transient`, `test_model_failure_triage` |
-| Malformed structured output → one retry → TRIAGE, including a truncated, content-filtered, or refused reply raised by the SDK | `llm.py` `MALFORMED_ERRORS`, `LiveModel.ask` | `test_malformed_output_retries_once_then_fails`, `test_real_wrapper_truncated_then_valid_recovers`, `test_real_wrapper_repeated_truncation_fails_as_malformed`, `test_real_wrapper_refusal_fails_as_malformed`, `test_real_wrapper_truncation_ends_in_triage_not_a_crash` |
+| Malformed structured output → one retry → TRIAGE. Includes a truncated, content-filtered, or refused reply, and a complete reply that is not valid JSON for the schema (pydantic `ValidationError` raised inside the SDK) | `llm.py` `MALFORMED_ERRORS`, `LiveModel.ask` | `test_malformed_output_retries_once_then_fails`, `test_real_wrapper_truncated_then_valid_recovers`, `test_real_wrapper_repeated_truncation_fails_as_malformed`, `test_real_wrapper_refusal_fails_as_malformed`, `test_real_wrapper_truncation_ends_in_triage_not_a_crash`, `test_real_wrapper_invalid_reply_then_valid_recovers`, `test_real_wrapper_repeated_invalid_reply_fails_as_malformed`, `test_corrupt_recording_is_not_retried_as_a_fresh_reply` |
 | Any other API error (bad request, bad key, unknown model, context too long) → no retry → TRIAGE | `LiveModel.ask` (`openai.APIError`) | `test_real_wrapper_other_api_error_fails_without_retry`, `test_every_langchain_openai_error_class_is_handled` |
 | Type not in candidates or catalog | `nodes.decide` | `test_type_not_in_candidates_triage` |
 | Out of scope | `nodes.decide`, `nodes.respond` | `test_out_of_scope_triage_with_explanation` |
@@ -213,7 +213,7 @@ These are ordered by how much depends on them and how easy a subtle error would 
    - A triaged item counts as wrong for department and queue accuracy.
 
 9. **`llm.py` error grouping and recording keys.**
-   - Every exception the installed OpenAI SDK and LangChain can raise must land in `TRANSIENT_ERRORS`, `MALFORMED_ERRORS`, or `openai.APIError`. The guard test lists the LangChain error classes for langchain-openai 1.7.2; re-check it after upgrading.
+   - Every exception the installed OpenAI SDK and LangChain can raise must land in `TRANSIENT_ERRORS`, `MALFORMED_ERRORS`, or `openai.APIError`. The guard test lists the LangChain error classes for langchain-openai 1.7.2; re-check it after upgrading. **It only covers LangChain's own classes:** the SDK can also raise exceptions from other libraries, such as pydantic's `ValidationError` (R1a). Those are covered by the mocked-HTTP tests, not by the guard.
    - Programming errors must still surface.
    - `recording_key` covers the settings and the schema, and `LiveModel` captures its settings once, at construction.
    - Schema identity includes class docstrings, which is why `AliasDraft` and `AliasBatch` deliberately have none.
@@ -231,7 +231,7 @@ These are ordered by how much depends on them and how easy a subtle error would 
 
 ## 7. Repairs after the 2026-10-23 review
 
-Astra's review of `d1d1c7d` is in [code_review_2026-10-23.md](code_review_2026-10-23.md). Each finding was repaired on branch `repair/astra-review`.
+Astra's review of `d1d1c7d` is in [code_review_2026-10-23.md](code_review_2026-10-23.md). Each finding was repaired on branch `repair/astra-review`. Astra's follow-up review of `01630ca`, [code_review_2026-10-23_round2.md](code_review_2026-10-23_round2.md), closed R2–R6 and found R1 partially fixed (R1a), which was then repaired the same way.
 
 Each repair followed the same steps:
 1. Write the regression test first and confirm it fails.
@@ -241,6 +241,7 @@ Each repair followed the same steps:
 | Finding | Commit | What changed | New tests |
 |---|---|---|---|
 | R1: SDK exceptions escaped the retry/TRIAGE path | `498d710` | Model errors are grouped as transient (timeouts, 5xx), malformed (truncated, filtered, refused), or `api_error`. Every group ends in `ClassifierFailure` and then TRIAGE. **Wider than reported:** HTTP 5xx and non-status API errors also escaped | 7 tests through the real ChatOpenAI and SDK with `httpx.MockTransport` |
+| R1a (round 2): SDK-raised pydantic `ValidationError` skipped the malformed retry | `fcfae5b` | `ValidationError` joins `MALFORMED_ERRORS`, caught only around the model call. A corrupt *recorded* answer is still not retried | 5 (4 failed before; the corrupt-recording guard passed before and after) |
 | R2: median shown from too few closed requests | `165daa7` | Each statistic is gated on its own sample (30), its count is stated, and the median is labeled as over closed requests. Only reply wording changes | 5 |
 | R3: terminal rules not enforced on every plan | `2114461` | `validate_department_plan` adds the terminal rules. `DepartmentPlan` is frozen with tuple fields, and scoring re-validates | 9 |
 | R4: seed and reasoning effort missing from the recording key | `1efe1d9` | The key and each record cover model, effort, seed, and schema id. All 83 recordings were migrated after verification against their v1 keys, with provenance justified from git (`scripts/migrate_recordings_v2.py`) | 4 |
