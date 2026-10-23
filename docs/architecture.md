@@ -419,6 +419,7 @@ boston311-crew-planner/
 - `case_title` mining
 - embedding retriever
 - a second "other consideration"
+- neighborhood exposure view: estimate where the simulated 2025 overdue requests fall by neighborhood. For each request type, multiply its simulated overdue count by that type's 2023 to 2024 neighborhood shares, then sum over types. This is deterministic, with no sampling. Compare the frozen plan with the baseline in each scenario, and label it request-mix exposure, not unequal treatment.
 
 ## 9. Acceptance checks with hand-calculated examples
 
