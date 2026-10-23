@@ -124,6 +124,49 @@ def test_provisional_requires_flag(catalog, monkeypatch):
 
 
 # ---------------------------------------------------------------------------
+# Historical statistics shown to residents (R2): each statistic needs its own sample
+# ---------------------------------------------------------------------------
+
+
+def stats_entry(catalog, with_target, on_time, closed, median=2.5):
+    e = copy.deepcopy(next(iter(catalog.values())))
+    e.stats = {"requests_in_scope": max(with_target, closed), "with_target": with_target, "on_time": on_time,
+               "closed": closed, "median_days_to_close": median}
+    return e
+
+
+def test_median_hidden_when_too_few_closed(catalog):
+    from boston311.catalog import historical_stats_text
+
+    text = historical_stats_text(stats_entry(catalog, with_target=75, on_time=7, closed=7))  # Parking Meter Repairs case
+    assert "9% of these requests with a target date" in text
+    assert "2.5" not in text and "median time to close: unavailable" in text.lower()
+
+
+@pytest.mark.parametrize("closed, median_shown", [(29, False), (30, True)])
+def test_median_boundary_at_min_sample(catalog, closed, median_shown):
+    from boston311.catalog import historical_stats_text
+
+    text = historical_stats_text(stats_entry(catalog, with_target=100, on_time=50, closed=closed))
+    assert ("median of 2.5 days" in text) is median_shown
+    assert "50% of these requests" in text  # the on-time statistic has its own, sufficient sample
+
+
+def test_on_time_hidden_when_too_few_with_target(catalog):
+    from boston311.catalog import historical_stats_text
+
+    text = historical_stats_text(stats_entry(catalog, with_target=29, on_time=29, closed=200))
+    assert "on-time share: unavailable" in text.lower() and "100%" not in text
+    assert "closed requests took a median of 2.5 days" in text
+
+
+def test_all_statistics_unavailable(catalog):
+    from boston311.catalog import historical_stats_text
+
+    assert "unavailable" in historical_stats_text(stats_entry(catalog, with_target=5, on_time=5, closed=5, median=None))
+
+
+# ---------------------------------------------------------------------------
 # Retrieval
 # ---------------------------------------------------------------------------
 

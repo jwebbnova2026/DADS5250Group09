@@ -277,16 +277,40 @@ def load_catalog() -> dict[str, CatalogEntry]:
 
 
 def historical_stats_text(entry: CatalogEntry) -> str:
-    """A short, clearly historical summary for the resident, or 'unavailable'."""
+    """A short, clearly historical summary for the resident.
+
+    The two statistics are computed over *different* groups of past
+    requests, so each is shown only if its own group is large enough
+    (``config.MIN_STATS_SAMPLE``, 30):
+
+    * the on-time share is over requests that had a target date;
+    * the median time to close is over requests that were closed.
+
+    A type can have many requests with a target date but very few closed
+    (for example Parking Meter Repairs: 75 and 7), so one statistic may be
+    shown while the other says "unavailable". Each statistic states how many
+    requests it is based on.
+    """
     s = entry.stats
-    if s.get("with_target", 0) < config.MIN_STATS_SAMPLE or s.get("median_days_to_close") is None:
+    with_target, closed = s.get("with_target", 0), s.get("closed", 0)
+    median = s.get("median_days_to_close")
+    on_time_ok = with_target >= config.MIN_STATS_SAMPLE
+    median_ok = closed >= config.MIN_STATS_SAMPLE and median is not None
+    if not on_time_ok and not median_ok:
         return "Historical service statistics: unavailable (too few past requests)."
-    share = s["on_time"] / s["with_target"]
-    days = s["median_days_to_close"]
-    return (
-        f"Historically (2023-2024), {share:.0%} of these requests with a target date were closed on time, "
-        f"and the median time to close was {days:.1f} days. This is past performance, not a promise."
-    )
+    parts = []
+    if on_time_ok:
+        parts.append(
+            f"{s['on_time'] / with_target:.0%} of these requests with a target date were closed on time "
+            f"(based on {with_target:,} requests)"
+        )
+    else:
+        parts.append(f"on-time share: unavailable (only {with_target} requests had a target date)")
+    if median_ok:
+        parts.append(f"closed requests took a median of {median:.1f} days to close (based on {closed:,} closed requests)")
+    else:
+        parts.append(f"median time to close: unavailable (only {closed} requests were closed)")
+    return f"Historically (2023-2024), {parts[0]}; {parts[1]}. This is past performance, not a promise."
 
 
 # ---------------------------------------------------------------------------
