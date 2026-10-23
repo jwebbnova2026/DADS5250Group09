@@ -1,0 +1,313 @@
+{
+  "created_utc": "2026-10-23T04:35:54+00:00",
+  "mode": "offline",
+  "sources": [
+    {
+      "year": 2023,
+      "resource_id": "e6013a93-1321-4f2a-bf91-8d8a02f1e62f",
+      "url": "https://data.boston.gov/dataset/8048697b-ad64-4bfc-b090-ee00169f2323/resource/e6013a93-1321-4f2a-bf91-8d8a02f1e62f/download/lagan_311_open_data_2023_rvsd3.csv",
+      "path": "data/raw/311_2023.csv",
+      "size_bytes": 184129946,
+      "md5": "beb0947323226eb7d9a6abd2207e4635",
+      "sha256": "9f647c5ddb20d161c0f04d56985eae597b367fa8d8e0ccc8ca133f68ed34212b",
+      "last_modified": "2026-09-18T01:27:26.805931",
+      "retrieved_at": "2026-10-23T03:17:44+00:00"
+    },
+    {
+      "year": 2024,
+      "resource_id": "dff4d804-5031-443a-8409-8344efd0e5c8",
+      "url": "https://data.boston.gov/dataset/8048697b-ad64-4bfc-b090-ee00169f2323/resource/dff4d804-5031-443a-8409-8344efd0e5c8/download/lagan_311_open_data_2024_rvsd3.csv",
+      "path": "data/raw/311_2024.csv",
+      "size_bytes": 182147317,
+      "md5": "99da78a9b838728d35d52658b7011a15",
+      "sha256": "a3f80f43cc03e00a87fcb26bf2c66bc9ed63dc7ee349b8d3aa803ebac288502d",
+      "last_modified": "2026-09-18T01:27:27.630670",
+      "retrieved_at": "2026-10-23T03:17:52+00:00"
+    }
+  ],
+  "data_reconciliation": {
+    "page_check_2024": {
+      "PWDx": {
+        "page": 157610,
+        "ours": 157610,
+        "match": true
+      },
+      "BTDT": {
+        "page": 81447,
+        "ours": 81447,
+        "match": true
+      },
+      "PARK": {
+        "page": 18736,
+        "ours": 18736,
+        "match": true
+      },
+      "ISD": {
+        "page": 18624,
+        "ours": 18624,
+        "match": true
+      }
+    },
+    "by_year": {
+      "2023": {
+        "rows_read": 307791,
+        "duplicates_removed": 0,
+        "unparseable_open_dt_removed": 0,
+        "opened_outside_file_year_removed": 0,
+        "rows_after_cleaning": 307791,
+        "out_of_scope_departments_excluded": 25545,
+        "in_scope_rows": 282246,
+        "in_scope_by_department": {
+          "PWDx": 171268,
+          "BTDT": 75314,
+          "PARK": 17541,
+          "ISD": 18123
+        },
+        "target_classes": {
+          "valid": 231524,
+          "missing": 50722,
+          "invalid_ordering": 0
+        }
+      },
+      "2024": {
+        "rows_read": 306756,
+        "duplicates_removed": 0,
+        "unparseable_open_dt_removed": 0,
+        "opened_outside_file_year_removed": 0,
+        "rows_after_cleaning": 306756,
+        "out_of_scope_departments_excluded": 30339,
+        "in_scope_rows": 276417,
+        "in_scope_by_department": {
+          "PWDx": 157610,
+          "BTDT": 81447,
+          "PARK": 18736,
+          "ISD": 18624
+        },
+        "target_classes": {
+          "valid": 244996,
+          "missing": 31421,
+          "invalid_ordering": 0
+        }
+      }
+    }
+  },
+  "training_cutoff": "2024-12-31",
+  "seeds": {
+    "planning": 20250101,
+    "evaluation": 20251231
+  },
+  "model": {
+    "provider": "openai",
+    "id": "gpt-6.1-sol",
+    "reasoning_effort": "low",
+    "seed": 5250,
+    "prompt_version": "classify-v2",
+    "alias_prompt_version": "aliases-v2",
+    "catalog_version": "catalog-v2"
+  },
+  "parameters": {
+    "ACCEPT_PROVISIONAL_APPROVALS": true,
+    "ALIAS_PROMPT_VERSION": "aliases-v2",
+    "CATALOG_VERSION": "catalog-v2",
+    "CKAN_API_BASE": "https://data.boston.gov/api/3/action",
+    "DATASET_ID": "311-service-requests",
+    "DATA_YEARS": [
+      2023,
+      2024
+    ],
+    "DEPARTMENTS": {
+      "PWDx": {
+        "code": "PWDx",
+        "name": "Public Works",
+        "capacity_per_crew_day": 12,
+        "annual_cost": 130000,
+        "start_crews": 50,
+        "requests_2024": 157610,
+        "on_time_2024": 0.9
+      },
+      "BTDT": {
+        "code": "BTDT",
+        "name": "Transportation",
+        "capacity_per_crew_day": 15,
+        "annual_cost": 110000,
+        "start_crews": 18,
+        "requests_2024": 81447,
+        "on_time_2024": 0.5
+      },
+      "PARK": {
+        "code": "PARK",
+        "name": "Parks & Recreation",
+        "capacity_per_crew_day": 6,
+        "annual_cost": 120000,
+        "start_crews": 10,
+        "requests_2024": 18736,
+        "on_time_2024": 0.93
+      },
+      "ISD": {
+        "code": "ISD",
+        "name": "Inspectional Services",
+        "capacity_per_crew_day": 4,
+        "annual_cost": 140000,
+        "start_crews": 16,
+        "requests_2024": 18624,
+        "on_time_2024": 0.72
+      }
+    },
+    "DEPT_CODES": [
+      "PWDx",
+      "BTDT",
+      "PARK",
+      "ISD"
+    ],
+    "EVALUATION_SEED": 20251231,
+    "HIRE_LEAD_MONTHS": 1,
+    "LAST_HIRE_ORDER_MONTH": 10,
+    "LAST_RELEASE_NOTICE_MONTH": 8,
+    "LLM_MAX_MALFORMED_RETRIES": 1,
+    "LLM_MAX_TRANSIENT_RETRIES": 2,
+    "LLM_MODEL": "gpt-6.1-sol",
+    "LLM_PROVIDER": "openai",
+    "LLM_REASONING_EFFORT": "low",
+    "LLM_SEED": 5250,
+    "LLM_TIMEOUT_SECONDS": 60,
+    "LOCATION_QUEUE_SHARE": 0.5,
+    "LOCATION_QUEUE_WORDS": [
+      "District",
+      "Region"
+    ],
+    "LONG_OVERDUE_DAYS": 30,
+    "LONG_OVERDUE_PENALTY": 100,
+    "MAPPING_SHARE_THRESHOLD": 0.9,
+    "MIN_ALL_REQUESTS_SHARE": 0.5,
+    "MIN_REGULAR_CREWS": 1,
+    "MIN_STATS_SAMPLE": 30,
+    "MIN_WINDOW_SAMPLES": 50,
+    "MODES": [
+      "live",
+      "offline"
+    ],
+    "NEIGHBORHOOD_ALIASES": {
+      "Allston": "Allston / Brighton",
+      "Brighton": "Allston / Brighton",
+      "South Boston": "South Boston / South Boston Waterfront",
+      "Mattapan": "Greater Mattapan",
+      "Boston": "Unspecified"
+    },
+    "OVERDUE_PENALTY": 20,
+    "PAID_TRAINING": true,
+    "PARKS_BLOCK_IN_SEASON_PERMANENT_HIRES": true,
+    "PLANNING_SEED": 20250101,
+    "PLAN_YEAR": 2025,
+    "PROMPT_VERSION": "classify-v2",
+    "RELEASE_LOOKAHEAD_MONTHS": 4,
+    "RELEASE_NOTICE_MONTHS": 1,
+    "REQUIRED_COLUMNS": [
+      "case_enquiry_id",
+      "open_dt",
+      "sla_target_dt",
+      "closed_dt",
+      "type",
+      "queue",
+      "department",
+      "case_title",
+      "neighborhood",
+      "source"
+    ],
+    "RESOURCE_IDS": {
+      "2023": "e6013a93-1321-4f2a-bf91-8d8a02f1e62f",
+      "2024": "dff4d804-5031-443a-8409-8344efd0e5c8"
+    },
+    "RETRIEVAL_GATE_MIN_SCORE": 0.15,
+    "RETRIEVAL_TOP_K": 8,
+    "ROUTING_EXCLUDED_DEPARTMENTS": [
+      "INFO"
+    ],
+    "SCENARIOS": [
+      "base",
+      "plus20",
+      "minus20",
+      "spike"
+    ],
+    "SCENARIO_FACTORS": {
+      "plus20": "6/5",
+      "minus20": "4/5"
+    },
+    "SEASONAL_COST_MULTIPLIER": 1.3,
+    "SEASONAL_DEPT": "PARK",
+    "SEASONAL_MONTHS": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "SERVICE_DAYS_PER_MONTH": 21,
+    "SEVERANCE_FRACTION": 0.25,
+    "SPIKE_DATES": [
+      "2025-02-10",
+      "2025-02-11",
+      "2025-02-12"
+    ],
+    "SPIKE_DEPT": "PWDx",
+    "SPIKE_MULTIPLIER": 3,
+    "TRAINING_CUTOFF": "2024-12-31",
+    "UNSPECIFIED_NEIGHBORHOOD": "Unspecified"
+  },
+  "inputs": {
+    "data/processed/monthly_demand.csv": "11251fed098b92a9aa41ca6da34570f3c15acdd5b5e002db5bfb31848931b682",
+    "data/processed/neighborhood_stats.csv": "3fd729dfbfed6125c1a6e4d80ac1558f935188818d90c22bbe3226ee588416bd",
+    "data/processed/neighborhood_type_stats.csv": "17d586afe4636ca20ced5f32258bc86bd759ad9dca97235fdb1f01f7e539433f",
+    "data/processed/target_class_counts.csv": "2f3771fad34fedb269a48de30e71220c6c8fec8f64359f2cc8b4674327547778",
+    "data/processed/type_month_counts.csv": "6fc0cb499382ce897f3fb0516da2c7eb4f4c192f2a9f408b272d79e0d90ab17a",
+    "data/processed/type_queue_counts.csv": "b53536dfa63a44ad118c80a1ef2151c226303623a07534939a70316465d2d2dd",
+    "data/processed/type_service_stats.csv": "9d07845ee2c10339690eaac2a639ddf8f21c331618377a54e810b251c6aa406b",
+    "data/processed/type_titles.csv": "6991d00bbf89332887f23d7edcd934e2adc80bf3ec924e4795752964ae7f2fcc",
+    "data/processed/types.csv": "69707f9b3654da331d2a1e4b15d394b4763bd4ebe312d9616b5ab6f793e89586",
+    "data/processed/window_counts.csv": "d39ab241a3f4f09ee129bbb43bbea0fbc299cbbbca6167393cd7b33b9f0a076f",
+    "data/processed/reconciliation.json": "02ea36b96e458b39fed733132e49fd6ef04cc9fdc3291b45fc35d6e3225fb667",
+    "data/catalog/catalog.json": "160b1965c7a521d9e35dc7941760ba7dcb79b094b88522d10acfa0884092ba87",
+    "data/catalog/mapping_review.csv": "778d6a66b39e20043861da716f295dfc55baddb3045ad1e427c9ed2077d6f267",
+    "data/eval/dev.jsonl": "bae2f4e48f49790fbb01f0dddd0efe09dd3eab9932e02f71f3e67e77ef75cfe1",
+    "data/eval/test.jsonl": "372b9daa4780f170b90712d433a2a3626df31da6fec62614bc1330e6ffefdad4",
+    "prompts/aliases_system.txt": "bf9e6043dd80af8bc35641d9378d05cb04535f5705c787bdce191e7cd1c0354f",
+    "prompts/classify_system.txt": "5f8f0f5821f32a91e2aba611d77363ce75493843bb0d4bd96a358d3bf73ad56b",
+    "prompts/classify_user.txt": "8cc0afdfa93a7067143928f9cee6e76396dde4d898c9764891fb0e88c416b4dc",
+    "data/demo/recordings.jsonl": "552ffe693167458b73697dff0800bb58ccd3e7e66b6418664b276ea671152e6f"
+  },
+  "environment": {
+    "python": "3.12.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "pandas": "3.1.0",
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "pydantic": "2.14.1",
+      "langchain": "1.4.7",
+      "langchain-core": "1.7.0",
+      "langchain-openai": "1.7.2",
+      "langgraph": "1.2.16",
+      "openai": "3.37.0"
+    },
+    "git_commit": "58c311a4377f7d8e5ce3242476524ff82f59edba-dirty"
+  },
+  "outputs": [
+    "outputs/forecast_2025.csv",
+    "outputs/forecast_backtest.csv",
+    "outputs/staffing_plan.csv",
+    "outputs/staffing_plan_log.txt",
+    "outputs/staffing_rows.csv",
+    "outputs/scenario_summary.csv",
+    "outputs/intake_dev_results.csv",
+    "outputs/intake_test_results.csv",
+    "outputs/intake_metrics.csv",
+    "outputs/retrieval_recall_dev.csv",
+    "outputs/equity_neighborhoods.csv",
+    "outputs/equity_summary.csv",
+    "outputs/figures/forecast_2025.png",
+    "outputs/figures/staffing_plan.png",
+    "outputs/figures/scenario_costs.png"
+  ],
+  "reconciliation": "all checks passed for every plan and scenario"
+}

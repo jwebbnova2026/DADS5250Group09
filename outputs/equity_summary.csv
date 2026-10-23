@@ -1,0 +1,5 @@
+department,neighborhoods,raw_on_time_min,raw_on_time_max,largest_negative_gap,largest_positive_gap
+PWDx,17,0.749,0.908,Downtown / Financial District (-2.2 pts),East Boston (+4.4 pts)
+BTDT,17,0.442,0.676,West Roxbury (-13.3 pts),South Boston / South Boston Waterfront (+10.8 pts)
+PARK,17,0.872,0.95,Dorchester (-1.3 pts),Beacon Hill (+3.8 pts)
+ISD,17,0.652,0.792,Charlestown (-4.1 pts),South Boston / South Boston Waterfront (+2.7 pts)

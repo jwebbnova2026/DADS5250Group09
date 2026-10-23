@@ -1,0 +1,5 @@
+department,forecast_total,actual_total,mape_pct,annual_bias_pct
+PWDx,171268,157610,13.6,8.7
+BTDT,75314,81447,7.6,-7.5
+PARK,17541,18736,17.7,-6.4
+ISD,18123,18624,13.3,-2.7

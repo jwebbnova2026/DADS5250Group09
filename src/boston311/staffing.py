@@ -578,6 +578,48 @@ def year_end_report(result: SimResult, dept_plan: DepartmentPlan, costs_accrued:
 
 
 # ---------------------------------------------------------------------------
+# Summaries for the report
+# ---------------------------------------------------------------------------
+
+
+def summarize(rows: pd.DataFrame, year_ends: list[YearEnd]) -> pd.DataFrame:
+    """Annual totals per department for one plan and scenario, plus an ALL row.
+
+    Columns: plan, scenario, department, staff_cost (regular + seasonal +
+    severance), penalty_cost, total_cost, overdue_events,
+    long_overdue_events, on_time_rate (share of 2025-due requests closed by
+    their target day), open_dec31.
+    """
+    ye = {y.department: y for y in year_ends}
+    out = []
+    for dept, g in rows.groupby("department", sort=False):
+        out.append(
+            {
+                "plan": g["plan"].iloc[0],
+                "scenario": g["scenario"].iloc[0],
+                "department": dept,
+                "staff_cost": g[["regular_cost", "seasonal_cost", "severance_cost"]].to_numpy().sum(),
+                "penalty_cost": g[["overdue_penalty", "long_overdue_penalty"]].to_numpy().sum(),
+                "total_cost": g["total_cost"].sum(),
+                "overdue_events": int(g["overdue_events"].sum()),
+                "long_overdue_events": int(g["long_overdue_events"].sum()),
+                "due_in_2025": ye[dept].due_in_2025,
+                "on_time_rate": ye[dept].on_time_rate,
+                "open_dec31": int(g.loc[g["month"] == 12, "open_end"].iloc[0]),
+            }
+        )
+    df = pd.DataFrame(out)
+    total = {
+        "plan": df["plan"].iloc[0],
+        "scenario": df["scenario"].iloc[0],
+        "department": "ALL",
+        **{c: df[c].sum() for c in ["staff_cost", "penalty_cost", "total_cost", "overdue_events", "long_overdue_events", "due_in_2025", "open_dec31"]},
+    }
+    total["on_time_rate"] = float((df["on_time_rate"] * df["due_in_2025"]).sum() / df["due_in_2025"].sum())
+    return pd.concat([df, pd.DataFrame([total])], ignore_index=True)
+
+
+# ---------------------------------------------------------------------------
 # Full-dataset reconciliation (spec section 9, check 8)
 # ---------------------------------------------------------------------------
 

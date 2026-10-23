@@ -22,6 +22,26 @@ These were checked directly in the data and need no spec change.
   - CE Collection and Major System Failure have no meaning documented in the data. Their wording was reduced to neutral text rather than invented.
 - **Test and dev sets:** written by Claude, labeled AI-authored, before any tuning, and never used as aliases.
 
+## Implementation notes for reviewers
+
+These are choices made where the spec was silent. None changes a GIVEN rule or a staffing decision rule.
+
+- **Model:** `gpt-6.1-sol` rejects any temperature but the default, so it runs at low reasoning effort with `seed=5250`. Exact reproducibility comes from offline replay of `data/demo/recordings.jsonl`. Recording keys include the model, the prompt and catalog versions, and the exact input, so a stale recording is never replayed.
+- **Tuning, dev set only:**
+  - The alias prompt moved to v2 after dev recall missed everyday synonyms ("lamp post", "recliner").
+  - The classify prompt moved to v2, adding rules for near-duplicate types and for not re-asking a location.
+  - The retrieval gate was set to 0.15. The lowest correct dev route scored 0.18 and out-of-scope messages about 0.10.
+  - The test set was run once, after tuning.
+- **Penalty events in projections:** the seasonal rule and the release check count both $20 and $100 events.
+- **Arrivals:**
+  - Within one day, requests queue in type-ID order.
+  - Scenario extras queue behind that day's base requests.
+  - The snowstorm adds two extra requests per base request in each Public Works type-day cell on February 10 to 12, so each cell ends at exactly 3x.
+- **Month-end inventory:** `open_overdue_end` (past target, under 30 days) and `open_long_overdue_end` (30+ days) are disjoint. Together with not-yet-due and no-target they partition `open_end`.
+- **Neighborhoods:** for the equity analysis only, "Allston", "Brighton", "South Boston" and "Mattapan" are merged into their combined labels, and blank or citywide "Boston" becomes "Unspecified" (`config.NEIGHBORHOOD_ALIASES`).
+- **Added module:** `src/boston311/equity.py`, for deliverable 6, which the spec's layout did not list. `scripts/` holds `build_data.py`, `build_catalog.py`, `build_eval_sets.py`, and `run_all.py`.
+- **Not used:** the GenAI_Agents reference notebooks were not consulted or copied in this build.
+
 ## Spec changes
 
 | Date | Change | Why | Decided by |
