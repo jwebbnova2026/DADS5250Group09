@@ -11,6 +11,7 @@ approved official mappings).
 from __future__ import annotations
 
 import copy
+import json
 
 import httpx
 import openai
@@ -292,6 +293,116 @@ def test_live_answers_are_recorded_and_replayed_offline(tmp_path):
     with pytest.raises(ClassifierFailure) as exc:
         OfflineModel(store).ask("classify", "sys", "a different input", ClassificationProposal)
     assert exc.value.kind == "no_recording"
+
+
+# --- Through the REAL LangChain/OpenAI wrapper, with fake HTTP responses (R1) ---
+# These tests send requests through the installed ChatOpenAI and OpenAI SDK, so
+# they see the exceptions the SDK really raises. httpx.MockTransport answers
+# every request locally: no network, no API key.
+
+VALID_PROPOSAL = {
+    "type_id": "T082", "ambiguous": False, "missing_detail": None, "clarifying_question": None,
+    "out_of_scope": False, "multiple_issues": False, "evidence_ids": ["T082"], "reason": "test",
+}
+
+
+def completion(content: str, finish_reason: str = "stop") -> httpx.Response:
+    """A well-formed HTTP 200 chat-completion envelope."""
+    return httpx.Response(200, json={
+        "id": "test", "object": "chat.completion", "created": 0, "model": config.LLM_MODEL,
+        "choices": [{"index": 0, "finish_reason": finish_reason, "message": {"role": "assistant", "content": content}}],
+        "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2},
+    })
+
+
+TRUNCATED = lambda: completion('{"type_id": "T08', finish_reason="length")  # noqa: E731
+VALID = lambda: completion(json.dumps(VALID_PROPOSAL))  # noqa: E731
+SERVER_ERROR = lambda: httpx.Response(500, json={"error": {"message": "server error"}})  # noqa: E731
+BAD_REQUEST = lambda: httpx.Response(400, json={"error": {"message": "bad request"}})  # noqa: E731
+
+
+def mocked_live_model(tmp_path, responses):
+    """A LiveModel whose ChatOpenAI answers from ``responses`` in order; counts HTTP calls."""
+    from langchain_openai import ChatOpenAI
+
+    queue = list(responses)
+    calls = {"n": 0}
+
+    def handler(request):
+        calls["n"] += 1
+        return queue.pop(0)()
+
+    chat = ChatOpenAI(
+        model=config.LLM_MODEL, api_key="test-key-not-real", max_retries=0,
+        http_client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    return LiveModel(RecordingStore(tmp_path / "r.jsonl"), llm=chat), calls
+
+
+@pytest.fixture
+def no_backoff(monkeypatch):
+    monkeypatch.setattr(llm.time, "sleep", lambda s: None)
+
+
+def test_real_wrapper_truncated_then_valid_recovers(tmp_path):
+    model, calls = mocked_live_model(tmp_path, [TRUNCATED, VALID])
+    out = model.ask("classify", "sys", "user", ClassificationProposal)
+    assert out.type_id == "T082" and calls["n"] == 2  # one malformed retry
+
+
+def test_real_wrapper_repeated_truncation_fails_as_malformed(tmp_path):
+    model, calls = mocked_live_model(tmp_path, [TRUNCATED, TRUNCATED])
+    with pytest.raises(ClassifierFailure) as exc:
+        model.ask("classify", "sys", "user", ClassificationProposal)
+    assert exc.value.kind == "malformed" and calls["n"] == 1 + config.LLM_MAX_MALFORMED_RETRIES
+
+
+def test_real_wrapper_server_error_is_retried_as_transient(tmp_path, no_backoff):
+    model, calls = mocked_live_model(tmp_path, [SERVER_ERROR, VALID])
+    assert model.ask("classify", "sys", "user", ClassificationProposal).type_id == "T082"
+    assert calls["n"] == 2
+    model, calls = mocked_live_model(tmp_path, [SERVER_ERROR] * (config.LLM_MAX_TRANSIENT_RETRIES + 1))
+    with pytest.raises(ClassifierFailure) as exc:
+        model.ask("classify", "sys", "other user", ClassificationProposal)
+    assert exc.value.kind == "transient" and calls["n"] == config.LLM_MAX_TRANSIENT_RETRIES + 1
+
+
+def test_real_wrapper_other_api_error_fails_without_retry(tmp_path):
+    model, calls = mocked_live_model(tmp_path, [BAD_REQUEST])
+    with pytest.raises(ClassifierFailure) as exc:
+        model.ask("classify", "sys", "user", ClassificationProposal)
+    assert exc.value.kind == "api_error" and calls["n"] == 1
+
+
+def test_real_wrapper_refusal_fails_as_malformed(tmp_path):
+    refusal = lambda: httpx.Response(200, json={  # noqa: E731
+        "id": "test", "object": "chat.completion", "created": 0, "model": config.LLM_MODEL,
+        "choices": [{"index": 0, "finish_reason": "stop",
+                     "message": {"role": "assistant", "content": None, "refusal": "I can't help with that."}}],
+        "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2},
+    })
+    model, calls = mocked_live_model(tmp_path, [refusal, refusal])
+    with pytest.raises(ClassifierFailure) as exc:
+        model.ask("classify", "sys", "user", ClassificationProposal)
+    assert exc.value.kind == "malformed" and calls["n"] == 2
+
+
+def test_every_langchain_openai_error_class_is_handled():
+    """Guard against escaping exceptions: each error class the installed
+    langchain-openai can raise must fall into one of LiveModel's groups."""
+    from langchain_openai.chat_models import base
+
+    handled = llm.TRANSIENT_ERRORS + llm.MALFORMED_ERRORS + (openai.APIError,)
+    for name in ("OpenAIAPIError", "OpenAIAuthenticationError", "OpenAIConnectionError", "OpenAIContextOverflowError",
+                 "OpenAIAPIContextOverflowError", "OpenAIInvalidRequestError", "OpenAIModelNotFoundError",
+                 "OpenAIPermissionDeniedError", "OpenAIRateLimitError", "OpenAIRefusalError", "OpenAITimeoutError"):
+        assert issubclass(getattr(base, name), handled), name
+
+
+def test_real_wrapper_truncation_ends_in_triage_not_a_crash(tmp_path, catalog, retriever):
+    model, _ = mocked_live_model(tmp_path, [TRUNCATED, TRUNCATED])
+    r = assistant(catalog, retriever, model).run("A car is blocking my driveway")
+    assert r.decision is Decision.TRIAGE and "malformed" in r.triage_reason
 
 
 def test_missing_api_key_message(monkeypatch):

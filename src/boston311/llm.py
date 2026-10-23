@@ -22,11 +22,17 @@ Failure handling (spec 6)
 -------------------------
 * Missing API key in live mode: :class:`MissingAPIKeyError` with a clear
   message that points to offline mode.
-* Timeouts, rate limits, connection errors: retried up to
-  ``config.LLM_MAX_TRANSIENT_RETRIES`` times, then :class:`ClassifierFailure`.
+* Timeouts, rate limits, connection errors, server errors (HTTP 5xx):
+  retried up to ``config.LLM_MAX_TRANSIENT_RETRIES`` times, then
+  :class:`ClassifierFailure` ("transient").
 * Malformed structured output: retried ``config.LLM_MAX_MALFORMED_RETRIES``
-  time, then :class:`ClassifierFailure`.
+  time, then :class:`ClassifierFailure` ("malformed"). This covers a reply the
+  parser rejects *and* the SDK exceptions raised before any parser result
+  exists (truncated reply, content filter, refusal).
+* Any other API error (bad request, bad key, unknown model, context too
+  long): no retry, :class:`ClassifierFailure` ("api_error").
 The intake agent turns every :class:`ClassifierFailure` into a TRIAGE.
+Programming errors are deliberately *not* caught, so they stay visible.
 """
 
 from __future__ import annotations
@@ -38,7 +44,9 @@ import time
 from dataclasses import dataclass
 from typing import Protocol, TypeVar
 
+import openai  # the SDK's exception classes (LangChain's errors subclass them)
 from dotenv import load_dotenv
+from langchain_openai.chat_models.base import OpenAIRefusalError
 from pydantic import BaseModel, ValidationError
 
 from boston311 import config
@@ -46,6 +54,24 @@ from boston311.schemas import ClassificationProposal
 
 RECORDINGS_PATH = config.DEMO_DIR / "recordings.jsonl"
 T = TypeVar("T", bound=BaseModel)
+
+# Exceptions from the model API, grouped by how LiveModel.ask handles them.
+# LangChain wraps SDK errors in its own classes (for example OpenAIAPIError for
+# an HTTP 500), but those subclass these OpenAI SDK classes, so catching the SDK
+# class catches both. Checked against langchain-openai 1.7.2 / openai 3.37.0.
+TRANSIENT_ERRORS: tuple[type[Exception], ...] = (
+    openai.APITimeoutError,
+    openai.RateLimitError,
+    openai.APIConnectionError,
+    openai.InternalServerError,  # HTTP 5xx
+)
+MALFORMED_ERRORS: tuple[type[Exception], ...] = (
+    openai.LengthFinishReasonError,  # reply cut off at the length limit: truncated JSON
+    openai.ContentFilterFinishReasonError,  # reply stopped by the content filter
+    OpenAIRefusalError,  # the model refused to answer in the schema
+)
+# Anything else from the API (400 bad request, 401 bad key, 404 unknown model,
+# context too long, ...) is caught as openai.APIError: retrying cannot help.
 
 
 class MissingAPIKeyError(RuntimeError):
@@ -56,7 +82,7 @@ class ClassifierFailure(RuntimeError):
     """The model could not produce a usable answer. ``kind`` says why."""
 
     def __init__(self, kind: str, detail: str = ""):
-        self.kind = kind  # "transient", "malformed", "no_recording"
+        self.kind = kind  # "transient", "malformed", "api_error", "no_recording"
         super().__init__(f"{kind}: {detail}" if detail else kind)
 
 
@@ -180,21 +206,39 @@ class LiveModel:
         if rec is not None:
             return schema.model_validate(rec["output"])
 
-        import openai  # the SDK's exception classes
-
         # json_schema + strict: OpenAI guarantees the reply matches the schema.
         structured = self.llm.with_structured_output(schema, method="json_schema", strict=True, include_raw=True)
         messages = [("system", system), ("human", user)]
         transient_left, malformed_left = config.LLM_MAX_TRANSIENT_RETRIES, config.LLM_MAX_MALFORMED_RETRIES
         while True:
+            # Every failure the model API can produce ends in a ClassifierFailure
+            # (which the agent turns into TRIAGE), sorted into three kinds. Only
+            # the specific SDK exception classes are caught, so a genuine
+            # programming error still surfaces instead of being hidden.
             try:
                 out = structured.invoke(messages)
-            except (openai.APITimeoutError, openai.RateLimitError, openai.APIConnectionError) as exc:
+            except TRANSIENT_ERRORS as exc:
+                # Timeouts, rate limits, lost connections, and server errors
+                # (HTTP 5xx): wait and retry a bounded number of times.
                 if transient_left == 0:
                     raise ClassifierFailure("transient", type(exc).__name__) from exc
                 transient_left -= 1
                 time.sleep(2 * (config.LLM_MAX_TRANSIENT_RETRIES - transient_left))  # 2 s, then 4 s
                 continue
+            except MALFORMED_ERRORS as exc:
+                # The SDK raises these *instead of* returning a parser result,
+                # e.g. when the reply was cut off at the length limit (truncated
+                # JSON). They are malformed output: one retry, then failure.
+                if malformed_left == 0:
+                    raise ClassifierFailure("malformed", type(exc).__name__) from exc
+                malformed_left -= 1
+                continue
+            except openai.APIError as exc:
+                # Any other API error (400 bad request, 401 bad key, 404
+                # unknown model, context too long, ...): retrying cannot help,
+                # so fail at once.
+                status = getattr(exc, "status_code", None)
+                raise ClassifierFailure("api_error", type(exc).__name__ + (f" (HTTP {status})" if status else "")) from exc
             parsed = out.get("parsed")
             if parsed is None or out.get("parsing_error") is not None:
                 if malformed_left == 0:
