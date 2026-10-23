@@ -40,6 +40,32 @@ def test_manifest_records_inputs_seeds_and_model():
     assert all(s["md5"] for s in m["sources"])
 
 
+def test_notebook_manifest_cell_writes_a_manifest(tmp_path, monkeypatch):
+    """R6: running the notebook's manifest cell saves one complete JSON manifest.
+
+    Executes the real cell source from demo.ipynb (redirected to a temporary
+    outputs folder) instead of re-running the whole notebook.
+    """
+    import nbformat
+
+    monkeypatch.setattr(config, "OUTPUTS_DIR", tmp_path)
+    nb = nbformat.read(config.REPO_ROOT / "demo.ipynb", as_version=4)
+    cell = next(c.source for c in nb.cells if c.cell_type == "code" and "manifest.build_manifest" in c.source)
+    exec(cell, {"MODE": "offline", "manifest": manifest, "config": config})
+    written = list((tmp_path / "manifests").glob("*.json"))
+    assert len(written) == 1
+    m = json.loads(written[0].read_text(encoding="utf-8"))
+    assert m["mode"] == "offline" and m["run"] == "demo.ipynb"
+    assert m["inputs"] and m["environment"]["packages"] and m["parameters"]
+
+
+def test_write_manifest_never_overwrites(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "OUTPUTS_DIR", tmp_path)
+    m = manifest.build_manifest("offline", outputs=[])
+    first, second = manifest.write_manifest(m), manifest.write_manifest(m)  # same timestamp
+    assert first != second and first.exists() and second.exists()
+
+
 @pytest.mark.parametrize("year", config.DATA_YEARS)
 def test_sources_are_pinned(year):
     m = manifest.build_manifest("offline", outputs=[])

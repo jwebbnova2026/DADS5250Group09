@@ -88,7 +88,9 @@ def main() -> None:
     written += make_figures(fc, plan, summary, figs)
 
     # 7. Manifest.
-    m = manifest.build_manifest(args.mode, written, {"reconciliation": "all checks passed for every plan and scenario"})
+    m = manifest.build_manifest(
+        args.mode, written, {"run": "scripts/run_all.py", "reconciliation": "all checks passed for every plan and scenario"}
+    )
     path = manifest.write_manifest(m)
     print(summary[summary["department"] == "ALL"].to_string(index=False))
     print(f"wrote {len(written)} outputs and {path.relative_to(config.REPO_ROOT)}")

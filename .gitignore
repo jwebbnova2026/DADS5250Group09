@@ -23,3 +23,7 @@ data/raw/*
 Thumbs.db
 .vscode/
 .idea/
+
+# Run manifests: one per run, kept local. Only the reference manifest for the
+# committed outputs (outputs/manifests/reference_run_all.json) is tracked.
+outputs/manifests/run_*.json

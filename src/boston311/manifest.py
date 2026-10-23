@@ -114,10 +114,21 @@ def build_manifest(mode: str, outputs: list[Path], extra: dict | None = None) ->
 
 
 def write_manifest(manifest: dict) -> Path:
-    """Write a manifest to outputs/manifests/ and return its path."""
+    """Write a manifest to outputs/manifests/ and return its path.
+
+    The file name comes from the creation time. If two runs start in the
+    same second, a counter is added, so a manifest is never overwritten (one
+    manifest per run, spec 5.9). Run manifests are gitignored; only
+    ``outputs/manifests/reference_run_all.json``, describing the committed
+    outputs, is kept in git.
+    """
     folder = config.OUTPUTS_DIR / "manifests"
     folder.mkdir(parents=True, exist_ok=True)
     stamp = manifest["created_utc"].replace(":", "").replace("-", "").replace("+0000", "Z")
     path = folder / f"run_{stamp}.json"
+    n = 1
+    while path.exists():
+        n += 1
+        path = folder / f"run_{stamp}_{n}.json"
     path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
     return path
