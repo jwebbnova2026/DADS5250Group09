@@ -194,6 +194,21 @@ def test_clarify_once_then_route_without_rerunning_the_model(catalog, retriever)
     assert turn.result.decision is Decision.ROUTE and turn.result.clarifications_used == 1
 
 
+def test_reused_thread_id_starts_clean(catalog, retriever):
+    """A second message on the same thread ID must not inherit the first one's
+    used clarification (it would otherwise triage instead of asking)."""
+    light = type_id_of(catalog, "Street Light Outages")
+    model = FakeModel(
+        proposal(None, ambiguous=True), proposal(light),  # first message: ask, then route
+        proposal(None, ambiguous=True),  # second message, same thread: must ask again
+    )
+    a = assistant(catalog, retriever, model)
+    first = a.run("There's a light out.", clarification_answer="A street light", thread_id="same")
+    assert first.decision is Decision.ROUTE
+    second = a.submit("There's a light out.", thread_id="same")
+    assert second.question is not None
+
+
 def test_second_ambiguity_triage(catalog, retriever):
     model = FakeModel(proposal(None, ambiguous=True), proposal(None, ambiguous=True))
     r = assistant(catalog, retriever, model).run("Problem.", clarification_answer="Not sure.")

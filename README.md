@@ -48,7 +48,7 @@ python -m ipykernel install --sys-prefix --name boston311 --display-name "Python
   python scripts/run_all.py
   ```
 
-* **Run the tests (100 tests, no network or key):**
+* **Run the tests (about 100, no network or key):**
 
   ```bash
   python -m pytest -q

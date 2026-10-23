@@ -64,10 +64,30 @@ class Nodes:
     # -- nodes ---------------------------------------------------------------
 
     def check_input(self, state: IntakeState) -> IntakeState:
-        """Reject empty or whitespace-only input before any API call."""
+        """Start a new message: reset per-message state, reject empty input.
+
+        This node runs only when a *new* message is submitted (never when the
+        graph resumes after a clarification). LangGraph keeps a thread's old
+        state in the checkpointer, so if a thread ID is reused, values from the
+        previous message (such as "clarification already used") would leak
+        into this one. Resetting them here makes every message start clean.
+        """
+        fresh: IntakeState = {
+            "clarification": None,
+            "clarifications_used": 0,
+            "candidates": [],
+            "top_score": 0.0,
+            "proposal": None,
+            "failure": None,
+            "decision": None,
+            "question": None,
+            "triage_reason": None,
+            "result": None,
+        }
         if not state.get("message", "").strip():
-            return {"decision": Decision.REJECTED.value, "triage_reason": "empty input"}
-        return {"clarifications_used": state.get("clarifications_used", 0)}
+            # Reject before any retrieval or API call (spec 6).
+            return {**fresh, "decision": Decision.REJECTED.value, "triage_reason": "empty input"}
+        return fresh
 
     def retrieve(self, state: IntakeState) -> IntakeState:
         """Find candidate types for the message (plus any clarification answer)."""
