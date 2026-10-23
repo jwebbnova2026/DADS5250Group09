@@ -1,0 +1,4 @@
+# Pinned dependency lock for boston311-crew-planner.
+# Not yet generated. After installing into a clean environment, regenerate with:
+#   pip install -e ".[dev]"
+#   pip freeze --exclude-editable > requirements.lock

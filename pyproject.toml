@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boston311-crew-planner"
+version = "0.1.0"
+description = "2025 monthly crew staffing plan and GenAI intake assistant for four Boston 311 departments (DADS5250 Module 7 Hackathon)."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "pydantic>=2",
+    "python-dotenv",
+    "langchain",
+    "langchain-core",
+    "langchain-openai",
+    "langgraph",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ipykernel",
+    "nbconvert",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
