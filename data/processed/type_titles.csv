@@ -1,0 +1,420 @@
+type_id,case_title,requests
+T001,Abandoned Bicycle,2203
+T001,Abandoned Bicycle: Scooter/Moped,3
+T002,Abandoned Building,158
+T003,Abandoned Vehicles,9242
+T003,Abandoned Vehicles: Scooter/Moped,34
+T003,Abandoned Vehicles: Motorcycle,16
+T003,Abandoned Vehicles: Multiple Vehicles,11
+T003,Abandoned Vehicles: RV/Trailer,7
+T003,Abandoned Vehicles: Moped/Scooter,3
+T004,Animal Generic Request,12
+T004,Pick up Dead Animal,4
+T005,General Request,13
+T007,Bed Bugs,71
+T007,SCH4/25Bed Bugs,3
+T007,SCH7/18Bed Bugs,3
+T007,SCH8/10Bed Bugs,3
+T008,Boston Bikes: Bikes - General; Complaint,16
+T008,Boston Bikes,12
+T008,Boston Bikes: Bikes - General; Request,10
+T008,Boston Bikes: Bikes - General; Crime,8
+T008,Boston Bikes: Bike Lanes; Complaint,6
+T008,Boston Bikes: Bike Lanes; Safety Request,6
+T008,Boston Bikes: Bike Racks; Complaint,6
+T008,Boston Bikes: Bike Lanes; Maintenance,5
+T008,Boston Bikes: Bike Racks; Maintenance,4
+T008,Boston Bikes: Bike Racks; Repair,4
+T009,Big Buildings Recycling (INTERNAL),3
+T010,Bridge Maintenance,18
+T011,Building Inspection Request,1192
+T012,CE Collection,33275
+T014,Carbon Monoxide,7
+T015,Catchbasin,20
+T016,Cemetery Maintenance Request,58
+T017,Chronic Dampness/Mold,135
+T017,SCH9/28Chronic Dampness/Mold,5
+T017,SCH 10/28 Chronic Dampness/Mold,4
+T017,SCH 9/6 Chronic Dampness/Mold,4
+T017,SCH10/17Chronic Dampness/Mold,4
+T017,SCH10/3Chronic Dampness/Mold,4
+T017,SCH4/11Chronic Dampness/Mold,4
+T017,SCH7/18Chronic Dampness/Mold,4
+T017,SCH7/20Chronic Dampness/Mold,4
+T017,SCH8/16Chronic Dampness/Mold,4
+T019,Construction Debris,400
+T020,Contractor Complaints,2432
+T021,Contractors Complaint,1985
+T022,Cross Metering - Sub-Metering,53
+T022,SCH7/12Cross Metering - Sub-Metering,4
+T022,SCH 3/15 Cross Metering - Sub-Metering,3
+T022,SCH2/22Cross Metering - Sub-Metering,3
+T022,SCH4/13Cross Metering - Sub-Metering,3
+T022,SCH4/5Cross Metering - Sub-Metering,3
+T022,SCH6/14Cross Metering - Sub-Metering,3
+T022,SCH6/16Cross Metering - Sub-Metering,3
+T022,SCH7/11Cross Metering - Sub-Metering,3
+T023,Egress,176
+T024,Electrical,1229
+T025,Empty Litter Basket,5288
+T025,Ground Maintenance: Commonwealth Avenue Mall - BPRD,10
+T025,Ground Maintenance: Hemenway Playground - BPRD,6
+T025,Ground Maintenance: Peters Park - BPRD,6
+T025,Ground Maintenance: Hayes Park - BPRD,4
+T025,Ground Maintenance: Highland Park - BPRD,4
+T025,Ground Maintenance: LoPresti Park - BPRD,4
+T025,Ground Maintenance: Myrtle Street Play Area - BPRD,4
+T025,Ground Maintenance: Paul Revere Mall - BPRD,4
+T025,Ground Maintenance: Polcari Park - BPRD,4
+T026,Equipment Repair,2367
+T026,Park Equipment Repair,526
+T026,Equipment Repair: Boston Common - BPRD,86
+T026,Equipment Repair: Billings Field - BPRD,55
+T026,Equipment Repair: Harambee Field - BPRD,38
+T026,Equipment Repair: Mission Hill Playground - BPRD,38
+T026,Equipment Repair: Peters Park - BPRD,34
+T026,Equipment Repair: Mozart St. Playground - BPRD,33
+T026,Equipment Repair: Public Garden - BPRD,32
+T026,Equipment Repair: Fallon Field - BPRD,31
+T027,Exceeding Terms of Permit,285
+T028,Fire in Food Establishment,76
+T030,Food Alert - Confirmed,475
+T031,Food Alert - Unconfirmed,262
+T031,Food Alert - Confirmed,4
+T031,Unsanitary Conditions - Food,3
+T032,PublicWorks: Complaint,247
+T032,BTDT: Complaint,103
+T032,PARKS: Complaint,22
+T032,PublicWorks: Compliment,19
+T032,PARKS: Compliment,15
+T032,PublicWorks: Comment,10
+T032,BTDT: Compliment,8
+T033,PublicWorks: Complaint,634
+T033,BTDT: Complaint,547
+T033,PublicWorks: Comment,170
+T033,BTDT: Comment,147
+T033,PARKS: Complaint,78
+T033,PARKS: Comment,36
+T033,PublicWorks: Compliment,25
+T033,PARKS: Compliment,19
+T033,BTDT: Compliment,12
+T033,Other: Complaint,9
+T034,General Lighting Request,1188
+T034,PRINTED : General Lighting Request  --  N.M.,210
+T034,PRINTED :,74
+T034,Printed - Break Out & Spin Post,12
+T034,General Lighting Request//printed,11
+T034,PRINTED : General Lighting Request   --  N.M.,11
+T034,Check SLCB,10
+T034,Printed: General Lighting Request/EH,10
+T034,PRINTED // General Lighting Request  // N.M.,8
+T034,General Lighting Request printed,7
+T035,General Traffic Engineering Request,293
+T036,Graffiti Removal,49
+T037,Ground Maintenance,4206
+T037,Ground Maintenance: --Not in list-- - BPRD,107
+T037,Ground Maintenance: Ronan Park - BPRD,95
+T037,Ground Maintenance: Franklin Park - BPRD,74
+T037,Ground Maintenance: Boston Common - BPRD,73
+T037,Ground Maintenance: Byrne Playground - BPRD,70
+T037,Ground Maintenance: Jamaica Pond - BPRD,60
+T037,Ground Maintenance: Almont Park/Hunt Playground - BPRD,44
+T037,Ground Maintenance: Back Bay Fens - BPRD,44
+T037,Ground Maintenance: Harambee Field - BPRD,42
+T038,Heat - Excessive  Insufficient,908
+T038,DISP Heat - Excessive  Insufficient,42
+T038,DISP1/17Heat - Excessive  Insufficient,16
+T038,DISPHeat - Excessive  Insufficient,14
+T038,DISP1/5Heat - Excessive  Insufficient,9
+T038,DISP1/3Heat - Excessive  Insufficient,8
+T038,DISP11/2Heat - Excessive  Insufficient,8
+T038,DISP1/20Heat - Excessive  Insufficient,7
+T038,DISP1/4Heat - Excessive  Insufficient,7
+T038,DISP11/3Heat - Excessive  Insufficient,7
+T039,Illegal Auto Body Shop,344
+T040,Illegal Dumping,6110
+T041,Illegal Occupancy,198
+T042,Illegal Posting of Signs,200
+T043,Illegal Rooming House,182
+T044,Illegal Vending,346
+T045,Improper Storage of Trash (Barrels),39688
+T045,Ground Maintenance: Copps Hill Terrace - BPRD,6
+T046,Install New Lighting,31
+T046,PRINTED,5
+T047,Item Price Missing,22
+T048,Knockdown Replacement,134
+T048,PRINTED : Knockdown Replacement  --  N.M.,89
+T048,PRINTED :,30
+T048,PRINTED : Knockdown Replacement   --  N.M.,7
+T048,Printed: Knockdown Replacement/EH,6
+T048,PRINTED : KNOCKDOWN REPLACEMENT,5
+T048,PRINTED : KNOCKDOWN REPLACMENT  --  N.M.,3
+T049,Lead,6
+T050,Litter Basket Maintenance,192
+T051,Maintenance - Homeowner,270
+T052,Maintenance Complaint - Residential,364
+T052,DISP Maintenance Complaint - Residential,11
+T052,SCH 9/19 Maintenance Complaint - Residential,7
+T052,DSP 4/4 Maintenance Complaint - Residential,6
+T052,SCH 12/27 Maintenance Complaint - Residential,6
+T052,SCH 7/16 Maintenance Complaint - Residential,6
+T052,SCH 8/20 Maintenance Complaint - Residential,6
+T052,SCH 8/21 Maintenance Complaint - Residential,6
+T052,SCH5/9Maintenance Complaint - Residential,6
+T052,SCH9/26Maintenance Complaint - Residential,6
+T053,Major System Failure,420
+T053,Major System Failure printed,14
+T053,PRINTED :,9
+T053,Printed: Major System Failure-EH,6
+T053,Major System Failure /Gas Leak,4
+T053,Printed: Major System Failure/EH,3
+T054,Mattress Pickup,36545
+T055,Mechanical,21
+T056,Mice Infestation - Residential,245
+T056,SCH 8/20 Mice Infestation - Residential,6
+T056,SCH1/17Mice Infestation - Residential,6
+T056,SCH11/28Mice Infestation - Residential,6
+T056,SCH2/7Mice Infestation - Residential,6
+T056,SCH2/8Mice Infestation - Residential,6
+T056,SCH6/6Mice Infestation - Residential,6
+T056,SCH 9/10 Mice Infestation - Residential,5
+T056,SCH1/19Mice Infestation - Residential,5
+T056,SCH2/1Mice Infestation - Residential,5
+T057,Misc. Snow Complaint,25
+T058,Missed Trash: District 07,1560
+T058,Missed Trash/Recycling/Yard Waste/Bulk Item,1298
+T058,Missed Trash: District 06,1269
+T058,Missed Trash: District 03,1245
+T058,Missed Leaf or Yard Trash: District 07,1216
+T058,Missed Trash: District 02,1151
+T058,Missed Trash: District 08,1130
+T058,Missed Trash: District 04,1012
+T058,Missed Trash: District 10B,947
+T058,Missed Trash: District 1C,837
+T059,Missing Sign,814
+T060,Mosquitoes (West Nile),16
+T061,Municipal Parking Lot Complaints,25
+T062,Needle Pickup,10
+T063,New Sign  Crosswalk or Pavement Marking,1766
+T064,New Tree Requests,3657
+T064,New Tree Request,1200
+T065,News Boxes,3
+T066,No Price on Gas/Wrong Price,10
+T067,No Utilities - Food Establishment - Electricity,5
+T068,No Utilities - Food Establishment - Flood,19
+T069,No Utilities - Food Establishment - Sewer,7
+T070,No Utilities - Food Establishment - Water,31
+T071,No Utilities Residential - Electricity,73
+T072,No Utilities Residential - Gas,11
+T073,No Utilities Residential - Water,141
+T074,No-Tow Complaint Confirmation,134
+T075,Fire,57
+T075,BWSC: Sanitary Sewer Overflow (SSO),43
+T075,BWSC: Water Main Break,30
+T075,BWSC: Water Main Shutoff,11
+T075,Fire: Other,3
+T076,Occupying W/Out A Valid CO/CI,17
+T078,Overcrowding,25
+T079,Overflowing or Un-kept Dumpster,222
+T080,PWD Graffiti,1923
+T080,POWER WASH,141
+T080,BLACK PAINT,125
+T080,PAINT CONTROL CABINET,47
+T080,REMOVE FLYERS,3
+T081,Park Improvement Requests,114
+T081,Park Improvement: Boston Common - BPRD,17
+T081,Park Improvement: Ronan Park - BPRD,10
+T081,Park Improvement: Franklin Park - BPRD,8
+T081,Park Improvement: Fallon Field - BPRD,7
+T081,Park Improvement: Malcolm X Park - BPRD,7
+T081,Park Improvement: Rogers Park - BPRD,7
+T081,Park Improvement: Brophy Park - BPRD,6
+T081,Park Improvement: Byrne Playground - BPRD,6
+T081,Park Improvement: Commonwealth Avenue Mall - BPRD,6
+T082,Parking Enforcement,119806
+T083,Parking Meter Repairs,75
+T084,Parking on Front/Back Yards (Illegal Parking),347
+T085,Parks General Request,216
+T085,WEEDS,4
+T086,Parks Lighting/Electrical Issues,490
+T086,Lighting/Electrical,15
+T086,Parks Lighting Issue:  -,10
+T086,Parks Lighting Issue: --Not in list-- - BPRD,9
+T086,Parks Lighting Issue: Boston Common - BPRD,7
+T086,Parks Lighting Issue: Brophy Park - BPRD,7
+T086,Parks Lighting Issue: American Legion Playground - BPRD,5
+T086,Parks Lighting Issue: Cassidy Playground - BPRD,5
+T086,Parks Lighting Issue: East Boston Memorial Stadium - BPRD,5
+T086,Parks Lighting Issue: Madison Park High School - BPRD,5
+T087,Pavement Marking Inspection,300
+T088,Pavement Marking Maintenance,64
+T089,Pest Infestation - Residential,2876
+T089,DISP Pest Infestation - Residential,11
+T089,SCH12/12Pest Infestation - Residential,5
+T089,SCH2/21Pest Infestation - Residential,5
+T089,SCH2/8Pest Infestation - Residential,5
+T089,SCH3/7Pest Infestation - Residential,5
+T089,SCH6/13Pest Infestation - Residential,5
+T089,SCH 12/27 Pest Infestation - Residential,4
+T089,SCH 12/30 Pest Infestation - Residential,4
+T089,SCH 9/24 Pest Infestation - Residential,4
+T090,Phone Bank Service Inquiry,23
+T091,Pick up Dead Animal,13610
+T091,Ground Maintenance: Boston Common - BPRD,16
+T091,Ground Maintenance: Titus Sparrow Park - BPRD,7
+T091,Ground Maintenance: Public Garden - BPRD,5
+T091,Ground Maintenance: Franklin Square - BPRD,4
+T091,Ground Maintenance: Ringer Playground - BPRD,4
+T091,Ground Maintenance: Blackstone Square - BPRD,3
+T091,Ground Maintenance: Byrne Playground - BPRD,3
+T091,Ground Maintenance: DeFilippo Playground - BPRD,3
+T091,Ground Maintenance: Doherty Playground - BPRD,3
+T092,Pickup/Clear Conduit,7
+T093,Pigeon Infestation,26
+T094,Planting,11
+T094,Planting:  -,3
+T095,Plumbing,127
+T096,Pole Compliance,80
+T097,Poor Conditions of Property,16415
+T097,Student Move-in CE Violation,455
+T098,Poor Ventilation,39
+T099,Private Parking Lot Complaints,11
+T100,Product Short Measure,8
+T101,Protection of Adjoining Property,519
+T102,Public Works General Request,1180
+T102,Pick up Dead Animal,12
+T102,WEEDS,12
+T102,Request for Street Cleaning,8
+T102,CONES,3
+T102,POWER WASH,3
+T103,Rat Bite,32
+T104,Recycling Cart Return,7632
+T105,Rental Unit Delivery Conditions,18
+T106,Request for Litter Basket Installation,244
+T107,Request for Pothole Repair,13813
+T107,Pothole,3004
+T107,SINKHOLE,74
+T107,PATCH,65
+T107,ASPHALT,37
+T107,SINK HOLE,21
+T107,PULL BOX,12
+T107,CUT OUT,5
+T107,Sidewalk Repair,4
+T108,Request for Recycling Cart,8276
+T109,Request for Snow Plowing,1009
+T110,Request for Snow Plowing (Emergency Responder),48
+T111,Directional or Roadway Changes,10
+T112,Requests for Street Cleaning,38313
+T112,Street Cleaning,2093
+T112,WEEDS,30
+T112,POWER WASH,26
+T112,Pick up Dead Animal,15
+T112,Ground Maintenance: Boston Common - BPRD,13
+T112,Missed Trash,7
+T112,Ground Maintenance: Franklin Park - BPRD,6
+T112,Missed Recycling,6
+T112,Ground Maintenance: Copley Square - BPRD,5
+T113,Requests for Traffic Signal Studies or Reviews,1233
+T114,Roadway Repair,779
+T115,Rodent Activity,8755
+T115,Pick up Dead Animal,29
+T117,Scale Not Visible,4
+T118,Scanning Overcharge,28
+T119,Schedule a Bulk Item Pickup,25114
+T120,Schedule Bulk Item Pickup,12754
+T121,Sewage/Septic Back-Up,49
+T122,Short Measure - Gas,4
+T123,Short Term Rental,418
+T123,DISP5/30Short Term Rental,3
+T124,Sidewalk Cover / Manhole,19
+T125,Sidewalk Repair,148
+T126,Sidewalk Repair (Make Safe),9458
+T126,Sidewalk (Make Safe),541
+T126,BRICKS,42
+T126,BREAK OUT,13
+T126,BREAKOUT,13
+T126,WEEDS,9
+T126,PARGE,7
+T126,Equipment Repair: Boston Common - BPRD,6
+T126,POWER WASH,6
+T126,Equipment Repair: Jamaica Pond - BPRD,4
+T127,Sign Repair,10356
+T130,Space Savers,311
+T131,Squalid Living Conditions,88
+T131,SCH12/28Squalid Living Conditions,3
+T132,Sticker Request,4666
+T133,Street Light Knock Downs,578
+T133,Street Light Knock Down,55
+T133,PRINTED :,38
+T133,Printed: Street Light Knock Downs- EH,10
+T133,PRINTED : Street light Knockdown  --  N.M,5
+T134,Street Light Outages,3145
+T134,Street Light Outage,1412
+T134,Street Light Outages printed DP,277
+T134,PRINTED :,191
+T134,Street Light Outages//streetlight out printed// EH,144
+T134,Street Light Outages GAS,74
+T134,Street Light Outage//S Reid created w/o and will close after repaired,55
+T134,Printed: Street Light Outages/EH,48
+T134,Street Light Outages///Issued to Cont,41
+T134,PRINTED : ONE LIGHT OUT,34
+T135,CONCRETE,245
+T135,Street Light Pole WO,21
+T135,StreetLight Pole WO,14
+T135,BRICKS,8
+T136,Student Move-in Issues,237
+T137,Student Overcrowding,5
+T138,Traffic Signal Inspection,7019
+T139,Illegal Graffiti,176
+T139,Traffic Signal Repair,61
+T140,Transportation General Request,1160
+T141,Trash on Vacant Lot,109
+T142,Tree Emergencies,1681
+T143,Tree Maintenance Requests,10031
+T143,Tree Maintenance,5033
+T143,WEEDS,4
+T144,Tree in Park,11
+T144,Tree In Park: Brophy Park; East Boston,6
+T144,Tree In Park: Byrne Playground; Dorchester,6
+T144,Tree In Park: Franklin Park; Jamaica Plain,4
+T144,Tree In Park: Rogers Park; Allston / Brighton,4
+T144,Tree In Park: Brewer/Burroughs Tot Lot; Jamaica Plain,3
+T144,Tree In Park: Chandler Pond; Allston / Brighton,3
+T144,Tree In Park: Ringer Playground; Allston / Brighton,3
+T144,Tree In Park: Savin Hill Park; Dorchester,3
+T144,Tree In Park: Sumner and Lamson St. Playground; East Boston,3
+T146,Unit Pricing Wrong/Missing,15
+T147,Unsafe/Dangerous Conditions,763
+T148,Unsanitary Conditions - Employees,96
+T149,Unsanitary Conditions - Establishment,1173
+T150,Unsanitary Conditions - Food,434
+T151,Unsatisfactory Living Conditions,1623
+T151,DISP Unsatisfactory Living Conditions,53
+T151,SCH10/3Unsatisfactory Living Conditions,26
+T151,SCH9/12Unsatisfactory Living Conditions,24
+T151,SCH2/7Unsatisfactory Living Conditions,22
+T151,SCH10/17Unsatisfactory Living Conditions,21
+T151,SCH9/19Unsatisfactory Living Conditions,21
+T151,SCH2/1Unsatisfactory Living Conditions,20
+T151,SCH9/20Unsatisfactory Living Conditions,20
+T151,SCH2/8Unsatisfactory Living Conditions,19
+T152,Unsatisfactory Utilities - Electrical  Plumbing,219
+T152,SCH6/13Unsatisfactory Utilities - Electrical  Plumbing,4
+T152,SCH7/20Unsatisfactory Utilities - Electrical  Plumbing,4
+T152,DISP3/14Unsatisfactory Utilities - Electrical  Plumbing,3
+T152,SCH10/11Unsatisfactory Utilities - Electrical  Plumbing,3
+T152,SCH10/17Unsatisfactory Utilities - Electrical  Plumbing,3
+T152,SCH11/28Unsatisfactory Utilities - Electrical  Plumbing,3
+T152,SCH11/9Unsatisfactory Utilities - Electrical  Plumbing,3
+T152,SCH2/23Unsatisfactory Utilities - Electrical  Plumbing,3
+T152,SCH5/9Unsatisfactory Utilities - Electrical  Plumbing,3
+T153,Unshoveled Sidewalk,4155
+T154,Upgrade Existing Lighting,32
+T155,Utility Call-In,3
+T156,Utility Casting Repair,387
+T157,Valet Parking Problems,14
+T158,Walk-In Service Inquiry,5
+T160,Work Hours-Loud Noise Complaints,405
+T161,Work w/out Permit,1676
+T162,Working Beyond Hours,1218
+T163,Zoning,69

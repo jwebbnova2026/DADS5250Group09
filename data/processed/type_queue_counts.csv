@@ -1,0 +1,2825 @@
+type_id,department,queue,requests
+T001,BTDT,BTDT_AVRS Interface Queue,160
+T001,BTDT,BTDT_Abandoned Bicycle,1968
+T001,BTDT,BTDT_Administration,4
+T001,BTDT,BTDT_BostonBikes,12
+T001,BTDT,BTDT_District 01,1
+T001,BTDT,BTDT_District 02,1
+T001,BTDT,BTDT_District 04,1
+T001,BTDT,BTDT_District 06,2
+T001,BTDT,BTDT_Parking Enforcement,35
+T001,BWSC,BWSC_All Cases,1
+T001,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,9
+T001,INFO,INFO_BPHC,10
+T001,INFO,INFO_Encampments,4
+T001,INFO,INFO_Mass DCR,5
+T001,INFO,INFO_Massport,1
+T001,INFO,INFO_Reallocation From Dept,5
+T001,PARK,PARK_Maintenance_Region 1,1
+T001,PWDx,PWDx_Code Enforcement,1
+T001,PWDx,PWDx_District 03: North Dorchester,1
+T001,PWDx,PWDx_District 04: Allston/Brighton,1
+T001,PWDx,PWDx_District 05: South Boston,2
+T001,PWDx,PWDx_District 07: South Dorchester,1
+T001,PWDx,PWDx_District 09: East Boston,1
+T001,PWDx,PWDx_District 10A: Roxbury,3
+T001,PWDx,PWDx_District 10B: Roxbury,1
+T001,PWDx,PWDx_District 1A: Charlestown,1
+T001,PWDx,PWDx_District 1C: Downtown,7
+T001,PWDx,PWDx_Graffiti,1
+T001,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,5
+T002,ANML,ANML_General,1
+T002,BPD,BPD_Districts,1
+T002,INFO,INFO_Reallocation From Dept,1
+T002,ISD,ISD_Administrative,7
+T002,ISD,ISD_Building (INTERNAL),76
+T002,ISD,ISD_Environmental Services (INTERNAL),64
+T002,ISD,ISD_Housing (INTERNAL),3
+T002,PWDx,PWDx_Code Enforcement,10
+T003,BPD,BPD_Districts,39
+T003,BTDT,BTDT_AVRS Interface Queue,9149
+T003,BTDT,BTDT_Abandoned Bicycle,4
+T003,BTDT,BTDT_BostonBikes,3
+T003,BTDT,BTDT_Parking Enforcement,148
+T003,BTDT,BTDT_Permits & Special Events,7
+T003,BTDT,BTDT_Sign Shop_Sign Installation,1
+T003,BWSC,BWSC_All Cases,1
+T003,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,15
+T003,INFO,INFO_Encampments,2
+T003,INFO,INFO_Eversource,1
+T003,INFO,INFO_Homeless Issue,2
+T003,INFO,INFO_MBTA,6
+T003,INFO,INFO_Mass DCR,5
+T003,INFO,INFO_Mass DOT,4
+T003,INFO,INFO_Massport,1
+T003,INFO,INFO_Reallocation From Dept,11
+T003,INFO,INFO_USPS Issues,1
+T003,INFO,INFO_Unsheltered_Persons,4
+T003,ISD,ISD_Administrative,4
+T003,ISD,ISD_Building (INTERNAL),1
+T003,ISD,ISD_Environmental Services (INTERNAL),1
+T003,ONS,ONS_General,1
+T003,PARK,PARK_Maintenance_Region 1,1
+T003,PARK,PARK_Maintenance_Region 5,1
+T003,PARK,PARK_Maintenance_Region 6,1
+T003,PWDx,PWDx_Code Enforcement,12
+T003,PWDx,PWDx_Contractor Complaints,3
+T003,PWDx,PWDx_District 08: Hyde Park,1
+T003,PWDx,PWDx_District 09: East Boston,1
+T003,PWDx,PWDx_Street Light Outages,1
+T004,ANML,ANML_General,2
+T004,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,6877
+T004,INFO,INFO_Mass DCR,1
+T004,INFO,INFO_Reallocation From Dept,1
+T004,ISD,ISD_Environmental Services (INTERNAL),3
+T004,PARK,PARK_Maintenance_Ground Maintenance,1
+T004,PARK,PARK_Maintenance_Region 2,1
+T004,PWDx,PWDx_Code Enforcement,1
+T004,PWDx,PWDx_District 03: North Dorchester,1
+T004,PWDx,PWDx_District 05: South Boston,2
+T004,PWDx,PWDx_District 07: South Dorchester,2
+T004,PWDx,PWDx_District 09: East Boston,1
+T004,PWDx,PWDx_District 1C: Downtown,4
+T004,PWDx,PWDx_Pick Up Dead Animals,2
+T005,BTDT,BTDT_Traffic Signal_Repair,1
+T005,BWSC,BWSC_All Cases,602
+T005,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T005,INFO,INFO_Eversource,1
+T005,INFO,INFO_Mass DCR,1
+T005,ISD,ISD_Building (INTERNAL),2
+T005,ISD,ISD_Environmental Services (INTERNAL),2
+T005,PARK,PARK_Maintenance_Trades,1
+T005,PWDx,PWDx_Contractor Complaints,1
+T005,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,2
+T005,PWDx,PWDx_Roadway Repair_Ponding,2
+T005,PWDx,PWDx_Sidewalk Repair,2
+T006,BWSC,BWSC_All Cases,1
+T006,BWSC,BWSC_Pothole,160
+T006,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,3
+T006,INFO,INFO_Eversource,1
+T006,INFO,INFO_Mass DCR,1
+T006,PWDx,PWDx_Contractor Complaints,2
+T007,ISD,ISD_Health (INTERNAL),1
+T007,ISD,ISD_Housing (INTERNAL),214
+T008,BTDT,BTDT_AVRS Interface Queue,1
+T008,BTDT,BTDT_Abandoned Bicycle,1
+T008,BTDT,BTDT_BostonBikes,98
+T009,PWDx,PWDx_WM_Mattress_Pickup,3
+T010,INFO,INFO_Mass DOT,2
+T010,PROP,PROP_GRAF_GraffitiRemoval,1
+T010,PWDx,PWDx_Bridge Maintenance,18
+T011,BHA,BHA_General,1
+T011,BPD,BPD_Districts,1
+T011,BTDT,BTDT_Parking Enforcement,1
+T011,BWSC,BWSC_All Cases,2
+T011,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,3
+T011,INFO,INFO_BPHC,2
+T011,INFO,INFO_Mass DCR,1
+T011,INFO,INFO_Mass DOT,1
+T011,INFO,INFO_Reallocation From Dept,12
+T011,ISD,ISD_Administrative,4
+T011,ISD,ISD_Building (INTERNAL),1122
+T011,ISD,ISD_Electrical,7
+T011,ISD,ISD_Environmental Services (INTERNAL),1
+T011,ISD,ISD_Health (INTERNAL),3
+T011,ISD,ISD_Housing (INTERNAL),58
+T011,ISD,ISD_Plumbing,4
+T011,PWDx,PWDx_Code Enforcement,4
+T011,PWDx,PWDx_Contractor Complaints,3
+T012,BHA,BHA_General,8
+T012,BPD,BPD_Districts,1
+T012,BTDT,BTDT_AVRS Interface Queue,4
+T012,BTDT,BTDT_Abandoned Bicycle,5
+T012,BTDT,BTDT_Administration,8
+T012,BTDT,BTDT_BostonBikes,9
+T012,BTDT,BTDT_Parking Enforcement,2
+T012,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,5
+T012,BTDT,BTDT_Sign Shop_Sign Installation,1
+T012,BWSC,BWSC_All Cases,3
+T012,DND,DND_General,2
+T012,GEN,GEN_Needle_Pickup,3
+T012,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,23
+T012,INFO,INFO_BPHC,6
+T012,INFO,INFO_Encampments,9
+T012,INFO,INFO_Eversource,3
+T012,INFO,INFO_Homeless Issue,1
+T012,INFO,INFO_MBTA,8
+T012,INFO,INFO_Mass DCR,59
+T012,INFO,INFO_Mass DOT,26
+T012,INFO,INFO_Reallocation From Dept,108
+T012,INFO,INFO_USPS Issues,1
+T012,ISD,ISD_Administrative,1
+T012,ISD,ISD_Building (INTERNAL),1
+T012,ISD,ISD_Environmental Services (INTERNAL),3
+T012,ISD,ISD_Health (INTERNAL),1
+T012,ONS,ONS_General,2
+T012,PARK,PARK_Maintenance_Ground Maintenance,2
+T012,PARK,PARK_Maintenance_Region 1,14
+T012,PARK,PARK_Maintenance_Region 2,3
+T012,PARK,PARK_Maintenance_Region 3,3
+T012,PARK,PARK_Maintenance_Region 4,1
+T012,PARK,PARK_Maintenance_Region 5,8
+T012,PARK,PARK_Maintenance_Region 6,8
+T012,PARK,PARK_Tree Emergencies,8
+T012,PWDx,PWDx_Code Enforcement,119
+T012,PWDx,PWDx_Contractor Complaints,4
+T012,PWDx,PWDx_District 02: Jamaica Plain,659
+T012,PWDx,PWDx_District 03: North Dorchester,1607
+T012,PWDx,PWDx_District 04: Allston/Brighton,3119
+T012,PWDx,PWDx_District 05: South Boston,1852
+T012,PWDx,PWDx_District 06: West Roxbury and Roslindale,333
+T012,PWDx,PWDx_District 07: South Dorchester,1179
+T012,PWDx,PWDx_District 08: Hyde Park,380
+T012,PWDx,PWDx_District 09: East Boston,1842
+T012,PWDx,PWDx_District 10A: Roxbury,1818
+T012,PWDx,PWDx_District 10B: Roxbury,1513
+T012,PWDx,PWDx_District 1A: Charlestown,358
+T012,PWDx,PWDx_District 1B: North End,8515
+T012,PWDx,PWDx_District 1C: Downtown,9423
+T012,PWDx,PWDx_Empty Litter Basket,4
+T012,PWDx,PWDx_Highway Construction,2
+T012,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,201
+T012,PWDx,PWDx_Recycling,1
+T012,PWDx,PWDx_Recycling Cart Return,1
+T012,PWDx,PWDx_Request for Street Cleaning,11
+T012,PWDx,PWDx_Street Light_General Lighting Request,2
+T012,PWDx,PWDx_WM_Mattress_Pickup,258
+T013,PARK,PARK_Park Improvement Requests,2
+T014,ISD,ISD_Housing (INTERNAL),15
+T015,BWSC,BWSC_All Cases,1167
+T015,BWSC,BWSC_Pothole,1
+T015,INFO,INFO_Encampments,1
+T015,INFO,INFO_Mass DCR,12
+T015,INFO,INFO_Mass DOT,5
+T015,ISD,ISD_Administrative,1
+T015,ISD,ISD_Building (INTERNAL),3
+T015,PARK,PARK_Carpentry,1
+T015,PARK,PARK_Maintenance_Region 3,1
+T015,PARK,PARK_Maintenance_Trades,1
+T015,PWDx,PWDx_District 02: Jamaica Plain,1
+T015,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,6
+T015,PWDx,PWDx_Roadway Repair_Ponding,5
+T015,PWDx,PWDx_Sidewalk Repair,2
+T016,PARK,PARK_Cemetery Maintenance Request,57
+T016,PARK,PARK_Maintenance_Region 1,1
+T017,ISD,ISD_Building (INTERNAL),1
+T017,ISD,ISD_Housing (INTERNAL),574
+T018,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,18
+T018,INFO,INFO_MBTA,1
+T018,INFO,INFO_Mass DCR,1
+T018,PWDx,PWDx_District 06: West Roxbury and Roslindale,1
+T019,BTDT,BTDT_AVRS Interface Queue,1
+T019,BTDT,BTDT_Parking Enforcement,5
+T019,BWSC,BWSC_All Cases,1
+T019,DND,DND_General,1
+T019,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T019,INFO,INFO_Eversource,1
+T019,ISD,ISD_Building (INTERNAL),5
+T019,PARK,PARK_Maintenance_Ground Maintenance,1
+T019,PWDx,PWDx_Code Enforcement,381
+T019,PWDx,PWDx_Contractor Complaints,6
+T019,PWDx,PWDx_Sidewalk Repair,1
+T020,BPD,BPD_Districts,18
+T020,BTDT,BTDT_Administration,8
+T020,BTDT,BTDT_BostonBikes,2
+T020,BTDT,BTDT_District 01,1
+T020,BTDT,BTDT_District 04,1
+T020,BTDT,BTDT_Parking Enforcement,9
+T020,BTDT,BTDT_Permits & Special Events,20
+T020,BTDT,BTDT_Sign Shop_Sign Installation,1
+T020,BWSC,BWSC_All Cases,93
+T020,BWSC,BWSC_Pothole,4
+T020,DND,DND_General,1
+T020,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,32
+T020,INFO,INFO_Eversource,6
+T020,INFO,INFO_Gas_Odor_Leak,1
+T020,INFO,INFO_MBTA,4
+T020,INFO,INFO_Mass DCR,5
+T020,INFO,INFO_Mass DOT,14
+T020,INFO,INFO_Massport,1
+T020,INFO,INFO_Reallocation From Dept,17
+T020,ISD,ISD_Administrative,36
+T020,ISD,ISD_Building (INTERNAL),125
+T020,ISD,ISD_Housing (INTERNAL),4
+T020,ONS,ONS_BackBay_Fenway_MissionHill,2
+T020,PARK,PARK_New Tree Requests,3
+T020,PARK,PARK_Tree Maintenance Request,5
+T020,PWDx,PWDx_Bridge Maintenance,1
+T020,PWDx,PWDx_Code Enforcement,23
+T020,PWDx,PWDx_Contractor Complaints,1861
+T020,PWDx,PWDx_District 04: Allston/Brighton,2
+T020,PWDx,PWDx_District 07: South Dorchester,1
+T020,PWDx,PWDx_District 09: East Boston,1
+T020,PWDx,PWDx_District 1C: Downtown,1
+T020,PWDx,PWDx_Engineering_PIC,1
+T020,PWDx,PWDx_Highway Construction,1
+T020,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,22
+T020,PWDx,PWDx_Roadway Repair,14
+T020,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,102
+T020,PWDx,PWDx_Roadway Repair_CRP_Resurfacing,4
+T020,PWDx,PWDx_Roadway Repair_Reconstruction,40
+T020,PWDx,PWDx_STRL Pole Compliance,1
+T020,PWDx,PWDx_Sidewalk Repair,138
+T020,PWDx,PWDx_Street Light_General Lighting Request,1
+T020,PWDx,PWDx_Work Hours-Loud Noise Complaints,4
+T021,BHA,BHA_General,1
+T021,BPD,BPD_Districts,1
+T021,BTDT,BTDT_Administration,10
+T021,BTDT,BTDT_District 01,2
+T021,BTDT,BTDT_District 05,2
+T021,BTDT,BTDT_District 06,1
+T021,BTDT,BTDT_Parking Enforcement,16
+T021,BTDT,BTDT_Permits & Special Events,4
+T021,BWSC,BWSC_All Cases,6
+T021,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,8
+T021,INFO,INFO_BPHC,2
+T021,INFO,INFO_Reallocation From Dept,23
+T021,ISD,ISD_Administrative,1
+T021,ISD,ISD_Building (INTERNAL),1856
+T021,ISD,ISD_Electrical,5
+T021,ISD,ISD_Environmental Services (INTERNAL),6
+T021,ISD,ISD_Housing (INTERNAL),1
+T021,ONS,ONS_General,1
+T021,PARK,PARK_Park Improvement Requests,1
+T021,PARK,PARK_Tree Maintenance Request,1
+T021,PWDx,PWDx_Code Enforcement,14
+T021,PWDx,PWDx_Contractor Complaints,51
+T021,PWDx,PWDx_District 09: East Boston,1
+T021,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,3
+T021,PWDx,PWDx_Sidewalk Repair,9
+T021,PWDx,PWDx_Space Saver Removal,1
+T022,ISD,ISD_Housing (INTERNAL),223
+T023,BTDT,BTDT_Parking Enforcement,2
+T023,INFO,INFO_Reallocation From Dept,1
+T023,ISD,ISD_Building (INTERNAL),163
+T023,ISD,ISD_Housing (INTERNAL),7
+T023,PWDx,PWDx_Code Enforcement,1
+T023,PWDx,PWDx_Contractor Complaints,2
+T023,PWDx,PWDx_Sidewalk Repair,2
+T024,ISD,ISD_Administrative,1
+T024,ISD,ISD_Building (INTERNAL),432
+T024,ISD,ISD_Electrical,796
+T024,ISD,ISD_Housing (INTERNAL),5
+T025,BHA,BHA_General,20
+T025,BTDT,BTDT_Administration,1
+T025,BTDT,BTDT_Parking Enforcement,1
+T025,DND,DND_General,1
+T025,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,86
+T025,INFO,INFO_Encampments,3
+T025,INFO,INFO_Eversource,4
+T025,INFO,INFO_MBTA,21
+T025,INFO,INFO_Mass DCR,117
+T025,INFO,INFO_Mass DOT,9
+T025,INFO,INFO_Massport,6
+T025,INFO,INFO_Reallocation From Dept,53
+T025,INFO,INFO_USPS Issues,1
+T025,ISD,ISD_Administrative,1
+T025,ISD,ISD_Building (INTERNAL),2
+T025,ISD,ISD_Environmental Services (INTERNAL),1
+T025,PARK,PARK_Carpentry,1
+T025,PARK,PARK_Cemetery Maintenance Request,1
+T025,PARK,PARK_Maintenance_Ground Maintenance,30
+T025,PARK,PARK_Maintenance_Horticulture,4
+T025,PARK,PARK_Maintenance_Region 1,237
+T025,PARK,PARK_Maintenance_Region 2,98
+T025,PARK,PARK_Maintenance_Region 3,41
+T025,PARK,PARK_Maintenance_Region 4,33
+T025,PARK,PARK_Maintenance_Region 5,54
+T025,PARK,PARK_Maintenance_Region 6,109
+T025,PARK,PARK_Park Improvement Requests,1
+T025,PWDx,PWDx_Code Enforcement,549
+T025,PWDx,PWDx_District 02: Jamaica Plain,93
+T025,PWDx,PWDx_District 03: North Dorchester,171
+T025,PWDx,PWDx_District 04: Allston/Brighton,421
+T025,PWDx,PWDx_District 05: South Boston,157
+T025,PWDx,PWDx_District 06: West Roxbury and Roslindale,24
+T025,PWDx,PWDx_District 07: South Dorchester,164
+T025,PWDx,PWDx_District 08: Hyde Park,34
+T025,PWDx,PWDx_District 09: East Boston,130
+T025,PWDx,PWDx_District 10A: Roxbury,561
+T025,PWDx,PWDx_District 10B: Roxbury,131
+T025,PWDx,PWDx_District 1A: Charlestown,282
+T025,PWDx,PWDx_District 1B: North End,500
+T025,PWDx,PWDx_District 1C: Downtown,861
+T025,PWDx,PWDx_Empty Litter Basket,454
+T025,PWDx,PWDx_Graffiti,2
+T025,PWDx,PWDx_Highway Construction,2
+T025,PWDx,PWDx_Litter Basket Maintenance,38
+T025,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,238
+T025,PWDx,PWDx_Recycling,15
+T025,PWDx,PWDx_Request for Litter Basket Installation,4
+T025,PWDx,PWDx_Sidewalk Repair,1
+T026,ANML,ANML_General,3
+T026,BHA,BHA_General,11
+T026,BPD,BPD_Districts,7
+T026,BTDT,BTDT_AVRS Interface Queue,1
+T026,BTDT,BTDT_Administration,5
+T026,BTDT,BTDT_BostonBikes,11
+T026,BTDT,BTDT_Broken Meter Complaints,3
+T026,BTDT,BTDT_District 04,1
+T026,BTDT,BTDT_District 05,3
+T026,BTDT,BTDT_Parking Enforcement,3
+T026,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,3
+T026,BTDT,BTDT_Pavement Marking_Maintenance,1
+T026,BTDT,BTDT_Sign Repair,1
+T026,BTDT,BTDT_Sign Shop_Sign Installation,14
+T026,BTDT,BTDT_Traffic Signal_Graffiti,1
+T026,BTDT,BTDT_Traffic Signal_Repair,4
+T026,BWSC,BWSC_All Cases,22
+T026,BWSC,BWSC_Pothole,1
+T026,DND,DND_General,1
+T026,GRNi,GRNi_Green_Infrastructure,1
+T026,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,144
+T026,INFO,INFO02_SelfServiceGenericeFormforOtherServiceRequestTypes,1
+T026,INFO,INFO_Encampments,1
+T026,INFO,INFO_Eversource,2
+T026,INFO,INFO_JC Decaux,2
+T026,INFO,INFO_Low Hanging Wire,1
+T026,INFO,INFO_MBTA,25
+T026,INFO,INFO_Mass DCR,434
+T026,INFO,INFO_Mass DOT,28
+T026,INFO,INFO_Massport,27
+T026,INFO,INFO_Reallocation From Dept,104
+T026,INFO,INFO_USPS Issues,2
+T026,ISD,ISD_Building (INTERNAL),8
+T026,ISD,ISD_Environmental Services (INTERNAL),4
+T026,ONS,ONS_SouthDorchester,1
+T026,PARK,PARK_Carpentry,833
+T026,PARK,PARK_Cemetery Maintenance Request,4
+T026,PARK,PARK_General Comments,4
+T026,PARK,PARK_Graffiti,703
+T026,PARK,PARK_Maintenance_Ground Maintenance,31
+T026,PARK,PARK_Maintenance_Horticulture,9
+T026,PARK,PARK_Maintenance_Lighting Electrical,69
+T026,PARK,PARK_Maintenance_Region 1,114
+T026,PARK,PARK_Maintenance_Region 2,56
+T026,PARK,PARK_Maintenance_Region 3,57
+T026,PARK,PARK_Maintenance_Region 4,48
+T026,PARK,PARK_Maintenance_Region 5,17
+T026,PARK,PARK_Maintenance_Region 6,50
+T026,PARK,PARK_Maintenance_Support Services,73
+T026,PARK,PARK_Maintenance_Trades,953
+T026,PARK,PARK_Painting,180
+T026,PARK,PARK_Park Improvement Requests,148
+T026,PARK,PARK_Plumbing,810
+T026,PARK,PARK_Tree Emergencies,11
+T026,PARK,PARK_Tree Maintenance Request,13
+T026,PARK,PARK_Tree in Park,9
+T026,PARK,PARK_Urban_Wilds,3
+T026,PARK,PARK_Welding,707
+T026,PROP,PROP_GRAF_GraffitiRemoval,15
+T026,PWDx,PWDx_Bridge Maintenance,1
+T026,PWDx,PWDx_Code Enforcement,4
+T026,PWDx,PWDx_Contractor Complaints,1
+T026,PWDx,PWDx_District 03: North Dorchester,1
+T026,PWDx,PWDx_District 07: South Dorchester,1
+T026,PWDx,PWDx_District 08: Hyde Park,1
+T026,PWDx,PWDx_District 1B: North End,3
+T026,PWDx,PWDx_District 1C: Downtown,2
+T026,PWDx,PWDx_Engineering_PIC,1
+T026,PWDx,PWDx_Graffiti,2
+T026,PWDx,PWDx_Highway Construction,6
+T026,PWDx,PWDx_Highway Construction General,1
+T026,PWDx,PWDx_Litter Basket Maintenance,5
+T026,PWDx,PWDx_Recycling,1
+T026,PWDx,PWDx_STRL Pole Compliance,1
+T026,PWDx,PWDx_Sidewalk Repair,17
+T026,PWDx,PWDx_Street Light Knock Downs,2
+T026,PWDx,PWDx_Street Light Knockdown Replacement,1
+T026,PWDx,PWDx_Street Light Outages,19
+T026,PWDx,PWDx_Street Light Outages - Gas,3
+T026,PWDx,PWDx_Street Light_General Lighting Request,9
+T027,BTDT,BTDT_Administration,2
+T027,BTDT,BTDT_Parking Enforcement,1
+T027,BTDT,BTDT_Permits & Special Events,2
+T027,INFO,INFO_Reallocation From Dept,6
+T027,ISD,ISD_Building (INTERNAL),270
+T027,ISD,ISD_Electrical,1
+T027,ISD,ISD_Environmental Services (INTERNAL),1
+T027,ISD,ISD_Housing (INTERNAL),2
+T027,PWDx,PWDx_Code Enforcement,3
+T027,PWDx,PWDx_Contractor Complaints,4
+T028,ISD,ISD_Building (INTERNAL),3
+T028,ISD,ISD_Health (INTERNAL),73
+T029,ISD,ISD_Administrative,1
+T030,INFO,INFO_BPHC,1
+T030,ISD,ISD_Health (INTERNAL),479
+T031,INFO,INFO_BPHC,1
+T031,ISD,ISD_Health (INTERNAL),272
+T032,BTDT,BTDT_BostonBikes,1
+T032,BTDT,BTDT_Broken Meter Complaints,1
+T032,BTDT,BTDT_General Comments,97
+T032,BTDT,BTDT_OPC_Phone Bank Service,2
+T032,BTDT,BTDT_OPC_Walk-In Service,6
+T032,BTDT,BTDT_Parking Enforcement,7
+T032,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T032,BTDT,BTDT_Sign Shop Clerical,1
+T032,DND,DND_General,1
+T032,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,3
+T032,INFO,INFO_MBTA,1
+T032,INFO,INFO_Mass DCR,1
+T032,INFO,INFO_Reallocation From Dept,11
+T032,ISD,ISD_Housing (INTERNAL),1
+T032,PARK,PARK_Cemetery Maintenance Request,1
+T032,PARK,PARK_General Comments,32
+T032,PARK,PARK_Maintenance_Region 1,1
+T032,PARK,PARK_Maintenance_Region 2,2
+T032,PARK,PARK_Maintenance_Region 6,1
+T032,PARK,PARK_Tree Emergencies,1
+T032,PARK,PARK_Tree Maintenance Request,1
+T032,PROP,PROP_GRAF_GraffitiRemoval,1
+T032,PWDx,PWDx_Bridge Maintenance,5
+T032,PWDx,PWDx_Code Enforcement,36
+T032,PWDx,PWDx_Contractor Complaints,4
+T032,PWDx,PWDx_District 02: Jamaica Plain,1
+T032,PWDx,PWDx_District 03: North Dorchester,4
+T032,PWDx,PWDx_District 04: Allston/Brighton,2
+T032,PWDx,PWDx_District 05: South Boston,1
+T032,PWDx,PWDx_District 06: West Roxbury and Roslindale,2
+T032,PWDx,PWDx_District 07: South Dorchester,2
+T032,PWDx,PWDx_District 08: Hyde Park,3
+T032,PWDx,PWDx_District 09: East Boston,2
+T032,PWDx,PWDx_District 10A: Roxbury,3
+T032,PWDx,PWDx_District 1B: North End,3
+T032,PWDx,PWDx_District 1C: Downtown,2
+T032,PWDx,PWDx_Empty Litter Basket,1
+T032,PWDx,PWDx_Engineering_PIC,1
+T032,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,194
+T032,PWDx,PWDx_Recycling,1
+T032,PWDx,PWDx_Roadway Repair,1
+T032,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T032,PWDx,PWDx_Sidewalk Repair,2
+T032,PWDx,PWDx_Street Light_General Lighting Request,4
+T033,ANML,ANML_General,3
+T033,BPD,BPD_Districts,2
+T033,BTDT,BTDT_AVRS Interface Queue,1
+T033,BTDT,BTDT_Abandoned Bicycle,2
+T033,BTDT,BTDT_Administration,6
+T033,BTDT,BTDT_BostonBikes,12
+T033,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,2
+T033,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,3
+T033,BTDT,BTDT_General Comments,588
+T033,BTDT,BTDT_OPC_Phone Bank Service,8
+T033,BTDT,BTDT_OPC_Walk-In Service,5
+T033,BTDT,BTDT_Parking Enforcement,86
+T033,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,2
+T033,BTDT,BTDT_Parking Lot_PrivateParkingLotComplaints,1
+T033,BTDT,BTDT_Permits & Special Events,2
+T033,BTDT,BTDT_Planning,1
+T033,BTDT,BTDT_Sign Shop_Sign Installation,1
+T033,BWSC,BWSC_All Cases,3
+T033,DISB,DISB_General_Request,3
+T033,DISB,DISB_HP Sign,3
+T033,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,6
+T033,INFO,INFO_Homeless Issue,1
+T033,INFO,INFO_HumanWaste,1
+T033,INFO,INFO_MBTA,3
+T033,INFO,INFO_Mass DCR,3
+T033,INFO,INFO_Mass DOT,2
+T033,INFO,INFO_Mayors Policy Office,9
+T033,INFO,INFO_Reallocation From Dept,22
+T033,ISD,ISD_Administrative,2
+T033,ISD,ISD_Building (INTERNAL),1
+T033,ISD,ISD_Environmental Services (INTERNAL),2
+T033,ONS,ONS_General,2
+T033,ONS,ONS_JamaicaPlain,1
+T033,ONS,ONS_Mattapan,1
+T033,ONS,ONS_Roxbury,1
+T033,PARK,PARK_Carpentry,1
+T033,PARK,PARK_Cemetery Maintenance Request,5
+T033,PARK,PARK_General Comments,68
+T033,PARK,PARK_Maintenance_Ground Maintenance,1
+T033,PARK,PARK_Maintenance_Region 1,8
+T033,PARK,PARK_Maintenance_Region 2,4
+T033,PARK,PARK_Maintenance_Region 3,2
+T033,PARK,PARK_Maintenance_Region 4,5
+T033,PARK,PARK_Maintenance_Region 5,2
+T033,PARK,PARK_Maintenance_Region 6,2
+T033,PARK,PARK_New Tree Requests,7
+T033,PARK,PARK_Park Improvement Requests,3
+T033,PARK,PARK_Plumbing,1
+T033,PARK,PARK_Tree Maintenance Request,26
+T033,PARK,PARK_Tree in Park,1
+T033,PROP,PROP_GRAF_GraffitiRemoval,1
+T033,PWDx,PWDx_Bridge Maintenance,4
+T033,PWDx,PWDx_Code Enforcement,116
+T033,PWDx,PWDx_Contractor Complaints,36
+T033,PWDx,PWDx_District 02: Jamaica Plain,7
+T033,PWDx,PWDx_District 03: North Dorchester,7
+T033,PWDx,PWDx_District 04: Allston/Brighton,4
+T033,PWDx,PWDx_District 05: South Boston,1
+T033,PWDx,PWDx_District 06: West Roxbury and Roslindale,4
+T033,PWDx,PWDx_District 07: South Dorchester,8
+T033,PWDx,PWDx_District 08: Hyde Park,7
+T033,PWDx,PWDx_District 09: East Boston,4
+T033,PWDx,PWDx_District 10A: Roxbury,9
+T033,PWDx,PWDx_District 10B: Roxbury,2
+T033,PWDx,PWDx_District 1A: Charlestown,5
+T033,PWDx,PWDx_District 1B: North End,4
+T033,PWDx,PWDx_District 1C: Downtown,4
+T033,PWDx,PWDx_Empty Litter Basket,1
+T033,PWDx,PWDx_Engineering_Design,3
+T033,PWDx,PWDx_Engineering_PIC,2
+T033,PWDx,PWDx_Highway Construction,5
+T033,PWDx,PWDx_Highway Construction General,1
+T033,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,438
+T033,PWDx,PWDx_Recycling,29
+T033,PWDx,PWDx_Request for Litter Basket Installation,3
+T033,PWDx,PWDx_Roadway Repair,8
+T033,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,21
+T033,PWDx,PWDx_Roadway Repair_CRP_Resurfacing,1
+T033,PWDx,PWDx_Roadway Repair_Ponding,1
+T033,PWDx,PWDx_Roadway Repair_Reconstruction,2
+T033,PWDx,PWDx_Sidewalk Repair,70
+T033,PWDx,PWDx_Snow Cases,1
+T033,PWDx,PWDx_Space Saver Removal,1
+T033,PWDx,PWDx_Street Light Outages,1
+T033,PWDx,PWDx_Street Light_General Lighting Request,16
+T034,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,1
+T034,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,2
+T034,BTDT,BTDT_Sign Shop_Sign Installation,2
+T034,BTDT,BTDT_Traffic Signal_Repair,9
+T034,BWSC,BWSC_All Cases,1
+T034,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,4
+T034,INFO,INFO_Eversource,8
+T034,INFO,INFO_Low Hanging Wire,3
+T034,INFO,INFO_MBTA,1
+T034,INFO,INFO_Mass DCR,7
+T034,INFO,INFO_Mass DOT,3
+T034,INFO,INFO_Reallocation From Dept,15
+T034,ONS,ONS_SouthBoston,1
+T034,PARK,PARK_Maintenance_Lighting Electrical,1
+T034,PARK,PARK_Maintenance_Region 2,1
+T034,PARK,PARK_Tree Emergencies,1
+T034,PARK,PARK_Tree Maintenance Request,2
+T034,PWDx,PWDx_Bridge Maintenance,1
+T034,PWDx,PWDx_District 10B: Roxbury,1
+T034,PWDx,PWDx_Highway Construction,2
+T034,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T034,PWDx,PWDx_STRL Pole Compliance,13
+T034,PWDx,PWDx_Street Light Knock Downs,2
+T034,PWDx,PWDx_Street Light Knockdown Replacement,6
+T034,PWDx,PWDx_Street Light Outages,9
+T034,PWDx,PWDx_Street Light Outages - Gas,11
+T034,PWDx,PWDx_Street Light Outages - Long-Term Repair,5
+T034,PWDx,PWDx_Street Light_General Lighting Request,1964
+T034,PWDx,PWDx_Street Light_Pickup_Clear Conduit,1
+T034,PWDx,PWDx_Street Light_Upgrade Existing Lighting,3
+T035,BPD,BPD_Districts,1
+T035,BTDT,BTDT_Administration,6
+T035,BTDT,BTDT_BostonBikes,19
+T035,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,182
+T035,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,17
+T035,BTDT,BTDT_General Comments,44
+T035,BTDT,BTDT_Parking Enforcement,1
+T035,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T035,BTDT,BTDT_Pavement Marking_Maintenance,1
+T035,BTDT,BTDT_Permits & Special Events,1
+T035,BTDT,BTDT_Planning,2
+T035,BTDT,BTDT_Sign Shop_Sign Installation,6
+T035,BTDT,BTDT_Traffic Signal_Repair,2
+T035,INFO,INFO_MBTA,1
+T035,INFO,INFO_Mass DCR,6
+T035,INFO,INFO_Mass DOT,2
+T035,INFO,INFO_Reallocation From Dept,1
+T035,ONS,ONS_General,1
+T035,ONS,ONS_MidDorchester,1
+T035,ONS,ONS_SouthDorchester,1
+T035,PWDx,PWDx_Contractor Complaints,2
+T035,PWDx,PWDx_Engineering_Design,2
+T035,PWDx,PWDx_Engineering_PIC,2
+T035,PWDx,PWDx_Highway Construction,1
+T035,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,2
+T035,PWDx,PWDx_Roadway Repair_CRP_Resurfacing,1
+T035,PWDx,PWDx_Street Light_General Lighting Request,1
+T036,BTDT,BTDT_Administration,2
+T036,BTDT,BTDT_Broken Meter Complaints,2
+T036,BTDT,BTDT_District 02,2
+T036,BTDT,BTDT_District 06,4
+T036,BTDT,BTDT_Sign Shop_Sign Installation,3
+T036,BTDT,BTDT_Traffic Signal_Graffiti,8
+T036,BWSC,BWSC_All Cases,2
+T036,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,6
+T036,INFO,INFO_Eversource,1
+T036,INFO,INFO_Gas_Odor_Leak,1
+T036,INFO,INFO_MBTA,3
+T036,INFO,INFO_Mass DCR,8
+T036,INFO,INFO_Mass DOT,21
+T036,INFO,INFO_Mayors Policy Office,2
+T036,INFO,INFO_Reallocation From Dept,29
+T036,INFO,INFO_USPS Issues,11
+T036,PARK,PARK_Graffiti,7
+T036,PARK,PARK_Painting,2
+T036,PROP,PROP_GRAF_GraffitiRemoval,4224
+T036,PWDx,PWDx_Code Enforcement,1
+T036,PWDx,PWDx_District 1A: Charlestown,2
+T036,PWDx,PWDx_District 1C: Downtown,2
+T036,PWDx,PWDx_Graffiti,9
+T036,PWDx,PWDx_Highway Construction General,1
+T036,PWDx,PWDx_Litter Basket Maintenance,2
+T036,PWDx,PWDx_News Boxes,1
+T036,PWDx,PWDx_STRL Pole Compliance,4
+T036,PWDx,PWDx_Street Light_General Lighting Request,2
+T037,ANML,ANML_General,2
+T037,BHA,BHA_General,39
+T037,BPD,BPD_Districts,2
+T037,BTDT,BTDT_AVRS Interface Queue,1
+T037,BTDT,BTDT_Abandoned Bicycle,1
+T037,BTDT,BTDT_Administration,3
+T037,BTDT,BTDT_BostonBikes,2
+T037,BTDT,BTDT_Parking Enforcement,6
+T037,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,10
+T037,BTDT,BTDT_Sign Shop_Sign Installation,1
+T037,DND,DND_General,10
+T037,GEN,GEN_Needle_Pickup,6
+T037,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,178
+T037,INFO,INFO_BPHC,10
+T037,INFO,INFO_Encampments,53
+T037,INFO,INFO_Eversource,4
+T037,INFO,INFO_Homeless Issue,1
+T037,INFO,INFO_HumanWaste,2
+T037,INFO,INFO_MBTA,37
+T037,INFO,INFO_Mass DCR,761
+T037,INFO,INFO_Mass DOT,87
+T037,INFO,INFO_Massport,18
+T037,INFO,INFO_Reallocation From Dept,123
+T037,INFO,INFO_USPS Issues,1
+T037,INFO,INFO_Unsheltered_Persons,2
+T037,ISD,ISD_Administrative,1
+T037,ISD,ISD_Building (INTERNAL),2
+T037,ISD,ISD_Environmental Services (INTERNAL),12
+T037,ONS,ONS_General,1
+T037,PARK,PARK_Carpentry,18
+T037,PARK,PARK_Cemetery Maintenance Request,8
+T037,PARK,PARK_Graffiti,77
+T037,PARK,PARK_Maintenance_Ground Maintenance,289
+T037,PARK,PARK_Maintenance_Horticulture,23
+T037,PARK,PARK_Maintenance_Lighting Electrical,10
+T037,PARK,PARK_Maintenance_Region 1,1370
+T037,PARK,PARK_Maintenance_Region 2,1229
+T037,PARK,PARK_Maintenance_Region 3,775
+T037,PARK,PARK_Maintenance_Region 4,703
+T037,PARK,PARK_Maintenance_Region 5,556
+T037,PARK,PARK_Maintenance_Region 6,1107
+T037,PARK,PARK_Maintenance_Support Services,126
+T037,PARK,PARK_Maintenance_Trades,25
+T037,PARK,PARK_New Tree Requests,1
+T037,PARK,PARK_Painting,14
+T037,PARK,PARK_Park Improvement Requests,16
+T037,PARK,PARK_Plumbing,51
+T037,PARK,PARK_Tree Emergencies,24
+T037,PARK,PARK_Tree Maintenance Request,7
+T037,PARK,PARK_Tree in Park,14
+T037,PARK,PARK_Urban_Wilds,18
+T037,PARK,PARK_Welding,11
+T037,PROP,PROP_GRAF_GraffitiRemoval,1
+T037,PWDx,PWDx_Bridge Maintenance,1
+T037,PWDx,PWDx_Code Enforcement,97
+T037,PWDx,PWDx_Contractor Complaints,1
+T037,PWDx,PWDx_District 02: Jamaica Plain,2
+T037,PWDx,PWDx_District 03: North Dorchester,14
+T037,PWDx,PWDx_District 04: Allston/Brighton,5
+T037,PWDx,PWDx_District 05: South Boston,1
+T037,PWDx,PWDx_District 06: West Roxbury and Roslindale,1
+T037,PWDx,PWDx_District 07: South Dorchester,1
+T037,PWDx,PWDx_District 09: East Boston,8
+T037,PWDx,PWDx_District 10A: Roxbury,6
+T037,PWDx,PWDx_District 10B: Roxbury,4
+T037,PWDx,PWDx_District 1B: North End,1
+T037,PWDx,PWDx_District 1C: Downtown,1
+T037,PWDx,PWDx_Engineering_PIC,2
+T037,PWDx,PWDx_Highway Construction,1
+T037,PWDx,PWDx_Litter Basket Maintenance,2
+T037,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,11
+T037,PWDx,PWDx_Recycling,4
+T037,PWDx,PWDx_Recycling Sent to Contractor,1
+T037,PWDx,PWDx_Request for Street Cleaning,1
+T037,PWDx,PWDx_Sidewalk Repair,1
+T037,PWDx,PWDx_Street Light Outages,4
+T037,PWDx,PWDx_Street Light_General Lighting Request,1
+T038,ISD,ISD_Electrical,3
+T038,ISD,ISD_Housing (INTERNAL),1665
+T038,ISD,ISD_Plumbing,1
+T039,BPD,BPD_Districts,3
+T039,BTDT,BTDT_Administration,1
+T039,BTDT,BTDT_Parking Enforcement,9
+T039,BWSC,BWSC_All Cases,1
+T039,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,5
+T039,INFO,INFO_Reallocation From Dept,5
+T039,ISD,ISD_Administrative,3
+T039,ISD,ISD_Building (INTERNAL),2
+T039,ISD,ISD_Environmental Services (INTERNAL),156
+T039,ISD,ISD_Health (INTERNAL),1
+T039,PWDx,PWDx_Code Enforcement,171
+T039,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,1
+T040,ANML,ANML_General,1
+T040,BHA,BHA_General,1
+T040,BTDT,BTDT_Abandoned Bicycle,3
+T040,BTDT,BTDT_Administration,2
+T040,BTDT,BTDT_BostonBikes,1
+T040,BTDT,BTDT_Parking Enforcement,3
+T040,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T040,BWSC,BWSC_All Cases,3
+T040,DISB,DISB_General_Request,1
+T040,DND,DND_General,1
+T040,GEN,GEN_Needle_Pickup,1
+T040,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,4
+T040,INFO,INFO_BPHC,1
+T040,INFO,INFO_Encampments,4
+T040,INFO,INFO_MBTA,1
+T040,INFO,INFO_Mass DCR,3
+T040,INFO,INFO_Mass DOT,1
+T040,INFO,INFO_Reallocation From Dept,17
+T040,ISD,ISD_Administrative,1
+T040,ISD,ISD_Building (INTERNAL),2
+T040,ISD,ISD_Housing (INTERNAL),3
+T040,PARK,PARK_Maintenance_Region 1,3
+T040,PARK,PARK_Maintenance_Region 4,1
+T040,PARK,PARK_Maintenance_Region 6,1
+T040,PWDx,PWDx_Code Enforcement,5800
+T040,PWDx,PWDx_Contractor Complaints,1
+T040,PWDx,PWDx_District 02: Jamaica Plain,5
+T040,PWDx,PWDx_District 03: North Dorchester,53
+T040,PWDx,PWDx_District 04: Allston/Brighton,19
+T040,PWDx,PWDx_District 05: South Boston,15
+T040,PWDx,PWDx_District 06: West Roxbury and Roslindale,8
+T040,PWDx,PWDx_District 07: South Dorchester,40
+T040,PWDx,PWDx_District 08: Hyde Park,7
+T040,PWDx,PWDx_District 09: East Boston,38
+T040,PWDx,PWDx_District 10A: Roxbury,16
+T040,PWDx,PWDx_District 10B: Roxbury,15
+T040,PWDx,PWDx_District 1A: Charlestown,4
+T040,PWDx,PWDx_District 1B: North End,31
+T040,PWDx,PWDx_District 1C: Downtown,22
+T040,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,6
+T040,PWDx,PWDx_Request for Litter Basket Installation,1
+T040,PWDx,PWDx_WM_Mattress_Pickup,10
+T041,INFO,INFO_Homeless Issue,1
+T041,INFO,INFO_Reallocation From Dept,1
+T041,ISD,ISD_Administrative,2
+T041,ISD,ISD_Building (INTERNAL),171
+T041,ISD,ISD_Environmental Services (INTERNAL),4
+T041,ISD,ISD_Housing (INTERNAL),21
+T042,BTDT,BTDT_Administration,3
+T042,BTDT,BTDT_OPC_Walk-In Service,1
+T042,BTDT,BTDT_Parking Enforcement,2
+T042,BTDT,BTDT_Permits & Special Events,2
+T042,BTDT,BTDT_Sign Shop_Sign Installation,4
+T042,BTDT,BTDT_Traffic Signal_Repair,1
+T042,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T042,INFO,INFO_Low Hanging Wire,1
+T042,INFO,INFO_MBTA,1
+T042,INFO,INFO_Reallocation From Dept,1
+T042,ISD,ISD_Administrative,2
+T042,ISD,ISD_Building (INTERNAL),4
+T042,ISD,ISD_Housing (INTERNAL),1
+T042,ONS,ONS_General,2
+T042,PARK,PARK_Maintenance_Region 1,1
+T042,PARK,PARK_Maintenance_Region 3,2
+T042,PWDx,PWDx_Code Enforcement,174
+T042,PWDx,PWDx_District 06: West Roxbury and Roslindale,1
+T042,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T042,PWDx,PWDx_STRL Pole Compliance,1
+T043,INFO,INFO_Reallocation From Dept,1
+T043,ISD,ISD_Administrative,1
+T043,ISD,ISD_Building (INTERNAL),156
+T043,ISD,ISD_Housing (INTERNAL),27
+T043,PWDx,PWDx_Code Enforcement,1
+T044,BPD,BPD_Districts,3
+T044,BTDT,BTDT_Parking Enforcement,1
+T044,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,4
+T044,INFO,INFO_Homeless Issue,1
+T044,INFO,INFO_Reallocation From Dept,1
+T044,ISD,ISD_Administrative,6
+T044,ISD,ISD_Health (INTERNAL),3
+T044,ONS,ONS_Roxbury,2
+T044,PWDx,PWDx_Code Enforcement,336
+T045,BHA,BHA_General,6
+T045,BPD,BPD_Districts,5
+T045,BTDT,BTDT_AVRS Interface Queue,1
+T045,BTDT,BTDT_Administration,5
+T045,BTDT,BTDT_District 01,1
+T045,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,1
+T045,BTDT,BTDT_Parking Enforcement,20
+T045,BTDT,BTDT_Sign Shop_Sign Installation,1
+T045,BWSC,BWSC_All Cases,5
+T045,DND,DND_General,2
+T045,ECON,ECON_OutdoorDining,1
+T045,GEN,GEN_Needle_Pickup,1
+T045,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,20
+T045,INFO,INFO_BPHC,3
+T045,INFO,INFO_Encampments,27
+T045,INFO,INFO_Eversource,1
+T045,INFO,INFO_Homeless Issue,11
+T045,INFO,INFO_MBTA,5
+T045,INFO,INFO_Mass DCR,40
+T045,INFO,INFO_Mass DOT,4
+T045,INFO,INFO_Reallocation From Dept,72
+T045,INFO,INFO_USPS Issues,1
+T045,INFO,INFO_Unsheltered_Persons,1
+T045,ISD,ISD_Administrative,6
+T045,ISD,ISD_Building (INTERNAL),11
+T045,ISD,ISD_Environmental Services (INTERNAL),4
+T045,ISD,ISD_Housing (INTERNAL),35
+T045,ONS,ONS_EastBoston,1
+T045,PARK,PARK_Maintenance_Ground Maintenance,6
+T045,PARK,PARK_Maintenance_Region 1,42
+T045,PARK,PARK_Maintenance_Region 2,11
+T045,PARK,PARK_Maintenance_Region 3,3
+T045,PARK,PARK_Maintenance_Region 4,4
+T045,PARK,PARK_Maintenance_Region 5,4
+T045,PARK,PARK_Maintenance_Region 6,14
+T045,PARK,PARK_Tree Maintenance Request,1
+T045,PARK,PARK_Tree in Park,1
+T045,PARK,PARK_Welding,2
+T045,PWDx,PWDx_Bridge Maintenance,2
+T045,PWDx,PWDx_Code Enforcement,38410
+T045,PWDx,PWDx_Contractor Complaints,2
+T045,PWDx,PWDx_District 02: Jamaica Plain,34
+T045,PWDx,PWDx_District 03: North Dorchester,66
+T045,PWDx,PWDx_District 04: Allston/Brighton,96
+T045,PWDx,PWDx_District 05: South Boston,60
+T045,PWDx,PWDx_District 06: West Roxbury and Roslindale,23
+T045,PWDx,PWDx_District 07: South Dorchester,47
+T045,PWDx,PWDx_District 08: Hyde Park,23
+T045,PWDx,PWDx_District 09: East Boston,156
+T045,PWDx,PWDx_District 10A: Roxbury,46
+T045,PWDx,PWDx_District 10B: Roxbury,52
+T045,PWDx,PWDx_District 1A: Charlestown,25
+T045,PWDx,PWDx_District 1B: North End,94
+T045,PWDx,PWDx_District 1C: Downtown,148
+T045,PWDx,PWDx_Highway Construction,3
+T045,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,213
+T045,PWDx,PWDx_Recycling,1
+T045,PWDx,PWDx_Request for Litter Basket Installation,1
+T045,PWDx,PWDx_STRL Pole Compliance,1
+T045,PWDx,PWDx_Sidewalk Repair,1
+T045,PWDx,PWDx_Space Saver Removal,1
+T045,PWDx,PWDx_Street Light Outages,1
+T045,PWDx,PWDx_WM_Mattress_Pickup,35
+T046,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,1
+T046,INFO,INFO_MBTA,1
+T046,INFO,INFO_Mass DCR,1
+T046,INFO,INFO_Mass DOT,1
+T046,INFO,INFO_Reallocation From Dept,1
+T046,PWDx,PWDx_Street Light Knockdown Replacement,2
+T046,PWDx,PWDx_Street Light Outages,2
+T046,PWDx,PWDx_Street Light_Install New Lighting,48
+T047,ISD,ISD_Health (INTERNAL),1
+T047,ISD,ISD_Weights and Measures (INTERNAL),21
+T048,BTDT,BTDT_Administration,2
+T048,BTDT,BTDT_District 02,1
+T048,BTDT,BTDT_District 03,1
+T048,BTDT,BTDT_District 04,1
+T048,BTDT,BTDT_District 06,2
+T048,BTDT,BTDT_Sign Repair,1
+T048,BTDT,BTDT_Sign Shop_Sign Installation,5
+T048,BTDT,BTDT_Traffic Signal_Repair,2
+T048,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T048,INFO,INFO_Mass DCR,1
+T048,PWDx,PWDx_STRL Pole Compliance,1
+T048,PWDx,PWDx_Street Light Knock Downs,5
+T048,PWDx,PWDx_Street Light Knockdown Replacement,292
+T048,PWDx,PWDx_Street Light_General Lighting Request,2
+T049,ISD,ISD_Housing (INTERNAL),27
+T050,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,4
+T050,INFO,INFO_Mass DCR,2
+T050,INFO,INFO_Reallocation From Dept,6
+T050,ONS,ONS_BackBay_Fenway_MissionHill,1
+T050,PARK,PARK_Maintenance_Ground Maintenance,1
+T050,PARK,PARK_Maintenance_Region 1,2
+T050,PWDx,PWDx_Code Enforcement,2
+T050,PWDx,PWDx_District 03: North Dorchester,2
+T050,PWDx,PWDx_District 04: Allston/Brighton,1
+T050,PWDx,PWDx_District 07: South Dorchester,2
+T050,PWDx,PWDx_District 08: Hyde Park,1
+T050,PWDx,PWDx_District 09: East Boston,2
+T050,PWDx,PWDx_District 10A: Roxbury,11
+T050,PWDx,PWDx_District 1B: North End,1
+T050,PWDx,PWDx_Litter Basket Maintenance,167
+T051,BWSC,BWSC_All Cases,1
+T051,INFO,INFO_Reallocation From Dept,3
+T051,ISD,ISD_Administrative,1
+T051,ISD,ISD_Building (INTERNAL),252
+T051,ISD,ISD_Electrical,1
+T051,ISD,ISD_Environmental Services (INTERNAL),1
+T051,ISD,ISD_Health (INTERNAL),1
+T051,ISD,ISD_Housing (INTERNAL),13
+T051,PWDx,PWDx_Code Enforcement,2
+T051,PWDx,PWDx_Contractor Complaints,1
+T051,PWDx,PWDx_Sidewalk Repair,1
+T052,BWSC,BWSC_All Cases,1
+T052,DND,DND_General,1
+T052,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T052,INFO,INFO_Reallocation From Dept,1
+T052,ISD,ISD_Administrative,1
+T052,ISD,ISD_Building (INTERNAL),17
+T052,ISD,ISD_Environmental Services (INTERNAL),2
+T052,ISD,ISD_Housing (INTERNAL),1008
+T052,ISD,ISD_Plumbing,1
+T052,PARK,PARK_Tree Maintenance Request,1
+T052,PWDx,PWDx_Code Enforcement,15
+T052,PWDx,PWDx_District 07: South Dorchester,1
+T053,BTDT,BTDT_Traffic Signal_Repair,3
+T053,INFO,INFO_Eversource,7
+T053,INFO,INFO_Mass DCR,6
+T053,INFO,INFO_Mass DOT,3
+T053,INFO,INFO_Massport,1
+T053,INFO,INFO_Reallocation From Dept,16
+T053,PWDx,PWDx_Major System Failure,529
+T053,PWDx,PWDx_Street Light Outages,14
+T053,PWDx,PWDx_Street Light Outages - Gas,3
+T053,PWDx,PWDx_Street Light Outages - Long-Term Repair,2
+T054,INFO,INFO_Reallocation From Dept,1
+T054,PWDx,PWDx_WM_Mattress_Pickup,36546
+T055,ISD,ISD_Building (INTERNAL),19
+T055,ISD,ISD_Plumbing,2
+T056,ISD,ISD_Environmental Services (INTERNAL),24
+T056,ISD,ISD_Health (INTERNAL),1
+T056,ISD,ISD_Housing (INTERNAL),750
+T056,PWDx,PWDx_Code Enforcement,1
+T057,PARK,PARK_Maintenance_Ground Maintenance,1
+T057,PWDx,PWDx_Snow Cases,24
+T058,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,3
+T058,INFO,INFO_Reallocation From Dept,9
+T058,PARK,PARK_Maintenance_Ground Maintenance,2
+T058,PARK,PARK_Maintenance_Region 1,2
+T058,PARK,PARK_Maintenance_Region 2,1
+T058,PARK,PARK_Maintenance_Region 6,4
+T058,PWDx,PWDx_Code Enforcement,224
+T058,PWDx,PWDx_District 09: East Boston,1
+T058,PWDx,PWDx_District 10A: Roxbury,1
+T058,PWDx,PWDx_District 1B: North End,1
+T058,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,22932
+T058,PWDx,PWDx_WM_Mattress_Pickup,1
+T059,BTDT,BTDT_Administration,3
+T059,BTDT,BTDT_District 01,24
+T059,BTDT,BTDT_District 02,36
+T059,BTDT,BTDT_District 03,15
+T059,BTDT,BTDT_District 04,22
+T059,BTDT,BTDT_District 05,13
+T059,BTDT,BTDT_District 06,24
+T059,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,24
+T059,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,1
+T059,BTDT,BTDT_Parking Enforcement,1
+T059,BTDT,BTDT_Sign Repair,31
+T059,BTDT,BTDT_Sign Shop Clerical,1
+T059,BTDT,BTDT_Sign Shop_Sign Installation,613
+T059,DISB,DISB_HP Sign,1
+T059,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T059,INFO,INFO_MBTA,9
+T059,INFO,INFO_Mass DCR,4
+T059,INFO,INFO_Mass DOT,1
+T059,INFO,INFO_Reallocation From Dept,6
+T059,ONS,ONS_General,1
+T059,PWDx,PWDx_Contractor Complaints,7
+T060,ANML,ANML_General,1
+T060,INFO,INFO_BPHC,5
+T060,INFO,INFO_Reallocation From Dept,2
+T060,ISD,ISD_Building (INTERNAL),1
+T060,ISD,ISD_Environmental Services (INTERNAL),14
+T060,PWDx,PWDx_Code Enforcement,1
+T061,BTDT,BTDT_Parking Enforcement,7
+T061,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,17
+T061,DISB,DISB_General_Request,1
+T061,DISB,DISB_HP Sign,1
+T061,DND,DND_General,2
+T061,PWDx,PWDx_Street Light_Upgrade Existing Lighting,1
+T062,GEN,GEN_Needle_Pickup,18117
+T062,INFO,INFO_BPHC,1
+T062,INFO,INFO_Encampments,6
+T062,INFO,INFO_HumanWaste,2
+T062,INFO,INFO_MBTA,2
+T062,INFO,INFO_Mass DCR,2
+T062,INFO,INFO_Reallocation From Dept,4
+T062,INFO,INFO_Unsheltered_Persons,2
+T062,ISD,ISD_Health (INTERNAL),2
+T062,PARK,PARK_Maintenance_Region 1,1
+T062,PARK,PARK_Maintenance_Region 3,1
+T062,PARK,PARK_Maintenance_Region 6,2
+T062,PWDx,PWDx_Code Enforcement,2
+T062,PWDx,PWDx_District 03: North Dorchester,1
+T062,PWDx,PWDx_District 05: South Boston,1
+T062,PWDx,PWDx_District 09: East Boston,1
+T062,PWDx,PWDx_District 1A: Charlestown,1
+T062,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,1
+T063,BHA,BHA_General,1
+T063,BPD,BPD_Districts,7
+T063,BTDT,BTDT_Administration,14
+T063,BTDT,BTDT_BostonBikes,34
+T063,BTDT,BTDT_District 01,11
+T063,BTDT,BTDT_District 02,9
+T063,BTDT,BTDT_District 03,7
+T063,BTDT,BTDT_District 04,8
+T063,BTDT,BTDT_District 05,3
+T063,BTDT,BTDT_District 06,5
+T063,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,1310
+T063,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,109
+T063,BTDT,BTDT_General Comments,57
+T063,BTDT,BTDT_Parking Enforcement,5
+T063,BTDT,BTDT_Parking Lot_Valet Parking Problems,1
+T063,BTDT,BTDT_Pavement Marking_Maintenance,34
+T063,BTDT,BTDT_Permits & Special Events,3
+T063,BTDT,BTDT_Planning,7
+T063,BTDT,BTDT_Sign Repair,16
+T063,BTDT,BTDT_Sign Shop_Sign Installation,114
+T063,BTDT,BTDT_Traffic Signal_Repair,2
+T063,BWSC,BWSC_All Cases,2
+T063,DISB,DISB_General_Request,5
+T063,DISB,DISB_HP Sign,9
+T063,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,3
+T063,INFO,INFO_MBTA,6
+T063,INFO,INFO_Mass DCR,53
+T063,INFO,INFO_Mass DOT,10
+T063,INFO,INFO_Reallocation From Dept,11
+T063,ONS,ONS_BackBay_Fenway_MissionHill,1
+T063,ONS,ONS_EastBoston,2
+T063,ONS,ONS_General,14
+T063,ONS,ONS_Mattapan,4
+T063,ONS,ONS_MidDorchester,1
+T063,ONS,ONS_NorthEnd_WaterFront_WestEnd,2
+T063,ONS,ONS_SouthBoston,1
+T063,ONS,ONS_SouthDorchester,1
+T063,ONS,ONS_WestRoxbury,1
+T063,PWDx,PWDx_Contractor Complaints,3
+T063,PWDx,PWDx_District 04: Allston/Brighton,1
+T063,PWDx,PWDx_District 07: South Dorchester,1
+T063,PWDx,PWDx_District 08: Hyde Park,2
+T063,PWDx,PWDx_Request for Street Cleaning,3
+T063,PWDx,PWDx_Roadway Repair,1
+T063,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,4
+T063,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T063,PWDx,PWDx_Sidewalk Repair,2
+T063,PWDx,PWDx_Street Light_Upgrade Existing Lighting,1
+T064,DND,DND_General,1
+T064,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,7
+T064,INFO,INFO_Eversource,1
+T064,INFO,INFO_Low Hanging Wire,2
+T064,INFO,INFO_MBTA,2
+T064,INFO,INFO_Mass DCR,15
+T064,INFO,INFO_Mass DOT,1
+T064,INFO,INFO_Reallocation From Dept,8
+T064,PARK,PARK_Cemetery Maintenance Request,1
+T064,PARK,PARK_Maintenance_Horticulture,1
+T064,PARK,PARK_Maintenance_Region 1,2
+T064,PARK,PARK_New Tree Requests,4376
+T064,PARK,PARK_Park Improvement Requests,3
+T064,PARK,PARK_Tree Emergencies,55
+T064,PARK,PARK_Tree Maintenance Request,378
+T064,PARK,PARK_Tree in Park,19
+T064,PROP,PROP_GRAF_GraffitiRemoval,1
+T064,PWDx,PWDx_Code Enforcement,5
+T064,PWDx,PWDx_District 07: South Dorchester,1
+T064,PWDx,PWDx_Highway Construction,2
+T064,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,6
+T064,PWDx,PWDx_Sidewalk Repair,8
+T065,PWDx,PWDx_News Boxes,3
+T066,ISD,ISD_Weights and Measures (INTERNAL),10
+T067,ISD,ISD_Health (INTERNAL),5
+T068,ISD,ISD_Health (INTERNAL),19
+T069,ISD,ISD_Health (INTERNAL),6
+T069,ISD,ISD_Housing (INTERNAL),1
+T070,ISD,ISD_Health (INTERNAL),31
+T071,ISD,ISD_Electrical,3
+T071,ISD,ISD_Housing (INTERNAL),130
+T072,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T072,ISD,ISD_Housing (INTERNAL),27
+T072,ISD,ISD_Plumbing,1
+T073,BWSC,BWSC_All Cases,3
+T073,ISD,ISD_Building (INTERNAL),3
+T073,ISD,ISD_Housing (INTERNAL),218
+T074,BTDT,BTDT_Administration,8
+T074,BTDT,BTDT_District 01,1
+T074,BTDT,BTDT_District 02,2
+T074,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,3
+T074,BTDT,BTDT_Parking Enforcement,2
+T074,BTDT,BTDT_Sign Shop_Sign Installation,20
+T074,INFO,INFO_Mass DOT,1
+T074,INFO,INFO_Reallocation From Dept,2
+T074,PARK,PARK_Tree Maintenance Request,1
+T074,PWDx,PWDx_District 02: Jamaica Plain,6
+T074,PWDx,PWDx_District 03: North Dorchester,6
+T074,PWDx,PWDx_District 04: Allston/Brighton,3
+T074,PWDx,PWDx_District 05: South Boston,11
+T074,PWDx,PWDx_District 06: West Roxbury and Roslindale,2
+T074,PWDx,PWDx_District 07: South Dorchester,15
+T074,PWDx,PWDx_District 09: East Boston,16
+T074,PWDx,PWDx_District 10A: Roxbury,7
+T074,PWDx,PWDx_District 10B: Roxbury,13
+T074,PWDx,PWDx_District 1A: Charlestown,6
+T074,PWDx,PWDx_District 1B: North End,3
+T074,PWDx,PWDx_District 1C: Downtown,9
+T075,BWSC,BWSC_All Cases,6
+T075,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T075,INFO,INFO_Reallocation From Dept,2
+T075,ISD,ISD_Building (INTERNAL),70
+T075,ISD,ISD_Electrical,3
+T075,ISD,ISD_Health (INTERNAL),3
+T075,ISD,ISD_Housing (INTERNAL),70
+T075,ISD,ISD_Housing_ShortTermRental,1
+T075,ISD,ISD_Plumbing,1
+T076,ISD,ISD_Building (INTERNAL),16
+T076,PWDx,PWDx_Code Enforcement,1
+T077,ISD,ISD_Weights and Measures (INTERNAL),1
+T078,ISD,ISD_Building (INTERNAL),4
+T078,ISD,ISD_Housing (INTERNAL),46
+T079,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T079,INFO,INFO_Reallocation From Dept,1
+T079,ISD,ISD_Building (INTERNAL),1
+T079,ISD,ISD_Environmental Services (INTERNAL),54
+T079,PWDx,PWDx_Code Enforcement,163
+T079,PWDx,PWDx_Empty Litter Basket,1
+T079,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,3
+T080,BTDT,BTDT_Administration,61
+T080,BTDT,BTDT_BostonBikes,2
+T080,BTDT,BTDT_Broken Meter Complaints,14
+T080,BTDT,BTDT_District 02,1
+T080,BTDT,BTDT_District 03,1
+T080,BTDT,BTDT_Sign Shop_Sign Installation,17
+T080,BTDT,BTDT_Traffic Signal_Graffiti,140
+T080,BTDT,BTDT_Traffic Signal_Repair,32
+T080,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,98
+T080,INFO,INFO_Eversource,24
+T080,INFO,INFO_Homeless Issue,1
+T080,INFO,INFO_Low Hanging Wire,3
+T080,INFO,INFO_MBTA,21
+T080,INFO,INFO_Mass DCR,105
+T080,INFO,INFO_Mass DOT,32
+T080,INFO,INFO_Massport,3
+T080,INFO,INFO_Reallocation From Dept,47
+T080,INFO,INFO_USPS Issues,18
+T080,ISD,ISD_Administrative,1
+T080,PARK,PARK_Graffiti,35
+T080,PARK,PARK_Maintenance_Horticulture,1
+T080,PARK,PARK_Maintenance_Region 1,3
+T080,PARK,PARK_Painting,5
+T080,PARK,PARK_Tree Maintenance Request,1
+T080,PROP,PROP_GRAF_GraffitiRemoval,233
+T080,PWDx,PWDx_Code Enforcement,14
+T080,PWDx,PWDx_Contractor Complaints,6
+T080,PWDx,PWDx_District 02: Jamaica Plain,131
+T080,PWDx,PWDx_District 03: North Dorchester,59
+T080,PWDx,PWDx_District 04: Allston/Brighton,51
+T080,PWDx,PWDx_District 05: South Boston,158
+T080,PWDx,PWDx_District 06: West Roxbury and Roslindale,65
+T080,PWDx,PWDx_District 07: South Dorchester,34
+T080,PWDx,PWDx_District 08: Hyde Park,58
+T080,PWDx,PWDx_District 09: East Boston,46
+T080,PWDx,PWDx_District 10A: Roxbury,160
+T080,PWDx,PWDx_District 10B: Roxbury,52
+T080,PWDx,PWDx_District 1A: Charlestown,10
+T080,PWDx,PWDx_District 1B: North End,46
+T080,PWDx,PWDx_District 1C: Downtown,299
+T080,PWDx,PWDx_Graffiti,373
+T080,PWDx,PWDx_Highway Construction,26
+T080,PWDx,PWDx_Highway Construction General,106
+T080,PWDx,PWDx_Litter Basket Maintenance,14
+T080,PWDx,PWDx_News Boxes,1
+T080,PWDx,PWDx_STRL Pole Compliance,224
+T080,PWDx,PWDx_Sidewalk Repair,3
+T080,PWDx,PWDx_Street Light Knock Downs,1
+T080,PWDx,PWDx_Street Light Outages,1
+T080,PWDx,PWDx_Street Light_General Lighting Request,13
+T081,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T081,INFO,INFO_Mass DCR,3
+T081,INFO,INFO_Reallocation From Dept,5
+T081,ISD,ISD_Environmental Services (INTERNAL),1
+T081,PARK,PARK_Carpentry,9
+T081,PARK,PARK_Graffiti,7
+T081,PARK,PARK_Maintenance_Ground Maintenance,1
+T081,PARK,PARK_Maintenance_Lighting Electrical,1
+T081,PARK,PARK_Maintenance_Region 1,2
+T081,PARK,PARK_Maintenance_Region 2,1
+T081,PARK,PARK_Maintenance_Region 5,1
+T081,PARK,PARK_Maintenance_Support Services,2
+T081,PARK,PARK_Painting,3
+T081,PARK,PARK_Park Improvement Requests,376
+T081,PARK,PARK_Welding,1
+T081,PROP,PROP_GRAF_GraffitiRemoval,1
+T081,PWDx,PWDx_Code Enforcement,1
+T081,PWDx,PWDx_Highway Construction,1
+T082,BPD,BPD_Districts,39
+T082,BTDT,BTDT_AVRS Interface Queue,381
+T082,BTDT,BTDT_Abandoned Bicycle,12
+T082,BTDT,BTDT_Administration,19
+T082,BTDT,BTDT_BostonBikes,9
+T082,BTDT,BTDT_Broken Meter Complaints,5
+T082,BTDT,BTDT_District 01,3
+T082,BTDT,BTDT_District 02,4
+T082,BTDT,BTDT_District 04,2
+T082,BTDT,BTDT_District 06,5
+T082,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,42
+T082,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,3
+T082,BTDT,BTDT_General Comments,1
+T082,BTDT,BTDT_OPC_Walk-In Service,5
+T082,BTDT,BTDT_Parking Enforcement,119034
+T082,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,2
+T082,BTDT,BTDT_Pavement Marking_Maintenance,1
+T082,BTDT,BTDT_Permits & Special Events,44
+T082,BTDT,BTDT_Sign Repair,4
+T082,BTDT,BTDT_Sign Shop Clerical,1
+T082,BTDT,BTDT_Sign Shop_Sign Installation,20
+T082,DISB,DISB_HP Sign,4
+T082,ECON,ECON_OutdoorDining,2
+T082,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,8
+T082,INFO,INFO_Encampments,2
+T082,INFO,INFO_Homeless Issue,32
+T082,INFO,INFO_MBTA,2
+T082,INFO,INFO_Mass DCR,8
+T082,INFO,INFO_Mass DOT,1
+T082,INFO,INFO_Reallocation From Dept,13
+T082,ISD,ISD_Administrative,23
+T082,ISD,ISD_Building (INTERNAL),15
+T082,ISD,ISD_Environmental Services (INTERNAL),6
+T082,ISD,ISD_Housing (INTERNAL),1
+T082,ONS,ONS_General,3
+T082,ONS,ONS_Roslindale,1
+T082,PARK,PARK_Maintenance_Ground Maintenance,1
+T082,PARK,PARK_Maintenance_Region 3,1
+T082,PARK,PARK_Maintenance_Region 4,1
+T082,PARK,PARK_Park Improvement Requests,1
+T082,PARK,PARK_Tree Emergencies,1
+T082,PROP,PROP_GRAF_GraffitiRemoval,3
+T082,PWDx,PWDx_Code Enforcement,62
+T082,PWDx,PWDx_Contractor Complaints,9
+T082,PWDx,PWDx_District 02: Jamaica Plain,1
+T082,PWDx,PWDx_District 03: North Dorchester,1
+T082,PWDx,PWDx_District 04: Allston/Brighton,1
+T082,PWDx,PWDx_District 05: South Boston,1
+T082,PWDx,PWDx_Highway Construction,1
+T082,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,1
+T082,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T082,PWDx,PWDx_Space Saver Removal,81
+T082,PWDx,PWDx_Street Light_General Lighting Request,1
+T083,BTDT,BTDT_Broken Meter Complaints,75
+T084,BTDT,BTDT_AVRS Interface Queue,9
+T084,BTDT,BTDT_Administration,9
+T084,BTDT,BTDT_District 01,1
+T084,BTDT,BTDT_District 06,2
+T084,BTDT,BTDT_Parking Enforcement,55
+T084,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T084,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,3
+T084,INFO,INFO_Mass DCR,1
+T084,INFO,INFO_Reallocation From Dept,4
+T084,ISD,ISD_Building (INTERNAL),2
+T084,ISD,ISD_Environmental Services (INTERNAL),2
+T084,ISD,ISD_Housing (INTERNAL),1
+T084,PWDx,PWDx_Code Enforcement,265
+T085,ANML,ANML_General,3
+T085,BPD,BPD_Districts,6
+T085,BWSC,BWSC_All Cases,1
+T085,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,16
+T085,INFO,INFO_BPHC,1
+T085,INFO,INFO_Eversource,1
+T085,INFO,INFO_MBTA,1
+T085,INFO,INFO_Mass DCR,12
+T085,INFO,INFO_Mass DOT,1
+T085,INFO,INFO_Massport,3
+T085,INFO,INFO_Reallocation From Dept,8
+T085,ISD,ISD_Administrative,1
+T085,ISD,ISD_Environmental Services (INTERNAL),3
+T085,ONS,ONS_General,1
+T085,ONS,ONS_JamaicaPlain,1
+T085,PARK,PARK_Carpentry,7
+T085,PARK,PARK_Cemetery Maintenance Request,12
+T085,PARK,PARK_Graffiti,4
+T085,PARK,PARK_Maintenance_Ground Maintenance,1
+T085,PARK,PARK_Maintenance_Horticulture,2
+T085,PARK,PARK_Maintenance_Lighting Electrical,10
+T085,PARK,PARK_Maintenance_Region 1,23
+T085,PARK,PARK_Maintenance_Region 2,21
+T085,PARK,PARK_Maintenance_Region 3,11
+T085,PARK,PARK_Maintenance_Region 4,17
+T085,PARK,PARK_Maintenance_Region 5,12
+T085,PARK,PARK_Maintenance_Region 6,7
+T085,PARK,PARK_Maintenance_Support Services,3
+T085,PARK,PARK_Maintenance_Trades,12
+T085,PARK,PARK_New Tree Requests,7
+T085,PARK,PARK_Park Improvement Requests,12
+T085,PARK,PARK_Plumbing,18
+T085,PARK,PARK_Tree Emergencies,11
+T085,PARK,PARK_Tree Maintenance Request,24
+T085,PARK,PARK_Tree in Park,1
+T085,PARK,PARK_Urban_Wilds,3
+T085,PARK,PARK_Welding,1
+T085,PWDx,PWDx_Code Enforcement,5
+T085,PWDx,PWDx_District 02: Jamaica Plain,3
+T085,PWDx,PWDx_District 04: Allston/Brighton,3
+T085,PWDx,PWDx_District 06: West Roxbury and Roslindale,3
+T085,PWDx,PWDx_District 07: South Dorchester,2
+T085,PWDx,PWDx_District 08: Hyde Park,1
+T085,PWDx,PWDx_District 10B: Roxbury,1
+T085,PWDx,PWDx_District 1A: Charlestown,1
+T085,PWDx,PWDx_Empty Litter Basket,1
+T085,PWDx,PWDx_Street Light_General Lighting Request,4
+T086,BHA,BHA_General,2
+T086,BPD,BPD_Districts,2
+T086,BTDT,BTDT_Administration,1
+T086,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,3
+T086,BTDT,BTDT_Parking Enforcement,2
+T086,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T086,BTDT,BTDT_Traffic Signal_Repair,2
+T086,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,41
+T086,INFO,INFO_BPHC,1
+T086,INFO,INFO_Down Wire,3
+T086,INFO,INFO_Eversource,1
+T086,INFO,INFO_Low Hanging Wire,3
+T086,INFO,INFO_MBTA,8
+T086,INFO,INFO_Mass DCR,72
+T086,INFO,INFO_Mass DOT,6
+T086,INFO,INFO_Massport,9
+T086,INFO,INFO_Reallocation From Dept,30
+T086,ISD,ISD_Building (INTERNAL),2
+T086,PARK,PARK_Cemetery Maintenance Request,1
+T086,PARK,PARK_Maintenance_Lighting Electrical,390
+T086,PARK,PARK_Maintenance_Region 1,1
+T086,PARK,PARK_Maintenance_Trades,1
+T086,PARK,PARK_Park Improvement Requests,1
+T086,PARK,PARK_Plumbing,2
+T086,PARK,PARK_Tree Emergencies,2
+T086,PARK,PARK_Tree Maintenance Request,1
+T086,PARK,PARK_Tree in Park,2
+T086,PARK,PARK_Welding,1
+T086,PROP,PROP_GRAF_GraffitiRemoval,1
+T086,PWDx,PWDx_District 02: Jamaica Plain,1
+T086,PWDx,PWDx_Major System Failure,1
+T086,PWDx,PWDx_Street Light Knock Downs,9
+T086,PWDx,PWDx_Street Light Knockdown Replacement,3
+T086,PWDx,PWDx_Street Light Outages,231
+T086,PWDx,PWDx_Street Light Outages - Gas,6
+T086,PWDx,PWDx_Street Light Outages - Long-Term Repair,1
+T086,PWDx,PWDx_Street Light_General Lighting Request,70
+T087,BTDT,BTDT_District 01,14
+T087,BTDT,BTDT_District 02,26
+T087,BTDT,BTDT_District 03,39
+T087,BTDT,BTDT_District 04,14
+T087,BTDT,BTDT_District 05,8
+T087,BTDT,BTDT_District 06,40
+T087,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,9
+T087,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,1
+T087,BTDT,BTDT_Pavement Marking_Maintenance,3
+T087,BTDT,BTDT_Sign Repair,1
+T087,BTDT,BTDT_Sign Shop_Sign Installation,141
+T087,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T087,INFO,INFO_MBTA,1
+T087,INFO,INFO_Mass DCR,1
+T087,INFO,INFO_Mass DOT,3
+T087,INFO,INFO_Mayors Policy Office,1
+T087,INFO,INFO_Reallocation From Dept,1
+T087,PARK,PARK_Maintenance_Ground Maintenance,1
+T087,PWDx,PWDx_Contractor Complaints,2
+T087,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,1
+T087,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T088,BTDT,BTDT_Pavement Marking_Maintenance,62
+T088,BTDT,BTDT_Sign Shop_Sign Installation,2
+T089,ANML,ANML_General,42
+T089,BHA,BHA_General,1
+T089,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,5
+T089,INFO,INFO_BPHC,5
+T089,INFO,INFO_MBTA,1
+T089,INFO,INFO_Reallocation From Dept,17
+T089,ISD,ISD_Administrative,5
+T089,ISD,ISD_Building (INTERNAL),9
+T089,ISD,ISD_Environmental Services (INTERNAL),2001
+T089,ISD,ISD_Health (INTERNAL),112
+T089,ISD,ISD_Housing (INTERNAL),1042
+T089,PARK,PARK_Tree Maintenance Request,2
+T089,PROP,PROP_GRAF_GraffitiRemoval,1
+T089,PWDx,PWDx_Code Enforcement,222
+T089,PWDx,PWDx_District 08: Hyde Park,1
+T089,PWDx,PWDx_District 09: East Boston,2
+T089,PWDx,PWDx_Pick Up Dead Animals,1
+T089,PWDx,PWDx_Recycling,1
+T090,BTDT,BTDT_OPC_Phone Bank Service,23
+T091,ANML,ANML_General,233
+T091,BHA,BHA_General,21
+T091,BTDT,BTDT_Administration,2
+T091,BTDT,BTDT_District 01,1
+T091,BTDT,BTDT_District 02,2
+T091,BTDT,BTDT_Parking Enforcement,1
+T091,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T091,BWSC,BWSC_All Cases,2
+T091,GEN,GEN_Needle_Pickup,6
+T091,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,217
+T091,INFO,INFO02_SelfServiceGenericeFormforOtherServiceRequestTypes,1
+T091,INFO,INFO_BPHC,3
+T091,INFO,INFO_Encampments,1
+T091,INFO,INFO_Eversource,4
+T091,INFO,INFO_HumanWaste,16
+T091,INFO,INFO_MBTA,51
+T091,INFO,INFO_Mass DCR,450
+T091,INFO,INFO_Mass DOT,73
+T091,INFO,INFO_Massport,45
+T091,INFO,INFO_Mayors Policy Office,1
+T091,INFO,INFO_Reallocation From Dept,427
+T091,INFO,INFO_USPS Issues,1
+T091,INFO,INFO_Unsheltered_Persons,2
+T091,ISD,ISD_Administrative,7
+T091,ISD,ISD_Building (INTERNAL),1
+T091,ISD,ISD_Environmental Services (INTERNAL),12
+T091,ISD,ISD_Health (INTERNAL),2
+T091,PARK,PARK_Cemetery Maintenance Request,2
+T091,PARK,PARK_Graffiti,1
+T091,PARK,PARK_Maintenance_Ground Maintenance,36
+T091,PARK,PARK_Maintenance_Horticulture,6
+T091,PARK,PARK_Maintenance_Region 1,212
+T091,PARK,PARK_Maintenance_Region 2,58
+T091,PARK,PARK_Maintenance_Region 3,66
+T091,PARK,PARK_Maintenance_Region 4,79
+T091,PARK,PARK_Maintenance_Region 5,32
+T091,PARK,PARK_Maintenance_Region 6,88
+T091,PARK,PARK_Maintenance_Trades,1
+T091,PARK,PARK_Park Improvement Requests,1
+T091,PARK,PARK_Plumbing,1
+T091,PARK,PARK_Tree Emergencies,5
+T091,PARK,PARK_Tree Maintenance Request,2
+T091,PARK,PARK_Tree in Park,1
+T091,PARK,PARK_Urban_Wilds,2
+T091,PROP,PROP_GRAF_GraffitiRemoval,1
+T091,PWDx,PWDx_Bridge Maintenance,1
+T091,PWDx,PWDx_Code Enforcement,22
+T091,PWDx,PWDx_District 02: Jamaica Plain,1206
+T091,PWDx,PWDx_District 03: North Dorchester,1274
+T091,PWDx,PWDx_District 04: Allston/Brighton,1869
+T091,PWDx,PWDx_District 05: South Boston,811
+T091,PWDx,PWDx_District 06: West Roxbury and Roslindale,1268
+T091,PWDx,PWDx_District 07: South Dorchester,1227
+T091,PWDx,PWDx_District 08: Hyde Park,467
+T091,PWDx,PWDx_District 09: East Boston,664
+T091,PWDx,PWDx_District 10A: Roxbury,531
+T091,PWDx,PWDx_District 10B: Roxbury,745
+T091,PWDx,PWDx_District 1A: Charlestown,286
+T091,PWDx,PWDx_District 1B: North End,1026
+T091,PWDx,PWDx_District 1C: Downtown,1458
+T091,PWDx,PWDx_Highway Construction,1
+T091,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,3
+T091,PWDx,PWDx_Pick Up Dead Animals,262
+T091,PWDx,PWDx_Sidewalk Repair,1
+T091,PWDx,PWDx_Street Light_General Lighting Request,1
+T092,PWDx,PWDx_Street Light_Pickup_Clear Conduit,10
+T093,ANML,ANML_General,2
+T093,BTDT,BTDT_District 05,1
+T093,INFO,INFO_BPHC,10
+T093,INFO,INFO_MBTA,1
+T093,INFO,INFO_Reallocation From Dept,2
+T093,INFO,INFO_Unsheltered_Persons,1
+T093,ISD,ISD_Environmental Services (INTERNAL),22
+T093,PWDx,PWDx_Bridge Maintenance,1
+T093,PWDx,PWDx_District 09: East Boston,1
+T093,PWDx,PWDx_Graffiti,1
+T093,PWDx,PWDx_Highway Construction,1
+T094,PARK,PARK_Maintenance_Horticulture,21
+T094,PARK,PARK_Maintenance_Region 2,2
+T094,PARK,PARK_Maintenance_Region 3,1
+T094,PARK,PARK_Maintenance_Region 4,1
+T094,PARK,PARK_Maintenance_Trades,1
+T094,PARK,PARK_New Tree Requests,3
+T094,PARK,PARK_Tree Maintenance Request,1
+T095,ISD,ISD_Building (INTERNAL),39
+T095,ISD,ISD_Electrical,1
+T095,ISD,ISD_Housing (INTERNAL),4
+T095,ISD,ISD_Plumbing,85
+T096,PWDx,PWDx_STRL Pole Compliance,79
+T096,PWDx,PWDx_Street Light Knock Downs,1
+T097,ANML,ANML_General,6
+T097,BHA,BHA_General,4
+T097,BTDT,BTDT_AVRS Interface Queue,2
+T097,BTDT,BTDT_Administration,2
+T097,BTDT,BTDT_BostonBikes,1
+T097,BTDT,BTDT_District 06,1
+T097,BTDT,BTDT_OPC_Walk-In Service,1
+T097,BTDT,BTDT_Parking Enforcement,12
+T097,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T097,BTDT,BTDT_Permits & Special Events,1
+T097,BWSC,BWSC_All Cases,2
+T097,DND,DND_General,5
+T097,GEN,GEN_Needle_Pickup,2
+T097,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,24
+T097,INFO,INFO_BPHC,3
+T097,INFO,INFO_Encampments,28
+T097,INFO,INFO_Homeless Issue,6
+T097,INFO,INFO_HumanWaste,1
+T097,INFO,INFO_Low Hanging Wire,1
+T097,INFO,INFO_MBTA,3
+T097,INFO,INFO_Mass DCR,4
+T097,INFO,INFO_Mass DOT,5
+T097,INFO,INFO_Massport,2
+T097,INFO,INFO_Reallocation From Dept,23
+T097,INFO,INFO_Unsheltered_Persons,1
+T097,ISD,ISD_Administrative,9
+T097,ISD,ISD_Building (INTERNAL),30
+T097,ISD,ISD_Environmental Services (INTERNAL),14
+T097,ISD,ISD_Health (INTERNAL),2
+T097,ISD,ISD_Housing (INTERNAL),21
+T097,ONS,ONS_General,1
+T097,PARK,PARK_Cemetery Maintenance Request,2
+T097,PARK,PARK_Graffiti,1
+T097,PARK,PARK_Maintenance_Ground Maintenance,1
+T097,PARK,PARK_Maintenance_Region 1,1
+T097,PARK,PARK_Maintenance_Region 3,3
+T097,PARK,PARK_Maintenance_Region 5,2
+T097,PARK,PARK_Maintenance_Region 6,1
+T097,PARK,PARK_Tree Emergencies,2
+T097,PARK,PARK_Tree Maintenance Request,3
+T097,PWDx,PWDx_Bridge Maintenance,2
+T097,PWDx,PWDx_Code Enforcement,16547
+T097,PWDx,PWDx_Contractor Complaints,1
+T097,PWDx,PWDx_District 02: Jamaica Plain,13
+T097,PWDx,PWDx_District 03: North Dorchester,4
+T097,PWDx,PWDx_District 04: Allston/Brighton,4
+T097,PWDx,PWDx_District 05: South Boston,3
+T097,PWDx,PWDx_District 06: West Roxbury and Roslindale,3
+T097,PWDx,PWDx_District 07: South Dorchester,9
+T097,PWDx,PWDx_District 08: Hyde Park,7
+T097,PWDx,PWDx_District 09: East Boston,5
+T097,PWDx,PWDx_District 10A: Roxbury,5
+T097,PWDx,PWDx_District 10B: Roxbury,1
+T097,PWDx,PWDx_District 1A: Charlestown,1
+T097,PWDx,PWDx_District 1B: North End,1
+T097,PWDx,PWDx_District 1C: Downtown,7
+T097,PWDx,PWDx_Empty Litter Basket,1
+T097,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,146
+T097,PWDx,PWDx_Recycling,1
+T097,PWDx,PWDx_Recycling Sent to Contractor,1
+T097,PWDx,PWDx_Request for Litter Basket Installation,1
+T097,PWDx,PWDx_Schedule a Bulk Item Pickup,1
+T097,PWDx,PWDx_WM_Mattress_Pickup,3
+T098,BHA,BHA_General,1
+T098,INFO,INFO_Reallocation From Dept,2
+T098,ISD,ISD_Building (INTERNAL),3
+T098,ISD,ISD_Housing (INTERNAL),60
+T099,BTDT,BTDT_Parking Lot_PrivateParkingLotComplaints,11
+T100,ISD,ISD_Weights and Measures (INTERNAL),8
+T101,ANML,ANML_General,1
+T101,BWSC,BWSC_All Cases,2
+T101,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T101,INFO,INFO_BPHC,4
+T101,INFO,INFO_Reallocation From Dept,7
+T101,ISD,ISD_Administrative,1
+T101,ISD,ISD_Building (INTERNAL),501
+T101,ISD,ISD_Environmental Services (INTERNAL),2
+T101,ISD,ISD_Housing (INTERNAL),3
+T101,ISD,ISD_Plumbing,2
+T101,PARK,PARK_Graffiti,1
+T101,PARK,PARK_Tree Emergencies,1
+T101,PARK,PARK_Tree Maintenance Request,1
+T101,PWDx,PWDx_Code Enforcement,7
+T102,ANML,ANML_General,3
+T102,BHA,BHA_General,1
+T102,BPD,BPD_Districts,3
+T102,BTDT,BTDT_Administration,15
+T102,BTDT,BTDT_BostonBikes,9
+T102,BTDT,BTDT_Broken Meter Complaints,1
+T102,BTDT,BTDT_District 01,1
+T102,BTDT,BTDT_District 02,1
+T102,BTDT,BTDT_District 03,1
+T102,BTDT,BTDT_District 04,1
+T102,BTDT,BTDT_District 06,1
+T102,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,2
+T102,BTDT,BTDT_General Comments,4
+T102,BTDT,BTDT_Parking Enforcement,2
+T102,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,2
+T102,BTDT,BTDT_Sign Shop_Sign Installation,6
+T102,BTDT,BTDT_Traffic Signal_Repair,2
+T102,BWSC,BWSC_All Cases,15
+T102,DISB,DISB_HP Sign,2
+T102,DND,DND_General,3
+T102,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,21
+T102,INFO,INFO_BPHC,1
+T102,INFO,INFO_Eversource,4
+T102,INFO,INFO_Homeless Issue,4
+T102,INFO,INFO_HumanWaste,1
+T102,INFO,INFO_JC Decaux,1
+T102,INFO,INFO_Low Hanging Wire,1
+T102,INFO,INFO_MBTA,9
+T102,INFO,INFO_Mass DCR,10
+T102,INFO,INFO_Mass DOT,3
+T102,INFO,INFO_Mayors Policy Office,1
+T102,INFO,INFO_Reallocation From Dept,28
+T102,ISD,ISD_Administrative,1
+T102,ISD,ISD_Building (INTERNAL),10
+T102,ONS,ONS_Allston_Brighton,1
+T102,ONS,ONS_Charlestown,1
+T102,ONS,ONS_General,8
+T102,ONS,ONS_HydePark,2
+T102,ONS,ONS_Mattapan,1
+T102,ONS,ONS_NorthEnd_WaterFront_WestEnd,1
+T102,ONS,ONS_SouthDorchester,2
+T102,PARK,PARK_Maintenance_Lighting Electrical,1
+T102,PARK,PARK_Maintenance_Region 1,1
+T102,PARK,PARK_Maintenance_Region 2,2
+T102,PARK,PARK_Maintenance_Region 3,1
+T102,PARK,PARK_Maintenance_Region 5,1
+T102,PARK,PARK_Plumbing,1
+T102,PARK,PARK_Tree Emergencies,3
+T102,PARK,PARK_Tree Maintenance Request,3
+T102,PWDx,PWDx_Bridge Maintenance,16
+T102,PWDx,PWDx_Code Enforcement,142
+T102,PWDx,PWDx_Contractor Complaints,68
+T102,PWDx,PWDx_District 02: Jamaica Plain,8
+T102,PWDx,PWDx_District 03: North Dorchester,18
+T102,PWDx,PWDx_District 04: Allston/Brighton,18
+T102,PWDx,PWDx_District 05: South Boston,8
+T102,PWDx,PWDx_District 06: West Roxbury and Roslindale,20
+T102,PWDx,PWDx_District 07: South Dorchester,25
+T102,PWDx,PWDx_District 08: Hyde Park,15
+T102,PWDx,PWDx_District 09: East Boston,15
+T102,PWDx,PWDx_District 10A: Roxbury,8
+T102,PWDx,PWDx_District 10B: Roxbury,10
+T102,PWDx,PWDx_District 1A: Charlestown,6
+T102,PWDx,PWDx_District 1B: North End,9
+T102,PWDx,PWDx_District 1C: Downtown,19
+T102,PWDx,PWDx_Empty Litter Basket,3
+T102,PWDx,PWDx_Engineering_Design,6
+T102,PWDx,PWDx_Engineering_PIC,13
+T102,PWDx,PWDx_Graffiti,6
+T102,PWDx,PWDx_Highway Construction,12
+T102,PWDx,PWDx_Highway Construction General,1
+T102,PWDx,PWDx_Litter Basket Maintenance,3
+T102,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,494
+T102,PWDx,PWDx_Recycling,87
+T102,PWDx,PWDx_Recycling Cart Return,1
+T102,PWDx,PWDx_Recycling Sent to Contractor,1
+T102,PWDx,PWDx_Request for Litter Basket Installation,3
+T102,PWDx,PWDx_Request for Street Cleaning,2
+T102,PWDx,PWDx_Roadway Repair,12
+T102,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,19
+T102,PWDx,PWDx_Roadway Repair_Ponding,4
+T102,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T102,PWDx,PWDx_Sidewalk Repair,51
+T102,PWDx,PWDx_Snow Cases,1
+T102,PWDx,PWDx_Space Saver Removal,2
+T102,PWDx,PWDx_Sticker Request,14
+T102,PWDx,PWDx_Street Light Knock Downs,1
+T102,PWDx,PWDx_Street Light Outages,2
+T102,PWDx,PWDx_Street Light Outages - Long-Term Repair,2
+T102,PWDx,PWDx_Street Light_General Lighting Request,10
+T102,PWDx,PWDx_WM_Mattress_Pickup,1
+T102,PWDx,PWDx_Work Hours-Loud Noise Complaints,1
+T103,ISD,ISD_Environmental Services (INTERNAL),31
+T103,ISD,ISD_Housing (INTERNAL),1
+T104,PWDx,PWDx_District 09: East Boston,1
+T104,PWDx,PWDx_IPL Damaged Cart Replacement,747
+T104,PWDx,PWDx_Recycling Cart Return,573
+T104,PWDx,PWDx_Recycling Sent to Contractor,6311
+T105,ISD,ISD_Building (INTERNAL),1
+T105,ISD,ISD_Housing (INTERNAL),26
+T106,INFO,INFO_MBTA,3
+T106,INFO,INFO_Mass DCR,1
+T106,INFO,INFO_Mass DOT,3
+T106,PARK,PARK_Maintenance_Region 1,3
+T106,PARK,PARK_Maintenance_Region 2,3
+T106,PARK,PARK_Maintenance_Region 4,1
+T106,PARK,PARK_Maintenance_Region 6,3
+T106,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,1
+T106,PWDx,PWDx_Request for Litter Basket Installation,234
+T107,BHA,BHA_General,39
+T107,BPD,BPD_Districts,7
+T107,BTDT,BTDT_Administration,34
+T107,BTDT,BTDT_BostonBikes,10
+T107,BTDT,BTDT_District 01,1
+T107,BTDT,BTDT_District 02,2
+T107,BTDT,BTDT_District 03,1
+T107,BTDT,BTDT_District 06,1
+T107,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,2
+T107,BTDT,BTDT_General Comments,7
+T107,BTDT,BTDT_Parking Enforcement,2
+T107,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,3
+T107,BTDT,BTDT_Pavement Marking_Maintenance,4
+T107,BTDT,BTDT_Sign Shop_Sign Installation,12
+T107,BTDT,BTDT_Traffic Signal_Repair,17
+T107,BWSC,BWSC_All Cases,2458
+T107,BWSC,BWSC_Pothole,663
+T107,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,517
+T107,INFO,INFO_Eversource,79
+T107,INFO,INFO_Low Hanging Wire,1
+T107,INFO,INFO_MBTA,94
+T107,INFO,INFO_Mass DCR,684
+T107,INFO,INFO_Mass DOT,335
+T107,INFO,INFO_Massport,22
+T107,INFO,INFO_Reallocation From Dept,481
+T107,ISD,ISD_Administrative,6
+T107,ISD,ISD_Building (INTERNAL),6
+T107,ONS,ONS_General,9
+T107,ONS,ONS_WestRoxbury,1
+T107,PARK,PARK_Carpentry,1
+T107,PARK,PARK_Maintenance_Ground Maintenance,2
+T107,PARK,PARK_Maintenance_Region 1,4
+T107,PARK,PARK_Maintenance_Region 3,1
+T107,PARK,PARK_Maintenance_Region 4,1
+T107,PARK,PARK_Maintenance_Trades,3
+T107,PARK,PARK_Park Improvement Requests,6
+T107,PARK,PARK_Plumbing,2
+T107,PARK,PARK_Welding,2
+T107,PWDx,PWDx_Bridge Maintenance,17
+T107,PWDx,PWDx_Code Enforcement,4
+T107,PWDx,PWDx_Contractor Complaints,2290
+T107,PWDx,PWDx_District 02: Jamaica Plain,995
+T107,PWDx,PWDx_District 03: North Dorchester,535
+T107,PWDx,PWDx_District 04: Allston/Brighton,754
+T107,PWDx,PWDx_District 05: South Boston,390
+T107,PWDx,PWDx_District 06: West Roxbury and Roslindale,576
+T107,PWDx,PWDx_District 07: South Dorchester,1316
+T107,PWDx,PWDx_District 08: Hyde Park,982
+T107,PWDx,PWDx_District 09: East Boston,1322
+T107,PWDx,PWDx_District 10A: Roxbury,890
+T107,PWDx,PWDx_District 10B: Roxbury,782
+T107,PWDx,PWDx_District 1A: Charlestown,270
+T107,PWDx,PWDx_District 1B: North End,447
+T107,PWDx,PWDx_District 1C: Downtown,1546
+T107,PWDx,PWDx_Engineering_Design,6
+T107,PWDx,PWDx_Engineering_PIC,7
+T107,PWDx,PWDx_Highway Construction,696
+T107,PWDx,PWDx_Highway Construction General,10
+T107,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,2
+T107,PWDx,PWDx_Request for Street Cleaning,1
+T107,PWDx,PWDx_Requests for Pothole Repair,443
+T107,PWDx,PWDx_Roadway Repair,102
+T107,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,2257
+T107,PWDx,PWDx_Roadway Repair_CRP_Resurfacing,46
+T107,PWDx,PWDx_Roadway Repair_Ponding,11
+T107,PWDx,PWDx_Roadway Repair_Reconstruction,11
+T107,PWDx,PWDx_STRL Pole Compliance,1
+T107,PWDx,PWDx_Sidewalk Repair,113
+T107,PWDx,PWDx_Street Light Outages,1
+T107,PWDx,PWDx_Street Light Outages - Long-Term Repair,19
+T107,PWDx,PWDx_Street Light_General Lighting Request,6
+T107,PWDx,PWDx_Utility Casting Repair,79
+T107,Test,TestQueue,1
+T108,PWDx,PWDx_Recycling,1611
+T108,PWDx,PWDx_Recycling Cart Return,10
+T108,PWDx,PWDx_Recycling Sent to Contractor,6655
+T109,BHA,BHA_General,1
+T109,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T109,BWSC,BWSC_All Cases,2
+T109,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,8
+T109,INFO,INFO_MBTA,1
+T109,INFO,INFO_Mass DCR,8
+T109,INFO,INFO_Mass DOT,2
+T109,INFO,INFO_Massport,3
+T109,INFO,INFO_Reallocation From Dept,10
+T109,ISD,ISD_Administrative,1
+T109,PARK,PARK_Cemetery Maintenance Request,1
+T109,PARK,PARK_Maintenance_Region 1,3
+T109,PARK,PARK_Maintenance_Region 3,1
+T109,PARK,PARK_Maintenance_Support Services,1
+T109,PWDx,PWDx_Bridge Maintenance,1
+T109,PWDx,PWDx_Code Enforcement,27
+T109,PWDx,PWDx_District 02: Jamaica Plain,158
+T109,PWDx,PWDx_District 03: North Dorchester,101
+T109,PWDx,PWDx_District 04: Allston/Brighton,39
+T109,PWDx,PWDx_District 05: South Boston,20
+T109,PWDx,PWDx_District 06: West Roxbury and Roslindale,103
+T109,PWDx,PWDx_District 07: South Dorchester,166
+T109,PWDx,PWDx_District 08: Hyde Park,128
+T109,PWDx,PWDx_District 09: East Boston,25
+T109,PWDx,PWDx_District 10A: Roxbury,18
+T109,PWDx,PWDx_District 10B: Roxbury,77
+T109,PWDx,PWDx_District 1A: Charlestown,23
+T109,PWDx,PWDx_District 1B: North End,13
+T109,PWDx,PWDx_District 1C: Downtown,37
+T109,PWDx,PWDx_Requests for Snow Plowing,66
+T109,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T110,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T110,INFO,INFO_Mass DOT,2
+T110,PWDx,PWDx_District 02: Jamaica Plain,4
+T110,PWDx,PWDx_District 03: North Dorchester,8
+T110,PWDx,PWDx_District 04: Allston/Brighton,1
+T110,PWDx,PWDx_District 05: South Boston,5
+T110,PWDx,PWDx_District 06: West Roxbury and Roslindale,1
+T110,PWDx,PWDx_District 07: South Dorchester,5
+T110,PWDx,PWDx_District 08: Hyde Park,5
+T110,PWDx,PWDx_District 09: East Boston,1
+T110,PWDx,PWDx_District 10A: Roxbury,3
+T110,PWDx,PWDx_District 10B: Roxbury,4
+T110,PWDx,PWDx_District 1B: North End,2
+T110,PWDx,PWDx_District 1C: Downtown,5
+T110,PWDx,PWDx_Requests for Snow Plowing (Emergency Responder),4
+T111,BPD,BPD_Districts,1
+T111,BTDT,BTDT_BostonBikes,1
+T111,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,5
+T111,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,4
+T111,INFO,INFO_Mass DOT,1
+T112,ANML,ANML_General,6
+T112,BHA,BHA_General,60
+T112,BPD,BPD_Districts,35
+T112,BTDT,BTDT_AVRS Interface Queue,15
+T112,BTDT,BTDT_Abandoned Bicycle,23
+T112,BTDT,BTDT_Administration,50
+T112,BTDT,BTDT_BostonBikes,67
+T112,BTDT,BTDT_Broken Meter Complaints,1
+T112,BTDT,BTDT_District 01,3
+T112,BTDT,BTDT_District 02,2
+T112,BTDT,BTDT_District 03,2
+T112,BTDT,BTDT_District 04,4
+T112,BTDT,BTDT_District 05,2
+T112,BTDT,BTDT_District 06,4
+T112,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,1
+T112,BTDT,BTDT_General Comments,2
+T112,BTDT,BTDT_OPC_Walk-In Service,2
+T112,BTDT,BTDT_Parking Enforcement,29
+T112,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,38
+T112,BTDT,BTDT_Permits & Special Events,2
+T112,BTDT,BTDT_Sign Repair,2
+T112,BTDT,BTDT_Sign Shop_Sign Installation,19
+T112,BTDT,BTDT_Traffic Signal_Graffiti,2
+T112,BTDT,BTDT_Traffic Signal_Knock Downs/Contractor,1
+T112,BTDT,BTDT_Traffic Signal_Repair,4
+T112,BWSC,BWSC_All Cases,80
+T112,DISB,DISB_General_Request,1
+T112,DND,DND_General,3
+T112,ECON,ECON_OutdoorDining,1
+T112,GEN,GEN_Needle_Pickup,76
+T112,GRNi,GRNi_Green_Infrastructure,4
+T112,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,456
+T112,INFO,INFO_BPHC,92
+T112,INFO,INFO_Encampments,274
+T112,INFO,INFO_Eversource,7
+T112,INFO,INFO_Homeless Issue,84
+T112,INFO,INFO_HumanWaste,66
+T112,INFO,INFO_JC Decaux,48
+T112,INFO,INFO_Low Hanging Wire,2
+T112,INFO,INFO_MBTA,447
+T112,INFO,INFO_Mass DCR,714
+T112,INFO,INFO_Mass DOT,427
+T112,INFO,INFO_Massport,21
+T112,INFO,INFO_Reallocation From Dept,724
+T112,INFO,INFO_USPS Issues,6
+T112,INFO,INFO_Unsheltered_Persons,37
+T112,ISD,ISD_Administrative,21
+T112,ISD,ISD_Building (INTERNAL),56
+T112,ISD,ISD_Environmental Services (INTERNAL),12
+T112,ISD,ISD_Housing (INTERNAL),3
+T112,ONS,ONS_BackBay_Fenway_MissionHill,2
+T112,ONS,ONS_Charlestown,2
+T112,ONS,ONS_EastBoston,2
+T112,ONS,ONS_General,6
+T112,ONS,ONS_HydePark,1
+T112,ONS,ONS_MidDorchester,2
+T112,ONS,ONS_NorthEnd_WaterFront_WestEnd,1
+T112,ONS,ONS_SouthBoston,1
+T112,PARK,PARK_Cemetery Maintenance Request,3
+T112,PARK,PARK_Graffiti,11
+T112,PARK,PARK_Maintenance_Ground Maintenance,31
+T112,PARK,PARK_Maintenance_Horticulture,5
+T112,PARK,PARK_Maintenance_Region 1,134
+T112,PARK,PARK_Maintenance_Region 2,64
+T112,PARK,PARK_Maintenance_Region 3,53
+T112,PARK,PARK_Maintenance_Region 4,44
+T112,PARK,PARK_Maintenance_Region 5,32
+T112,PARK,PARK_Maintenance_Region 6,55
+T112,PARK,PARK_Maintenance_Support Services,1
+T112,PARK,PARK_Maintenance_Trades,1
+T112,PARK,PARK_New Tree Requests,3
+T112,PARK,PARK_Tree Emergencies,79
+T112,PARK,PARK_Tree Maintenance Request,61
+T112,PARK,PARK_Urban_Wilds,2
+T112,PARK,PARK_Welding,1
+T112,PROP,PROP_GRAF_GraffitiRemoval,8
+T112,PWDx,PWDx_Bridge Maintenance,11
+T112,PWDx,PWDx_Code Enforcement,3514
+T112,PWDx,PWDx_Contractor Complaints,99
+T112,PWDx,PWDx_District 02: Jamaica Plain,1738
+T112,PWDx,PWDx_District 03: North Dorchester,4910
+T112,PWDx,PWDx_District 04: Allston/Brighton,2416
+T112,PWDx,PWDx_District 05: South Boston,2453
+T112,PWDx,PWDx_District 06: West Roxbury and Roslindale,1446
+T112,PWDx,PWDx_District 07: South Dorchester,3331
+T112,PWDx,PWDx_District 08: Hyde Park,1610
+T112,PWDx,PWDx_District 09: East Boston,2345
+T112,PWDx,PWDx_District 10A: Roxbury,1612
+T112,PWDx,PWDx_District 10B: Roxbury,2767
+T112,PWDx,PWDx_District 1A: Charlestown,523
+T112,PWDx,PWDx_District 1B: North End,2392
+T112,PWDx,PWDx_District 1C: Downtown,5900
+T112,PWDx,PWDx_Empty Litter Basket,5
+T112,PWDx,PWDx_Engineering_PIC,3
+T112,PWDx,PWDx_Graffiti,39
+T112,PWDx,PWDx_Highway Construction,34
+T112,PWDx,PWDx_Highway Construction General,1
+T112,PWDx,PWDx_Litter Basket Maintenance,17
+T112,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,1628
+T112,PWDx,PWDx_News Boxes,8
+T112,PWDx,PWDx_Pick Up Dead Animals,2
+T112,PWDx,PWDx_Recycling,12
+T112,PWDx,PWDx_Request for Litter Basket Installation,13
+T112,PWDx,PWDx_Request for Street Cleaning,751
+T112,PWDx,PWDx_Roadway Repair,2
+T112,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,6
+T112,PWDx,PWDx_Roadway Repair_Ponding,3
+T112,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T112,PWDx,PWDx_STRL Pole Compliance,2
+T112,PWDx,PWDx_Sidewalk Repair,14
+T112,PWDx,PWDx_Snow Cases,1
+T112,PWDx,PWDx_Space Saver Removal,14
+T112,PWDx,PWDx_Sticker Request,2
+T112,PWDx,PWDx_Street Light Knock Downs,11
+T112,PWDx,PWDx_Street Light Knockdown Replacement,3
+T112,PWDx,PWDx_Street Light_General Lighting Request,8
+T112,PWDx,PWDx_WM_Mattress_Pickup,34
+T113,BPD,BPD_Districts,14
+T113,BTDT,BTDT_Administration,37
+T113,BTDT,BTDT_BostonBikes,95
+T113,BTDT,BTDT_District 04,1
+T113,BTDT,BTDT_District 05,1
+T113,BTDT,BTDT_District 06,2
+T113,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,66
+T113,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,959
+T113,BTDT,BTDT_General Comments,3
+T113,BTDT,BTDT_Parking Enforcement,2
+T113,BTDT,BTDT_Permits & Special Events,1
+T113,BTDT,BTDT_Planning,3
+T113,BTDT,BTDT_Sign Shop_Sign Installation,9
+T113,BTDT,BTDT_Traffic Signal_Repair,51
+T113,DISB,DISB_HP Sign,1
+T113,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T113,INFO,INFO_Mass DCR,44
+T113,INFO,INFO_Mass DOT,37
+T113,INFO,INFO_Reallocation From Dept,1
+T113,ONS,ONS_Roslindale,1
+T113,PWDx,PWDx_Request for Street Cleaning,1
+T113,PWDx,PWDx_Roadway Repair,1
+T113,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T114,BTDT,BTDT_Administration,1
+T114,BWSC,BWSC_All Cases,21
+T114,BWSC,BWSC_Pothole,1
+T114,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,5
+T114,INFO,INFO_Eversource,2
+T114,INFO,INFO_MBTA,2
+T114,INFO,INFO_Mass DCR,2
+T114,INFO,INFO_Mass DOT,3
+T114,INFO,INFO_Reallocation From Dept,1
+T114,ISD,ISD_Building (INTERNAL),3
+T114,PARK,PARK_Maintenance_Region 4,1
+T114,PARK,PARK_Tree Maintenance Request,1
+T114,PWDx,PWDx_Bridge Maintenance,2
+T114,PWDx,PWDx_Code Enforcement,3
+T114,PWDx,PWDx_Contractor Complaints,38
+T114,PWDx,PWDx_District 03: North Dorchester,1
+T114,PWDx,PWDx_District 09: East Boston,1
+T114,PWDx,PWDx_District 10A: Roxbury,1
+T114,PWDx,PWDx_District 10B: Roxbury,1
+T114,PWDx,PWDx_Engineering_Design,3
+T114,PWDx,PWDx_Highway Construction,12
+T114,PWDx,PWDx_Roadway Repair,491
+T114,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,205
+T114,PWDx,PWDx_Roadway Repair_CRP_Resurfacing,10
+T114,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T114,PWDx,PWDx_Sidewalk Repair,5
+T115,ANML,ANML_General,69
+T115,BHA,BHA_General,1
+T115,BPD,BPD_Districts,8
+T115,BTDT,BTDT_Parking Enforcement,6
+T115,DND,DND_General,1
+T115,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,9
+T115,INFO,INFO_BPHC,6
+T115,INFO,INFO_Encampments,1
+T115,INFO,INFO_HumanWaste,1
+T115,INFO,INFO_MBTA,4
+T115,INFO,INFO_Mass DCR,6
+T115,INFO,INFO_Mass DOT,1
+T115,INFO,INFO_Reallocation From Dept,33
+T115,INFO,INFO_Unsheltered_Persons,1
+T115,ISD,ISD_Administrative,8
+T115,ISD,ISD_Building (INTERNAL),4
+T115,ISD,ISD_Environmental Services (INTERNAL),8287
+T115,ISD,ISD_Health (INTERNAL),8
+T115,ISD,ISD_Housing (INTERNAL),33
+T115,ISD,ISD_Plumbing,1
+T115,PARK,PARK_Carpentry,1
+T115,PARK,PARK_Maintenance_Ground Maintenance,2
+T115,PARK,PARK_Maintenance_Horticulture,1
+T115,PARK,PARK_Maintenance_Region 1,1
+T115,PARK,PARK_Maintenance_Region 2,4
+T115,PARK,PARK_Maintenance_Region 3,1
+T115,PARK,PARK_Maintenance_Region 4,1
+T115,PARK,PARK_Maintenance_Region 5,2
+T115,PARK,PARK_Maintenance_Region 6,6
+T115,PARK,PARK_Maintenance_Support Services,1
+T115,PARK,PARK_Park Improvement Requests,1
+T115,PARK,PARK_Tree Emergencies,2
+T115,PARK,PARK_Tree Maintenance Request,5
+T115,PARK,PARK_Urban_Wilds,1
+T115,PARK,PARK_Welding,1
+T115,PWDx,PWDx_Code Enforcement,270
+T115,PWDx,PWDx_District 02: Jamaica Plain,10
+T115,PWDx,PWDx_District 03: North Dorchester,12
+T115,PWDx,PWDx_District 04: Allston/Brighton,9
+T115,PWDx,PWDx_District 05: South Boston,8
+T115,PWDx,PWDx_District 06: West Roxbury and Roslindale,8
+T115,PWDx,PWDx_District 07: South Dorchester,22
+T115,PWDx,PWDx_District 08: Hyde Park,5
+T115,PWDx,PWDx_District 09: East Boston,8
+T115,PWDx,PWDx_District 10A: Roxbury,10
+T115,PWDx,PWDx_District 10B: Roxbury,4
+T115,PWDx,PWDx_District 1A: Charlestown,3
+T115,PWDx,PWDx_District 1B: North End,8
+T115,PWDx,PWDx_District 1C: Downtown,20
+T115,PWDx,PWDx_Empty Litter Basket,1
+T115,PWDx,PWDx_Graffiti,2
+T115,PWDx,PWDx_Highway Construction,11
+T115,PWDx,PWDx_Litter Basket Maintenance,1
+T115,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,4
+T115,PWDx,PWDx_Pick Up Dead Animals,1
+T115,PWDx,PWDx_Recycling Cart Return,1
+T115,PWDx,PWDx_Sidewalk Repair,10
+T115,PWDx,PWDx_Street Light Outages,2
+T115,PWDx,PWDx_Street Light_General Lighting Request,1
+T115,PWDx,PWDx_Utility Casting Repair,1
+T116,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,58
+T116,INFO,INFO_BPHC,1
+T116,ISD,ISD_Building (INTERNAL),2
+T117,ISD,ISD_Weights and Measures (INTERNAL),4
+T118,ISD,ISD_Weights and Measures (INTERNAL),28
+T119,INFO,"INFO03_Mobile ""Other"" Requests",1
+T119,INFO,INFO_Reallocation From Dept,1
+T119,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,2
+T119,PWDx,PWDx_Schedule a Bulk Item Pickup,25112
+T120,PWDx,PWDx_Schedule a Bulk Item Pickup,12755
+T121,BWSC,BWSC_All Cases,6
+T121,ISD,ISD_Administrative,1
+T121,ISD,ISD_Housing (INTERNAL),83
+T121,ISD,ISD_Plumbing,2
+T122,ISD,ISD_Weights and Measures (INTERNAL),4
+T123,ANML,ANML_General,2
+T123,BPD,BPD_Districts,16
+T123,BTDT,BTDT_Parking Enforcement,1
+T123,BWSC,BWSC_All Cases,3
+T123,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,4
+T123,INFO,INFO_BPHC,3
+T123,INFO,INFO_Encampments,4
+T123,INFO,INFO_Homeless Issue,2
+T123,INFO,INFO_Mass DCR,5
+T123,INFO,INFO_Mass DOT,1
+T123,INFO,INFO_Reallocation From Dept,13
+T123,INFO,INFO_Unsheltered_Persons,1
+T123,ISD,ISD_Administrative,1
+T123,ISD,ISD_Building (INTERNAL),40
+T123,ISD,ISD_Environmental Services (INTERNAL),2
+T123,ISD,ISD_Health (INTERNAL),1
+T123,ISD,ISD_Housing (INTERNAL),78
+T123,ISD,ISD_Housing_ShortTermRental,316
+T123,PWDx,PWDx_Code Enforcement,5
+T123,PWDx,PWDx_Highway Construction,1
+T123,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,1
+T123,PWDx,PWDx_Sidewalk Repair,1
+T124,BTDT,BTDT_Administration,2
+T124,BTDT,BTDT_Traffic Signal_Repair,1
+T124,BWSC,BWSC_All Cases,500
+T124,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,25
+T124,INFO,INFO_Eversource,16
+T124,INFO,INFO_MBTA,1
+T124,ISD,ISD_Administrative,1
+T124,ISD,ISD_Building (INTERNAL),3
+T124,PARK,PARK_Maintenance_Region 1,1
+T124,PARK,PARK_Maintenance_Region 4,1
+T124,PWDx,PWDx_Code Enforcement,1
+T124,PWDx,PWDx_Contractor Complaints,1
+T124,PWDx,PWDx_Highway Construction,3
+T124,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,1
+T124,PWDx,PWDx_Sidewalk Repair,1
+T124,PWDx,PWDx_Street Light_General Lighting Request,2
+T124,PWDx,PWDx_Utility Casting Repair,2
+T125,BWSC,BWSC_All Cases,1
+T125,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T125,INFO,INFO_Mass DOT,1
+T125,PWDx,PWDx_Contractor Complaints,1
+T125,PWDx,PWDx_Highway Construction,46
+T125,PWDx,PWDx_Sidewalk Repair,101
+T126,BHA,BHA_General,10
+T126,BPD,BPD_Districts,1
+T126,BTDT,BTDT_AVRS Interface Queue,1
+T126,BTDT,BTDT_Abandoned Bicycle,1
+T126,BTDT,BTDT_Administration,71
+T126,BTDT,BTDT_BostonBikes,21
+T126,BTDT,BTDT_Broken Meter Complaints,1
+T126,BTDT,BTDT_District 01,5
+T126,BTDT,BTDT_District 02,2
+T126,BTDT,BTDT_District 03,4
+T126,BTDT,BTDT_District 05,1
+T126,BTDT,BTDT_District 06,5
+T126,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,19
+T126,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,3
+T126,BTDT,BTDT_General Comments,3
+T126,BTDT,BTDT_Parking Enforcement,5
+T126,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,2
+T126,BTDT,BTDT_Pavement Marking_Maintenance,16
+T126,BTDT,BTDT_Sign Repair,6
+T126,BTDT,BTDT_Sign Shop_Sign Installation,35
+T126,BTDT,BTDT_Traffic Signal_Repair,6
+T126,BWSC,BWSC_All Cases,468
+T126,BWSC,BWSC_Pothole,15
+T126,DISB,DISB_General_Request,2
+T126,DND,DND_General,1
+T126,GRNi,GRNi_Green_Infrastructure,1
+T126,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,124
+T126,INFO,INFO_Down Wire,1
+T126,INFO,INFO_Eversource,15
+T126,INFO,INFO_Homeless Issue,1
+T126,INFO,INFO_JC Decaux,1
+T126,INFO,INFO_Low Hanging Wire,6
+T126,INFO,INFO_MBTA,49
+T126,INFO,INFO_Mass DCR,185
+T126,INFO,INFO_Mass DOT,100
+T126,INFO,INFO_Massport,4
+T126,INFO,INFO_Reallocation From Dept,131
+T126,INFO,INFO_USPS Issues,1
+T126,ISD,ISD_Administrative,41
+T126,ISD,ISD_Building (INTERNAL),158
+T126,ISD,ISD_Environmental Services (INTERNAL),8
+T126,ISD,ISD_Housing (INTERNAL),1
+T126,ONS,ONS_General,3
+T126,PARK,PARK_Carpentry,3
+T126,PARK,PARK_General Comments,1
+T126,PARK,PARK_Graffiti,1
+T126,PARK,PARK_Maintenance_Ground Maintenance,3
+T126,PARK,PARK_Maintenance_Region 1,11
+T126,PARK,PARK_Maintenance_Region 2,6
+T126,PARK,PARK_Maintenance_Region 3,2
+T126,PARK,PARK_Maintenance_Region 6,2
+T126,PARK,PARK_Maintenance_Trades,27
+T126,PARK,PARK_New Tree Requests,12
+T126,PARK,PARK_Park Improvement Requests,19
+T126,PARK,PARK_Plumbing,3
+T126,PARK,PARK_Tree Emergencies,10
+T126,PARK,PARK_Tree Maintenance Request,53
+T126,PARK,PARK_Welding,4
+T126,PROP,PROP_GRAF_GraffitiRemoval,1
+T126,PWDx,PWDx_Bridge Maintenance,41
+T126,PWDx,PWDx_Code Enforcement,105
+T126,PWDx,PWDx_Contractor Complaints,166
+T126,PWDx,PWDx_District 02: Jamaica Plain,90
+T126,PWDx,PWDx_District 03: North Dorchester,72
+T126,PWDx,PWDx_District 04: Allston/Brighton,146
+T126,PWDx,PWDx_District 05: South Boston,97
+T126,PWDx,PWDx_District 06: West Roxbury and Roslindale,269
+T126,PWDx,PWDx_District 07: South Dorchester,76
+T126,PWDx,PWDx_District 08: Hyde Park,91
+T126,PWDx,PWDx_District 09: East Boston,148
+T126,PWDx,PWDx_District 10A: Roxbury,56
+T126,PWDx,PWDx_District 10B: Roxbury,51
+T126,PWDx,PWDx_District 1A: Charlestown,15
+T126,PWDx,PWDx_District 1B: North End,34
+T126,PWDx,PWDx_District 1C: Downtown,51
+T126,PWDx,PWDx_Engineering_Design,43
+T126,PWDx,PWDx_Engineering_PIC,27
+T126,PWDx,PWDx_Graffiti,7
+T126,PWDx,PWDx_Highway Construction,2486
+T126,PWDx,PWDx_Highway Construction General,14
+T126,PWDx,PWDx_Litter Basket Maintenance,1
+T126,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,1
+T126,PWDx,PWDx_Request for Street Cleaning,1
+T126,PWDx,PWDx_Roadway Repair,4
+T126,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,34
+T126,PWDx,PWDx_Roadway Repair_CRP_Resurfacing,2
+T126,PWDx,PWDx_Roadway Repair_Ponding,11
+T126,PWDx,PWDx_Roadway Repair_Reconstruction,12
+T126,PWDx,PWDx_STRL Pole Compliance,2
+T126,PWDx,PWDx_Sidewalk Repair,5198
+T126,PWDx,PWDx_Sidewalk Repair (Make Safe),189
+T126,PWDx,PWDx_Snow Cases,1
+T126,PWDx,PWDx_Street Light Knock Downs,1
+T126,PWDx,PWDx_Street Light Knockdown Replacement,10
+T126,PWDx,PWDx_Street Light Outages - Gas,1
+T126,PWDx,PWDx_Street Light Outages - Long-Term Repair,1
+T126,PWDx,PWDx_Street Light_General Lighting Request,29
+T126,PWDx,PWDx_Street Light_Install New Lighting,1
+T126,PWDx,PWDx_Utility Casting Repair,5
+T127,BHA,BHA_General,1
+T127,BPD,BPD_Districts,7
+T127,BTDT,BTDT_Administration,21
+T127,BTDT,BTDT_BostonBikes,32
+T127,BTDT,BTDT_Broken Meter Complaints,8
+T127,BTDT,BTDT_District 01,480
+T127,BTDT,BTDT_District 02,627
+T127,BTDT,BTDT_District 03,194
+T127,BTDT,BTDT_District 04,155
+T127,BTDT,BTDT_District 05,236
+T127,BTDT,BTDT_District 06,487
+T127,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,160
+T127,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,45
+T127,BTDT,BTDT_General Comments,6
+T127,BTDT,BTDT_Parking Enforcement,9
+T127,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T127,BTDT,BTDT_Pavement Marking_Maintenance,3
+T127,BTDT,BTDT_Permits & Special Events,5
+T127,BTDT,BTDT_Sign Repair,63
+T127,BTDT,BTDT_Sign Shop Clerical,9
+T127,BTDT,BTDT_Sign Shop_Sign Installation,7556
+T127,BTDT,BTDT_Traffic Signal_Graffiti,2
+T127,BTDT,BTDT_Traffic Signal_Knock Downs/Contractor,3
+T127,BTDT,BTDT_Traffic Signal_Repair,75
+T127,BWSC,BWSC_All Cases,7
+T127,BWSC,BWSC_Pothole,1
+T127,DISB,DISB_General_Request,4
+T127,DISB,DISB_HP Sign,6
+T127,GRNi,GRNi_Green_Infrastructure,2
+T127,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,75
+T127,INFO,INFO_Eversource,7
+T127,INFO,INFO_JC Decaux,9
+T127,INFO,INFO_Low Hanging Wire,9
+T127,INFO,INFO_MBTA,392
+T127,INFO,INFO_Mass DCR,206
+T127,INFO,INFO_Mass DOT,47
+T127,INFO,INFO_Massport,9
+T127,INFO,INFO_Reallocation From Dept,86
+T127,INFO,INFO_USPS Issues,2
+T127,ISD,ISD_Administrative,2
+T127,ISD,ISD_Building (INTERNAL),8
+T127,ISD,ISD_Environmental Services (INTERNAL),1
+T127,ISD,ISD_Housing (INTERNAL),1
+T127,ONS,ONS_Allston_Brighton,1
+T127,ONS,ONS_BackBay_Fenway_MissionHill,1
+T127,ONS,ONS_EastBoston,1
+T127,ONS,ONS_General,10
+T127,ONS,ONS_MidDorchester,1
+T127,ONS,ONS_NorthEnd_WaterFront_WestEnd,2
+T127,ONS,ONS_SouthBoston,4
+T127,ONS,ONS_SouthDorchester,3
+T127,PARK,PARK_Carpentry,18
+T127,PARK,PARK_Graffiti,4
+T127,PARK,PARK_Maintenance_Region 1,2
+T127,PARK,PARK_Maintenance_Region 4,2
+T127,PARK,PARK_Park Improvement Requests,11
+T127,PARK,PARK_Tree Emergencies,5
+T127,PARK,PARK_Tree Maintenance Request,5
+T127,PROP,PROP_GRAF_GraffitiRemoval,4
+T127,PWDx,PWDx_Bridge Maintenance,1
+T127,PWDx,PWDx_Code Enforcement,5
+T127,PWDx,PWDx_Contractor Complaints,60
+T127,PWDx,PWDx_District 03: North Dorchester,1
+T127,PWDx,PWDx_District 05: South Boston,2
+T127,PWDx,PWDx_District 06: West Roxbury and Roslindale,2
+T127,PWDx,PWDx_District 08: Hyde Park,2
+T127,PWDx,PWDx_District 09: East Boston,1
+T127,PWDx,PWDx_District 10A: Roxbury,1
+T127,PWDx,PWDx_District 10B: Roxbury,1
+T127,PWDx,PWDx_District 1C: Downtown,1
+T127,PWDx,PWDx_Engineering_Design,1
+T127,PWDx,PWDx_Graffiti,1
+T127,PWDx,PWDx_Highway Construction,4
+T127,PWDx,PWDx_Highway Construction General,1
+T127,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,1
+T127,PWDx,PWDx_Roadway Repair,4
+T127,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,2
+T127,PWDx,PWDx_Roadway Repair_CRP_Resurfacing,1
+T127,PWDx,PWDx_STRL Pole Compliance,1
+T127,PWDx,PWDx_Sidewalk Repair,5
+T127,PWDx,PWDx_Street Light Knock Downs,9
+T127,PWDx,PWDx_Street Light Knockdown Replacement,5
+T127,PWDx,PWDx_Street Light Outages,3
+T127,PWDx,PWDx_Street Light Outages - Gas,5
+T127,PWDx,PWDx_Street Light_General Lighting Request,10
+T128,BTDT,BTDT_Sign Shop Clerical,1
+T129,PWDx,PWDx_District 03: North Dorchester,1
+T129,PWDx,PWDx_District 09: East Boston,1
+T130,BHA,BHA_General,1
+T130,BTDT,BTDT_Administration,2
+T130,BTDT,BTDT_Parking Enforcement,2
+T130,BTDT,BTDT_Parking Lot_PrivateParkingLotComplaints,1
+T130,BTDT,BTDT_Permits & Special Events,2
+T130,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T130,INFO,INFO_Reallocation From Dept,3
+T130,ISD,ISD_Building (INTERNAL),1
+T130,PWDx,PWDx_Code Enforcement,2
+T130,PWDx,PWDx_Contractor Complaints,3
+T130,PWDx,PWDx_District 02: Jamaica Plain,6
+T130,PWDx,PWDx_District 03: North Dorchester,62
+T130,PWDx,PWDx_District 04: Allston/Brighton,7
+T130,PWDx,PWDx_District 05: South Boston,10
+T130,PWDx,PWDx_District 06: West Roxbury and Roslindale,15
+T130,PWDx,PWDx_District 07: South Dorchester,54
+T130,PWDx,PWDx_District 08: Hyde Park,14
+T130,PWDx,PWDx_District 09: East Boston,16
+T130,PWDx,PWDx_District 10A: Roxbury,9
+T130,PWDx,PWDx_District 10B: Roxbury,50
+T130,PWDx,PWDx_District 1A: Charlestown,5
+T130,PWDx,PWDx_District 1B: North End,13
+T130,PWDx,PWDx_District 1C: Downtown,6
+T130,PWDx,PWDx_Request for Street Cleaning,1
+T130,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,1
+T130,PWDx,PWDx_Roadway Repair_Reconstruction,1
+T130,PWDx,PWDx_Space Saver Removal,28
+T131,BHA,BHA_General,1
+T131,INFO,INFO_Reallocation From Dept,1
+T131,ISD,ISD_Administrative,1
+T131,ISD,ISD_Building (INTERNAL),3
+T131,ISD,ISD_Housing (INTERNAL),134
+T131,PWDx,PWDx_Code Enforcement,5
+T132,PWDx,PWDx_Sticker Request,4666
+T133,BHA,BHA_General,1
+T133,BTDT,BTDT_Administration,2
+T133,BTDT,BTDT_Traffic Signal_Knock Downs/Contractor,1
+T133,BTDT,BTDT_Traffic Signal_Repair,52
+T133,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,16
+T133,INFO,INFO_Eversource,8
+T133,INFO,INFO_Gas_Odor_Leak,1
+T133,INFO,INFO_Low Hanging Wire,4
+T133,INFO,INFO_MBTA,2
+T133,INFO,INFO_Mass DCR,20
+T133,INFO,INFO_Mass DOT,11
+T133,INFO,INFO_Massport,1
+T133,INFO,INFO_Reallocation From Dept,23
+T133,PWDx,PWDx_Major System Failure,1
+T133,PWDx,PWDx_STRL Pole Compliance,6
+T133,PWDx,PWDx_Street Light Knock Downs,761
+T133,PWDx,PWDx_Street Light Knockdown Replacement,10
+T133,PWDx,PWDx_Street Light Outages,2
+T133,PWDx,PWDx_Street Light Outages - Gas,8
+T133,PWDx,PWDx_Street Light_General Lighting Request,20
+T133,PWDx,PWDx_Street Light_Install New Lighting,1
+T134,BHA,BHA_General,6
+T134,BPD,BPD_Districts,4
+T134,BTDT,BTDT_Administration,6
+T134,BTDT,BTDT_Broken Meter Complaints,1
+T134,BTDT,BTDT_District 02,1
+T134,BTDT,BTDT_District 05,1
+T134,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,20
+T134,BTDT,BTDT_Parking Enforcement,2
+T134,BTDT,BTDT_Permits & Special Events,2
+T134,BTDT,BTDT_Sign Shop_Sign Installation,2
+T134,BTDT,BTDT_Traffic Signal_Repair,136
+T134,BWSC,BWSC_All Cases,2
+T134,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,95
+T134,INFO,INFO_BPHC,2
+T134,INFO,INFO_Down Wire,3
+T134,INFO,INFO_Encampments,1
+T134,INFO,INFO_Eversource,32
+T134,INFO,INFO_Gas_Odor_Leak,1
+T134,INFO,INFO_Low Hanging Wire,18
+T134,INFO,INFO_MBTA,20
+T134,INFO,INFO_Mass DCR,295
+T134,INFO,INFO_Mass DOT,83
+T134,INFO,INFO_Massport,11
+T134,INFO,INFO_Mayors Policy Office,2
+T134,INFO,INFO_Reallocation From Dept,83
+T134,ISD,ISD_Administrative,1
+T134,ONS,ONS_General,1
+T134,PARK,PARK_Maintenance_Lighting Electrical,17
+T134,PARK,PARK_Tree Emergencies,4
+T134,PARK,PARK_Tree Maintenance Request,8
+T134,PWDx,PWDx_Bridge Maintenance,1
+T134,PWDx,PWDx_District 1C: Downtown,1
+T134,PWDx,PWDx_Highway Construction,9
+T134,PWDx,PWDx_Major System Failure,6
+T134,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,1
+T134,PWDx,PWDx_Roadway Repair,1
+T134,PWDx,PWDx_STRL Pole Compliance,90
+T134,PWDx,PWDx_Sidewalk Repair,4
+T134,PWDx,PWDx_Sidewalk Repair (Make Safe),1
+T134,PWDx,PWDx_Street Light Knock Downs,12
+T134,PWDx,PWDx_Street Light Knockdown Replacement,22
+T134,PWDx,PWDx_Street Light Outages,7081
+T134,PWDx,PWDx_Street Light Outages - Gas,672
+T134,PWDx,PWDx_Street Light Outages - Long-Term Repair,264
+T134,PWDx,PWDx_Street Light_Antenna Pole,1
+T134,PWDx,PWDx_Street Light_General Lighting Request,38
+T134,PWDx,PWDx_Street Light_Pickup_Clear Conduit,6
+T134,PWDx,PWDx_Street Light_Upgrade Existing Lighting,5
+T135,INFO,INFO_Low Hanging Wire,1
+T135,INFO,INFO_Reallocation From Dept,2
+T135,PWDx,PWDx_District 02: Jamaica Plain,1
+T135,PWDx,PWDx_District 03: North Dorchester,1
+T135,PWDx,PWDx_District 05: South Boston,1
+T135,PWDx,PWDx_District 08: Hyde Park,4
+T135,PWDx,PWDx_District 10A: Roxbury,1
+T135,PWDx,PWDx_District 1A: Charlestown,1
+T135,PWDx,PWDx_District 1C: Downtown,2
+T135,PWDx,PWDx_Highway Construction,6
+T135,PWDx,PWDx_Highway Construction General,252
+T135,PWDx,PWDx_Street Light Knockdown Replacement,1
+T135,PWDx,PWDx_Street Light Outages - Gas,1
+T135,PWDx,PWDx_Street Light Outages - Long-Term Repair,1
+T135,PWDx,PWDx_Street Light_General Lighting Request,28
+T136,BPD,BPD_Districts,6
+T136,BTDT,BTDT_Parking Enforcement,12
+T136,BTDT,BTDT_Permits & Special Events,2
+T136,BTDT,BTDT_Sign Shop_Sign Installation,2
+T136,BWSC,BWSC_All Cases,1
+T136,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,5
+T136,INFO,"INFO03_Mobile ""Other"" Requests",69
+T136,INFO,INFO_Encampments,1
+T136,ISD,ISD_Building (INTERNAL),2
+T136,PWDx,PWDx_Code Enforcement,205
+T136,PWDx,PWDx_District 04: Allston/Brighton,2
+T136,PWDx,PWDx_District 09: East Boston,3
+T136,PWDx,PWDx_District 10A: Roxbury,2
+T136,PWDx,PWDx_District 10B: Roxbury,2
+T136,PWDx,PWDx_District 1B: North End,1
+T136,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,2
+T136,PWDx,PWDx_Sidewalk Repair,1
+T136,PWDx,PWDx_WM_Mattress_Pickup,1
+T137,ISD,ISD_Housing (INTERNAL),5
+T138,BPD,BPD_Districts,50
+T138,BTDT,BTDT_AVRS Interface Queue,2
+T138,BTDT,BTDT_Administration,63
+T138,BTDT,BTDT_BostonBikes,120
+T138,BTDT,BTDT_Broken Meter Complaints,1
+T138,BTDT,BTDT_District 01,5
+T138,BTDT,BTDT_District 02,4
+T138,BTDT,BTDT_District 03,1
+T138,BTDT,BTDT_District 04,1
+T138,BTDT,BTDT_District 05,3
+T138,BTDT,BTDT_District 06,8
+T138,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,61
+T138,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,1417
+T138,BTDT,BTDT_General Comments,3
+T138,BTDT,BTDT_Parking Enforcement,6
+T138,BTDT,BTDT_Pavement Marking_Maintenance,3
+T138,BTDT,BTDT_Permits & Special Events,4
+T138,BTDT,BTDT_Planning,3
+T138,BTDT,BTDT_Sign Repair,1
+T138,BTDT,BTDT_Sign Shop Clerical,1
+T138,BTDT,BTDT_Sign Shop_Sign Installation,39
+T138,BTDT,BTDT_Traffic Signal_Graffiti,1
+T138,BTDT,BTDT_Traffic Signal_Knock Downs/Contractor,1
+T138,BTDT,BTDT_Traffic Signal_Repair,5229
+T138,BWSC,BWSC_All Cases,2
+T138,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,56
+T138,INFO,INFO_Eversource,3
+T138,INFO,INFO_Low Hanging Wire,1
+T138,INFO,INFO_MBTA,4
+T138,INFO,INFO_Mass DCR,536
+T138,INFO,INFO_Mass DOT,220
+T138,INFO,INFO_Massport,9
+T138,INFO,INFO_Reallocation From Dept,304
+T138,INFO,INFO_USPS Issues,1
+T138,ISD,ISD_Administrative,1
+T138,PARK,PARK_Tree Emergencies,1
+T138,PROP,PROP_GRAF_GraffitiRemoval,2
+T138,PWDx,PWDx_Code Enforcement,1
+T138,PWDx,PWDx_Contractor Complaints,5
+T138,PWDx,PWDx_District 03: North Dorchester,1
+T138,PWDx,PWDx_District 1C: Downtown,2
+T138,PWDx,PWDx_Highway Construction,1
+T138,PWDx,PWDx_Highway Construction General,1
+T138,PWDx,PWDx_Roadway Repair_Reconstruction,5
+T138,PWDx,PWDx_Sidewalk Repair,1
+T138,PWDx,PWDx_Street Light Knock Downs,9
+T138,PWDx,PWDx_Street Light Knockdown Replacement,1
+T138,PWDx,PWDx_Street Light Outages,9
+T138,PWDx,PWDx_Street Light_General Lighting Request,7
+T138,PWDx,PWDx_Utility Call-In,1
+T138,PWDx,PWDx_Work Hours-Loud Noise Complaints,1
+T139,BTDT,BTDT_Broken Meter Complaints,5
+T139,BTDT,BTDT_District 02,1
+T139,BTDT,BTDT_District 04,1
+T139,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,2
+T139,BTDT,BTDT_Sign Shop_Sign Installation,5
+T139,BTDT,BTDT_Traffic Signal_Graffiti,126
+T139,BTDT,BTDT_Traffic Signal_Knock Downs/Contractor,1
+T139,BTDT,BTDT_Traffic Signal_Repair,55
+T139,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,26
+T139,INFO,INFO_MBTA,3
+T139,INFO,INFO_Mass DCR,25
+T139,INFO,INFO_Mass DOT,6
+T139,INFO,INFO_Massport,2
+T139,INFO,INFO_Reallocation From Dept,7
+T139,ONS,ONS_JamaicaPlain,1
+T139,PARK,PARK_Graffiti,2
+T139,PARK,PARK_Painting,2
+T139,PROP,PROP_GRAF_GraffitiRemoval,19
+T139,PWDx,PWDx_District 02: Jamaica Plain,5
+T139,PWDx,PWDx_District 03: North Dorchester,2
+T139,PWDx,PWDx_District 04: Allston/Brighton,1
+T139,PWDx,PWDx_District 05: South Boston,1
+T139,PWDx,PWDx_District 07: South Dorchester,4
+T139,PWDx,PWDx_District 09: East Boston,2
+T139,PWDx,PWDx_District 10A: Roxbury,3
+T139,PWDx,PWDx_District 1B: North End,1
+T139,PWDx,PWDx_District 1C: Downtown,10
+T139,PWDx,PWDx_Graffiti,2
+T139,PWDx,PWDx_Litter Basket Maintenance,1
+T139,PWDx,PWDx_STRL Pole Compliance,3
+T139,PWDx,PWDx_Street Light_General Lighting Request,2
+T140,BPD,BPD_Districts,5
+T140,BTDT,BTDT_AVRS Interface Queue,2
+T140,BTDT,BTDT_Abandoned Bicycle,13
+T140,BTDT,BTDT_Administration,946
+T140,BTDT,BTDT_BostonBikes,19
+T140,BTDT,BTDT_Broken Meter Complaints,1
+T140,BTDT,BTDT_District 02,1
+T140,BTDT,BTDT_District 05,1
+T140,BTDT,BTDT_Engineering_New Sign and Pavement Marking Requests,16
+T140,BTDT,BTDT_Engineering_Request for Traffic Signal Study or Review,11
+T140,BTDT,BTDT_General Comments,1
+T140,BTDT,BTDT_OPC_Phone Bank Service,3
+T140,BTDT,BTDT_Parking Enforcement,85
+T140,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,3
+T140,BTDT,BTDT_Permits & Special Events,4
+T140,BTDT,BTDT_Sign Shop_Sign Installation,19
+T140,BTDT,BTDT_Traffic Signal_Graffiti,1
+T140,BTDT,BTDT_Traffic Signal_Repair,7
+T140,DISB,DISB_General_Request,2
+T140,DISB,DISB_HP Sign,9
+T140,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T140,INFO,INFO_MBTA,1
+T140,INFO,INFO_Mass DCR,2
+T140,INFO,INFO_Mass DOT,1
+T140,INFO,INFO_Reallocation From Dept,1
+T140,ISD,ISD_Housing (INTERNAL),1
+T140,ONS,ONS_General,1
+T140,ONS,ONS_Roxbury,1
+T140,PWDx,PWDx_Code Enforcement,8
+T140,PWDx,PWDx_District 06: West Roxbury and Roslindale,1
+T140,PWDx,PWDx_District 07: South Dorchester,1
+T140,PWDx,PWDx_Engineering_Design,1
+T140,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,1
+T140,PWDx,PWDx_Sidewalk Repair,2
+T140,PWDx,PWDx_Space Saver Removal,11
+T140,PWDx,PWDx_Street Light_General Lighting Request,1
+T141,DND,DND_General,1
+T141,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T141,INFO,INFO_Mass DCR,3
+T141,INFO,INFO_Reallocation From Dept,3
+T141,ISD,ISD_Environmental Services (INTERNAL),23
+T141,PWDx,PWDx_Code Enforcement,81
+T141,PWDx,PWDx_District 03: North Dorchester,1
+T141,PWDx,PWDx_District 08: Hyde Park,1
+T141,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,2
+T141,PWDx,PWDx_Sidewalk Repair,1
+T142,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,1
+T142,DND,DND_General,2
+T142,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T142,INFO,INFO_Down Wire,2
+T142,INFO,INFO_Eversource,13
+T142,INFO,INFO_Low Hanging Wire,1
+T142,INFO,INFO_MBTA,2
+T142,INFO,INFO_Mass DCR,16
+T142,INFO,INFO_Mass DOT,1
+T142,INFO,INFO_Reallocation From Dept,5
+T142,PARK,PARK_Cemetery Maintenance Request,2
+T142,PARK,PARK_New Tree Requests,1
+T142,PARK,PARK_Tree Emergencies,1636
+T142,PARK,PARK_Tree Maintenance Request,33
+T142,PARK,PARK_Tree in Park,7
+T142,PARK,PARK_Urban_Wilds,2
+T142,PWDx,PWDx_Sidewalk Repair,1
+T143,BHA,BHA_General,22
+T143,BPD,BPD_Districts,4
+T143,BTDT,BTDT_Administration,1
+T143,BTDT,BTDT_Parking Enforcement,1
+T143,BTDT,BTDT_Parking Lot_Municipal Parking Lot Complaints,12
+T143,BWSC,BWSC_All Cases,2
+T143,DND,DND_General,44
+T143,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,40
+T143,INFO,INFO_BPHC,1
+T143,INFO,INFO_Down Wire,7
+T143,INFO,INFO_Eversource,32
+T143,INFO,INFO_Homeless Issue,1
+T143,INFO,INFO_Low Hanging Wire,63
+T143,INFO,INFO_MBTA,37
+T143,INFO,INFO_Mass DCR,194
+T143,INFO,INFO_Mass DOT,39
+T143,INFO,INFO_Massport,7
+T143,INFO,INFO_Reallocation From Dept,45
+T143,ISD,ISD_Building (INTERNAL),1
+T143,ISD,ISD_Environmental Services (INTERNAL),2
+T143,ONS,ONS_General,1
+T143,PARK,PARK_Cemetery Maintenance Request,14
+T143,PARK,PARK_Graffiti,1
+T143,PARK,PARK_Maintenance_Ground Maintenance,1
+T143,PARK,PARK_Maintenance_Horticulture,17
+T143,PARK,PARK_Maintenance_Region 1,22
+T143,PARK,PARK_Maintenance_Region 2,20
+T143,PARK,PARK_Maintenance_Region 3,15
+T143,PARK,PARK_Maintenance_Region 4,5
+T143,PARK,PARK_Maintenance_Region 5,7
+T143,PARK,PARK_Maintenance_Region 6,13
+T143,PARK,PARK_New Tree Requests,39
+T143,PARK,PARK_Park Improvement Requests,2
+T143,PARK,PARK_Tree Emergencies,1571
+T143,PARK,PARK_Tree Maintenance Request,12443
+T143,PARK,PARK_Tree in Park,333
+T143,PARK,PARK_Urban_Wilds,14
+T143,PROP,PROP_GRAF_GraffitiRemoval,1
+T143,PWDx,PWDx_Bridge Maintenance,1
+T143,PWDx,PWDx_Code Enforcement,479
+T143,PWDx,PWDx_Contractor Complaints,2
+T143,PWDx,PWDx_District 02: Jamaica Plain,1
+T143,PWDx,PWDx_District 03: North Dorchester,1
+T143,PWDx,PWDx_District 04: Allston/Brighton,2
+T143,PWDx,PWDx_District 05: South Boston,3
+T143,PWDx,PWDx_District 06: West Roxbury and Roslindale,5
+T143,PWDx,PWDx_District 07: South Dorchester,4
+T143,PWDx,PWDx_District 08: Hyde Park,1
+T143,PWDx,PWDx_District 09: East Boston,3
+T143,PWDx,PWDx_District 10B: Roxbury,2
+T143,PWDx,PWDx_District 1A: Charlestown,7
+T143,PWDx,PWDx_District 1C: Downtown,2
+T143,PWDx,PWDx_Engineering_PIC,3
+T143,PWDx,PWDx_Highway Construction,1
+T143,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,13
+T143,PWDx,PWDx_Sidewalk Repair,8
+T143,PWDx,PWDx_Street Light_General Lighting Request,2
+T144,INFO,INFO_Mass DCR,1
+T144,PARK,PARK_Cemetery Maintenance Request,2
+T144,PARK,PARK_Park Improvement Requests,1
+T144,PARK,PARK_Tree Emergencies,23
+T144,PARK,PARK_Tree in Park,109
+T144,PARK,PARK_Urban_Wilds,1
+T145,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,178
+T145,INFO,INFO_MBTA,1
+T145,ISD,ISD_Administrative,1
+T146,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T146,ISD,ISD_Weights and Measures (INTERNAL),15
+T147,BTDT,BTDT_Administration,1
+T147,GEN,GEN_Needle_Pickup,1
+T147,INFO,INFO_BPHC,3
+T147,INFO,INFO_Homeless Issue,1
+T147,INFO,INFO_Mass DCR,1
+T147,INFO,INFO_Reallocation From Dept,12
+T147,ISD,ISD_Administrative,3
+T147,ISD,ISD_Building (INTERNAL),686
+T147,ISD,ISD_Electrical,6
+T147,ISD,ISD_Environmental Services (INTERNAL),6
+T147,ISD,ISD_Health (INTERNAL),1
+T147,ISD,ISD_Housing (INTERNAL),43
+T147,ISD,ISD_Plumbing,3
+T147,PWDx,PWDx_Code Enforcement,9
+T147,PWDx,PWDx_Contractor Complaints,2
+T147,PWDx,PWDx_Graffiti,1
+T147,PWDx,PWDx_Highway Construction,1
+T147,PWDx,PWDx_Sidewalk Repair,6
+T148,ISD,ISD_Health (INTERNAL),97
+T149,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,3
+T149,INFO,INFO_BPHC,3
+T149,INFO,INFO_Reallocation From Dept,3
+T149,ISD,ISD_Administrative,1
+T149,ISD,ISD_Building (INTERNAL),8
+T149,ISD,ISD_Electrical,1
+T149,ISD,ISD_Health (INTERNAL),1153
+T149,ISD,ISD_Housing (INTERNAL),4
+T149,ISD,ISD_Plumbing,3
+T149,ISD,ISD_Weights and Measures (INTERNAL),1
+T149,PWDx,PWDx_Code Enforcement,4
+T150,BPD,BPD_Districts,1
+T150,ISD,ISD_Building (INTERNAL),1
+T150,ISD,ISD_Health (INTERNAL),430
+T150,ISD,ISD_Housing (INTERNAL),1
+T150,PWDx,PWDx_Code Enforcement,3
+T151,ANML,ANML_General,1
+T151,BHA,BHA_General,1
+T151,BPD,BPD_Districts,1
+T151,BWSC,BWSC_All Cases,4
+T151,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,2
+T151,INFO,INFO_Reallocation From Dept,9
+T151,ISD,ISD_Administrative,2
+T151,ISD,ISD_Building (INTERNAL),42
+T151,ISD,ISD_Electrical,1
+T151,ISD,ISD_Environmental Services (INTERNAL),9
+T151,ISD,ISD_Health (INTERNAL),1
+T151,ISD,ISD_Housing (INTERNAL),5112
+T151,PWDx,PWDx_Code Enforcement,36
+T151,PWDx,PWDx_District 05: South Boston,1
+T151,PWDx,PWDx_District 09: East Boston,1
+T151,PWDx,PWDx_District 10A: Roxbury,1
+T151,PWDx,PWDx_WM_Mattress_Pickup,5
+T152,BWSC,BWSC_All Cases,4
+T152,ISD,ISD_Building (INTERNAL),3
+T152,ISD,ISD_Electrical,1
+T152,ISD,ISD_Environmental Services (INTERNAL),1
+T152,ISD,ISD_Health (INTERNAL),1
+T152,ISD,ISD_Housing (INTERNAL),461
+T152,ISD,ISD_Plumbing,1
+T153,BHA,BHA_General,1
+T153,BTDT,BTDT_BostonBikes,1
+T153,BWSC,BWSC_All Cases,1
+T153,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,7
+T153,INFO,INFO_MBTA,4
+T153,INFO,INFO_Mass DCR,11
+T153,INFO,INFO_Mass DOT,1
+T153,INFO,INFO_Massport,1
+T153,INFO,INFO_Reallocation From Dept,6
+T153,PARK,PARK_Maintenance_Ground Maintenance,6
+T153,PARK,PARK_Maintenance_Region 1,18
+T153,PARK,PARK_Maintenance_Region 2,4
+T153,PARK,PARK_Maintenance_Region 3,18
+T153,PARK,PARK_Maintenance_Region 4,2
+T153,PARK,PARK_Maintenance_Region 5,5
+T153,PARK,PARK_Maintenance_Region 6,12
+T153,PARK,PARK_Maintenance_Support Services,4
+T153,PARK,PARK_Maintenance_Trades,1
+T153,PWDx,PWDx_Code Enforcement,4048
+T153,PWDx,PWDx_District 02: Jamaica Plain,17
+T153,PWDx,PWDx_District 03: North Dorchester,2
+T153,PWDx,PWDx_District 04: Allston/Brighton,8
+T153,PWDx,PWDx_District 05: South Boston,3
+T153,PWDx,PWDx_District 06: West Roxbury and Roslindale,5
+T153,PWDx,PWDx_District 07: South Dorchester,1
+T153,PWDx,PWDx_District 08: Hyde Park,1
+T153,PWDx,PWDx_District 09: East Boston,1
+T153,PWDx,PWDx_District 10A: Roxbury,4
+T153,PWDx,PWDx_District 10B: Roxbury,1
+T153,PWDx,PWDx_District 1C: Downtown,6
+T153,PWDx,PWDx_Sidewalk Repair,1
+T153,PWDx,PWDx_Snow Removal,1
+T154,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T154,INFO,INFO_Mass DCR,1
+T154,INFO,INFO_Reallocation From Dept,2
+T154,PWDx,PWDx_Highway Construction,1
+T154,PWDx,PWDx_Street Light Knockdown Replacement,2
+T154,PWDx,PWDx_Street Light Outages - Gas,3
+T154,PWDx,PWDx_Street Light_Upgrade Existing Lighting,49
+T155,PWDx,PWDx_Utility Call-In,3
+T156,BTDT,BTDT_Administration,1
+T156,BWSC,BWSC_All Cases,62
+T156,BWSC,BWSC_Pothole,120
+T156,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,30
+T156,INFO,INFO_Eversource,3
+T156,INFO,INFO_Reallocation From Dept,14
+T156,PWDx,PWDx_Contractor Complaints,3
+T156,PWDx,PWDx_District 09: East Boston,1
+T156,PWDx,PWDx_District 1B: North End,1
+T156,PWDx,PWDx_Highway Construction,3
+T156,PWDx,PWDx_Sidewalk Repair,6
+T156,PWDx,PWDx_Street Light_General Lighting Request,1
+T156,PWDx,PWDx_Utility Casting Repair,371
+T157,BTDT,BTDT_Parking Lot_Valet Parking Problems,14
+T158,BTDT,BTDT_OPC_Walk-In Service,5
+T159,ISD,ISD_Weights and Measures (INTERNAL),2
+T160,BPD,BPD_Districts,1
+T160,BTDT,BTDT_Permits & Special Events,6
+T160,BWSC,BWSC_All Cases,2
+T160,INFO,INFO01_GenericeFormforOtherServiceRequestTypes,1
+T160,INFO,INFO_Mass DCR,1
+T160,INFO,INFO_Mass DOT,1
+T160,INFO,INFO_Massport,1
+T160,INFO,INFO_Reallocation From Dept,4
+T160,ISD,ISD_Administrative,5
+T160,ISD,ISD_Building (INTERNAL),14
+T160,PWDx,PWDx_Contractor Complaints,1
+T160,PWDx,PWDx_Engineering_PIC,1
+T160,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,5
+T160,PWDx,PWDx_Roadway Repair_Reconstruction,3
+T160,PWDx,PWDx_Work Hours-Loud Noise Complaints,370
+T161,BTDT,BTDT_Administration,1
+T161,BTDT,BTDT_District 05,1
+T161,BTDT,BTDT_Parking Enforcement,1
+T161,BTDT,BTDT_Permits & Special Events,1
+T161,BWSC,BWSC_All Cases,1
+T161,INFO,INFO_BPHC,1
+T161,INFO,INFO_Reallocation From Dept,84
+T161,ISD,ISD_Administrative,1
+T161,ISD,ISD_Building (INTERNAL),1650
+T161,ISD,ISD_Electrical,1
+T161,ISD,ISD_Housing (INTERNAL),3
+T161,ISD,ISD_Plumbing,4
+T161,PWDx,PWDx_Code Enforcement,8
+T161,PWDx,PWDx_Contractor Complaints,4
+T161,PWDx,PWDx_Sidewalk Repair,1
+T162,BTDT,BTDT_Administration,1
+T162,BTDT,BTDT_Parking Enforcement,1
+T162,BWSC,BWSC_All Cases,1
+T162,INFO,INFO_Reallocation From Dept,17
+T162,ISD,ISD_Administrative,4
+T162,ISD,ISD_Building (INTERNAL),1203
+T162,ISD,ISD_Plumbing,1
+T162,ONS,ONS_Roxbury,1
+T162,PWDx,PWDx_Contractor Complaints,4
+T162,PWDx,PWDx_Sidewalk Repair,3
+T162,PWDx,PWDx_Work Hours-Loud Noise Complaints,1
+T163,BTDT,BTDT_Administration,1
+T163,ISD,ISD_Administrative,1
+T163,ISD,ISD_Building (INTERNAL),66
+T163,PWDx,PWDx_Code Enforcement,1

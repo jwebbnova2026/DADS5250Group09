@@ -1,0 +1,3550 @@
+department,neighborhood,type_id,requests,with_target,on_time,closed
+BTDT,Allston / Brighton,T001,208,0,0,111
+BTDT,Allston / Brighton,T003,802,802,186,798
+BTDT,Allston / Brighton,T008,5,5,0,0
+BTDT,Allston / Brighton,T019,2,2,0,1
+BTDT,Allston / Brighton,T026,4,4,1,2
+BTDT,Allston / Brighton,T032,3,0,0,2
+BTDT,Allston / Brighton,T033,1,1,0,0
+BTDT,Allston / Brighton,T035,20,20,13,19
+BTDT,Allston / Brighton,T037,1,1,0,1
+BTDT,Allston / Brighton,T039,1,1,0,1
+BTDT,Allston / Brighton,T040,1,1,0,0
+BTDT,Allston / Brighton,T042,1,1,0,0
+BTDT,Allston / Brighton,T045,3,3,1,2
+BTDT,Allston / Brighton,T048,1,1,0,0
+BTDT,Allston / Brighton,T059,93,93,50,91
+BTDT,Allston / Brighton,T061,2,2,2,2
+BTDT,Allston / Brighton,T063,166,166,90,148
+BTDT,Allston / Brighton,T074,3,3,0,1
+BTDT,Allston / Brighton,T080,32,32,21,27
+BTDT,Allston / Brighton,T082,10300,10300,6268,9080
+BTDT,Allston / Brighton,T084,6,6,2,5
+BTDT,Allston / Brighton,T087,24,24,11,22
+BTDT,Allston / Brighton,T088,6,6,0,1
+BTDT,Allston / Brighton,T097,1,1,1,1
+BTDT,Allston / Brighton,T102,3,0,0,2
+BTDT,Allston / Brighton,T107,12,12,1,6
+BTDT,Allston / Brighton,T111,1,0,0,1
+BTDT,Allston / Brighton,T112,17,17,1,10
+BTDT,Allston / Brighton,T113,90,90,62,80
+BTDT,Allston / Brighton,T126,20,20,2,11
+BTDT,Allston / Brighton,T127,1254,1254,870,1227
+BTDT,Allston / Brighton,T133,3,3,3,3
+BTDT,Allston / Brighton,T134,7,7,7,7
+BTDT,Allston / Brighton,T136,3,3,1,2
+BTDT,Allston / Brighton,T138,700,700,508,672
+BTDT,Allston / Brighton,T139,15,15,15,15
+BTDT,Allston / Brighton,T140,72,0,0,42
+BTDT,Allston / Brighton,T157,2,2,0,0
+BTDT,Back Bay,T001,256,1,0,166
+BTDT,Back Bay,T003,122,122,48,112
+BTDT,Back Bay,T005,1,0,0,1
+BTDT,Back Bay,T008,11,11,3,3
+BTDT,Back Bay,T012,2,2,0,0
+BTDT,Back Bay,T020,4,4,1,1
+BTDT,Back Bay,T026,2,2,1,1
+BTDT,Back Bay,T032,5,0,0,3
+BTDT,Back Bay,T033,2,2,0,1
+BTDT,Back Bay,T034,1,1,1,1
+BTDT,Back Bay,T035,6,6,0,4
+BTDT,Back Bay,T036,2,2,1,1
+BTDT,Back Bay,T037,2,2,1,2
+BTDT,Back Bay,T045,1,1,0,1
+BTDT,Back Bay,T059,18,17,9,17
+BTDT,Back Bay,T063,36,36,12,29
+BTDT,Back Bay,T080,69,69,20,42
+BTDT,Back Bay,T082,4334,4334,2393,3716
+BTDT,Back Bay,T083,20,20,1,1
+BTDT,Back Bay,T084,2,2,1,1
+BTDT,Back Bay,T087,21,21,16,18
+BTDT,Back Bay,T088,8,8,0,0
+BTDT,Back Bay,T090,1,0,0,1
+BTDT,Back Bay,T097,2,2,1,2
+BTDT,Back Bay,T102,4,0,0,1
+BTDT,Back Bay,T107,12,12,0,4
+BTDT,Back Bay,T111,1,0,0,1
+BTDT,Back Bay,T112,15,15,0,6
+BTDT,Back Bay,T113,103,103,53,85
+BTDT,Back Bay,T115,1,1,1,1
+BTDT,Back Bay,T126,22,22,1,10
+BTDT,Back Bay,T127,344,344,203,314
+BTDT,Back Bay,T133,4,4,4,4
+BTDT,Back Bay,T134,8,8,7,7
+BTDT,Back Bay,T136,1,1,1,1
+BTDT,Back Bay,T138,422,422,290,404
+BTDT,Back Bay,T139,29,29,28,28
+BTDT,Back Bay,T140,65,0,0,27
+BTDT,Back Bay,T157,1,1,0,0
+BTDT,Beacon Hill,T001,172,2,0,100
+BTDT,Beacon Hill,T003,62,62,31,60
+BTDT,Beacon Hill,T008,3,3,1,1
+BTDT,Beacon Hill,T012,1,1,0,0
+BTDT,Beacon Hill,T020,2,2,0,1
+BTDT,Beacon Hill,T021,1,1,1,1
+BTDT,Beacon Hill,T032,3,0,0,2
+BTDT,Beacon Hill,T033,1,1,0,0
+BTDT,Beacon Hill,T035,1,1,1,1
+BTDT,Beacon Hill,T042,1,1,1,1
+BTDT,Beacon Hill,T059,18,18,11,16
+BTDT,Beacon Hill,T063,5,5,2,4
+BTDT,Beacon Hill,T080,5,5,0,1
+BTDT,Beacon Hill,T082,1662,1662,896,1399
+BTDT,Beacon Hill,T083,1,1,0,0
+BTDT,Beacon Hill,T087,13,13,11,13
+BTDT,Beacon Hill,T088,2,2,0,0
+BTDT,Beacon Hill,T091,1,1,0,1
+BTDT,Beacon Hill,T102,1,0,0,0
+BTDT,Beacon Hill,T107,1,1,0,0
+BTDT,Beacon Hill,T112,10,10,0,3
+BTDT,Beacon Hill,T113,38,38,20,33
+BTDT,Beacon Hill,T126,3,3,0,1
+BTDT,Beacon Hill,T127,237,237,138,201
+BTDT,Beacon Hill,T133,2,2,2,2
+BTDT,Beacon Hill,T134,4,4,2,4
+BTDT,Beacon Hill,T138,122,122,78,117
+BTDT,Beacon Hill,T139,5,5,5,5
+BTDT,Beacon Hill,T140,21,0,0,7
+BTDT,Beacon Hill,T143,1,1,0,0
+BTDT,Charlestown,T001,47,0,0,36
+BTDT,Charlestown,T003,176,176,40,173
+BTDT,Charlestown,T008,3,3,0,0
+BTDT,Charlestown,T020,3,3,0,1
+BTDT,Charlestown,T021,2,2,2,2
+BTDT,Charlestown,T026,1,1,0,1
+BTDT,Charlestown,T032,2,0,0,1
+BTDT,Charlestown,T035,4,4,2,4
+BTDT,Charlestown,T036,12,12,4,11
+BTDT,Charlestown,T040,1,1,0,0
+BTDT,Charlestown,T045,2,2,1,1
+BTDT,Charlestown,T059,20,20,8,20
+BTDT,Charlestown,T063,74,74,39,66
+BTDT,Charlestown,T074,3,3,0,3
+BTDT,Charlestown,T082,5804,5804,2779,5072
+BTDT,Charlestown,T083,1,1,0,0
+BTDT,Charlestown,T084,3,3,2,3
+BTDT,Charlestown,T087,9,9,4,8
+BTDT,Charlestown,T088,1,1,0,1
+BTDT,Charlestown,T099,1,1,0,0
+BTDT,Charlestown,T102,1,0,0,0
+BTDT,Charlestown,T107,5,5,0,5
+BTDT,Charlestown,T112,8,8,0,3
+BTDT,Charlestown,T113,36,36,30,35
+BTDT,Charlestown,T124,1,0,0,1
+BTDT,Charlestown,T126,12,12,1,11
+BTDT,Charlestown,T127,358,358,246,355
+BTDT,Charlestown,T130,3,0,0,0
+BTDT,Charlestown,T134,9,9,9,9
+BTDT,Charlestown,T138,230,230,172,229
+BTDT,Charlestown,T139,2,2,2,2
+BTDT,Charlestown,T140,26,0,0,12
+BTDT,Chestnut Hill,T140,1,0,0,1
+BTDT,Dorchester,T001,225,0,0,179
+BTDT,Dorchester,T003,2303,2303,597,2293
+BTDT,Dorchester,T008,16,16,4,5
+BTDT,Dorchester,T012,8,8,1,5
+BTDT,Dorchester,T020,2,2,1,2
+BTDT,Dorchester,T021,1,1,1,1
+BTDT,Dorchester,T026,4,4,2,2
+BTDT,Dorchester,T032,10,0,0,3
+BTDT,Dorchester,T033,6,6,1,1
+BTDT,Dorchester,T034,1,1,1,1
+BTDT,Dorchester,T035,41,41,22,40
+BTDT,Dorchester,T037,6,6,1,3
+BTDT,Dorchester,T039,2,2,0,2
+BTDT,Dorchester,T040,2,2,0,1
+BTDT,Dorchester,T044,1,1,0,0
+BTDT,Dorchester,T045,6,6,2,4
+BTDT,Dorchester,T048,4,4,2,3
+BTDT,Dorchester,T053,1,1,1,1
+BTDT,Dorchester,T059,119,119,84,117
+BTDT,Dorchester,T061,2,2,1,2
+BTDT,Dorchester,T063,278,278,175,262
+BTDT,Dorchester,T074,1,1,0,1
+BTDT,Dorchester,T080,6,6,2,3
+BTDT,Dorchester,T082,13522,13522,7710,11904
+BTDT,Dorchester,T084,10,10,6,7
+BTDT,Dorchester,T086,2,2,2,2
+BTDT,Dorchester,T087,26,26,17,26
+BTDT,Dorchester,T088,4,4,0,1
+BTDT,Dorchester,T091,1,1,1,1
+BTDT,Dorchester,T097,2,2,0,0
+BTDT,Dorchester,T099,1,1,1,1
+BTDT,Dorchester,T102,4,0,0,2
+BTDT,Dorchester,T107,6,6,0,3
+BTDT,Dorchester,T111,2,0,0,2
+BTDT,Dorchester,T112,70,70,9,43
+BTDT,Dorchester,T113,114,114,72,88
+BTDT,Dorchester,T115,1,1,1,1
+BTDT,Dorchester,T123,1,1,1,1
+BTDT,Dorchester,T126,21,21,5,16
+BTDT,Dorchester,T127,1387,1387,1109,1373
+BTDT,Dorchester,T130,1,0,0,0
+BTDT,Dorchester,T133,4,4,3,3
+BTDT,Dorchester,T134,12,12,10,12
+BTDT,Dorchester,T136,1,1,1,1
+BTDT,Dorchester,T138,676,676,524,652
+BTDT,Dorchester,T139,14,14,14,14
+BTDT,Dorchester,T140,168,0,0,90
+BTDT,Downtown / Financial District,T001,177,0,0,109
+BTDT,Downtown / Financial District,T003,135,135,61,131
+BTDT,Downtown / Financial District,T008,8,8,0,0
+BTDT,Downtown / Financial District,T012,4,4,0,0
+BTDT,Downtown / Financial District,T020,3,3,0,1
+BTDT,Downtown / Financial District,T021,6,6,4,4
+BTDT,Downtown / Financial District,T026,5,5,1,3
+BTDT,Downtown / Financial District,T027,3,3,1,2
+BTDT,Downtown / Financial District,T032,8,0,0,0
+BTDT,Downtown / Financial District,T033,2,2,0,0
+BTDT,Downtown / Financial District,T034,1,1,1,1
+BTDT,Downtown / Financial District,T035,9,9,3,7
+BTDT,Downtown / Financial District,T036,3,3,1,2
+BTDT,Downtown / Financial District,T037,2,2,0,2
+BTDT,Downtown / Financial District,T042,2,2,0,1
+BTDT,Downtown / Financial District,T045,2,2,0,1
+BTDT,Downtown / Financial District,T048,4,4,1,4
+BTDT,Downtown / Financial District,T059,35,35,20,35
+BTDT,Downtown / Financial District,T063,76,76,39,64
+BTDT,Downtown / Financial District,T074,3,3,0,2
+BTDT,Downtown / Financial District,T080,10,10,6,9
+BTDT,Downtown / Financial District,T082,7159,7159,4036,6235
+BTDT,Downtown / Financial District,T083,10,10,1,1
+BTDT,Downtown / Financial District,T084,4,4,3,4
+BTDT,Downtown / Financial District,T086,2,2,2,2
+BTDT,Downtown / Financial District,T087,18,18,8,18
+BTDT,Downtown / Financial District,T088,1,1,0,0
+BTDT,Downtown / Financial District,T097,4,4,0,1
+BTDT,Downtown / Financial District,T102,1,0,0,0
+BTDT,Downtown / Financial District,T107,15,15,0,11
+BTDT,Downtown / Financial District,T112,16,16,1,6
+BTDT,Downtown / Financial District,T113,126,126,78,111
+BTDT,Downtown / Financial District,T114,1,0,0,0
+BTDT,Downtown / Financial District,T124,1,0,0,1
+BTDT,Downtown / Financial District,T126,13,13,0,5
+BTDT,Downtown / Financial District,T127,605,605,363,562
+BTDT,Downtown / Financial District,T130,1,0,0,0
+BTDT,Downtown / Financial District,T133,8,8,7,8
+BTDT,Downtown / Financial District,T134,15,15,9,14
+BTDT,Downtown / Financial District,T138,650,650,461,622
+BTDT,Downtown / Financial District,T139,15,15,14,15
+BTDT,Downtown / Financial District,T140,77,0,0,40
+BTDT,Downtown / Financial District,T157,6,6,1,1
+BTDT,Downtown / Financial District,T160,5,5,1,1
+BTDT,Downtown / Financial District,T161,1,1,0,1
+BTDT,East Boston,T001,50,0,0,35
+BTDT,East Boston,T003,469,469,120,465
+BTDT,East Boston,T008,7,7,1,1
+BTDT,East Boston,T011,1,1,0,1
+BTDT,East Boston,T012,2,2,0,2
+BTDT,East Boston,T020,3,3,1,2
+BTDT,East Boston,T021,8,8,8,8
+BTDT,East Boston,T026,6,6,3,4
+BTDT,East Boston,T032,5,0,0,2
+BTDT,East Boston,T033,2,2,0,1
+BTDT,East Boston,T035,9,9,6,8
+BTDT,East Boston,T036,1,1,1,1
+BTDT,East Boston,T037,6,6,2,4
+BTDT,East Boston,T039,2,2,0,1
+BTDT,East Boston,T042,1,1,0,1
+BTDT,East Boston,T045,1,1,1,1
+BTDT,East Boston,T048,1,1,1,1
+BTDT,East Boston,T059,58,58,29,58
+BTDT,East Boston,T061,1,1,0,1
+BTDT,East Boston,T063,98,98,65,96
+BTDT,East Boston,T074,5,5,1,4
+BTDT,East Boston,T082,12688,12688,6869,11341
+BTDT,East Boston,T084,7,7,4,6
+BTDT,East Boston,T086,1,1,0,0
+BTDT,East Boston,T087,10,10,7,10
+BTDT,East Boston,T088,3,3,0,0
+BTDT,East Boston,T091,1,1,0,1
+BTDT,East Boston,T102,3,0,0,3
+BTDT,East Boston,T107,1,1,1,1
+BTDT,East Boston,T112,7,7,3,5
+BTDT,East Boston,T113,18,18,11,15
+BTDT,East Boston,T126,11,11,3,9
+BTDT,East Boston,T127,626,626,429,620
+BTDT,East Boston,T133,2,2,1,2
+BTDT,East Boston,T134,7,7,5,5
+BTDT,East Boston,T138,202,202,159,196
+BTDT,East Boston,T139,7,7,7,7
+BTDT,East Boston,T140,46,0,0,14
+BTDT,East Boston,T142,1,1,0,1
+BTDT,East Boston,T143,5,5,5,5
+BTDT,East Boston,T157,1,1,0,0
+BTDT,East Boston,T161,1,1,0,1
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T001,106,0,0,53
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T003,60,60,37,59
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T008,3,3,0,0
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T020,4,4,2,3
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T023,1,1,1,1
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T026,5,5,0,2
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T032,4,0,0,0
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T035,3,3,3,3
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T042,1,1,1,1
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T045,1,1,0,0
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T059,20,20,15,19
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T063,32,32,19,26
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T080,39,39,22,31
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T082,2607,2607,1449,2236
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T083,7,7,1,1
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T084,2,2,2,2
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T087,12,12,5,11
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T088,2,2,0,0
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T090,1,0,0,1
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T099,1,1,0,0
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T102,2,0,0,1
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T107,3,3,0,2
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T112,7,7,0,2
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T113,29,29,24,28
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T126,8,8,2,5
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T127,215,215,172,207
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T133,1,1,1,1
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T134,7,7,4,6
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T136,1,1,1,1
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T138,227,227,180,224
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T139,15,15,15,15
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,T140,32,0,0,19
+BTDT,Greater Mattapan,T001,72,0,0,58
+BTDT,Greater Mattapan,T003,640,640,148,639
+BTDT,Greater Mattapan,T008,1,1,0,0
+BTDT,Greater Mattapan,T012,1,1,0,0
+BTDT,Greater Mattapan,T020,3,3,1,2
+BTDT,Greater Mattapan,T021,1,1,1,1
+BTDT,Greater Mattapan,T025,1,1,0,1
+BTDT,Greater Mattapan,T032,4,0,0,1
+BTDT,Greater Mattapan,T033,2,2,0,1
+BTDT,Greater Mattapan,T034,1,1,1,1
+BTDT,Greater Mattapan,T035,34,34,19,34
+BTDT,Greater Mattapan,T039,2,2,1,2
+BTDT,Greater Mattapan,T040,2,2,0,0
+BTDT,Greater Mattapan,T042,1,1,0,1
+BTDT,Greater Mattapan,T046,1,1,1,1
+BTDT,Greater Mattapan,T048,1,1,0,1
+BTDT,Greater Mattapan,T053,1,1,1,1
+BTDT,Greater Mattapan,T059,40,40,33,40
+BTDT,Greater Mattapan,T063,118,118,79,113
+BTDT,Greater Mattapan,T080,2,2,1,1
+BTDT,Greater Mattapan,T082,2179,2179,1154,1873
+BTDT,Greater Mattapan,T084,5,5,3,4
+BTDT,Greater Mattapan,T087,19,19,12,19
+BTDT,Greater Mattapan,T088,4,4,0,2
+BTDT,Greater Mattapan,T099,1,1,0,0
+BTDT,Greater Mattapan,T102,5,0,0,3
+BTDT,Greater Mattapan,T107,3,3,1,3
+BTDT,Greater Mattapan,T112,8,8,2,5
+BTDT,Greater Mattapan,T113,86,86,53,77
+BTDT,Greater Mattapan,T126,2,2,0,1
+BTDT,Greater Mattapan,T127,458,458,353,454
+BTDT,Greater Mattapan,T133,5,5,5,5
+BTDT,Greater Mattapan,T134,1,1,1,1
+BTDT,Greater Mattapan,T138,253,253,192,248
+BTDT,Greater Mattapan,T139,3,3,3,3
+BTDT,Greater Mattapan,T140,51,0,0,30
+BTDT,Hyde Park,T001,36,0,0,30
+BTDT,Hyde Park,T003,825,825,206,823
+BTDT,Hyde Park,T008,3,3,1,1
+BTDT,Hyde Park,T019,1,1,1,1
+BTDT,Hyde Park,T020,2,2,0,1
+BTDT,Hyde Park,T023,1,1,1,1
+BTDT,Hyde Park,T032,2,0,0,1
+BTDT,Hyde Park,T033,1,1,0,0
+BTDT,Hyde Park,T034,1,1,0,1
+BTDT,Hyde Park,T035,19,19,13,18
+BTDT,Hyde Park,T036,1,1,0,0
+BTDT,Hyde Park,T037,1,1,0,1
+BTDT,Hyde Park,T040,1,1,1,1
+BTDT,Hyde Park,T045,2,2,0,1
+BTDT,Hyde Park,T048,2,2,2,2
+BTDT,Hyde Park,T059,36,36,22,35
+BTDT,Hyde Park,T061,5,5,4,5
+BTDT,Hyde Park,T063,127,127,86,120
+BTDT,Hyde Park,T080,8,8,6,7
+BTDT,Hyde Park,T082,2022,2022,821,1683
+BTDT,Hyde Park,T084,6,6,2,4
+BTDT,Hyde Park,T087,11,11,7,11
+BTDT,Hyde Park,T088,3,3,0,1
+BTDT,Hyde Park,T097,1,1,0,0
+BTDT,Hyde Park,T099,1,1,0,0
+BTDT,Hyde Park,T102,2,0,0,2
+BTDT,Hyde Park,T107,1,1,0,0
+BTDT,Hyde Park,T111,1,0,0,1
+BTDT,Hyde Park,T112,3,3,0,1
+BTDT,Hyde Park,T113,46,46,33,40
+BTDT,Hyde Park,T126,4,4,0,1
+BTDT,Hyde Park,T127,416,416,312,413
+BTDT,Hyde Park,T133,1,1,1,1
+BTDT,Hyde Park,T134,5,5,5,5
+BTDT,Hyde Park,T138,203,203,148,200
+BTDT,Hyde Park,T139,5,5,5,5
+BTDT,Hyde Park,T140,56,0,0,27
+BTDT,Hyde Park,T163,1,1,1,1
+BTDT,Jamaica Plain,T001,95,0,0,62
+BTDT,Jamaica Plain,T003,820,820,162,816
+BTDT,Jamaica Plain,T008,6,6,3,3
+BTDT,Jamaica Plain,T012,1,1,0,1
+BTDT,Jamaica Plain,T020,3,3,0,2
+BTDT,Jamaica Plain,T021,2,2,2,2
+BTDT,Jamaica Plain,T026,1,1,0,1
+BTDT,Jamaica Plain,T032,3,0,0,2
+BTDT,Jamaica Plain,T033,3,3,1,1
+BTDT,Jamaica Plain,T034,1,1,1,1
+BTDT,Jamaica Plain,T035,28,28,18,24
+BTDT,Jamaica Plain,T036,1,1,1,1
+BTDT,Jamaica Plain,T037,2,2,2,2
+BTDT,Jamaica Plain,T042,1,1,0,0
+BTDT,Jamaica Plain,T045,1,1,0,1
+BTDT,Jamaica Plain,T059,46,46,31,46
+BTDT,Jamaica Plain,T061,3,3,1,3
+BTDT,Jamaica Plain,T063,158,158,96,143
+BTDT,Jamaica Plain,T074,12,12,2,7
+BTDT,Jamaica Plain,T080,15,15,4,11
+BTDT,Jamaica Plain,T082,6671,6671,2917,5530
+BTDT,Jamaica Plain,T084,5,5,3,4
+BTDT,Jamaica Plain,T086,1,1,0,1
+BTDT,Jamaica Plain,T087,30,30,11,28
+BTDT,Jamaica Plain,T088,6,6,1,2
+BTDT,Jamaica Plain,T102,2,0,0,2
+BTDT,Jamaica Plain,T107,3,3,1,3
+BTDT,Jamaica Plain,T111,1,0,0,1
+BTDT,Jamaica Plain,T112,7,7,0,5
+BTDT,Jamaica Plain,T113,121,121,67,109
+BTDT,Jamaica Plain,T115,1,1,1,1
+BTDT,Jamaica Plain,T126,11,11,0,3
+BTDT,Jamaica Plain,T127,883,883,615,863
+BTDT,Jamaica Plain,T133,3,3,3,3
+BTDT,Jamaica Plain,T134,15,15,14,15
+BTDT,Jamaica Plain,T136,2,2,0,0
+BTDT,Jamaica Plain,T138,587,587,427,568
+BTDT,Jamaica Plain,T139,18,18,16,17
+BTDT,Jamaica Plain,T140,93,0,0,48
+BTDT,Jamaica Plain,T143,1,1,0,1
+BTDT,Mission Hill,T001,21,0,0,13
+BTDT,Mission Hill,T003,101,101,23,100
+BTDT,Mission Hill,T008,5,5,2,2
+BTDT,Mission Hill,T012,1,1,0,0
+BTDT,Mission Hill,T026,1,1,0,0
+BTDT,Mission Hill,T032,4,0,0,1
+BTDT,Mission Hill,T033,1,1,0,0
+BTDT,Mission Hill,T035,4,4,2,3
+BTDT,Mission Hill,T059,49,49,25,49
+BTDT,Mission Hill,T063,21,21,8,19
+BTDT,Mission Hill,T074,3,3,1,2
+BTDT,Mission Hill,T082,1842,1842,1008,1615
+BTDT,Mission Hill,T083,1,1,0,0
+BTDT,Mission Hill,T087,7,7,4,7
+BTDT,Mission Hill,T088,5,5,0,1
+BTDT,Mission Hill,T107,2,2,0,1
+BTDT,Mission Hill,T112,4,4,0,2
+BTDT,Mission Hill,T113,26,26,19,26
+BTDT,Mission Hill,T115,1,1,1,1
+BTDT,Mission Hill,T126,4,4,0,2
+BTDT,Mission Hill,T127,188,188,143,187
+BTDT,Mission Hill,T133,2,2,2,2
+BTDT,Mission Hill,T134,3,3,2,3
+BTDT,Mission Hill,T136,1,1,1,1
+BTDT,Mission Hill,T138,120,120,90,119
+BTDT,Mission Hill,T139,2,2,2,2
+BTDT,Mission Hill,T140,13,0,0,7
+BTDT,Mission Hill,T147,1,1,0,1
+BTDT,Roslindale,T001,40,0,0,32
+BTDT,Roslindale,T003,731,731,150,728
+BTDT,Roslindale,T008,2,2,0,0
+BTDT,Roslindale,T020,1,1,0,0
+BTDT,Roslindale,T021,1,1,1,1
+BTDT,Roslindale,T026,1,1,0,1
+BTDT,Roslindale,T032,4,0,0,3
+BTDT,Roslindale,T033,1,1,0,0
+BTDT,Roslindale,T034,2,2,2,2
+BTDT,Roslindale,T035,12,12,8,10
+BTDT,Roslindale,T037,1,1,1,1
+BTDT,Roslindale,T039,1,1,0,1
+BTDT,Roslindale,T040,2,2,0,0
+BTDT,Roslindale,T042,2,2,1,2
+BTDT,Roslindale,T045,1,1,0,0
+BTDT,Roslindale,T059,20,20,11,18
+BTDT,Roslindale,T063,107,107,68,101
+BTDT,Roslindale,T080,8,8,5,5
+BTDT,Roslindale,T082,3192,3192,1469,2699
+BTDT,Roslindale,T084,4,4,2,3
+BTDT,Roslindale,T086,1,1,0,0
+BTDT,Roslindale,T087,11,11,5,10
+BTDT,Roslindale,T088,1,1,0,1
+BTDT,Roslindale,T091,1,1,1,1
+BTDT,Roslindale,T097,3,3,1,2
+BTDT,Roslindale,T099,1,1,0,0
+BTDT,Roslindale,T102,1,0,0,0
+BTDT,Roslindale,T107,1,1,0,0
+BTDT,Roslindale,T111,1,0,0,1
+BTDT,Roslindale,T112,6,6,0,3
+BTDT,Roslindale,T113,80,80,49,74
+BTDT,Roslindale,T126,9,9,1,6
+BTDT,Roslindale,T127,465,465,339,459
+BTDT,Roslindale,T133,1,1,1,1
+BTDT,Roslindale,T134,11,11,10,10
+BTDT,Roslindale,T138,466,466,386,463
+BTDT,Roslindale,T139,3,3,3,3
+BTDT,Roslindale,T140,48,0,0,27
+BTDT,Roxbury,T001,145,1,0,106
+BTDT,Roxbury,T003,1055,1055,253,1051
+BTDT,Roxbury,T008,7,7,4,4
+BTDT,Roxbury,T012,10,10,3,6
+BTDT,Roxbury,T019,1,1,0,0
+BTDT,Roxbury,T020,3,3,0,2
+BTDT,Roxbury,T026,8,8,3,6
+BTDT,Roxbury,T032,8,0,0,4
+BTDT,Roxbury,T033,1,1,0,0
+BTDT,Roxbury,T034,3,3,3,3
+BTDT,Roxbury,T035,30,30,15,26
+BTDT,Roxbury,T037,1,1,0,0
+BTDT,Roxbury,T039,1,1,0,1
+BTDT,Roxbury,T045,3,3,1,1
+BTDT,Roxbury,T053,1,1,1,1
+BTDT,Roxbury,T059,116,116,88,115
+BTDT,Roxbury,T061,7,7,4,7
+BTDT,Roxbury,T063,205,205,122,193
+BTDT,Roxbury,T074,2,2,0,2
+BTDT,Roxbury,T080,9,9,2,7
+BTDT,Roxbury,T082,6633,6633,3338,5645
+BTDT,Roxbury,T083,4,4,2,2
+BTDT,Roxbury,T084,12,12,2,8
+BTDT,Roxbury,T087,38,37,24,37
+BTDT,Roxbury,T088,8,8,0,2
+BTDT,Roxbury,T097,2,2,1,2
+BTDT,Roxbury,T099,2,2,0,0
+BTDT,Roxbury,T102,7,0,0,5
+BTDT,Roxbury,T107,5,5,1,3
+BTDT,Roxbury,T109,1,1,1,1
+BTDT,Roxbury,T111,2,0,0,2
+BTDT,Roxbury,T112,33,33,5,15
+BTDT,Roxbury,T113,127,127,78,117
+BTDT,Roxbury,T124,1,0,0,1
+BTDT,Roxbury,T126,14,14,6,12
+BTDT,Roxbury,T127,774,774,619,768
+BTDT,Roxbury,T130,1,0,0,0
+BTDT,Roxbury,T133,12,12,12,12
+BTDT,Roxbury,T134,27,27,27,27
+BTDT,Roxbury,T136,1,1,0,0
+BTDT,Roxbury,T138,855,855,680,839
+BTDT,Roxbury,T139,15,15,15,15
+BTDT,Roxbury,T140,135,0,0,61
+BTDT,Roxbury,T143,6,6,6,6
+BTDT,Roxbury,T161,2,2,0,1
+BTDT,South Boston / South Boston Waterfront,T001,177,0,0,129
+BTDT,South Boston / South Boston Waterfront,T003,440,440,157,433
+BTDT,South Boston / South Boston Waterfront,T008,8,8,2,2
+BTDT,South Boston / South Boston Waterfront,T012,1,1,0,1
+BTDT,South Boston / South Boston Waterfront,T019,2,2,0,2
+BTDT,South Boston / South Boston Waterfront,T020,5,5,1,2
+BTDT,South Boston / South Boston Waterfront,T021,9,9,7,7
+BTDT,South Boston / South Boston Waterfront,T025,1,1,0,0
+BTDT,South Boston / South Boston Waterfront,T026,4,4,2,3
+BTDT,South Boston / South Boston Waterfront,T032,6,0,0,1
+BTDT,South Boston / South Boston Waterfront,T033,1,1,0,0
+BTDT,South Boston / South Boston Waterfront,T034,2,2,2,2
+BTDT,South Boston / South Boston Waterfront,T035,11,11,7,8
+BTDT,South Boston / South Boston Waterfront,T037,2,2,0,0
+BTDT,South Boston / South Boston Waterfront,T039,1,1,1,1
+BTDT,South Boston / South Boston Waterfront,T042,2,2,0,2
+BTDT,South Boston / South Boston Waterfront,T045,1,1,0,0
+BTDT,South Boston / South Boston Waterfront,T059,43,43,34,43
+BTDT,South Boston / South Boston Waterfront,T061,4,4,2,4
+BTDT,South Boston / South Boston Waterfront,T063,72,72,42,66
+BTDT,South Boston / South Boston Waterfront,T074,2,2,1,2
+BTDT,South Boston / South Boston Waterfront,T080,12,12,2,7
+BTDT,South Boston / South Boston Waterfront,T082,22767,22767,15520,20546
+BTDT,South Boston / South Boston Waterfront,T084,5,5,2,4
+BTDT,South Boston / South Boston Waterfront,T086,1,1,1,1
+BTDT,South Boston / South Boston Waterfront,T087,11,11,5,11
+BTDT,South Boston / South Boston Waterfront,T088,3,3,0,0
+BTDT,South Boston / South Boston Waterfront,T091,1,1,0,1
+BTDT,South Boston / South Boston Waterfront,T093,1,1,1,1
+BTDT,South Boston / South Boston Waterfront,T097,5,5,2,3
+BTDT,South Boston / South Boston Waterfront,T102,4,0,0,2
+BTDT,South Boston / South Boston Waterfront,T107,4,4,0,1
+BTDT,South Boston / South Boston Waterfront,T111,1,0,0,1
+BTDT,South Boston / South Boston Waterfront,T112,25,25,2,9
+BTDT,South Boston / South Boston Waterfront,T113,81,81,46,61
+BTDT,South Boston / South Boston Waterfront,T115,1,1,1,1
+BTDT,South Boston / South Boston Waterfront,T126,27,27,1,15
+BTDT,South Boston / South Boston Waterfront,T127,748,748,613,739
+BTDT,South Boston / South Boston Waterfront,T130,1,0,0,1
+BTDT,South Boston / South Boston Waterfront,T133,2,2,1,2
+BTDT,South Boston / South Boston Waterfront,T134,18,18,14,18
+BTDT,South Boston / South Boston Waterfront,T136,4,4,1,1
+BTDT,South Boston / South Boston Waterfront,T138,432,432,267,397
+BTDT,South Boston / South Boston Waterfront,T139,10,10,10,10
+BTDT,South Boston / South Boston Waterfront,T140,70,0,0,26
+BTDT,South Boston / South Boston Waterfront,T153,1,1,0,0
+BTDT,South Boston / South Boston Waterfront,T157,1,1,0,0
+BTDT,South Boston / South Boston Waterfront,T162,1,1,1,1
+BTDT,South End,T001,186,0,0,126
+BTDT,South End,T003,170,170,78,163
+BTDT,South End,T008,3,3,0,0
+BTDT,South End,T012,1,1,0,0
+BTDT,South End,T020,2,2,0,1
+BTDT,South End,T021,4,4,4,4
+BTDT,South End,T026,3,3,0,1
+BTDT,South End,T032,3,0,0,2
+BTDT,South End,T033,1,1,0,0
+BTDT,South End,T035,10,10,5,7
+BTDT,South End,T045,4,4,1,4
+BTDT,South End,T059,15,15,11,15
+BTDT,South End,T063,45,45,23,39
+BTDT,South End,T074,1,1,0,0
+BTDT,South End,T080,29,29,12,23
+BTDT,South End,T082,7938,7938,4497,6919
+BTDT,South End,T083,10,10,0,0
+BTDT,South End,T084,1,1,0,1
+BTDT,South End,T087,4,4,3,3
+BTDT,South End,T088,1,1,0,0
+BTDT,South End,T091,1,1,0,0
+BTDT,South End,T097,1,1,0,1
+BTDT,South End,T102,2,0,0,0
+BTDT,South End,T107,12,12,1,6
+BTDT,South End,T112,24,24,0,3
+BTDT,South End,T113,35,35,18,27
+BTDT,South End,T126,9,9,0,3
+BTDT,South End,T127,375,375,217,352
+BTDT,South End,T133,2,2,2,2
+BTDT,South End,T134,14,14,13,13
+BTDT,South End,T136,1,1,0,0
+BTDT,South End,T138,410,410,300,400
+BTDT,South End,T139,18,18,15,17
+BTDT,South End,T140,37,0,0,13
+BTDT,Unspecified,T001,160,0,0,98
+BTDT,Unspecified,T003,95,95,55,93
+BTDT,Unspecified,T008,9,9,3,3
+BTDT,Unspecified,T012,2,2,0,1
+BTDT,Unspecified,T020,2,2,1,1
+BTDT,Unspecified,T026,4,4,1,2
+BTDT,Unspecified,T027,2,2,0,0
+BTDT,Unspecified,T032,41,0,0,19
+BTDT,Unspecified,T033,694,694,40,333
+BTDT,Unspecified,T034,1,1,0,1
+BTDT,Unspecified,T035,23,23,18,21
+BTDT,Unspecified,T045,1,1,0,0
+BTDT,Unspecified,T048,1,1,1,1
+BTDT,Unspecified,T059,24,24,13,23
+BTDT,Unspecified,T063,35,35,15,29
+BTDT,Unspecified,T074,1,1,0,0
+BTDT,Unspecified,T080,20,20,7,15
+BTDT,Unspecified,T082,6630,6630,4110,5752
+BTDT,Unspecified,T083,21,21,2,2
+BTDT,Unspecified,T084,1,1,0,1
+BTDT,Unspecified,T087,13,13,7,13
+BTDT,Unspecified,T088,2,2,0,2
+BTDT,Unspecified,T090,21,0,0,21
+BTDT,Unspecified,T091,1,1,0,1
+BTDT,Unspecified,T099,2,2,0,0
+BTDT,Unspecified,T102,2,0,0,0
+BTDT,Unspecified,T107,6,6,0,1
+BTDT,Unspecified,T112,14,14,4,6
+BTDT,Unspecified,T113,28,28,20,24
+BTDT,Unspecified,T115,1,1,0,0
+BTDT,Unspecified,T126,12,12,2,8
+BTDT,Unspecified,T127,409,409,265,380
+BTDT,Unspecified,T128,1,1,1,1
+BTDT,Unspecified,T133,3,3,3,3
+BTDT,Unspecified,T134,5,5,5,5
+BTDT,Unspecified,T136,1,1,0,0
+BTDT,Unspecified,T138,131,131,100,129
+BTDT,Unspecified,T139,16,16,13,13
+BTDT,Unspecified,T140,80,0,0,50
+BTDT,Unspecified,T157,3,3,1,1
+BTDT,Unspecified,T158,5,0,0,5
+BTDT,Unspecified,T160,1,1,0,0
+BTDT,Unspecified,T162,1,1,1,1
+BTDT,West Roxbury,T001,11,0,0,6
+BTDT,West Roxbury,T003,306,306,75,305
+BTDT,West Roxbury,T026,2,2,0,2
+BTDT,West Roxbury,T032,1,0,0,1
+BTDT,West Roxbury,T033,1,1,0,0
+BTDT,West Roxbury,T035,18,18,5,11
+BTDT,West Roxbury,T036,1,1,1,1
+BTDT,West Roxbury,T040,1,1,1,1
+BTDT,West Roxbury,T042,1,1,0,0
+BTDT,West Roxbury,T048,1,1,1,1
+BTDT,West Roxbury,T059,38,38,19,38
+BTDT,West Roxbury,T063,96,96,59,92
+BTDT,West Roxbury,T080,4,4,1,2
+BTDT,West Roxbury,T082,1647,1647,601,1363
+BTDT,West Roxbury,T084,4,4,1,3
+BTDT,West Roxbury,T086,1,1,0,1
+BTDT,West Roxbury,T087,19,19,9,18
+BTDT,West Roxbury,T088,4,4,0,0
+BTDT,West Roxbury,T099,1,1,0,0
+BTDT,West Roxbury,T102,4,0,0,2
+BTDT,West Roxbury,T107,4,4,1,1
+BTDT,West Roxbury,T112,1,1,1,1
+BTDT,West Roxbury,T113,46,46,24,41
+BTDT,West Roxbury,T126,5,5,0,2
+BTDT,West Roxbury,T127,435,435,310,429
+BTDT,West Roxbury,T134,3,3,3,3
+BTDT,West Roxbury,T138,291,291,180,284
+BTDT,West Roxbury,T139,4,4,4,4
+BTDT,West Roxbury,T140,42,0,0,19
+BTDT,West Roxbury,T143,1,1,1,1
+BTDT,West Roxbury,T156,1,0,0,1
+ISD,Allston / Brighton,T002,3,3,3,3
+ISD,Allston / Brighton,T007,26,26,15,26
+ISD,Allston / Brighton,T011,103,103,51,102
+ISD,Allston / Brighton,T012,2,2,2,2
+ISD,Allston / Brighton,T014,1,1,1,1
+ISD,Allston / Brighton,T017,61,61,42,49
+ISD,Allston / Brighton,T019,1,1,0,1
+ISD,Allston / Brighton,T020,21,21,6,20
+ISD,Allston / Brighton,T021,134,134,132,134
+ISD,Allston / Brighton,T022,13,13,6,12
+ISD,Allston / Brighton,T023,9,9,7,8
+ISD,Allston / Brighton,T024,82,82,34,82
+ISD,Allston / Brighton,T026,1,1,0,0
+ISD,Allston / Brighton,T027,29,29,17,29
+ISD,Allston / Brighton,T028,1,1,1,1
+ISD,Allston / Brighton,T030,58,58,40,58
+ISD,Allston / Brighton,T031,22,22,16,22
+ISD,Allston / Brighton,T037,5,5,5,5
+ISD,Allston / Brighton,T038,188,188,145,160
+ISD,Allston / Brighton,T039,4,4,3,4
+ISD,Allston / Brighton,T041,29,29,15,29
+ISD,Allston / Brighton,T043,15,15,5,15
+ISD,Allston / Brighton,T044,1,1,1,1
+ISD,Allston / Brighton,T045,2,2,1,2
+ISD,Allston / Brighton,T047,1,1,0,1
+ISD,Allston / Brighton,T049,4,4,1,3
+ISD,Allston / Brighton,T051,23,23,14,23
+ISD,Allston / Brighton,T052,93,93,48,59
+ISD,Allston / Brighton,T056,77,77,44,59
+ISD,Allston / Brighton,T068,2,2,2,2
+ISD,Allston / Brighton,T069,2,2,1,2
+ISD,Allston / Brighton,T070,3,3,0,3
+ISD,Allston / Brighton,T071,9,9,5,7
+ISD,Allston / Brighton,T072,2,2,1,1
+ISD,Allston / Brighton,T073,17,17,15,16
+ISD,Allston / Brighton,T075,11,0,0,0
+ISD,Allston / Brighton,T076,1,1,0,1
+ISD,Allston / Brighton,T078,6,6,5,6
+ISD,Allston / Brighton,T079,13,13,12,13
+ISD,Allston / Brighton,T082,4,4,0,4
+ISD,Allston / Brighton,T086,1,1,1,1
+ISD,Allston / Brighton,T089,627,627,597,606
+ISD,Allston / Brighton,T091,5,5,0,5
+ISD,Allston / Brighton,T093,2,2,2,2
+ISD,Allston / Brighton,T095,5,5,1,5
+ISD,Allston / Brighton,T097,4,4,1,2
+ISD,Allston / Brighton,T098,7,7,7,7
+ISD,Allston / Brighton,T100,2,2,0,2
+ISD,Allston / Brighton,T101,40,40,13,38
+ISD,Allston / Brighton,T103,6,6,6,6
+ISD,Allston / Brighton,T105,4,4,4,4
+ISD,Allston / Brighton,T107,1,1,0,1
+ISD,Allston / Brighton,T112,6,6,0,6
+ISD,Allston / Brighton,T115,1136,1136,1135,1135
+ISD,Allston / Brighton,T117,1,1,0,1
+ISD,Allston / Brighton,T121,7,7,5,6
+ISD,Allston / Brighton,T123,64,64,36,48
+ISD,Allston / Brighton,T126,11,11,0,11
+ISD,Allston / Brighton,T131,10,10,7,10
+ISD,Allston / Brighton,T136,1,1,0,1
+ISD,Allston / Brighton,T141,1,1,1,1
+ISD,Allston / Brighton,T143,1,1,1,1
+ISD,Allston / Brighton,T145,1,0,0,1
+ISD,Allston / Brighton,T146,1,1,0,1
+ISD,Allston / Brighton,T147,52,52,10,50
+ISD,Allston / Brighton,T148,10,10,5,10
+ISD,Allston / Brighton,T149,83,83,70,83
+ISD,Allston / Brighton,T150,26,26,20,26
+ISD,Allston / Brighton,T151,417,417,278,323
+ISD,Allston / Brighton,T152,38,38,20,32
+ISD,Allston / Brighton,T160,3,3,0,3
+ISD,Allston / Brighton,T161,116,116,41,116
+ISD,Allston / Brighton,T162,97,97,96,97
+ISD,Allston / Brighton,T163,10,10,6,10
+ISD,Back Bay,T002,2,2,0,2
+ISD,Back Bay,T003,1,1,1,1
+ISD,Back Bay,T007,2,2,1,2
+ISD,Back Bay,T011,46,46,17,46
+ISD,Back Bay,T017,11,11,8,11
+ISD,Back Bay,T020,8,8,1,8
+ISD,Back Bay,T021,73,73,73,73
+ISD,Back Bay,T022,8,8,4,8
+ISD,Back Bay,T023,5,5,4,4
+ISD,Back Bay,T024,59,59,18,59
+ISD,Back Bay,T025,1,1,0,1
+ISD,Back Bay,T026,2,2,0,2
+ISD,Back Bay,T027,11,11,5,11
+ISD,Back Bay,T028,4,4,2,4
+ISD,Back Bay,T030,37,37,29,37
+ISD,Back Bay,T031,22,22,18,22
+ISD,Back Bay,T038,33,33,23,26
+ISD,Back Bay,T041,1,1,0,1
+ISD,Back Bay,T043,1,1,1,1
+ISD,Back Bay,T045,2,2,0,2
+ISD,Back Bay,T047,1,1,0,1
+ISD,Back Bay,T051,9,9,3,9
+ISD,Back Bay,T052,28,28,14,19
+ISD,Back Bay,T055,2,2,1,2
+ISD,Back Bay,T056,11,11,7,8
+ISD,Back Bay,T060,2,2,2,2
+ISD,Back Bay,T066,1,1,1,1
+ISD,Back Bay,T068,2,2,2,2
+ISD,Back Bay,T072,2,2,0,1
+ISD,Back Bay,T073,5,5,4,4
+ISD,Back Bay,T075,1,0,0,0
+ISD,Back Bay,T079,1,1,1,1
+ISD,Back Bay,T089,88,88,83,84
+ISD,Back Bay,T095,4,4,0,4
+ISD,Back Bay,T097,3,3,0,2
+ISD,Back Bay,T098,3,3,2,3
+ISD,Back Bay,T101,10,10,3,7
+ISD,Back Bay,T102,1,0,0,0
+ISD,Back Bay,T112,3,3,0,3
+ISD,Back Bay,T115,469,469,468,468
+ISD,Back Bay,T118,1,1,0,1
+ISD,Back Bay,T121,2,2,0,2
+ISD,Back Bay,T123,26,26,22,25
+ISD,Back Bay,T124,1,0,0,1
+ISD,Back Bay,T126,13,13,0,13
+ISD,Back Bay,T131,5,5,3,4
+ISD,Back Bay,T141,1,1,1,1
+ISD,Back Bay,T147,33,33,2,33
+ISD,Back Bay,T148,3,3,2,3
+ISD,Back Bay,T149,68,68,58,68
+ISD,Back Bay,T150,29,29,22,29
+ISD,Back Bay,T151,90,90,52,70
+ISD,Back Bay,T152,5,5,4,4
+ISD,Back Bay,T161,57,57,18,57
+ISD,Back Bay,T162,41,41,41,41
+ISD,Back Bay,T163,2,2,1,2
+ISD,Beacon Hill,T002,1,1,0,1
+ISD,Beacon Hill,T005,1,0,0,1
+ISD,Beacon Hill,T007,1,1,1,1
+ISD,Beacon Hill,T011,17,17,3,17
+ISD,Beacon Hill,T015,1,0,0,1
+ISD,Beacon Hill,T017,8,8,6,7
+ISD,Beacon Hill,T020,8,8,0,8
+ISD,Beacon Hill,T021,44,44,44,44
+ISD,Beacon Hill,T022,1,1,1,1
+ISD,Beacon Hill,T023,4,4,4,4
+ISD,Beacon Hill,T024,18,18,4,18
+ISD,Beacon Hill,T027,7,7,2,7
+ISD,Beacon Hill,T028,2,2,1,2
+ISD,Beacon Hill,T030,5,5,5,5
+ISD,Beacon Hill,T031,1,1,1,1
+ISD,Beacon Hill,T038,38,38,33,35
+ISD,Beacon Hill,T041,6,6,1,5
+ISD,Beacon Hill,T051,4,4,0,4
+ISD,Beacon Hill,T052,11,11,7,7
+ISD,Beacon Hill,T056,11,11,6,9
+ISD,Beacon Hill,T071,1,1,1,1
+ISD,Beacon Hill,T072,2,2,2,2
+ISD,Beacon Hill,T073,4,4,3,4
+ISD,Beacon Hill,T075,3,0,0,0
+ISD,Beacon Hill,T076,1,1,0,1
+ISD,Beacon Hill,T079,1,1,1,1
+ISD,Beacon Hill,T082,1,1,1,1
+ISD,Beacon Hill,T089,49,49,47,47
+ISD,Beacon Hill,T091,1,1,0,1
+ISD,Beacon Hill,T095,4,4,0,4
+ISD,Beacon Hill,T097,1,1,0,1
+ISD,Beacon Hill,T101,2,2,1,2
+ISD,Beacon Hill,T103,1,1,1,1
+ISD,Beacon Hill,T107,1,1,0,1
+ISD,Beacon Hill,T112,1,1,0,1
+ISD,Beacon Hill,T115,254,254,254,254
+ISD,Beacon Hill,T121,1,1,0,0
+ISD,Beacon Hill,T123,7,7,6,7
+ISD,Beacon Hill,T126,11,11,1,11
+ISD,Beacon Hill,T146,1,1,1,1
+ISD,Beacon Hill,T147,12,12,3,12
+ISD,Beacon Hill,T148,1,1,1,1
+ISD,Beacon Hill,T149,21,21,19,21
+ISD,Beacon Hill,T150,2,2,2,2
+ISD,Beacon Hill,T151,48,48,28,40
+ISD,Beacon Hill,T152,3,3,3,3
+ISD,Beacon Hill,T161,32,32,9,32
+ISD,Beacon Hill,T162,19,19,19,19
+ISD,Charlestown,T002,2,2,0,2
+ISD,Charlestown,T007,10,10,6,10
+ISD,Charlestown,T011,31,31,8,31
+ISD,Charlestown,T015,1,0,0,1
+ISD,Charlestown,T017,15,15,8,10
+ISD,Charlestown,T020,10,10,1,10
+ISD,Charlestown,T021,144,144,142,144
+ISD,Charlestown,T023,7,7,6,7
+ISD,Charlestown,T024,40,40,12,40
+ISD,Charlestown,T027,14,14,2,14
+ISD,Charlestown,T028,4,4,3,4
+ISD,Charlestown,T030,9,9,6,9
+ISD,Charlestown,T031,3,3,1,3
+ISD,Charlestown,T038,28,28,24,27
+ISD,Charlestown,T041,2,2,1,1
+ISD,Charlestown,T043,1,1,0,1
+ISD,Charlestown,T045,3,3,1,2
+ISD,Charlestown,T049,1,1,0,1
+ISD,Charlestown,T051,6,6,0,6
+ISD,Charlestown,T052,24,24,12,16
+ISD,Charlestown,T056,10,10,7,7
+ISD,Charlestown,T071,7,7,3,3
+ISD,Charlestown,T073,6,6,1,3
+ISD,Charlestown,T075,3,0,0,0
+ISD,Charlestown,T076,1,1,0,1
+ISD,Charlestown,T079,2,2,2,2
+ISD,Charlestown,T082,1,1,0,1
+ISD,Charlestown,T089,47,47,41,42
+ISD,Charlestown,T095,3,3,1,3
+ISD,Charlestown,T097,3,3,2,3
+ISD,Charlestown,T101,18,18,3,14
+ISD,Charlestown,T102,1,0,0,1
+ISD,Charlestown,T112,2,2,0,2
+ISD,Charlestown,T115,199,199,199,199
+ISD,Charlestown,T118,1,1,1,1
+ISD,Charlestown,T123,9,9,9,9
+ISD,Charlestown,T126,7,7,0,7
+ISD,Charlestown,T131,6,6,5,6
+ISD,Charlestown,T147,22,22,6,20
+ISD,Charlestown,T148,1,1,1,1
+ISD,Charlestown,T149,21,21,10,21
+ISD,Charlestown,T150,7,7,4,7
+ISD,Charlestown,T151,106,106,59,80
+ISD,Charlestown,T152,13,13,11,11
+ISD,Charlestown,T160,1,1,0,1
+ISD,Charlestown,T161,66,66,20,66
+ISD,Charlestown,T162,66,66,66,66
+ISD,Charlestown,T163,2,2,1,2
+ISD,Chestnut Hill,T101,1,1,1,1
+ISD,Chestnut Hill,T149,1,1,1,1
+ISD,Chestnut Hill,T150,1,1,1,1
+ISD,Dorchester,T002,41,41,20,39
+ISD,Dorchester,T003,2,2,1,2
+ISD,Dorchester,T007,46,46,33,45
+ISD,Dorchester,T011,176,176,68,176
+ISD,Dorchester,T014,3,3,2,3
+ISD,Dorchester,T017,93,93,53,73
+ISD,Dorchester,T019,1,1,1,1
+ISD,Dorchester,T020,18,18,2,17
+ISD,Dorchester,T021,242,242,238,242
+ISD,Dorchester,T022,50,50,28,49
+ISD,Dorchester,T023,34,34,27,31
+ISD,Dorchester,T024,133,133,77,132
+ISD,Dorchester,T027,51,51,25,51
+ISD,Dorchester,T028,18,18,16,18
+ISD,Dorchester,T030,46,46,39,46
+ISD,Dorchester,T031,28,28,23,28
+ISD,Dorchester,T037,3,3,1,3
+ISD,Dorchester,T038,284,284,215,246
+ISD,Dorchester,T039,49,49,47,49
+ISD,Dorchester,T040,2,2,0,1
+ISD,Dorchester,T041,35,35,5,26
+ISD,Dorchester,T042,1,1,0,1
+ISD,Dorchester,T043,41,41,11,38
+ISD,Dorchester,T044,5,5,3,5
+ISD,Dorchester,T045,10,10,3,8
+ISD,Dorchester,T047,2,2,1,2
+ISD,Dorchester,T049,5,5,3,5
+ISD,Dorchester,T051,52,52,10,48
+ISD,Dorchester,T052,190,190,115,142
+ISD,Dorchester,T055,6,6,2,6
+ISD,Dorchester,T056,146,146,106,127
+ISD,Dorchester,T066,6,6,1,6
+ISD,Dorchester,T068,2,2,2,2
+ISD,Dorchester,T069,1,1,0,1
+ISD,Dorchester,T070,11,11,9,11
+ISD,Dorchester,T071,30,30,19,20
+ISD,Dorchester,T072,3,3,1,1
+ISD,Dorchester,T073,38,38,25,32
+ISD,Dorchester,T075,21,0,0,2
+ISD,Dorchester,T076,2,2,0,2
+ISD,Dorchester,T078,11,11,7,11
+ISD,Dorchester,T079,10,10,9,10
+ISD,Dorchester,T082,9,9,1,9
+ISD,Dorchester,T084,2,2,0,2
+ISD,Dorchester,T089,673,673,609,633
+ISD,Dorchester,T091,1,1,0,1
+ISD,Dorchester,T093,3,3,3,3
+ISD,Dorchester,T095,20,20,6,20
+ISD,Dorchester,T097,6,6,2,5
+ISD,Dorchester,T098,6,6,3,3
+ISD,Dorchester,T100,2,2,1,2
+ISD,Dorchester,T101,97,97,33,88
+ISD,Dorchester,T103,4,4,4,4
+ISD,Dorchester,T105,2,2,0,1
+ISD,Dorchester,T112,9,9,1,8
+ISD,Dorchester,T115,1262,1262,1260,1260
+ISD,Dorchester,T118,9,9,6,9
+ISD,Dorchester,T121,8,8,6,6
+ISD,Dorchester,T123,76,76,56,68
+ISD,Dorchester,T126,10,10,0,9
+ISD,Dorchester,T131,21,21,9,16
+ISD,Dorchester,T140,1,0,0,0
+ISD,Dorchester,T141,6,6,6,6
+ISD,Dorchester,T143,2,2,1,2
+ISD,Dorchester,T146,4,4,3,4
+ISD,Dorchester,T147,101,101,16,89
+ISD,Dorchester,T148,7,7,6,7
+ISD,Dorchester,T149,155,155,121,155
+ISD,Dorchester,T150,63,63,47,63
+ISD,Dorchester,T151,1026,1026,644,804
+ISD,Dorchester,T152,118,118,76,97
+ISD,Dorchester,T159,1,1,0,1
+ISD,Dorchester,T160,1,1,0,1
+ISD,Dorchester,T161,302,302,78,301
+ISD,Dorchester,T162,168,168,168,168
+ISD,Dorchester,T163,12,12,6,12
+ISD,Downtown / Financial District,T002,1,1,1,1
+ISD,Downtown / Financial District,T007,2,2,0,1
+ISD,Downtown / Financial District,T011,52,52,12,51
+ISD,Downtown / Financial District,T017,13,13,6,11
+ISD,Downtown / Financial District,T020,9,9,1,9
+ISD,Downtown / Financial District,T021,87,87,86,87
+ISD,Downtown / Financial District,T022,5,5,2,5
+ISD,Downtown / Financial District,T023,15,15,15,15
+ISD,Downtown / Financial District,T024,78,78,29,78
+ISD,Downtown / Financial District,T025,1,1,0,1
+ISD,Downtown / Financial District,T026,1,1,0,1
+ISD,Downtown / Financial District,T027,13,13,3,13
+ISD,Downtown / Financial District,T028,9,9,6,9
+ISD,Downtown / Financial District,T030,52,52,43,52
+ISD,Downtown / Financial District,T031,22,22,16,22
+ISD,Downtown / Financial District,T037,1,1,1,1
+ISD,Downtown / Financial District,T038,20,20,14,19
+ISD,Downtown / Financial District,T041,6,6,2,6
+ISD,Downtown / Financial District,T043,5,5,1,4
+ISD,Downtown / Financial District,T044,1,1,0,1
+ISD,Downtown / Financial District,T045,2,2,1,2
+ISD,Downtown / Financial District,T047,4,4,1,4
+ISD,Downtown / Financial District,T051,15,15,5,15
+ISD,Downtown / Financial District,T052,18,18,10,12
+ISD,Downtown / Financial District,T055,2,2,1,2
+ISD,Downtown / Financial District,T056,17,17,8,10
+ISD,Downtown / Financial District,T060,1,1,1,1
+ISD,Downtown / Financial District,T067,2,2,2,2
+ISD,Downtown / Financial District,T068,2,2,2,2
+ISD,Downtown / Financial District,T069,2,2,0,2
+ISD,Downtown / Financial District,T070,6,6,6,6
+ISD,Downtown / Financial District,T071,2,2,1,1
+ISD,Downtown / Financial District,T072,1,1,1,1
+ISD,Downtown / Financial District,T073,4,4,4,4
+ISD,Downtown / Financial District,T075,9,0,0,0
+ISD,Downtown / Financial District,T078,2,2,1,1
+ISD,Downtown / Financial District,T082,4,4,0,4
+ISD,Downtown / Financial District,T086,1,1,1,1
+ISD,Downtown / Financial District,T089,62,62,57,59
+ISD,Downtown / Financial District,T091,1,1,0,1
+ISD,Downtown / Financial District,T093,1,1,1,1
+ISD,Downtown / Financial District,T095,5,5,1,5
+ISD,Downtown / Financial District,T097,2,2,1,2
+ISD,Downtown / Financial District,T098,5,5,4,5
+ISD,Downtown / Financial District,T101,17,17,2,17
+ISD,Downtown / Financial District,T102,1,0,0,1
+ISD,Downtown / Financial District,T103,1,1,1,1
+ISD,Downtown / Financial District,T105,1,1,0,0
+ISD,Downtown / Financial District,T107,5,5,0,5
+ISD,Downtown / Financial District,T112,5,5,1,5
+ISD,Downtown / Financial District,T114,1,0,0,0
+ISD,Downtown / Financial District,T115,338,338,338,338
+ISD,Downtown / Financial District,T118,1,1,1,1
+ISD,Downtown / Financial District,T121,1,1,1,1
+ISD,Downtown / Financial District,T123,23,23,16,21
+ISD,Downtown / Financial District,T126,20,20,2,19
+ISD,Downtown / Financial District,T131,3,3,1,3
+ISD,Downtown / Financial District,T136,1,1,1,1
+ISD,Downtown / Financial District,T138,1,1,0,1
+ISD,Downtown / Financial District,T141,5,5,5,5
+ISD,Downtown / Financial District,T147,50,50,14,48
+ISD,Downtown / Financial District,T148,7,7,5,7
+ISD,Downtown / Financial District,T149,110,110,82,110
+ISD,Downtown / Financial District,T150,48,48,38,48
+ISD,Downtown / Financial District,T151,108,108,65,87
+ISD,Downtown / Financial District,T152,9,9,6,6
+ISD,Downtown / Financial District,T160,4,4,0,4
+ISD,Downtown / Financial District,T161,70,70,20,70
+ISD,Downtown / Financial District,T162,84,84,84,84
+ISD,Downtown / Financial District,T163,2,2,0,2
+ISD,East Boston,T002,16,16,8,15
+ISD,East Boston,T003,2,2,1,2
+ISD,East Boston,T007,9,9,6,9
+ISD,East Boston,T011,86,86,33,86
+ISD,East Boston,T014,2,2,0,2
+ISD,East Boston,T017,17,17,9,12
+ISD,East Boston,T019,1,1,0,1
+ISD,East Boston,T020,14,14,1,13
+ISD,East Boston,T021,191,191,189,191
+ISD,East Boston,T022,18,18,13,18
+ISD,East Boston,T023,7,7,6,6
+ISD,East Boston,T024,100,100,32,100
+ISD,East Boston,T027,23,23,12,23
+ISD,East Boston,T028,1,1,1,1
+ISD,East Boston,T030,13,13,10,13
+ISD,East Boston,T031,21,21,15,21
+ISD,East Boston,T038,37,37,26,30
+ISD,East Boston,T039,12,12,12,12
+ISD,East Boston,T040,1,1,0,0
+ISD,East Boston,T041,17,17,2,17
+ISD,East Boston,T042,1,1,0,0
+ISD,East Boston,T043,12,12,2,10
+ISD,East Boston,T045,2,2,1,1
+ISD,East Boston,T049,1,1,0,1
+ISD,East Boston,T051,17,17,2,16
+ISD,East Boston,T052,41,41,19,25
+ISD,East Boston,T055,1,1,0,1
+ISD,East Boston,T056,26,26,19,19
+ISD,East Boston,T060,1,1,1,1
+ISD,East Boston,T068,1,1,1,1
+ISD,East Boston,T071,10,10,7,8
+ISD,East Boston,T072,2,2,1,1
+ISD,East Boston,T073,7,7,5,7
+ISD,East Boston,T075,10,0,0,1
+ISD,East Boston,T076,4,4,1,3
+ISD,East Boston,T078,1,1,0,1
+ISD,East Boston,T082,4,4,0,4
+ISD,East Boston,T085,1,0,0,1
+ISD,East Boston,T089,181,181,167,174
+ISD,East Boston,T093,2,2,2,2
+ISD,East Boston,T095,17,17,2,17
+ISD,East Boston,T097,8,8,3,6
+ISD,East Boston,T098,3,3,1,3
+ISD,East Boston,T101,51,51,14,44
+ISD,East Boston,T103,2,2,2,2
+ISD,East Boston,T105,2,2,1,2
+ISD,East Boston,T112,6,6,0,5
+ISD,East Boston,T115,443,443,441,443
+ISD,East Boston,T116,1,0,0,0
+ISD,East Boston,T118,1,1,0,1
+ISD,East Boston,T121,5,5,3,5
+ISD,East Boston,T123,54,54,40,52
+ISD,East Boston,T126,9,9,3,9
+ISD,East Boston,T127,2,2,1,1
+ISD,East Boston,T131,8,8,6,8
+ISD,East Boston,T137,1,1,0,0
+ISD,East Boston,T147,66,66,11,63
+ISD,East Boston,T148,1,1,1,1
+ISD,East Boston,T149,77,77,60,77
+ISD,East Boston,T150,26,26,25,26
+ISD,East Boston,T151,232,232,152,177
+ISD,East Boston,T152,19,19,13,15
+ISD,East Boston,T161,167,167,54,167
+ISD,East Boston,T162,91,91,91,91
+ISD,East Boston,T163,3,3,0,3
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T007,16,16,9,14
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T011,32,32,14,32
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T014,1,1,0,0
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T015,1,0,0,1
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T017,10,10,6,8
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T020,10,10,1,10
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T021,27,27,27,27
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T022,5,5,3,4
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T023,8,8,8,8
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T024,39,39,15,39
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T027,3,3,2,3
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T028,2,2,2,2
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T030,16,16,12,16
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T031,13,13,10,13
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T038,93,93,67,80
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T041,8,8,4,8
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T043,3,3,1,3
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T051,5,5,3,5
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T052,31,31,20,26
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T056,20,20,14,18
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T062,1,0,0,1
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T068,2,2,2,2
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T071,1,1,1,1
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T073,6,6,4,5
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T079,1,1,1,1
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T082,1,1,1,1
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T089,70,70,54,58
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T095,4,4,0,4
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T097,4,4,0,3
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T098,3,3,0,3
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T101,3,3,3,3
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T105,4,4,1,4
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T112,2,2,0,2
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T115,143,143,142,142
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T121,4,4,2,4
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T123,8,8,6,7
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T124,1,0,0,1
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T126,2,2,1,2
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T127,1,1,0,1
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T131,8,8,5,7
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T137,2,2,2,2
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T147,14,14,1,14
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T148,4,4,2,4
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T149,25,25,16,25
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T150,19,19,13,19
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T151,128,128,89,106
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T152,9,9,5,7
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T160,1,1,1,1
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T161,14,14,8,14
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,T162,28,28,28,28
+ISD,Greater Mattapan,T002,12,12,5,10
+ISD,Greater Mattapan,T004,2,0,0,2
+ISD,Greater Mattapan,T007,28,28,23,27
+ISD,Greater Mattapan,T011,71,71,25,70
+ISD,Greater Mattapan,T017,66,66,33,54
+ISD,Greater Mattapan,T020,2,2,1,2
+ISD,Greater Mattapan,T021,64,64,63,64
+ISD,Greater Mattapan,T022,30,30,18,30
+ISD,Greater Mattapan,T023,6,6,4,5
+ISD,Greater Mattapan,T024,70,70,19,70
+ISD,Greater Mattapan,T027,6,6,1,6
+ISD,Greater Mattapan,T030,14,14,11,14
+ISD,Greater Mattapan,T031,4,4,2,4
+ISD,Greater Mattapan,T038,169,169,134,141
+ISD,Greater Mattapan,T039,27,27,26,27
+ISD,Greater Mattapan,T041,14,14,3,9
+ISD,Greater Mattapan,T042,2,2,0,1
+ISD,Greater Mattapan,T043,24,24,4,23
+ISD,Greater Mattapan,T044,1,1,1,1
+ISD,Greater Mattapan,T047,1,1,0,1
+ISD,Greater Mattapan,T049,2,2,1,1
+ISD,Greater Mattapan,T051,13,13,5,10
+ISD,Greater Mattapan,T052,106,106,68,77
+ISD,Greater Mattapan,T056,86,86,57,69
+ISD,Greater Mattapan,T071,17,17,12,13
+ISD,Greater Mattapan,T072,4,4,1,3
+ISD,Greater Mattapan,T073,25,25,18,23
+ISD,Greater Mattapan,T075,12,0,0,0
+ISD,Greater Mattapan,T076,1,1,0,1
+ISD,Greater Mattapan,T077,1,1,0,1
+ISD,Greater Mattapan,T078,2,2,1,1
+ISD,Greater Mattapan,T079,5,5,5,5
+ISD,Greater Mattapan,T082,2,2,0,2
+ISD,Greater Mattapan,T084,2,2,1,2
+ISD,Greater Mattapan,T089,113,113,92,103
+ISD,Greater Mattapan,T095,11,11,1,11
+ISD,Greater Mattapan,T097,8,8,2,5
+ISD,Greater Mattapan,T098,2,2,0,2
+ISD,Greater Mattapan,T100,1,1,1,1
+ISD,Greater Mattapan,T101,39,39,8,27
+ISD,Greater Mattapan,T102,1,0,0,1
+ISD,Greater Mattapan,T103,4,4,4,4
+ISD,Greater Mattapan,T105,1,1,0,1
+ISD,Greater Mattapan,T112,4,4,0,3
+ISD,Greater Mattapan,T114,1,0,0,1
+ISD,Greater Mattapan,T115,278,278,277,278
+ISD,Greater Mattapan,T121,8,8,7,8
+ISD,Greater Mattapan,T122,2,2,1,2
+ISD,Greater Mattapan,T123,20,20,10,16
+ISD,Greater Mattapan,T131,11,11,6,8
+ISD,Greater Mattapan,T141,2,2,2,2
+ISD,Greater Mattapan,T146,3,3,1,3
+ISD,Greater Mattapan,T147,36,36,2,24
+ISD,Greater Mattapan,T148,4,4,3,4
+ISD,Greater Mattapan,T149,42,42,34,42
+ISD,Greater Mattapan,T150,12,12,7,12
+ISD,Greater Mattapan,T151,583,583,364,456
+ISD,Greater Mattapan,T152,35,35,24,28
+ISD,Greater Mattapan,T161,80,80,25,80
+ISD,Greater Mattapan,T162,28,28,27,28
+ISD,Greater Mattapan,T163,3,3,0,3
+ISD,Hyde Park,T002,8,8,5,8
+ISD,Hyde Park,T007,9,9,7,9
+ISD,Hyde Park,T011,59,59,18,59
+ISD,Hyde Park,T017,30,30,20,24
+ISD,Hyde Park,T020,2,2,1,2
+ISD,Hyde Park,T021,51,51,50,51
+ISD,Hyde Park,T022,15,15,8,15
+ISD,Hyde Park,T023,4,4,4,4
+ISD,Hyde Park,T024,41,41,10,41
+ISD,Hyde Park,T027,2,2,1,2
+ISD,Hyde Park,T028,1,1,1,1
+ISD,Hyde Park,T030,12,12,10,12
+ISD,Hyde Park,T031,7,7,7,7
+ISD,Hyde Park,T038,79,79,64,71
+ISD,Hyde Park,T039,18,18,18,18
+ISD,Hyde Park,T041,20,20,7,14
+ISD,Hyde Park,T043,21,21,3,19
+ISD,Hyde Park,T045,1,1,0,1
+ISD,Hyde Park,T047,2,2,1,2
+ISD,Hyde Park,T049,3,3,1,3
+ISD,Hyde Park,T051,11,11,3,9
+ISD,Hyde Park,T052,51,51,20,25
+ISD,Hyde Park,T055,3,3,1,3
+ISD,Hyde Park,T056,31,31,24,26
+ISD,Hyde Park,T060,1,1,1,1
+ISD,Hyde Park,T071,10,10,8,8
+ISD,Hyde Park,T072,1,1,1,1
+ISD,Hyde Park,T073,8,8,4,6
+ISD,Hyde Park,T075,9,0,0,0
+ISD,Hyde Park,T076,1,1,0,1
+ISD,Hyde Park,T078,5,5,3,4
+ISD,Hyde Park,T079,1,1,1,1
+ISD,Hyde Park,T082,3,3,0,3
+ISD,Hyde Park,T089,84,84,78,82
+ISD,Hyde Park,T093,1,1,1,1
+ISD,Hyde Park,T095,11,11,2,10
+ISD,Hyde Park,T097,7,7,3,4
+ISD,Hyde Park,T100,1,1,0,1
+ISD,Hyde Park,T101,36,36,14,31
+ISD,Hyde Park,T102,1,0,0,1
+ISD,Hyde Park,T103,1,1,1,1
+ISD,Hyde Park,T105,1,1,1,1
+ISD,Hyde Park,T112,4,4,1,4
+ISD,Hyde Park,T115,268,268,268,268
+ISD,Hyde Park,T121,4,4,3,3
+ISD,Hyde Park,T123,5,5,2,3
+ISD,Hyde Park,T131,6,6,5,5
+ISD,Hyde Park,T146,1,1,0,1
+ISD,Hyde Park,T147,27,27,5,27
+ISD,Hyde Park,T148,4,4,4,4
+ISD,Hyde Park,T149,38,38,30,38
+ISD,Hyde Park,T150,15,15,11,15
+ISD,Hyde Park,T151,192,192,125,150
+ISD,Hyde Park,T152,24,24,13,20
+ISD,Hyde Park,T161,81,81,29,81
+ISD,Hyde Park,T162,40,40,39,40
+ISD,Hyde Park,T163,12,12,4,12
+ISD,Jamaica Plain,T002,8,8,5,8
+ISD,Jamaica Plain,T005,1,0,0,1
+ISD,Jamaica Plain,T007,4,4,4,4
+ISD,Jamaica Plain,T011,59,59,22,59
+ISD,Jamaica Plain,T012,1,1,1,1
+ISD,Jamaica Plain,T014,1,1,0,1
+ISD,Jamaica Plain,T017,45,45,31,39
+ISD,Jamaica Plain,T020,7,7,0,7
+ISD,Jamaica Plain,T021,125,125,124,125
+ISD,Jamaica Plain,T022,8,8,7,8
+ISD,Jamaica Plain,T023,11,11,10,11
+ISD,Jamaica Plain,T024,68,68,27,68
+ISD,Jamaica Plain,T025,1,1,1,1
+ISD,Jamaica Plain,T027,18,18,7,18
+ISD,Jamaica Plain,T028,4,4,4,4
+ISD,Jamaica Plain,T030,23,23,19,23
+ISD,Jamaica Plain,T031,10,10,9,10
+ISD,Jamaica Plain,T038,135,135,102,111
+ISD,Jamaica Plain,T039,10,10,10,10
+ISD,Jamaica Plain,T040,1,1,0,1
+ISD,Jamaica Plain,T041,2,2,1,1
+ISD,Jamaica Plain,T043,4,4,0,4
+ISD,Jamaica Plain,T047,1,1,1,1
+ISD,Jamaica Plain,T049,3,3,1,3
+ISD,Jamaica Plain,T051,8,8,0,7
+ISD,Jamaica Plain,T052,75,75,52,58
+ISD,Jamaica Plain,T055,1,1,0,1
+ISD,Jamaica Plain,T056,42,42,31,35
+ISD,Jamaica Plain,T069,1,1,1,1
+ISD,Jamaica Plain,T071,4,4,4,4
+ISD,Jamaica Plain,T072,2,2,1,2
+ISD,Jamaica Plain,T073,13,13,7,9
+ISD,Jamaica Plain,T075,8,0,0,0
+ISD,Jamaica Plain,T078,1,1,1,1
+ISD,Jamaica Plain,T079,2,2,2,2
+ISD,Jamaica Plain,T082,4,4,0,4
+ISD,Jamaica Plain,T089,211,211,191,198
+ISD,Jamaica Plain,T091,2,2,0,2
+ISD,Jamaica Plain,T093,1,1,1,1
+ISD,Jamaica Plain,T095,3,3,0,3
+ISD,Jamaica Plain,T097,5,5,1,4
+ISD,Jamaica Plain,T098,1,1,1,1
+ISD,Jamaica Plain,T101,37,37,9,32
+ISD,Jamaica Plain,T102,2,0,0,2
+ISD,Jamaica Plain,T103,1,1,1,1
+ISD,Jamaica Plain,T105,1,1,0,1
+ISD,Jamaica Plain,T112,7,7,3,7
+ISD,Jamaica Plain,T115,480,480,479,480
+ISD,Jamaica Plain,T116,1,0,0,0
+ISD,Jamaica Plain,T121,7,7,3,4
+ISD,Jamaica Plain,T123,13,13,3,8
+ISD,Jamaica Plain,T126,14,14,0,13
+ISD,Jamaica Plain,T131,15,15,10,15
+ISD,Jamaica Plain,T141,2,2,2,2
+ISD,Jamaica Plain,T147,43,43,7,38
+ISD,Jamaica Plain,T148,2,2,1,2
+ISD,Jamaica Plain,T149,40,40,33,40
+ISD,Jamaica Plain,T150,11,11,5,11
+ISD,Jamaica Plain,T151,339,339,239,286
+ISD,Jamaica Plain,T152,28,28,16,23
+ISD,Jamaica Plain,T161,87,87,36,87
+ISD,Jamaica Plain,T162,84,84,84,84
+ISD,Jamaica Plain,T163,3,3,1,3
+ISD,Mission Hill,T002,4,4,4,4
+ISD,Mission Hill,T007,7,7,6,6
+ISD,Mission Hill,T011,34,34,13,34
+ISD,Mission Hill,T012,1,1,0,1
+ISD,Mission Hill,T014,1,1,0,1
+ISD,Mission Hill,T017,19,19,11,15
+ISD,Mission Hill,T020,1,1,0,1
+ISD,Mission Hill,T021,20,20,20,20
+ISD,Mission Hill,T022,5,5,4,4
+ISD,Mission Hill,T023,1,1,1,1
+ISD,Mission Hill,T024,28,28,8,28
+ISD,Mission Hill,T026,1,1,0,1
+ISD,Mission Hill,T027,1,1,1,1
+ISD,Mission Hill,T030,7,7,4,7
+ISD,Mission Hill,T031,1,1,1,1
+ISD,Mission Hill,T038,54,54,45,47
+ISD,Mission Hill,T039,5,5,5,5
+ISD,Mission Hill,T041,2,2,1,2
+ISD,Mission Hill,T043,3,3,0,3
+ISD,Mission Hill,T047,1,1,0,1
+ISD,Mission Hill,T051,6,6,4,6
+ISD,Mission Hill,T052,42,42,32,34
+ISD,Mission Hill,T056,38,38,25,33
+ISD,Mission Hill,T071,1,1,0,0
+ISD,Mission Hill,T072,1,1,1,1
+ISD,Mission Hill,T073,14,14,12,13
+ISD,Mission Hill,T075,3,0,0,0
+ISD,Mission Hill,T078,3,3,2,2
+ISD,Mission Hill,T079,1,1,1,1
+ISD,Mission Hill,T080,1,1,0,1
+ISD,Mission Hill,T089,92,92,78,81
+ISD,Mission Hill,T097,2,2,1,2
+ISD,Mission Hill,T098,5,5,5,5
+ISD,Mission Hill,T101,5,5,1,5
+ISD,Mission Hill,T105,2,2,1,2
+ISD,Mission Hill,T107,1,1,0,1
+ISD,Mission Hill,T115,187,187,185,186
+ISD,Mission Hill,T117,1,1,0,1
+ISD,Mission Hill,T121,4,4,1,3
+ISD,Mission Hill,T123,7,7,2,2
+ISD,Mission Hill,T131,4,4,3,4
+ISD,Mission Hill,T137,2,2,2,2
+ISD,Mission Hill,T147,10,10,0,9
+ISD,Mission Hill,T148,2,2,2,2
+ISD,Mission Hill,T149,32,32,24,32
+ISD,Mission Hill,T150,7,7,6,7
+ISD,Mission Hill,T151,183,183,137,160
+ISD,Mission Hill,T152,10,10,8,10
+ISD,Mission Hill,T161,34,34,11,34
+ISD,Mission Hill,T162,20,20,20,20
+ISD,Roslindale,T002,10,10,8,10
+ISD,Roslindale,T004,1,0,0,1
+ISD,Roslindale,T005,1,0,0,1
+ISD,Roslindale,T007,4,4,4,4
+ISD,Roslindale,T011,37,37,17,37
+ISD,Roslindale,T014,1,1,1,1
+ISD,Roslindale,T017,17,17,11,13
+ISD,Roslindale,T020,5,5,0,4
+ISD,Roslindale,T021,63,63,62,63
+ISD,Roslindale,T022,8,8,3,8
+ISD,Roslindale,T023,2,2,1,1
+ISD,Roslindale,T024,32,32,14,32
+ISD,Roslindale,T027,4,4,2,4
+ISD,Roslindale,T028,3,3,3,3
+ISD,Roslindale,T030,4,4,3,4
+ISD,Roslindale,T031,6,6,5,6
+ISD,Roslindale,T037,1,1,0,1
+ISD,Roslindale,T038,51,51,38,40
+ISD,Roslindale,T039,8,8,7,8
+ISD,Roslindale,T041,7,7,3,6
+ISD,Roslindale,T043,15,15,3,14
+ISD,Roslindale,T051,13,13,3,13
+ISD,Roslindale,T052,26,26,19,20
+ISD,Roslindale,T056,29,29,21,25
+ISD,Roslindale,T070,1,1,1,1
+ISD,Roslindale,T071,7,7,4,4
+ISD,Roslindale,T073,5,5,3,3
+ISD,Roslindale,T075,7,0,0,1
+ISD,Roslindale,T078,1,1,1,1
+ISD,Roslindale,T079,1,1,1,1
+ISD,Roslindale,T082,2,2,0,2
+ISD,Roslindale,T085,1,0,0,1
+ISD,Roslindale,T089,100,100,89,91
+ISD,Roslindale,T093,1,1,1,1
+ISD,Roslindale,T095,2,2,0,2
+ISD,Roslindale,T097,2,2,0,2
+ISD,Roslindale,T098,2,2,1,2
+ISD,Roslindale,T101,17,17,6,16
+ISD,Roslindale,T103,1,1,1,1
+ISD,Roslindale,T112,2,2,1,2
+ISD,Roslindale,T115,218,218,216,216
+ISD,Roslindale,T117,1,1,0,1
+ISD,Roslindale,T118,1,1,1,1
+ISD,Roslindale,T121,3,3,3,3
+ISD,Roslindale,T122,1,1,1,1
+ISD,Roslindale,T123,10,10,6,6
+ISD,Roslindale,T126,5,5,0,4
+ISD,Roslindale,T127,2,2,1,1
+ISD,Roslindale,T131,6,6,2,2
+ISD,Roslindale,T146,2,2,0,2
+ISD,Roslindale,T147,32,32,7,31
+ISD,Roslindale,T148,6,6,6,6
+ISD,Roslindale,T149,36,36,29,36
+ISD,Roslindale,T150,16,16,12,16
+ISD,Roslindale,T151,143,143,96,112
+ISD,Roslindale,T152,13,13,7,7
+ISD,Roslindale,T160,1,1,0,1
+ISD,Roslindale,T161,48,48,16,48
+ISD,Roslindale,T162,34,34,34,34
+ISD,Roslindale,T163,1,1,1,1
+ISD,Roxbury,T002,18,18,10,15
+ISD,Roxbury,T003,1,1,0,1
+ISD,Roxbury,T007,31,31,17,26
+ISD,Roxbury,T011,148,148,49,147
+ISD,Roxbury,T012,2,2,1,2
+ISD,Roxbury,T014,3,3,3,3
+ISD,Roxbury,T015,1,0,0,1
+ISD,Roxbury,T017,90,90,63,76
+ISD,Roxbury,T020,7,7,1,7
+ISD,Roxbury,T021,130,130,130,130
+ISD,Roxbury,T022,35,35,25,34
+ISD,Roxbury,T023,23,23,17,18
+ISD,Roxbury,T024,163,163,64,162
+ISD,Roxbury,T026,1,1,0,1
+ISD,Roxbury,T027,19,19,3,19
+ISD,Roxbury,T028,5,5,3,5
+ISD,Roxbury,T030,27,27,23,27
+ISD,Roxbury,T031,18,18,13,18
+ISD,Roxbury,T037,1,1,0,1
+ISD,Roxbury,T038,298,298,229,245
+ISD,Roxbury,T039,24,24,21,23
+ISD,Roxbury,T041,19,19,7,16
+ISD,Roxbury,T043,22,22,4,19
+ISD,Roxbury,T045,26,26,9,13
+ISD,Roxbury,T047,4,4,2,4
+ISD,Roxbury,T049,5,5,2,3
+ISD,Roxbury,T051,36,36,8,30
+ISD,Roxbury,T052,171,171,123,140
+ISD,Roxbury,T055,1,1,0,1
+ISD,Roxbury,T056,144,144,104,123
+ISD,Roxbury,T060,3,3,3,3
+ISD,Roxbury,T066,1,1,0,1
+ISD,Roxbury,T068,1,1,1,1
+ISD,Roxbury,T070,3,3,2,3
+ISD,Roxbury,T071,18,18,14,14
+ISD,Roxbury,T072,5,5,4,5
+ISD,Roxbury,T073,32,32,26,29
+ISD,Roxbury,T075,14,0,0,1
+ISD,Roxbury,T076,3,3,1,2
+ISD,Roxbury,T078,5,5,3,4
+ISD,Roxbury,T079,10,10,10,10
+ISD,Roxbury,T082,8,8,0,7
+ISD,Roxbury,T084,1,1,0,1
+ISD,Roxbury,T085,1,0,0,1
+ISD,Roxbury,T089,256,256,221,229
+ISD,Roxbury,T091,3,3,1,3
+ISD,Roxbury,T093,1,1,1,1
+ISD,Roxbury,T095,11,11,0,11
+ISD,Roxbury,T097,11,11,4,9
+ISD,Roxbury,T098,14,14,10,12
+ISD,Roxbury,T100,1,1,1,1
+ISD,Roxbury,T101,40,40,9,37
+ISD,Roxbury,T102,2,0,0,2
+ISD,Roxbury,T103,7,7,7,7
+ISD,Roxbury,T105,1,1,1,1
+ISD,Roxbury,T107,1,1,0,1
+ISD,Roxbury,T112,7,7,3,5
+ISD,Roxbury,T114,1,0,0,1
+ISD,Roxbury,T115,842,842,835,837
+ISD,Roxbury,T118,6,6,3,6
+ISD,Roxbury,T121,11,11,10,10
+ISD,Roxbury,T122,1,1,0,1
+ISD,Roxbury,T123,36,36,19,27
+ISD,Roxbury,T126,3,3,0,3
+ISD,Roxbury,T127,2,2,1,2
+ISD,Roxbury,T130,1,0,0,1
+ISD,Roxbury,T131,16,16,13,14
+ISD,Roxbury,T141,4,4,4,4
+ISD,Roxbury,T146,2,2,1,2
+ISD,Roxbury,T147,75,75,9,56
+ISD,Roxbury,T148,5,5,4,5
+ISD,Roxbury,T149,84,84,57,84
+ISD,Roxbury,T150,45,45,30,45
+ISD,Roxbury,T151,947,947,689,790
+ISD,Roxbury,T152,81,81,55,66
+ISD,Roxbury,T160,1,1,1,1
+ISD,Roxbury,T161,130,130,34,130
+ISD,Roxbury,T162,85,85,85,85
+ISD,Roxbury,T163,7,7,2,7
+ISD,South Boston / South Boston Waterfront,T002,8,8,5,8
+ISD,South Boston / South Boston Waterfront,T007,5,5,4,5
+ISD,South Boston / South Boston Waterfront,T011,98,98,50,97
+ISD,South Boston / South Boston Waterfront,T014,1,1,1,1
+ISD,South Boston / South Boston Waterfront,T017,30,30,19,26
+ISD,South Boston / South Boston Waterfront,T020,21,21,8,21
+ISD,South Boston / South Boston Waterfront,T021,233,233,232,233
+ISD,South Boston / South Boston Waterfront,T022,7,7,5,7
+ISD,South Boston / South Boston Waterfront,T023,15,15,13,15
+ISD,South Boston / South Boston Waterfront,T024,85,85,35,85
+ISD,South Boston / South Boston Waterfront,T026,4,4,0,4
+ISD,South Boston / South Boston Waterfront,T027,27,27,20,27
+ISD,South Boston / South Boston Waterfront,T028,7,7,4,7
+ISD,South Boston / South Boston Waterfront,T030,14,14,12,14
+ISD,South Boston / South Boston Waterfront,T031,11,11,8,11
+ISD,South Boston / South Boston Waterfront,T038,72,72,54,63
+ISD,South Boston / South Boston Waterfront,T039,3,3,2,3
+ISD,South Boston / South Boston Waterfront,T040,1,1,0,0
+ISD,South Boston / South Boston Waterfront,T041,6,6,1,6
+ISD,South Boston / South Boston Waterfront,T043,4,4,1,3
+ISD,South Boston / South Boston Waterfront,T045,4,4,2,4
+ISD,South Boston / South Boston Waterfront,T047,2,2,1,2
+ISD,South Boston / South Boston Waterfront,T049,2,2,2,2
+ISD,South Boston / South Boston Waterfront,T051,11,11,4,11
+ISD,South Boston / South Boston Waterfront,T052,50,50,21,31
+ISD,South Boston / South Boston Waterfront,T055,4,4,0,4
+ISD,South Boston / South Boston Waterfront,T056,24,24,12,19
+ISD,South Boston / South Boston Waterfront,T060,3,3,3,3
+ISD,South Boston / South Boston Waterfront,T062,1,0,0,1
+ISD,South Boston / South Boston Waterfront,T066,1,1,0,1
+ISD,South Boston / South Boston Waterfront,T067,2,2,2,2
+ISD,South Boston / South Boston Waterfront,T068,1,1,1,1
+ISD,South Boston / South Boston Waterfront,T069,1,1,1,1
+ISD,South Boston / South Boston Waterfront,T070,2,2,2,2
+ISD,South Boston / South Boston Waterfront,T071,6,6,3,4
+ISD,South Boston / South Boston Waterfront,T072,1,1,1,1
+ISD,South Boston / South Boston Waterfront,T073,26,26,20,23
+ISD,South Boston / South Boston Waterfront,T075,11,0,0,0
+ISD,South Boston / South Boston Waterfront,T078,1,1,1,1
+ISD,South Boston / South Boston Waterfront,T079,3,3,3,3
+ISD,South Boston / South Boston Waterfront,T082,2,2,0,2
+ISD,South Boston / South Boston Waterfront,T089,186,186,173,181
+ISD,South Boston / South Boston Waterfront,T091,3,3,0,3
+ISD,South Boston / South Boston Waterfront,T093,9,9,9,9
+ISD,South Boston / South Boston Waterfront,T095,14,14,0,14
+ISD,South Boston / South Boston Waterfront,T097,4,4,1,2
+ISD,South Boston / South Boston Waterfront,T098,4,4,3,4
+ISD,South Boston / South Boston Waterfront,T101,43,43,23,43
+ISD,South Boston / South Boston Waterfront,T102,1,0,0,1
+ISD,South Boston / South Boston Waterfront,T103,2,2,2,2
+ISD,South Boston / South Boston Waterfront,T105,4,4,3,3
+ISD,South Boston / South Boston Waterfront,T107,1,1,0,1
+ISD,South Boston / South Boston Waterfront,T109,1,1,0,1
+ISD,South Boston / South Boston Waterfront,T112,24,24,2,24
+ISD,South Boston / South Boston Waterfront,T115,612,612,611,611
+ISD,South Boston / South Boston Waterfront,T118,4,4,2,4
+ISD,South Boston / South Boston Waterfront,T121,7,7,5,5
+ISD,South Boston / South Boston Waterfront,T123,37,37,32,37
+ISD,South Boston / South Boston Waterfront,T126,38,38,2,38
+ISD,South Boston / South Boston Waterfront,T127,1,1,0,1
+ISD,South Boston / South Boston Waterfront,T131,9,9,4,7
+ISD,South Boston / South Boston Waterfront,T134,1,1,1,1
+ISD,South Boston / South Boston Waterfront,T141,1,1,1,1
+ISD,South Boston / South Boston Waterfront,T146,1,1,0,1
+ISD,South Boston / South Boston Waterfront,T147,72,72,15,70
+ISD,South Boston / South Boston Waterfront,T148,8,8,8,8
+ISD,South Boston / South Boston Waterfront,T149,65,65,59,65
+ISD,South Boston / South Boston Waterfront,T150,14,14,14,14
+ISD,South Boston / South Boston Waterfront,T151,258,258,170,211
+ISD,South Boston / South Boston Waterfront,T152,26,26,17,19
+ISD,South Boston / South Boston Waterfront,T160,1,1,1,1
+ISD,South Boston / South Boston Waterfront,T161,184,184,83,184
+ISD,South Boston / South Boston Waterfront,T162,131,131,131,131
+ISD,South Boston / South Boston Waterfront,T163,5,5,2,5
+ISD,South End,T005,1,0,0,1
+ISD,South End,T007,10,10,6,10
+ISD,South End,T011,38,38,15,38
+ISD,South End,T017,14,14,10,12
+ISD,South End,T019,1,1,0,1
+ISD,South End,T020,13,13,3,13
+ISD,South End,T021,90,90,88,90
+ISD,South End,T022,3,3,2,3
+ISD,South End,T023,8,8,7,8
+ISD,South End,T024,68,68,25,68
+ISD,South End,T027,22,22,7,22
+ISD,South End,T028,2,2,1,2
+ISD,South End,T030,18,18,15,18
+ISD,South End,T031,7,7,5,7
+ISD,South End,T038,30,30,23,24
+ISD,South End,T039,1,1,1,1
+ISD,South End,T041,5,5,1,4
+ISD,South End,T042,1,1,0,1
+ISD,South End,T043,1,1,0,1
+ISD,South End,T045,3,3,1,1
+ISD,South End,T051,10,10,3,10
+ISD,South End,T052,26,26,18,19
+ISD,South End,T056,26,26,21,24
+ISD,South End,T066,1,1,0,1
+ISD,South End,T067,1,1,1,1
+ISD,South End,T068,1,1,1,1
+ISD,South End,T070,2,2,2,2
+ISD,South End,T071,1,1,1,1
+ISD,South End,T072,1,1,1,1
+ISD,South End,T073,4,4,3,3
+ISD,South End,T075,7,0,0,1
+ISD,South End,T089,164,164,159,163
+ISD,South End,T091,2,2,0,2
+ISD,South End,T095,7,7,2,7
+ISD,South End,T097,3,3,2,3
+ISD,South End,T101,28,28,7,27
+ISD,South End,T102,1,0,0,1
+ISD,South End,T103,1,1,1,1
+ISD,South End,T105,3,3,2,3
+ISD,South End,T107,1,1,0,1
+ISD,South End,T112,4,4,0,4
+ISD,South End,T115,666,666,665,666
+ISD,South End,T117,1,1,1,1
+ISD,South End,T118,1,1,1,1
+ISD,South End,T121,3,3,2,2
+ISD,South End,T123,9,9,6,7
+ISD,South End,T124,1,0,0,0
+ISD,South End,T126,45,45,0,44
+ISD,South End,T127,1,1,0,1
+ISD,South End,T131,2,2,2,2
+ISD,South End,T147,38,38,4,34
+ISD,South End,T148,3,3,3,3
+ISD,South End,T149,29,29,21,29
+ISD,South End,T150,4,4,3,4
+ISD,South End,T151,148,148,98,116
+ISD,South End,T152,7,7,3,4
+ISD,South End,T161,87,87,28,87
+ISD,South End,T162,78,78,78,78
+ISD,South End,T163,1,1,0,1
+ISD,Unspecified,T002,4,4,2,4
+ISD,Unspecified,T011,70,70,37,68
+ISD,Unspecified,T017,15,15,7,12
+ISD,Unspecified,T019,1,1,0,1
+ISD,Unspecified,T020,4,4,0,4
+ISD,Unspecified,T021,95,95,94,95
+ISD,Unspecified,T022,8,8,3,7
+ISD,Unspecified,T023,8,8,8,8
+ISD,Unspecified,T024,107,107,47,107
+ISD,Unspecified,T025,1,1,0,1
+ISD,Unspecified,T026,2,2,2,2
+ISD,Unspecified,T027,13,13,5,13
+ISD,Unspecified,T028,13,13,11,13
+ISD,Unspecified,T029,1,0,0,1
+ISD,Unspecified,T030,120,120,94,120
+ISD,Unspecified,T031,69,69,55,69
+ISD,Unspecified,T032,1,0,0,0
+ISD,Unspecified,T033,5,5,4,5
+ISD,Unspecified,T037,4,4,3,4
+ISD,Unspecified,T038,44,44,33,36
+ISD,Unspecified,T041,8,8,2,7
+ISD,Unspecified,T042,1,1,0,1
+ISD,Unspecified,T045,1,1,0,1
+ISD,Unspecified,T047,3,3,2,3
+ISD,Unspecified,T051,26,26,17,26
+ISD,Unspecified,T052,25,25,18,21
+ISD,Unspecified,T055,1,1,0,1
+ISD,Unspecified,T056,14,14,13,14
+ISD,Unspecified,T068,5,5,5,5
+ISD,Unspecified,T070,2,2,1,2
+ISD,Unspecified,T071,5,5,4,4
+ISD,Unspecified,T073,4,4,3,4
+ISD,Unspecified,T075,10,0,0,1
+ISD,Unspecified,T079,1,1,1,1
+ISD,Unspecified,T081,1,0,0,1
+ISD,Unspecified,T085,1,0,0,1
+ISD,Unspecified,T089,84,84,77,80
+ISD,Unspecified,T091,4,4,0,4
+ISD,Unspecified,T093,1,1,1,1
+ISD,Unspecified,T095,5,5,2,5
+ISD,Unspecified,T098,4,4,3,4
+ISD,Unspecified,T100,1,1,1,1
+ISD,Unspecified,T101,7,7,5,7
+ISD,Unspecified,T105,1,1,1,1
+ISD,Unspecified,T112,5,5,2,5
+ISD,Unspecified,T115,291,291,291,291
+ISD,Unspecified,T118,3,3,3,3
+ISD,Unspecified,T121,4,4,3,3
+ISD,Unspecified,T123,22,22,16,21
+ISD,Unspecified,T126,19,19,1,19
+ISD,Unspecified,T127,2,2,0,1
+ISD,Unspecified,T131,2,2,1,1
+ISD,Unspecified,T147,43,43,14,43
+ISD,Unspecified,T148,26,26,23,26
+ISD,Unspecified,T149,214,214,163,214
+ISD,Unspecified,T150,75,75,62,75
+ISD,Unspecified,T151,127,127,95,109
+ISD,Unspecified,T152,24,24,21,22
+ISD,Unspecified,T159,1,1,1,1
+ISD,Unspecified,T160,6,6,4,6
+ISD,Unspecified,T161,44,44,14,44
+ISD,Unspecified,T162,75,75,75,75
+ISD,Unspecified,T163,1,1,1,1
+ISD,West Roxbury,T002,12,12,9,12
+ISD,West Roxbury,T007,5,5,3,5
+ISD,West Roxbury,T011,42,42,13,40
+ISD,West Roxbury,T014,1,1,1,1
+ISD,West Roxbury,T017,21,21,14,18
+ISD,West Roxbury,T020,5,5,0,5
+ISD,West Roxbury,T021,56,56,54,56
+ISD,West Roxbury,T022,4,4,3,3
+ISD,West Roxbury,T023,3,3,3,3
+ISD,West Roxbury,T024,23,23,9,23
+ISD,West Roxbury,T027,11,11,5,11
+ISD,West Roxbury,T030,4,4,4,4
+ISD,West Roxbury,T031,7,7,6,7
+ISD,West Roxbury,T038,16,16,14,14
+ISD,West Roxbury,T039,1,1,1,1
+ISD,West Roxbury,T040,1,1,0,1
+ISD,West Roxbury,T041,11,11,3,11
+ISD,West Roxbury,T042,1,1,0,1
+ISD,West Roxbury,T043,12,12,2,12
+ISD,West Roxbury,T044,1,1,0,1
+ISD,West Roxbury,T049,1,1,1,1
+ISD,West Roxbury,T051,4,4,1,4
+ISD,West Roxbury,T052,21,21,15,18
+ISD,West Roxbury,T056,23,23,16,19
+ISD,West Roxbury,T060,4,4,3,4
+ISD,West Roxbury,T070,1,1,1,1
+ISD,West Roxbury,T071,4,4,2,2
+ISD,West Roxbury,T072,1,1,1,1
+ISD,West Roxbury,T073,3,3,3,3
+ISD,West Roxbury,T075,9,0,0,0
+ISD,West Roxbury,T076,2,2,2,2
+ISD,West Roxbury,T078,12,12,7,10
+ISD,West Roxbury,T079,3,3,3,3
+ISD,West Roxbury,T089,82,82,75,79
+ISD,West Roxbury,T095,3,3,0,3
+ISD,West Roxbury,T097,3,3,1,2
+ISD,West Roxbury,T098,4,4,3,4
+ISD,West Roxbury,T101,18,18,8,17
+ISD,West Roxbury,T103,1,1,1,1
+ISD,West Roxbury,T107,1,1,0,1
+ISD,West Roxbury,T112,1,1,0,1
+ISD,West Roxbury,T115,255,255,255,255
+ISD,West Roxbury,T121,7,7,7,7
+ISD,West Roxbury,T123,12,12,5,10
+ISD,West Roxbury,T124,1,0,0,1
+ISD,West Roxbury,T126,1,1,0,1
+ISD,West Roxbury,T127,1,1,0,1
+ISD,West Roxbury,T131,6,6,5,6
+ISD,West Roxbury,T141,1,1,1,1
+ISD,West Roxbury,T147,22,22,2,22
+ISD,West Roxbury,T148,3,3,3,3
+ISD,West Roxbury,T149,30,30,27,30
+ISD,West Roxbury,T150,12,12,11,12
+ISD,West Roxbury,T151,92,92,63,82
+ISD,West Roxbury,T152,6,6,2,3
+ISD,West Roxbury,T161,60,60,17,60
+ISD,West Roxbury,T162,39,39,39,39
+ISD,West Roxbury,T163,3,3,1,3
+PARK,Allston / Brighton,T020,1,1,1,1
+PARK,Allston / Brighton,T025,23,23,14,23
+PARK,Allston / Brighton,T026,294,294,232,290
+PARK,Allston / Brighton,T032,1,0,0,1
+PARK,Allston / Brighton,T034,2,2,2,2
+PARK,Allston / Brighton,T036,1,1,1,1
+PARK,Allston / Brighton,T037,388,388,365,388
+PARK,Allston / Brighton,T040,1,1,1,1
+PARK,Allston / Brighton,T045,4,4,2,4
+PARK,Allston / Brighton,T064,333,333,307,331
+PARK,Allston / Brighton,T074,1,1,0,1
+PARK,Allston / Brighton,T080,6,6,5,6
+PARK,Allston / Brighton,T081,6,0,0,6
+PARK,Allston / Brighton,T085,13,0,0,13
+PARK,Allston / Brighton,T086,39,39,32,39
+PARK,Allston / Brighton,T091,54,54,41,54
+PARK,Allston / Brighton,T094,1,1,1,1
+PARK,Allston / Brighton,T106,1,1,0,1
+PARK,Allston / Brighton,T112,36,36,15,36
+PARK,Allston / Brighton,T124,1,0,0,1
+PARK,Allston / Brighton,T126,11,11,3,11
+PARK,Allston / Brighton,T127,5,5,4,5
+PARK,Allston / Brighton,T134,7,7,3,7
+PARK,Allston / Brighton,T139,1,1,1,1
+PARK,Allston / Brighton,T142,125,125,110,125
+PARK,Allston / Brighton,T143,1119,1119,1094,1118
+PARK,Allston / Brighton,T144,17,17,14,15
+PARK,Allston / Brighton,T153,2,2,1,2
+PARK,Back Bay,T025,26,26,21,26
+PARK,Back Bay,T026,99,99,75,99
+PARK,Back Bay,T036,1,1,0,1
+PARK,Back Bay,T037,50,50,44,50
+PARK,Back Bay,T045,2,2,2,2
+PARK,Back Bay,T050,1,0,0,1
+PARK,Back Bay,T064,159,159,152,154
+PARK,Back Bay,T080,2,2,0,2
+PARK,Back Bay,T081,1,0,0,1
+PARK,Back Bay,T085,8,0,0,8
+PARK,Back Bay,T086,12,12,11,12
+PARK,Back Bay,T091,17,17,14,17
+PARK,Back Bay,T094,1,1,1,1
+PARK,Back Bay,T102,2,0,0,2
+PARK,Back Bay,T109,1,1,1,1
+PARK,Back Bay,T112,44,44,16,44
+PARK,Back Bay,T115,2,2,2,2
+PARK,Back Bay,T126,8,8,1,8
+PARK,Back Bay,T127,1,1,0,1
+PARK,Back Bay,T134,1,1,1,1
+PARK,Back Bay,T142,27,27,25,27
+PARK,Back Bay,T143,460,460,457,460
+PARK,Back Bay,T144,1,1,1,1
+PARK,Back Bay,T153,1,1,0,1
+PARK,Beacon Hill,T025,22,22,21,22
+PARK,Beacon Hill,T026,90,90,77,90
+PARK,Beacon Hill,T037,62,62,60,62
+PARK,Beacon Hill,T045,1,1,1,1
+PARK,Beacon Hill,T064,154,154,143,151
+PARK,Beacon Hill,T080,5,5,5,5
+PARK,Beacon Hill,T085,1,0,0,1
+PARK,Beacon Hill,T086,7,7,6,7
+PARK,Beacon Hill,T091,29,29,22,29
+PARK,Beacon Hill,T097,1,1,0,1
+PARK,Beacon Hill,T106,2,2,2,2
+PARK,Beacon Hill,T112,19,19,10,19
+PARK,Beacon Hill,T126,7,7,3,7
+PARK,Beacon Hill,T127,3,3,0,3
+PARK,Beacon Hill,T134,1,1,1,1
+PARK,Beacon Hill,T142,22,22,22,22
+PARK,Beacon Hill,T143,304,304,303,304
+PARK,Beacon Hill,T144,1,1,1,1
+PARK,Beacon Hill,T153,3,3,2,3
+PARK,Charlestown,T012,5,5,4,5
+PARK,Charlestown,T025,39,39,27,39
+PARK,Charlestown,T026,216,216,158,214
+PARK,Charlestown,T032,4,0,0,4
+PARK,Charlestown,T034,1,1,0,1
+PARK,Charlestown,T037,133,133,110,132
+PARK,Charlestown,T042,1,1,0,1
+PARK,Charlestown,T045,7,7,6,7
+PARK,Charlestown,T058,1,1,1,1
+PARK,Charlestown,T062,1,0,0,1
+PARK,Charlestown,T064,213,213,206,213
+PARK,Charlestown,T080,1,1,0,1
+PARK,Charlestown,T081,2,0,0,2
+PARK,Charlestown,T085,7,0,0,7
+PARK,Charlestown,T086,12,12,12,12
+PARK,Charlestown,T091,23,23,9,23
+PARK,Charlestown,T097,3,3,2,3
+PARK,Charlestown,T107,2,2,0,2
+PARK,Charlestown,T112,9,9,4,9
+PARK,Charlestown,T126,6,6,0,6
+PARK,Charlestown,T127,1,1,0,1
+PARK,Charlestown,T142,44,44,42,44
+PARK,Charlestown,T143,548,548,544,548
+PARK,Charlestown,T144,6,6,3,4
+PARK,Charlestown,T153,4,4,1,4
+PARK,Chestnut Hill,T026,1,1,1,1
+PARK,Dorchester,T004,1,0,0,1
+PARK,Dorchester,T012,6,6,6,6
+PARK,Dorchester,T020,1,1,1,1
+PARK,Dorchester,T025,97,97,55,97
+PARK,Dorchester,T026,637,637,475,634
+PARK,Dorchester,T032,2,0,0,2
+PARK,Dorchester,T033,2,2,2,2
+PARK,Dorchester,T034,1,1,1,1
+PARK,Dorchester,T037,1209,1209,1049,1209
+PARK,Dorchester,T045,13,13,9,13
+PARK,Dorchester,T058,2,2,2,2
+PARK,Dorchester,T064,623,623,558,615
+PARK,Dorchester,T080,1,1,1,1
+PARK,Dorchester,T081,18,0,0,18
+PARK,Dorchester,T085,33,0,0,33
+PARK,Dorchester,T086,16,16,14,16
+PARK,Dorchester,T089,1,1,1,1
+PARK,Dorchester,T091,63,63,22,63
+PARK,Dorchester,T094,3,3,2,3
+PARK,Dorchester,T097,2,2,1,2
+PARK,Dorchester,T101,2,2,2,2
+PARK,Dorchester,T102,3,0,0,3
+PARK,Dorchester,T106,2,2,1,2
+PARK,Dorchester,T107,2,2,1,2
+PARK,Dorchester,T112,75,75,35,75
+PARK,Dorchester,T115,5,5,5,5
+PARK,Dorchester,T126,18,18,7,18
+PARK,Dorchester,T127,5,5,2,5
+PARK,Dorchester,T134,1,1,1,1
+PARK,Dorchester,T142,270,270,259,270
+PARK,Dorchester,T143,1763,1763,1750,1760
+PARK,Dorchester,T144,23,23,20,21
+PARK,Dorchester,T153,4,4,4,4
+PARK,Downtown / Financial District,T012,3,3,3,3
+PARK,Downtown / Financial District,T025,30,30,19,30
+PARK,Downtown / Financial District,T026,156,156,122,156
+PARK,Downtown / Financial District,T032,1,0,0,1
+PARK,Downtown / Financial District,T033,1,1,0,1
+PARK,Downtown / Financial District,T037,281,281,270,281
+PARK,Downtown / Financial District,T040,1,1,1,1
+PARK,Downtown / Financial District,T045,17,17,11,17
+PARK,Downtown / Financial District,T064,100,100,97,98
+PARK,Downtown / Financial District,T080,1,1,0,1
+PARK,Downtown / Financial District,T081,2,0,0,2
+PARK,Downtown / Financial District,T085,8,0,0,8
+PARK,Downtown / Financial District,T086,11,11,10,11
+PARK,Downtown / Financial District,T091,40,40,27,40
+PARK,Downtown / Financial District,T107,3,3,1,3
+PARK,Downtown / Financial District,T109,2,2,2,2
+PARK,Downtown / Financial District,T112,22,22,8,22
+PARK,Downtown / Financial District,T115,1,1,0,1
+PARK,Downtown / Financial District,T126,9,9,3,9
+PARK,Downtown / Financial District,T127,3,3,2,3
+PARK,Downtown / Financial District,T142,12,12,12,12
+PARK,Downtown / Financial District,T143,285,285,284,284
+PARK,Downtown / Financial District,T144,1,1,1,1
+PARK,Downtown / Financial District,T153,5,5,5,5
+PARK,East Boston,T020,1,1,0,1
+PARK,East Boston,T021,2,2,2,2
+PARK,East Boston,T025,60,60,37,60
+PARK,East Boston,T026,409,409,267,406
+PARK,East Boston,T032,3,0,0,3
+PARK,East Boston,T033,2,2,1,2
+PARK,East Boston,T036,1,1,1,1
+PARK,East Boston,T037,496,496,443,496
+PARK,East Boston,T045,8,8,5,8
+PARK,East Boston,T058,1,1,0,1
+PARK,East Boston,T064,409,409,403,408
+PARK,East Boston,T080,5,5,1,5
+PARK,East Boston,T081,10,0,0,10
+PARK,East Boston,T085,16,0,0,16
+PARK,East Boston,T086,21,21,19,21
+PARK,East Boston,T091,26,26,18,26
+PARK,East Boston,T094,1,1,1,1
+PARK,East Boston,T102,2,0,0,2
+PARK,East Boston,T112,26,26,11,26
+PARK,East Boston,T115,2,2,1,2
+PARK,East Boston,T126,8,8,3,8
+PARK,East Boston,T127,3,3,2,3
+PARK,East Boston,T134,2,2,1,2
+PARK,East Boston,T139,2,2,2,2
+PARK,East Boston,T142,68,68,64,68
+PARK,East Boston,T143,1161,1161,1147,1159
+PARK,East Boston,T144,8,8,8,8
+PARK,East Boston,T153,3,3,3,3
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T012,2,2,0,2
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T025,8,8,5,8
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T026,123,123,106,123
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T037,116,116,88,116
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T064,125,125,121,122
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T080,1,1,1,1
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T081,1,0,0,1
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T085,4,0,0,3
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T086,4,4,4,4
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T091,7,7,2,7
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T094,1,1,1,1
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T097,1,1,0,1
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T102,1,0,0,1
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T109,1,1,1,1
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T112,11,11,3,11
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T126,6,6,2,6
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T127,1,1,0,1
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T142,20,20,20,20
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T143,318,318,317,318
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,T153,8,8,3,8
+PARK,Greater Mattapan,T005,1,0,0,1
+PARK,Greater Mattapan,T025,10,10,8,10
+PARK,Greater Mattapan,T026,145,145,112,143
+PARK,Greater Mattapan,T032,6,0,0,6
+PARK,Greater Mattapan,T033,1,1,1,1
+PARK,Greater Mattapan,T034,1,1,1,1
+PARK,Greater Mattapan,T037,225,225,201,225
+PARK,Greater Mattapan,T042,1,1,1,1
+PARK,Greater Mattapan,T045,1,1,0,1
+PARK,Greater Mattapan,T057,1,0,0,1
+PARK,Greater Mattapan,T062,1,0,0,1
+PARK,Greater Mattapan,T064,202,202,198,202
+PARK,Greater Mattapan,T080,2,2,2,2
+PARK,Greater Mattapan,T081,8,0,0,8
+PARK,Greater Mattapan,T085,14,0,0,14
+PARK,Greater Mattapan,T086,2,2,1,2
+PARK,Greater Mattapan,T087,1,1,1,1
+PARK,Greater Mattapan,T091,13,13,7,13
+PARK,Greater Mattapan,T094,1,1,1,1
+PARK,Greater Mattapan,T097,1,1,1,1
+PARK,Greater Mattapan,T106,1,1,1,1
+PARK,Greater Mattapan,T107,3,3,1,3
+PARK,Greater Mattapan,T112,42,42,27,42
+PARK,Greater Mattapan,T115,2,2,2,2
+PARK,Greater Mattapan,T126,2,2,1,2
+PARK,Greater Mattapan,T127,2,2,0,2
+PARK,Greater Mattapan,T134,5,5,3,5
+PARK,Greater Mattapan,T142,101,101,94,100
+PARK,Greater Mattapan,T143,694,694,691,694
+PARK,Greater Mattapan,T144,3,3,2,2
+PARK,Greater Mattapan,T153,3,3,3,3
+PARK,Hyde Park,T012,1,1,0,1
+PARK,Hyde Park,T020,1,1,1,1
+PARK,Hyde Park,T025,1,1,0,1
+PARK,Hyde Park,T026,138,138,116,137
+PARK,Hyde Park,T032,2,0,0,2
+PARK,Hyde Park,T033,2,2,1,2
+PARK,Hyde Park,T037,77,77,67,77
+PARK,Hyde Park,T050,1,0,0,1
+PARK,Hyde Park,T052,1,1,1,1
+PARK,Hyde Park,T064,199,199,154,192
+PARK,Hyde Park,T080,1,1,0,1
+PARK,Hyde Park,T081,1,0,0,1
+PARK,Hyde Park,T085,12,0,0,12
+PARK,Hyde Park,T086,4,4,4,4
+PARK,Hyde Park,T091,10,10,9,10
+PARK,Hyde Park,T097,1,1,0,1
+PARK,Hyde Park,T112,8,8,7,8
+PARK,Hyde Park,T114,1,0,0,1
+PARK,Hyde Park,T126,3,3,2,3
+PARK,Hyde Park,T127,2,2,2,2
+PARK,Hyde Park,T138,1,1,0,1
+PARK,Hyde Park,T142,126,126,118,126
+PARK,Hyde Park,T143,690,690,686,689
+PARK,Hyde Park,T144,2,2,1,2
+PARK,Jamaica Plain,T015,1,0,0,1
+PARK,Jamaica Plain,T020,1,1,1,1
+PARK,Jamaica Plain,T025,24,24,19,24
+PARK,Jamaica Plain,T026,441,441,339,440
+PARK,Jamaica Plain,T036,3,3,1,3
+PARK,Jamaica Plain,T037,394,394,340,394
+PARK,Jamaica Plain,T042,1,1,0,1
+PARK,Jamaica Plain,T045,4,4,3,4
+PARK,Jamaica Plain,T064,289,289,267,284
+PARK,Jamaica Plain,T080,5,5,3,5
+PARK,Jamaica Plain,T081,5,0,0,5
+PARK,Jamaica Plain,T085,13,0,0,13
+PARK,Jamaica Plain,T086,36,36,31,36
+PARK,Jamaica Plain,T091,42,42,27,42
+PARK,Jamaica Plain,T097,1,1,1,1
+PARK,Jamaica Plain,T102,1,0,0,1
+PARK,Jamaica Plain,T107,5,5,0,5
+PARK,Jamaica Plain,T112,28,28,16,28
+PARK,Jamaica Plain,T115,1,1,1,1
+PARK,Jamaica Plain,T126,15,15,6,15
+PARK,Jamaica Plain,T127,2,2,0,2
+PARK,Jamaica Plain,T134,5,5,3,5
+PARK,Jamaica Plain,T139,1,1,1,1
+PARK,Jamaica Plain,T142,151,151,147,151
+PARK,Jamaica Plain,T143,871,871,851,868
+PARK,Jamaica Plain,T144,8,8,6,7
+PARK,Jamaica Plain,T153,3,3,1,3
+PARK,Mission Hill,T012,1,1,1,1
+PARK,Mission Hill,T025,1,1,0,1
+PARK,Mission Hill,T026,105,105,84,105
+PARK,Mission Hill,T037,44,44,40,44
+PARK,Mission Hill,T064,118,118,115,118
+PARK,Mission Hill,T081,1,0,0,1
+PARK,Mission Hill,T082,1,1,0,1
+PARK,Mission Hill,T085,6,0,0,6
+PARK,Mission Hill,T086,2,2,1,2
+PARK,Mission Hill,T091,4,4,1,4
+PARK,Mission Hill,T097,1,1,1,1
+PARK,Mission Hill,T112,5,5,3,5
+PARK,Mission Hill,T126,2,2,1,2
+PARK,Mission Hill,T142,20,20,20,20
+PARK,Mission Hill,T143,255,255,253,255
+PARK,Mission Hill,T144,1,1,1,1
+PARK,Roslindale,T012,1,1,1,1
+PARK,Roslindale,T020,1,1,1,1
+PARK,Roslindale,T025,6,6,4,6
+PARK,Roslindale,T026,168,168,115,168
+PARK,Roslindale,T032,2,0,0,2
+PARK,Roslindale,T037,234,234,229,234
+PARK,Roslindale,T045,2,2,1,2
+PARK,Roslindale,T064,303,303,289,297
+PARK,Roslindale,T081,2,0,0,2
+PARK,Roslindale,T085,16,0,0,16
+PARK,Roslindale,T086,9,9,9,9
+PARK,Roslindale,T091,18,18,9,18
+PARK,Roslindale,T094,1,1,1,1
+PARK,Roslindale,T101,1,1,0,1
+PARK,Roslindale,T107,1,1,0,1
+PARK,Roslindale,T112,29,29,19,29
+PARK,Roslindale,T114,1,0,0,1
+PARK,Roslindale,T115,1,1,1,1
+PARK,Roslindale,T126,3,3,1,3
+PARK,Roslindale,T134,1,1,1,1
+PARK,Roslindale,T142,101,101,94,101
+PARK,Roslindale,T143,778,778,774,778
+PARK,Roslindale,T144,3,3,2,3
+PARK,Roxbury,T003,1,1,0,1
+PARK,Roxbury,T004,1,0,0,1
+PARK,Roxbury,T012,9,9,6,9
+PARK,Roxbury,T015,1,0,0,1
+PARK,Roxbury,T025,74,74,42,74
+PARK,Roxbury,T026,500,500,410,500
+PARK,Roxbury,T032,5,0,0,5
+PARK,Roxbury,T037,879,879,701,879
+PARK,Roxbury,T045,8,8,4,8
+PARK,Roxbury,T064,324,324,312,315
+PARK,Roxbury,T080,1,1,1,1
+PARK,Roxbury,T081,9,0,0,9
+PARK,Roxbury,T082,1,1,0,1
+PARK,Roxbury,T085,29,0,0,29
+PARK,Roxbury,T086,15,15,12,15
+PARK,Roxbury,T091,59,59,37,59
+PARK,Roxbury,T094,5,5,3,5
+PARK,Roxbury,T097,2,2,1,2
+PARK,Roxbury,T106,2,2,2,2
+PARK,Roxbury,T107,1,1,1,1
+PARK,Roxbury,T112,68,68,39,68
+PARK,Roxbury,T115,5,5,5,5
+PARK,Roxbury,T126,8,8,3,8
+PARK,Roxbury,T127,5,5,3,5
+PARK,Roxbury,T134,2,2,2,2
+PARK,Roxbury,T142,167,167,160,167
+PARK,Roxbury,T143,1070,1070,1056,1064
+PARK,Roxbury,T144,11,11,9,9
+PARK,Roxbury,T153,11,11,5,11
+PARK,South Boston / South Boston Waterfront,T012,1,1,0,1
+PARK,South Boston / South Boston Waterfront,T019,1,1,1,1
+PARK,South Boston / South Boston Waterfront,T020,1,1,1,1
+PARK,South Boston / South Boston Waterfront,T025,25,25,21,25
+PARK,South Boston / South Boston Waterfront,T026,172,172,139,172
+PARK,South Boston / South Boston Waterfront,T032,1,0,0,1
+PARK,South Boston / South Boston Waterfront,T037,194,194,168,194
+PARK,South Boston / South Boston Waterfront,T064,370,370,346,370
+PARK,South Boston / South Boston Waterfront,T080,2,2,2,2
+PARK,South Boston / South Boston Waterfront,T081,13,0,0,13
+PARK,South Boston / South Boston Waterfront,T085,3,0,0,3
+PARK,South Boston / South Boston Waterfront,T086,20,20,18,20
+PARK,South Boston / South Boston Waterfront,T091,18,18,10,18
+PARK,South Boston / South Boston Waterfront,T097,1,1,0,1
+PARK,South Boston / South Boston Waterfront,T107,1,1,0,1
+PARK,South Boston / South Boston Waterfront,T112,34,34,19,34
+PARK,South Boston / South Boston Waterfront,T115,3,3,3,3
+PARK,South Boston / South Boston Waterfront,T126,13,13,6,13
+PARK,South Boston / South Boston Waterfront,T127,1,1,1,1
+PARK,South Boston / South Boston Waterfront,T134,1,1,1,1
+PARK,South Boston / South Boston Waterfront,T142,93,93,92,93
+PARK,South Boston / South Boston Waterfront,T143,1104,1104,1084,1103
+PARK,South Boston / South Boston Waterfront,T144,4,4,4,4
+PARK,South Boston / South Boston Waterfront,T153,1,1,1,1
+PARK,South End,T003,1,1,1,1
+PARK,South End,T012,8,8,5,8
+PARK,South End,T020,1,1,0,1
+PARK,South End,T025,56,56,46,56
+PARK,South End,T026,115,115,79,115
+PARK,South End,T033,1,1,0,1
+PARK,South End,T037,391,391,373,391
+PARK,South End,T040,1,1,1,1
+PARK,South End,T045,8,8,7,8
+PARK,South End,T058,5,5,4,5
+PARK,South End,T062,2,0,0,2
+PARK,South End,T064,307,307,284,301
+PARK,South End,T080,6,6,6,6
+PARK,South End,T081,4,0,0,4
+PARK,South End,T085,4,0,0,4
+PARK,South End,T086,3,3,2,3
+PARK,South End,T089,1,1,0,1
+PARK,South End,T091,41,41,23,41
+PARK,South End,T097,1,1,1,1
+PARK,South End,T102,1,0,0,1
+PARK,South End,T106,1,1,1,1
+PARK,South End,T112,36,36,21,36
+PARK,South End,T115,6,6,4,6
+PARK,South End,T126,8,8,1,8
+PARK,South End,T127,6,6,2,6
+PARK,South End,T142,94,94,89,94
+PARK,South End,T143,1016,1016,1000,1012
+PARK,South End,T144,2,2,1,2
+PARK,South End,T153,7,7,6,7
+PARK,Unspecified,T001,1,0,0,1
+PARK,Unspecified,T003,1,1,1,1
+PARK,Unspecified,T012,9,9,7,9
+PARK,Unspecified,T013,2,0,0,2
+PARK,Unspecified,T016,58,58,34,58
+PARK,Unspecified,T025,100,100,80,100
+PARK,Unspecified,T026,892,892,655,889
+PARK,Unspecified,T032,12,0,0,12
+PARK,Unspecified,T033,124,124,113,124
+PARK,Unspecified,T036,3,3,2,3
+PARK,Unspecified,T037,1192,1192,1038,1192
+PARK,Unspecified,T040,2,2,1,2
+PARK,Unspecified,T045,13,13,11,13
+PARK,Unspecified,T050,1,0,0,1
+PARK,Unspecified,T064,182,182,170,176
+PARK,Unspecified,T080,6,6,3,6
+PARK,Unspecified,T081,317,0,0,307
+PARK,Unspecified,T082,1,1,1,1
+PARK,Unspecified,T085,15,0,0,15
+PARK,Unspecified,T086,182,182,168,181
+PARK,Unspecified,T091,117,117,74,117
+PARK,Unspecified,T094,14,14,9,14
+PARK,Unspecified,T097,1,1,1,1
+PARK,Unspecified,T102,2,1,0,2
+PARK,Unspecified,T106,1,1,0,1
+PARK,Unspecified,T107,4,4,3,4
+PARK,Unspecified,T109,2,2,1,2
+PARK,Unspecified,T112,83,83,57,83
+PARK,Unspecified,T124,1,0,0,1
+PARK,Unspecified,T126,20,20,6,18
+PARK,Unspecified,T127,4,4,4,4
+PARK,Unspecified,T134,2,2,2,2
+PARK,Unspecified,T142,27,27,22,27
+PARK,Unspecified,T143,754,754,745,751
+PARK,Unspecified,T144,44,44,40,43
+PARK,Unspecified,T153,15,15,7,15
+PARK,West Roxbury,T012,1,1,1,1
+PARK,West Roxbury,T015,1,0,0,1
+PARK,West Roxbury,T025,7,7,6,7
+PARK,West Roxbury,T026,201,201,169,199
+PARK,West Roxbury,T033,3,3,2,3
+PARK,West Roxbury,T037,107,107,96,107
+PARK,West Roxbury,T064,425,425,397,415
+PARK,West Roxbury,T081,4,0,0,4
+PARK,West Roxbury,T082,2,2,2,2
+PARK,West Roxbury,T085,17,0,0,17
+PARK,West Roxbury,T086,7,7,7,7
+PARK,West Roxbury,T091,12,12,9,12
+PARK,West Roxbury,T094,2,2,2,2
+PARK,West Roxbury,T102,1,0,0,1
+PARK,West Roxbury,T112,5,5,4,5
+PARK,West Roxbury,T115,2,2,2,2
+PARK,West Roxbury,T126,10,10,3,10
+PARK,West Roxbury,T127,3,3,1,3
+PARK,West Roxbury,T134,1,1,0,1
+PARK,West Roxbury,T142,213,213,199,213
+PARK,West Roxbury,T143,1327,1327,1312,1322
+PARK,West Roxbury,T144,1,1,1,1
+PWDx,Allston / Brighton,T001,1,0,0,1
+PWDx,Allston / Brighton,T004,1,0,0,1
+PWDx,Allston / Brighton,T010,2,0,0,2
+PWDx,Allston / Brighton,T012,3236,3236,3217,3236
+PWDx,Allston / Brighton,T015,1,0,0,0
+PWDx,Allston / Brighton,T019,26,26,25,26
+PWDx,Allston / Brighton,T020,109,109,61,103
+PWDx,Allston / Brighton,T023,1,1,1,1
+PWDx,Allston / Brighton,T025,508,508,500,508
+PWDx,Allston / Brighton,T026,5,5,1,2
+PWDx,Allston / Brighton,T032,26,0,0,26
+PWDx,Allston / Brighton,T033,8,8,7,8
+PWDx,Allston / Brighton,T034,124,124,99,121
+PWDx,Allston / Brighton,T037,12,12,11,12
+PWDx,Allston / Brighton,T039,3,3,3,3
+PWDx,Allston / Brighton,T040,546,546,543,546
+PWDx,Allston / Brighton,T042,9,9,7,9
+PWDx,Allston / Brighton,T044,5,5,5,5
+PWDx,Allston / Brighton,T045,3081,3081,3077,3081
+PWDx,Allston / Brighton,T046,2,2,2,2
+PWDx,Allston / Brighton,T048,14,14,7,11
+PWDx,Allston / Brighton,T050,12,0,0,12
+PWDx,Allston / Brighton,T052,1,1,1,1
+PWDx,Allston / Brighton,T053,21,21,18,21
+PWDx,Allston / Brighton,T054,3238,0,0,3238
+PWDx,Allston / Brighton,T057,2,0,0,0
+PWDx,Allston / Brighton,T058,2518,2518,2453,2518
+PWDx,Allston / Brighton,T063,3,3,1,2
+PWDx,Allston / Brighton,T064,2,2,1,1
+PWDx,Allston / Brighton,T074,3,3,3,3
+PWDx,Allston / Brighton,T079,16,16,16,16
+PWDx,Allston / Brighton,T080,150,150,106,150
+PWDx,Allston / Brighton,T082,7,7,3,3
+PWDx,Allston / Brighton,T084,20,20,20,20
+PWDx,Allston / Brighton,T085,3,0,0,3
+PWDx,Allston / Brighton,T086,7,7,4,6
+PWDx,Allston / Brighton,T087,3,3,0,3
+PWDx,Allston / Brighton,T089,23,23,23,23
+PWDx,Allston / Brighton,T091,1891,1891,1890,1891
+PWDx,Allston / Brighton,T096,2,2,2,2
+PWDx,Allston / Brighton,T097,2792,2792,2792,2792
+PWDx,Allston / Brighton,T102,87,0,0,84
+PWDx,Allston / Brighton,T104,1098,1098,196,1098
+PWDx,Allston / Brighton,T106,30,30,30,30
+PWDx,Allston / Brighton,T107,1495,1495,499,1222
+PWDx,Allston / Brighton,T108,852,852,787,852
+PWDx,Allston / Brighton,T109,41,41,40,41
+PWDx,Allston / Brighton,T110,1,0,0,1
+PWDx,Allston / Brighton,T112,2832,2832,2693,2831
+PWDx,Allston / Brighton,T114,58,0,0,18
+PWDx,Allston / Brighton,T115,33,33,32,33
+PWDx,Allston / Brighton,T119,1656,0,0,876
+PWDx,Allston / Brighton,T120,1339,0,0,462
+PWDx,Allston / Brighton,T125,102,102,46,49
+PWDx,Allston / Brighton,T126,647,647,188,314
+PWDx,Allston / Brighton,T127,15,15,10,13
+PWDx,Allston / Brighton,T130,7,0,0,7
+PWDx,Allston / Brighton,T132,519,519,514,519
+PWDx,Allston / Brighton,T133,47,47,45,46
+PWDx,Allston / Brighton,T134,327,327,128,273
+PWDx,Allston / Brighton,T135,8,8,1,1
+PWDx,Allston / Brighton,T136,62,62,62,62
+PWDx,Allston / Brighton,T138,2,2,0,1
+PWDx,Allston / Brighton,T139,1,1,1,1
+PWDx,Allston / Brighton,T140,2,0,0,2
+PWDx,Allston / Brighton,T141,3,3,3,3
+PWDx,Allston / Brighton,T143,78,78,76,76
+PWDx,Allston / Brighton,T147,2,2,0,2
+PWDx,Allston / Brighton,T151,3,3,3,3
+PWDx,Allston / Brighton,T153,564,564,515,564
+PWDx,Allston / Brighton,T154,1,1,0,1
+PWDx,Allston / Brighton,T156,2,0,0,2
+PWDx,Allston / Brighton,T160,22,22,13,22
+PWDx,Allston / Brighton,T163,1,1,0,1
+PWDx,Back Bay,T001,1,0,0,1
+PWDx,Back Bay,T002,1,1,1,1
+PWDx,Back Bay,T003,1,1,0,1
+PWDx,Back Bay,T009,2,2,2,2
+PWDx,Back Bay,T012,3989,3989,3981,3989
+PWDx,Back Bay,T015,4,0,0,1
+PWDx,Back Bay,T019,20,20,20,20
+PWDx,Back Bay,T020,120,120,68,108
+PWDx,Back Bay,T021,1,1,1,1
+PWDx,Back Bay,T023,1,1,1,1
+PWDx,Back Bay,T025,572,572,560,572
+PWDx,Back Bay,T026,5,5,4,5
+PWDx,Back Bay,T032,5,0,0,5
+PWDx,Back Bay,T033,1,1,0,0
+PWDx,Back Bay,T034,88,88,64,83
+PWDx,Back Bay,T036,8,8,6,8
+PWDx,Back Bay,T037,3,3,3,3
+PWDx,Back Bay,T040,381,380,377,381
+PWDx,Back Bay,T042,9,9,9,9
+PWDx,Back Bay,T044,66,66,66,66
+PWDx,Back Bay,T045,3498,3498,3497,3498
+PWDx,Back Bay,T046,3,3,2,2
+PWDx,Back Bay,T048,6,6,2,5
+PWDx,Back Bay,T050,30,0,0,30
+PWDx,Back Bay,T053,17,17,12,17
+PWDx,Back Bay,T054,383,0,0,383
+PWDx,Back Bay,T057,2,0,0,2
+PWDx,Back Bay,T058,373,373,369,373
+PWDx,Back Bay,T062,1,0,0,1
+PWDx,Back Bay,T074,4,4,4,4
+PWDx,Back Bay,T079,5,5,5,5
+PWDx,Back Bay,T080,270,270,153,270
+PWDx,Back Bay,T084,3,3,3,3
+PWDx,Back Bay,T085,1,0,0,1
+PWDx,Back Bay,T086,23,23,5,15
+PWDx,Back Bay,T089,2,2,2,2
+PWDx,Back Bay,T091,508,508,505,508
+PWDx,Back Bay,T096,4,4,3,4
+PWDx,Back Bay,T097,737,737,736,737
+PWDx,Back Bay,T101,1,1,1,1
+PWDx,Back Bay,T102,35,0,0,32
+PWDx,Back Bay,T104,44,44,11,44
+PWDx,Back Bay,T106,7,7,7,7
+PWDx,Back Bay,T107,1247,1247,319,775
+PWDx,Back Bay,T108,76,76,70,76
+PWDx,Back Bay,T109,17,17,17,17
+PWDx,Back Bay,T110,1,0,0,1
+PWDx,Back Bay,T112,1604,1604,1551,1604
+PWDx,Back Bay,T114,43,0,0,8
+PWDx,Back Bay,T115,29,29,28,28
+PWDx,Back Bay,T119,309,0,0,153
+PWDx,Back Bay,T120,275,0,0,91
+PWDx,Back Bay,T124,2,0,0,2
+PWDx,Back Bay,T126,476,476,85,220
+PWDx,Back Bay,T127,8,8,5,8
+PWDx,Back Bay,T130,4,0,0,4
+PWDx,Back Bay,T131,1,1,1,1
+PWDx,Back Bay,T132,28,28,28,28
+PWDx,Back Bay,T133,49,49,46,49
+PWDx,Back Bay,T134,833,833,482,813
+PWDx,Back Bay,T135,5,5,2,3
+PWDx,Back Bay,T136,20,20,20,20
+PWDx,Back Bay,T138,7,7,2,6
+PWDx,Back Bay,T139,4,4,4,4
+PWDx,Back Bay,T140,1,0,0,0
+PWDx,Back Bay,T143,9,9,9,9
+PWDx,Back Bay,T147,1,1,0,1
+PWDx,Back Bay,T149,1,1,1,1
+PWDx,Back Bay,T150,2,2,2,2
+PWDx,Back Bay,T151,2,2,2,2
+PWDx,Back Bay,T153,125,125,115,125
+PWDx,Back Bay,T154,1,1,0,1
+PWDx,Back Bay,T155,1,1,1,1
+PWDx,Back Bay,T156,1,0,0,1
+PWDx,Back Bay,T160,33,33,10,30
+PWDx,Back Bay,T162,1,1,1,1
+PWDx,Beacon Hill,T012,4123,4123,4116,4123
+PWDx,Beacon Hill,T019,8,8,8,8
+PWDx,Beacon Hill,T020,61,61,30,54
+PWDx,Beacon Hill,T021,2,2,2,2
+PWDx,Beacon Hill,T025,343,343,333,343
+PWDx,Beacon Hill,T026,7,7,2,6
+PWDx,Beacon Hill,T027,1,1,1,1
+PWDx,Beacon Hill,T032,3,0,0,3
+PWDx,Beacon Hill,T033,1,1,0,0
+PWDx,Beacon Hill,T034,29,29,22,28
+PWDx,Beacon Hill,T040,182,182,180,182
+PWDx,Beacon Hill,T042,2,2,2,2
+PWDx,Beacon Hill,T044,3,3,3,3
+PWDx,Beacon Hill,T045,4574,4574,4574,4574
+PWDx,Beacon Hill,T050,10,0,0,10
+PWDx,Beacon Hill,T051,1,1,0,1
+PWDx,Beacon Hill,T053,7,7,3,7
+PWDx,Beacon Hill,T054,338,0,0,338
+PWDx,Beacon Hill,T058,553,553,552,553
+PWDx,Beacon Hill,T063,1,1,0,1
+PWDx,Beacon Hill,T074,1,1,1,1
+PWDx,Beacon Hill,T079,2,2,2,2
+PWDx,Beacon Hill,T080,18,18,12,17
+PWDx,Beacon Hill,T082,4,4,2,3
+PWDx,Beacon Hill,T084,1,1,1,1
+PWDx,Beacon Hill,T086,14,14,1,12
+PWDx,Beacon Hill,T089,1,1,1,1
+PWDx,Beacon Hill,T091,511,511,511,511
+PWDx,Beacon Hill,T096,1,1,1,1
+PWDx,Beacon Hill,T097,91,91,91,91
+PWDx,Beacon Hill,T102,23,0,0,22
+PWDx,Beacon Hill,T104,16,16,4,16
+PWDx,Beacon Hill,T106,19,19,19,19
+PWDx,Beacon Hill,T107,425,425,111,311
+PWDx,Beacon Hill,T108,25,25,25,25
+PWDx,Beacon Hill,T109,3,3,3,3
+PWDx,Beacon Hill,T110,1,0,0,1
+PWDx,Beacon Hill,T112,1726,1726,1686,1724
+PWDx,Beacon Hill,T114,17,0,0,8
+PWDx,Beacon Hill,T115,13,13,12,13
+PWDx,Beacon Hill,T119,199,0,0,111
+PWDx,Beacon Hill,T120,179,0,0,57
+PWDx,Beacon Hill,T123,1,1,1,1
+PWDx,Beacon Hill,T126,670,670,89,455
+PWDx,Beacon Hill,T127,5,5,4,5
+PWDx,Beacon Hill,T130,1,0,0,0
+PWDx,Beacon Hill,T132,17,17,17,17
+PWDx,Beacon Hill,T133,26,26,21,26
+PWDx,Beacon Hill,T134,755,755,504,745
+PWDx,Beacon Hill,T135,2,2,1,1
+PWDx,Beacon Hill,T136,16,16,16,16
+PWDx,Beacon Hill,T138,3,3,0,3
+PWDx,Beacon Hill,T139,1,1,1,1
+PWDx,Beacon Hill,T140,1,0,0,1
+PWDx,Beacon Hill,T143,1,1,1,1
+PWDx,Beacon Hill,T151,3,3,3,3
+PWDx,Beacon Hill,T153,58,58,54,58
+PWDx,Beacon Hill,T154,4,4,2,3
+PWDx,Beacon Hill,T156,1,0,0,1
+PWDx,Beacon Hill,T160,14,14,5,14
+PWDx,Beacon Hill,T161,2,2,0,2
+PWDx,Charlestown,T001,1,0,0,1
+PWDx,Charlestown,T003,1,1,1,1
+PWDx,Charlestown,T012,368,368,367,368
+PWDx,Charlestown,T019,25,25,25,25
+PWDx,Charlestown,T020,134,134,96,124
+PWDx,Charlestown,T021,6,6,6,6
+PWDx,Charlestown,T023,1,1,1,1
+PWDx,Charlestown,T025,353,353,348,353
+PWDx,Charlestown,T026,2,2,0,1
+PWDx,Charlestown,T027,2,2,0,2
+PWDx,Charlestown,T032,5,0,0,5
+PWDx,Charlestown,T033,1,1,1,1
+PWDx,Charlestown,T034,84,84,71,84
+PWDx,Charlestown,T036,9,9,7,9
+PWDx,Charlestown,T037,5,5,5,5
+PWDx,Charlestown,T039,1,1,1,1
+PWDx,Charlestown,T040,117,117,114,117
+PWDx,Charlestown,T042,9,9,9,9
+PWDx,Charlestown,T044,1,1,1,1
+PWDx,Charlestown,T045,682,682,680,682
+PWDx,Charlestown,T046,1,1,1,1
+PWDx,Charlestown,T048,22,22,13,19
+PWDx,Charlestown,T050,6,0,0,6
+PWDx,Charlestown,T053,24,24,17,24
+PWDx,Charlestown,T054,565,0,0,565
+PWDx,Charlestown,T058,508,508,507,508
+PWDx,Charlestown,T062,1,0,0,1
+PWDx,Charlestown,T063,2,2,0,0
+PWDx,Charlestown,T074,6,6,6,6
+PWDx,Charlestown,T079,9,9,9,9
+PWDx,Charlestown,T080,27,27,19,27
+PWDx,Charlestown,T082,10,10,1,6
+PWDx,Charlestown,T084,8,8,8,8
+PWDx,Charlestown,T085,2,0,0,2
+PWDx,Charlestown,T086,6,6,1,6
+PWDx,Charlestown,T089,3,3,3,3
+PWDx,Charlestown,T091,296,296,294,296
+PWDx,Charlestown,T097,165,165,165,165
+PWDx,Charlestown,T102,41,0,0,39
+PWDx,Charlestown,T104,286,286,29,286
+PWDx,Charlestown,T106,2,2,2,2
+PWDx,Charlestown,T107,630,630,160,437
+PWDx,Charlestown,T108,231,231,208,231
+PWDx,Charlestown,T109,28,28,27,28
+PWDx,Charlestown,T112,738,738,692,731
+PWDx,Charlestown,T114,22,0,0,8
+PWDx,Charlestown,T115,8,8,8,8
+PWDx,Charlestown,T119,469,0,0,262
+PWDx,Charlestown,T120,388,0,0,130
+PWDx,Charlestown,T126,474,474,135,285
+PWDx,Charlestown,T127,4,4,1,4
+PWDx,Charlestown,T130,6,0,0,5
+PWDx,Charlestown,T132,110,110,109,110
+PWDx,Charlestown,T133,38,38,35,37
+PWDx,Charlestown,T134,1068,1068,663,1038
+PWDx,Charlestown,T135,19,19,3,5
+PWDx,Charlestown,T136,2,2,2,2
+PWDx,Charlestown,T138,3,3,2,3
+PWDx,Charlestown,T140,1,0,0,0
+PWDx,Charlestown,T141,1,1,1,1
+PWDx,Charlestown,T143,18,18,17,17
+PWDx,Charlestown,T153,175,175,170,175
+PWDx,Charlestown,T154,2,2,1,2
+PWDx,Charlestown,T155,1,1,1,1
+PWDx,Charlestown,T156,1,0,0,1
+PWDx,Charlestown,T160,16,16,8,15
+PWDx,Charlestown,T161,2,2,0,2
+PWDx,Chestnut Hill,T045,2,2,2,2
+PWDx,Chestnut Hill,T058,3,3,3,3
+PWDx,Chestnut Hill,T097,3,3,3,3
+PWDx,Chestnut Hill,T104,2,2,0,2
+PWDx,Chestnut Hill,T107,1,1,0,1
+PWDx,Chestnut Hill,T132,1,1,1,1
+PWDx,Dorchester,T001,1,0,0,1
+PWDx,Dorchester,T002,1,1,1,1
+PWDx,Dorchester,T003,2,2,1,2
+PWDx,Dorchester,T004,1,0,0,1
+PWDx,Dorchester,T005,1,0,0,0
+PWDx,Dorchester,T006,1,0,0,1
+PWDx,Dorchester,T011,2,2,1,2
+PWDx,Dorchester,T012,1913,1913,1901,1913
+PWDx,Dorchester,T015,2,0,0,0
+PWDx,Dorchester,T019,64,64,63,64
+PWDx,Dorchester,T020,356,356,217,316
+PWDx,Dorchester,T021,16,16,16,16
+PWDx,Dorchester,T025,370,370,368,370
+PWDx,Dorchester,T026,8,8,3,6
+PWDx,Dorchester,T032,50,0,0,50
+PWDx,Dorchester,T033,8,8,6,6
+PWDx,Dorchester,T034,288,288,236,285
+PWDx,Dorchester,T035,2,2,0,2
+PWDx,Dorchester,T037,30,30,26,28
+PWDx,Dorchester,T039,43,43,41,43
+PWDx,Dorchester,T040,848,848,840,848
+PWDx,Dorchester,T042,21,21,21,21
+PWDx,Dorchester,T043,1,1,1,1
+PWDx,Dorchester,T044,44,44,44,44
+PWDx,Dorchester,T045,3874,3874,3870,3874
+PWDx,Dorchester,T046,12,12,2,10
+PWDx,Dorchester,T048,51,51,30,50
+PWDx,Dorchester,T050,15,0,0,15
+PWDx,Dorchester,T051,2,2,2,2
+PWDx,Dorchester,T052,3,3,3,3
+PWDx,Dorchester,T053,85,85,74,85
+PWDx,Dorchester,T054,8694,2,1,8694
+PWDx,Dorchester,T057,2,0,0,0
+PWDx,Dorchester,T058,4395,4395,4299,4395
+PWDx,Dorchester,T063,2,2,2,2
+PWDx,Dorchester,T064,5,5,5,5
+PWDx,Dorchester,T065,1,1,1,1
+PWDx,Dorchester,T074,17,17,17,17
+PWDx,Dorchester,T079,29,29,27,29
+PWDx,Dorchester,T080,109,109,86,109
+PWDx,Dorchester,T082,27,27,7,11
+PWDx,Dorchester,T084,69,69,69,69
+PWDx,Dorchester,T085,1,0,0,1
+PWDx,Dorchester,T086,13,13,8,11
+PWDx,Dorchester,T089,73,73,73,73
+PWDx,Dorchester,T091,2080,2080,2075,2080
+PWDx,Dorchester,T092,3,0,0,1
+PWDx,Dorchester,T096,10,10,7,10
+PWDx,Dorchester,T097,3634,3634,3632,3634
+PWDx,Dorchester,T101,3,3,3,3
+PWDx,Dorchester,T102,192,0,0,176
+PWDx,Dorchester,T104,1347,1347,102,1347
+PWDx,Dorchester,T106,25,25,23,25
+PWDx,Dorchester,T107,1639,1639,951,1529
+PWDx,Dorchester,T108,1712,1712,1563,1712
+PWDx,Dorchester,T109,163,163,161,163
+PWDx,Dorchester,T110,5,0,0,5
+PWDx,Dorchester,T112,6649,6649,6578,6647
+PWDx,Dorchester,T113,1,1,0,1
+PWDx,Dorchester,T114,106,0,0,30
+PWDx,Dorchester,T115,112,112,111,111
+PWDx,Dorchester,T119,6462,0,0,3037
+PWDx,Dorchester,T120,2409,0,0,828
+PWDx,Dorchester,T123,1,1,1,1
+PWDx,Dorchester,T124,1,0,0,0
+PWDx,Dorchester,T126,1098,1098,265,470
+PWDx,Dorchester,T127,15,15,9,14
+PWDx,Dorchester,T130,90,0,0,89
+PWDx,Dorchester,T131,1,1,1,1
+PWDx,Dorchester,T132,928,928,922,928
+PWDx,Dorchester,T133,140,140,133,140
+PWDx,Dorchester,T134,875,875,494,836
+PWDx,Dorchester,T135,71,71,2,10
+PWDx,Dorchester,T136,10,10,10,10
+PWDx,Dorchester,T138,6,6,4,6
+PWDx,Dorchester,T139,6,6,6,6
+PWDx,Dorchester,T140,6,0,0,2
+PWDx,Dorchester,T141,29,29,29,29
+PWDx,Dorchester,T143,92,92,92,92
+PWDx,Dorchester,T147,2,2,1,2
+PWDx,Dorchester,T149,1,1,1,1
+PWDx,Dorchester,T151,5,5,5,5
+PWDx,Dorchester,T153,495,495,470,495
+PWDx,Dorchester,T154,6,6,4,6
+PWDx,Dorchester,T156,1,0,0,1
+PWDx,Dorchester,T160,23,23,12,23
+PWDx,Dorchester,T161,3,3,0,3
+PWDx,Dorchester,T162,1,1,1,1
+PWDx,Downtown / Financial District,T001,1,0,0,1
+PWDx,Downtown / Financial District,T012,4178,4178,4164,4178
+PWDx,Downtown / Financial District,T019,29,29,29,29
+PWDx,Downtown / Financial District,T020,97,97,48,87
+PWDx,Downtown / Financial District,T021,4,4,4,4
+PWDx,Downtown / Financial District,T025,404,404,400,404
+PWDx,Downtown / Financial District,T026,12,12,4,7
+PWDx,Downtown / Financial District,T027,1,1,1,1
+PWDx,Downtown / Financial District,T032,2,0,0,2
+PWDx,Downtown / Financial District,T033,3,3,2,3
+PWDx,Downtown / Financial District,T034,134,134,108,129
+PWDx,Downtown / Financial District,T035,2,2,1,1
+PWDx,Downtown / Financial District,T036,1,1,0,1
+PWDx,Downtown / Financial District,T037,26,26,25,25
+PWDx,Downtown / Financial District,T040,391,391,390,391
+PWDx,Downtown / Financial District,T042,14,14,14,14
+PWDx,Downtown / Financial District,T044,35,35,35,35
+PWDx,Downtown / Financial District,T045,2763,2763,2760,2762
+PWDx,Downtown / Financial District,T046,5,5,4,4
+PWDx,Downtown / Financial District,T048,23,23,13,19
+PWDx,Downtown / Financial District,T050,9,0,0,9
+PWDx,Downtown / Financial District,T053,44,44,34,44
+PWDx,Downtown / Financial District,T054,519,0,0,519
+PWDx,Downtown / Financial District,T058,484,484,484,484
+PWDx,Downtown / Financial District,T059,1,1,0,1
+PWDx,Downtown / Financial District,T064,1,1,1,1
+PWDx,Downtown / Financial District,T074,1,1,1,1
+PWDx,Downtown / Financial District,T076,1,1,1,1
+PWDx,Downtown / Financial District,T079,8,8,8,8
+PWDx,Downtown / Financial District,T080,107,107,72,107
+PWDx,Downtown / Financial District,T082,5,5,1,1
+PWDx,Downtown / Financial District,T084,4,4,4,4
+PWDx,Downtown / Financial District,T086,26,26,5,22
+PWDx,Downtown / Financial District,T089,1,1,1,1
+PWDx,Downtown / Financial District,T091,492,492,489,492
+PWDx,Downtown / Financial District,T093,1,1,0,1
+PWDx,Downtown / Financial District,T096,19,19,17,19
+PWDx,Downtown / Financial District,T097,244,244,243,244
+PWDx,Downtown / Financial District,T102,49,0,0,47
+PWDx,Downtown / Financial District,T104,6,6,3,6
+PWDx,Downtown / Financial District,T106,13,13,13,13
+PWDx,Downtown / Financial District,T107,1234,1234,302,836
+PWDx,Downtown / Financial District,T108,23,23,21,23
+PWDx,Downtown / Financial District,T109,26,26,26,26
+PWDx,Downtown / Financial District,T110,4,0,0,4
+PWDx,Downtown / Financial District,T112,1751,1751,1703,1743
+PWDx,Downtown / Financial District,T114,37,0,0,12
+PWDx,Downtown / Financial District,T115,12,12,9,10
+PWDx,Downtown / Financial District,T119,332,0,0,183
+PWDx,Downtown / Financial District,T120,330,0,0,122
+PWDx,Downtown / Financial District,T124,4,0,0,4
+PWDx,Downtown / Financial District,T126,686,686,146,382
+PWDx,Downtown / Financial District,T127,10,10,4,8
+PWDx,Downtown / Financial District,T130,15,0,0,13
+PWDx,Downtown / Financial District,T131,1,1,1,1
+PWDx,Downtown / Financial District,T132,69,69,69,69
+PWDx,Downtown / Financial District,T133,50,50,46,50
+PWDx,Downtown / Financial District,T134,664,664,355,604
+PWDx,Downtown / Financial District,T135,12,12,5,7
+PWDx,Downtown / Financial District,T136,9,9,9,9
+PWDx,Downtown / Financial District,T138,5,5,2,4
+PWDx,Downtown / Financial District,T139,2,2,1,2
+PWDx,Downtown / Financial District,T140,1,0,0,0
+PWDx,Downtown / Financial District,T141,8,8,8,8
+PWDx,Downtown / Financial District,T143,1,1,1,1
+PWDx,Downtown / Financial District,T147,2,2,0,1
+PWDx,Downtown / Financial District,T150,1,1,1,1
+PWDx,Downtown / Financial District,T151,4,4,4,4
+PWDx,Downtown / Financial District,T153,113,113,108,113
+PWDx,Downtown / Financial District,T154,1,1,1,1
+PWDx,Downtown / Financial District,T155,1,1,1,1
+PWDx,Downtown / Financial District,T156,7,0,0,7
+PWDx,Downtown / Financial District,T160,42,42,15,42
+PWDx,Downtown / Financial District,T161,1,1,0,1
+PWDx,East Boston,T001,2,0,0,2
+PWDx,East Boston,T003,1,1,1,1
+PWDx,East Boston,T004,1,0,0,1
+PWDx,East Boston,T010,2,0,0,2
+PWDx,East Boston,T011,3,3,0,3
+PWDx,East Boston,T012,1891,1891,1845,1891
+PWDx,East Boston,T019,34,34,34,34
+PWDx,East Boston,T020,134,134,83,129
+PWDx,East Boston,T021,8,8,8,8
+PWDx,East Boston,T023,1,1,1,1
+PWDx,East Boston,T025,179,179,177,179
+PWDx,East Boston,T026,6,6,1,6
+PWDx,East Boston,T032,10,0,0,9
+PWDx,East Boston,T033,9,9,5,5
+PWDx,East Boston,T034,100,100,86,97
+PWDx,East Boston,T035,1,1,0,0
+PWDx,East Boston,T037,23,23,22,23
+PWDx,East Boston,T039,7,7,7,7
+PWDx,East Boston,T040,683,683,679,683
+PWDx,East Boston,T042,9,9,9,9
+PWDx,East Boston,T044,19,19,19,19
+PWDx,East Boston,T045,2776,2776,2771,2776
+PWDx,East Boston,T046,3,3,1,3
+PWDx,East Boston,T048,6,6,2,6
+PWDx,East Boston,T050,3,0,0,3
+PWDx,East Boston,T053,40,40,31,40
+PWDx,East Boston,T054,3223,0,0,3223
+PWDx,East Boston,T058,694,694,680,694
+PWDx,East Boston,T059,1,1,0,1
+PWDx,East Boston,T062,1,0,0,1
+PWDx,East Boston,T063,1,1,0,1
+PWDx,East Boston,T064,4,4,4,4
+PWDx,East Boston,T074,16,16,16,16
+PWDx,East Boston,T079,9,9,8,9
+PWDx,East Boston,T080,62,62,50,62
+PWDx,East Boston,T082,25,25,6,15
+PWDx,East Boston,T084,14,14,14,14
+PWDx,East Boston,T085,1,0,0,1
+PWDx,East Boston,T086,36,36,6,24
+PWDx,East Boston,T089,20,20,20,20
+PWDx,East Boston,T091,686,686,685,686
+PWDx,East Boston,T093,1,1,1,1
+PWDx,East Boston,T096,1,1,1,1
+PWDx,East Boston,T097,850,850,850,850
+PWDx,East Boston,T102,66,0,0,62
+PWDx,East Boston,T104,415,415,46,415
+PWDx,East Boston,T106,13,13,13,13
+PWDx,East Boston,T107,1506,1506,1339,1462
+PWDx,East Boston,T108,736,736,683,736
+PWDx,East Boston,T109,34,34,31,34
+PWDx,East Boston,T110,2,0,0,2
+PWDx,East Boston,T112,2699,2699,2661,2699
+PWDx,East Boston,T114,32,0,0,10
+PWDx,East Boston,T115,34,34,33,33
+PWDx,East Boston,T119,1022,0,0,540
+PWDx,East Boston,T120,569,0,0,190
+PWDx,East Boston,T125,1,1,0,0
+PWDx,East Boston,T126,530,530,224,341
+PWDx,East Boston,T127,8,8,3,7
+PWDx,East Boston,T129,1,1,1,1
+PWDx,East Boston,T130,16,0,0,16
+PWDx,East Boston,T132,172,172,172,172
+PWDx,East Boston,T133,28,28,26,28
+PWDx,East Boston,T134,443,443,169,418
+PWDx,East Boston,T135,6,6,0,0
+PWDx,East Boston,T136,12,12,12,12
+PWDx,East Boston,T139,2,2,2,2
+PWDx,East Boston,T140,1,0,0,1
+PWDx,East Boston,T141,10,10,10,10
+PWDx,East Boston,T143,37,37,35,35
+PWDx,East Boston,T147,1,1,0,1
+PWDx,East Boston,T151,1,1,1,1
+PWDx,East Boston,T153,373,373,364,373
+PWDx,East Boston,T154,2,2,1,2
+PWDx,East Boston,T156,13,0,0,13
+PWDx,East Boston,T160,11,11,1,11
+PWDx,East Boston,T162,1,1,1,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T001,1,0,0,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T010,1,0,0,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T012,449,449,445,449
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T015,1,0,0,0
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T019,2,2,1,2
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T020,47,47,32,47
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T021,1,1,1,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T025,279,279,276,278
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T026,1,1,1,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T033,1,1,1,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T034,53,53,45,53
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T037,2,2,2,2
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T040,105,105,105,105
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T042,4,4,4,4
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T044,6,6,6,6
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T045,465,465,462,465
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T048,1,1,1,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T050,9,0,0,9
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T053,10,10,8,10
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T054,118,0,0,118
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T058,109,109,106,109
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T063,1,1,0,0
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T079,4,4,4,4
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T080,196,196,134,195
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T082,1,1,0,0
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T084,3,3,3,3
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T085,1,0,0,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T086,8,8,5,7
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T091,145,145,145,145
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T096,9,9,9,9
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T097,131,131,130,131
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T102,9,0,0,9
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T104,5,5,0,5
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T106,3,3,3,3
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T107,363,363,174,333
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T108,15,15,15,15
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T109,7,7,7,7
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T110,1,0,0,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T112,712,712,694,710
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T114,9,0,0,3
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T115,3,3,3,3
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T119,85,0,0,49
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T120,84,0,0,24
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T124,1,0,0,0
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T126,178,178,41,75
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T127,8,8,6,7
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T130,1,0,0,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T132,4,4,4,4
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T133,10,10,8,10
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T134,200,200,95,183
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T135,4,4,1,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T136,10,10,10,10
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T139,1,1,1,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T143,9,9,8,8
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T151,3,3,3,3
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T153,56,56,36,56
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T154,1,1,0,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T156,1,0,0,1
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,T160,23,23,4,23
+PWDx,Greater Mattapan,T001,2,0,0,2
+PWDx,Greater Mattapan,T002,1,1,1,1
+PWDx,Greater Mattapan,T003,1,1,1,1
+PWDx,Greater Mattapan,T004,3,0,0,3
+PWDx,Greater Mattapan,T011,1,1,0,1
+PWDx,Greater Mattapan,T012,677,677,669,677
+PWDx,Greater Mattapan,T019,20,20,20,20
+PWDx,Greater Mattapan,T020,114,114,56,87
+PWDx,Greater Mattapan,T021,6,6,5,5
+PWDx,Greater Mattapan,T025,71,71,70,71
+PWDx,Greater Mattapan,T026,1,1,1,1
+PWDx,Greater Mattapan,T032,17,0,0,17
+PWDx,Greater Mattapan,T033,7,7,6,6
+PWDx,Greater Mattapan,T034,102,102,95,102
+PWDx,Greater Mattapan,T035,1,1,0,0
+PWDx,Greater Mattapan,T037,3,3,3,3
+PWDx,Greater Mattapan,T039,25,25,24,25
+PWDx,Greater Mattapan,T040,419,419,413,419
+PWDx,Greater Mattapan,T042,3,3,3,3
+PWDx,Greater Mattapan,T044,22,22,22,22
+PWDx,Greater Mattapan,T045,1019,1019,1016,1018
+PWDx,Greater Mattapan,T046,2,2,1,2
+PWDx,Greater Mattapan,T048,36,36,23,35
+PWDx,Greater Mattapan,T050,4,0,0,4
+PWDx,Greater Mattapan,T052,5,5,5,5
+PWDx,Greater Mattapan,T053,34,34,24,34
+PWDx,Greater Mattapan,T054,3461,1,0,3461
+PWDx,Greater Mattapan,T057,3,0,0,0
+PWDx,Greater Mattapan,T058,1660,1660,1612,1660
+PWDx,Greater Mattapan,T059,1,1,1,1
+PWDx,Greater Mattapan,T063,2,2,1,2
+PWDx,Greater Mattapan,T074,4,4,4,4
+PWDx,Greater Mattapan,T079,20,20,20,20
+PWDx,Greater Mattapan,T080,26,26,22,26
+PWDx,Greater Mattapan,T082,2,2,0,1
+PWDx,Greater Mattapan,T084,34,34,34,34
+PWDx,Greater Mattapan,T085,5,0,0,5
+PWDx,Greater Mattapan,T086,2,2,0,2
+PWDx,Greater Mattapan,T089,10,10,10,10
+PWDx,Greater Mattapan,T091,356,356,356,356
+PWDx,Greater Mattapan,T092,1,0,0,1
+PWDx,Greater Mattapan,T096,3,3,3,3
+PWDx,Greater Mattapan,T097,1558,1558,1557,1558
+PWDx,Greater Mattapan,T101,2,2,1,2
+PWDx,Greater Mattapan,T102,74,0,0,70
+PWDx,Greater Mattapan,T104,395,395,31,395
+PWDx,Greater Mattapan,T106,19,19,19,19
+PWDx,Greater Mattapan,T107,843,843,535,801
+PWDx,Greater Mattapan,T108,576,576,528,576
+PWDx,Greater Mattapan,T109,106,106,102,105
+PWDx,Greater Mattapan,T110,5,0,0,5
+PWDx,Greater Mattapan,T112,1856,1856,1821,1855
+PWDx,Greater Mattapan,T114,62,0,0,14
+PWDx,Greater Mattapan,T115,30,30,29,30
+PWDx,Greater Mattapan,T119,2974,0,0,1438
+PWDx,Greater Mattapan,T120,780,0,0,292
+PWDx,Greater Mattapan,T126,346,346,87,138
+PWDx,Greater Mattapan,T127,3,3,1,1
+PWDx,Greater Mattapan,T130,27,0,0,25
+PWDx,Greater Mattapan,T132,281,281,277,281
+PWDx,Greater Mattapan,T133,65,65,59,65
+PWDx,Greater Mattapan,T134,246,246,163,233
+PWDx,Greater Mattapan,T135,25,25,2,3
+PWDx,Greater Mattapan,T140,2,0,0,1
+PWDx,Greater Mattapan,T141,9,9,9,9
+PWDx,Greater Mattapan,T143,18,18,18,18
+PWDx,Greater Mattapan,T147,2,2,0,2
+PWDx,Greater Mattapan,T151,3,3,3,3
+PWDx,Greater Mattapan,T153,97,97,73,97
+PWDx,Greater Mattapan,T154,2,2,0,2
+PWDx,Greater Mattapan,T160,13,13,6,12
+PWDx,Hyde Park,T002,1,1,1,1
+PWDx,Hyde Park,T003,4,4,4,4
+PWDx,Hyde Park,T005,1,0,0,0
+PWDx,Hyde Park,T011,1,1,1,1
+PWDx,Hyde Park,T012,345,345,343,345
+PWDx,Hyde Park,T019,9,9,8,9
+PWDx,Hyde Park,T020,99,99,58,91
+PWDx,Hyde Park,T021,2,2,2,2
+PWDx,Hyde Park,T025,55,55,54,55
+PWDx,Hyde Park,T026,2,2,1,2
+PWDx,Hyde Park,T032,38,0,0,38
+PWDx,Hyde Park,T033,8,8,6,8
+PWDx,Hyde Park,T034,49,49,40,48
+PWDx,Hyde Park,T035,2,2,0,1
+PWDx,Hyde Park,T036,1,1,1,1
+PWDx,Hyde Park,T037,3,3,3,3
+PWDx,Hyde Park,T039,24,24,24,24
+PWDx,Hyde Park,T040,237,237,234,237
+PWDx,Hyde Park,T042,21,21,21,21
+PWDx,Hyde Park,T044,17,17,17,17
+PWDx,Hyde Park,T045,771,771,771,771
+PWDx,Hyde Park,T046,1,1,0,1
+PWDx,Hyde Park,T048,21,21,10,21
+PWDx,Hyde Park,T050,6,0,0,6
+PWDx,Hyde Park,T052,2,2,2,2
+PWDx,Hyde Park,T053,6,6,6,6
+PWDx,Hyde Park,T054,2652,0,0,2652
+PWDx,Hyde Park,T057,1,0,0,0
+PWDx,Hyde Park,T058,1901,1901,1802,1901
+PWDx,Hyde Park,T063,3,3,3,3
+PWDx,Hyde Park,T064,5,5,1,2
+PWDx,Hyde Park,T079,3,3,3,3
+PWDx,Hyde Park,T080,48,48,46,48
+PWDx,Hyde Park,T082,10,10,6,10
+PWDx,Hyde Park,T084,20,20,20,20
+PWDx,Hyde Park,T085,1,0,0,1
+PWDx,Hyde Park,T086,2,2,2,2
+PWDx,Hyde Park,T089,10,10,10,10
+PWDx,Hyde Park,T091,417,417,415,417
+PWDx,Hyde Park,T096,1,1,1,1
+PWDx,Hyde Park,T097,518,518,517,518
+PWDx,Hyde Park,T102,98,0,0,93
+PWDx,Hyde Park,T104,1171,1171,80,1171
+PWDx,Hyde Park,T106,10,10,9,10
+PWDx,Hyde Park,T107,1027,1027,875,1016
+PWDx,Hyde Park,T108,592,592,544,592
+PWDx,Hyde Park,T109,128,128,123,128
+PWDx,Hyde Park,T110,5,0,0,5
+PWDx,Hyde Park,T112,1470,1470,1451,1469
+PWDx,Hyde Park,T114,37,0,0,13
+PWDx,Hyde Park,T115,10,10,10,10
+PWDx,Hyde Park,T119,2174,0,0,992
+PWDx,Hyde Park,T120,985,0,0,324
+PWDx,Hyde Park,T123,3,3,3,3
+PWDx,Hyde Park,T124,1,0,0,1
+PWDx,Hyde Park,T126,259,259,97,170
+PWDx,Hyde Park,T127,5,5,4,5
+PWDx,Hyde Park,T130,13,0,0,13
+PWDx,Hyde Park,T132,448,448,440,448
+PWDx,Hyde Park,T133,31,31,28,31
+PWDx,Hyde Park,T134,131,131,69,125
+PWDx,Hyde Park,T135,18,18,4,4
+PWDx,Hyde Park,T140,1,0,0,1
+PWDx,Hyde Park,T141,4,4,4,4
+PWDx,Hyde Park,T142,1,1,0,0
+PWDx,Hyde Park,T143,38,38,38,38
+PWDx,Hyde Park,T147,2,2,0,1
+PWDx,Hyde Park,T151,1,1,1,1
+PWDx,Hyde Park,T153,119,119,95,119
+PWDx,Hyde Park,T154,3,3,1,2
+PWDx,Hyde Park,T156,5,0,0,3
+PWDx,Hyde Park,T160,5,5,2,4
+PWDx,Jamaica Plain,T003,1,1,1,1
+PWDx,Jamaica Plain,T012,771,771,753,770
+PWDx,Jamaica Plain,T015,2,0,0,1
+PWDx,Jamaica Plain,T019,25,25,25,25
+PWDx,Jamaica Plain,T020,142,142,87,129
+PWDx,Jamaica Plain,T025,139,139,137,139
+PWDx,Jamaica Plain,T026,2,2,1,1
+PWDx,Jamaica Plain,T032,20,0,0,20
+PWDx,Jamaica Plain,T033,5,5,3,3
+PWDx,Jamaica Plain,T034,96,96,77,94
+PWDx,Jamaica Plain,T035,1,1,0,0
+PWDx,Jamaica Plain,T037,5,5,4,5
+PWDx,Jamaica Plain,T039,11,11,11,11
+PWDx,Jamaica Plain,T040,242,242,240,242
+PWDx,Jamaica Plain,T042,24,24,24,24
+PWDx,Jamaica Plain,T044,9,9,9,9
+PWDx,Jamaica Plain,T045,1226,1226,1222,1226
+PWDx,Jamaica Plain,T046,2,2,1,2
+PWDx,Jamaica Plain,T048,11,11,7,11
+PWDx,Jamaica Plain,T050,10,0,0,10
+PWDx,Jamaica Plain,T052,2,2,2,2
+PWDx,Jamaica Plain,T053,24,24,21,24
+PWDx,Jamaica Plain,T054,2398,0,0,2398
+PWDx,Jamaica Plain,T057,2,0,0,0
+PWDx,Jamaica Plain,T058,1896,1896,1852,1896
+PWDx,Jamaica Plain,T063,1,1,1,1
+PWDx,Jamaica Plain,T074,12,12,12,12
+PWDx,Jamaica Plain,T079,9,9,9,9
+PWDx,Jamaica Plain,T080,176,176,144,176
+PWDx,Jamaica Plain,T082,4,4,2,3
+PWDx,Jamaica Plain,T084,11,11,11,11
+PWDx,Jamaica Plain,T086,7,7,2,6
+PWDx,Jamaica Plain,T089,23,23,23,23
+PWDx,Jamaica Plain,T091,1191,1191,1189,1191
+PWDx,Jamaica Plain,T096,2,2,1,2
+PWDx,Jamaica Plain,T097,749,749,748,749
+PWDx,Jamaica Plain,T102,83,0,0,72
+PWDx,Jamaica Plain,T104,752,752,54,752
+PWDx,Jamaica Plain,T106,15,15,15,15
+PWDx,Jamaica Plain,T107,1158,1158,462,1050
+PWDx,Jamaica Plain,T108,829,829,732,829
+PWDx,Jamaica Plain,T109,129,129,127,129
+PWDx,Jamaica Plain,T110,3,0,0,3
+PWDx,Jamaica Plain,T112,1922,1922,1780,1920
+PWDx,Jamaica Plain,T114,37,0,0,7
+PWDx,Jamaica Plain,T115,20,20,19,19
+PWDx,Jamaica Plain,T119,1400,0,0,739
+PWDx,Jamaica Plain,T120,954,0,0,342
+PWDx,Jamaica Plain,T123,1,1,0,1
+PWDx,Jamaica Plain,T124,1,0,0,0
+PWDx,Jamaica Plain,T126,462,462,119,234
+PWDx,Jamaica Plain,T127,4,4,3,4
+PWDx,Jamaica Plain,T130,14,0,0,13
+PWDx,Jamaica Plain,T131,1,1,1,1
+PWDx,Jamaica Plain,T132,539,539,526,539
+PWDx,Jamaica Plain,T133,53,53,47,53
+PWDx,Jamaica Plain,T134,243,243,142,234
+PWDx,Jamaica Plain,T135,16,16,1,2
+PWDx,Jamaica Plain,T136,5,5,5,5
+PWDx,Jamaica Plain,T138,3,3,1,3
+PWDx,Jamaica Plain,T139,8,8,8,8
+PWDx,Jamaica Plain,T140,2,0,0,2
+PWDx,Jamaica Plain,T141,4,4,4,4
+PWDx,Jamaica Plain,T143,43,43,41,41
+PWDx,Jamaica Plain,T147,2,2,0,1
+PWDx,Jamaica Plain,T149,1,1,0,1
+PWDx,Jamaica Plain,T151,1,1,1,1
+PWDx,Jamaica Plain,T153,497,497,474,496
+PWDx,Jamaica Plain,T154,4,4,1,4
+PWDx,Jamaica Plain,T156,12,0,0,12
+PWDx,Jamaica Plain,T160,20,20,13,20
+PWDx,Jamaica Plain,T161,3,3,2,3
+PWDx,Mission Hill,T001,2,0,0,2
+PWDx,Mission Hill,T012,1036,1036,1030,1036
+PWDx,Mission Hill,T019,3,3,3,3
+PWDx,Mission Hill,T020,12,12,8,10
+PWDx,Mission Hill,T021,1,1,1,1
+PWDx,Mission Hill,T025,180,180,179,180
+PWDx,Mission Hill,T026,2,2,0,1
+PWDx,Mission Hill,T032,3,0,0,3
+PWDx,Mission Hill,T033,1,1,1,1
+PWDx,Mission Hill,T034,57,57,46,57
+PWDx,Mission Hill,T037,4,4,4,4
+PWDx,Mission Hill,T040,85,85,84,85
+PWDx,Mission Hill,T042,1,1,1,1
+PWDx,Mission Hill,T045,994,994,994,994
+PWDx,Mission Hill,T046,1,1,1,1
+PWDx,Mission Hill,T048,4,4,3,4
+PWDx,Mission Hill,T050,27,0,0,27
+PWDx,Mission Hill,T053,19,19,16,19
+PWDx,Mission Hill,T054,610,0,0,610
+PWDx,Mission Hill,T056,1,1,1,1
+PWDx,Mission Hill,T058,266,266,264,266
+PWDx,Mission Hill,T074,4,4,4,4
+PWDx,Mission Hill,T079,2,2,2,2
+PWDx,Mission Hill,T080,25,25,24,25
+PWDx,Mission Hill,T082,2,2,0,0
+PWDx,Mission Hill,T084,2,2,2,2
+PWDx,Mission Hill,T086,1,1,0,1
+PWDx,Mission Hill,T089,2,2,2,2
+PWDx,Mission Hill,T091,170,170,169,170
+PWDx,Mission Hill,T096,1,1,1,1
+PWDx,Mission Hill,T097,848,848,848,848
+PWDx,Mission Hill,T102,9,0,0,8
+PWDx,Mission Hill,T104,126,126,20,126
+PWDx,Mission Hill,T106,1,1,1,1
+PWDx,Mission Hill,T107,376,376,181,363
+PWDx,Mission Hill,T108,177,177,162,177
+PWDx,Mission Hill,T109,8,8,8,8
+PWDx,Mission Hill,T110,1,0,0,1
+PWDx,Mission Hill,T112,423,423,406,422
+PWDx,Mission Hill,T114,15,0,0,2
+PWDx,Mission Hill,T115,9,9,9,9
+PWDx,Mission Hill,T119,253,0,0,123
+PWDx,Mission Hill,T120,200,0,0,73
+PWDx,Mission Hill,T126,164,164,56,88
+PWDx,Mission Hill,T127,2,2,1,1
+PWDx,Mission Hill,T130,2,0,0,2
+PWDx,Mission Hill,T132,41,41,41,41
+PWDx,Mission Hill,T133,16,16,15,16
+PWDx,Mission Hill,T134,138,138,66,133
+PWDx,Mission Hill,T135,7,7,2,2
+PWDx,Mission Hill,T136,14,14,14,14
+PWDx,Mission Hill,T140,1,0,0,0
+PWDx,Mission Hill,T143,11,11,11,11
+PWDx,Mission Hill,T147,1,1,1,1
+PWDx,Mission Hill,T153,79,79,59,79
+PWDx,Mission Hill,T154,1,1,0,0
+PWDx,Mission Hill,T160,5,5,2,5
+PWDx,Roslindale,T002,1,1,1,1
+PWDx,Roslindale,T003,1,1,1,1
+PWDx,Roslindale,T012,297,297,290,297
+PWDx,Roslindale,T019,14,14,14,14
+PWDx,Roslindale,T020,88,88,47,84
+PWDx,Roslindale,T021,3,3,3,3
+PWDx,Roslindale,T025,55,55,51,55
+PWDx,Roslindale,T032,18,0,0,17
+PWDx,Roslindale,T033,3,3,2,2
+PWDx,Roslindale,T034,52,52,40,51
+PWDx,Roslindale,T036,1,1,1,1
+PWDx,Roslindale,T037,4,4,4,4
+PWDx,Roslindale,T039,13,13,13,13
+PWDx,Roslindale,T040,133,133,131,133
+PWDx,Roslindale,T042,5,5,5,5
+PWDx,Roslindale,T044,3,3,3,3
+PWDx,Roslindale,T045,549,549,549,549
+PWDx,Roslindale,T046,4,4,1,3
+PWDx,Roslindale,T053,10,10,10,10
+PWDx,Roslindale,T054,1834,0,0,1834
+PWDx,Roslindale,T057,3,0,0,0
+PWDx,Roslindale,T058,1429,1429,1383,1429
+PWDx,Roslindale,T064,1,1,0,0
+PWDx,Roslindale,T074,3,3,2,3
+PWDx,Roslindale,T079,4,4,4,4
+PWDx,Roslindale,T080,85,85,83,85
+PWDx,Roslindale,T082,14,14,2,2
+PWDx,Roslindale,T084,16,16,16,16
+PWDx,Roslindale,T085,1,0,0,1
+PWDx,Roslindale,T086,1,1,0,0
+PWDx,Roslindale,T089,6,6,6,6
+PWDx,Roslindale,T091,813,813,811,813
+PWDx,Roslindale,T096,1,1,1,1
+PWDx,Roslindale,T097,453,453,451,453
+PWDx,Roslindale,T102,56,0,0,54
+PWDx,Roslindale,T104,338,338,38,338
+PWDx,Roslindale,T106,9,9,9,9
+PWDx,Roslindale,T107,620,620,289,582
+PWDx,Roslindale,T108,402,402,356,402
+PWDx,Roslindale,T109,93,93,92,93
+PWDx,Roslindale,T110,2,0,0,2
+PWDx,Roslindale,T112,1322,1322,1259,1322
+PWDx,Roslindale,T114,45,0,0,14
+PWDx,Roslindale,T115,8,8,8,8
+PWDx,Roslindale,T119,1546,0,0,748
+PWDx,Roslindale,T120,974,0,0,355
+PWDx,Roslindale,T125,2,2,1,1
+PWDx,Roslindale,T126,428,428,122,249
+PWDx,Roslindale,T127,2,2,1,2
+PWDx,Roslindale,T130,17,0,0,17
+PWDx,Roslindale,T131,1,1,1,1
+PWDx,Roslindale,T132,439,439,436,439
+PWDx,Roslindale,T133,20,20,20,20
+PWDx,Roslindale,T134,138,138,74,133
+PWDx,Roslindale,T135,12,12,0,2
+PWDx,Roslindale,T138,2,2,2,2
+PWDx,Roslindale,T140,1,0,0,0
+PWDx,Roslindale,T141,1,1,1,1
+PWDx,Roslindale,T143,38,38,36,36
+PWDx,Roslindale,T153,153,153,108,153
+PWDx,Roslindale,T154,1,1,0,1
+PWDx,Roslindale,T156,115,0,0,114
+PWDx,Roslindale,T160,6,6,3,6
+PWDx,Roxbury,T001,4,0,0,4
+PWDx,Roxbury,T002,3,3,3,3
+PWDx,Roxbury,T003,2,2,2,2
+PWDx,Roxbury,T005,2,0,0,0
+PWDx,Roxbury,T012,2201,2201,2184,2201
+PWDx,Roxbury,T015,2,0,0,2
+PWDx,Roxbury,T019,25,25,25,25
+PWDx,Roxbury,T020,223,223,111,206
+PWDx,Roxbury,T021,12,12,11,11
+PWDx,Roxbury,T023,1,1,1,1
+PWDx,Roxbury,T025,277,277,276,277
+PWDx,Roxbury,T026,5,5,2,4
+PWDx,Roxbury,T032,30,0,0,30
+PWDx,Roxbury,T033,11,11,9,9
+PWDx,Roxbury,T034,326,326,254,317
+PWDx,Roxbury,T035,2,2,1,1
+PWDx,Roxbury,T037,28,28,24,28
+PWDx,Roxbury,T039,38,38,35,38
+PWDx,Roxbury,T040,700,700,692,700
+PWDx,Roxbury,T042,9,9,8,9
+PWDx,Roxbury,T044,26,26,26,26
+PWDx,Roxbury,T045,2952,2952,2946,2951
+PWDx,Roxbury,T046,9,9,2,5
+PWDx,Roxbury,T048,65,65,45,63
+PWDx,Roxbury,T050,9,0,0,9
+PWDx,Roxbury,T051,1,1,0,1
+PWDx,Roxbury,T052,3,3,3,3
+PWDx,Roxbury,T053,109,109,97,109
+PWDx,Roxbury,T054,3836,0,0,3836
+PWDx,Roxbury,T057,3,0,0,1
+PWDx,Roxbury,T058,2602,2602,2550,2602
+PWDx,Roxbury,T059,1,1,1,1
+PWDx,Roxbury,T061,1,1,0,0
+PWDx,Roxbury,T062,2,0,0,2
+PWDx,Roxbury,T064,1,1,1,1
+PWDx,Roxbury,T074,9,9,9,9
+PWDx,Roxbury,T079,25,25,24,25
+PWDx,Roxbury,T080,131,131,109,131
+PWDx,Roxbury,T081,1,0,0,1
+PWDx,Roxbury,T082,23,23,1,6
+PWDx,Roxbury,T084,32,32,32,32
+PWDx,Roxbury,T085,2,0,0,2
+PWDx,Roxbury,T086,41,41,12,35
+PWDx,Roxbury,T087,1,1,1,1
+PWDx,Roxbury,T089,23,23,23,23
+PWDx,Roxbury,T091,997,997,996,997
+PWDx,Roxbury,T092,3,0,0,3
+PWDx,Roxbury,T096,12,12,10,11
+PWDx,Roxbury,T097,1770,1770,1768,1770
+PWDx,Roxbury,T101,1,1,1,1
+PWDx,Roxbury,T102,123,0,0,116
+PWDx,Roxbury,T104,559,559,102,559
+PWDx,Roxbury,T106,35,35,34,35
+PWDx,Roxbury,T107,1275,1275,579,1097
+PWDx,Roxbury,T108,679,679,625,679
+PWDx,Roxbury,T109,111,111,109,111
+PWDx,Roxbury,T110,8,0,0,8
+PWDx,Roxbury,T112,4578,4578,4499,4574
+PWDx,Roxbury,T114,105,0,0,32
+PWDx,Roxbury,T115,30,30,28,28
+PWDx,Roxbury,T119,2546,0,0,1232
+PWDx,Roxbury,T120,677,0,0,222
+PWDx,Roxbury,T123,2,2,2,2
+PWDx,Roxbury,T124,1,0,0,1
+PWDx,Roxbury,T125,2,2,1,1
+PWDx,Roxbury,T126,646,646,148,281
+PWDx,Roxbury,T127,10,10,6,8
+PWDx,Roxbury,T129,1,1,1,1
+PWDx,Roxbury,T130,64,0,0,62
+PWDx,Roxbury,T132,277,277,275,277
+PWDx,Roxbury,T133,129,129,118,129
+PWDx,Roxbury,T134,611,611,330,599
+PWDx,Roxbury,T135,49,49,5,7
+PWDx,Roxbury,T136,10,10,10,10
+PWDx,Roxbury,T138,3,3,2,3
+PWDx,Roxbury,T139,1,1,1,1
+PWDx,Roxbury,T140,2,0,0,1
+PWDx,Roxbury,T141,12,12,11,12
+PWDx,Roxbury,T143,45,45,45,45
+PWDx,Roxbury,T147,2,2,0,1
+PWDx,Roxbury,T151,8,8,8,8
+PWDx,Roxbury,T153,190,190,159,190
+PWDx,Roxbury,T154,10,10,3,8
+PWDx,Roxbury,T156,1,0,0,1
+PWDx,Roxbury,T160,35,35,10,35
+PWDx,Roxbury,T161,1,1,0,1
+PWDx,South Boston / South Boston Waterfront,T001,2,0,0,2
+PWDx,South Boston / South Boston Waterfront,T004,3,0,0,3
+PWDx,South Boston / South Boston Waterfront,T005,1,0,0,1
+PWDx,South Boston / South Boston Waterfront,T006,1,0,0,1
+PWDx,South Boston / South Boston Waterfront,T010,8,0,0,8
+PWDx,South Boston / South Boston Waterfront,T012,1886,1886,1873,1886
+PWDx,South Boston / South Boston Waterfront,T019,40,40,40,40
+PWDx,South Boston / South Boston Waterfront,T020,202,202,122,189
+PWDx,South Boston / South Boston Waterfront,T021,7,7,7,7
+PWDx,South Boston / South Boston Waterfront,T025,246,246,244,246
+PWDx,South Boston / South Boston Waterfront,T026,6,6,1,3
+PWDx,South Boston / South Boston Waterfront,T027,2,2,2,2
+PWDx,South Boston / South Boston Waterfront,T032,8,0,0,8
+PWDx,South Boston / South Boston Waterfront,T033,3,3,3,3
+PWDx,South Boston / South Boston Waterfront,T034,181,181,144,179
+PWDx,South Boston / South Boston Waterfront,T036,2,2,0,2
+PWDx,South Boston / South Boston Waterfront,T037,7,7,6,7
+PWDx,South Boston / South Boston Waterfront,T039,1,1,1,1
+PWDx,South Boston / South Boston Waterfront,T040,420,420,416,420
+PWDx,South Boston / South Boston Waterfront,T042,15,15,14,15
+PWDx,South Boston / South Boston Waterfront,T044,5,5,5,5
+PWDx,South Boston / South Boston Waterfront,T045,2769,2769,2769,2769
+PWDx,South Boston / South Boston Waterfront,T046,4,4,2,3
+PWDx,South Boston / South Boston Waterfront,T048,17,17,12,17
+PWDx,South Boston / South Boston Waterfront,T050,2,0,0,2
+PWDx,South Boston / South Boston Waterfront,T053,30,30,21,30
+PWDx,South Boston / South Boston Waterfront,T054,1857,0,0,1857
+PWDx,South Boston / South Boston Waterfront,T057,1,0,0,0
+PWDx,South Boston / South Boston Waterfront,T058,912,912,903,912
+PWDx,South Boston / South Boston Waterfront,T059,2,2,0,2
+PWDx,South Boston / South Boston Waterfront,T062,1,0,0,1
+PWDx,South Boston / South Boston Waterfront,T063,2,2,0,0
+PWDx,South Boston / South Boston Waterfront,T074,11,11,11,11
+PWDx,South Boston / South Boston Waterfront,T079,9,9,9,9
+PWDx,South Boston / South Boston Waterfront,T080,172,172,158,172
+PWDx,South Boston / South Boston Waterfront,T082,13,13,3,10
+PWDx,South Boston / South Boston Waterfront,T084,13,13,13,13
+PWDx,South Boston / South Boston Waterfront,T085,4,0,0,4
+PWDx,South Boston / South Boston Waterfront,T086,25,25,6,22
+PWDx,South Boston / South Boston Waterfront,T089,22,22,22,22
+PWDx,South Boston / South Boston Waterfront,T091,843,843,842,843
+PWDx,South Boston / South Boston Waterfront,T092,2,0,0,1
+PWDx,South Boston / South Boston Waterfront,T093,2,2,1,2
+PWDx,South Boston / South Boston Waterfront,T096,4,4,3,4
+PWDx,South Boston / South Boston Waterfront,T097,1214,1214,1213,1214
+PWDx,South Boston / South Boston Waterfront,T102,58,0,0,53
+PWDx,South Boston / South Boston Waterfront,T104,521,521,52,521
+PWDx,South Boston / South Boston Waterfront,T106,10,10,9,10
+PWDx,South Boston / South Boston Waterfront,T107,925,925,427,713
+PWDx,South Boston / South Boston Waterfront,T108,902,902,858,902
+PWDx,South Boston / South Boston Waterfront,T109,27,27,25,27
+PWDx,South Boston / South Boston Waterfront,T110,3,0,0,3
+PWDx,South Boston / South Boston Waterfront,T112,3024,3024,2953,3021
+PWDx,South Boston / South Boston Waterfront,T114,27,0,0,5
+PWDx,South Boston / South Boston Waterfront,T115,30,30,30,30
+PWDx,South Boston / South Boston Waterfront,T119,1271,0,0,635
+PWDx,South Boston / South Boston Waterfront,T120,664,0,0,210
+PWDx,South Boston / South Boston Waterfront,T125,40,40,6,7
+PWDx,South Boston / South Boston Waterfront,T126,495,495,175,276
+PWDx,South Boston / South Boston Waterfront,T127,6,6,3,6
+PWDx,South Boston / South Boston Waterfront,T130,13,0,0,12
+PWDx,South Boston / South Boston Waterfront,T132,205,205,205,205
+PWDx,South Boston / South Boston Waterfront,T133,36,36,36,36
+PWDx,South Boston / South Boston Waterfront,T134,477,477,224,438
+PWDx,South Boston / South Boston Waterfront,T135,28,28,3,3
+PWDx,South Boston / South Boston Waterfront,T136,37,37,37,37
+PWDx,South Boston / South Boston Waterfront,T138,3,3,2,3
+PWDx,South Boston / South Boston Waterfront,T139,2,2,2,2
+PWDx,South Boston / South Boston Waterfront,T141,3,3,3,3
+PWDx,South Boston / South Boston Waterfront,T143,41,41,41,41
+PWDx,South Boston / South Boston Waterfront,T147,1,1,0,1
+PWDx,South Boston / South Boston Waterfront,T151,5,5,5,5
+PWDx,South Boston / South Boston Waterfront,T153,544,544,485,544
+PWDx,South Boston / South Boston Waterfront,T154,1,1,1,1
+PWDx,South Boston / South Boston Waterfront,T156,8,0,0,8
+PWDx,South Boston / South Boston Waterfront,T160,40,40,21,39
+PWDx,South Boston / South Boston Waterfront,T162,2,2,2,2
+PWDx,South End,T001,6,0,0,6
+PWDx,South End,T004,2,0,0,2
+PWDx,South End,T009,1,1,1,1
+PWDx,South End,T012,4349,4349,4343,4349
+PWDx,South End,T019,25,25,25,25
+PWDx,South End,T020,95,95,53,86
+PWDx,South End,T021,4,4,4,4
+PWDx,South End,T025,419,419,418,419
+PWDx,South End,T026,6,6,4,5
+PWDx,South End,T027,1,1,0,1
+PWDx,South End,T032,8,0,0,8
+PWDx,South End,T033,3,3,2,3
+PWDx,South End,T034,80,80,69,80
+PWDx,South End,T037,2,2,2,2
+PWDx,South End,T040,301,301,301,301
+PWDx,South End,T042,5,5,5,5
+PWDx,South End,T044,3,3,3,3
+PWDx,South End,T045,5641,5641,5636,5641
+PWDx,South End,T046,1,1,0,1
+PWDx,South End,T048,5,5,2,5
+PWDx,South End,T050,10,0,0,10
+PWDx,South End,T053,26,26,23,26
+PWDx,South End,T054,638,0,0,638
+PWDx,South End,T057,1,0,0,0
+PWDx,South End,T058,936,936,933,936
+PWDx,South End,T059,1,1,0,1
+PWDx,South End,T062,1,0,0,1
+PWDx,South End,T064,2,2,0,0
+PWDx,South End,T074,5,5,5,5
+PWDx,South End,T079,3,3,3,3
+PWDx,South End,T080,141,141,71,141
+PWDx,South End,T082,7,7,1,4
+PWDx,South End,T084,5,5,5,5
+PWDx,South End,T086,24,24,5,22
+PWDx,South End,T089,5,5,5,5
+PWDx,South End,T091,768,768,765,768
+PWDx,South End,T092,1,0,0,1
+PWDx,South End,T096,2,2,2,2
+PWDx,South End,T097,319,319,319,319
+PWDx,South End,T102,38,0,0,34
+PWDx,South End,T104,50,50,13,50
+PWDx,South End,T106,5,5,5,5
+PWDx,South End,T107,879,879,288,619
+PWDx,South End,T108,96,96,92,96
+PWDx,South End,T109,11,11,11,11
+PWDx,South End,T110,1,0,0,1
+PWDx,South End,T112,4491,4491,4432,4487
+PWDx,South End,T113,1,1,0,0
+PWDx,South End,T114,39,0,0,10
+PWDx,South End,T115,30,30,25,25
+PWDx,South End,T119,463,0,0,219
+PWDx,South End,T120,398,0,0,126
+PWDx,South End,T125,1,1,1,1
+PWDx,South End,T126,1092,1092,143,387
+PWDx,South End,T127,10,10,6,10
+PWDx,South End,T130,3,0,0,3
+PWDx,South End,T132,79,79,79,79
+PWDx,South End,T133,14,14,13,14
+PWDx,South End,T134,488,488,239,472
+PWDx,South End,T135,3,3,0,2
+PWDx,South End,T136,9,9,9,9
+PWDx,South End,T138,6,6,1,4
+PWDx,South End,T139,7,7,7,7
+PWDx,South End,T140,2,0,0,2
+PWDx,South End,T141,2,2,2,2
+PWDx,South End,T143,7,7,7,7
+PWDx,South End,T151,3,3,3,3
+PWDx,South End,T153,144,144,133,144
+PWDx,South End,T154,4,4,0,4
+PWDx,South End,T156,4,0,0,3
+PWDx,South End,T160,19,19,7,19
+PWDx,Unspecified,T001,1,0,0,1
+PWDx,Unspecified,T003,3,3,3,3
+PWDx,Unspecified,T004,2,0,0,2
+PWDx,Unspecified,T010,5,0,0,5
+PWDx,Unspecified,T012,1309,1309,1302,1309
+PWDx,Unspecified,T015,1,0,0,0
+PWDx,Unspecified,T019,5,5,5,5
+PWDx,Unspecified,T020,109,108,80,108
+PWDx,Unspecified,T021,1,1,1,1
+PWDx,Unspecified,T025,361,361,355,361
+PWDx,Unspecified,T026,12,12,6,11
+PWDx,Unspecified,T032,16,0,0,16
+PWDx,Unspecified,T033,748,748,687,721
+PWDx,Unspecified,T034,128,128,111,125
+PWDx,Unspecified,T036,1,1,1,1
+PWDx,Unspecified,T037,13,13,12,13
+PWDx,Unspecified,T040,184,184,181,184
+PWDx,Unspecified,T042,6,6,6,6
+PWDx,Unspecified,T044,68,68,68,68
+PWDx,Unspecified,T045,1505,1505,1503,1505
+PWDx,Unspecified,T046,2,2,1,1
+PWDx,Unspecified,T048,14,14,8,9
+PWDx,Unspecified,T050,20,0,0,20
+PWDx,Unspecified,T053,35,35,29,35
+PWDx,Unspecified,T054,432,1,0,432
+PWDx,Unspecified,T057,2,0,0,1
+PWDx,Unspecified,T058,341,341,333,341
+PWDx,Unspecified,T063,1,1,1,1
+PWDx,Unspecified,T065,2,2,1,2
+PWDx,Unspecified,T074,1,1,1,1
+PWDx,Unspecified,T079,4,4,3,4
+PWDx,Unspecified,T080,178,178,128,177
+PWDx,Unspecified,T081,1,0,0,0
+PWDx,Unspecified,T082,1,1,0,1
+PWDx,Unspecified,T084,5,5,5,5
+PWDx,Unspecified,T086,86,86,25,74
+PWDx,Unspecified,T091,288,288,285,288
+PWDx,Unspecified,T096,7,7,4,6
+PWDx,Unspecified,T097,277,277,277,277
+PWDx,Unspecified,T102,40,0,0,39
+PWDx,Unspecified,T104,15,15,6,15
+PWDx,Unspecified,T106,12,12,12,12
+PWDx,Unspecified,T107,656,656,235,486
+PWDx,Unspecified,T108,35,35,31,35
+PWDx,Unspecified,T109,13,13,10,11
+PWDx,Unspecified,T110,3,0,0,3
+PWDx,Unspecified,T112,1010,1010,969,1008
+PWDx,Unspecified,T114,24,0,0,13
+PWDx,Unspecified,T115,7,7,7,7
+PWDx,Unspecified,T119,257,0,0,194
+PWDx,Unspecified,T120,104,1,1,35
+PWDx,Unspecified,T126,455,455,126,272
+PWDx,Unspecified,T127,8,8,2,7
+PWDx,Unspecified,T130,5,0,0,5
+PWDx,Unspecified,T132,22,22,17,22
+PWDx,Unspecified,T133,45,45,40,44
+PWDx,Unspecified,T134,465,465,256,432
+PWDx,Unspecified,T135,5,5,2,2
+PWDx,Unspecified,T136,3,3,3,3
+PWDx,Unspecified,T139,2,2,2,2
+PWDx,Unspecified,T140,1,0,0,1
+PWDx,Unspecified,T143,5,5,5,5
+PWDx,Unspecified,T147,1,1,0,0
+PWDx,Unspecified,T149,1,1,0,1
+PWDx,Unspecified,T151,2,2,2,2
+PWDx,Unspecified,T153,118,118,101,118
+PWDx,Unspecified,T154,11,11,9,11
+PWDx,Unspecified,T156,1,0,0,1
+PWDx,Unspecified,T160,44,44,25,44
+PWDx,Unspecified,T162,3,3,3,3
+PWDx,West Roxbury,T002,2,2,2,2
+PWDx,West Roxbury,T003,1,1,1,1
+PWDx,West Roxbury,T005,2,0,0,0
+PWDx,West Roxbury,T012,183,183,183,183
+PWDx,West Roxbury,T015,1,0,0,0
+PWDx,West Roxbury,T018,1,0,0,1
+PWDx,West Roxbury,T019,14,14,13,14
+PWDx,West Roxbury,T020,76,76,43,67
+PWDx,West Roxbury,T021,5,5,4,4
+PWDx,West Roxbury,T025,21,21,19,21
+PWDx,West Roxbury,T032,16,0,0,16
+PWDx,West Roxbury,T033,5,5,2,3
+PWDx,West Roxbury,T034,48,48,43,47
+PWDx,West Roxbury,T036,1,1,0,1
+PWDx,West Roxbury,T037,1,1,1,1
+PWDx,West Roxbury,T039,6,6,5,6
+PWDx,West Roxbury,T040,117,117,115,117
+PWDx,West Roxbury,T042,11,11,11,11
+PWDx,West Roxbury,T044,4,4,4,4
+PWDx,West Roxbury,T045,400,400,400,400
+PWDx,West Roxbury,T048,4,4,3,4
+PWDx,West Roxbury,T050,7,0,0,7
+PWDx,West Roxbury,T053,7,7,6,7
+PWDx,West Roxbury,T054,1750,1,1,1750
+PWDx,West Roxbury,T057,2,0,0,0
+PWDx,West Roxbury,T058,1580,1580,1540,1580
+PWDx,West Roxbury,T060,1,1,1,1
+PWDx,West Roxbury,T064,1,1,1,1
+PWDx,West Roxbury,T079,6,6,6,6
+PWDx,West Roxbury,T080,30,30,29,30
+PWDx,West Roxbury,T082,5,5,0,2
+PWDx,West Roxbury,T084,5,5,5,5
+PWDx,West Roxbury,T085,2,0,0,2
+PWDx,West Roxbury,T089,3,3,3,3
+PWDx,West Roxbury,T091,671,671,671,671
+PWDx,West Roxbury,T096,1,1,1,1
+PWDx,West Roxbury,T097,414,414,413,414
+PWDx,West Roxbury,T102,77,1,0,71
+PWDx,West Roxbury,T104,486,486,60,486
+PWDx,West Roxbury,T106,7,7,7,7
+PWDx,West Roxbury,T107,628,628,328,607
+PWDx,West Roxbury,T108,318,318,286,318
+PWDx,West Roxbury,T109,58,58,58,58
+PWDx,West Roxbury,T110,2,0,0,2
+PWDx,West Roxbury,T112,874,874,840,871
+PWDx,West Roxbury,T113,1,1,0,0
+PWDx,West Roxbury,T114,59,0,0,13
+PWDx,West Roxbury,T115,14,14,14,14
+PWDx,West Roxbury,T119,1696,0,0,788
+PWDx,West Roxbury,T120,1446,0,0,550
+PWDx,West Roxbury,T126,483,483,143,283
+PWDx,West Roxbury,T127,7,7,5,7
+PWDx,West Roxbury,T130,5,0,0,4
+PWDx,West Roxbury,T132,487,487,485,487
+PWDx,West Roxbury,T133,12,12,10,11
+PWDx,West Roxbury,T134,113,113,64,110
+PWDx,West Roxbury,T135,10,10,1,1
+PWDx,West Roxbury,T138,2,2,0,1
+PWDx,West Roxbury,T140,1,0,0,1
+PWDx,West Roxbury,T143,49,49,49,49
+PWDx,West Roxbury,T153,199,199,155,199
+PWDx,West Roxbury,T156,213,0,0,209
+PWDx,West Roxbury,T160,9,9,5,8
+PWDx,West Roxbury,T161,1,1,1,1

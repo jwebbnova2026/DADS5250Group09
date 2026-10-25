@@ -1,0 +1,164 @@
+type_id,type
+T001,Abandoned Bicycle
+T002,Abandoned Building
+T003,Abandoned Vehicles
+T004,Animal Generic Request
+T005,BWSC General Request
+T006,BWSC Pothole
+T007,Bed Bugs
+T008,Bicycle Issues
+T009,Big Buildings Recycling (INTERNAL)
+T010,Bridge Maintenance
+T011,Building Inspection Request
+T012,CE Collection
+T013,Capital Improvement Long Term
+T014,Carbon Monoxide
+T015,Catchbasin
+T016,Cemetery Maintenance Request
+T017,Chronic Dampness/Mold
+T018,City/State Snow Issues
+T019,Construction Debris
+T020,Contractor Complaints
+T021,Contractors Complaint
+T022,Cross Metering - Sub-Metering
+T023,Egress
+T024,Electrical
+T025,Empty Litter Basket
+T026,Equipment Repair
+T027,Exceeding Terms of Permit
+T028,Fire in Food Establishment
+T029,Follow-Up
+T030,Food Alert - Confirmed
+T031,Food Alert - Unconfirmed
+T032,General Comments For An Employee
+T033,General Comments For a Program or Policy
+T034,General Lighting Request
+T035,General Traffic Engineering Request
+T036,Graffiti Removal
+T037,Ground Maintenance
+T038,Heat - Excessive  Insufficient
+T039,Illegal Auto Body Shop
+T040,Illegal Dumping
+T041,Illegal Occupancy
+T042,Illegal Posting of Signs
+T043,Illegal Rooming House
+T044,Illegal Vending
+T045,Improper Storage of Trash (Barrels)
+T046,Install New Lighting
+T047,Item Price Missing
+T048,Knockdown Replacement
+T049,Lead
+T050,Litter Basket Maintenance
+T051,Maintenance - Homeowner
+T052,Maintenance Complaint - Residential
+T053,Major System Failure
+T054,Mattress_Pickup
+T055,Mechanical
+T056,Mice Infestation - Residential
+T057,Misc. Snow Complaint
+T058,Missed Trash/Recycling/Yard Waste/Bulk Item
+T059,Missing Sign
+T060,Mosquitoes (West Nile)
+T061,Municipal Parking Lot Complaints
+T062,Needle Pickup
+T063,New Sign  Crosswalk or Pavement Marking
+T064,New Tree Requests
+T065,News Boxes
+T066,No Price on Gas/Wrong Price
+T067,No Utilities - Food Establishment - Electricity
+T068,No Utilities - Food Establishment - Flood
+T069,No Utilities - Food Establishment - Sewer
+T070,No Utilities - Food Establishment - Water
+T071,No Utilities Residential - Electricity
+T072,No Utilities Residential - Gas
+T073,No Utilities Residential - Water
+T074,No-Tow Complaint Confirmation
+T075,Notification
+T076,Occupying W/Out A Valid CO/CI
+T077,Oil Truck - No Receipt
+T078,Overcrowding
+T079,Overflowing or Un-kept Dumpster
+T080,PWD Graffiti
+T081,Park Improvement Requests
+T082,Parking Enforcement
+T083,Parking Meter Repairs
+T084,Parking on Front/Back Yards (Illegal Parking)
+T085,Parks General Request
+T086,Parks Lighting/Electrical Issues
+T087,Pavement Marking Inspection
+T088,Pavement Marking Maintenance
+T089,Pest Infestation - Residential
+T090,Phone Bank Service Inquiry
+T091,Pick up Dead Animal
+T092,Pickup/Clear Conduit
+T093,Pigeon Infestation
+T094,Planting
+T095,Plumbing
+T096,Pole Compliance
+T097,Poor Conditions of Property
+T098,Poor Ventilation
+T099,Private Parking Lot Complaints
+T100,Product Short Measure
+T101,Protection of Adjoining Property
+T102,Public Works General Request
+T103,Rat Bite
+T104,Recycling Cart Return
+T105,Rental Unit Delivery Conditions
+T106,Request for Litter Basket Installation
+T107,Request for Pothole Repair
+T108,Request for Recycling Cart
+T109,Request for Snow Plowing
+T110,Request for Snow Plowing (Emergency Responder)
+T111,Requests for Directional or Roadway Changes
+T112,Requests for Street Cleaning
+T113,Requests for Traffic Signal Studies or Reviews
+T114,Roadway Repair
+T115,Rodent Activity
+T116,Rooftop & Mechanical Disturbances
+T117,Scale Not Visible
+T118,Scanning Overcharge
+T119,Schedule a Bulk Item Pickup
+T120,Schedule a Bulk Item Pickup SS
+T121,Sewage/Septic Back-Up
+T122,Short Measure - Gas
+T123,Short Term Rental
+T124,Sidewalk Cover / Manhole
+T125,Sidewalk Repair
+T126,Sidewalk Repair (Make Safe)
+T127,Sign Repair
+T128,Sign Shop WO
+T129,Snow/Ice Control
+T130,Space Savers
+T131,Squalid Living Conditions
+T132,Sticker Request
+T133,Street Light Knock Downs
+T134,Street Light Outages
+T135,StreetLight Pole WO
+T136,Student Move-in Issues
+T137,Student Overcrowding
+T138,Traffic Signal Inspection
+T139,Traffic Signal Repair
+T140,Transportation General Request
+T141,Trash on Vacant Lot
+T142,Tree Emergencies
+T143,Tree Maintenance Requests
+T144,Tree in Park
+T145,Undefined Noise Disturbance
+T146,Unit Pricing Wrong/Missing
+T147,Unsafe Dangerous Conditions
+T148,Unsanitary Conditions - Employees
+T149,Unsanitary Conditions - Establishment
+T150,Unsanitary Conditions - Food
+T151,Unsatisfactory Living Conditions
+T152,Unsatisfactory Utilities - Electrical  Plumbing
+T153,Unshoveled Sidewalk
+T154,Upgrade Existing Lighting
+T155,Utility Call-In
+T156,Utility Casting Repair
+T157,Valet Parking Problems
+T158,Walk-In Service Inquiry
+T159,Water in Gas - High Priority
+T160,Work Hours-Loud Noise Complaints
+T161,Work w/out Permit
+T162,Working Beyond Hours
+T163,Zoning

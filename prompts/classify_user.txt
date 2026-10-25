@@ -1,0 +1,8 @@
+RESIDENT MESSAGE:
+{message}
+
+CLARIFICATION ANSWER:
+{clarification}
+
+CANDIDATES (ID | official type | department | description | other ways residents describe it):
+{candidates}

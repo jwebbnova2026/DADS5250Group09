@@ -1,0 +1,77 @@
+department,neighborhood,requests,with_target,on_time_rate,expected_on_time_rate,gap_pct_points,median_days_to_close,small_sample
+PWDx,Chestnut Hill,12,12,0.75,0.801,-5.1,0.57,True
+PWDx,Downtown / Financial District,15618,14308,0.854,0.876,-2.2,0.15,False
+PWDx,Back Bay,16451,15352,0.865,0.887,-2.2,0.17,False
+PWDx,Jamaica Plain,18492,13554,0.826,0.841,-1.5,0.71,False
+PWDx,Fenway / Kenmore / Audubon Circle / Longwood,3970,3648,0.833,0.844,-1.1,0.42,False
+PWDx,South End,22251,20636,0.898,0.908,-1.0,0.15,False
+PWDx,Allston / Brighton,30371,23933,0.868,0.877,-0.9,0.48,False
+PWDx,Roslindale,12709,8097,0.837,0.846,-0.9,0.75,False
+PWDx,Charlestown,8252,6744,0.749,0.756,-0.7,0.58,False
+PWDx,Unspecified,9548,8634,0.844,0.85,-0.6,0.24,False
+PWDx,Beacon Hill,15120,14347,0.908,0.912,-0.4,0.14,False
+PWDx,Roxbury,29430,22009,0.882,0.882,0.0,0.53,False
+PWDx,Mission Hill,6446,5323,0.891,0.889,0.2,0.32,False
+PWDx,West Roxbury,12661,7383,0.818,0.814,0.4,0.88,False
+PWDx,South Boston / South Boston Waterfront,20426,16492,0.877,0.873,0.4,0.29,False
+PWDx,Dorchester,52010,33969,0.884,0.876,0.9,0.62,False
+PWDx,Greater Mattapan,18605,11186,0.88,0.868,1.1,0.72,False
+PWDx,Hyde Park,16113,10095,0.823,0.791,3.3,0.82,False
+PWDx,East Boston,20393,15429,0.904,0.861,4.4,0.51,False
+BTDT,West Roxbury,2994,2935,0.442,0.574,-13.3,3.7,False
+BTDT,Jamaica Plain,9663,9469,0.465,0.565,-10.1,2.17,False
+BTDT,Hyde Park,3862,3765,0.446,0.526,-8.0,3.95,False
+BTDT,Charlestown,6860,6780,0.493,0.571,-7.9,1.39,False
+BTDT,Roslindale,5243,5149,0.488,0.552,-6.4,2.6,False
+BTDT,Beacon Hill,2399,2204,0.544,0.582,-3.7,1.24,False
+BTDT,Roxbury,10333,10034,0.53,0.56,-3.0,1.86,False
+BTDT,Back Bay,5960,5627,0.55,0.576,-2.6,0.92,False
+BTDT,East Boston,14384,14280,0.542,0.566,-2.3,1.17,False
+BTDT,Mission Hill,2433,2395,0.557,0.573,-1.6,1.08,False
+BTDT,Greater Mattapan,4011,3879,0.532,0.546,-1.3,2.84,False
+BTDT,Downtown / Financial District,9252,8986,0.57,0.583,-1.3,0.89,False
+BTDT,South End,9372,9144,0.569,0.573,-0.4,0.8,False
+BTDT,Fenway / Kenmore / Audubon Circle / Longwood,3458,3313,0.59,0.579,1.1,0.86,False
+BTDT,Dorchester,19095,18685,0.556,0.545,1.1,1.68,False
+BTDT,Allston / Brighton,13885,13598,0.597,0.571,2.6,0.85,False
+BTDT,Unspecified,8525,8216,0.571,0.528,4.3,0.68,False
+BTDT,South Boston / South Boston Waterfront,25031,24772,0.676,0.568,10.8,0.38,False
+BTDT,Chestnut Hill,1,0,,,,0.0,True
+PARK,Dorchester,4904,4847,0.884,0.897,-1.3,2.87,False
+PARK,Roxbury,3273,3228,0.872,0.885,-1.3,1.85,False
+PARK,Charlestown,1289,1275,0.885,0.897,-1.2,5.74,False
+PARK,Hyde Park,1285,1268,0.922,0.933,-1.1,7.83,False
+PARK,East Boston,2756,2725,0.895,0.904,-0.9,4.74,False
+PARK,Jamaica Plain,2351,2331,0.885,0.891,-0.5,2.08,False
+PARK,Fenway / Kenmore / Audubon Circle / Longwood,759,753,0.895,0.898,-0.3,1.87,False
+PARK,Unspecified,4204,3854,0.845,0.844,0.0,1.54,False
+PARK,Back Bay,927,915,0.901,0.899,0.1,5.89,False
+PARK,Allston / Brighton,2493,2472,0.91,0.907,0.3,2.81,False
+PARK,South Boston / South Boston Waterfront,2077,2060,0.931,0.926,0.5,7.01,False
+PARK,West Roxbury,2352,2329,0.95,0.941,0.9,7.78,False
+PARK,South End,2133,2122,0.922,0.913,0.9,2.92,False
+PARK,Roslindale,1682,1661,0.934,0.921,1.3,4.63,False
+PARK,Greater Mattapan,1495,1464,0.929,0.913,1.6,3.84,False
+PARK,Mission Hill,567,560,0.93,0.912,1.8,3.98,False
+PARK,Downtown / Financial District,995,984,0.892,0.861,3.1,1.02,False
+PARK,Beacon Hill,734,733,0.926,0.888,3.8,5.25,False
+PARK,Chestnut Hill,1,1,1.0,0.761,23.9,2.95,True
+ISD,Charlestown,986,981,0.698,0.74,-4.1,5.19,False
+ISD,Greater Mattapan,2223,2207,0.652,0.684,-3.2,6.0,False
+ISD,Downtown / Financial District,1479,1468,0.702,0.721,-2.0,2.98,False
+ISD,Fenway / Kenmore / Audubon Circle / Longwood,856,853,0.71,0.725,-1.5,3.95,False
+ISD,Back Bay,1352,1349,0.758,0.77,-1.3,2.55,False
+ISD,East Boston,2208,2196,0.696,0.705,-0.9,2.8,False
+ISD,Dorchester,6135,6113,0.723,0.732,-0.9,2.85,False
+ISD,Hyde Park,1384,1374,0.685,0.692,-0.7,3.12,False
+ISD,Beacon Hill,674,669,0.78,0.78,0.0,2.12,False
+ISD,South End,1754,1744,0.774,0.771,0.3,2.81,False
+ISD,Roslindale,1079,1069,0.725,0.721,0.4,2.88,False
+ISD,Roxbury,4318,4298,0.722,0.715,0.7,3.84,False
+ISD,Jamaica Plain,2151,2139,0.753,0.745,0.8,3.16,False
+ISD,West Roxbury,989,979,0.741,0.732,0.9,2.76,False
+ISD,Allston / Brighton,3875,3863,0.792,0.783,0.9,2.08,False
+ISD,Mission Hill,916,913,0.754,0.737,1.6,3.33,False
+ISD,South Boston / South Boston Waterfront,2581,2568,0.75,0.724,2.7,2.05,False
+ISD,Unspecified,1784,1770,0.763,0.727,3.6,1.82,False
+ISD,Chestnut Hill,3,3,1.0,0.624,37.6,0.05,True

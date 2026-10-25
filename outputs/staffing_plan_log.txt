@@ -1,0 +1,22 @@
+PWDx: month 1: projected shortage 2 crews in month 2 and 4 in month 3; ordered 2 hire(s), productive from month 2
+PWDx: month 3: projected shortage 6 crews in month 4 and 7 in month 5; ordered 6 hire(s), productive from month 4
+PWDx: month 7: projected shortage 12 crews in month 8 and 17 in month 9; ordered 12 hire(s), productive from month 8
+BTDT: month 1: projected shortage 3 crews in month 2 and 8 in month 3; ordered 3 hire(s), productive from month 2
+BTDT: month 2: projected shortage 2 crews in month 3 and 4 in month 4; ordered 2 hire(s), productive from month 3
+BTDT: month 3: projected shortage 1 crews in month 4 and 3 in month 5; ordered 1 hire(s), productive from month 4
+BTDT: month 4: projected shortage 2 crews in month 5 and 1 in month 6; ordered 1 hire(s), productive from month 5
+BTDT: month 8: projected shortage 1 crews in month 9 and 2 in month 10; ordered 1 hire(s), productive from month 9
+PARK: month 2: projected shortage 1 crews in month 3 and 1 in month 4; ordered 1 hire(s), productive from month 3
+PARK: month 3: projected shortage 1 crews in month 4 and 1 in month 5; hire of 1 blocked (a Parks permanent crew would start in season)
+PARK: month 4: 1 seasonal crew(s)
+PARK: month 4: projected shortage 1 crews in month 5 and 1 in month 6; hire of 1 blocked (a Parks permanent crew would start in season)
+PARK: month 5: 5 seasonal crew(s)
+PARK: month 5: projected shortage 1 crews in month 6 and 3 in month 7; hire of 1 blocked (a Parks permanent crew would start in season)
+PARK: month 6: 12 seasonal crew(s)
+PARK: month 7: 9 seasonal crew(s)
+PARK: month 8: 13 seasonal crew(s)
+PARK: month 9: 2 seasonal crew(s)
+ISD: month 1: projected shortage 2 crews in month 2 and 2 in month 3; ordered 2 hire(s), productive from month 2
+ISD: month 4: projected shortage 1 crews in month 5 and 5 in month 6; ordered 1 hire(s), productive from month 5
+ISD: month 5: projected shortage 4 crews in month 6 and 6 in month 7; ordered 4 hire(s), productive from month 6
+ISD: month 7: projected shortage 3 crews in month 8 and 2 in month 9; ordered 2 hire(s), productive from month 8
