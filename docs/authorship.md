@@ -28,6 +28,7 @@ Northeastern's Academic Integrity and Use of AI policy asks us to mark AI-genera
 | Type descriptions and aliases | Drafted by gpt-6.1-sol; reviewed and edited by Claude | Pending team review |
 | Dev and test message sets (`data/eval/`) | Claude | Pending team review |
 | `demo.ipynb` | Claude | Pending team review |
+| `docs/notebook_guide.md` (plain-language walkthrough) | Claude, at John's request | Pending team review |
 | `docs/report.md` | Draft by Claude | Andrew and Nicholas to finalize |
 | 3-minute video | Andrew and Nicholas | To do |
 | README setup, architecture, and team table | Claude | Pending team review |
