@@ -7,6 +7,7 @@ Midterm for John Baldwin, Nicholar Maar, Adam Jaroudi, and Andrew Lai: Option 2 
 
 * **Departments:** Public Works, Transportation, Parks & Recreation, and Inspectional Services.
 * **Results:** see the executed notebook [demo.ipynb](demo.ipynb) and the draft report [docs/report.md](docs/report.md).
+* **New to code?** [docs/notebook_guide.md](docs/notebook_guide.md) is a plain-language walkthrough of the project and the notebook, with step-by-step setup.
 * **Specification:** [docs/architecture.md](docs/architecture.md), the frozen design, plus the changes logged in [docs/decisions.md](docs/decisions.md).
 
 This is a demonstration. It never submits anything to the City of Boston and never promises a completion date.
