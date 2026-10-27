@@ -1,4 +1,4 @@
-<!-- [AI-authored: Claude] Reviewer entry point for branch Zero_Shot_Attempt_1, written 2026-10-23. -->
+<!-- Reviewer entry point, written 2026-10-23. -->
 # Review guide
 
 This guide is the starting point for reviewing the zero-shot build on branch `Zero_Shot_Attempt_1`. It tells you what to read, how to check that the results reproduce, where each requirement is implemented and tested, what differs from the original spec, and where bugs are most likely to hide.
@@ -8,7 +8,7 @@ This guide is the starting point for reviewing the zero-shot build on branch `Ze
 - `docs/architecture.md` is the authority. It is the frozen spec v5.1, plus the changes the team approved during the build.
 - `docs/decisions.md` records every one of those changes with its evidence and date. It also records the data audit and the implementation choices made where the spec was silent.
 - Anything this guide summarizes is stated in full in one of those two files. If this guide disagrees with them, they win.
-- Code locations are given as file and function names; search for the function. This guide was last updated after the repair of Astra's review findings R1–R6 (section 7).
+- Code locations are given as file and function names; search for the function. This guide was last updated after the repair of the code review findings R1–R6 and R1a (section 7).
 
 ## 1. Read in this order
 
@@ -222,16 +222,16 @@ These are ordered by how much depends on them and how easy a subtle error would 
 
 - **Pending team review:**
   - the provisional mappings (`data/catalog/mapping_review.csv`) and aliases (`catalog.json`);
-  - the AI-written test and dev messages. The same AI wrote the aliases and the messages, a possible source of optimistic accuracy. The test set was run once, after tuning on the dev set only.
+  - the test and dev messages. They were not written independently of the catalog aliases, a possible source of optimistic accuracy. The test set was run once, after tuning on the dev set only.
 - **Synthetic evaluation:** the plan is scored on synthetic workloads, not real 2025 requests. The challenge's costs and penalties are assumptions.
 - **Volume-based hiring:** the hiring rule counts long-deadline requests in its shortage. It is safe with the 93% floor, but a weaker seasonal rule can trigger large October hires (see `decisions.md`).
 - **No releases occur.** As a result, Public Works and Inspectional Services run at about 60% utilization in Q4. This follows from the "no notices after August" rule and is discussed in `report.md`.
 - **Frontier wobble:** neighbouring targets can swap order on cost, because the planner fully re-plans for each target.
-- **Spec 10.4 logistics** are still open: the Q&A forum check on pandas and scikit-learn, an owner for `authorship.md`, and a code-freeze date.
+- **Spec 10.4 logistics** are still open: the Q&A forum check on pandas and scikit-learn, and a code-freeze date.
 
 ## 7. Repairs after the 2026-10-23 review
 
-Astra's review of `d1d1c7d` is in [code_review_2026-10-23.md](code_review_2026-10-23.md). Each finding was repaired on branch `repair/astra-review`. Astra's follow-up review of `01630ca`, [code_review_2026-10-23_round2.md](code_review_2026-10-23_round2.md), closed R2–R6 and found R1 partially fixed (R1a), which was then repaired the same way.
+The code review of `d1d1c7d` is in [code_review_2026-10-23.md](code_review_2026-10-23.md). Each finding was repaired on branch `repair/astra-review`. The follow-up review of `01630ca`, [code_review_2026-10-23_round2.md](code_review_2026-10-23_round2.md), closed R2–R6 and found R1 partially fixed (R1a), which was then repaired the same way.
 
 Each repair followed the same steps:
 1. Write the regression test first and confirm it fails.

@@ -1,4 +1,4 @@
-<!-- [AI-authored: Codex] Independent repository review; no implementation fixes made. -->
+<!-- Independent repository review; no implementation fixes made. -->
 # Code review — October 23, 2026
 
 Reviewed commit: `d1d1c7d` (`Zero_Shot_Attempt_1`). The working tree was clean at the start. The authority for this review is `docs/architecture.md`, including the approved changes in `docs/decisions.md`; `docs/review_guide.md` supplied the verification map.
@@ -101,6 +101,6 @@ The published base comparison reproduced: heuristic **$16,394,440**, **89.5035% 
 
 ## Follow-up boundaries
 
-The provisional approvals, AI-authored evaluation set, synthetic demand, single evaluation seed, and lack of reactive sensitivity planning are disclosed limitations or approved scope choices. I have not relabeled them as implementation bugs. Human review of mappings/aliases/messages and the report/video/logistics still remains as documented. A live API smoke test and a genuinely clean dependency installation were not performed in this review.
+The provisional approvals, unreviewed evaluation set, synthetic demand, single evaluation seed, and lack of reactive sensitivity planning are disclosed limitations or approved scope choices. I have not relabeled them as implementation bugs. Human review of mappings/aliases/messages and the report/video/logistics still remains as documented. A live API smoke test and a genuinely clean dependency installation were not performed in this review.
 
 For a single repair pass, address R1–R6, add the targeted regression checks above, preserve the frozen specification, rerun the suite and offline CLI/notebook, and explain any changed outputs. Reuse the current tests as regression checks, but do not rely exclusively on fixtures that bypass the actual SDK behavior. A second independent review should then inspect the repair diff and rerun the new counterexamples. No findings have been sent to another chat or author by this review.

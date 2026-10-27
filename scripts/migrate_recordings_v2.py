@@ -1,6 +1,6 @@
 """One-time migration of data/demo/recordings.jsonl to the v2 recording key (R4).
 
-[AI-authored: Claude] Run once on 2026-10-23; kept for the record.
+Run once on 2026-10-23; kept for the record.
 
 Why: the v1 key covered the model name, prompt and catalog versions, and the
 exact prompt text, but not the reasoning effort, the seed, or the response

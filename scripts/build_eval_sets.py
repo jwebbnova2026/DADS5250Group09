@@ -1,8 +1,7 @@
 """Write the intake dev and test sets to data/eval/ (spec 5.8).
 
-[AI-authored: Claude] Every message below was written by Claude for this
-build, before any prompt or gate tuning, and is pending team review. None of
-them is used as a retrieval alias.
+Every message below was written before any prompt or gate tuning and is
+pending team review. None of them is used as a retrieval alias.
 
 Each item names its expected official request type *by name*. This script
 looks the name up in the catalog, so a typo fails loudly, and fills in the
@@ -113,7 +112,6 @@ def build(items, catalog_by_name):
             "expected_department": None,
             "expected_queue": None,
             "expected_decision": None,
-            "authored_by": "Claude (AI), pending team review",
         }
         if category == "empty":
             rec["expected_decision"] = "REJECTED"

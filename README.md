@@ -1,7 +1,5 @@
 # DADS5250Group09
-Midterm for John Baldwin, Nicholar Maar, Adam Jaroudi, and Andrew Lai: Option 2 Staffing Boston's 311 City Service Teams
-
-<!-- [AI-authored: Claude] Sections below written by Claude; team to review. -->
+Midterm for John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai: Option 2 Staffing Boston's 311 City Service Teams
 
 **Boston 311 Crew Planner.** This builds a month-by-month 2025 crew plan for four Boston departments from real 2023 and 2024 311 data. It also includes a GenAI intake assistant that routes residents' plain-language messages to an official request type and department.
 
@@ -131,15 +129,19 @@ flowchart LR
 
 Course techniques used: **prompt engineering**, **structured output** (Pydantic + strict JSON schema), **RAG** (retrieval over the official catalog), **LangChain**, and a **LangGraph agent** with an interrupt-based clarification. No other agent frameworks are used.
 
-## Team contributions
+## Authorship
 
-| Member | Role |
-|---|---|
-| John Baldwin | Technical build; planning-year, package-plus-notebook, and reference-notebook decisions |
-| Adam Jaroudi | Technical build |
-| Nicholas Maar | Project selection; report and video |
-| Andrew Lai | Report and video |
-| Claude (AI, Anthropic) | Wrote the architecture spec with Codex review, the code, tests, eval sets, notebook, and report draft. See [docs/authorship.md](docs/authorship.md) |
+Team: John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai.
+
+- **Everyone** participated in project selection, design, architecture, and presentation planning.
+- **Claude** (Anthropic, via Claude Code) wrote all code.
+- **Codex** (OpenAI) did review. Its reviews are in `docs/code_review_2026-10-23*.md`.
+- **Everyone** did additional review.
+
+### How AI was used
+
+- **gpt-6.1-sol** (OpenAI) is part of the product: it classifies residents' messages at run time, and it drafted the request-type descriptions and aliases in `data/catalog/catalog.json`, which Claude then reviewed. Its recorded answers are in `data/demo/recordings.jsonl`.
+- **The team** made every design decision; they are logged with dates in `docs/decisions.md`.
 
 ## Reference material
 

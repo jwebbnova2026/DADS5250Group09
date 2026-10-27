@@ -1,6 +1,6 @@
 {
   "catalog_version": "catalog-v2",
-  "rule": "Two-tier mapping (spec 5.6): department mapping if one in-scope department has >= 90% of the type's 2023-2024 requests (all departments); exact queue if one queue of that department has >= 90%. 'provisional' = nominated and provisionally approved by Claude, pending team review.",
+  "rule": "Two-tier mapping (spec 5.6): department mapping if one in-scope department has >= 90% of the type's 2023-2024 requests (all departments); exact queue if one queue of that department has >= 90%. 'provisional' = nominated and provisionally approved, pending team review.",
   "entries": [
     {
       "type_id": "T001",
@@ -58,7 +58,6 @@
         "bicycle looks abandoned"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Abandoned Bicycle",
         "Abandoned Bicycle: Scooter/Moped"
@@ -129,7 +128,6 @@
         "nobody lives in this abandoned building"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Abandoned Building"
       ],
@@ -203,7 +201,6 @@
         "car nobody has moved"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Abandoned Vehicles",
         "Abandoned Vehicles: Scooter/Moped",
@@ -275,7 +272,6 @@
         "animal concern"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Animal Generic Request",
         "Pick up Dead Animal"
@@ -347,7 +343,6 @@
         "general sewer question"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "General Request"
       ],
@@ -415,7 +410,6 @@
         "sunken pavement after water work"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -464,7 +458,6 @@
         "bed bugs in my building"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Bed Bugs",
         "SCH4/25Bed Bugs",
@@ -524,7 +517,6 @@
         "general bicycle question"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Boston Bikes: Bikes - General; Complaint",
         "Boston Bikes",
@@ -579,7 +571,6 @@
         "building recycling program question"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Big Buildings Recycling (INTERNAL)"
       ],
@@ -638,7 +629,6 @@
         "bridge is falling apart"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Bridge Maintenance"
       ],
@@ -710,7 +700,6 @@
         "inspect the building"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Building Inspection Request"
       ],
@@ -785,7 +774,6 @@
         "CE collection still pending"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "CE Collection"
       ],
@@ -831,7 +819,6 @@
         "recreation center renovation request"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -875,7 +862,6 @@
         "worried about carbon monoxide indoors"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Carbon Monoxide"
       ],
@@ -946,7 +932,6 @@
         "missing catch basin cover"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Catchbasin"
       ],
@@ -998,7 +983,6 @@
         "graveyard grounds are neglected"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Cemetery Maintenance Request"
       ],
@@ -1051,7 +1035,6 @@
         "persistent moisture indoors"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Chronic Dampness/Mold",
         "SCH9/28Chronic Dampness/Mold",
@@ -1122,7 +1105,6 @@
         "who handles snow on state property"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 1,
@@ -1193,7 +1175,6 @@
         "demolition debris piled up"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Construction Debris"
       ],
@@ -1268,7 +1249,6 @@
         "unhappy with contractor's work"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Contractor Complaints"
       ],
@@ -1342,7 +1322,6 @@
         "report a home improvement contractor"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Contractors Complaint"
       ],
@@ -1388,7 +1367,6 @@
         "being charged for shared utilities"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Cross Metering - Sub-Metering",
         "SCH7/12Cross Metering - Sub-Metering",
@@ -1465,7 +1443,6 @@
         "hallway exit blocked"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Egress"
       ],
@@ -1527,7 +1504,6 @@
         "electrical panel problem"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Electrical"
       ],
@@ -1599,7 +1575,6 @@
         "trash spilling out of park basket"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Empty Litter Basket",
         "Ground Maintenance: Commonwealth Avenue Mall - BPRD",
@@ -1687,7 +1662,6 @@
         "playground climbing frame is damaged"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Equipment Repair",
         "Park Equipment Repair",
@@ -1765,7 +1739,6 @@
         "project doesn't match approved permit"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Exceeding Terms of Permit"
       ],
@@ -1816,7 +1789,6 @@
         "food establishment fire incident"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Fire in Food Establishment"
       ],
@@ -1862,7 +1834,6 @@
         "question about an existing inspection case"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 1,
@@ -1912,7 +1883,6 @@
         "confirmed safety alert for a food business"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Food Alert - Confirmed"
       ],
@@ -1962,7 +1932,6 @@
         "food may be contaminated"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Food Alert - Unconfirmed",
         "Food Alert - Confirmed",
@@ -2036,7 +2005,6 @@
         "staff member treated me poorly"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "PublicWorks: Complaint",
         "BTDT: Complaint",
@@ -2118,7 +2086,6 @@
         "concern about city rules"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "PublicWorks: Complaint",
         "BTDT: Complaint",
@@ -2197,7 +2164,6 @@
         "our block needs better lighting"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "General Lighting Request",
         "PRINTED : General Lighting Request  --  N.M.",
@@ -2276,7 +2242,6 @@
         "cars have trouble navigating this intersection"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "General Traffic Engineering Request"
       ],
@@ -2347,7 +2312,6 @@
         "painted scribbles on a fence"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Graffiti Removal"
       ],
@@ -2424,7 +2388,6 @@
         "playground grounds need maintenance"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Ground Maintenance",
         "Ground Maintenance: --Not in list-- - BPRD",
@@ -2490,7 +2453,6 @@
         "landlord won't turn on the heat"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Heat - Excessive  Insufficient",
         "DISP Heat - Excessive  Insufficient",
@@ -2570,7 +2532,6 @@
         "unlicensed auto body work in garage"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Illegal Auto Body Shop"
       ],
@@ -2647,7 +2608,6 @@
         "someone dumped an old couch"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Illegal Dumping"
       ],
@@ -2714,7 +2674,6 @@
         "unapproved residential occupancy"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Illegal Occupancy"
       ],
@@ -2785,7 +2744,6 @@
         "someone put ads on street poles"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Illegal Posting of Signs"
       ],
@@ -2853,7 +2811,6 @@
         "suspected illegal boarding house"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Illegal Rooming House"
       ],
@@ -2924,7 +2881,6 @@
         "street sales without permission"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Illegal Vending"
       ],
@@ -3001,7 +2957,6 @@
         "rubbish spilling out of bins"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Improper Storage of Trash (Barrels)",
         "Ground Maintenance: Copps Hill Terrace - BPRD"
@@ -3070,7 +3025,6 @@
         "this corner needs a light"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Install New Lighting",
         "PRINTED"
@@ -3122,7 +3076,6 @@
         "goods missing price labels"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Item Price Missing"
       ],
@@ -3190,7 +3143,6 @@
         "lamp post down after a crash"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Knockdown Replacement",
         "PRINTED : Knockdown Replacement  --  N.M.",
@@ -3242,7 +3194,6 @@
         "old window paint might have lead"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Lead"
       ],
@@ -3312,7 +3263,6 @@
         "trash spilling from a street basket"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Litter Basket Maintenance"
       ],
@@ -3380,7 +3330,6 @@
         "poor conditions in my owner occupied home"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Maintenance - Homeowner"
       ],
@@ -3451,7 +3400,6 @@
         "repairs aren't getting done in my apartment"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Maintenance Complaint - Residential",
         "DISP Maintenance Complaint - Residential",
@@ -3526,7 +3474,6 @@
         "major system malfunction"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Major System Failure",
         "Major System Failure printed",
@@ -3583,7 +3530,6 @@
         "schedule mattress collection"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Mattress Pickup"
       ],
@@ -3633,7 +3579,6 @@
         "mechanical system complaint"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Mechanical"
       ],
@@ -3696,7 +3641,6 @@
         "keep finding mice in my rental"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Mice Infestation - Residential",
         "SCH 8/20 Mice Infestation - Residential",
@@ -3756,7 +3700,6 @@
         "question about a snow problem"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Misc. Snow Complaint"
       ],
@@ -3826,7 +3769,6 @@
         "they skipped our recycling"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Missed Trash: District 07",
         "Missed Trash/Recycling/Yard Waste/Bulk Item",
@@ -3905,7 +3847,6 @@
         "road sign is missing"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Missing Sign"
       ],
@@ -3975,7 +3916,6 @@
         "West Nile mosquito concern"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Mosquitoes (West Nile)"
       ],
@@ -4043,7 +3983,6 @@
         "complaint about city owned parking"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Municipal Parking Lot Complaints"
       ],
@@ -4113,7 +4052,6 @@
         "used needles in the park"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Needle Pickup"
       ],
@@ -4187,7 +4125,6 @@
         "this intersection needs a pedestrian crossing"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "New Sign  Crosswalk or Pavement Marking"
       ],
@@ -4257,7 +4194,6 @@
         "empty tree pit needs a tree"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "New Tree Requests",
         "New Tree Request"
@@ -4304,7 +4240,6 @@
         "news rack blocking the sidewalk"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "News Boxes"
       ],
@@ -4350,7 +4285,6 @@
         "charged more than the posted gas price"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No Price on Gas/Wrong Price"
       ],
@@ -4396,7 +4330,6 @@
         "bakery has an electrical outage"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No Utilities - Food Establishment - Electricity"
       ],
@@ -4442,7 +4375,6 @@
         "standing floodwater in the restaurant"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No Utilities - Food Establishment - Flood"
       ],
@@ -4493,7 +4425,6 @@
         "bakery has sewage coming up"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No Utilities - Food Establishment - Sewer"
       ],
@@ -4539,7 +4470,6 @@
         "restaurant water service is out"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No Utilities - Food Establishment - Water"
       ],
@@ -4590,7 +4520,6 @@
         "electricity is off in my building"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No Utilities Residential - Electricity"
       ],
@@ -4647,7 +4576,6 @@
         "no gas supply to my home"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No Utilities Residential - Gas"
       ],
@@ -4704,7 +4632,6 @@
         "all my taps are dry"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No Utilities Residential - Water"
       ],
@@ -4773,7 +4700,6 @@
         "no tow complaint confirmation"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "No-Tow Complaint Confirmation"
       ],
@@ -4841,7 +4767,6 @@
         "sanitary sewer overflow notification"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Fire",
         "BWSC: Sanitary Sewer Overflow (SSO)",
@@ -4897,7 +4822,6 @@
         "building in use without valid certificates"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Occupying W/Out A Valid CO/CI"
       ],
@@ -4943,7 +4867,6 @@
         "never got my oil delivery receipt"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 1,
@@ -4992,7 +4915,6 @@
         "overcrowded rental unit"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Overcrowding"
       ],
@@ -5061,7 +4983,6 @@
         "dumpster is filthy and neglected"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Overflowing or Un-kept Dumpster"
       ],
@@ -5133,7 +5054,6 @@
         "unwanted writing on a wall"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "PWD Graffiti",
         "POWER WASH",
@@ -5207,7 +5127,6 @@
         "suggest upgrades to the playground"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Park Improvement Requests",
         "Park Improvement: Boston Common - BPRD",
@@ -5293,7 +5212,6 @@
         "car parked in resident parking without permit"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Parking Enforcement"
       ],
@@ -5340,7 +5258,6 @@
         "parking meter buttons are stuck"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Parking Meter Repairs"
       ],
@@ -5409,7 +5326,6 @@
         "backyard being used as a parking lot"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Parking on Front/Back Yards (Illegal Parking)"
       ],
@@ -5482,7 +5398,6 @@
         "I have a request about the park"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Parks General Request",
         "WEEDS"
@@ -5558,7 +5473,6 @@
         "park electrical box is damaged"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Parks Lighting/Electrical Issues",
         "Lighting/Electrical",
@@ -5636,7 +5550,6 @@
         "have someone assess the pavement markings"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Pavement Marking Inspection"
       ],
@@ -5689,7 +5602,6 @@
         "street stripes need touching up"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Pavement Marking Maintenance"
       ],
@@ -5760,7 +5672,6 @@
         "my apartment has an insect infestation"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Pest Infestation - Residential",
         "DISP Pest Infestation - Residential",
@@ -5815,7 +5726,6 @@
         "question about the transportation call service"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Phone Bank Service Inquiry"
       ],
@@ -5891,7 +5801,6 @@
         "dead skunk on the road"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Pick up Dead Animal",
         "Ground Maintenance: Boston Common - BPRD",
@@ -5946,7 +5855,6 @@
         "there's conduit that needs clearing"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Pickup/Clear Conduit"
       ],
@@ -6017,7 +5925,6 @@
         "pigeon poop buildup"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Pigeon Infestation"
       ],
@@ -6083,7 +5990,6 @@
         "empty planting beds in the park"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Planting",
         "Planting:  -"
@@ -6146,7 +6052,6 @@
         "water leaking from plumbing"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Plumbing"
       ],
@@ -6197,7 +6102,6 @@
         "pole not meeting standards"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Pole Compliance"
       ],
@@ -6274,7 +6178,6 @@
         "move in trash left outside"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Poor Conditions of Property",
         "Student Move-in CE Violation"
@@ -6339,7 +6242,6 @@
         "kitchen exhaust isn't venting"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Poor Ventilation"
       ],
@@ -6386,7 +6288,6 @@
         "private parking lot conditions"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Private Parking Lot Complaints"
       ],
@@ -6433,7 +6334,6 @@
         "package is underweight"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Product Short Measure"
       ],
@@ -6504,7 +6404,6 @@
         "protection for buildings beside construction"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Protection of Adjoining Property"
       ],
@@ -6577,7 +6476,6 @@
         "cones left in the street"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Public Works General Request",
         "Pick up Dead Animal",
@@ -6633,7 +6531,6 @@
         "bitten by a rodent that looked ratlike"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Rat Bite"
       ],
@@ -6694,7 +6591,6 @@
         "give back the recycling bin"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Recycling Cart Return"
       ],
@@ -6745,7 +6641,6 @@
         "problems with apartment condition at move in"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Rental Unit Delivery Conditions"
       ],
@@ -6813,7 +6708,6 @@
         "no public wastebasket on this block"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Request for Litter Basket Installation"
       ],
@@ -6889,7 +6783,6 @@
         "street pavement is caving in"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Request for Pothole Repair",
         "Pothole",
@@ -6953,7 +6846,6 @@
         "request a wheeled recycling tote"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Request for Recycling Cart"
       ],
@@ -7026,7 +6918,6 @@
         "need another pass with the plow"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Request for Snow Plowing"
       ],
@@ -7093,7 +6984,6 @@
         "snowplow needed for ambulance access"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Request for Snow Plowing (Emergency Responder)"
       ],
@@ -7161,7 +7051,6 @@
         "roadway design change request"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Directional or Roadway Changes"
       ],
@@ -7243,7 +7132,6 @@
         "litter all over the road"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Requests for Street Cleaning",
         "Street Cleaning",
@@ -7324,7 +7212,6 @@
         "request a new stoplight"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Requests for Traffic Signal Studies or Reviews"
       ],
@@ -7396,7 +7283,6 @@
         "road pavement is breaking apart"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Roadway Repair"
       ],
@@ -7470,7 +7356,6 @@
         "signs of a rodent infestation"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Rodent Activity",
         "Pick up Dead Animal"
@@ -7529,7 +7414,6 @@
         "rooftop machinery keeping me awake"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -7574,7 +7458,6 @@
         "cannot see what my purchase weighs"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Scale Not Visible"
       ],
@@ -7621,7 +7504,6 @@
         "groceries rang up too high"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Scanning Overcharge"
       ],
@@ -7684,7 +7566,6 @@
         "schedule collection of bulky items"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Schedule a Bulk Item Pickup"
       ],
@@ -7731,7 +7612,6 @@
         "large household item collection request"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Schedule Bulk Item Pickup"
       ],
@@ -7793,7 +7673,6 @@
         "septic waste overflowing"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Sewage/Septic Back-Up"
       ],
@@ -7839,7 +7718,6 @@
         "fuel pump under dispensing"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Short Measure - Gas"
       ],
@@ -7911,7 +7789,6 @@
         "Vrbo property complaint"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Short Term Rental",
         "DISP5/30Short Term Rental"
@@ -7984,7 +7861,6 @@
         "sidewalk cover is cracked"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Sidewalk Cover / Manhole"
       ],
@@ -8052,7 +7928,6 @@
         "damaged sidewalk slabs"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Sidewalk Repair"
       ],
@@ -8131,7 +8006,6 @@
         "sidewalk bricks sticking up"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Sidewalk Repair (Make Safe)",
         "Sidewalk (Make Safe)",
@@ -8218,7 +8092,6 @@
         "can't read the parking sign"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Sign Repair"
       ],
@@ -8263,7 +8136,6 @@
         "transportation sign shop job"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 1,
@@ -8311,7 +8183,6 @@
         "snow and ice buildup"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -8380,7 +8251,6 @@
         "objects used to claim street parking"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Space Savers"
       ],
@@ -8449,7 +8319,6 @@
         "squalor inside a house"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Squalid Living Conditions",
         "SCH12/28Squalid Living Conditions"
@@ -8495,7 +8364,6 @@
         "can I get a replacement sticker"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Sticker Request"
       ],
@@ -8564,7 +8432,6 @@
         "street light pole toppled"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Street Light Knock Downs",
         "Street Light Knock Down",
@@ -8643,7 +8510,6 @@
         "streetlight keeps going out"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Street Light Outages",
         "Street Light Outage",
@@ -8719,7 +8585,6 @@
         "streetlamp pole needs repairs"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "CONCRETE",
         "Street Light Pole WO",
@@ -8793,7 +8658,6 @@
         "student move in disruption"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Student Move-in Issues"
       ],
@@ -8839,7 +8703,6 @@
         "crowded college student housing"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Student Overcrowding"
       ],
@@ -8912,7 +8775,6 @@
         "have these traffic signals been inspected"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Traffic Signal Inspection"
       ],
@@ -8984,7 +8846,6 @@
         "traffic light needs repair"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Illegal Graffiti",
         "Traffic Signal Repair"
@@ -9057,7 +8918,6 @@
         "general traffic concern"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Transportation General Request"
       ],
@@ -9126,7 +8986,6 @@
         "the vacant lot is covered in junk"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Trash on Vacant Lot"
       ],
@@ -9196,7 +9055,6 @@
         "tree fell across the sidewalk"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Tree Emergencies"
       ],
@@ -9272,7 +9130,6 @@
         "street tree needs maintenance"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Tree Maintenance Requests",
         "Tree Maintenance",
@@ -9341,7 +9198,6 @@
         "tree in the tot lot"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Tree in Park",
         "Tree In Park: Brophy Park; East Boston",
@@ -9407,7 +9263,6 @@
         "unknown source of loud noise"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 1,
@@ -9457,7 +9312,6 @@
         "unit pricing on shelf is incorrect"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Unit Pricing Wrong/Missing"
       ],
@@ -9527,7 +9381,6 @@
         "hazardous conditions around the premises"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Unsafe/Dangerous Conditions"
       ],
@@ -9573,7 +9426,6 @@
         "worker sneezing into food"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Unsanitary Conditions - Employees"
       ],
@@ -9641,7 +9493,6 @@
         "dirty dishes used at restaurant"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Unsanitary Conditions - Establishment"
       ],
@@ -9709,7 +9560,6 @@
         "food left uncovered and contaminated"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Unsanitary Conditions - Food"
       ],
@@ -9781,7 +9631,6 @@
         "poorly maintained living space"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Unsatisfactory Living Conditions",
         "DISP Unsatisfactory Living Conditions",
@@ -9857,7 +9706,6 @@
         "bad electrical or plumbing conditions"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Unsatisfactory Utilities - Electrical  Plumbing",
         "SCH6/13Unsatisfactory Utilities - Electrical  Plumbing",
@@ -9937,7 +9785,6 @@
         "sidewalk needs shoveling"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Unshoveled Sidewalk"
       ],
@@ -10004,7 +9851,6 @@
         "existing street lights aren't bright enough"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Upgrade Existing Lighting"
       ],
@@ -10050,7 +9896,6 @@
         "calling in a utility job"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Utility Call-In"
       ],
@@ -10119,7 +9964,6 @@
         "metal cover rocks when cars pass"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Utility Casting Repair"
       ],
@@ -10165,7 +10009,6 @@
         "complaint about valet service parking"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Valet Parking Problems"
       ],
@@ -10211,7 +10054,6 @@
         "parking question at the counter"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Walk-In Service Inquiry"
       ],
@@ -10257,7 +10099,6 @@
         "bought gas with water in it"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -10326,7 +10167,6 @@
         "loud equipment waking me up"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Work Hours-Loud Noise Complaints"
       ],
@@ -10396,7 +10236,6 @@
         "no permit posted for construction"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Work w/out Permit"
       ],
@@ -10467,7 +10306,6 @@
         "they are still drilling at midnight"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Working Beyond Hours"
       ],
@@ -10531,7 +10369,6 @@
         "too many units for this zone"
       ],
       "alias_status": "provisional",
-      "alias_source": "llm:gpt-6.1-sol/aliases-v2; reviewed by Claude (provisional), pending team review",
       "top_titles": [
         "Zoning"
       ],

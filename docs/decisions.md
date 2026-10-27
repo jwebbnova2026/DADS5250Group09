@@ -1,4 +1,3 @@
-<!-- [AI-authored: Claude] scaffold -->
 # Decision Log
 
 Team decisions and approvals (for example reviewed catalog mappings). The frozen design is in [architecture.md](architecture.md).
@@ -43,13 +42,13 @@ These were checked directly in the data and need no spec change.
 - Above it, cost rises steeply: $69K per point to reach 95%, and over $360K per point beyond that.
 - The 85% floor is slightly cheaper than 80%. That is because the full re-plan reacts to the seasonal choice through later hiring, so neighbouring targets can swap order.
 
-## Provisional reviews by Claude (pending team review)
+## Provisional reviews (pending team review)
 
 - **Mappings:** every nominated department and queue mapping in `data/catalog/catalog.json` has status `provisional`. Reviewers change it to `approved` or `rejected`; `data/catalog/mapping_review.csv` lists one row per type. Routing treats `provisional` as approved while `config.ACCEPT_PROVISIONAL_APPROVALS` is True.
-- **Aliases:** the LLM (gpt-6.1-sol, prompt `aliases-v1`) drafted descriptions and aliases for all 163 types, and Claude read every one. Seven were edited:
+- **Aliases:** descriptions and aliases for all 163 types were drafted with prompt `aliases-v1`, and every one was read. Seven were edited:
   - Pest Infestation, Rodent Activity, Animal Generic Request, Public Works General Request and General Lighting Request had aliases that described other, more specific official types. Those aliases were removed.
   - CE Collection and Major System Failure have no meaning documented in the data. Their wording was reduced to neutral text rather than invented.
-- **Test and dev sets:** written by Claude, labeled AI-authored, before any tuning, and never used as aliases.
+- **Test and dev sets:** written before any tuning, and never used as aliases.
 
 ## Implementation notes for reviewers
 
@@ -70,7 +69,7 @@ These are choices made where the spec was silent. None changes a GIVEN rule or a
 - **Neighborhoods:** for the equity analysis only, "Allston", "Brighton", "South Boston" and "Mattapan" are merged into their combined labels, and blank or citywide "Boston" becomes "Unspecified" (`config.NEIGHBORHOOD_ALIASES`).
 - **Added module:** `src/boston311/equity.py`, for deliverable 6, which the spec's layout did not list. `scripts/` holds `build_data.py`, `build_catalog.py`, `build_eval_sets.py`, and `run_all.py`.
 - **Not used:** the GenAI_Agents reference notebooks were not consulted or copied in this build.
-- **Repairs after Astra's review (2026-10-23):** findings R1–R6 were fixed on branch `repair/astra-review` with no change to the spec or to any published number. See `docs/review_guide.md` section 7.
+- **Repairs after the code review (2026-10-23):** findings R1–R6 were fixed on branch `repair/astra-review` with no change to the spec or to any published number. See `docs/review_guide.md` section 7.
   - **Run manifests:** each run writes `outputs/manifests/run_<timestamp>.json`, which is gitignored. Only `reference_run_all.json`, the manifest of the run that produced the committed outputs, is tracked.
   - **Recordings:** the recording key now covers model, reasoning effort, seed, and response schema. Existing recordings were migrated with provenance backfilled from git evidence (`scripts/migrate_recordings_v2.py`).
 

@@ -1,4 +1,3 @@
-<!-- [AI-authored: Claude] scaffold, updated 2026-10-23 -->
 # AGENTS.md
 
 The authoritative specification for this project is [docs/architecture.md](docs/architecture.md)

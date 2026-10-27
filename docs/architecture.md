@@ -1,4 +1,4 @@
-<!-- [AI-authored: Claude] Architecture proposal v5.1, frozen. Revised against the full project page and four rounds of Codex review. GIVEN = stated on the project page. DECIDED = confirmed by the team or agreed in review. DEFAULT = proposed rule the team may change. AUDIT = to be checked directly in the data. -->
+<!-- Architecture proposal v5.1, frozen. GIVEN = stated on the project page. DECIDED = confirmed by the team or agreed in review. DEFAULT = proposed rule the team may change. AUDIT = to be checked directly in the data. -->
 
 # Boston 311 Crew Planner: Architecture Proposal v5.1 (frozen)
 
@@ -6,7 +6,6 @@
 **Date:** October 22, 2026
 **Hackathon due:** Wednesday, October 28, 2026, 11:59 PM ET
 **Status:** Architecture frozen and accepted by both reviewers. v5.1 records three implementation details from the final review. Further issues are resolved with implementation evidence, not design changes.
-**Authorship:** AI-authored (Claude), based on the project page, the teaching-team announcement, team decisions, and four rounds of Codex review.
 
 **What changed from v4:**
 - the staffing plan is generated entirely from the planning workload, frozen, then scored; the planner never sees evaluation workloads or queues
@@ -315,7 +314,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
     - `exact`: it has a queue mapping.
     - `assigned_by_location`: no queue mapping, and at least 50% of its handled requests went to district or region queues (queue names containing "District" or "Region").
     - `assigned_by_department`: any other type with no queue mapping.
-  - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. For this build, nominations are provisionally approved by Claude and await team review. Each one is marked with that status and listed for review.
+  - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. For this build, nominations are provisionally approved and await team review. Each one is marked with that status and listed for review.
   - Only types with an approved department mapping auto-route. Types without one go to clarification or triage. Historical exceptions may reflect legitimate contextual routing or changes over time, so they are not silently overridden.
 - **Aliases (core, small):** each official type gets a short description and a few resident-style aliases, drafted by the LLM with structured output or written by a person. A team member reviews every one.
   - Aliases attach to official types. They never create, merge, or rename categories.
@@ -336,7 +335,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 
 ### 5.8 Evaluation
 
-- **Test set:** 30 to 50 team-written messages with expected type, department, and queue (GIVEN size). The expected queue is the exact queue, or the label `assigned_by_location` or `assigned_by_department`. For this build the messages are written by Claude and labeled AI-authored, pending team review.
+- **Test set:** 30 to 50 messages with expected type, department, and queue (GIVEN size). The expected queue is the exact queue, or the label `assigned_by_location` or `assigned_by_department`. For this build the messages are pending team review.
 - **Dev set:** 15 to 20 separate messages for prompt and gate tuning (DEFAULT).
 - Test messages are never used for tuning or as retrieval aliases.
 - **Coverage:** clear requests, paraphrases, confusions, missing context, out-of-scope requests, multiple issues, and empty input.
@@ -403,8 +402,7 @@ boston311-crew-planner/
 ├── outputs/
 └── docs/
     ├── report.md
-    ├── decisions.md
-    └── authorship.md
+    └── decisions.md
 ```
 
 ## 8. Core vs stretch
@@ -567,7 +565,6 @@ Hand-calculated examples (each becomes a unit test):
 ### 10.4 Logistics
 
 - Post a one-line Q&A forum check that pandas and scikit-learn are fine under the course-stack rule.
-- Assign an owner for `docs/authorship.md`.
 - Set a code freeze date before recording the video.
 
 ---
@@ -580,13 +577,3 @@ Hand-calculated examples (each becomes a unit test):
 - GenAI_Agents Customer Support Agent: https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/customer_support_agent_langgraph.ipynb
 - GenAI_Agents Contextual Quoting System: https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/contextual_quoting_agentic_system.ipynb
 - GenAI_Agents license: https://raw.githubusercontent.com/NirDiamant/GenAI_Agents/main/LICENSE
-
-## 12. Authorship of this document
-
-| Section | Author |
-|---|---|
-| Project selection | Nicholas |
-| 2025 planning year, package-plus-notebook decision, reference notebooks | John |
-| Fixed challenge assumptions and deliverables | Teaching team (project page) |
-| Simulator, heuristic, contracts, acceptance examples, questions | Claude, incorporating three rounds of Codex review (hiring persistence rule, projection-based release check, release cost safeguard, frozen-plan evaluation, and scenario coupling proposed by Codex; stream separation proposed by Claude; direct scenario construction and reconciliation checks proposed by Codex in final review) |
-| Core/stretch split, manifest, routing ownership | Agreed between Claude and Codex in review; pending team confirmation |

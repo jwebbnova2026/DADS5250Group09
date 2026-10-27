@@ -1,4 +1,4 @@
-<!-- [AI-authored: Codex] Follow-up review; no implementation fixes made. -->
+<!-- Follow-up review; no implementation fixes made. -->
 # Code review — October 23, 2026, round 3
 
 Reviewed commit: `ad56f30934f8bb2823d6191e1ff2347fcc51dadf`.

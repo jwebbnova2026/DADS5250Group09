@@ -18,7 +18,7 @@ departments in 2023-2024 (163 types). Each entry holds:
   (mostly district or region queues, which depend on the address), or
   ``assigned_by_department`` (several queues; the department assigns).
 * **Review status** of each mapping: ``provisional`` (nominated and
-  provisionally approved by Claude, awaiting team review), ``approved``,
+  provisionally approved, awaiting team review), ``approved``,
   ``rejected``, or ``not_nominated``.
 * **Description and aliases**: a neutral one-sentence description and a few
   resident-style phrasings, used only to help retrieval find the type. They
@@ -72,7 +72,6 @@ class CatalogEntry:
     description: str = ""
     aliases: list[str] = field(default_factory=list)
     alias_status: str = "missing"  # "missing", "provisional", "approved"
-    alias_source: str = ""  # e.g. "llm:gpt-6.1-sol/aliases-v1, reviewed by Claude"
     top_titles: list[str] = field(default_factory=list)
     stats: dict = field(default_factory=dict)
     department_share_all: float = 0.0  # same department's share of ALL requests (guard: >= 50%)
@@ -221,7 +220,7 @@ def merge_reviews(new: list[CatalogEntry], old: list[CatalogEntry]) -> list[Cata
         o = by_name.get(e.type)
         if o is None:
             continue
-        e.description, e.aliases, e.alias_status, e.alias_source = o.description, o.aliases, o.alias_status, o.alias_source
+        e.description, e.aliases, e.alias_status = o.description, o.aliases, o.alias_status
         if o.department == e.department and o.department_status in (APPROVED, REJECTED):
             e.department_status = o.department_status
         if o.queue == e.queue and o.queue_status_review in (APPROVED, REJECTED):
@@ -237,7 +236,7 @@ def save_catalog(entries: list[CatalogEntry]) -> None:
         "rule": (
             "Two-tier mapping (spec 5.6): department mapping if one in-scope department has >= 90% of the "
             "type's 2023-2024 requests (all departments); exact queue if one queue of that department has >= 90%. "
-            "'provisional' = nominated and provisionally approved by Claude, pending team review."
+            "'provisional' = nominated and provisionally approved, pending team review."
         ),
         "entries": [asdict(e) for e in entries],
     }

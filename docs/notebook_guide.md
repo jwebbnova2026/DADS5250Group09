@@ -1,4 +1,4 @@
-<!-- [AI-authored: Claude] Plain-language walkthrough of the project and demo.ipynb for readers who do not code. Team to review. Every number quoted here is copied from the committed outputs of demo.ipynb (offline mode). -->
+<!-- Plain-language walkthrough of the project and demo.ipynb for readers who do not code. Every number quoted here is copied from the committed outputs of demo.ipynb (offline mode). -->
 
 # A plain-language guide to the Boston 311 Crew Planner
 
@@ -165,7 +165,7 @@ python scripts/run_all.py
 
 A notebook is a document made of **cells** stacked top to bottom.
 
-* **Text cells** explain what is happening. They are written by us for human readers.
+* **Text cells** explain what is happening, for human readers.
 * **Code cells** are instructions for the computer. They have a grey box, and usually a number in brackets on the left, such as `[5]`, showing the order they ran in.
 * **Outputs** appear directly under each code cell: a table, a chart, or a few lines of printed text. **The outputs are what matter for you.** You can skip the code itself.
 
@@ -187,7 +187,7 @@ Each part below matches a heading in the notebook. For each one: the question it
 
 ### Title cell and the setup cell
 
-**What it is.** The first text cell lists the team, states that the notebook and code were written by Claude (an AI) from the team's design, and summarizes the six parts of the notebook.
+**What it is.** The first text cell lists the team and summarizes the six parts of the notebook.
 
 **The first code cell** loads the project's tools and sets `MODE = "offline"`. Its only output is one line:
 
@@ -390,7 +390,7 @@ Every routed reply also gives the type's past on-time rate and typical time to c
 
 **Question.** How often does the assistant get it right?
 
-**What happens.** The assistant is run on two sets of practice messages. The **dev set** (18 messages) was used to tune the assistant. The **test set** (40 messages) was kept aside and never used for tuning, so it is the fair measure. The test set mixes clear requests, rewordings, easily confused types, vague messages, messages with several problems, out-of-scope messages, and an empty message. Both sets were written by Claude and are pending team review.
+**What happens.** The assistant is run on two sets of practice messages. The **dev set** (18 messages) was used to tune the assistant. The **test set** (40 messages) was kept aside and never used for tuning, so it is the fair measure. The test set mixes clear requests, rewordings, easily confused types, vague messages, messages with several problems, out-of-scope messages, and an empty message. Both sets are pending team review.
 
 **How to read the metrics table.** Each metric shows `correct`, `total`, and `percent`, for dev and for test:
 
@@ -429,9 +429,9 @@ The notebook ends with the main caveats, repeated here in plain terms:
 
 * The costs, crew capacities, and penalties are the course's assumptions, and the 21-day working month is simplified.
 * The plan is graded on made-up 2025 requests, not on real 2025 requests.
-* The request-type mappings, aliases, and test messages are AI-prepared and still awaiting team review.
+* The request-type mappings, aliases, and test messages are still awaiting team review.
 * The 93% Parks target is a policy choice backed by the cost-versus-service comparison, not the single "best" answer.
-* How AI was used in this project is documented in [`docs/authorship.md`](authorship.md).
+* Authorship, and how AI was used, are in the Authorship section of the [README](../README.md#authorship).
 
 ---
 
@@ -455,11 +455,10 @@ You do not need any of these to follow the notebook, but they are useful for the
 
 | File | What it is |
 |---|---|
-| [`README.md`](../README.md) | Setup instructions, architecture diagram, team contributions |
+| [`README.md`](../README.md) | Setup instructions, architecture diagram, authorship |
 | [`docs/report.md`](report.md) | Draft written report with the same results in prose |
 | [`docs/architecture.md`](architecture.md) | The full design specification |
 | [`docs/decisions.md`](decisions.md) | Every design decision the team made, and why |
-| [`docs/authorship.md`](authorship.md) | Who wrote what, and how AI was used |
 | [`docs/review_guide.md`](review_guide.md) | A technical guide for code reviewers |
 | `outputs/` | Every result table as a spreadsheet-friendly CSV file, plus the charts in `outputs/figures/` |
 | `data/eval/` | The dev and test messages used to grade the intake assistant |

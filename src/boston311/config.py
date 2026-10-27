@@ -235,7 +235,7 @@ MIN_ALL_REQUESTS_SHARE = 0.50
 LOCATION_QUEUE_SHARE = 0.50
 LOCATION_QUEUE_WORDS: tuple[str, ...] = ("District", "Region")
 # Mapping review statuses recorded in data/catalog/catalog.json. For this
-# build Claude provisionally approved every nomination; the team replaces
+# build every nomination was provisionally approved; the team replaces
 # "provisional" with "approved" or "rejected" after review. Routing treats
 # "provisional" as approved only while this flag is True.
 ACCEPT_PROVISIONAL_APPROVALS = True

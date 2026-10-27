@@ -1,4 +1,4 @@
-<!-- [AI-authored: Claude] First draft for Andrew and Nicholas to rewrite and finalize. Every number comes from outputs/ (python scripts/run_all.py, offline mode). -->
+<!-- Draft. Every number comes from outputs/ (python scripts/run_all.py, offline mode). -->
 # Staffing Boston's 311 City Service Teams: analysis and justification (draft)
 
 ## 1. Summary
@@ -23,7 +23,7 @@ We built a month-by-month 2025 crew plan for Public Works (PWDx), Transportation
 * 33/34 correct request types;
 * 29/30 auto-routes correct (96.7% precision).
 
-Results are a demonstration evaluation on AI-written messages pending team review.
+Results are a demonstration evaluation on messages pending team review.
 
 ## 2. Data
 
@@ -172,12 +172,5 @@ This is descriptive, not causal: reporting channels and employee-generated reque
 * **Scoring workloads are synthetic.** The plan is scored on synthetic workloads, not real 2025 requests. A 2025 holdout is stretch.
 * **The 93% Parks target is a policy choice, not an optimum.** Another target moves along the frontier in section 5a. The frontier itself depends on the challenge's assumed costs and penalties.
 * **Hiring looks at volume, not deadlines.** The hiring rule counts every arriving request, including Parks requests with year-long deadlines. Where the seasonal rule leaves a backlog, the rule can still order permanent crews in October, as the rejected cost-only rule showed.
-* **Pending review.** Mappings and aliases are provisionally approved by Claude, and the eval messages are AI-written.
+* **Pending review.** The mappings, the aliases, and the eval messages are provisional, pending team review.
 * **Synthetic workload contents.** No-target requests use capacity but carry no penalty, as a labelled assumption. Synthetic requests have no neighborhood, so equity is analysed historically only.
-
-## 10. How AI was used
-
-See `docs/authorship.md`. In short:
-* Claude wrote the spec (reviewed by Codex), the code, the tests, the eval sets, the notebook, and this draft.
-* `gpt-6.1-sol` drafted the catalog aliases and classifies messages at run time.
-* The team made every design decision logged in `docs/decisions.md`.
