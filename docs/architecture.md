@@ -542,7 +542,7 @@ Hand-calculated examples (each becomes a unit test):
 
 | ID | Question | Answer |
 |---|---|---|
-| Q1 | Are trainees paid during their training month? An optional one-line Q&A forum check; does not block. | Yes, paid (configurable) |
+| Q1 | Are trainees paid during their training month? | Yes, paid (configurable) |
 | Q2 | Which spike scenario: snowstorm, heat wave, or both? | Snowstorm only |
 | Q3 | Which "other consideration": neighborhood equity or employee vs resident requests? | Neighborhood equity |
 | Q4 | Which provider and model (OpenAI or Gemini), and does everyone have access? | OpenAI |
@@ -572,7 +572,6 @@ Hand-calculated examples (each becomes a unit test):
 
 ### 10.4 Logistics
 
-- Post a one-line Q&A forum check that pandas and scikit-learn are fine under the course-stack rule.
 - Set a code freeze date before recording the video. Done: the code freeze is 2026-10-28.
 
 ---

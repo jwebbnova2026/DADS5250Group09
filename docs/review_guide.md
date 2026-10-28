@@ -231,7 +231,6 @@ These are ordered by how much depends on them and how easy a subtle error would 
 - **Volume-based hiring:** the hiring rule counts long-deadline requests in its shortage. It is safe with the 93% floor, but a weaker seasonal rule can trigger large October hires (architecture section 5.4).
 - **No releases occur.** As a result, Public Works and Inspectional Services run at about 60% utilization in Q4. This follows from the "no notices after August" rule and is discussed in the notebook, section 4.
 - **Frontier wobble:** neighbouring targets can swap order on cost, because the planner fully re-plans for each target.
-- **Spec 10.4 logistics** are still open: the Q&A forum check on pandas and scikit-learn, and a code-freeze date.
 
 ## 7. Repairs after the 2026-10-23 review
 
