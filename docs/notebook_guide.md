@@ -113,7 +113,7 @@ Running it yourself proves the results are reproducible. Offline mode needs no A
 
 **Step 1. Install the tools (once).**
 
-* **Python 3.12** from [python.org/downloads](https://www.python.org/downloads/). On Windows, tick **"Add python.exe to PATH"** on the first installer screen.
+* **Python 3.12** from [python.org/downloads](https://www.python.org/downloads/). On Windows, tick **"Add python.exe to PATH"** on the first installer screen. Or install it with one command: `winget install Python.Python.3.12` in PowerShell on Windows, or `brew install python@3.12` on a Mac with Homebrew.
 * **Visual Studio Code** (VS Code) from [code.visualstudio.com](https://code.visualstudio.com/). Open it, click the Extensions icon (four squares) on the left, and install the **Python** and **Jupyter** extensions published by Microsoft. Anaconda's Jupyter also works if you already have it.
 
 **Step 2. Get the project.** On the repository's GitHub page, click the green **Code** button, then **Download ZIP**. Unzip it somewhere easy to find, such as your Desktop.
@@ -142,7 +142,7 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
 
 The last command registers this environment with Jupyter under the name **Python (boston311)**.
 
-On Windows, if `python` is "not recognized," close and reopen VS Code, or use `py` in place of `python` for the first command.
+On Windows, if `python` is "not recognized," close and reopen VS Code, or use `py -3.12` in place of `python` for the first command. Use `py -3.12` too if you have more than one Python installed, so the environment gets 3.12 and not a newer version.
 
 **Step 5. Open and run the notebook.**
 

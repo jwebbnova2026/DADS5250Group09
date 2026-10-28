@@ -12,10 +12,22 @@ This is a demonstration. It never submits anything to the City of Boston and nev
 
 ## Setup
 
-Requires Python 3.12 (3.11 or later should work). From the repository root:
+Requires Python 3.12 (3.11 or later should work). The pinned dependencies in `requirements.lock` were built on 3.12. If you don't have it, install it:
 
 ```bash
-python -m venv .venv
+# Windows (PowerShell)
+winget install Python.Python.3.12
+# macOS (Homebrew)
+brew install python@3.12
+```
+
+Or download it from [python.org/downloads](https://www.python.org/downloads/). Then, from the repository root, create the virtual environment with 3.12:
+
+```bash
+# Windows
+py -3.12 -m venv .venv
+# macOS or Linux
+python3.12 -m venv .venv
 ```
 
 Activate it (Windows: `.venv\Scripts\activate`; macOS or Linux: `source .venv/bin/activate`), then install the pinned dependencies and the package:
