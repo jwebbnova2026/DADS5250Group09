@@ -384,7 +384,7 @@ A plan made once in January cannot respond when demand changes. A natural next s
 
 Every routed reply also gives the type's past on-time rate and typical time to close, labeled as past performance, not a promise. Every reply ends by stating that nothing was actually submitted to the city.
 
-**The clarification example.** The resident writes "There's a light out." The assistant asks: "Is it a streetlight, a traffic signal, or a light in a park?" The resident answers that it is a street light in front of their house, and the assistant routes it to Street Light Outages in Public Works.
+**The clarification example.** The resident writes "There's a light out." The assistant asks: "Is it a streetlight or a traffic signal that's out?" The resident answers that it is a street light in front of their house, and the assistant routes it to Street Light Outages in Public Works.
 
 ### Accuracy on the dev and test sets
 

@@ -641,6 +641,8 @@ The team reviewed every nominated mapping, every description and alias set, and 
 | Descriptions and aliases (163) | 153 approved, 10 provisional. 11 types were reworded, for example Abandoned Bicycle now covers bicycles only, and Carbon Monoxide and Fire in Food Establishment now send active alarms and fires out of scope |
 | Evaluation examples (40 test, 18 dev) | Six were relabeled: t20, t22, t25, t29, d10, and d15 |
 
+**Before the team review,** a first read of every LLM draft removed aliases from Pest Infestation, Rodent Activity, Animal Generic Request, Public Works General Request, and General Lighting Request that described other, more specific official types, and reduced CE Collection and Major System Failure, whose meaning the data does not document, to neutral wording.
+
 **Rejected routing (8 types).** Big Buildings Recycling (INTERNAL), Follow-Up, Major System Failure, Notification, Phone Bank Service Inquiry, Sign Shop WO, Utility Call-In, and Walk-In Service Inquiry describe internal staff work or are undefined in the data. They never auto-route; a message classified as one of them goes to triage. Two other types first held as possible staff workflows, Capital Improvement Long Term and StreetLight Pole WO, were approved.
 
 **Remaining exceptions (prototype limitations).**

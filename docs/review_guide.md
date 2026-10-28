@@ -105,7 +105,7 @@ Code paths are under `src/boston311/`. Tests are under `tests/`.
 
 | Spec | Where | Tested by |
 |---|---|---|
-| **1** fresh install; notebook runs from a restarted kernel | README Setup; `requirements.lock` | Manual. A clean venv built from `requirements.lock` passed the tests and executed the notebook on 2026-10-22. After later changes the notebook was re-executed with `nbconvert` (a fresh kernel) on 2026-10-23, using Miniconda's Jupyter and the `boston311` kernel |
+| **1** fresh install; notebook runs from a restarted kernel | README Setup; `requirements.lock` | Manual. On 2026-10-28 a new venv built from `requirements.lock` on Python 3.12.10 passed all 145 tests, `run_all.py` reproduced every committed output byte for byte, and the notebook executed with no errors in a fresh `boston311` kernel. On that Windows machine `nbconvert --execute` stopped with "Kernel didn't respond in 60 seconds" because its client connects before the kernel is listening; starting the kernel first, waiting 15 seconds, and executing through `nbclient` (the engine `nbconvert` uses) worked |
 | **2** offline mode with no network or secrets | `llm.py` `OfflineModel`, `RecordingStore` | `test_intake.py::test_offline_replay_covers_every_eval_item`; the notebook executes with `OPENAI_API_KEY` unset |
 | **3** 48 rows per scenario; flow and cost identities | `staffing.py` `score_plan`, `reconciliation_failures` | `test_full_reconciliation` (8 plan × scenario combinations) |
 | **4** same seed and scenario → identical workloads across plans | By construction: both plans are scored on the same `Workload` object (`scripts/run_all.py`, notebook section 5) | Indirectly only, through `test_full_reconciliation`. No test asserts object identity |
