@@ -301,10 +301,23 @@ def test_multiple_issues_ask_first(catalog, retriever):
 
 
 def test_retrieval_gate_asks_for_detail(catalog, retriever):
-    pe = type_id_of(catalog, "Parking Enforcement")
-    model = FakeModel(proposal(pe))
-    r = assistant(catalog, retriever, model, gate=0.99).run("A car is blocking my driveway")
+    # The model picks a candidate that is NOT the top retrieval hit, so the
+    # two signals disagree and the gate applies.
+    message = "A car is blocking my driveway"
+    second = retriever.search(message)[1].type_id
+    model = FakeModel(proposal(second))
+    r = assistant(catalog, retriever, model, gate=0.99).run(message)
     assert r.decision is Decision.CLARIFY
+
+
+def test_agreement_with_top_candidate_skips_gate(catalog, retriever):
+    # Agreement rule (decided 2026-10-28): the model's clear pick is also the
+    # top retrieval hit, so a weak retrieval score alone does not force a question.
+    message = "A car is blocking my driveway"
+    top = retriever.search(message)[0].type_id
+    assert top == type_id_of(catalog, "Parking Enforcement")
+    r = assistant(catalog, retriever, FakeModel(proposal(top)), gate=0.99).run(message)
+    assert r.decision is Decision.ROUTE and r.department == "BTDT"
 
 
 def test_model_failure_triage(catalog, retriever):

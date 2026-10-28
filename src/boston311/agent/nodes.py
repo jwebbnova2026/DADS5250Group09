@@ -113,6 +113,8 @@ class Nodes:
         3. Something is unclear: the model flags ambiguity or several
            issues, proposes no type, or the retrieval gate fails -> CLARIFY
            if we have not asked yet, otherwise TRIAGE (second ambiguity).
+           The gate is skipped when the model's pick is the top-ranked
+           retrieval candidate (agreement rule).
         4. The proposed type is not one of the retrieved candidates or not
            in the catalog -> TRIAGE.
         5. The proposed type is one of an overlapping pair
@@ -134,7 +136,10 @@ class Nodes:
             unclear_reason = "more than one request type fits"
         elif p.type_id is None:
             unclear_reason = "no request type clearly fits"
-        elif state.get("top_score", 0.0) < self.gate:
+        elif state.get("top_score", 0.0) < self.gate and not _agrees_with_top_candidate(p, state):
+            # Agreement rule (decided 2026-10-28): a weak retrieval score
+            # alone does not force a question when the model's clear pick
+            # is also the top-ranked candidate; the two signals agree.
             unclear_reason = "the message matches no official type closely (retrieval gate)"
         if unclear_reason:
             if state.get("clarifications_used", 0) == 0:
@@ -232,6 +237,15 @@ class Nodes:
     @staticmethod
     def after_decide(state: IntakeState) -> str:
         return "clarify" if state.get("decision") == Decision.CLARIFY.value else "respond"
+
+
+def _agrees_with_top_candidate(p: ClassificationProposal, state: IntakeState) -> bool:
+    """True if the model's proposed type is the top-ranked retrieved candidate.
+
+    Candidates are stored best first (see ``tools.retrieve_candidates``).
+    """
+    candidates = state.get("candidates") or []
+    return bool(candidates) and p.type_id is not None and p.type_id == candidates[0]["type_id"]
 
 
 def _triage(reason: str) -> IntakeState:

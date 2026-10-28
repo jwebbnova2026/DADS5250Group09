@@ -8,12 +8,12 @@ auto-route precision,12,12,100.0,dev
 auto-route coverage,12,12,100.0,dev
 clarification rate,3,18,16.7,dev
 triage rate,5,18,27.8,dev
-decision accuracy,39,40,97.5,test
-type accuracy,32,34,94.1,test
-department accuracy,28,29,96.6,test
+decision accuracy,40,40,100.0,test
+type accuracy,33,34,97.1,test
+department accuracy,29,29,100.0,test
 queue accuracy (exact queues),19,20,95.0,test
-queue accuracy (location/department labels),8,9,88.9,test
-auto-route precision,27,28,96.4,test
-auto-route coverage,28,29,96.6,test
-clarification rate,9,40,22.5,test
+queue accuracy (location/department labels),9,9,100.0,test
+auto-route precision,28,29,96.6,test
+auto-route coverage,29,29,100.0,test
+clarification rate,8,40,20.0,test
 triage rate,9,40,22.5,test
