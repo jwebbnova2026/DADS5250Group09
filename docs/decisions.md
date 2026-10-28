@@ -50,6 +50,23 @@ These were checked directly in the data and need no spec change.
   - CE Collection and Major System Failure have no meaning documented in the data. Their wording was reduced to neutral text rather than invented.
 - **Test and dev sets:** written before any tuning, and never used as aliases.
 
+### Team review, round 1 (2026-10-27)
+
+None of these changes a result: routing treats `approved` and `provisional` the same while `ACCEPT_PROVISIONAL_APPROVALS` is True.
+
+- **Department mappings approved (14):** Parking Enforcement, Abandoned Vehicles, Parking Meter Repairs and Pavement Marking Maintenance (Transportation); Improper Storage of Trash (Barrels), Mattress_Pickup, Schedule a Bulk Item Pickup, Missed Trash/Recycling/Yard Waste/Bulk Item and Unshoveled Sidewalk (Public Works); Unsatisfactory Living Conditions, Heat - Excessive Insufficient, Mice Infestation - Residential, Chronic Dampness/Mold and Bed Bugs (Inspectional Services). `department_status` is now `approved` for these. Their exact-queue mappings were not part of this approval and stay `provisional`.
+- **"Assigned by location" labels approved (8):** CE Collection, Ground Maintenance, Pick up Dead Animal, Request for Snow Plowing, Request for Snow Plowing (Emergency Responder), Requests for Street Cleaning, Snow/Ice Control and Space Savers. Their recorded District/Region queue shares (82.8% to 100%) support the label. This approves the routing label only, independently of the aliases and of what residents are eligible for. The label is derived from `location_queue_share` and has no status field, so the approval is recorded here. The eight department mappings themselves stay `provisional`.
+- **Unmapped types (31): approve retaining `not_nominated`.** All 31 fail the current nomination rules. This approval keeps them unmapped; it is not permission to create a mapping for any of them.
+
+### Test example t13 after the review (2026-10-28, accepted as is)
+
+After the review's wording edits and the `classify-v3` prompt, all 66 classifications were re-recorded live. Test decision accuracy fell from 40/40 to 39/40, and type accuracy from 33/34 to 32/34. Both drops are t13, "streetlite broke on my block, its pitch black at nite".
+
+- **What changed:** the model still picks Street Light Outages with no ambiguity. But the message's best retrieval score fell from 0.1504 to 0.1495, just under the 0.15 retrieval gate, so the assistant now asks one clarifying question. t13 has no scripted answer, so the evaluation ends at that question and counts it as a miss.
+- **Why the score moved:** t13's own type was not edited. TF-IDF weights each word by how many types use it, so removing about 40 aliases from other types (the bike-only Abandoned Bicycle wording and the ten reworded types) shifted every score slightly. t13 had passed the gate by only 0.0004.
+- **Accepted, not tuned:** the gate was tuned on the dev set only (see "Tuning, dev set only" below), and spec 5.8 forbids tuning on the test set. Lowering the gate or editing t13 to recover the point would do exactly that, so the result stands.
+- **Other changes in the same run:** t22 and d15 now go to TRIAGE under the overlapping-types rule, as intended. This also changes the denominators of the coverage, department, and queue metrics.
+
 ## Implementation notes for reviewers
 
 These are choices made where the spec was silent. None changes a GIVEN rule or a staffing decision rule.
@@ -77,6 +94,8 @@ These are choices made where the spec was silent. None changes a GIVEN rule or a
 
 | Date | Change | Why | Decided by |
 |---|---|---|---|
+| 2026-10-27 | Overlapping types go to TRIAGE: if the model picks one type of a listed pair and the other was also retrieved, a person routes it (sections 5.6, 5.7, 6; `config.OVERLAPPING_TYPE_PAIRS`). Test example t22 now expects TRIAGE, as d15 does | Team review: Contractor Complaints / Contractors Complaint, Work Hours-Loud Noise Complaints / Working Beyond Hours, and Sidewalk Repair / Sidewalk Repair (Make Safe) describe the same problem but route differently (or one routes and one does not). Nothing in the data tells them apart, and prompt rule 8 ("pick the first" near-duplicate) made the outcome depend on retrieval order. A code rule is deterministic and testable and leaves the prompt alone | John |
+| 2026-10-27 | Classifier prompt rule 4 narrowed (`classify-v3`): "emergencies" means situations needing police, fire, or an ambulance; a hazard reported to a city department, such as a tree that may fall, stays in scope (section 5.7) | The old rule excluded all "emergencies", contradicting the approved Tree Emergencies type ("pose an immediate danger") and test example t12. The new wording also matches the reviewed Carbon Monoxide and Fire in Food Establishment descriptions, which send active alarms and fires out of scope | John |
 | 2026-10-23 | Parks seasonal rule became a 93% service floor: the fewest seasonal crews keeping each in-season month's due requests at least 93% on time, or the best reachable rate (spec 5.4 step 2) | See "Parks seasonal rule" below | John |
 | 2026-10-22 | Q5 corrected: John and Adam own the tech build, not Andrew and John | The original entry was a mistake | John |
 | 2026-10-22 | Two-tier routing replaces the single-queue mapping rule (sections 5.6, 5.7, 5.8, 9, 10.2) | Audit: only 86 of 163 types (60% of in-scope volume) have one queue with at least 90% of requests. About 18% of volume goes to district or region queues chosen by location, which text cannot determine, so potholes, street cleaning and dead-animal pickup could never auto-route. Department mapping covers 79% of volume | John |

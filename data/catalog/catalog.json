@@ -43,21 +43,19 @@
       "location_queue_share": 0.0109,
       "department": "BTDT",
       "department_share": 0.9878,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8901,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
-      "description": "A bicycle, scooter, or moped appears to have been abandoned.",
+      "description": "A bicycle appears to have been abandoned.",
       "aliases": [
         "abandoned bicycle",
         "bike left for months",
-        "abandoned scooter",
-        "moped left behind",
         "old bike nobody has moved",
         "bicycle looks abandoned"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Abandoned Bicycle",
         "Abandoned Bicycle: Scooter/Moped"
@@ -113,7 +111,7 @@
       "location_queue_share": 0.0062,
       "department": "ISD",
       "department_share": 0.9259,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.4691,
       "queue_status_review": "not_nominated",
@@ -127,7 +125,7 @@
         "empty property falling apart",
         "nobody lives in this abandoned building"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Abandoned Building"
       ],
@@ -185,10 +183,10 @@
       "location_queue_share": 0.0047,
       "department": "BTDT",
       "department_share": 0.9928,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "BTDT_AVRS Interface Queue",
       "queue_share": 0.9754,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "A car, motorcycle, scooter, moped, RV, trailer, or other vehicle appears to have been abandoned.",
       "aliases": [
@@ -271,7 +269,7 @@
         "need help with an animal",
         "animal concern"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Animal Generic Request",
         "Pick up Dead Animal"
@@ -342,7 +340,7 @@
         "water and sewer inquiry",
         "general sewer question"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "General Request"
       ],
@@ -409,7 +407,7 @@
         "pothole in water main repair patch",
         "sunken pavement after water work"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -443,10 +441,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9953,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Bed bugs are present or suspected in a building.",
       "aliases": [
@@ -457,7 +455,7 @@
         "bedbugs in the bedroom",
         "bed bugs in my building"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Bed Bugs",
         "SCH4/25Bed Bugs",
@@ -501,10 +499,10 @@
       "location_queue_share": 0.0,
       "department": "BTDT",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "BTDT_BostonBikes",
       "queue_share": 0.98,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "A question, complaint, or safety concern involving bicycling, bicycle lanes, or bicycle programs.",
       "aliases": [
@@ -516,7 +514,7 @@
         "problem with bike lanes",
         "general bicycle question"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Boston Bikes: Bikes - General; Complaint",
         "Boston Bikes",
@@ -556,21 +554,14 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "rejected",
       "queue": "PWDx_WM_Mattress_Pickup",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "rejected",
       "queue_status": "exact",
-      "description": "An internal administrative request concerning recycling in large buildings.",
-      "aliases": [
-        "large building recycling question",
-        "apartment building recycling inquiry",
-        "recycling in a big building",
-        "recycling for large residential buildings",
-        "large property recycling request",
-        "building recycling program question"
-      ],
-      "alias_status": "provisional",
+      "description": "An internal Public Works category for recycling in large buildings. It is not a resident request type.",
+      "aliases": [],
+      "alias_status": "approved",
       "top_titles": [
         "Big Buildings Recycling (INTERNAL)"
       ],
@@ -613,10 +604,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 0.9474,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Bridge Maintenance",
       "queue_share": 0.9474,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "A bridge needs maintenance or repair.",
       "aliases": [
@@ -628,7 +619,7 @@
         "loose parts on the bridge",
         "bridge is falling apart"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Bridge Maintenance"
       ],
@@ -685,10 +676,10 @@
       "location_queue_share": 0.0008,
       "department": "ISD",
       "department_share": 0.9901,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9265,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests for an inspection of a building's condition or construction.",
       "aliases": [
@@ -699,7 +690,7 @@
         "concerns about building safety",
         "inspect the building"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Building Inspection Request"
       ],
@@ -760,7 +751,7 @@
       "location_queue_share": 0.9799,
       "department": "PWDx",
       "department_share": 0.9968,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.2829,
       "queue_status_review": "not_nominated",
@@ -773,7 +764,7 @@
         "request a CE pickup",
         "CE collection still pending"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "CE Collection"
       ],
@@ -804,21 +795,20 @@
       "location_queue_share": 0.0,
       "department": "PARK",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PARK_Park Improvement Requests",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
-      "description": "Long-term capital improvement needs for parks and recreation facilities.",
+      "description": "Long-term capital improvement projects for parks and recreation facilities, such as a major renovation. Routine maintenance and repairs belong to other Parks types.",
       "aliases": [
-        "park needs major improvements",
+        "long term park capital improvement",
         "long term park renovation",
-        "recreation facility needs an upgrade",
-        "request major park upgrades",
-        "park needs a complete overhaul",
-        "recreation center renovation request"
+        "major park renovation project",
+        "capital improvement project for a park",
+        "long term upgrade to a recreation center"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -847,21 +837,19 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
-      "description": "Concerns about carbon monoxide in a building.",
+      "description": "A non-emergency concern about carbon monoxide in a residential building, for housing inspectors. An alarm sounding now, or symptoms of exposure, is an emergency and out of scope.",
       "aliases": [
         "carbon monoxide concern",
-        "possible carbon monoxide leak",
-        "CO in the building",
-        "carbon monoxide alarm went off",
-        "high carbon monoxide reading",
-        "worried about carbon monoxide indoors"
+        "worried about carbon monoxide in my building",
+        "carbon monoxide problem in my apartment building",
+        "CO concern in a rental"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Carbon Monoxide"
       ],
@@ -931,7 +919,7 @@
         "water pooling around the catch basin",
         "missing catch basin cover"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Catchbasin"
       ],
@@ -967,10 +955,10 @@
       "location_queue_share": 0.0172,
       "department": "PARK",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PARK_Cemetery Maintenance Request",
       "queue_share": 0.9828,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Maintenance problems with cemetery grounds and features.",
       "aliases": [
@@ -982,7 +970,7 @@
         "fallen branches in the cemetery",
         "graveyard grounds are neglected"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Cemetery Maintenance Request"
       ],
@@ -1018,10 +1006,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9983,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Persistent dampness, excess moisture, or mold inside a building.",
       "aliases": [
@@ -1034,7 +1022,7 @@
         "black spots growing on the ceiling",
         "persistent moisture indoors"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Chronic Dampness/Mold",
         "SCH9/28Chronic Dampness/Mold",
@@ -1104,7 +1092,7 @@
         "city property needs snow cleared",
         "who handles snow on state property"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 1,
@@ -1159,10 +1147,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 0.9652,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Code Enforcement",
       "queue_share": 0.9478,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Construction or renovation waste left for disposal or scattered in an area.",
       "aliases": [
@@ -1174,7 +1162,7 @@
         "scrap wood from construction",
         "demolition debris piled up"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Construction Debris"
       ],
@@ -1307,10 +1295,10 @@
       "location_queue_share": 0.0035,
       "department": "ISD",
       "department_share": 0.9373,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9308,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Complaints about contractors and their work.",
       "aliases": [
@@ -1352,10 +1340,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Problems involving utility meters that serve the wrong unit, shared utility usage, or submetering.",
       "aliases": [
@@ -1366,7 +1354,7 @@
         "problem with my utility submeter",
         "being charged for shared utilities"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Cross Metering - Sub-Metering",
         "SCH7/12Cross Metering - Sub-Metering",
@@ -1428,10 +1416,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9605,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9209,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Problems with building exits or paths needed to leave a building safely.",
       "aliases": [
@@ -1442,7 +1430,7 @@
         "emergency exit won't open",
         "hallway exit blocked"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Egress"
       ],
@@ -1488,7 +1476,7 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.6451,
       "queue_status_review": "not_nominated",
@@ -1503,7 +1491,7 @@
         "light switch gives me a shock",
         "electrical panel problem"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Electrical"
       ],
@@ -1574,7 +1562,7 @@
         "overflowing public waste bin",
         "trash spilling out of park basket"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Empty Litter Basket",
         "Ground Maintenance: Commonwealth Avenue Mall - BPRD",
@@ -1646,7 +1634,7 @@
       "location_queue_share": 0.0707,
       "department": "PARK",
       "department_share": 0.9595,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.1865,
       "queue_status_review": "not_nominated",
@@ -1661,7 +1649,7 @@
         "broken equipment at the park",
         "playground climbing frame is damaged"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Equipment Repair",
         "Park Equipment Repair",
@@ -1724,10 +1712,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.958,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9441,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Work or activity that goes beyond what a permit allows.",
       "aliases": [
@@ -1738,7 +1726,7 @@
         "contractor ignoring permit limits",
         "project doesn't match approved permit"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Exceeding Terms of Permit"
       ],
@@ -1774,21 +1762,20 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 0.9605,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
-      "description": "A fire incident at a restaurant or other food establishment.",
+      "description": "A report to health inspectors about a fire that has already happened at a restaurant or other food establishment. A fire burning now is an emergency and out of scope.",
       "aliases": [
-        "fire at a restaurant",
-        "restaurant kitchen had a fire",
-        "fire in a food business",
-        "report a fire at a cafe",
-        "there was a fire in the bakery",
-        "food establishment fire incident"
+        "a restaurant had a fire earlier",
+        "there was a fire at a cafe yesterday",
+        "restaurant kitchen fire last week",
+        "past fire at a food business",
+        "bakery had a fire recently"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Fire in Food Establishment"
       ],
@@ -1819,10 +1806,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "rejected",
       "queue": "ISD_Administrative",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "rejected",
       "queue_status": "exact",
       "description": "Follow-up information or inquiries about an existing Inspectional Services matter.",
       "aliases": [
@@ -1868,10 +1855,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "A confirmed food safety alert involving a food product or food establishment.",
       "aliases": [
@@ -1882,7 +1869,7 @@
         "confirmed food warning",
         "confirmed safety alert for a food business"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Food Alert - Confirmed"
       ],
@@ -1919,10 +1906,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of possible food safety hazards or unsanitary conditions involving food.",
       "aliases": [
@@ -1931,7 +1918,7 @@
         "restaurant food safety concern",
         "food may be contaminated"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Food Alert - Unconfirmed",
         "Food Alert - Confirmed",
@@ -2004,7 +1991,7 @@
         "feedback about a city worker",
         "staff member treated me poorly"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "PublicWorks: Complaint",
         "BTDT: Complaint",
@@ -2085,7 +2072,7 @@
         "compliment about a city program",
         "concern about city rules"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "PublicWorks: Complaint",
         "BTDT: Complaint",
@@ -2150,10 +2137,10 @@
       "location_queue_share": 0.001,
       "department": "PWDx",
       "department_share": 0.9897,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Street Light_General Lighting Request",
       "queue_share": 0.9627,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "General requests or concerns about public street lighting.",
       "aliases": [
@@ -2163,7 +2150,7 @@
         "request for public lighting",
         "our block needs better lighting"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "General Lighting Request",
         "PRINTED : General Lighting Request  --  N.M.",
@@ -2227,7 +2214,7 @@
       "location_queue_share": 0.0034,
       "department": "BTDT",
       "department_share": 0.9495,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.6128,
       "queue_status_review": "not_nominated",
@@ -2241,7 +2228,7 @@
         "request a traffic study",
         "cars have trouble navigating this intersection"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "General Traffic Engineering Request"
       ],
@@ -2311,7 +2298,7 @@
         "graffiti on a utility box",
         "painted scribbles on a fence"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Graffiti Removal"
       ],
@@ -2373,7 +2360,7 @@
       "location_queue_share": 0.8581,
       "department": "PARK",
       "department_share": 0.9598,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.2032,
       "queue_status_review": "not_nominated",
@@ -2387,7 +2374,7 @@
         "weeds in park flower beds",
         "playground grounds need maintenance"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Ground Maintenance",
         "Ground Maintenance: --Not in list-- - BPRD",
@@ -2437,10 +2424,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9976,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of excessive or insufficient indoor heat.",
       "aliases": [
@@ -2452,7 +2439,7 @@
         "my apartment is unbearably hot",
         "landlord won't turn on the heat"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Heat - Excessive  Insufficient",
         "DISP Heat - Excessive  Insufficient",
@@ -2531,7 +2518,7 @@
         "suspected illegal car painting business",
         "unlicensed auto body work in garage"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Illegal Auto Body Shop"
       ],
@@ -2592,10 +2579,10 @@
       "location_queue_share": 0.0454,
       "department": "PWDx",
       "department_share": 0.9953,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Code Enforcement",
       "queue_share": 0.9477,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of waste or unwanted items dumped in unauthorized locations.",
       "aliases": [
@@ -2607,7 +2594,7 @@
         "bags of rubbish dumped on public land",
         "someone dumped an old couch"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Illegal Dumping"
       ],
@@ -2659,7 +2646,7 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8636,
       "queue_status_review": "not_nominated",
@@ -2673,7 +2660,7 @@
         "people living in a commercial space",
         "unapproved residential occupancy"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Illegal Occupancy"
       ],
@@ -2743,7 +2730,7 @@
         "signs posted without permission",
         "someone put ads on street poles"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Illegal Posting of Signs"
       ],
@@ -2796,7 +2783,7 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9946,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8432,
       "queue_status_review": "not_nominated",
@@ -2810,7 +2797,7 @@
         "rooms rented separately in unlicensed house",
         "suspected illegal boarding house"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Illegal Rooming House"
       ],
@@ -2866,10 +2853,10 @@
       "location_queue_share": 0.0085,
       "department": "PWDx",
       "department_share": 0.9573,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Code Enforcement",
       "queue_share": 0.9573,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Selling goods in public places without required permission.",
       "aliases": [
@@ -2880,7 +2867,7 @@
         "someone selling merchandise on the sidewalk",
         "street sales without permission"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Illegal Vending"
       ],
@@ -2942,10 +2929,10 @@
       "location_queue_share": 0.024,
       "department": "PWDx",
       "department_share": 0.9951,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Code Enforcement",
       "queue_share": 0.9667,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Trash stored improperly in barrels, bins, or other containers.",
       "aliases": [
@@ -2956,7 +2943,7 @@
         "improperly stored garbage",
         "rubbish spilling out of bins"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Improper Storage of Trash (Barrels)",
         "Ground Maintenance: Copps Hill Terrace - BPRD"
@@ -3010,10 +2997,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 0.9811,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Street Light_Install New Lighting",
       "queue_share": 0.9057,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests for new street lighting where lighting is not currently installed.",
       "aliases": [
@@ -3024,7 +3011,7 @@
         "add a street light here",
         "this corner needs a light"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Install New Lighting",
         "PRINTED"
@@ -3061,10 +3048,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 0.9545,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Items offered for sale without required price markings.",
       "aliases": [
@@ -3075,7 +3062,7 @@
         "can't find the item price",
         "goods missing price labels"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Item Price Missing"
       ],
@@ -3128,10 +3115,10 @@
       "location_queue_share": 0.0159,
       "department": "PWDx",
       "department_share": 0.9524,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Street Light Knockdown Replacement",
       "queue_share": 0.927,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Streetlight poles or fixtures that have been knocked down and need replacement.",
       "aliases": [
@@ -3142,7 +3129,7 @@
         "street light knocked over",
         "lamp post down after a crash"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Knockdown Replacement",
         "PRINTED : Knockdown Replacement  --  N.M.",
@@ -3179,10 +3166,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Suspected lead hazards in a building, including lead-based paint.",
       "aliases": [
@@ -3193,7 +3180,7 @@
         "suspected lead paint dust",
         "old window paint might have lead"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Lead"
       ],
@@ -3247,22 +3234,21 @@
       "location_queue_share": 0.114,
       "department": "PWDx",
       "department_share": 0.9793,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8653,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_department",
-      "description": "Maintenance needs for public litter baskets, including full, dirty, or damaged receptacles.",
+      "description": "Repair or cleaning of a public litter basket that is damaged, broken, or dirty. A basket that only needs emptying is Empty Litter Basket.",
       "aliases": [
-        "public trash basket is full",
-        "overflowing sidewalk litter bin",
-        "street trash can needs emptying",
         "broken public garbage bin",
         "litter basket needs cleaning",
         "public wastebasket is damaged",
-        "trash spilling from a street basket"
+        "street trash can is cracked",
+        "litter basket lid is broken",
+        "dirty public trash basket"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Litter Basket Maintenance"
       ],
@@ -3316,10 +3302,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9818,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9197,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Maintenance problems in an owner-occupied home.",
       "aliases": [
@@ -3329,7 +3315,7 @@
         "upkeep issues in my house",
         "poor conditions in my owner occupied home"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Maintenance - Homeowner"
       ],
@@ -3385,10 +3371,10 @@
       "location_queue_share": 0.001,
       "department": "ISD",
       "department_share": 0.9819,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9618,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Complaints about maintenance problems or disrepair in residential buildings.",
       "aliases": [
@@ -3399,7 +3385,7 @@
         "housing maintenance complaint",
         "repairs aren't getting done in my apartment"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Maintenance Complaint - Residential",
         "DISP Maintenance Complaint - Residential",
@@ -3461,19 +3447,16 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 0.9946,
-      "department_status": "provisional",
+      "department_status": "rejected",
       "queue": "PWDx_Major System Failure",
       "queue_share": 0.9601,
-      "queue_status_review": "provisional",
+      "queue_status_review": "rejected",
       "queue_status": "exact",
       "description": "A major system failure logged by Public Works staff; the data does not define it further.",
       "aliases": [
-        "major system breakdown",
-        "a major system has stopped working",
-        "serious system failure",
-        "major system malfunction"
+        "major system failure"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Major System Failure",
         "Major System Failure printed",
@@ -3515,10 +3498,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_WM_Mattress_Pickup",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests for pickup of unwanted mattresses.",
       "aliases": [
@@ -3529,7 +3512,7 @@
         "throwing away a bed mattress",
         "schedule mattress collection"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Mattress Pickup"
       ],
@@ -3565,10 +3548,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9048,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Concerns about mechanical equipment or installations in buildings.",
       "aliases": [
@@ -3578,7 +3561,7 @@
         "mechanical equipment isn't working properly",
         "mechanical system complaint"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Mechanical"
       ],
@@ -3625,10 +3608,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9987,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9665,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Mouse infestations in homes or residential buildings.",
       "aliases": [
@@ -3640,7 +3623,7 @@
         "my building is infested with mice",
         "keep finding mice in my rental"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Mice Infestation - Residential",
         "SCH 8/20 Mice Infestation - Residential",
@@ -3686,10 +3669,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 0.96,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Snow Cases",
       "queue_share": 0.96,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Snow-related complaints not covered by a more specific snow issue.",
       "aliases": [
@@ -3699,7 +3682,7 @@
         "snow issue in my neighborhood",
         "question about a snow problem"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Misc. Snow Complaint"
       ],
@@ -3752,10 +3735,10 @@
       "location_queue_share": 0.0004,
       "department": "PWDx",
       "department_share": 0.9996,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Missed Trash\\Recycling\\Yard Waste\\Bulk Item",
       "queue_share": 0.9898,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Trash, recycling, yard waste, or bulk items left uncollected during a scheduled pickup.",
       "aliases": [
@@ -3768,7 +3751,7 @@
         "my couch wasn't picked up",
         "they skipped our recycling"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Missed Trash: District 07",
         "Missed Trash/Recycling/Yard Waste/Bulk Item",
@@ -3832,7 +3815,7 @@
       "location_queue_share": 0.164,
       "department": "BTDT",
       "department_share": 0.989,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.7503,
       "queue_status_review": "not_nominated",
@@ -3846,7 +3829,7 @@
         "there used to be a sign here",
         "road sign is missing"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Missing Sign"
       ],
@@ -3915,7 +3898,7 @@
         "mosquito infestation",
         "West Nile mosquito concern"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Mosquitoes (West Nile)"
       ],
@@ -3982,7 +3965,7 @@
         "issues with the city parking lot",
         "complaint about city owned parking"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Municipal Parking Lot Complaints"
       ],
@@ -4051,7 +4034,7 @@
         "please pick up these syringes",
         "used needles in the park"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Needle Pickup"
       ],
@@ -4109,7 +4092,7 @@
       "location_queue_share": 0.0297,
       "department": "BTDT",
       "department_share": 0.9615,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.7202,
       "queue_status_review": "not_nominated",
@@ -4124,7 +4107,7 @@
         "request new road markings",
         "this intersection needs a pedestrian crossing"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "New Sign  Crosswalk or Pavement Marking"
       ],
@@ -4179,10 +4162,10 @@
       "location_queue_share": 0.0006,
       "department": "PARK",
       "department_share": 0.9951,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PARK_New Tree Requests",
       "queue_share": 0.9006,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests to plant new trees.",
       "aliases": [
@@ -4193,7 +4176,7 @@
         "please plant more trees",
         "empty tree pit needs a tree"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "New Tree Requests",
         "New Tree Request"
@@ -4225,10 +4208,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_News Boxes",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Complaints about newspaper boxes or newspaper vending racks.",
       "aliases": [
@@ -4239,7 +4222,7 @@
         "abandoned newspaper dispenser",
         "news rack blocking the sidewalk"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "News Boxes"
       ],
@@ -4270,10 +4253,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Missing or incorrect gasoline prices at gas stations.",
       "aliases": [
@@ -4284,7 +4267,7 @@
         "no price displayed for gasoline",
         "charged more than the posted gas price"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No Price on Gas/Wrong Price"
       ],
@@ -4315,10 +4298,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Lack of electricity at a restaurant or other food establishment.",
       "aliases": [
@@ -4329,7 +4312,7 @@
         "no power in the restaurant",
         "bakery has an electrical outage"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No Utilities - Food Establishment - Electricity"
       ],
@@ -4360,10 +4343,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Flooding at a restaurant or other food establishment.",
       "aliases": [
@@ -4374,7 +4357,7 @@
         "bakery kitchen is flooding",
         "standing floodwater in the restaurant"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No Utilities - Food Establishment - Flood"
       ],
@@ -4410,7 +4393,7 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8571,
       "queue_status_review": "not_nominated",
@@ -4424,7 +4407,7 @@
         "restaurant drains backing up with sewage",
         "bakery has sewage coming up"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No Utilities - Food Establishment - Sewer"
       ],
@@ -4455,10 +4438,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Lack of water service at a restaurant or other food establishment.",
       "aliases": [
@@ -4469,7 +4452,7 @@
         "bakery taps have no water",
         "restaurant water service is out"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No Utilities - Food Establishment - Water"
       ],
@@ -4505,10 +4488,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9774,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Loss or lack of electricity in a residential dwelling.",
       "aliases": [
@@ -4519,7 +4502,7 @@
         "no electric service in the house",
         "electricity is off in my building"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No Utilities Residential - Electricity"
       ],
@@ -4561,10 +4544,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9643,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Loss or lack of gas service in a residential dwelling.",
       "aliases": [
@@ -4575,7 +4558,7 @@
         "residential gas service is off",
         "no gas supply to my home"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No Utilities Residential - Gas"
       ],
@@ -4617,10 +4600,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9866,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9732,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Loss or lack of water service in a residential dwelling.",
       "aliases": [
@@ -4631,7 +4614,7 @@
         "water service disconnected at home",
         "all my taps are dry"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No Utilities Residential - Water"
       ],
@@ -4699,7 +4682,7 @@
         "car reported but not towed",
         "no tow complaint confirmation"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "No-Tow Complaint Confirmation"
       ],
@@ -4752,7 +4735,7 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.961,
-      "department_status": "provisional",
+      "department_status": "rejected",
       "queue": null,
       "queue_share": 0.4545,
       "queue_status_review": "not_nominated",
@@ -4807,10 +4790,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9412,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9412,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Occupancy of a building or space without a valid certificate of occupancy or inspection.",
       "aliases": [
@@ -4821,7 +4804,7 @@
         "occupancy certificate has expired",
         "building in use without valid certificates"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Occupying W/Out A Valid CO/CI"
       ],
@@ -4852,10 +4835,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "An oil delivery made without a receipt.",
       "aliases": [
@@ -4866,7 +4849,7 @@
         "heating oil delivered without a ticket",
         "never got my oil delivery receipt"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 1,
@@ -4900,10 +4883,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.92,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Overcrowded living conditions in a residential dwelling.",
       "aliases": [
@@ -4914,7 +4897,7 @@
         "too many people sharing one bedroom",
         "overcrowded rental unit"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Overcrowding"
       ],
@@ -4982,7 +4965,7 @@
         "trash container overflowing onto the ground",
         "dumpster is filthy and neglected"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Overflowing or Un-kept Dumpster"
       ],
@@ -5053,7 +5036,7 @@
         "stickers and flyers need removing",
         "unwanted writing on a wall"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "PWD Graffiti",
         "POWER WASH",
@@ -5112,10 +5095,10 @@
       "location_queue_share": 0.0098,
       "department": "PARK",
       "department_share": 0.9902,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PARK_Park Improvement Requests",
       "queue_share": 0.9216,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests for improvements or additions to parks and their amenities.",
       "aliases": [
@@ -5126,7 +5109,7 @@
         "improve the park paths",
         "suggest upgrades to the playground"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Park Improvement Requests",
         "Park Improvement: Boston Common - BPRD",
@@ -5195,10 +5178,10 @@
       "location_queue_share": 0.0005,
       "department": "BTDT",
       "department_share": 0.9978,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "BTDT_Parking Enforcement",
       "queue_share": 0.9931,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of vehicles parked in violation of parking rules.",
       "aliases": [
@@ -5211,7 +5194,7 @@
         "car blocking the fire hydrant",
         "car parked in resident parking without permit"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Parking Enforcement"
       ],
@@ -5242,10 +5225,10 @@
       "location_queue_share": 0.0,
       "department": "BTDT",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "BTDT_Broken Meter Complaints",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of broken or malfunctioning parking meters.",
       "aliases": [
@@ -5257,7 +5240,7 @@
         "meter didn't give me parking time",
         "parking meter buttons are stuck"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Parking Meter Repairs"
       ],
@@ -5325,7 +5308,7 @@
         "vehicles stored in the front yard",
         "backyard being used as a parking lot"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Parking on Front/Back Yards (Illegal Parking)"
       ],
@@ -5388,16 +5371,14 @@
       "queue_share": 0.0,
       "queue_status_review": "not_nominated",
       "queue_status": null,
-      "description": "General park-related requests and concerns, including weeds.",
+      "description": "A general request or concern about a park that does not fit a more specific Parks type.",
       "aliases": [
         "general question about a park",
-        "weeds in the park",
-        "park grounds need attention",
-        "overgrown weeds by the park path",
-        "concern about park upkeep",
-        "I have a request about the park"
+        "I have a request about the park",
+        "general concern about a park",
+        "something at the park needs attention"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Parks General Request",
         "WEEDS"
@@ -5472,7 +5453,7 @@
         "park walkway is dark",
         "park electrical box is damaged"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Parks Lighting/Electrical Issues",
         "Lighting/Electrical",
@@ -5535,7 +5516,7 @@
       "location_queue_share": 0.4684,
       "department": "BTDT",
       "department_share": 0.9834,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.4684,
       "queue_status_review": "not_nominated",
@@ -5549,7 +5530,7 @@
         "check placement of the stop line",
         "have someone assess the pavement markings"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Pavement Marking Inspection"
       ],
@@ -5585,10 +5566,10 @@
       "location_queue_share": 0.0,
       "department": "BTDT",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "BTDT_Pavement Marking_Maintenance",
       "queue_share": 0.9688,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of pavement markings that need repainting or maintenance.",
       "aliases": [
@@ -5601,7 +5582,7 @@
         "painted turn arrow is worn off",
         "street stripes need touching up"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Pavement Marking Maintenance"
       ],
@@ -5658,7 +5639,7 @@
       "location_queue_share": 0.0009,
       "department": "ISD",
       "department_share": 0.9207,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.5813,
       "queue_status_review": "not_nominated",
@@ -5671,7 +5652,7 @@
         "pests in my building",
         "my apartment has an insect infestation"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Pest Infestation - Residential",
         "DISP Pest Infestation - Residential",
@@ -5711,10 +5692,10 @@
       "location_queue_share": 0.0,
       "department": "BTDT",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "rejected",
       "queue": "BTDT_OPC_Phone Bank Service",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "rejected",
       "queue_status": "exact",
       "description": "Inquiries about Transportation phone bank service.",
       "aliases": [
@@ -5785,7 +5766,7 @@
       "location_queue_share": 0.9545,
       "department": "PWDx",
       "department_share": 0.9368,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.1334,
       "queue_status_review": "not_nominated",
@@ -5800,7 +5781,7 @@
         "there's a dead raccoon by the curb",
         "dead skunk on the road"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Pick up Dead Animal",
         "Ground Maintenance: Boston Common - BPRD",
@@ -5840,21 +5821,19 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Street Light_Pickup_Clear Conduit",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
-      "description": "Requests to pick up or clear conduit.",
+      "description": "A Public Works street-lighting request to pick up or clear conduit; the data does not define it further.",
       "aliases": [
         "pick up conduit",
-        "clear away conduit",
-        "conduit needs removal",
-        "electrical tubing left behind",
-        "remove leftover conduit pipe",
-        "there's conduit that needs clearing"
+        "clear conduit",
+        "conduit needs to be cleared",
+        "street light conduit pickup"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Pickup/Clear Conduit"
       ],
@@ -5924,7 +5903,7 @@
         "pigeons have taken over the ledge",
         "pigeon poop buildup"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Pigeon Infestation"
       ],
@@ -5975,7 +5954,7 @@
       "location_queue_share": 0.1333,
       "department": "PARK",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.7,
       "queue_status_review": "not_nominated",
@@ -5989,7 +5968,7 @@
         "request shrubs for a landscaped area",
         "empty planting beds in the park"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Planting",
         "Planting:  -"
@@ -6036,7 +6015,7 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.6589,
       "queue_status_review": "not_nominated",
@@ -6051,7 +6030,7 @@
         "sink won't drain",
         "water leaking from plumbing"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Plumbing"
       ],
@@ -6087,21 +6066,19 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_STRL Pole Compliance",
       "queue_share": 0.9875,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
-      "description": "Concerns about whether poles meet applicable requirements.",
+      "description": "Compliance concerns about street-light poles, handled by Public Works street lighting.",
       "aliases": [
-        "pole compliance concern",
-        "utility pole may violate requirements",
-        "check whether this pole is compliant",
-        "pole installation doesn't look compliant",
-        "concern about pole placement rules",
-        "pole not meeting standards"
+        "street light pole compliance",
+        "streetlight pole compliance concern",
+        "check whether this street light pole is compliant",
+        "street light pole not meeting standards"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Pole Compliance"
       ],
@@ -6162,10 +6139,10 @@
       "location_queue_share": 0.0042,
       "department": "PWDx",
       "department_share": 0.9921,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Code Enforcement",
       "queue_share": 0.9791,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of poorly maintained property, including accumulated trash and debris.",
       "aliases": [
@@ -6177,7 +6154,7 @@
         "rubbish around the property",
         "move in trash left outside"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Poor Conditions of Property",
         "Student Move-in CE Violation"
@@ -6226,10 +6203,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9844,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9375,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of inadequate ventilation or air circulation inside a building.",
       "aliases": [
@@ -6241,7 +6218,7 @@
         "not enough ventilation indoors",
         "kitchen exhaust isn't venting"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Poor Ventilation"
       ],
@@ -6272,10 +6249,10 @@
       "location_queue_share": 0.0,
       "department": "BTDT",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "BTDT_Parking Lot_PrivateParkingLotComplaints",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Complaints about the operation or conditions of private parking lots.",
       "aliases": [
@@ -6287,7 +6264,7 @@
         "problems at a commercial parking lot",
         "private parking lot conditions"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Private Parking Lot Complaints"
       ],
@@ -6318,10 +6295,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of products sold in quantities smaller than the stated weight, volume, or measure.",
       "aliases": [
@@ -6333,7 +6310,7 @@
         "short measure on a purchase",
         "package is underweight"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Product Short Measure"
       ],
@@ -6389,10 +6366,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9751,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9598,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Concerns about protection of neighboring property during construction or demolition.",
       "aliases": [
@@ -6403,7 +6380,7 @@
         "construction damage to adjoining property",
         "protection for buildings beside construction"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Protection of Adjoining Property"
       ],
@@ -6465,7 +6442,7 @@
       "location_queue_share": 0.1508,
       "department": "PWDx",
       "department_share": 0.9097,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.3881,
       "queue_status_review": "not_nominated",
@@ -6475,7 +6452,7 @@
         "general public works help",
         "cones left in the street"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Public Works General Request",
         "Pick up Dead Animal",
@@ -6516,10 +6493,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Environmental Services (INTERNAL)",
       "queue_share": 0.9688,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of a person being bitten by a rat.",
       "aliases": [
@@ -6530,7 +6507,7 @@
         "rat bit my hand",
         "bitten by a rodent that looked ratlike"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Rat Bite"
       ],
@@ -6576,7 +6553,7 @@
       "location_queue_share": 0.0001,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8269,
       "queue_status_review": "not_nominated",
@@ -6590,7 +6567,7 @@
         "unwanted recycling cart pickup",
         "give back the recycling bin"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Recycling Cart Return"
       ],
@@ -6626,10 +6603,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.963,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Concerns about the condition of a rental unit when it is provided to a tenant.",
       "aliases": [
@@ -6640,7 +6617,7 @@
         "rental wasn't habitable when I got keys",
         "problems with apartment condition at move in"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Rental Unit Delivery Conditions"
       ],
@@ -6693,10 +6670,10 @@
       "location_queue_share": 0.0408,
       "department": "PWDx",
       "department_share": 0.9592,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Request for Litter Basket Installation",
       "queue_share": 0.9551,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests for installation of a public litter basket.",
       "aliases": [
@@ -6707,7 +6684,7 @@
         "request a new sidewalk trash can",
         "no public wastebasket on this block"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Request for Litter Basket Installation"
       ],
@@ -6782,7 +6759,7 @@
         "please fix this pothole",
         "street pavement is caving in"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Request for Pothole Repair",
         "Pothole",
@@ -6831,7 +6808,7 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8041,
       "queue_status_review": "not_nominated",
@@ -6845,7 +6822,7 @@
         "please send a recycling container",
         "request a wheeled recycling tote"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Request for Recycling Cart"
       ],
@@ -6902,7 +6879,7 @@
       "location_queue_share": 0.8994,
       "department": "PWDx",
       "department_share": 0.9892,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.1637,
       "queue_status_review": "not_nominated",
@@ -6917,7 +6894,7 @@
         "snow blocking the roadway",
         "need another pass with the plow"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Request for Snow Plowing"
       ],
@@ -6969,7 +6946,7 @@
       "location_queue_share": 0.9167,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.1667,
       "queue_status_review": "not_nominated",
@@ -6983,7 +6960,7 @@
         "police vehicle blocked by unplowed snow",
         "snowplow needed for ambulance access"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Request for Snow Plowing (Emergency Responder)"
       ],
@@ -7036,7 +7013,7 @@
       "location_queue_share": 0.0909,
       "department": "BTDT",
       "department_share": 0.9091,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.4545,
       "queue_status_review": "not_nominated",
@@ -7050,7 +7027,7 @@
         "change the lane configuration",
         "roadway design change request"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Directional or Roadway Changes"
       ],
@@ -7116,7 +7093,7 @@
       "location_queue_share": 0.8279,
       "department": "PWDx",
       "department_share": 0.9697,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.1442,
       "queue_status_review": "not_nominated",
@@ -7131,7 +7108,7 @@
         "street needs power washing",
         "litter all over the road"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Requests for Street Cleaning",
         "Street Cleaning",
@@ -7196,7 +7173,7 @@
       "location_queue_share": 0.0144,
       "department": "BTDT",
       "department_share": 0.9848,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.7678,
       "queue_status_review": "not_nominated",
@@ -7211,7 +7188,7 @@
         "stoplights need better coordination",
         "request a new stoplight"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Requests for Traffic Signal Studies or Reviews"
       ],
@@ -7267,7 +7244,7 @@
       "location_queue_share": 0.0062,
       "department": "PWDx",
       "department_share": 0.9651,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.6122,
       "queue_status_review": "not_nominated",
@@ -7282,7 +7259,7 @@
         "street surface needs repair",
         "road pavement is breaking apart"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Roadway Repair"
       ],
@@ -7341,10 +7318,10 @@
       "location_queue_share": 0.0169,
       "department": "ISD",
       "department_share": 0.9385,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Environmental Services (INTERNAL)",
       "queue_share": 0.9324,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of rats, mice, or signs of rodent activity.",
       "aliases": [
@@ -7355,7 +7332,7 @@
         "seeing rats during the day",
         "signs of a rodent infestation"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Rodent Activity",
         "Pick up Dead Animal"
@@ -7413,7 +7390,7 @@
         "loud ventilation fan on the roof",
         "rooftop machinery keeping me awake"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -7442,10 +7419,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of a weighing scale or its weight display not being visible to customers.",
       "aliases": [
@@ -7457,7 +7434,7 @@
         "produce scale screen is blocked",
         "cannot see what my purchase weighs"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Scale Not Visible"
       ],
@@ -7488,10 +7465,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of merchandise scanning at a higher price than its advertised or displayed price.",
       "aliases": [
@@ -7503,7 +7480,7 @@
         "receipt price higher than advertised",
         "groceries rang up too high"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Scanning Overcharge"
       ],
@@ -7550,10 +7527,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Schedule a Bulk Item Pickup",
       "queue_share": 0.9999,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests to schedule collection of large discarded items such as furniture.",
       "aliases": [
@@ -7565,7 +7542,7 @@
         "get rid of a bookcase",
         "schedule collection of bulky items"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Schedule a Bulk Item Pickup"
       ],
@@ -7596,10 +7573,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Schedule a Bulk Item Pickup",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests to schedule collection of large discarded items such as furniture.",
       "aliases": [
@@ -7611,7 +7588,7 @@
         "arrange pickup for a bookcase",
         "large household item collection request"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Schedule Bulk Item Pickup"
       ],
@@ -7658,10 +7635,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9348,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9022,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Sewage or septic waste backing up into a building or onto property.",
       "aliases": [
@@ -7672,7 +7649,7 @@
         "wastewater backing into basement",
         "septic waste overflowing"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Sewage/Septic Back-Up"
       ],
@@ -7703,10 +7680,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "A gas pump dispensing less fuel than the amount shown or charged.",
       "aliases": [
@@ -7717,7 +7694,7 @@
         "incorrect gallons at gas pump",
         "fuel pump under dispensing"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Short Measure - Gas"
       ],
@@ -7774,7 +7751,7 @@
       "location_queue_share": 0.0342,
       "department": "ISD",
       "department_share": 0.9359,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.6752,
       "queue_status_review": "not_nominated",
@@ -7788,7 +7765,7 @@
         "short stay rental issue",
         "Vrbo property complaint"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Short Term Rental",
         "DISP5/30Short Term Rental"
@@ -7860,7 +7837,7 @@
         "open utility hole in sidewalk",
         "sidewalk cover is cracked"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Sidewalk Cover / Manhole"
       ],
@@ -7913,7 +7890,7 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 0.9933,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.6779,
       "queue_status_review": "not_nominated",
@@ -7927,7 +7904,7 @@
         "sidewalk surface wearing away",
         "damaged sidewalk slabs"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Sidewalk Repair"
       ],
@@ -8005,7 +7982,7 @@
         "hole in sidewalk needs making safe",
         "sidewalk bricks sticking up"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Sidewalk Repair (Make Safe)",
         "Sidewalk (Make Safe)",
@@ -8076,7 +8053,7 @@
       "location_queue_share": 0.2112,
       "department": "BTDT",
       "department_share": 0.9766,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.7251,
       "queue_status_review": "not_nominated",
@@ -8091,7 +8068,7 @@
         "sign pole leaning over",
         "can't read the parking sign"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Sign Repair"
       ],
@@ -8122,10 +8099,10 @@
       "location_queue_share": 0.0,
       "department": "BTDT",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "rejected",
       "queue": "BTDT_Sign Shop Clerical",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "rejected",
       "queue_status": "exact",
       "description": "Administrative work orders for sign shop work on transportation signs.",
       "aliases": [
@@ -8169,20 +8146,17 @@
       "location_queue_share": 1.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.5,
       "queue_status_review": "not_nominated",
       "queue_status": "assigned_by_location",
-      "description": "Snow or ice on public streets or sidewalks that affects passage.",
+      "description": "Snow and ice control, an official Public Works category with only two recorded requests; the data does not define it further.",
       "aliases": [
-        "street covered in snow",
-        "road needs plowing",
-        "ice making street slippery",
-        "street needs salt",
-        "snow and ice buildup"
+        "snow and ice control",
+        "snow/ice control request"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -8235,7 +8209,7 @@
       "location_queue_share": 0.8558,
       "department": "PWDx",
       "department_share": 0.9712,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.1987,
       "queue_status_review": "not_nominated",
@@ -8250,7 +8224,7 @@
         "bucket saving a spot",
         "objects used to claim street parking"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Space Savers"
       ],
@@ -8304,10 +8278,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9583,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9306,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Severely unsanitary or filthy conditions inside a home.",
       "aliases": [
@@ -8318,7 +8292,7 @@
         "my home is dangerously dirty",
         "squalor inside a house"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Squalid Living Conditions",
         "SCH12/28Squalid Living Conditions"
@@ -8350,10 +8324,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Sticker Request",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Requests for a Public Works sticker.",
       "aliases": [
@@ -8363,7 +8337,7 @@
         "public works sticker request",
         "can I get a replacement sticker"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Sticker Request"
       ],
@@ -8417,7 +8391,7 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 0.9353,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8798,
       "queue_status_review": "not_nominated",
@@ -8431,7 +8405,7 @@
         "streetlamp fell over",
         "street light pole toppled"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Street Light Knock Downs",
         "Street Light Knock Down",
@@ -8494,7 +8468,7 @@
       "location_queue_share": 0.0008,
       "department": "PWDx",
       "department_share": 0.9746,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8401,
       "queue_status_review": "not_nominated",
@@ -8509,7 +8483,7 @@
         "gas streetlight not lighting",
         "streetlight keeps going out"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Street Light Outages",
         "Street Light Outage",
@@ -8570,7 +8544,7 @@
       "location_queue_share": 0.0367,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.84,
       "queue_status_review": "not_nominated",
@@ -8584,7 +8558,7 @@
         "light pole maintenance request",
         "streetlamp pole needs repairs"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "CONCRETE",
         "Street Light Pole WO",
@@ -8657,7 +8631,7 @@
         "trouble with college move ins",
         "student move in disruption"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Student Move-in Issues"
       ],
@@ -8688,10 +8662,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Overcrowded housing occupied by students.",
       "aliases": [
@@ -8702,7 +8676,7 @@
         "too many student tenants",
         "crowded college student housing"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Student Overcrowding"
       ],
@@ -8760,7 +8734,7 @@
       "location_queue_share": 0.0106,
       "department": "BTDT",
       "department_share": 0.9857,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.7388,
       "queue_status_review": "not_nominated",
@@ -8774,7 +8748,7 @@
         "request a traffic light safety check",
         "have these traffic signals been inspected"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Traffic Signal Inspection"
       ],
@@ -8845,7 +8819,7 @@
         "damaged signal head",
         "traffic light needs repair"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Illegal Graffiti",
         "Traffic Signal Repair"
@@ -8903,7 +8877,7 @@
       "location_queue_share": 0.0076,
       "department": "BTDT",
       "department_share": 0.9618,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8031,
       "queue_status_review": "not_nominated",
@@ -8917,7 +8891,7 @@
         "help with a transportation issue",
         "general traffic concern"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Transportation General Request"
       ],
@@ -8985,7 +8959,7 @@
         "debris dumped on vacant lot",
         "the vacant lot is covered in junk"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Trash on Vacant Lot"
       ],
@@ -9040,10 +9014,10 @@
       "location_queue_share": 0.0,
       "department": "PARK",
       "department_share": 0.9976,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PARK_Tree Emergencies",
       "queue_share": 0.9709,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Trees or tree limbs that have fallen or pose an immediate danger.",
       "aliases": [
@@ -9054,7 +9028,7 @@
         "broken branch about to drop",
         "tree fell across the sidewalk"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Tree Emergencies"
       ],
@@ -9115,7 +9089,7 @@
       "location_queue_share": 0.0077,
       "department": "PARK",
       "department_share": 0.9583,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8214,
       "queue_status_review": "not_nominated",
@@ -9129,7 +9103,7 @@
         "please cut back these tree branches",
         "street tree needs maintenance"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Tree Maintenance Requests",
         "Tree Maintenance",
@@ -9183,7 +9157,7 @@
       "location_queue_share": 0.0,
       "department": "PARK",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8015,
       "queue_status_review": "not_nominated",
@@ -9197,7 +9171,7 @@
         "branches over the park path",
         "tree in the tot lot"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Tree in Park",
         "Tree In Park: Brophy Park; East Boston",
@@ -9262,7 +9236,7 @@
         "something loud is keeping me awake",
         "unknown source of loud noise"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 1,
@@ -9297,10 +9271,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Missing or incorrect unit prices showing the cost per unit of measure for goods offered for sale.",
       "aliases": [
@@ -9311,7 +9285,7 @@
         "no price per ounce listed",
         "unit pricing on shelf is incorrect"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Unit Pricing Wrong/Missing"
       ],
@@ -9366,7 +9340,7 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9727,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8921,
       "queue_status_review": "not_nominated",
@@ -9380,7 +9354,7 @@
         "building conditions feel unsafe",
         "hazardous conditions around the premises"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Unsafe/Dangerous Conditions"
       ],
@@ -9411,10 +9385,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Unsanitary hygiene or handling practices by employees working with food.",
       "aliases": [
@@ -9425,7 +9399,7 @@
         "food handler has dirty clothing",
         "worker sneezing into food"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Unsanitary Conditions - Employees"
       ],
@@ -9478,10 +9452,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9966,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 0.9813,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Unsanitary conditions in a food establishment's premises or equipment.",
       "aliases": [
@@ -9492,7 +9466,7 @@
         "food shop floors are filthy",
         "dirty dishes used at restaurant"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Unsanitary Conditions - Establishment"
       ],
@@ -9545,10 +9519,10 @@
       "location_queue_share": 0.0023,
       "department": "ISD",
       "department_share": 0.9908,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Health (INTERNAL)",
       "queue_share": 0.9862,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Food that is contaminated, spoiled, or kept under unsanitary conditions.",
       "aliases": [
@@ -9559,7 +9533,7 @@
         "food stored in dirty containers",
         "food left uncovered and contaminated"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Unsanitary Conditions - Food"
       ],
@@ -9616,10 +9590,10 @@
       "location_queue_share": 0.0008,
       "department": "ISD",
       "department_share": 0.9902,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9797,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of generally unsafe, unhealthy, or poorly maintained conditions in a home.",
       "aliases": [
@@ -9630,7 +9604,7 @@
         "unsanitary housing",
         "poorly maintained living space"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Unsatisfactory Living Conditions",
         "DISP Unsatisfactory Living Conditions",
@@ -9691,10 +9665,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9915,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Housing (INTERNAL)",
       "queue_share": 0.9767,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of inadequate or defective electrical or plumbing systems in a building.",
       "aliases": [
@@ -9705,7 +9679,7 @@
         "pipes and fixtures aren't working properly",
         "bad electrical or plumbing conditions"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Unsatisfactory Utilities - Electrical  Plumbing",
         "SCH6/13Unsatisfactory Utilities - Electrical  Plumbing",
@@ -9770,10 +9744,10 @@
       "location_queue_share": 0.0259,
       "department": "PWDx",
       "department_share": 0.9825,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Code Enforcement",
       "queue_share": 0.9703,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of snow or ice left uncleared on a sidewalk.",
       "aliases": [
@@ -9784,7 +9758,7 @@
         "can't walk through snow on sidewalk",
         "sidewalk needs shoveling"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Unshoveled Sidewalk"
       ],
@@ -9836,7 +9810,7 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": null,
       "queue_share": 0.8909,
       "queue_status_review": "not_nominated",
@@ -9850,7 +9824,7 @@
         "lamp posts need brighter lights",
         "existing street lights aren't bright enough"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Upgrade Existing Lighting"
       ],
@@ -9881,10 +9855,10 @@
       "location_queue_share": 0.0,
       "department": "PWDx",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "rejected",
       "queue": "PWDx_Utility Call-In",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "rejected",
       "queue_status": "exact",
       "description": "Notifications or calls concerning utility work.",
       "aliases": [
@@ -9895,7 +9869,7 @@
         "notice of utility work",
         "calling in a utility job"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Utility Call-In"
       ],
@@ -9963,7 +9937,7 @@
         "cracked manhole cover",
         "metal cover rocks when cars pass"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Utility Casting Repair"
       ],
@@ -9994,10 +9968,10 @@
       "location_queue_share": 0.0,
       "department": "BTDT",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "BTDT_Parking Lot_Valet Parking Problems",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of problems with valet parking operations.",
       "aliases": [
@@ -10008,7 +9982,7 @@
         "valet parking in unauthorized spaces",
         "complaint about valet service parking"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Valet Parking Problems"
       ],
@@ -10039,10 +10013,10 @@
       "location_queue_share": 0.0,
       "department": "BTDT",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "rejected",
       "queue": "BTDT_OPC_Walk-In Service",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "rejected",
       "queue_status": "exact",
       "description": "In-person inquiries about transportation services.",
       "aliases": [
@@ -10084,10 +10058,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 1.0,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Weights and Measures (INTERNAL)",
       "queue_share": 1.0,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Reports of water contamination in gasoline.",
       "aliases": [
@@ -10098,7 +10072,7 @@
         "water in gas from the pump",
         "bought gas with water in it"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [],
       "stats": {
         "requests_in_scope": 2,
@@ -10152,10 +10126,10 @@
       "location_queue_share": 0.0025,
       "department": "PWDx",
       "department_share": 0.9314,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "PWDx_Work Hours-Loud Noise Complaints",
       "queue_share": 0.9069,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Complaints about loud work noise or work occurring outside permitted hours.",
       "aliases": [
@@ -10221,10 +10195,10 @@
       "location_queue_share": 0.0006,
       "department": "ISD",
       "department_share": 0.9893,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9839,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Construction, renovation, or other building work being done without a required permit.",
       "aliases": [
@@ -10235,7 +10209,7 @@
         "they are building without a permit",
         "no permit posted for construction"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Work w/out Permit"
       ],
@@ -10291,10 +10265,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.9902,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9861,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Construction or building work taking place outside permitted working hours.",
       "aliases": [
@@ -10353,10 +10327,10 @@
       "location_queue_share": 0.0,
       "department": "ISD",
       "department_share": 0.971,
-      "department_status": "provisional",
+      "department_status": "approved",
       "queue": "ISD_Building (INTERNAL)",
       "queue_share": 0.9565,
-      "queue_status_review": "provisional",
+      "queue_status_review": "approved",
       "queue_status": "exact",
       "description": "Questions or concerns about zoning rules governing property use and development.",
       "aliases": [
@@ -10368,7 +10342,7 @@
         "questions about zoning rules",
         "too many units for this zone"
       ],
-      "alias_status": "provisional",
+      "alias_status": "approved",
       "top_titles": [
         "Zoning"
       ],

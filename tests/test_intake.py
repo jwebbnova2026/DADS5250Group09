@@ -20,7 +20,7 @@ from pydantic import ValidationError
 
 from boston311 import config, evaluate, llm
 from boston311.agent import IntakeAssistant
-from boston311.catalog import APPROVED, REJECTED, load_catalog
+from boston311.catalog import APPROVED, PROVISIONAL, REJECTED, load_catalog
 from boston311.llm import ClassifierFailure, LiveModel, MissingAPIKeyError, OfflineModel, RecordingStore
 from boston311.retrieval import Retriever
 from boston311.schemas import ClassificationProposal, Decision, QueueStatus
@@ -115,7 +115,10 @@ def test_rejected_mapping_never_routes(catalog):
 
 
 def test_provisional_requires_flag(catalog, monkeypatch):
-    entry = catalog[type_id_of(catalog, "Parking Enforcement")]
+    # Use a provisional copy: the real entry has since been approved in review.
+    entry = copy.deepcopy(catalog[type_id_of(catalog, "Parking Enforcement")])
+    entry.department_status = PROVISIONAL
+    entry.queue_status_review = PROVISIONAL
     monkeypatch.setattr(config, "ACCEPT_PROVISIONAL_APPROVALS", False)
     assert entry.route()[0] is None
     approved = copy.deepcopy(entry)
@@ -224,6 +227,36 @@ def test_unmapped_type_triage(catalog, retriever):
     pothole = type_id_of(catalog, "Request for Pothole Repair")
     r = assistant(catalog, retriever, FakeModel(proposal(pothole))).run("There is a pothole in the road")
     assert r.decision is Decision.TRIAGE and r.type_id == pothole and "most often Public Works" in r.triage_reason
+
+
+# Overlapping official types (decided 2026-10-27): when the model picks one
+# type of a pair and the other one was also retrieved, the data cannot say
+# which is right, so a person routes it instead of the code picking one.
+
+
+def test_overlap_pairs_name_real_types(catalog):
+    names = {e.type for e in catalog.values()}
+    for pair in config.OVERLAPPING_TYPE_PAIRS:
+        assert len(pair) == 2 and set(pair) <= names
+
+
+def test_overlap_pair_triage_when_partner_retrieved(catalog, retriever):
+    sidewalk = type_id_of(catalog, "Sidewalk Repair")
+    r = assistant(catalog, retriever, FakeModel(proposal(sidewalk))).run(
+        "The sidewalk on my street is all cracked and the slabs are uneven."
+    )
+    assert type_id_of(catalog, "Sidewalk Repair (Make Safe)") in r.candidate_ids  # the partner was retrieved
+    assert r.decision is Decision.TRIAGE and r.type_id == sidewalk
+    assert "overlapping official types" in r.triage_reason
+
+
+def test_overlap_pair_routes_when_partner_not_retrieved(catalog, retriever, monkeypatch):
+    # A made-up pair whose second type cannot be retrieved for this message.
+    monkeypatch.setattr(config, "OVERLAPPING_TYPE_PAIRS", (("Parking Enforcement", "Cemetery Maintenance Request"),))
+    pe = type_id_of(catalog, "Parking Enforcement")
+    r = assistant(catalog, retriever, FakeModel(proposal(pe))).run("A car is blocking my driveway")
+    assert type_id_of(catalog, "Cemetery Maintenance Request") not in r.candidate_ids
+    assert r.decision is Decision.ROUTE
 
 
 def test_clarify_once_then_route_without_rerunning_the_model(catalog, retriever):

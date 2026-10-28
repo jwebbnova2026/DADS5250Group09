@@ -239,6 +239,17 @@ LOCATION_QUEUE_WORDS: tuple[str, ...] = ("District", "Region")
 # "provisional" with "approved" or "rejected" after review. Routing treats
 # "provisional" as approved only while this flag is True.
 ACCEPT_PROVISIONAL_APPROVALS = True
+# Pairs of official types that describe the same problem but route
+# differently (DECIDED 2026-10-27, team review). Nothing in the data tells
+# them apart, so if the model picks one type of a pair while the other was
+# also retrieved, the request goes to TRIAGE and a person routes it, rather
+# than the code silently picking one department. Names, not IDs, because IDs
+# follow alphabetical order and could shift.
+OVERLAPPING_TYPE_PAIRS: tuple[tuple[str, str], ...] = (
+    ("Contractor Complaints", "Contractors Complaint"),  # unmapped vs Inspectional Services
+    ("Work Hours-Loud Noise Complaints", "Working Beyond Hours"),  # Public Works vs Inspectional Services
+    ("Sidewalk Repair", "Sidewalk Repair (Make Safe)"),  # Public Works vs unmapped
+)
 # Historical service statistics are shown only if a type has at least this many
 # relevant requests; otherwise the response says "unavailable".
 MIN_STATS_SAMPLE = 30
@@ -270,7 +281,7 @@ LLM_MAX_MALFORMED_RETRIES = 1
 
 # Version labels recorded in the run manifest so a reader can tell exactly
 # which prompt and catalog produced a result. Bump them when you edit those.
-PROMPT_VERSION = "classify-v2"
+PROMPT_VERSION = "classify-v3"
 ALIAS_PROMPT_VERSION = "aliases-v2"
 CATALOG_VERSION = "catalog-v2"
 

@@ -115,8 +115,11 @@ class Nodes:
            if we have not asked yet, otherwise TRIAGE (second ambiguity).
         4. The proposed type is not one of the retrieved candidates or not
            in the catalog -> TRIAGE.
-        5. The type has no approved department mapping -> TRIAGE.
-        6. Otherwise -> ROUTE.
+        5. The proposed type is one of an overlapping pair
+           (``config.OVERLAPPING_TYPE_PAIRS``) and the other type of the pair
+           was retrieved too -> TRIAGE, because the data cannot tell them apart.
+        6. The type has no approved department mapping -> TRIAGE.
+        7. Otherwise -> ROUTE.
         """
         if state.get("failure"):
             return _triage(f"the language model could not answer ({state['failure']})")
@@ -143,6 +146,13 @@ class Nodes:
         if p.type_id not in candidate_ids or p.type_id not in self.catalog:
             return _triage(f"the proposed type {p.type_id!r} is not one of the retrieved official candidates")
         entry = self.catalog[p.type_id]
+        partner = tools.overlapping_partner(entry.type)
+        candidate_names = {c["type"] for c in state["candidates"]}
+        if partner is not None and partner in candidate_names:
+            return _triage(
+                f"overlapping official types: \"{entry.type}\" and \"{partner}\" describe the same problem "
+                "but are handled differently, so a person needs to route it"
+            )
         department, _, _ = entry.route()
         if department is None:
             return _triage(

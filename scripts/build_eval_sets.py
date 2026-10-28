@@ -8,8 +8,9 @@ looks the name up in the catalog, so a typo fails loudly, and fills in the
 expected department, queue, and decision from the approved mappings:
 
 * ROUTE   - the type has an approved department mapping;
-* TRIAGE  - the type has no approved department mapping, or the message is
-            out of scope (no expected type);
+* TRIAGE  - the type has no approved department mapping, the type is one of
+            an overlapping pair (config.OVERLAPPING_TYPE_PAIRS), or the
+            message is out of scope (no expected type);
 * REJECTED - empty input.
 
 ``alternates`` lists other official types that are equally correct because
@@ -24,6 +25,7 @@ from __future__ import annotations
 import json
 
 from boston311 import config
+from boston311.agent.tools import overlapping_partner
 from boston311.catalog import load_catalog
 
 # (id, category, message, expected type name or None, clarification answer or None, alternates)
@@ -49,18 +51,18 @@ TEST = [
     ("t17", "paraphrase", "the sidewalk in front of the corner store was never shoveled and it's a sheet of ice", "Unshoveled Sidewalk", None, []),
     ("t18", "paraphrase", "can I get a new recycling bin? ours cracked down the middle", "Request for Recycling Cart", None, []),
     ("t19", "paraphrase", "dead raccoon in the middle of the road on Adams St", "Pick up Dead Animal", None, []),
-    ("t20", "paraphrase", "the restaurant on the corner has mice running around the kitchen", "Unsanitary Conditions - Establishment", None, ["Unsanitary Conditions - Food"]),
+    ("t20", "paraphrase", "the restaurant on the corner has mice running around the kitchen", "Unsanitary Conditions - Establishment", None, []),
     # --- easily confused types ----------------------------------------------
     ("t21", "confusion", "One of the lights in Franklin Park near the playground is out.", "Parks Lighting/Electrical Issues", None, []),
     ("t22", "confusion", "The sidewalk on my street is all cracked and the slabs are uneven.", "Sidewalk Repair", None, ["Sidewalk Repair (Make Safe)"]),
     ("t23", "confusion", "The traffic light at Mass Ave and Boylston is stuck on red.", "Traffic Signal Repair", None, []),
     ("t24", "confusion", "The house next door leaves its trash barrels out on the sidewalk all week with the lids off.", "Improper Storage of Trash (Barrels)", None, []),
-    ("t25", "confusion", "The public trash can at the bus stop on Washington St is overflowing.", "Litter Basket Maintenance", None, ["Empty Litter Basket"]),
+    ("t25", "confusion", "The public trash can at the bus stop on Washington St is overflowing.", "Empty Litter Basket", None, []),
     ("t26", "confusion", "Huge pothole on Tremont St near the Park Street T stop. It almost blew out my tire.", "Request for Pothole Repair", None, []),
     # --- missing context (one clarification, scripted answer) -----------------
     ("t27", "missing_context", "There's a light out.", "Street Light Outages", "It's a street light on the sidewalk in front of my house on Dorchester Ave.", []),
     ("t28", "missing_context", "Something needs to be picked up.", "Pick up Dead Animal", "A dead cat in the street outside my house.", []),
-    ("t29", "missing_context", "It's really bad in my apartment.", "Mice Infestation - Residential", "We have mice everywhere and the landlord does nothing.", ["Pest Infestation - Residential"]),
+    ("t29", "missing_context", "It's really bad in my apartment.", "Mice Infestation - Residential", "We have mice everywhere and the landlord does nothing.", []),
     ("t30", "missing_context", "There's a problem with a tree.", "Tree Maintenance Requests", "It's a street tree on the sidewalk and the branches need trimming. It's not an emergency.", []),
     ("t31", "missing_context", "Car problem on my street.", "Parking Enforcement", "A car is double parked and blocking traffic right now.", []),
     # --- multiple issues (resident picks one when asked) ----------------------
@@ -87,16 +89,29 @@ DEV = [
     ("d07", "paraphrase", "cockroaches all over my kitchen and the landlord won't call an exterminator", "Pest Infestation - Residential", None, []),
     ("d08", "paraphrase", "a bike has been locked to the rack for months, it's missing both wheels", "Abandoned Bicycle", None, []),
     ("d09", "paraphrase", "the lane lines on Columbus Ave are so faded you can't see them at night", "Pavement Marking Maintenance", None, []),
-    ("d10", "confusion", "The stop sign at my corner got knocked over.", "Sign Repair", None, ["Missing Sign"]),
+    ("d10", "confusion", "The stop sign at my corner got knocked over.", "Sign Repair", None, []),
     ("d11", "confusion", "The lights at the park's tennis courts don't work.", "Parks Lighting/Electrical Issues", None, []),
     ("d12", "confusion", "There's a deep pothole right outside my house.", "Request for Pothole Repair", None, []),
     ("d13", "missing_context", "There's an issue on my block.", "Illegal Dumping", "Someone dumped a pile of old furniture on the sidewalk.", []),
     ("d14", "missing_context", "I need help with my apartment.", "Chronic Dampness/Mold", "There's mold all over the bedroom walls.", []),
-    ("d15", "multiple_issues", "The street light is out and the sidewalk is broken.", "Sidewalk Repair", "The sidewalk. Someone tripped on it yesterday.", ["Sidewalk Repair (Make Safe)"]),
+    ("d15", "multiple_issues", "The street light is out and the sidewalk is broken.", "Sidewalk Repair (Make Safe)", "The sidewalk. Someone tripped on it yesterday.", []),
     ("d16", "out_of_scope", "I lost my wallet on the Red Line this morning.", None, None, []),
     ("d17", "out_of_scope", "What time does City Hall open on Saturdays?", None, None, []),
     ("d18", "empty", "", None, None, []),
 ]
+
+
+def expected_route(entry):
+    """The routing the assistant should produce for this type.
+
+    Same as ``entry.route()``, except that a type in an overlapping pair
+    (``config.OVERLAPPING_TYPE_PAIRS``) is expected to go to TRIAGE: the two
+    types describe the same problem and route differently, so a person
+    decides (team review, 2026-10-27).
+    """
+    if overlapping_partner(entry.type) is not None:
+        return None, None, None
+    return entry.route()
 
 
 def build(items, catalog_by_name):
@@ -121,7 +136,7 @@ def build(items, catalog_by_name):
             entry = catalog_by_name[type_name]  # KeyError = typo in the type name
             rec["expected_type_id"] = entry.type_id
             rec["acceptable_type_ids"] = [entry.type_id] + [catalog_by_name[a].type_id for a in alternates]
-            dept, queue, status = entry.route()
+            dept, queue, status = expected_route(entry)
             if dept is None:
                 rec["expected_decision"] = "TRIAGE"
             else:
@@ -133,7 +148,7 @@ def build(items, catalog_by_name):
         decisions, depts, queues = {rec["expected_decision"]}, set(), set()
         for tid in rec["acceptable_type_ids"]:
             alt = next(e for e in catalog_by_name.values() if e.type_id == tid)
-            d, q, s = alt.route()
+            d, q, s = expected_route(alt)
             decisions.add("ROUTE" if d else "TRIAGE")
             if d:
                 depts.add(d)

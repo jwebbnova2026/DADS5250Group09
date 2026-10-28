@@ -316,6 +316,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
     - `assigned_by_department`: any other type with no queue mapping.
   - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. For this build, nominations are provisionally approved and await team review. Each one is marked with that status and listed for review.
   - Only types with an approved department mapping auto-route. Types without one go to clarification or triage. Historical exceptions may reflect legitimate contextual routing or changes over time, so they are not silently overridden.
+  - **Overlapping types (DECIDED 2026-10-27, see docs/decisions.md):** three pairs of official types describe the same problem but route differently, and nothing in the data tells them apart: Contractor Complaints and Contractors Complaint; Work Hours-Loud Noise Complaints and Working Beyond Hours; Sidewalk Repair and Sidewalk Repair (Make Safe). If the model picks one type of a pair and the other type was also retrieved, the request goes to TRIAGE, so the code never picks a department arbitrarily. The pairs are listed in `config.OVERLAPPING_TYPE_PAIRS`, and test and dev examples for these types expect TRIAGE.
 - **Aliases (core, small):** each official type gets a short description and a few resident-style aliases, drafted by the LLM with structured output or written by a person. A team member reviews every one.
   - Aliases attach to official types. They never create, merge, or rename categories.
   - Aliases never assert service eligibility or responsibilities the data does not support.
@@ -330,7 +331,8 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 - **LLM owns:** selected type ID or none, ambiguity flag, missing detail, clarifying question, evidence IDs, short reason.
 - **Code owns:** checking the type against candidates and catalog, assigning the department and, where the type has an `exact` status, the queue, and choosing the decision.
 - **Clarification:** at most one, via a LangGraph interrupt with a checkpointer and stable thread ID. API calls stay outside the part of the node that re-runs on resume.
-- **Auto-route requires:** a valid candidate, an approved department mapping, no unresolved ambiguity, and passing the dev-tuned retrieval gate.
+- **Auto-route requires:** a valid candidate, an approved department mapping, no unresolved ambiguity, passing the dev-tuned retrieval gate, and not being one of an overlapping pair whose other type was also retrieved (section 5.6).
+- **Scope (DECIDED 2026-10-27, see docs/decisions.md):** out of scope includes emergencies that need police, fire, or an ambulance, such as a fire burning now, a gas or carbon monoxide alarm sounding now, or someone hurt or in danger. A hazard reported to a city department, such as a tree or branch that may fall, stays in scope as its official type (for example Tree Emergencies).
 - **Response:** templated. It shows the type and department, plus one of: the exact queue; "queue assigned by location (district or region)"; or "queue assigned by the department". It also shows historical statistics labeled as historical, or "unavailable" for small samples.
 
 ### 5.8 Evaluation
@@ -360,6 +362,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 | Timeout or rate limit | Bounded retries, then TRIAGE |
 | Malformed structured output | One retry, then TRIAGE |
 | Type not in candidates or catalog | TRIAGE |
+| Type is one of an overlapping pair and the other type was also retrieved | TRIAGE |
 | Out-of-scope request | TRIAGE with explanation |
 | Empty input | Rejected before any API call |
 | Second unresolved ambiguity | TRIAGE |
