@@ -49,11 +49,13 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
 ### Run it
 
 * **No API key needed.** The default mode is `offline`: it replays saved model responses and requires no API key.
-* **Execute the notebook from a fresh kernel:**
+* **Execute the notebook from a fresh kernel.** Open `demo.ipynb` in VS Code or Jupyter, check that the kernel is **Python (boston311)**, and choose *Run All*. It takes about a minute and a half and needs no API key. Or from the command line:
 
   ```bash
   python -m nbconvert --to notebook --execute --inplace demo.ipynb
   ```
+
+  On some Windows machines this command stops with "Kernel didn't respond in 60 seconds". That comes from `nbconvert` starting the kernel, not from the notebook. If you see it, run the notebook from VS Code or Jupyter instead; the results are identical.
 
 * **Or run everything and write all tables, figures, and a run manifest to `outputs/`:**
 
