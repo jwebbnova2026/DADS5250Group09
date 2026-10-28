@@ -1,4 +1,4 @@
-"""One JSON run manifest per run (spec section 5.9).
+"""One JSON run manifest per run (spec section 4.9).
 
 A manifest records everything needed to check or reproduce a run:
 
@@ -118,7 +118,7 @@ def write_manifest(manifest: dict) -> Path:
 
     The file name comes from the creation time. If two runs start in the
     same second, a counter is added, so a manifest is never overwritten (one
-    manifest per run, spec 5.9). Run manifests are gitignored; only
+    manifest per run, spec 4.9). Run manifests are gitignored; only
     ``outputs/manifests/reference_run_all.json``, describing the committed
     outputs, is kept in git.
     """

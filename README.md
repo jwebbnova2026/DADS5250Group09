@@ -90,11 +90,11 @@ This fetches the 2023 and 2024 files (about 370 MB) through the [data.boston.gov
 
 ```mermaid
 flowchart LR
-    subgraph Data["Data (spec 5.1)"]
+    subgraph Data["Data (spec 4.1)"]
         API["data.boston.gov<br/>CKAN API"] --> RAW["data/raw<br/>2023, 2024 CSV"]
         RAW --> PROC["data/processed<br/>count tables (committed)"]
     end
-    subgraph Plan["Staffing (spec 5.2-5.5)"]
+    subgraph Plan["Staffing (spec 4.2-4.5)"]
         PROC --> FC["forecast.py<br/>seasonal naive"]
         FC --> WL["workload.py<br/>planning stream / evaluation stream<br/>+20%, -20%, snowstorm"]
         WL -- planning workload only --> PL["staffing.py<br/>heuristic planner"]
@@ -104,7 +104,7 @@ flowchart LR
         BASE["baseline:<br/>January crews"] --> SC
         SC --> ROWS["StaffingRows, costs,<br/>sensitivity, year-end"]
     end
-    subgraph Intake["Intake assistant (spec 5.6-5.8)"]
+    subgraph Intake["Intake assistant (spec 4.6-4.8)"]
         PROC --> CAT["catalog.py<br/>two-tier mappings + reviewed aliases"]
         CAT --> RET["retrieval.py<br/>TF-IDF (RAG)"]
         MSG["resident message"] --> G
@@ -141,7 +141,7 @@ flowchart LR
 
 Course techniques used: **prompt engineering**, **structured output** (Pydantic + strict JSON schema), **RAG** (retrieval over the official catalog), **LangChain**, and a **LangGraph agent** with an interrupt-based clarification. No other agent frameworks are used.
 
-RAG retrieval uses TF-IDF (scikit-learn) over the 163 official request types rather than embeddings and a vector store. The catalog is small, TF-IDF runs offline and deterministically (so recorded model answers replay exactly), and with the reviewed aliases it put the correct type among the 8 candidates for every dev-set message that has one (`outputs/retrieval_recall_dev.csv`; spec section 5.6). pandas, numpy, scikit-learn, and matplotlib are ordinary data libraries, not agent frameworks.
+RAG retrieval uses TF-IDF (scikit-learn) over the 163 official request types rather than embeddings and a vector store. The catalog is small, TF-IDF runs offline and deterministically (so recorded model answers replay exactly), and with the reviewed aliases it put the correct type among the 8 candidates for every dev-set message that has one (`outputs/retrieval_recall_dev.csv`; spec section 4.6). pandas, numpy, scikit-learn, and matplotlib are ordinary data libraries, not agent frameworks.
 
 ## Authorship
 

@@ -1,4 +1,4 @@
-"""LangGraph intake agent (spec section 5.7).
+"""LangGraph intake agent (spec section 4.7).
 
 * ``tools``  - catalog look-ups and retrieval the agent uses (plain functions)
 * ``nodes``  - the steps of the graph: check input, retrieve, classify,

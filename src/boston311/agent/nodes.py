@@ -1,12 +1,12 @@
 """The steps (nodes) of the intake graph.
 
-Spec section 5.7. The flow for one message:
+Spec section 4.7. The flow for one message:
 
     check_input -> retrieve -> classify -> decide -> respond
                        ^                     |
                        +----- clarify <------+   (at most once)
 
-* **check_input** rejects empty input before any model call (spec 6).
+* **check_input** rejects empty input before any model call (spec 5).
 * **retrieve** finds candidate types with TF-IDF (RAG).
 * **classify** asks the language model for a structured proposal.
 * **decide** is plain code. It checks the proposal against the candidates and
@@ -85,7 +85,7 @@ class Nodes:
             "result": None,
         }
         if not state.get("message", "").strip():
-            # Reject before any retrieval or API call (spec 6).
+            # Reject before any retrieval or API call (spec 5).
             return {**fresh, "decision": Decision.REJECTED.value, "triage_reason": "empty input"}
         return fresh
 

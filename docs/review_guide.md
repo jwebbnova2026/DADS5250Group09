@@ -12,7 +12,7 @@ This guide is the starting point for reviewing the finished prototype. It tells 
 
 ## 1. Read in this order
 
-1. [architecture.md](architecture.md), sections 2, 5.3, 5.4, 5.6, 5.7 and 9. These sections contain the GIVEN rules, the simulator, the policy, routing, the agent, and the acceptance checks.
+1. [architecture.md](architecture.md), sections 2, 4.3, 4.4, 4.6, 4.7 and 8. These sections contain the GIVEN rules, the simulator, the policy, routing, the agent, and the acceptance checks.
 2. [architecture.md](architecture.md), section 11: the approved changes, data audit, implementation decisions, test-set disclosure, and catalog review.
 3. [demo.ipynb](../demo.ipynb): the executed analysis, from the problem statement to the limitations.
 4. The code, in dependency order:
@@ -79,7 +79,7 @@ Optional checks that need network or a key:
 
 Code paths are under `src/boston311/`. Tests are under `tests/`.
 
-### Acceptance examples (spec section 9)
+### Acceptance examples (spec section 8)
 
 | Spec | Implemented in | Tested by |
 |---|---|---|
@@ -101,7 +101,7 @@ Code paths are under `src/boston311/`. Tests are under `tests/`.
 | **E16** long-deadline Parks work | `Projector.seasonal_needed`, `hires_from_shortages` Parks block | `test_e16_long_deadline_parks_work_carries_forward` |
 | **E17** scenario coupling | `workload.py` `build_plus_scenario`, `build_minus_scenario`, `build_spike_scenario`, `largest_remainder` | `test_e17_*` (subset, superset, exact totals, spike tripling, cell monotonicity), `test_largest_remainder_spec_example` ([1,3,7] with totals 5 and 6) |
 
-### General checks (spec section 9)
+### General checks (spec section 8)
 
 | Spec | Where | Tested by |
 |---|---|---|
@@ -111,10 +111,10 @@ Code paths are under `src/boston311/`. Tests are under `tests/`.
 | **4** same seed and scenario → identical workloads across plans | By construction: both plans are scored on the same `Workload` object (`scripts/run_all.py`, notebook section 5) | Indirectly only, through `test_full_reconciliation`. No test asserts object identity |
 | **5** forecast never reads past Dec 2024 | `forecast.forecast_2025`; `data.build_all` raises on later dates | `test_forecast_never_reads_past_2024` |
 | **6** routing only through approved mappings | `catalog.py` `CatalogEntry.route`, `_approved`; `agent/nodes.py` `decide` | `test_rejected_mapping_never_routes`, `test_provisional_requires_flag`, `test_unmapped_type_triage` |
-| **7** every section 6 condition (table below) | | |
+| **7** every section 5 condition (table below) | | |
 | **8** full-dataset reconciliation | `reconciliation_failures`: flow, workforce, seasonal, cost identities, and per-request penalty counts | `test_full_reconciliation`; plus `test_simulate.py::test_fast_simulator_matches_naive_reference_on_real_workload`, a literal deque transcription of the daily order of events, compared on about 18,600 real-sized requests |
 
-### Failure behavior (spec section 6)
+### Failure behavior (spec section 5)
 
 | Condition | Where | Tested by |
 |---|---|---|
@@ -134,36 +134,36 @@ Code paths are under `src/boston311/`. Tests are under `tests/`.
 
 | Spec | Where | Tested by |
 |---|---|---|
-| 5.1 data reconciliation against the page | `data.reconciliation_report`; `data/processed/reconciliation.json` | `test_2024_counts_reconcile_with_project_page` |
-| 5.2 seasonal naive forecast and backtest | `forecast.py` | `test_forecast_is_seasonal_naive_from_2024`, `test_backtest_reports_every_department` |
-| 5.3 arrivals match the forecast exactly | `workload.allocate_to_cells` | `test_arrivals_match_forecast_exactly`, `test_largest_remainder_*`, `test_round_half_up` |
-| 5.3 class shares reproduced per type | `_draw_attributes` | `test_generated_class_shares_track_history` (statistical, ±0.005) |
-| 5.4 seasonal service floor (changed) | `Projector.month_on_time_rate`, `seasonal_needed` | `test_seasonal_floor_uses_fewest_crews_meeting_target`, `test_seasonal_floor_falls_back_to_best_possible_rate`, `test_seasonal_rule_only_for_parks_in_season`, `test_seasonal_frontier_is_ordered_and_restores_config` |
-| 5.6 two-tier mapping rule (changed) | `catalog.build_mappings` | `test_mappings_follow_the_two_tier_rule`, `test_audit_examples` |
-| 5.6 retrieval, recall with and without aliases | `retrieval.py`, `evaluate.retrieval_recall` | `test_retrieval_tolerates_misspelling`, `test_aliases_improve_recall_on_dev` |
-| 5.7 one clarification via interrupt, no API calls on resume | `nodes.clarify`, `agent/graph.py` | `test_clarify_once_then_route_without_rerunning_the_model`, `test_multiple_issues_ask_first`, `test_reused_thread_id_starts_clean` |
-| 5.7 retrieval gate, and the agreement rule that skips it | `nodes.decide`; `config.RETRIEVAL_GATE_MIN_SCORE` | `test_retrieval_gate_asks_for_detail`, `test_agreement_with_top_candidate_skips_gate` |
-| 5.6 / 5.7 overlapping types go to TRIAGE | `nodes.decide`; `config.OVERLAPPING_TYPE_PAIRS` | `test_overlap_pairs_name_real_types`, `test_overlap_pair_triage_when_partner_retrieved`, `test_overlap_pair_routes_when_partner_not_retrieved` |
-| 5.4 terminal rules apply to every plan; plans cannot be edited after validation | `staffing.validate_department_plan`, frozen `DepartmentPlan`, re-check in `score_department` | `test_hire_orders_after_october_are_rejected`, `test_release_notices_after_august_are_rejected`, `test_last_allowed_months_are_valid`, `test_plan_cannot_be_edited_after_validation`, `test_scoring_revalidates_the_plan` |
-| 5.7 templated response, never claims submission | `agent/tools.py` `route_text`, `DEMO_NOTICE` | `test_route`, `test_assigned_by_location_label` |
-| 5.6 / 5.7 historical statistics: "unavailable" for small samples, each statistic gated on its own sample | `catalog.historical_stats_text` | `test_median_hidden_when_too_few_closed`, `test_median_boundary_at_min_sample`, `test_on_time_hidden_when_too_few_with_target`, `test_all_statistics_unavailable` |
-| 5.8 metrics (clarification counted when asked) | `evaluate.metrics`, `evaluate.run_set`, `IntakeResult.questions_asked` | `test_metrics_on_a_tiny_frame`, `test_clarification_rate_counts_questions_asked` |
-| 5.9 recordings: key and provenance include model, reasoning effort, seed, schema | `llm.recording_key`, `llm.schema_id`, `RecordingStore.put`; `scripts/migrate_recordings_v2.py` | `test_recording_key_depends_on_generation_settings_and_schema`, `test_changed_seed_is_a_cache_miss`, `test_record_stores_the_settings_used`, `test_committed_recordings_have_verifiable_provenance` |
-| 5.9 run manifest, one JSON file per run (CLI and notebook) | `manifest.build_manifest`, `manifest.write_manifest`; notebook section 9 | `test_manifest_records_inputs_seeds_and_model`, `test_sources_are_pinned`, `test_notebook_manifest_cell_writes_a_manifest`, `test_write_manifest_never_overwrites` |
+| 4.1 data reconciliation against the page | `data.reconciliation_report`; `data/processed/reconciliation.json` | `test_2024_counts_reconcile_with_project_page` |
+| 4.2 seasonal naive forecast and backtest | `forecast.py` | `test_forecast_is_seasonal_naive_from_2024`, `test_backtest_reports_every_department` |
+| 4.3 arrivals match the forecast exactly | `workload.allocate_to_cells` | `test_arrivals_match_forecast_exactly`, `test_largest_remainder_*`, `test_round_half_up` |
+| 4.3 class shares reproduced per type | `_draw_attributes` | `test_generated_class_shares_track_history` (statistical, ±0.005) |
+| 4.4 seasonal service floor (changed) | `Projector.month_on_time_rate`, `seasonal_needed` | `test_seasonal_floor_uses_fewest_crews_meeting_target`, `test_seasonal_floor_falls_back_to_best_possible_rate`, `test_seasonal_rule_only_for_parks_in_season`, `test_seasonal_frontier_is_ordered_and_restores_config` |
+| 4.6 two-tier mapping rule (changed) | `catalog.build_mappings` | `test_mappings_follow_the_two_tier_rule`, `test_audit_examples` |
+| 4.6 retrieval, recall with and without aliases | `retrieval.py`, `evaluate.retrieval_recall` | `test_retrieval_tolerates_misspelling`, `test_aliases_improve_recall_on_dev` |
+| 4.7 one clarification via interrupt, no API calls on resume | `nodes.clarify`, `agent/graph.py` | `test_clarify_once_then_route_without_rerunning_the_model`, `test_multiple_issues_ask_first`, `test_reused_thread_id_starts_clean` |
+| 4.7 retrieval gate, and the agreement rule that skips it | `nodes.decide`; `config.RETRIEVAL_GATE_MIN_SCORE` | `test_retrieval_gate_asks_for_detail`, `test_agreement_with_top_candidate_skips_gate` |
+| 4.6 / 4.7 overlapping types go to TRIAGE | `nodes.decide`; `config.OVERLAPPING_TYPE_PAIRS` | `test_overlap_pairs_name_real_types`, `test_overlap_pair_triage_when_partner_retrieved`, `test_overlap_pair_routes_when_partner_not_retrieved` |
+| 4.4 terminal rules apply to every plan; plans cannot be edited after validation | `staffing.validate_department_plan`, frozen `DepartmentPlan`, re-check in `score_department` | `test_hire_orders_after_october_are_rejected`, `test_release_notices_after_august_are_rejected`, `test_last_allowed_months_are_valid`, `test_plan_cannot_be_edited_after_validation`, `test_scoring_revalidates_the_plan` |
+| 4.7 templated response, never claims submission | `agent/tools.py` `route_text`, `DEMO_NOTICE` | `test_route`, `test_assigned_by_location_label` |
+| 4.6 / 4.7 historical statistics: "unavailable" for small samples, each statistic gated on its own sample | `catalog.historical_stats_text` | `test_median_hidden_when_too_few_closed`, `test_median_boundary_at_min_sample`, `test_on_time_hidden_when_too_few_with_target`, `test_all_statistics_unavailable` |
+| 4.8 metrics (clarification counted when asked) | `evaluate.metrics`, `evaluate.run_set`, `IntakeResult.questions_asked` | `test_metrics_on_a_tiny_frame`, `test_clarification_rate_counts_questions_asked` |
+| 4.9 recordings: key and provenance include model, reasoning effort, seed, schema | `llm.recording_key`, `llm.schema_id`, `RecordingStore.put`; `scripts/migrate_recordings_v2.py` | `test_recording_key_depends_on_generation_settings_and_schema`, `test_changed_seed_is_a_cache_miss`, `test_record_stores_the_settings_used`, `test_committed_recordings_have_verifiable_provenance` |
+| 4.9 run manifest, one JSON file per run (CLI and notebook) | `manifest.build_manifest`, `manifest.write_manifest`; notebook section 9 | `test_manifest_records_inputs_seeds_and_model`, `test_sources_are_pinned`, `test_notebook_manifest_cell_writes_a_manifest`, `test_write_manifest_never_overwrites` |
 | Deliverable 6, neighborhood equity | `equity.py` | `test_equity_expected_on_time_sums_to_actual_per_department`, `test_equity_covers_every_department_and_flags_small_groups` |
 
 ## 4. Deviations from the original spec v5.1
 
 Each deviation is approved by John and recorded in architecture section 11.1, with the spec text updated:
 
-1. **Two-tier intake routing** (spec 5.6–5.8, 9, 10.2).
+1. **Two-tier intake routing** (spec 4.6–4.8, 8, 10.2).
    - **Change:** route to a department when one handles at least 90% of a type's requests. Name an exact queue only when one queue has at least 90%. Otherwise label the queue `assigned_by_location` or `assigned_by_department`.
    - **Why:** about 18% of volume goes to district or region queues, which depend on location.
-2. **INFO referral queues** are left out of the share denominator, with a guard that the mapped department must hold at least 50% of *all* the type's requests (spec 5.6).
-3. **Parks seasonal rule.** The original rule removed every avoidable miss. The new rule is a **93% monthly on-time service floor**, with fallback to the best reachable rate (spec 5.4 step 2, the plain-language rules, E16, and 10.2). Two cost-only rules were tested and rejected; the evidence is in `outputs/parks_seasonal_frontier.csv`.
-4. **Overlapping types** (spec 5.6, 5.7, 6). If the model picks one type of a listed pair and the other was also retrieved, the request goes to TRIAGE (`config.OVERLAPPING_TYPE_PAIRS`).
-5. **Scope rule narrowed** (`classify-v3`, spec 5.7). Emergencies are situations needing police, fire, or an ambulance; a hazard such as a tree that may fall stays in scope.
-6. **Agreement rule** (spec 5.7). The retrieval gate does not apply when the model's clear, in-scope pick is also retrieval's top candidate. It was prompted by test example t13 (spec 11.4).
+2. **INFO referral queues** are left out of the share denominator, with a guard that the mapped department must hold at least 50% of *all* the type's requests (spec 4.6).
+3. **Parks seasonal rule.** The original rule removed every avoidable miss. The new rule is a **93% monthly on-time service floor**, with fallback to the best reachable rate (spec 4.4 step 2, the plain-language rules, E16, and 10.2). Two cost-only rules were tested and rejected; the evidence is in `outputs/parks_seasonal_frontier.csv`.
+4. **Overlapping types** (spec 4.6, 4.7, 5). If the model picks one type of a listed pair and the other was also retrieved, the request goes to TRIAGE (`config.OVERLAPPING_TYPE_PAIRS`).
+5. **Scope rule narrowed** (`classify-v3`, spec 4.7). Emergencies are situations needing police, fire, or an ambulance; a hazard such as a tree that may fall stays in scope.
+6. **Agreement rule** (spec 4.7). The retrieval gate does not apply when the model's clear, in-scope pick is also retrieval's top candidate. It was prompted by test example t13 (spec 11.4).
 7. **Q5 ownership** corrected (John and Adam on the build). The **exposure view** was added to the stretch list.
 
 Additions and choices where the spec was silent (architecture section 11.3):
@@ -228,7 +228,7 @@ These are ordered by how much depends on them and how easy a subtle error would 
 - **Catalog review (2026-10-27):** every nominated mapping is approved or rejected (`data/catalog/mapping_review.csv`). Wording for 10 types is still provisional and is still indexed for retrieval, and the scooter/moped overlap between Abandoned Bicycle and Abandoned Vehicles is unresolved. Approval checks consistency with the routing data, not the city's service eligibility. See architecture section 11.5.
 - **Evaluation sets:** the test and dev messages were not written independently of the catalog aliases, a possible source of optimistic accuracy. The test set was run once after dev-set tuning, six labels were corrected in the review, and the agreement rule was prompted by test example t13 (architecture section 11.4).
 - **Synthetic evaluation:** the plan is scored on synthetic workloads from one planning seed and one evaluation seed, not on real 2025 requests. The challenge's costs and penalties are assumptions.
-- **Volume-based hiring:** the hiring rule counts long-deadline requests in its shortage. It is safe with the 93% floor, but a weaker seasonal rule can trigger large October hires (architecture section 5.4).
+- **Volume-based hiring:** the hiring rule counts long-deadline requests in its shortage. It is safe with the 93% floor, but a weaker seasonal rule can trigger large October hires (architecture section 4.4).
 - **No releases occur.** As a result, Public Works and Inspectional Services run at about 60% utilization in Q4. This follows from the "no notices after August" rule and is discussed in the notebook, section 4.
 - **Frontier wobble:** neighbouring targets can swap order on cost, because the planner fully re-plans for each target.
 

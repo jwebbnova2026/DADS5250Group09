@@ -4,7 +4,7 @@ No test here calls the real model: a FakeModel returns scripted proposals,
 and the offline replay test uses the committed recordings. So these tests
 need no network and no API key (spec check 2).
 
-Covers spec section 6 (failure behavior) and check 6 (routing only through
+Covers spec section 5 (failure behavior) and check 6 (routing only through
 approved official mappings).
 """
 
@@ -327,7 +327,7 @@ def test_model_failure_triage(catalog, retriever):
 
 
 # ---------------------------------------------------------------------------
-# LLM wrapper failure behavior (spec 6)
+# LLM wrapper failure behavior (spec 5)
 # ---------------------------------------------------------------------------
 
 

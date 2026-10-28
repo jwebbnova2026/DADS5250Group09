@@ -1,4 +1,4 @@
-"""Tests for the data pipeline and forecast (spec 5.1, 5.2, checks 5 and 7)."""
+"""Tests for the data pipeline and forecast (spec 4.1, 4.2, checks 5 and 7)."""
 
 from __future__ import annotations
 

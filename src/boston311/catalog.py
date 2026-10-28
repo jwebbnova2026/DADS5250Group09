@@ -1,6 +1,6 @@
 """The official request-type catalog: routing mappings, aliases, and statistics.
 
-Spec section 5.6, with the two-tier routing rule decided on 2026-10-22.
+Spec section 4.6, with the two-tier routing rule decided on 2026-10-22.
 
 What is in the catalog
 ----------------------
@@ -138,7 +138,7 @@ def build_mappings() -> list[CatalogEntry]:
 
         # The mapping rule works on the requests some department actually
         # handled: 311 referral / reallocation queues (department INFO) are
-        # left out of the denominator (DECIDED 2026-10-22, spec 5.6).
+        # left out of the denominator (DECIDED 2026-10-22, spec 4.6).
         handled_rows = rows[~rows["department"].isin(config.ROUTING_EXCLUDED_DEPARTMENTS)]
         handled = int(handled_rows["requests"].sum())
         referral_share = 1 - handled / total
@@ -234,7 +234,7 @@ def save_catalog(entries: list[CatalogEntry]) -> None:
     payload = {
         "catalog_version": config.CATALOG_VERSION,
         "rule": (
-            "Two-tier mapping (spec 5.6): department mapping if one in-scope department has >= 90% of the "
+            "Two-tier mapping (spec 4.6): department mapping if one in-scope department has >= 90% of the "
             "type's 2023-2024 requests (all departments); exact queue if one queue of that department has >= 90%. "
             "'provisional' = nominated, not yet reviewed; routing accepts it only while ACCEPT_PROVISIONAL_APPROVALS is True."
         ),

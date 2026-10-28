@@ -1,4 +1,4 @@
-"""TF-IDF retrieval over the official request-type catalog (spec 5.6).
+"""TF-IDF retrieval over the official request-type catalog (spec 4.6).
 
 This is the "R" in RAG (retrieval-augmented generation): before the language
 model sees a resident's message, we retrieve the few official request types
@@ -49,7 +49,7 @@ class Retriever:
     Args:
         entries: catalog entries to index.
         with_aliases: index aliases too (True) or only names and
-            descriptions (False). The evaluation compares both (spec 5.6).
+            descriptions (False). The evaluation compares both (spec 4.6).
     """
 
     def __init__(self, entries: list[CatalogEntry], *, with_aliases: bool = True):

@@ -74,7 +74,7 @@ def queue_sentence(queue: str | None, status: QueueStatus) -> str:
 
 
 def route_text(entry: CatalogEntry, department: str, queue: str | None, status: QueueStatus) -> str:
-    """The templated reply for a routed request (spec 5.7: templated, never promises)."""
+    """The templated reply for a routed request (spec 4.7: templated, never promises)."""
     dept_name = config.DEPARTMENTS[department].name
     return (
         f"This looks like a \"{entry.type}\" request, handled by {dept_name}. "

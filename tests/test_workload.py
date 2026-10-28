@@ -1,6 +1,6 @@
-"""Tests for workload generation and scenario coupling (spec 5.3).
+"""Tests for workload generation and scenario coupling (spec 4.3).
 
-Hand-calculated examples from spec section 9: E10 (generation part), E11,
+Hand-calculated examples from spec section 8: E10 (generation part), E11,
 E14, E17.
 """
 

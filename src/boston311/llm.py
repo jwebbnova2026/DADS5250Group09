@@ -1,6 +1,6 @@
 """Language-model access through LangChain, with live and offline modes.
 
-Spec sections 4, 5.7, 5.9, and 6.
+Spec sections 3, 4.7, 4.9, and 5.
 
 Live mode calls OpenAI (model ``config.LLM_MODEL``) through LangChain's
 ``ChatOpenAI``. It forces the model to answer in the exact shape of a
@@ -27,7 +27,7 @@ can never be replayed silently. Each recording also stores those settings
 next to the answer, so its provenance can be checked without trusting the
 current configuration.
 
-Failure handling (spec 6)
+Failure handling (spec 5)
 -------------------------
 * Missing API key in live mode: :class:`MissingAPIKeyError` with a clear
   message that points to offline mode.
