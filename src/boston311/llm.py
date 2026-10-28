@@ -25,9 +25,9 @@ it:
 * the exact text sent to the model.
 
 If any of these change, old recordings no longer match, so offline mode
-reports "no recording" and a stale answer can never be replayed silently. Each recording also stores those settings
-next to the answer, so its provenance can be checked without trusting the
-current configuration.
+reports "no recording" and a stale answer can never be replayed silently.
+Each recording also stores those settings next to the answer, so its
+provenance can be checked without trusting the current configuration.
 
 Failure handling (spec 5)
 -------------------------
