@@ -4,9 +4,9 @@ Midterm for John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai: Option 2 
 **Boston 311 Crew Planner.** This builds a month-by-month 2025 crew plan for four Boston departments from real 2023 and 2024 311 data. It also includes a GenAI intake assistant that routes residents' plain-language messages to an official request type and department.
 
 * **Departments:** Public Works, Transportation, Parks & Recreation, and Inspectional Services.
-* **Results:** see the executed notebook [demo.ipynb](demo.ipynb) and the draft report [docs/report.md](docs/report.md).
+* **Analysis and results:** the executed notebook [demo.ipynb](demo.ipynb) is the complete analysis: problem and approach, assumptions, the staffing plan against the fixed-crew baseline, sensitivity, the intake evaluation, neighborhood equity, and limitations.
 * **New to code?** [docs/notebook_guide.md](docs/notebook_guide.md) is a plain-language walkthrough of the project and the notebook, with step-by-step setup.
-* **Specification:** [docs/architecture.md](docs/architecture.md), the frozen design, plus the changes logged in [docs/decisions.md](docs/decisions.md).
+* **Specification:** [docs/architecture.md](docs/architecture.md), the frozen design, with the approved changes and implementation decisions in its section 11.
 
 This is a demonstration. It never submits anything to the City of Boston and never promises a completion date.
 
@@ -153,7 +153,7 @@ Team: John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai.
 ### How AI was used
 
 - **gpt-6.1-sol** (OpenAI) is part of the product: it classifies residents' messages at run time, and it drafted the request-type descriptions and aliases in `data/catalog/catalog.json`, which Claude then reviewed. Its recorded answers are in `data/demo/recordings.jsonl`.
-- **The team** made every design decision; they are logged with dates in `docs/decisions.md`.
+- **The team** made every design decision; they are logged with dates in section 11 of `docs/architecture.md`.
 
 ## Reference material
 

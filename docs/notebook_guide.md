@@ -448,14 +448,12 @@ The notebook ends with the main caveats, repeated here in plain terms:
 
 ## 7. Where everything else lives
 
-You do not need any of these to follow the notebook, but they are useful for the report and video.
+You do not need any of these to follow the notebook, but they are useful for the video.
 
 | File | What it is |
 |---|---|
 | [`README.md`](../README.md) | Setup instructions, architecture diagram, authorship |
-| [`docs/report.md`](report.md) | Draft written report with the same results in prose |
-| [`docs/architecture.md`](architecture.md) | The full design specification |
-| [`docs/decisions.md`](decisions.md) | Every design decision the team made, and why |
+| [`docs/architecture.md`](architecture.md) | The full design specification; section 11 lists every design decision the team made after the freeze, and why |
 | [`docs/review_guide.md`](review_guide.md) | A technical guide for code reviewers |
 | `outputs/` | Every result table as a spreadsheet-friendly CSV file, plus the charts in `outputs/figures/` |
 | `data/eval/` | The dev and test messages used to grade the intake assistant |

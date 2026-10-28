@@ -7,7 +7,7 @@ Usage (repository root, virtual environment active):
 
 Drafted aliases are saved with alias_status "provisional". A reviewer then
 reads every one, edits as needed in catalog.json, and records the review in
-docs/decisions.md.
+docs/architecture.md, section 11.
 """
 
 from __future__ import annotations

@@ -1,6 +1,6 @@
 """Neighborhood equity in historical response times (deliverable 6).
 
-[Added module; see docs/decisions.md.] This answers one question with
+[Added module; see spec section 11.3.] This answers one question with
 2023-2024 data: did residents in some neighborhoods get less on-time service
 than others *for the same kinds of requests*?
 

@@ -396,6 +396,7 @@ boston311-crew-planner/
 │   ├── retrieval.py
 │   ├── llm.py
 │   ├── evaluate.py
+│   ├── equity.py             # neighborhood equity (deliverable 6)
 │   ├── manifest.py
 │   └── agent/
 │       ├── graph.py
@@ -407,8 +408,9 @@ boston311-crew-planner/
 ├── tests/
 ├── outputs/
 └── docs/
-    ├── report.md
-    └── decisions.md
+    ├── architecture.md
+    ├── review_guide.md
+    └── notebook_guide.md
 ```
 
 ## 8. Core vs stretch
@@ -532,7 +534,7 @@ Hand-calculated examples (each becomes a unit test):
 2. Build workload generation and the simulator against the hand-calculated fixtures.
 3. Implement staffing decisions and frozen-plan evaluation, with the full-dataset reconciliation checks.
 4. Build the reviewed catalog and the intake workflow.
-5. Run the notebook from a clean environment, then prepare the report and video.
+5. Run the notebook from a clean environment, then prepare the video. The executed notebook is the analysis deliverable.
 
 ## 10. Questions
 

@@ -79,7 +79,7 @@ REQUIRED_COLUMNS: tuple[str, ...] = (
 # ("Allston / Brighton"). For the neighborhood equity analysis only (spec
 # deliverable 6) we merge those into the combined label, and treat a blank or
 # the citywide label "Boston" as "Unspecified". DEFAULT, documented in
-# docs/decisions.md. Labels not listed here are kept exactly as they are.
+# spec section 11.3. Labels not listed here are kept exactly as they are.
 NEIGHBORHOOD_ALIASES: dict[str, str] = {
     "Allston": "Allston / Brighton",
     "Brighton": "Allston / Brighton",
