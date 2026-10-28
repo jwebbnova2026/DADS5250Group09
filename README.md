@@ -6,7 +6,7 @@ Midterm for John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai: Option 2 
 * **Departments:** Public Works, Transportation, Parks & Recreation, and Inspectional Services.
 * **Analysis and results:** the executed notebook [demo.ipynb](demo.ipynb) is the complete analysis: problem and approach, assumptions, the staffing plan against the fixed-crew baseline, sensitivity, the intake evaluation, neighborhood equity, and limitations.
 * **New to code?** [docs/notebook_guide.md](docs/notebook_guide.md) is a plain-language walkthrough of the project and the notebook, with step-by-step setup.
-* **Specification:** [docs/architecture.md](docs/architecture.md), the frozen design, with the approved changes and implementation decisions in its section 11.
+* **Specification:** [docs/architecture.md](docs/architecture.md) the design.
 
 This is a demonstration. It never submits anything to the City of Boston and never promises a completion date.
 
@@ -72,7 +72,7 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
 1. Copy `.env.example` to `.env` and set `OPENAI_API_KEY`. The `.env` file is gitignored.
 2. Set `MODE = "live"` in the notebook's first code cell, or run `python scripts/run_all.py --mode live`.
 
-Live mode calls `gpt-6.1-sol`, but only for inputs that have no recording yet.
+Live mode calls `gpt-6.1-sol`, but only for inputs that have no recording yet, so reset kernel and run all cells.
 
 ### Rebuild the data (optional)
 
@@ -148,14 +148,16 @@ RAG retrieval uses TF-IDF (scikit-learn) over the 163 official request types rat
 Team: John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai.
 
 - **Everyone** participated in project selection, design, architecture, and presentation planning.
-- **Claude** (Anthropic, via Claude Code) wrote all code.
-- **Codex** (OpenAI) did review. Its reviews are in `docs/code_review_2026-10-23*.md`.
+- **Claude** (Anthropic, via Claude Code) wrote all code and supporting documentation.
+- **Codex** (OpenAI) did review of all of Claude's work.
 - **Everyone** did additional review.
+- Adam and Nicholas built presentation
+- Nicholas recorded and delivered the presentation
 
 ### How AI was used
 
 - **gpt-6.1-sol** (OpenAI) is part of the product: it classifies residents' messages at run time, and it drafted the request-type descriptions and aliases in `data/catalog/catalog.json`, which Claude then reviewed. Its recorded answers are in `data/demo/recordings.jsonl`.
-- **The team** made every design decision; they are logged with dates in section 11 of `docs/architecture.md`.
+- **The team** made the design decisions.
 
 ## Reference material
 
