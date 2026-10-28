@@ -17,9 +17,9 @@ departments in 2023-2024 (163 types). Each entry holds:
 * **Queue status**: ``exact`` (has a queue mapping), ``assigned_by_location``
   (mostly district or region queues, which depend on the address), or
   ``assigned_by_department`` (several queues; the department assigns).
-* **Review status** of each mapping: ``provisional`` (nominated and
-  provisionally approved, awaiting team review), ``approved``,
-  ``rejected``, or ``not_nominated``.
+* **Review status** of each mapping: ``provisional`` (nominated, not yet
+  reviewed), ``approved``, ``rejected``, or ``not_nominated``. After the
+  team review every nominated mapping is ``approved`` or ``rejected``.
 * **Description and aliases**: a neutral one-sentence description and a few
   resident-style phrasings, used only to help retrieval find the type. They
   never create, rename, or merge types.
@@ -236,7 +236,7 @@ def save_catalog(entries: list[CatalogEntry]) -> None:
         "rule": (
             "Two-tier mapping (spec 5.6): department mapping if one in-scope department has >= 90% of the "
             "type's 2023-2024 requests (all departments); exact queue if one queue of that department has >= 90%. "
-            "'provisional' = nominated and provisionally approved, pending team review."
+            "'provisional' = nominated, not yet reviewed; routing accepts it only while ACCEPT_PROVISIONAL_APPROVALS is True."
         ),
         "entries": [asdict(e) for e in entries],
     }

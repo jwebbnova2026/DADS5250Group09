@@ -1,6 +1,6 @@
 {
   "catalog_version": "catalog-v2",
-  "rule": "Two-tier mapping (spec 5.6): department mapping if one in-scope department has >= 90% of the type's 2023-2024 requests (all departments); exact queue if one queue of that department has >= 90%. 'provisional' = nominated and provisionally approved, pending team review.",
+  "rule": "Two-tier mapping (spec 5.6): department mapping if one in-scope department has >= 90% of the type's 2023-2024 requests (all departments); exact queue if one queue of that department has >= 90%. 'provisional' = nominated, not yet reviewed; routing accepts it only while ACCEPT_PROVISIONAL_APPROVALS is True.",
   "entries": [
     {
       "type_id": "T001",

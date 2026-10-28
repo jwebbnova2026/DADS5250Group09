@@ -131,7 +131,7 @@ flowchart LR
 | `workload.py` | Exact largest-remainder arrivals, seeded deadlines, and coupled scenarios |
 | `simulate.py` | Synthetic 21-day calendar; FIFO queue whose state is one integer; penalty events |
 | `staffing.py` | Heuristic planner, frozen-plan replay, cost accounting, year-end report, reconciliation checks |
-| `catalog.py` | Official request types, two-tier routing mappings, provisional reviews, aliases, statistics |
+| `catalog.py` | Official request types, two-tier routing mappings, review statuses, aliases, statistics |
 | `retrieval.py` | TF-IDF search (words plus character fragments) |
 | `llm.py` | LangChain `ChatOpenAI` with strict structured output, bounded retries, record and replay |
 | `agent/` | LangGraph intake graph (`graph.py`), its steps (`nodes.py`), and helpers (`tools.py`) |

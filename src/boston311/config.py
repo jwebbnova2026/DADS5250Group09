@@ -234,10 +234,11 @@ MIN_ALL_REQUESTS_SHARE = 0.50
 # names containing one of these words), else "assigned_by_department".
 LOCATION_QUEUE_SHARE = 0.50
 LOCATION_QUEUE_WORDS: tuple[str, ...] = ("District", "Region")
-# Mapping review statuses recorded in data/catalog/catalog.json. For this
-# build every nomination was provisionally approved; the team replaces
-# "provisional" with "approved" or "rejected" after review. Routing treats
-# "provisional" as approved only while this flag is True.
+# Mapping review statuses recorded in data/catalog/catalog.json. A new
+# nomination starts as "provisional"; review replaces it with "approved" or
+# "rejected". Routing treats "provisional" as approved only while this flag
+# is True. After the 2026-10-27 review no mapping is provisional, so the flag
+# has no effect on the committed catalog (spec 11.5).
 ACCEPT_PROVISIONAL_APPROVALS = True
 # Pairs of official types that describe the same problem but route
 # differently (DECIDED 2026-10-27, team review). Nothing in the data tells
@@ -261,7 +262,8 @@ RETRIEVAL_TOP_K = 8  # how many candidate types the classifier is shown
 # Retrieval gate (spec 5.7): auto-route only if the best retrieval score is at
 # least this. Below it, the message shares too few words with any official
 # type to trust, so the assistant asks for more detail instead. Tuned on the
-# dev set only (see docs/decisions.md); never on the test set.
+# dev set only (spec 11.3). The agreement rule skips the gate when the
+# model's pick is also retrieval's top candidate (spec 5.7, 11.4).
 RETRIEVAL_GATE_MIN_SCORE = 0.15
 
 LLM_PROVIDER = "openai"  # DECIDED (Q4)

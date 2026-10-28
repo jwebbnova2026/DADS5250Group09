@@ -1,7 +1,8 @@
 """Write the intake dev and test sets to data/eval/ (spec 5.8).
 
-Every message below was written before any prompt or gate tuning and is
-pending team review. None of them is used as a retrieval alias.
+Every message below was written before any prompt or gate tuning, and the
+team reviewed every message and label on 2026-10-27 (spec 11.5). None of
+them is used as a retrieval alias.
 
 Each item names its expected official request type *by name*. This script
 looks the name up in the catalog, so a typo fails loudly, and fills in the

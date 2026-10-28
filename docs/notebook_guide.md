@@ -390,24 +390,21 @@ Every routed reply also gives the type's past on-time rate and typical time to c
 
 **Question.** How often does the assistant get it right?
 
-**What happens.** The assistant is run on two sets of practice messages. The **dev set** (18 messages) was used to tune the assistant. The **test set** (40 messages) was kept aside and never used for tuning, so it is the fair measure. The test set mixes clear requests, rewordings, easily confused types, vague messages, messages with several problems, out-of-scope messages, and an empty message. Both sets are pending team review.
+**What happens.** The assistant is run on two sets of practice messages. The **dev set** (18 messages) was used to tune the assistant. The **test set** (40 messages) was kept aside: it was not used to tune the prompts, the everyday phrases, or the score threshold, so it is the fairer measure. One later rule change (when the AI's pick and the search's top result agree, the score threshold is skipped) was prompted by a test message, so the test set is not completely untouched. The test set mixes clear requests, rewordings, easily confused types, vague messages, messages with several problems, out-of-scope messages, and an empty message. The team reviewed both sets and corrected six expected answers.
 
 **How to read the metrics table.** Each metric shows `correct`, `total`, and `percent`, for dev and for test:
 
 * **Decision accuracy:** did it reach the right final outcome (route, triage, or reject), counting the answer it got after asking a question when it asked one? Test: 40 of 40.
 * **Type accuracy:** for messages that have a correct request type, did it pick that type? Test: 33 of 34.
-* **Department accuracy:** for messages that should reach a department, did they reach the right one? Test: 30 of 31.
+* **Department accuracy:** for messages that should reach a department, did they reach the right one? Test: 29 of 29.
 * **Queue accuracy:** whether the exact queue, or the "assigned by location / by department" label, was right.
-* **Auto-route precision:** of the messages it routed on its own, how many had both the right type and the right department? Test: 29 of 30. This matters most, because a wrong automatic route sends a crew to the wrong job.
+* **Auto-route precision:** of the messages it routed on its own, how many had both the right type and the right department? Test: 28 of 29. This matters most, because a wrong automatic route sends a crew to the wrong job.
 * **Auto-route coverage:** of the messages that should have been routed, how many it actually routed.
-* **Clarification rate / triage rate:** how often it asked a question, or handed off to a person. Each is 20% on the test set.
+* **Clarification rate / triage rate:** how often it asked a question, or handed off to a person. On the test set it asked a question 20% of the time (8 of 40) and handed off 22.5% of the time (9 of 40).
 
 **Retrieval table.** This shows how often the correct type was among the 8 search results: 100% with aliases, 47% without. The everyday phrases make a big difference.
 
-**The two test mistakes** (last table):
-
-* "the restaurant on the corner has mice running..." was routed as Rodent Activity instead of a restaurant sanitation type.
-* An overflowing bus-stop trash can was matched to the near-duplicate "Empty Litter Basket." That type has no single department, so it was sent to a person instead of being routed wrongly.
+**The one test mistake** (last table): "the restaurant on the corner has mice running..." was routed as Rodent Activity instead of a restaurant sanitation type. The department was right; the queue was not.
 
 ### Notebook section 8: Other consideration, neighborhood equity
 
@@ -429,7 +426,7 @@ The notebook ends with the main caveats, repeated here in plain terms:
 
 * The costs, crew capacities, and penalties are the course's assumptions, and the 21-day working month is simplified.
 * The plan is graded on made-up 2025 requests, not on real 2025 requests.
-* The request-type mappings, aliases, and test messages are still awaiting team review.
+* The team reviewed the request-type mappings, everyday phrases, and test messages. Approval means they match past city routing, not that the city confirmed them. Phrases for 10 types are still unconfirmed, and the test messages are a small demonstration, not proof of how the assistant would do with real residents.
 * The 93% Parks target is a policy choice backed by the cost-versus-service comparison, not the single "best" answer.
 * Authorship, and how AI was used, are in the Authorship section of the [README](../README.md#authorship).
 

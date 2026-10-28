@@ -340,7 +340,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 
 ### 5.8 Evaluation
 
-- **Test set:** 30 to 50 messages with expected type, department, and queue (GIVEN size). The expected queue is the exact queue, or the label `assigned_by_location` or `assigned_by_department`. For this build the messages are pending team review.
+- **Test set:** 30 to 50 messages with expected type, department, and queue (GIVEN size). The expected queue is the exact queue, or the label `assigned_by_location` or `assigned_by_department`. The team reviewed every message and label on 2026-10-27 (section 11.5).
 - **Dev set:** 15 to 20 separate messages for prompt and gate tuning (DEFAULT).
 - Test messages are never used as retrieval aliases. The prompts, aliases, and retrieval gate were tuned on the dev set only. One logic change, the agreement rule, was prompted by a test-set result, so the test set is not strictly untouched (section 11.4).
 - **Coverage:** clear requests, paraphrases, confusions, missing context, out-of-scope requests, multiple issues, and empty input.
@@ -536,18 +536,18 @@ Hand-calculated examples (each becomes a unit test):
 
 ## 10. Questions
 
-### 10.1 Team decisions still open
+### 10.1 Team decisions
 
-| ID | Question | Default if unanswered |
+| ID | Question | Answer |
 |---|---|---|
 | Q1 | Are trainees paid during their training month? An optional one-line Q&A forum check; does not block. | Yes, paid (configurable) |
 | Q2 | Which spike scenario: snowstorm, heat wave, or both? | Snowstorm only |
 | Q3 | Which "other consideration": neighborhood equity or employee vs resident requests? | Neighborhood equity |
 | Q4 | Which provider and model (OpenAI or Gemini), and does everyone have access? | OpenAI |
 | Q5 | Who owns each component (data, simulator and staffing, catalog and intake, evaluation, report, README and video)? | Andrew & Nicholas are doing report and video. John and Adam are doing tech build pieces |
-| Q6 | Is Nicholas's topic sign-up confirmed? Building waits on it. | Yes |
+| Q6 | Is Nicholas's topic sign-up confirmed? | Yes |
 
-### 10.2 Defaults for team review (not blocking)
+### 10.2 Defaults in use
 
 - **Calendar:** synthetic 21-day operating calendar, first 21 weekdays with earliest Saturdays added, holidays ignored.
 - **Arrivals:** uniform daily arrivals with largest-remainder rounding.
