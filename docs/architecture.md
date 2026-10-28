@@ -316,10 +316,10 @@ Each StaffingRow (one per department per month per scenario) separates events fr
     - `exact`: it has a queue mapping.
     - `assigned_by_location`: no queue mapping, and at least 50% of its handled requests went to district or region queues (queue names containing "District" or "Region").
     - `assigned_by_department`: any other type with no queue mapping.
-  - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. For this build, nominations are provisionally approved and await team review. Each one is marked with that status and listed for review.
+  - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. The team review of 2026-10-27 gave every nominated department and queue mapping an approved or rejected status (section 11.5).
   - Only types with an approved department mapping auto-route. Types without one go to clarification or triage. Historical exceptions may reflect legitimate contextual routing or changes over time, so they are not silently overridden.
   - **Overlapping types (DECIDED 2026-10-27, section 11.1):** three pairs of official types describe the same problem but route differently, and nothing in the data tells them apart: Contractor Complaints and Contractors Complaint; Work Hours-Loud Noise Complaints and Working Beyond Hours; Sidewalk Repair and Sidewalk Repair (Make Safe). If the model picks one type of a pair and the other type was also retrieved, the request goes to TRIAGE, so the code never picks a department arbitrarily. The pairs are listed in `config.OVERLAPPING_TYPE_PAIRS`, and test and dev examples for these types expect TRIAGE.
-- **Aliases (core, small):** each official type gets a short description and a few resident-style aliases, drafted by the LLM with structured output or written by a person. A team member reviews every one.
+- **Aliases (core, small):** each official type gets a short description and a few resident-style aliases, drafted by the LLM with structured output or written by a person. A team member reviews every one. After the 2026-10-27 review, 153 sets are approved and 10 remain provisional (section 11.5).
   - Aliases attach to official types. They never create, merge, or rename categories.
   - Aliases never assert service eligibility or responsibilities the data does not support.
   - Candidate recall@k on the dev set is measured with and without aliases. The test set is never used for this.
@@ -626,6 +626,29 @@ These are choices made where the spec was silent. None changes a GIVEN rule or a
 The test set was run once after dev-set tuning. A later catalog review then reworded 11 types, and all classifications were re-recorded live with `classify-v3`. After that run, test example t13 ("streetlite broke on my block, its pitch black at nite") fell from a best retrieval score of 0.1504 to 0.1495, just under the 0.15 gate. The model still picked Street Light Outages with no ambiguity, but the assistant asked a clarifying question, and t13 has no scripted answer, so it counted as a miss.
 
 t13's own type was not edited. TF-IDF weights each word by how many types use it, so removing about 40 aliases from other types shifted every score slightly; t13 had passed the gate by only 0.0004. Lowering the gate or editing t13 would have tuned on the test set, so neither was done. Instead, t13 showed that the gate can overrule a model pick that retrieval also ranks first, which led to the agreement rule (section 11.1). Because that logic revision was prompted by a test result, the test set is no longer strictly untouched. The gate threshold, the prompt, the catalog, and every test message were unchanged by it.
+
+### 11.5 Catalog review (2026-10-27) and remaining exceptions
+
+The team reviewed every nominated mapping, every description and alias set, and every evaluation example. The decisions are recorded in `data/catalog/catalog.json`; `data/catalog/mapping_review.csv` is regenerated from it.
+
+| Item | Outcome |
+|---|---|
+| Department mappings (132 nominated) | 124 approved, 8 rejected. The 31 types that never met the rule stay `not_nominated` (approved to remain unmapped) |
+| Exact queues (90 nominated) | 83 approved, 7 rejected. Every rejected queue belongs to a type whose department mapping was also rejected |
+| "Assigned by location" labels (8) | All 8 confirmed: CE Collection, Ground Maintenance, Pick up Dead Animal, Request for Snow Plowing, Request for Snow Plowing (Emergency Responder), Requests for Street Cleaning, Snow/Ice Control, and Space Savers. Their District/Region queue shares are 82.8% to 100%. The label is derived from `location_queue_share` and has no status field, so the confirmation is recorded here |
+| Descriptions and aliases (163) | 153 approved, 10 provisional. 11 types were reworded, for example Abandoned Bicycle now covers bicycles only, and Carbon Monoxide and Fire in Food Establishment now send active alarms and fires out of scope |
+| Evaluation examples (40 test, 18 dev) | Six were relabeled: t20, t22, t25, t29, d10, and d15 |
+
+**Rejected routing (8 types).** Big Buildings Recycling (INTERNAL), Follow-Up, Major System Failure, Notification, Phone Bank Service Inquiry, Sign Shop WO, Utility Call-In, and Walk-In Service Inquiry describe internal staff work or are undefined in the data. They never auto-route; a message classified as one of them goes to triage. Two other types first held as possible staff workflows, Capital Improvement Long Term and StreetLight Pole WO, were approved.
+
+**Remaining exceptions (prototype limitations).**
+- **Provisional wording (10 types):** Abandoned Vehicles, Contractor Complaints, Contractors Complaint, Follow-Up, Notification, Phone Bank Service Inquiry, Sign Shop WO, Walk-In Service Inquiry, Work Hours-Loud Noise Complaints, and Working Beyond Hours. `alias_status` does not change retrieval, so this wording is still indexed and shown to the model. Five have rejected routing and always go to triage. Four are in the overlapping pairs (section 5.6), which go to triage when both types of a pair are retrieved. Abandoned Vehicles routes to its approved exact queue.
+- **Scooters and mopeds:** historical titles put scooters and mopeds under both Abandoned Bicycle and Abandoned Vehicles. The prototype describes them only under Abandoned Vehicles, which names an exact queue. The data does not establish that distinction.
+- **What approval means:** an approval says a mapping is consistent with the 2023 to 2024 routing data and the agreed rules. It does not verify the city's service eligibility, and the rules set no minimum sample size, so some approved types rest on few requests.
+- **Provisional acceptance:** `config.ACCEPT_PROVISIONAL_APPROVALS` is still True, but no department or queue mapping is provisional any more, so it has no effect on routing.
+- **Evaluation independence:** the test and dev messages were written within the same build as the catalog wording, not independently of it. Six labels were corrected during the review, and the agreement rule was prompted by t13 (section 11.4). The results are a demonstration evaluation; a claim about new residents' messages would need a fresh held-out set.
+- **One evaluation seed:** staffing results come from one planning seed and one evaluation seed. Other draws of target dates would change the numbers somewhat.
+- **Live service:** the live model path was exercised by the recorded live classification runs and by mocked-HTTP tests of the real SDK wrapper. It has not been run as a service with real residents.
 
 ---
 
