@@ -112,7 +112,7 @@ This motivates comparing fixed staffing with a dynamic plan. It does not mean ev
 - Deduplicate by case ID. Reconcile counts against the page's 2024 totals and report included, excluded, and unmapped records.
 - Aggregate to monthly demand per department and to monthly type shares per department.
 - Build target-window distributions (section 5.3).
-- AUDIT: the page's "Things to watch for in this data" section and its column list (not yet captured).
+- AUDIT: the page's "Things to watch for in this data" section and its column list. Not captured as a separate record, and unnecessary for submission: the checks in section 11.2 (identical 30 columns, exact page counts, no duplicates) cover the data, and the HTML-entity decoding that section calls for is applied in `data.py`.
 
 ### 5.2 Forecast
 
@@ -564,16 +564,16 @@ Hand-calculated examples (each becomes a unit test):
 
 ### 10.3 Data audits (investigate directly)
 
-- Capture the page's "Things to watch for in this data" section and its column list.
-- Confirm the 2023 and 2024 files share the same 30 columns and department codes.
+- Capture the page's "Things to watch for in this data" section and its column list. Unnecessary for submission (section 5.1).
+- Confirm the 2023 and 2024 files share the same 30 columns and department codes. Done 2026-10-22 (section 11.2).
 - List nominated mappings (90% or more) and exceptions (under 90%) for review and approval. Done 2026-10-22: 86 of 163 types qualify for a single queue, covering 60% of in-scope volume. A department mapping covers 79%. This led to the two-tier rule in section 5.6. Leaving out the INFO referral queues gives 132 department mappings (92% of volume) and 90 exact queues. Request for Pothole Repair stays unmapped: Public Works handles 84% of its handled requests and the Water and Sewer Commission 14%.
-- Measure target classes per type and department: valid, missing, and invalid_ordering counts, and the window distribution, including long windows.
-- Check whether the 2025 file is available for the stretch holdout.
+- Measure target classes per type and department: valid, missing, and invalid_ordering counts, and the window distribution, including long windows. Done 2026-10-22 (section 11.2).
+- Check whether the 2025 file is available for the stretch holdout. Deferred with the holdout, which was not built.
 
 ### 10.4 Logistics
 
 - Post a one-line Q&A forum check that pandas and scikit-learn are fine under the course-stack rule.
-- Set a code freeze date before recording the video.
+- Set a code freeze date before recording the video. Done: the code freeze is 2026-10-28.
 
 ---
 
@@ -649,7 +649,7 @@ The team reviewed every nominated mapping, every description and alias set, and 
 - **Provisional wording (10 types):** Abandoned Vehicles, Contractor Complaints, Contractors Complaint, Follow-Up, Notification, Phone Bank Service Inquiry, Sign Shop WO, Walk-In Service Inquiry, Work Hours-Loud Noise Complaints, and Working Beyond Hours. `alias_status` does not change retrieval, so this wording is still indexed and shown to the model. Five have rejected routing and always go to triage. Four are in the overlapping pairs (section 5.6), which go to triage when both types of a pair are retrieved. Abandoned Vehicles routes to its approved exact queue.
 - **Scooters and mopeds:** historical titles put scooters and mopeds under both Abandoned Bicycle and Abandoned Vehicles. The prototype describes them only under Abandoned Vehicles, which names an exact queue. The data does not establish that distinction.
 - **What approval means:** an approval says a mapping is consistent with the 2023 to 2024 routing data and the agreed rules. It does not verify the city's service eligibility, and the rules set no minimum sample size, so some approved types rest on few requests.
-- **Provisional acceptance:** `config.ACCEPT_PROVISIONAL_APPROVALS` is still True, but no department or queue mapping is provisional any more, so it has no effect on routing.
+- **Provisional acceptance:** `config.ACCEPT_PROVISIONAL_APPROVALS` was set to False on 2026-10-28, since no department or queue mapping is provisional any more. Only `approved` mappings route; a future `provisional` nomination will not route until it is reviewed. This changed no result.
 - **Evaluation independence:** the test and dev messages were written within the same build as the catalog wording, not independently of it. Six labels were corrected during the review, and the agreement rule was prompted by t13 (section 11.4). The results are a demonstration evaluation; a claim about new residents' messages would need a fresh held-out set.
 - **One evaluation seed:** staffing results come from one planning seed and one evaluation seed. Other draws of target dates would change the numbers somewhat.
 - **Live service:** the live model path was exercised by the recorded live classification runs and by mocked-HTTP tests of the real SDK wrapper. It has not been run as a service with real residents.

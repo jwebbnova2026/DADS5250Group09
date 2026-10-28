@@ -61,7 +61,7 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
   python scripts/run_all.py
   ```
 
-* **Run the tests (about 100, no network or key):**
+* **Run the tests (145, no network or key):**
 
   ```bash
   python -m pytest -q

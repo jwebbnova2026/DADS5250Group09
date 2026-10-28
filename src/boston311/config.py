@@ -237,9 +237,9 @@ LOCATION_QUEUE_WORDS: tuple[str, ...] = ("District", "Region")
 # Mapping review statuses recorded in data/catalog/catalog.json. A new
 # nomination starts as "provisional"; review replaces it with "approved" or
 # "rejected". Routing treats "provisional" as approved only while this flag
-# is True. After the 2026-10-27 review no mapping is provisional, so the flag
-# has no effect on the committed catalog (spec 11.5).
-ACCEPT_PROVISIONAL_APPROVALS = True
+# is True. It is False since the 2026-10-27 review left no mapping
+# provisional, so only reviewed approvals route (spec 11.5).
+ACCEPT_PROVISIONAL_APPROVALS = False
 # Pairs of official types that describe the same problem but route
 # differently (DECIDED 2026-10-27, team review). Nothing in the data tells
 # them apart, so if the model picks one type of a pair while the other was
