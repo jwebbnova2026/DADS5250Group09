@@ -5,7 +5,7 @@
 **Course:** DADS5250 Generative AI in Practice, Module 7 Hackathon (midterm group project)
 **Date:** October 22, 2026
 **Hackathon due:** Wednesday, October 28, 2026, 11:59 PM ET
-**Status:** Architecture frozen and accepted by both reviewers. v5.1 records three implementation details from the final review. Further issues are resolved with implementation evidence, not design changes.
+**Status:** Architecture frozen and accepted by both reviewers. v5.1 records three implementation details from the final review. Further issues are resolved with implementation evidence, not design changes. The changes the team approved after the freeze are written into the sections they affect and listed with dates in section 11, which also records the implementation decisions needed to interpret the results.
 
 **What changed from v4:**
 - the staffing plan is generated entirely from the planning workload, frozen, then scored; the planner never sees evaluation workloads or queues
@@ -213,7 +213,7 @@ The planning function receives no evaluation workload and no evaluation queue.
 
 **Order of decisions at the start of month t:**
 1. **Apply scheduled changes.** Hires ordered in month t-1 start. Releases noticed in month t-1 leave.
-2. **Parks seasonal crews (April to October only). Service-floor rule, DECIDED 2026-10-23; see docs/decisions.md.**
+2. **Parks seasonal crews (April to October only). Service-floor rule, DECIDED 2026-10-23 (section 11.1).**
    - S_t is the smallest number of seasonal crews for which a one-month projection of month t keeps the on-time rate of requests due in month t at or above 93%. That is Parks' own 2024 on-time rate (GIVEN).
      - A due request has its target day in month t. It is on time if it closes on or before that day.
    - If even unlimited capacity cannot reach 93% in a month, the target for that month becomes the best rate unlimited capacity reaches. Some requests are unavoidably overdue, such as same-day targets arriving on non-service days.
@@ -222,7 +222,9 @@ The planning function receives no evaluation workload and no evaluation queue.
    - Replaced rule: the original rule added crews until no avoidable overdue request remained (equivalent to a 100% target).
      - On the base evaluation workload it bought 95 seasonal crew-months for 97.8% Parks on-time at $2.44M.
      - The 93% floor buys 42 crew-months for 95.4% at $1.86M.
-     - A purely cost-minimizing rule was also tested and rejected: it kept Parks on-time near 32%, and service matters as much as cost.
+     - Two cost-driven rules were also tested and rejected, because service matters as much as cost:
+       - "Add a crew only while it saves more in penalties than its $13,000 cost" bought no seasonal crews, since a crew-month closes at most 126 requests worth at most $120 each. The backlog grew all season, the hiring rule ordered 27 permanent crews in October, and Parks came to $2.57M at 29% on time.
+       - "Minimize seasonal cost plus projected penalties" came to $1.82M at 32% on time. The $20 penalty is too small to value timely service.
      - The full cost-versus-service frontier is in `outputs/parks_seasonal_frontier.csv`.
 3. **Hiring decision**, only if t is October or earlier:
    - Project months t through t+2 with the scheduled workforce, no new hires or releases, and the seasonal rule applied to future Parks in-season months.
@@ -304,7 +306,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 ### 5.6 Request-type catalog and retrieval
 
 - **Routing targets come from official values only.** Each target is an official type with its observed department and queue from 2023 to 2024.
-- **Two-tier mapping rule (DECIDED 2026-10-22, replacing the single-queue rule; see docs/decisions.md):** The data audit found that about 18% of in-scope volume goes to queues chosen by the request's district or region, for example `PWDx_District 1C: Downtown`. Text alone cannot determine those queues.
+- **Two-tier mapping rule (DECIDED 2026-10-22, replacing the single-queue rule; section 11.1):** The data audit found that about 18% of in-scope volume goes to queues chosen by the request's district or region, for example `PWDx_District 1C: Downtown`. Text alone cannot determine those queues.
   - **Handled requests (DECIDED 2026-10-22):** shares are computed over a type's 2023 to 2024 requests in every department, except the 311 center's own INFO queues. Those queues refer requests to agencies outside the city (MassDOT, DCR, MBTA, Eversource, Massport), depending on who owns the location, or hold "Reallocation From Dept" resubmissions. No department does the work there, so they are left out of the denominator.
   - **Department mapping (tier 1):** a type-to-department mapping is nominated for review only if both hold:
     - one of the four in-scope departments handled at least 90% of the type's handled requests;
@@ -316,7 +318,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
     - `assigned_by_department`: any other type with no queue mapping.
   - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. For this build, nominations are provisionally approved and await team review. Each one is marked with that status and listed for review.
   - Only types with an approved department mapping auto-route. Types without one go to clarification or triage. Historical exceptions may reflect legitimate contextual routing or changes over time, so they are not silently overridden.
-  - **Overlapping types (DECIDED 2026-10-27, see docs/decisions.md):** three pairs of official types describe the same problem but route differently, and nothing in the data tells them apart: Contractor Complaints and Contractors Complaint; Work Hours-Loud Noise Complaints and Working Beyond Hours; Sidewalk Repair and Sidewalk Repair (Make Safe). If the model picks one type of a pair and the other type was also retrieved, the request goes to TRIAGE, so the code never picks a department arbitrarily. The pairs are listed in `config.OVERLAPPING_TYPE_PAIRS`, and test and dev examples for these types expect TRIAGE.
+  - **Overlapping types (DECIDED 2026-10-27, section 11.1):** three pairs of official types describe the same problem but route differently, and nothing in the data tells them apart: Contractor Complaints and Contractors Complaint; Work Hours-Loud Noise Complaints and Working Beyond Hours; Sidewalk Repair and Sidewalk Repair (Make Safe). If the model picks one type of a pair and the other type was also retrieved, the request goes to TRIAGE, so the code never picks a department arbitrarily. The pairs are listed in `config.OVERLAPPING_TYPE_PAIRS`, and test and dev examples for these types expect TRIAGE.
 - **Aliases (core, small):** each official type gets a short description and a few resident-style aliases, drafted by the LLM with structured output or written by a person. A team member reviews every one.
   - Aliases attach to official types. They never create, merge, or rename categories.
   - Aliases never assert service eligibility or responsibilities the data does not support.
@@ -332,15 +334,15 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 - **Code owns:** checking the type against candidates and catalog, assigning the department and, where the type has an `exact` status, the queue, and choosing the decision.
 - **Clarification:** at most one, via a LangGraph interrupt with a checkpointer and stable thread ID. API calls stay outside the part of the node that re-runs on resume.
 - **Auto-route requires:** a valid candidate, an approved department mapping, no unresolved ambiguity, passing the dev-tuned retrieval gate, and not being one of an overlapping pair whose other type was also retrieved (section 5.6).
-- **Agreement rule (DECIDED 2026-10-28, see docs/decisions.md):** the retrieval gate does not apply when the model's clear, in-scope pick is also the top-ranked retrieval candidate. The two signals agree, so a weak retrieval score alone does not force a clarifying question. The gate threshold itself is unchanged.
-- **Scope (DECIDED 2026-10-27, see docs/decisions.md):** out of scope includes emergencies that need police, fire, or an ambulance, such as a fire burning now, a gas or carbon monoxide alarm sounding now, or someone hurt or in danger. A hazard reported to a city department, such as a tree or branch that may fall, stays in scope as its official type (for example Tree Emergencies).
+- **Agreement rule (DECIDED 2026-10-28, section 11.1):** the retrieval gate does not apply when the model's clear, in-scope pick is also the top-ranked retrieval candidate. The two signals agree, so a weak retrieval score alone does not force a clarifying question. The gate threshold itself is unchanged. This rule was prompted by a test-set result (section 11.4).
+- **Scope (DECIDED 2026-10-27, section 11.1):** out of scope includes emergencies that need police, fire, or an ambulance, such as a fire burning now, a gas or carbon monoxide alarm sounding now, or someone hurt or in danger. A hazard reported to a city department, such as a tree or branch that may fall, stays in scope as its official type (for example Tree Emergencies).
 - **Response:** templated. It shows the type and department, plus one of: the exact queue; "queue assigned by location (district or region)"; or "queue assigned by the department". It also shows historical statistics labeled as historical, or "unavailable" for small samples.
 
 ### 5.8 Evaluation
 
 - **Test set:** 30 to 50 messages with expected type, department, and queue (GIVEN size). The expected queue is the exact queue, or the label `assigned_by_location` or `assigned_by_department`. For this build the messages are pending team review.
 - **Dev set:** 15 to 20 separate messages for prompt and gate tuning (DEFAULT).
-- Test messages are never used for tuning or as retrieval aliases.
+- Test messages are never used as retrieval aliases. The prompts, aliases, and retrieval gate were tuned on the dev set only. One logic change, the agreement rule, was prompted by a test-set result, so the test set is not strictly untouched (section 11.4).
 - **Coverage:** clear requests, paraphrases, confusions, missing context, out-of-scope requests, multiple issues, and empty input.
 - **Metrics:**
   - type and department accuracy on every message
@@ -573,7 +575,61 @@ Hand-calculated examples (each becomes a unit test):
 
 ---
 
-## 11. References
+## 11. Approved changes and implementation decisions
+
+This section is the record of what the team approved after the freeze and of the choices the build made where the spec was silent. The rules themselves are written into the sections above.
+
+### 11.1 Approved changes
+
+| Date | Change | Why | Decided by |
+|---|---|---|---|
+| 2026-10-28 | Agreement rule: the retrieval gate does not apply when the model's clear, in-scope pick is also the top-ranked retrieval candidate (section 5.7). The 0.15 threshold is unchanged | The gate exists to stop auto-routing when a message matches no official type well. When the model and retrieval independently agree on the same top type, a low score mostly reflects wording such as misspellings ("streetlite"). The trade-off is reliance on the model flagging out-of-scope messages, which it did for every out-of-scope dev and test message. Prompted by test example t13 (section 11.4) | John |
+| 2026-10-27 | Overlapping types go to TRIAGE: if the model picks one type of a listed pair and the other was also retrieved, a person routes it (sections 5.6, 5.7, 6; `config.OVERLAPPING_TYPE_PAIRS`). Test example t22 and dev example d15 expect TRIAGE | Contractor Complaints / Contractors Complaint, Work Hours-Loud Noise Complaints / Working Beyond Hours, and Sidewalk Repair / Sidewalk Repair (Make Safe) describe the same problem but route differently (or one routes and one does not). Nothing in the data tells them apart, and the earlier prompt rule ("pick the first" near-duplicate) made the outcome depend on retrieval order. A code rule is deterministic and testable | John |
+| 2026-10-27 | Classifier prompt rule 4 narrowed (`classify-v3`): "emergencies" means situations needing police, fire, or an ambulance; a hazard reported to a city department, such as a tree that may fall, stays in scope (section 5.7) | The old rule excluded all "emergencies", contradicting the approved Tree Emergencies type ("pose an immediate danger") and test example t12. The new wording matches the reviewed Carbon Monoxide and Fire in Food Establishment descriptions, which send active alarms and fires out of scope | John |
+| 2026-10-23 | Parks seasonal rule became a 93% service floor (section 5.4, step 2) | Clearing every avoidable miss was very expensive, and both cost-driven alternatives gave poor service (section 5.4) | John |
+| 2026-10-22 | Q5 corrected: John and Adam own the tech build | The original entry was a mistake | John |
+| 2026-10-22 | Two-tier routing replaces the single-queue mapping rule (sections 5.6, 5.7, 5.8, 9, 10.2) | Only 86 of 163 types (60% of in-scope volume) have one queue with at least 90% of requests. About 18% of volume goes to district or region queues chosen by location, which text cannot determine, so potholes, street cleaning, and dead-animal pickup could never auto-route. Department mapping covers 79% of volume | John |
+| 2026-10-22 | 311 INFO referral and reallocation queues are left out of the mapping denominator; a mapped department must still hold at least 50% of all requests (section 5.6) | INFO queues are referrals to MassDOT, DCR, MBTA, Eversource, and Massport, chosen by who owns the location, or resubmissions. They diluted common types below 90%: street cleaning was 89.5%, dead-animal pickup 85.8%, Parks ground maintenance 80.7%. Coverage rises from 122 to 132 types (79% to 92% of volume). The guard stops tiny, mostly referred types from mapping, such as Undefined Noise Disturbance (0.6% in scope). Potholes stay unmapped (Public Works 84%, Water and Sewer Commission 14%) | John |
+| 2026-10-22 | Neighborhood exposure view added to the stretch list (section 8) | It goes beyond the core equity deliverable | John |
+
+### 11.2 Data audit findings (2026-10-22)
+
+- 2024 department counts match the project page exactly: PWDx 157,610, BTDT 81,447, PARK 18,736, ISD 18,624. On-time shares from the city's `on_time` flag also match: 90%, 50%, 93%, 72%.
+- Both files have the same 30 columns. There are no duplicate case IDs, and every date parses as ISO 8601.
+- No in-scope request has a target date before its open date, so the `invalid_ordering` class has 0 records in both years. The class stays in the code.
+- Valid target windows range from 0 to 720 days. 58% of 2024 Parks windows are 365 days or longer.
+- The city's `on_time` flag marks about 5,000 valid-target requests per year OVERDUE that closed on the target date but after the target time. The simulator uses this spec's calendar-date convention (closed on day T is on time). The historical statistics shown to residents use the city's flag, because it reproduces the page's on-time rates. The two kinds of on-time rate are therefore not directly comparable.
+- The city last revised both files on 2026-09-18. Each run records the file checksums, and the processed tables are committed, so the notebook reproduces even if the source changes again.
+
+### 11.3 Implementation decisions
+
+These are choices made where the spec was silent. None changes a GIVEN rule or a staffing decision rule.
+
+- **Model:** `gpt-6.1-sol` rejects any temperature but the default, so it runs at low reasoning effort with `seed=5250`. Exact reproducibility comes from offline replay of `data/demo/recordings.jsonl`. A recording's key covers the model, reasoning effort, seed, response schema, prompt and catalog versions, and the exact input, so a stale recording is never replayed. Recordings made before the key included reasoning effort, seed, and schema were migrated with provenance backfilled from git evidence (`scripts/migrate_recordings_v2.py`).
+- **Tuning, dev set only:**
+  - The alias prompt moved to `aliases-v2` after dev recall missed everyday synonyms ("lamp post", "recliner").
+  - The classify prompt moved to `classify-v2`, adding rules for near-duplicate types and for not re-asking a location. `classify-v3` is the scope change in section 11.1.
+  - The retrieval gate was set to 0.15. The lowest correct dev route scored 0.18 and out-of-scope messages about 0.10.
+- **Penalty events in projections:** the seasonal rule and the release check count both $20 and $100 events.
+- **Arrivals:**
+  - Within one day, requests queue in type-ID order.
+  - Scenario extras queue behind that day's base requests.
+  - The snowstorm adds two extra requests per base request in each Public Works type-day cell on February 10 to 12, so each cell ends at exactly 3x.
+- **Month-end inventory:** `open_overdue_end` (past target, under 30 days) and `open_long_overdue_end` (30+ days) are disjoint. Together with not-yet-due and no-target they partition `open_end`.
+- **Neighborhoods:** for the equity analysis only, "Allston", "Brighton", "South Boston", and "Mattapan" are merged into their combined labels, and blank or citywide "Boston" becomes "Unspecified" (`config.NEIGHBORHOOD_ALIASES`).
+- **Added module:** `src/boston311/equity.py`, for deliverable 6, which the spec's layout did not list. `scripts/` holds `build_data.py`, `build_catalog.py`, `build_eval_sets.py`, and `run_all.py`.
+- **Not used:** the GenAI_Agents reference notebooks were not consulted or copied in this build.
+- **Run manifests:** each run writes `outputs/manifests/run_<timestamp>.json`, which is gitignored. Only `reference_run_all.json`, the manifest of the run that produced the committed outputs, is tracked.
+
+### 11.4 Test-set disclosure (2026-10-28)
+
+The test set was run once after dev-set tuning. A later catalog review then reworded 11 types, and all classifications were re-recorded live with `classify-v3`. After that run, test example t13 ("streetlite broke on my block, its pitch black at nite") fell from a best retrieval score of 0.1504 to 0.1495, just under the 0.15 gate. The model still picked Street Light Outages with no ambiguity, but the assistant asked a clarifying question, and t13 has no scripted answer, so it counted as a miss.
+
+t13's own type was not edited. TF-IDF weights each word by how many types use it, so removing about 40 aliases from other types shifted every score slightly; t13 had passed the gate by only 0.0004. Lowering the gate or editing t13 would have tuned on the test set, so neither was done. Instead, t13 showed that the gate can overrule a model pick that retrieval also ranks first, which led to the agreement rule (section 11.1). Because that logic revision was prompted by a test result, the test set is no longer strictly untouched. The gate threshold, the prompt, the catalog, and every test message were unchanged by it.
+
+---
+
+## 12. References
 
 - Boston 311 project page: https://www.ai2lab.ai/courses/DADS5250/hackathon/
 - Analyze Boston 311 Service Requests: https://data.boston.gov/dataset/311-service-requests
