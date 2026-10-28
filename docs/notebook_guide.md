@@ -1,8 +1,8 @@
-<!-- [AI-authored: Claude] Plain-language walkthrough of the project and demo.ipynb for readers who do not code. Team to review. Every number quoted here is copied from the committed outputs of demo.ipynb (offline mode). -->
+<!-- Plain-language walkthrough of the project and demo.ipynb for readers who do not code. Every number quoted here is copied from the committed outputs of demo.ipynb (offline mode). -->
 
 # A plain-language guide to the Boston 311 Crew Planner
 
-This guide is for anyone who wants to understand and follow this project without knowing how to code: teammates working on the report or video, graders, or anyone curious. You do not need to read or change any code. You only need to know where to look and what the numbers mean.
+This guide is for anyone who wants to understand and follow this project without knowing how to code: teammates working on the video, graders, or anyone curious. You do not need to read or change any code. You only need to know where to look and what the numbers mean.
 
 **Contents**
 
@@ -113,7 +113,7 @@ Running it yourself proves the results are reproducible. Offline mode needs no A
 
 **Step 1. Install the tools (once).**
 
-* **Python 3.12** from [python.org/downloads](https://www.python.org/downloads/). On Windows, tick **"Add python.exe to PATH"** on the first installer screen.
+* **Python 3.12** from [python.org/downloads](https://www.python.org/downloads/). On Windows, tick **"Add python.exe to PATH"** on the first installer screen. Or install it with one command: `winget install Python.Python.3.12` in PowerShell on Windows, or `brew install python@3.12` on a Mac with Homebrew.
 * **Visual Studio Code** (VS Code) from [code.visualstudio.com](https://code.visualstudio.com/). Open it, click the Extensions icon (four squares) on the left, and install the **Python** and **Jupyter** extensions published by Microsoft. Anaconda's Jupyter also works if you already have it.
 
 **Step 2. Get the project.** On the repository's GitHub page, click the green **Code** button, then **Download ZIP**. Unzip it somewhere easy to find, such as your Desktop.
@@ -142,7 +142,7 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
 
 The last command registers this environment with Jupyter under the name **Python (boston311)**.
 
-On Windows, if `python` is "not recognized," close and reopen VS Code, or use `py` in place of `python` for the first command.
+On Windows, if `python` is "not recognized," close and reopen VS Code, or use `py -3.12` in place of `python` for the first command. Use `py -3.12` too if you have more than one Python installed, so the environment gets 3.12 and not a newer version.
 
 **Step 5. Open and run the notebook.**
 
@@ -165,7 +165,7 @@ python scripts/run_all.py
 
 A notebook is a document made of **cells** stacked top to bottom.
 
-* **Text cells** explain what is happening. They are written by us for human readers.
+* **Text cells** explain what is happening, for human readers.
 * **Code cells** are instructions for the computer. They have a grey box, and usually a number in brackets on the left, such as `[5]`, showing the order they ran in.
 * **Outputs** appear directly under each code cell: a table, a chart, or a few lines of printed text. **The outputs are what matter for you.** You can skip the code itself.
 
@@ -187,7 +187,7 @@ Each part below matches a heading in the notebook. For each one: the question it
 
 ### Title cell and the setup cell
 
-**What it is.** The first text cell lists the team, states that the notebook and code were written by Claude (an AI) from the team's design, and summarizes the six parts of the notebook.
+**What it is.** The first text cell lists the team and summarizes the six parts of the notebook.
 
 **The first code cell** loads the project's tools and sets `MODE = "offline"`. Its only output is one line:
 
@@ -384,30 +384,27 @@ A plan made once in January cannot respond when demand changes. A natural next s
 
 Every routed reply also gives the type's past on-time rate and typical time to close, labeled as past performance, not a promise. Every reply ends by stating that nothing was actually submitted to the city.
 
-**The clarification example.** The resident writes "There's a light out." The assistant asks: "Is it a streetlight, a traffic signal, or a light in a park?" The resident answers that it is a street light in front of their house, and the assistant routes it to Street Light Outages in Public Works.
+**The clarification example.** The resident writes "There's a light out." The assistant asks: "Is it a streetlight or a traffic signal that's out?" The resident answers that it is a street light in front of their house, and the assistant routes it to Street Light Outages in Public Works.
 
 ### Accuracy on the dev and test sets
 
 **Question.** How often does the assistant get it right?
 
-**What happens.** The assistant is run on two sets of practice messages. The **dev set** (18 messages) was used to tune the assistant. The **test set** (40 messages) was kept aside and never used for tuning, so it is the fair measure. The test set mixes clear requests, rewordings, easily confused types, vague messages, messages with several problems, out-of-scope messages, and an empty message. Both sets were written by Claude and are pending team review.
+**What happens.** The assistant is run on two sets of practice messages. The **dev set** (18 messages) was used to tune the assistant. The **test set** (40 messages) was kept aside: it was not used to tune the prompts, the everyday phrases, or the score threshold, so it is the fairer measure. One later rule change (when the AI's pick and the search's top result agree, the score threshold is skipped) was prompted by a test message, so the test set is not completely untouched. The test set mixes clear requests, rewordings, easily confused types, vague messages, messages with several problems, out-of-scope messages, and an empty message. The team reviewed both sets and corrected six expected answers.
 
 **How to read the metrics table.** Each metric shows `correct`, `total`, and `percent`, for dev and for test:
 
 * **Decision accuracy:** did it reach the right final outcome (route, triage, or reject), counting the answer it got after asking a question when it asked one? Test: 40 of 40.
 * **Type accuracy:** for messages that have a correct request type, did it pick that type? Test: 33 of 34.
-* **Department accuracy:** for messages that should reach a department, did they reach the right one? Test: 30 of 31.
+* **Department accuracy:** for messages that should reach a department, did they reach the right one? Test: 29 of 29.
 * **Queue accuracy:** whether the exact queue, or the "assigned by location / by department" label, was right.
-* **Auto-route precision:** of the messages it routed on its own, how many had both the right type and the right department? Test: 29 of 30. This matters most, because a wrong automatic route sends a crew to the wrong job.
+* **Auto-route precision:** of the messages it routed on its own, how many had both the right type and the right department? Test: 28 of 29. This matters most, because a wrong automatic route sends a crew to the wrong job.
 * **Auto-route coverage:** of the messages that should have been routed, how many it actually routed.
-* **Clarification rate / triage rate:** how often it asked a question, or handed off to a person. Each is 20% on the test set.
+* **Clarification rate / triage rate:** how often it asked a question, or handed off to a person. On the test set it asked a question 20% of the time (8 of 40) and handed off 22.5% of the time (9 of 40).
 
 **Retrieval table.** This shows how often the correct type was among the 8 search results: 100% with aliases, 47% without. The everyday phrases make a big difference.
 
-**The two test mistakes** (last table):
-
-* "the restaurant on the corner has mice running..." was routed as Rodent Activity instead of a restaurant sanitation type.
-* An overflowing bus-stop trash can was matched to the near-duplicate "Empty Litter Basket." That type has no single department, so it was sent to a person instead of being routed wrongly.
+**The one test mistake** (last table): "the restaurant on the corner has mice running..." was routed as Rodent Activity instead of a restaurant sanitation type. The department was right; the queue was not.
 
 ### Notebook section 8: Other consideration, neighborhood equity
 
@@ -429,9 +426,9 @@ The notebook ends with the main caveats, repeated here in plain terms:
 
 * The costs, crew capacities, and penalties are the course's assumptions, and the 21-day working month is simplified.
 * The plan is graded on made-up 2025 requests, not on real 2025 requests.
-* The request-type mappings, aliases, and test messages are AI-prepared and still awaiting team review.
+* The team reviewed the request-type mappings, everyday phrases, and test messages. Approval means they match past city routing, not that the city confirmed them. Phrases for 10 types are still unconfirmed, and the test messages are a small demonstration, not proof of how the assistant would do with real residents.
 * The 93% Parks target is a policy choice backed by the cost-versus-service comparison, not the single "best" answer.
-* How AI was used in this project is documented in [`docs/authorship.md`](authorship.md).
+* Authorship, and how AI was used, are in the Authorship section of the [README](../README.md#authorship).
 
 ---
 
@@ -451,15 +448,12 @@ The notebook ends with the main caveats, repeated here in plain terms:
 
 ## 7. Where everything else lives
 
-You do not need any of these to follow the notebook, but they are useful for the report and video.
+You do not need any of these to follow the notebook, but they are useful for the video.
 
 | File | What it is |
 |---|---|
-| [`README.md`](../README.md) | Setup instructions, architecture diagram, team contributions |
-| [`docs/report.md`](report.md) | Draft written report with the same results in prose |
-| [`docs/architecture.md`](architecture.md) | The full design specification |
-| [`docs/decisions.md`](decisions.md) | Every design decision the team made, and why |
-| [`docs/authorship.md`](authorship.md) | Who wrote what, and how AI was used |
+| [`README.md`](../README.md) | Setup instructions, architecture diagram, authorship |
+| [`docs/architecture.md`](architecture.md) | The full design specification; section 11 lists every design decision the team made after the freeze, and why |
 | [`docs/review_guide.md`](review_guide.md) | A technical guide for code reviewers |
 | `outputs/` | Every result table as a spreadsheet-friendly CSV file, plus the charts in `outputs/figures/` |
 | `data/eval/` | The dev and test messages used to grade the intake assistant |

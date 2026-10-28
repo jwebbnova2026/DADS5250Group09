@@ -1,29 +1,15 @@
-<!-- [AI-authored: Claude] Architecture proposal v5.1, frozen. Revised against the full project page and four rounds of Codex review. GIVEN = stated on the project page. DECIDED = confirmed by the team or agreed in review. DEFAULT = proposed rule the team may change. AUDIT = to be checked directly in the data. -->
-
-# Boston 311 Crew Planner: Architecture Proposal v5.1 (frozen)
+# Boston 311 Crew Planner: Architecture Proposal v5.1
 
 **Course:** DADS5250 Generative AI in Practice, Module 7 Hackathon (midterm group project)
 **Date:** October 22, 2026
 **Hackathon due:** Wednesday, October 28, 2026, 11:59 PM ET
-**Status:** Architecture frozen and accepted by both reviewers. v5.1 records three implementation details from the final review. Further issues are resolved with implementation evidence, not design changes.
-**Authorship:** AI-authored (Claude), based on the project page, the teaching-team announcement, team decisions, and four rounds of Codex review.
-
-**What changed from v4:**
-- the staffing plan is generated entirely from the planning workload, frozen, then scored; the planner never sees evaluation workloads or queues
-- the seed-separation claim is narrowed: evaluation uses a separate synthetic workload, not unseen real requests
-- the release rule adds an economic safeguard (no projected cost increase) and an end-of-horizon backlog check
-- the false claim that Parks seasonal crews eliminate all in-season shortage is removed; a separate explicit rule bars Parks permanent hires that would start April to October
-- evaluation scenarios are coupled: shared requests keep identical attributes, and demand changes add or remove requests reproducibly
-- cost-derivation wording is corrected, and the seasonal comparison is stated as conditional on a new hire
-- new acceptance examples cover release economics, long-deadline workload, and planning/evaluation separation
-
----
+**Status:** Prototype Complete.
 
 ## 1. Purpose and scope
 
 Build a month-by-month 2025 staffing plan for four City of Boston departments from real 2023 and 2024 311 data, plus a GenAI intake assistant. The plan balances cost efficiency, timely service (especially Transportation), and flexibility under the hiring, release, and seasonal-crew rules.
 
-**Deliverables (GIVEN):**
+**Deliverables:**
 1. 2025 monthly demand forecast per department
 2. Intake assistant with a 30 to 50 message test set and reported accuracy
 3. Dynamic staffing table with hire and release timing
@@ -31,16 +17,16 @@ Build a month-by-month 2025 staffing plan for four City of Boston departments fr
 5. Sensitivity analysis: demand 20% higher, demand 20% lower, and a weather spike
 6. Other considerations, such as neighborhood equity or employee vs resident requests
 
-**Submission (GIVEN):**
+**Submission:**
 - executed notebook
 - GitHub repo with README (setup, architecture diagram, team contributions)
-- 3-minute video link
+- 3-minute video
 
-**Stack (GIVEN):** LangChain, LangGraph, prompt engineering, structured output, RAG, and agents. No other agent SDKs.
+**Stack:** LangChain, LangGraph, prompt engineering, structured output, RAG, and agents. No other agent SDKs.
 
 The system is a demonstration. It never claims a request was submitted to the city and never promises a completion date.
 
-## 2. Fixed challenge assumptions (GIVEN, used as stated)
+## 2. Fixed challenge assumptions
 
 These are assignment-provided assumptions. They support meaningful comparisons within the challenge model. They are not estimates of Boston's actual operations.
 
@@ -61,9 +47,9 @@ These are assignment-provided assumptions. They support meaningful comparisons w
 | Parks & Recreation | PARK | 18,736 | 93% | 6 | $120,000 | $10,000.00 | 10 |
 | Inspectional Services | ISD | 18,624 | 72% | 4 | $140,000 | $11,666.67 | 16 |
 
-Monthly cost per crew is annual cost divided by 12 (derived).
+Monthly cost per crew is annual cost divided by 12.
 
-**Capacity check (derived):** under the challenge assumptions, holding the starting workforce constant provides less annual capacity than stated 2024 demand in every department.
+**Capacity check:** under the challenge assumptions, holding the starting workforce constant provides less annual capacity than stated 2024 demand in every department.
 
 | Dept | Avg 2024 monthly demand | Jan 2025 monthly capacity | Coverage |
 |---|---|---|---|
@@ -74,27 +60,7 @@ Monthly cost per crew is annual cost divided by 12 (derived).
 
 This motivates comparing fixed staffing with a dynamic plan. It does not mean every department must add permanent crews; Parks may cover its shortfall seasonally. It also cannot explain actual 2024 on-time performance, because actual 2024 staffing is not supplied.
 
-## 3. Decisions recorded
-
-| Decision | Status | Source |
-|---|---|---|
-| Boston 311 project | DECIDED | Nicholas |
-| Planning year 2025 from 2023 and 2024 data; January 2025 crews and zero backlog as given | DECIDED / GIVEN | John, project page |
-| Optional 2025 actuals holdout | DECIDED (stretch) | Review |
-| Installable package plus thin demo notebook | DECIDED | John |
-| Reference notebooks: GenAI_Agents Customer Support Agent and Contextual Quoting System (custom non-commercial license, attribution required) | DECIDED | John |
-| Seasonal naive forecast baseline | DECIDED | Review |
-| Routing uses official type, department, and queue values; auto-routing requires a reviewer-approved mapping | DECIDED | Review |
-| LLM proposes a type; code validates and assigns department and queue | DECIDED | Review |
-| One clarification, then route or triage | DECIDED | Review |
-| Exact heuristic is the core decision method (two-month hiring persistence, simulator-projected release check); bounded search is stretch | DECIDED | Review |
-| Paid training month, as a configurable labeled interpretation | DECIDED (default) | Review |
-| The plan is generated from the planning workload only, frozen, then scored; sensitivity replays the frozen plan; reactive re-planning is stretch | DECIDED | Review |
-| Daily simulator scores every plan, including the fixed-workforce baseline | DECIDED | Review |
-| One JSON run manifest per run | DECIDED | Review |
-| Labeled live and offline demo modes | DECIDED | Review |
-
-## 4. Course techniques
+## 3. Course techniques
 
 | Technique | Use |
 |---|---|
@@ -104,27 +70,27 @@ This motivates comparing fixed staffing with a dynamic plan. It does not mean ev
 | LangGraph agent | Validation gate, interrupt-based clarification, triage fallback |
 | LangChain | Model wrappers, prompt templates, structured-output binding |
 
-## 5. Components
+## 4. Components
 
-### 5.1 Data pipeline
+### 4.1 Data pipeline
 
 - Load the 2023 and 2024 files; filter to the four department codes early.
 - Keep: case ID, open date, `sla_target_dt`, close date, type, queue, department, `case_title`, neighborhood, and source.
 - Deduplicate by case ID. Reconcile counts against the page's 2024 totals and report included, excluded, and unmapped records.
 - Aggregate to monthly demand per department and to monthly type shares per department.
-- Build target-window distributions (section 5.3).
-- AUDIT: the page's "Things to watch for in this data" section and its column list (not yet captured).
+- Build target-window distributions (section 4.3).
+- AUDIT: the page's "Things to watch for in this data" section and its column list. Not captured as a separate record, and unnecessary for submission: the checks in section 11.2 (identical 30 columns, exact page counts, no duplicates) cover the data, and the HTML-entity decoding that section calls for is applied in `data.py`.
 
-### 5.2 Forecast
+### 4.2 Forecast
 
 - Monthly series per department; training cutoff December 2024.
 - Baseline: seasonal naive (each 2025 month equals the same 2024 month).
 - Optional candidate model only if a fair validation is possible (predict 2024 from 2023). Otherwise the baseline is final.
 - Stretch: score the frozen forecast and plan against 2025 actuals if available. Nothing is tuned on 2025.
 
-### 5.3 Daily simulator
+### 4.3 Daily simulator
 
-The simulator exists because penalties depend on deadlines. Every plan, including the fixed-workforce baseline, runs through the same simulator. Decision projections (section 5.4) also use it, so there is only one source of truth for how the queue behaves.
+The simulator exists because penalties depend on deadlines. Every plan, including the fixed-workforce baseline, runs through the same simulator. Decision projections (section 4.4) also use it, so there is only one source of truth for how the queue behaves.
 
 **Synthetic 21-day operating calendar (DEFAULT):**
 - Requests arrive on every calendar day.
@@ -132,7 +98,7 @@ The simulator exists because penalties depend on deadlines. Every plan, includin
 - If a month has fewer than 21 weekdays, Saturdays are added in date order, earliest first, until there are 21.
 - If a month has more than 21 weekdays, the weekdays after the 21st are non-service days.
 - Holidays are ignored.
-- This is a modeling calendar, labeled as synthetic in the report.
+- This is a modeling calendar, labeled as synthetic in the notebook.
 
 **Workloads:**
 - A workload is the full list of generated requests for 2025: arrival day, type, target class, and target day.
@@ -193,7 +159,7 @@ The simulator exists because penalties depend on deadlines. Every plan, includin
 
 **No-target requests** (missing and invalid_ordering) consume capacity like any other request. They are excluded from on-time metrics and penalties, and are counted by class. This is a labeled assumption.
 
-### 5.4 Staffing policy (core heuristic)
+### 4.4 Staffing policy (core heuristic)
 
 **Notation:**
 - C = capacity per crew-month = capacity per crew-day x 21
@@ -210,12 +176,12 @@ The planning function receives no evaluation workload and no evaluation queue.
 
 **Projection:** a projection copies the planner's queue at the start of month t, then runs the simulator forward on the planning workload under a stated workforce path. Every estimate below comes from a projection.
 
-**Initial state (GIVEN plus DEFAULT):** January crews as given, zero backlog, and no hires or releases pending on January 1.
+**Initial state:** January crews as given, zero backlog, and no hires or releases pending on January 1.
 
 **Order of decisions at the start of month t:**
 1. **Apply scheduled changes.** Hires ordered in month t-1 start. Releases noticed in month t-1 leave.
-2. **Parks seasonal crews (April to October only). Service-floor rule, DECIDED 2026-10-23; see docs/decisions.md.**
-   - S_t is the smallest number of seasonal crews for which a one-month projection of month t keeps the on-time rate of requests due in month t at or above 93%. That is Parks' own 2024 on-time rate (GIVEN).
+2. **Parks seasonal crews (April to October only). Service-floor rule, DECIDED 2026-10-23 (section 11.1).**
+   - S_t is the smallest number of seasonal crews for which a one-month projection of month t keeps the on-time rate of requests due in month t at or above 93%. That is Parks' own 2024 on-time rate.
      - A due request has its target day in month t. It is on time if it closes on or before that day.
    - If even unlimited capacity cannot reach 93% in a month, the target for that month becomes the best rate unlimited capacity reaches. Some requests are unavoidably overdue, such as same-day targets arriving on non-service days.
    - This rule is deadline-based. It does not guarantee that all arriving work is cleared; long-deadline and no-target work can still accumulate.
@@ -223,13 +189,15 @@ The planning function receives no evaluation workload and no evaluation queue.
    - Replaced rule: the original rule added crews until no avoidable overdue request remained (equivalent to a 100% target).
      - On the base evaluation workload it bought 95 seasonal crew-months for 97.8% Parks on-time at $2.44M.
      - The 93% floor buys 42 crew-months for 95.4% at $1.86M.
-     - A purely cost-minimizing rule was also tested and rejected: it kept Parks on-time near 32%, and service matters as much as cost.
+     - Two cost-driven rules were also tested and rejected, because service matters as much as cost:
+       - "Add a crew only while it saves more in penalties than its $13,000 cost" bought no seasonal crews, since a crew-month closes at most 126 requests worth at most $120 each. The backlog grew all season, the hiring rule ordered 27 permanent crews in October, and Parks came to $2.57M at 29% on time.
+       - "Minimize seasonal cost plus projected penalties" came to $1.82M at 32% on time. The $20 penalty is too small to value timely service.
      - The full cost-versus-service frontier is in `outputs/parks_seasonal_frontier.csv`.
 3. **Hiring decision**, only if t is October or earlier:
    - Project months t through t+2 with the scheduled workforce, no new hires or releases, and the seasonal rule applied to future Parks in-season months.
    - For each productive month m = t+1 and m = t+2, compute shortage_m = ceil(max(0, open at start of m + arrivals in m - capacity in m) / C), using the actual projected residual workload after seasonal crews.
    - If both shortages are at least 1, order h = min(shortage_(t+1), shortage_(t+2)) hires. They train in month t and are productive from month t+1.
-4. **Parks permanent-hire restriction (explicit heuristic policy):** Parks orders no permanent hires whose first productive month falls in April to October. In-season residual work carries forward; off-season shortfalls can still trigger hires through rule 3. Rationale: for a new permanent crew that is later released after the compared service period, seasonal staffing is cheaper over any in-season span (see cost derivations). This does not prove seasonal staffing is always cheaper than retaining a permanent hire for continuing work. The report states this qualification; the model is not expanded to resolve it.
+4. **Parks permanent-hire restriction (explicit heuristic policy):** Parks orders no permanent hires whose first productive month falls in April to October. In-season residual work carries forward; off-season shortfalls can still trigger hires through rule 3. Rationale: for a new permanent crew that is later released after the compared service period, seasonal staffing is cheaper over any in-season span (see cost derivations). This does not prove seasonal staffing is always cheaper than retaining a permanent hire for continuing work. The notebook states this qualification; the model is not expanded to resolve it.
 5. **Release decision**, only if no hire was ordered this month and t is August or earlier:
    - For n = 1, 2, and so on, keeping at least 1 crew, compare a projection with N_t - n crews from month t+1 against the no-release projection, over months t through t+4.
    - A candidate n passes only if all three hold:
@@ -267,7 +235,7 @@ The release fails the cost check and is not noticed.
 - Effects beyond December 31 are disclosed, not charged.
 - The fixed-workforce baseline makes no changes, so the rules do not affect it.
 
-**Cost timing (GIVEN rates, DEFAULT timing):**
+**Cost timing:**
 
 | Cost | Charged when |
 |---|---|
@@ -285,7 +253,7 @@ The release fails the cost check and is not noticed.
 
 **Optional stretch, bounded search:** evaluate a bounded candidate set per department and report the result as the best evaluated candidate. Full enumeration is 3^12 = 531,441 sequences per department.
 
-### 5.5 Staffing output fields
+### 4.5 Staffing output fields
 
 Each StaffingRow (one per department per month per scenario) separates events from inventory:
 
@@ -302,10 +270,10 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 - overdue requests whose 30-day threshold falls in 2026, not charged and disclosed
 - outstanding commitments: hires ordered and release notices given in 2025 that take effect in 2026 (expected zero under the terminal rules, reported regardless)
 
-### 5.6 Request-type catalog and retrieval
+### 4.6 Request-type catalog and retrieval
 
 - **Routing targets come from official values only.** Each target is an official type with its observed department and queue from 2023 to 2024.
-- **Two-tier mapping rule (DECIDED 2026-10-22, replacing the single-queue rule; see docs/decisions.md):** The data audit found that about 18% of in-scope volume goes to queues chosen by the request's district or region, for example `PWDx_District 1C: Downtown`. Text alone cannot determine those queues.
+- **Two-tier mapping rule (DECIDED 2026-10-22, replacing the single-queue rule; section 11.1):** The data audit found that about 18% of in-scope volume goes to queues chosen by the request's district or region, for example `PWDx_District 1C: Downtown`. Text alone cannot determine those queues.
   - **Handled requests (DECIDED 2026-10-22):** shares are computed over a type's 2023 to 2024 requests in every department, except the 311 center's own INFO queues. Those queues refer requests to agencies outside the city (MassDOT, DCR, MBTA, Eversource, Massport), depending on who owns the location, or hold "Reallocation From Dept" resubmissions. No department does the work there, so they are left out of the denominator.
   - **Department mapping (tier 1):** a type-to-department mapping is nominated for review only if both hold:
     - one of the four in-scope departments handled at least 90% of the type's handled requests;
@@ -315,9 +283,10 @@ Each StaffingRow (one per department per month per scenario) separates events fr
     - `exact`: it has a queue mapping.
     - `assigned_by_location`: no queue mapping, and at least 50% of its handled requests went to district or region queues (queue names containing "District" or "Region").
     - `assigned_by_department`: any other type with no queue mapping.
-  - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. For this build, nominations are provisionally approved by Claude and await team review. Each one is marked with that status and listed for review.
+  - A team member approves or rejects each nominated mapping, and the decision is recorded in the catalog file. The team review of 2026-10-27 gave every nominated department and queue mapping an approved or rejected status, recorded in `data/catalog/catalog.json` and listed per type in `data/catalog/mapping_review.csv`.
   - Only types with an approved department mapping auto-route. Types without one go to clarification or triage. Historical exceptions may reflect legitimate contextual routing or changes over time, so they are not silently overridden.
-- **Aliases (core, small):** each official type gets a short description and a few resident-style aliases, drafted by the LLM with structured output or written by a person. A team member reviews every one.
+  - **Overlapping types (DECIDED 2026-10-27, section 11.1):** three pairs of official types describe the same problem but route differently, and nothing in the data tells them apart: Contractor Complaints and Contractors Complaint; Work Hours-Loud Noise Complaints and Working Beyond Hours; Sidewalk Repair and Sidewalk Repair (Make Safe). If the model picks one type of a pair and the other type was also retrieved, the request goes to TRIAGE, so the code never picks a department arbitrarily. The pairs are listed in `config.OVERLAPPING_TYPE_PAIRS`, and test and dev examples for these types expect TRIAGE.
+- **Aliases (core, small):** each official type gets a short description and a few resident-style aliases, drafted by the LLM with structured output or written by a person. A team member reviews every one. After the 2026-10-27 review, 153 sets are approved and 10 remain provisional (section 11.5).
   - Aliases attach to official types. They never create, merge, or rename categories.
   - Aliases never assert service eligibility or responsibilities the data does not support.
   - Candidate recall@k on the dev set is measured with and without aliases. The test set is never used for this.
@@ -325,20 +294,22 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 - **Retriever (DEFAULT):** TF-IDF with cosine scoring over type names, descriptions, and aliases. Retrieval works offline. Classifying an arbitrary message still requires the model; offline demos replay recorded classifications, clearly labeled. Embeddings are added only if dev-set recall justifies it.
 - Service statistics (historical on-time share, median days to close) are stored separately and joined by type.
 
-### 5.7 Intake agent
+### 4.7 Intake agent
 
 - Retrieve candidates, classify once, validate in code, then route, clarify, or triage.
 - **LLM owns:** selected type ID or none, ambiguity flag, missing detail, clarifying question, evidence IDs, short reason.
 - **Code owns:** checking the type against candidates and catalog, assigning the department and, where the type has an `exact` status, the queue, and choosing the decision.
 - **Clarification:** at most one, via a LangGraph interrupt with a checkpointer and stable thread ID. API calls stay outside the part of the node that re-runs on resume.
-- **Auto-route requires:** a valid candidate, an approved department mapping, no unresolved ambiguity, and passing the dev-tuned retrieval gate.
+- **Auto-route requires:** a valid candidate, an approved department mapping, no unresolved ambiguity, passing the dev-tuned retrieval gate, and not being one of an overlapping pair whose other type was also retrieved (section 4.6).
+- **Agreement rule (DECIDED 2026-10-28, section 11.1):** the retrieval gate does not apply when the model's clear, in-scope pick is also the top-ranked retrieval candidate. The two signals agree, so a weak retrieval score alone does not force a clarifying question. The gate threshold itself is unchanged. This rule was prompted by a test-set result (section 11.4).
+- **Scope (DECIDED 2026-10-27, section 11.1):** out of scope includes emergencies that need police, fire, or an ambulance, such as a fire burning now, a gas or carbon monoxide alarm sounding now, or someone hurt or in danger. A hazard reported to a city department, such as a tree or branch that may fall, stays in scope as its official type (for example Tree Emergencies).
 - **Response:** templated. It shows the type and department, plus one of: the exact queue; "queue assigned by location (district or region)"; or "queue assigned by the department". It also shows historical statistics labeled as historical, or "unavailable" for small samples.
 
-### 5.8 Evaluation
+### 4.8 Evaluation
 
-- **Test set:** 30 to 50 team-written messages with expected type, department, and queue (GIVEN size). The expected queue is the exact queue, or the label `assigned_by_location` or `assigned_by_department`. For this build the messages are written by Claude and labeled AI-authored, pending team review.
+- **Test set:** 30 to 50 messages with expected type, department, and queue. The expected queue is the exact queue, or the label `assigned_by_location` or `assigned_by_department`. The team reviewed every message and label on 2026-10-27 and corrected six labels.
 - **Dev set:** 15 to 20 separate messages for prompt and gate tuning (DEFAULT).
-- Test messages are never used for tuning or as retrieval aliases.
+- Test messages are never used as retrieval aliases. The prompts, aliases, and retrieval gate were tuned on the dev set only. One logic change, the agreement rule, was prompted by a test-set result, so the test set is not strictly untouched (section 11.4).
 - **Coverage:** clear requests, paraphrases, confusions, missing context, out-of-scope requests, multiple issues, and empty input.
 - **Metrics:**
   - type and department accuracy on every message
@@ -347,13 +318,13 @@ Each StaffingRow (one per department per month per scenario) separates events fr
   - clarification rate and triage rate
 - Report counts with percentages, and label results as a demonstration evaluation.
 
-### 5.9 Run manifest and demo modes
+### 4.9 Run manifest and demo modes
 
 - One JSON manifest per run: sources, retrieval dates, hashes, exclusions, training cutoff, scenario seeds, parameters, model, prompt, and catalog versions, mode, and output paths.
 - **Live mode** needs an API key.
 - **Offline mode** replays recorded outputs, visibly labeled.
 
-## 6. Failure behavior
+## 5. Failure behavior
 
 | Condition | Outcome |
 |---|---|
@@ -361,6 +332,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 | Timeout or rate limit | Bounded retries, then TRIAGE |
 | Malformed structured output | One retry, then TRIAGE |
 | Type not in candidates or catalog | TRIAGE |
+| Type is one of an overlapping pair and the other type was also retrieved | TRIAGE |
 | Out-of-scope request | TRIAGE with explanation |
 | Empty input | Rejected before any API call |
 | Second unresolved ambiguity | TRIAGE |
@@ -368,7 +340,7 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 | Seasonal crews requested outside Parks or outside April to October | Typed error |
 | Invalid staffing input (for example a negative crew count) | Typed error naming the parameter |
 
-## 7. File layout
+## 6. File layout
 
 ```text
 boston311-crew-planner/
@@ -391,6 +363,7 @@ boston311-crew-planner/
 │   ├── retrieval.py
 │   ├── llm.py
 │   ├── evaluate.py
+│   ├── equity.py             # neighborhood equity (deliverable 6)
 │   ├── manifest.py
 │   └── agent/
 │       ├── graph.py
@@ -402,12 +375,12 @@ boston311-crew-planner/
 ├── tests/
 ├── outputs/
 └── docs/
-    ├── report.md
-    ├── decisions.md
-    └── authorship.md
+    ├── architecture.md
+    ├── review_guide.md
+    └── notebook_guide.md
 ```
 
-## 8. Core vs stretch
+## 7. Core vs stretch
 
 **Core:**
 - data pipeline
@@ -422,7 +395,7 @@ boston311-crew-planner/
 - intake agent
 - test and dev sets
 - manifest, package, and offline mode
-- report, README, and notebook
+- README and the executed notebook, which is the analysis and justification report
 
 **Stretch:**
 - 2025 holdout
@@ -435,7 +408,7 @@ boston311-crew-planner/
 - a second "other consideration"
 - neighborhood exposure view: estimate where the simulated 2025 overdue requests fall by neighborhood. For each request type, multiply its simulated overdue count by that type's 2023 to 2024 neighborhood shares, then sum over types. This is deterministic, with no sampling. Compare the frozen plan with the baseline in each scenario, and label it request-mix exposure, not unequal treatment.
 
-## 9. Acceptance checks with hand-calculated examples
+## 8. Acceptance checks with hand-calculated examples
 
 General checks:
 1. Fresh install, and the notebook runs from a restarted kernel.
@@ -444,7 +417,7 @@ General checks:
 4. The same seed and scenario produce identical workloads across plans.
 5. Forecasting never reads past December 2024.
 6. Intake routes only through approved official department mappings, and names a queue only through approved queue mappings.
-7. Every condition in section 6 produces its typed outcome.
+7. Every condition in section 5 produces its typed outcome.
 8. **Full-dataset reconciliation**, run on every scenario and plan, not just fixtures. The hand-calculated examples establish only the behaviors they exercise; these checks cover the full run.
    - **Request flow:** for each department-month, start open + arrivals = closed + end open. Annual arrivals equal the workload total.
    - **Workforce:** crews(t) = crews(t-1) + hires_started(t) - releases_effective(t). Every hire start is matched to an order one month earlier, and every release to a notice one month earlier. Seasonal crews are nonzero only for Parks, April to October.
@@ -522,28 +495,28 @@ Hand-calculated examples (each becomes a unit test):
 
 ---
 
-## 9a. Implementation order
+## 9. Implementation order
 
 1. Complete the source-data audit (section 10.3) and confirm provider and model, component ownership, and topic sign-up.
 2. Build workload generation and the simulator against the hand-calculated fixtures.
 3. Implement staffing decisions and frozen-plan evaluation, with the full-dataset reconciliation checks.
 4. Build the reviewed catalog and the intake workflow.
-5. Run the notebook from a clean environment, then prepare the report and video.
+5. Run the notebook from a clean environment, then prepare the video. The executed notebook is the analysis deliverable.
 
 ## 10. Questions
 
-### 10.1 Team decisions still open
+### 10.1 Team decisions
 
-| ID | Question | Default if unanswered |
+| ID | Question | Answer |
 |---|---|---|
-| Q1 | Are trainees paid during their training month? An optional one-line Q&A forum check; does not block. | Yes, paid (configurable) |
+| Q1 | Are trainees paid during their training month? | Yes, paid (configurable) |
 | Q2 | Which spike scenario: snowstorm, heat wave, or both? | Snowstorm only |
 | Q3 | Which "other consideration": neighborhood equity or employee vs resident requests? | Neighborhood equity |
 | Q4 | Which provider and model (OpenAI or Gemini), and does everyone have access? | OpenAI |
 | Q5 | Who owns each component (data, simulator and staffing, catalog and intake, evaluation, report, README and video)? | Andrew & Nicholas are doing report and video. John and Adam are doing tech build pieces |
-| Q6 | Is Nicholas's topic sign-up confirmed? Building waits on it. | Yes |
+| Q6 | Is Nicholas's topic sign-up confirmed? | Yes |
 
-### 10.2 Defaults for team review (not blocking)
+### 10.2 Defaults in use
 
 - **Calendar:** synthetic 21-day operating calendar, first 21 weekdays with earliest Saturdays added, holidays ignored.
 - **Arrivals:** uniform daily arrivals with largest-remainder rounding.
@@ -558,21 +531,81 @@ Hand-calculated examples (each becomes a unit test):
 
 ### 10.3 Data audits (investigate directly)
 
-- Capture the page's "Things to watch for in this data" section and its column list.
-- Confirm the 2023 and 2024 files share the same 30 columns and department codes.
-- List nominated mappings (90% or more) and exceptions (under 90%) for review and approval. Done 2026-10-22: 86 of 163 types qualify for a single queue, covering 60% of in-scope volume. A department mapping covers 79%. This led to the two-tier rule in section 5.6. Leaving out the INFO referral queues gives 132 department mappings (92% of volume) and 90 exact queues. Request for Pothole Repair stays unmapped: Public Works handles 84% of its handled requests and the Water and Sewer Commission 14%.
-- Measure target classes per type and department: valid, missing, and invalid_ordering counts, and the window distribution, including long windows.
-- Check whether the 2025 file is available for the stretch holdout.
+- Capture the page's "Things to watch for in this data" section and its column list. Unnecessary for submission (section 4.1).
+- Confirm the 2023 and 2024 files share the same 30 columns and department codes. Done 2026-10-22 (section 11.2).
+- List nominated mappings (90% or more) and exceptions (under 90%) for review and approval. Done 2026-10-22: 86 of 163 types qualify for a single queue, covering 60% of in-scope volume. A department mapping covers 79%. This led to the two-tier rule in section 4.6. Leaving out the INFO referral queues gives 132 department mappings (92% of volume) and 90 exact queues. Request for Pothole Repair stays unmapped: Public Works handles 84% of its handled requests and the Water and Sewer Commission 14%.
+- Measure target classes per type and department: valid, missing, and invalid_ordering counts, and the window distribution, including long windows. Done 2026-10-22 (section 11.2).
+- Check whether the 2025 file is available for the stretch holdout. Deferred with the holdout, which was not built.
 
 ### 10.4 Logistics
 
-- Post a one-line Q&A forum check that pandas and scikit-learn are fine under the course-stack rule.
-- Assign an owner for `docs/authorship.md`.
-- Set a code freeze date before recording the video.
+- Set a code freeze date before recording the video. Done: the code freeze is 2026-10-28.
 
 ---
 
-## 11. References
+## 11. Approved changes and implementation decisions
+
+This section is the record of what the team approved after the freeze and of the choices the build made where the spec was silent. The rules themselves are written into the sections above.
+
+### 11.1 Approved changes
+
+| Date | Change | Why | Decided by |
+|---|---|---|---|
+| 2026-10-28 | Agreement rule: the retrieval gate does not apply when the model's clear, in-scope pick is also the top-ranked retrieval candidate (section 4.7). The 0.15 threshold is unchanged | The gate exists to stop auto-routing when a message matches no official type well. When the model and retrieval independently agree on the same top type, a low score mostly reflects wording such as misspellings ("streetlite"). The trade-off is reliance on the model flagging out-of-scope messages, which it did for every out-of-scope dev and test message. Prompted by test example t13 (section 11.4) | John |
+| 2026-10-27 | Overlapping types go to TRIAGE: if the model picks one type of a listed pair and the other was also retrieved, a person routes it (sections 4.6, 4.7, 5; `config.OVERLAPPING_TYPE_PAIRS`). Test example t22 and dev example d15 expect TRIAGE | Contractor Complaints / Contractors Complaint, Work Hours-Loud Noise Complaints / Working Beyond Hours, and Sidewalk Repair / Sidewalk Repair (Make Safe) describe the same problem but route differently (or one routes and one does not). Nothing in the data tells them apart, and the earlier prompt rule ("pick the first" near-duplicate) made the outcome depend on retrieval order. A code rule is deterministic and testable | John |
+| 2026-10-27 | Classifier prompt rule 4 narrowed (`classify-v3`): "emergencies" means situations needing police, fire, or an ambulance; a hazard reported to a city department, such as a tree that may fall, stays in scope (section 4.7) | The old rule excluded all "emergencies", contradicting the approved Tree Emergencies type ("pose an immediate danger") and test example t12. The new wording matches the reviewed Carbon Monoxide and Fire in Food Establishment descriptions, which send active alarms and fires out of scope | John |
+| 2026-10-23 | Parks seasonal rule became a 93% service floor (section 4.4, step 2) | Clearing every avoidable miss was very expensive, and both cost-driven alternatives gave poor service (section 4.4) | John |
+| 2026-10-22 | Q5 corrected: John and Adam own the tech build | The original entry was a mistake | John |
+| 2026-10-22 | Two-tier routing replaces the single-queue mapping rule (sections 4.6, 4.7, 4.8, 8, 10.2) | Only 86 of 163 types (60% of in-scope volume) have one queue with at least 90% of requests. About 18% of volume goes to district or region queues chosen by location, which text cannot determine, so potholes, street cleaning, and dead-animal pickup could never auto-route. Department mapping covers 79% of volume | John |
+| 2026-10-22 | 311 INFO referral and reallocation queues are left out of the mapping denominator; a mapped department must still hold at least 50% of all requests (section 4.6) | INFO queues are referrals to MassDOT, DCR, MBTA, Eversource, and Massport, chosen by who owns the location, or resubmissions. They diluted common types below 90%: street cleaning was 89.5%, dead-animal pickup 85.8%, Parks ground maintenance 80.7%. Coverage rises from 122 to 132 types (79% to 92% of volume). The guard stops tiny, mostly referred types from mapping, such as Undefined Noise Disturbance (0.6% in scope). Potholes stay unmapped (Public Works 84%, Water and Sewer Commission 14%) | John |
+| 2026-10-22 | Neighborhood exposure view added to the stretch list (section 7) | It goes beyond the core equity deliverable | John |
+
+### 11.2 Data audit findings (2026-10-22)
+
+- 2024 department counts match the project page exactly: PWDx 157,610, BTDT 81,447, PARK 18,736, ISD 18,624. On-time shares from the city's `on_time` flag also match: 90%, 50%, 93%, 72%.
+- Both files have the same 30 columns. There are no duplicate case IDs, and every date parses as ISO 8601.
+- No in-scope request has a target date before its open date, so the `invalid_ordering` class has 0 records in both years. The class stays in the code.
+- Valid target windows range from 0 to 720 days. 58% of 2024 Parks windows are 365 days or longer.
+- The city's `on_time` flag marks about 5,000 valid-target requests per year OVERDUE that closed on the target date but after the target time. The simulator uses this spec's calendar-date convention (closed on day T is on time). The historical statistics shown to residents use the city's flag, because it reproduces the page's on-time rates. The two kinds of on-time rate are therefore not directly comparable.
+- The city last revised both files on 2026-09-18. Each run records the file checksums, and the processed tables are committed, so the notebook reproduces even if the source changes again.
+
+### 11.3 Implementation decisions
+
+These are choices made where the spec was silent. None changes a GIVEN rule or a staffing decision rule.
+
+- **Model:** `gpt-6.1-sol` rejects any temperature but the default, so it runs at low reasoning effort with `seed=5250`. Exact reproducibility comes from offline replay of `data/demo/recordings.jsonl`. A recording's key covers the model, reasoning effort, seed, response schema, prompt and catalog versions, and the exact input, so a stale recording is never replayed. Recordings made before the key included reasoning effort, seed, and schema were migrated with provenance backfilled from git evidence (`scripts/migrate_recordings_v2.py`).
+- **Tuning, dev set only:**
+  - The alias prompt moved to `aliases-v2` after dev recall missed everyday synonyms ("lamp post", "recliner").
+  - The classify prompt moved to `classify-v2`, adding rules for near-duplicate types and for not re-asking a location. `classify-v3` is the scope change in section 11.1.
+  - The retrieval gate was set to 0.15. The lowest correct dev route scored 0.18 and out-of-scope messages about 0.10.
+- **Penalty events in projections:** the seasonal rule and the release check count both $20 and $100 events.
+- **Arrivals:**
+  - Within one day, requests queue in type-ID order.
+  - Scenario extras queue behind that day's base requests.
+  - The snowstorm adds two extra requests per base request in each Public Works type-day cell on February 10 to 12, so each cell ends at exactly 3x.
+- **Month-end inventory:** `open_overdue_end` (past target, under 30 days) and `open_long_overdue_end` (30+ days) are disjoint. Together with not-yet-due and no-target they partition `open_end`.
+- **Neighborhoods:** for the equity analysis only, "Allston", "Brighton", "South Boston", and "Mattapan" are merged into their combined labels, and blank or citywide "Boston" becomes "Unspecified" (`config.NEIGHBORHOOD_ALIASES`).
+- **Added module:** `src/boston311/equity.py`, for deliverable 6, which the spec's layout did not list. `scripts/` holds `build_data.py`, `build_catalog.py`, `build_eval_sets.py`, and `run_all.py`.
+- **Not used:** the GenAI_Agents reference notebooks were not consulted or copied in this build.
+- **Run manifests:** each run writes `outputs/manifests/run_<timestamp>.json`, which is gitignored. Only `reference_run_all.json`, the manifest of the run that produced the committed outputs, is tracked.
+
+### 11.4 Test-set disclosure (2026-10-28)
+
+The test set was run once after dev-set tuning. A later catalog review then reworded 11 types, and all classifications were re-recorded live with `classify-v3`. After that run, test example t13 ("streetlite broke on my block, its pitch black at nite") fell from a best retrieval score of 0.1504 to 0.1495, just under the 0.15 gate. The model still picked Street Light Outages with no ambiguity, but the assistant asked a clarifying question, and t13 has no scripted answer, so it counted as a miss.
+
+t13's own type was not edited. TF-IDF weights each word by how many types use it, so removing about 40 aliases from other types shifted every score slightly; t13 had passed the gate by only 0.0004. Lowering the gate or editing t13 would have tuned on the test set, so neither was done. Instead, t13 showed that the gate can overrule a model pick that retrieval also ranks first, which led to the agreement rule (section 11.1). Because that logic revision was prompted by a test result, the test set is no longer strictly untouched. The gate threshold, the prompt, the catalog, and every test message were unchanged by it.
+
+### 11.5 Remaining exceptions (prototype limitations)
+- **Provisional wording (10 types):** Abandoned Vehicles, Contractor Complaints, Contractors Complaint, Follow-Up, Notification, Phone Bank Service Inquiry, Sign Shop WO, Walk-In Service Inquiry, Work Hours-Loud Noise Complaints, and Working Beyond Hours. `alias_status` does not change retrieval, so this wording is still indexed and shown to the model. Five have rejected routing and always go to triage. Four are in the overlapping pairs (section 4.6), which go to triage when both types of a pair are retrieved. Abandoned Vehicles routes to its approved exact queue.
+- **Scooters and mopeds:** historical titles put scooters and mopeds under both Abandoned Bicycle and Abandoned Vehicles. The prototype describes them only under Abandoned Vehicles, which names an exact queue. The data does not establish that distinction.
+- **What approval means:** an approval says a mapping is consistent with the 2023 to 2024 routing data and the agreed rules. It does not verify the city's service eligibility, and the rules set no minimum sample size, so some approved types rest on few requests.
+- **Evaluation independence:** the test and dev messages were written within the same build as the catalog wording, not independently of it. Six labels were corrected during the review, and the agreement rule was prompted by t13 (section 11.4). The results are a demonstration evaluation; a claim about new residents' messages would need a fresh held-out set.
+- **One evaluation seed:** staffing results come from one planning seed and one evaluation seed. Other draws of target dates would change the numbers somewhat.
+- **Live service:** the live model path was exercised by the recorded live classification runs and by mocked-HTTP tests of the real SDK wrapper. It has not been run as a service with real residents.
+
+---
+
+## 12. References
 
 - Boston 311 project page: https://www.ai2lab.ai/courses/DADS5250/hackathon/
 - Analyze Boston 311 Service Requests: https://data.boston.gov/dataset/311-service-requests
@@ -580,13 +613,3 @@ Hand-calculated examples (each becomes a unit test):
 - GenAI_Agents Customer Support Agent: https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/customer_support_agent_langgraph.ipynb
 - GenAI_Agents Contextual Quoting System: https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/contextual_quoting_agentic_system.ipynb
 - GenAI_Agents license: https://raw.githubusercontent.com/NirDiamant/GenAI_Agents/main/LICENSE
-
-## 12. Authorship of this document
-
-| Section | Author |
-|---|---|
-| Project selection | Nicholas |
-| 2025 planning year, package-plus-notebook decision, reference notebooks | John |
-| Fixed challenge assumptions and deliverables | Teaching team (project page) |
-| Simulator, heuristic, contracts, acceptance examples, questions | Claude, incorporating three rounds of Codex review (hiring persistence rule, projection-based release check, release cost safeguard, frozen-plan evaluation, and scenario coupling proposed by Codex; stream separation proposed by Claude; direct scenario construction and reconciliation checks proposed by Codex in final review) |
-| Core/stretch split, manifest, routing ownership | Agreed between Claude and Codex in review; pending team confirmation |

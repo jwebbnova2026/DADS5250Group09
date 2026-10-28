@@ -1,23 +1,33 @@
 # DADS5250Group09
-Midterm for John Baldwin, Nicholar Maar, Adam Jaroudi, and Andrew Lai: Option 2 Staffing Boston's 311 City Service Teams
-
-<!-- [AI-authored: Claude] Sections below written by Claude; team to review. -->
+Midterm for John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai: Option 2 Staffing Boston's 311 City Service Teams
 
 **Boston 311 Crew Planner.** This builds a month-by-month 2025 crew plan for four Boston departments from real 2023 and 2024 311 data. It also includes a GenAI intake assistant that routes residents' plain-language messages to an official request type and department.
 
 * **Departments:** Public Works, Transportation, Parks & Recreation, and Inspectional Services.
-* **Results:** see the executed notebook [demo.ipynb](demo.ipynb) and the draft report [docs/report.md](docs/report.md).
+* **Analysis and results:** the executed notebook [demo.ipynb](demo.ipynb) is the complete analysis: problem and approach, assumptions, the staffing plan against the fixed-crew baseline, sensitivity, the intake evaluation, neighborhood equity, and limitations.
 * **New to code?** [docs/notebook_guide.md](docs/notebook_guide.md) is a plain-language walkthrough of the project and the notebook, with step-by-step setup.
-* **Specification:** [docs/architecture.md](docs/architecture.md), the frozen design, plus the changes logged in [docs/decisions.md](docs/decisions.md).
+* **Specification:** [docs/architecture.md](docs/architecture.md) the design.
 
 This is a demonstration. It never submits anything to the City of Boston and never promises a completion date.
 
 ## Setup
 
-Requires Python 3.12 (3.11 or later should work). From the repository root:
+Requires Python 3.12 (3.11 or later should work). The pinned dependencies in `requirements.lock` were built on 3.12. If you don't have it, install it:
 
 ```bash
-python -m venv .venv
+# Windows (PowerShell)
+winget install Python.Python.3.12
+# macOS (Homebrew)
+brew install python@3.12
+```
+
+Or download it from [python.org/downloads](https://www.python.org/downloads/). Then, from the repository root, create the virtual environment with 3.12:
+
+```bash
+# Windows
+py -3.12 -m venv .venv
+# macOS or Linux
+python3.12 -m venv .venv
 ```
 
 Activate it (Windows: `.venv\Scripts\activate`; macOS or Linux: `source .venv/bin/activate`), then install the pinned dependencies and the package:
@@ -51,7 +61,7 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
   python scripts/run_all.py
   ```
 
-* **Run the tests (about 100, no network or key):**
+* **Run the tests (145, no network or key):**
 
   ```bash
   python -m pytest -q
@@ -62,7 +72,7 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
 1. Copy `.env.example` to `.env` and set `OPENAI_API_KEY`. The `.env` file is gitignored.
 2. Set `MODE = "live"` in the notebook's first code cell, or run `python scripts/run_all.py --mode live`.
 
-Live mode calls `gpt-6.1-sol`, but only for inputs that have no recording yet.
+Live mode calls `gpt-6.1-sol`, but only for inputs that have no recording yet, so reset kernel and run all cells.
 
 ### Rebuild the data (optional)
 
@@ -80,11 +90,11 @@ This fetches the 2023 and 2024 files (about 370 MB) through the [data.boston.gov
 
 ```mermaid
 flowchart LR
-    subgraph Data["Data (spec 5.1)"]
+    subgraph Data["Data (spec 4.1)"]
         API["data.boston.gov<br/>CKAN API"] --> RAW["data/raw<br/>2023, 2024 CSV"]
         RAW --> PROC["data/processed<br/>count tables (committed)"]
     end
-    subgraph Plan["Staffing (spec 5.2-5.5)"]
+    subgraph Plan["Staffing (spec 4.2-4.5)"]
         PROC --> FC["forecast.py<br/>seasonal naive"]
         FC --> WL["workload.py<br/>planning stream / evaluation stream<br/>+20%, -20%, snowstorm"]
         WL -- planning workload only --> PL["staffing.py<br/>heuristic planner"]
@@ -94,7 +104,7 @@ flowchart LR
         BASE["baseline:<br/>January crews"] --> SC
         SC --> ROWS["StaffingRows, costs,<br/>sensitivity, year-end"]
     end
-    subgraph Intake["Intake assistant (spec 5.6-5.8)"]
+    subgraph Intake["Intake assistant (spec 4.6-4.8)"]
         PROC --> CAT["catalog.py<br/>two-tier mappings + reviewed aliases"]
         CAT --> RET["retrieval.py<br/>TF-IDF (RAG)"]
         MSG["resident message"] --> G
@@ -108,7 +118,7 @@ flowchart LR
         CL <--> LLM["llm.py<br/>live: gpt-6.1-sol<br/>offline: recordings"]
         OUT --> EV["evaluate.py<br/>dev + test sets"]
     end
-    ROWS --> NB["demo.ipynb, outputs/, report"]
+    ROWS --> NB["demo.ipynb and outputs/"]
     EV --> NB
     PROC --> EQ["equity.py<br/>neighborhood equity"] --> NB
 ```
@@ -121,7 +131,7 @@ flowchart LR
 | `workload.py` | Exact largest-remainder arrivals, seeded deadlines, and coupled scenarios |
 | `simulate.py` | Synthetic 21-day calendar; FIFO queue whose state is one integer; penalty events |
 | `staffing.py` | Heuristic planner, frozen-plan replay, cost accounting, year-end report, reconciliation checks |
-| `catalog.py` | Official request types, two-tier routing mappings, provisional reviews, aliases, statistics |
+| `catalog.py` | Official request types, two-tier routing mappings, review statuses, aliases, statistics |
 | `retrieval.py` | TF-IDF search (words plus character fragments) |
 | `llm.py` | LangChain `ChatOpenAI` with strict structured output, bounded retries, record and replay |
 | `agent/` | LangGraph intake graph (`graph.py`), its steps (`nodes.py`), and helpers (`tools.py`) |
@@ -131,15 +141,23 @@ flowchart LR
 
 Course techniques used: **prompt engineering**, **structured output** (Pydantic + strict JSON schema), **RAG** (retrieval over the official catalog), **LangChain**, and a **LangGraph agent** with an interrupt-based clarification. No other agent frameworks are used.
 
-## Team contributions
+RAG retrieval uses TF-IDF (scikit-learn) over the 163 official request types rather than embeddings and a vector store. The catalog is small, TF-IDF runs offline and deterministically (so recorded model answers replay exactly), and with the reviewed aliases it put the correct type among the 8 candidates for every dev-set message that has one (`outputs/retrieval_recall_dev.csv`; spec section 4.6). pandas, numpy, scikit-learn, and matplotlib are ordinary data libraries, not agent frameworks.
 
-| Member | Role |
-|---|---|
-| John Baldwin | Technical build; planning-year, package-plus-notebook, and reference-notebook decisions |
-| Adam Jaroudi | Technical build |
-| Nicholas Maar | Project selection; report and video |
-| Andrew Lai | Report and video |
-| Claude (AI, Anthropic) | Wrote the architecture spec with Codex review, the code, tests, eval sets, notebook, and report draft. See [docs/authorship.md](docs/authorship.md) |
+## Authorship
+
+Team: John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai.
+
+- **Everyone** participated in project selection, design, architecture, and presentation planning.
+- **Claude** (Anthropic, via Claude Code) wrote all code and supporting documentation.
+- **Codex** (OpenAI) did review of all of Claude's work.
+- **Everyone** did additional review.
+- Adam and Nicholas built presentation
+- Nicholas recorded and delivered the presentation
+
+### How AI was used
+
+- **gpt-6.1-sol** (OpenAI) is part of the product: it classifies residents' messages at run time, and it drafted the request-type descriptions and aliases in `data/catalog/catalog.json`, which Claude then reviewed. Its recorded answers are in `data/demo/recordings.jsonl`.
+- **The team** made the design decisions.
 
 ## Reference material
 

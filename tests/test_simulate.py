@@ -1,6 +1,6 @@
-"""Tests for the calendar and the daily FIFO simulator (spec 5.3).
+"""Tests for the calendar and the daily FIFO simulator (spec 4.3).
 
-Hand-calculated examples from spec section 9: E8, E9, E10 (simulator part),
+Hand-calculated examples from spec section 8: E8, E9, E10 (simulator part),
 E12. A naive reference simulator, written as directly as possible from the
 spec's "daily order of events", cross-checks the fast simulator on a full
 year of real-sized data.
@@ -148,7 +148,7 @@ def test_negative_crews_rejected(calendar):
 
 
 def naive_simulate(arrival_day, has_target, target_day, daily_capacity, n_days):
-    """Reference simulator: a literal transcription of spec 5.3's daily order.
+    """Reference simulator: a literal transcription of spec 4.3's daily order.
 
     Slow but obviously correct: a real queue (deque), one day at a time.
     Returns (close_day per request, overdue events per day, long events per day).

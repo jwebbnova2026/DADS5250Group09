@@ -1,6 +1,6 @@
 """The LangGraph intake graph and a small wrapper class to use it.
 
-Spec section 5.7. LangGraph describes a workflow as a graph: nodes are steps
+Spec section 4.7. LangGraph describes a workflow as a graph: nodes are steps
 (see nodes.py) and edges say which step runs next. A *checkpointer* saves
 the state after every step under a *thread ID*, which is what lets the graph
 pause to ask the resident a question and later resume the same conversation.

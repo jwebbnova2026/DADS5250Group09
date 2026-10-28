@@ -1,6 +1,6 @@
 """Neighborhood equity in historical response times (deliverable 6).
 
-[Added module; see docs/decisions.md.] This answers one question with
+[Added module; see spec section 11.3.] This answers one question with
 2023-2024 data: did residents in some neighborhoods get less on-time service
 than others *for the same kinds of requests*?
 
@@ -21,7 +21,7 @@ department). This is called indirect standardization:
 A neighborhood well below its own expectation (a negative gap) is a real
 signal worth investigating; a low raw rate with a zero gap is just its mix.
 
-Limits (stated in the report): this is descriptive, not causal. Differences
+Limits (stated in the notebook): this is descriptive, not causal. Differences
 can come from how requests are reported (app vs. phone, employee vs.
 resident) as well as from how they are served, and there is no population
 data, so nothing here is per resident. On-time uses the city's own flag over

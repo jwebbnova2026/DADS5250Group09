@@ -1,4 +1,4 @@
-"""2025 monthly demand forecast per department (spec section 5.2).
+"""2025 monthly demand forecast per department (spec section 4.2).
 
 The method is a **seasonal naive** forecast: each 2025 month is predicted to
 have exactly as many requests as the same month of 2024. For example, the

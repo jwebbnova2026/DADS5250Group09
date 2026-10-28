@@ -1,12 +1,12 @@
 """The steps (nodes) of the intake graph.
 
-Spec section 5.7. The flow for one message:
+Spec section 4.7. The flow for one message:
 
     check_input -> retrieve -> classify -> decide -> respond
                        ^                     |
                        +----- clarify <------+   (at most once)
 
-* **check_input** rejects empty input before any model call (spec 6).
+* **check_input** rejects empty input before any model call (spec 5).
 * **retrieve** finds candidate types with TF-IDF (RAG).
 * **classify** asks the language model for a structured proposal.
 * **decide** is plain code. It checks the proposal against the candidates and
@@ -85,7 +85,7 @@ class Nodes:
             "result": None,
         }
         if not state.get("message", "").strip():
-            # Reject before any retrieval or API call (spec 6).
+            # Reject before any retrieval or API call (spec 5).
             return {**fresh, "decision": Decision.REJECTED.value, "triage_reason": "empty input"}
         return fresh
 
@@ -113,10 +113,15 @@ class Nodes:
         3. Something is unclear: the model flags ambiguity or several
            issues, proposes no type, or the retrieval gate fails -> CLARIFY
            if we have not asked yet, otherwise TRIAGE (second ambiguity).
+           The gate is skipped when the model's pick is the top-ranked
+           retrieval candidate (agreement rule).
         4. The proposed type is not one of the retrieved candidates or not
            in the catalog -> TRIAGE.
-        5. The type has no approved department mapping -> TRIAGE.
-        6. Otherwise -> ROUTE.
+        5. The proposed type is one of an overlapping pair
+           (``config.OVERLAPPING_TYPE_PAIRS``) and the other type of the pair
+           was retrieved too -> TRIAGE, because the data cannot tell them apart.
+        6. The type has no approved department mapping -> TRIAGE.
+        7. Otherwise -> ROUTE.
         """
         if state.get("failure"):
             return _triage(f"the language model could not answer ({state['failure']})")
@@ -131,7 +136,10 @@ class Nodes:
             unclear_reason = "more than one request type fits"
         elif p.type_id is None:
             unclear_reason = "no request type clearly fits"
-        elif state.get("top_score", 0.0) < self.gate:
+        elif state.get("top_score", 0.0) < self.gate and not _agrees_with_top_candidate(p, state):
+            # Agreement rule (decided 2026-10-28): a weak retrieval score
+            # alone does not force a question when the model's clear pick
+            # is also the top-ranked candidate; the two signals agree.
             unclear_reason = "the message matches no official type closely (retrieval gate)"
         if unclear_reason:
             if state.get("clarifications_used", 0) == 0:
@@ -143,6 +151,13 @@ class Nodes:
         if p.type_id not in candidate_ids or p.type_id not in self.catalog:
             return _triage(f"the proposed type {p.type_id!r} is not one of the retrieved official candidates")
         entry = self.catalog[p.type_id]
+        partner = tools.overlapping_partner(entry.type)
+        candidate_names = {c["type"] for c in state["candidates"]}
+        if partner is not None and partner in candidate_names:
+            return _triage(
+                f"overlapping official types: \"{entry.type}\" and \"{partner}\" describe the same problem "
+                "but are handled differently, so a person needs to route it"
+            )
         department, _, _ = entry.route()
         if department is None:
             return _triage(
@@ -222,6 +237,15 @@ class Nodes:
     @staticmethod
     def after_decide(state: IntakeState) -> str:
         return "clarify" if state.get("decision") == Decision.CLARIFY.value else "respond"
+
+
+def _agrees_with_top_candidate(p: ClassificationProposal, state: IntakeState) -> bool:
+    """True if the model's proposed type is the top-ranked retrieved candidate.
+
+    Candidates are stored best first (see ``tools.retrieve_candidates``).
+    """
+    candidates = state.get("candidates") or []
+    return bool(candidates) and p.type_id is not None and p.type_id == candidates[0]["type_id"]
 
 
 def _triage(reason: str) -> IntakeState:

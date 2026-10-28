@@ -1,6 +1,6 @@
 """Daily first-in-first-out (FIFO) queue simulator and penalty events.
 
-Spec section 5.3. This module is the single source of truth for how a
+Spec section 4.3. This module is the single source of truth for how a
 department's queue behaves. Every plan (our heuristic plan and the
 fixed-workforce baseline) and every projection the planner makes runs
 through :func:`simulate`.
@@ -22,7 +22,7 @@ sequence number). If we sort a department's requests that way, the requests
 closed so far are always exactly the first ``head`` requests in the list, and
 the open queue is the slice ``[head, arrived_so_far)``. So the whole queue
 state at any moment is the single integer ``head``. Copying the planner's
-queue for a projection (spec 5.4) means copying one integer, and the
+queue for a projection (spec 4.4) means copying one integer, and the
 simulator only needs to track how ``head`` moves day by day. From that we can
 work out the exact day each request closed, and from close days we get every
 penalty event and monthly count.
@@ -48,7 +48,7 @@ from boston311 import config
 NEVER = np.iinfo(np.int64).max // 4
 
 # ---------------------------------------------------------------------------
-# Synthetic 21-day operating calendar (spec 5.3, DEFAULT)
+# Synthetic 21-day operating calendar (spec 4.3, DEFAULT)
 # ---------------------------------------------------------------------------
 
 
@@ -93,7 +93,7 @@ class Calendar:
 def build_calendar(year: int = config.PLAN_YEAR, service_days: int = config.SERVICE_DAYS_PER_MONTH) -> Calendar:
     """Build the synthetic operating calendar for one year.
 
-    Rules (spec 5.3):
+    Rules (spec 4.3):
     * Service days are the first ``service_days`` (21) weekdays of each month.
     * If a month has fewer weekdays than that, Saturdays are added, earliest
       first, until there are 21. (In 2025 only February needs this: it has 20
@@ -221,7 +221,7 @@ def simulate(requests: Requests, head_start: int, start_day: int, end_day: int, 
     Returns:
         A :class:`SimResult`.
 
-    Daily order of events (spec 5.3), for each day d:
+    Daily order of events (spec 4.3), for each day d:
         1. Day d's arrivals join the back of the queue.
         2. If d is a service day, up to ``daily_capacity[d]`` requests close
            from the front.

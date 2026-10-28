@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-23T14:07:04+00:00",
+  "created_utc": "2026-10-28T16:43:31+00:00",
   "mode": "offline",
   "sources": [
     {
@@ -101,12 +101,12 @@
     "id": "gpt-6.1-sol",
     "reasoning_effort": "low",
     "seed": 5250,
-    "prompt_version": "classify-v2",
+    "prompt_version": "classify-v3",
     "alias_prompt_version": "aliases-v2",
     "catalog_version": "catalog-v2"
   },
   "parameters": {
-    "ACCEPT_PROVISIONAL_APPROVALS": true,
+    "ACCEPT_PROVISIONAL_APPROVALS": false,
     "ALIAS_PROMPT_VERSION": "aliases-v2",
     "CATALOG_VERSION": "catalog-v2",
     "CKAN_API_BASE": "https://data.boston.gov/api/3/action",
@@ -194,11 +194,25 @@
       "Boston": "Unspecified"
     },
     "OVERDUE_PENALTY": 20,
+    "OVERLAPPING_TYPE_PAIRS": [
+      [
+        "Contractor Complaints",
+        "Contractors Complaint"
+      ],
+      [
+        "Work Hours-Loud Noise Complaints",
+        "Working Beyond Hours"
+      ],
+      [
+        "Sidewalk Repair",
+        "Sidewalk Repair (Make Safe)"
+      ]
+    ],
     "PAID_TRAINING": true,
     "PARKS_BLOCK_IN_SEASON_PERMANENT_HIRES": true,
     "PLANNING_SEED": 20250101,
     "PLAN_YEAR": 2025,
-    "PROMPT_VERSION": "classify-v2",
+    "PROMPT_VERSION": "classify-v3",
     "RELEASE_LOOKAHEAD_MONTHS": 4,
     "RELEASE_NOTICE_MONTHS": 1,
     "REQUIRED_COLUMNS": [
@@ -268,17 +282,17 @@
     "data/processed/types.csv": "69707f9b3654da331d2a1e4b15d394b4763bd4ebe312d9616b5ab6f793e89586",
     "data/processed/window_counts.csv": "d39ab241a3f4f09ee129bbb43bbea0fbc299cbbbca6167393cd7b33b9f0a076f",
     "data/processed/reconciliation.json": "02ea36b96e458b39fed733132e49fd6ef04cc9fdc3291b45fc35d6e3225fb667",
-    "data/catalog/catalog.json": "160b1965c7a521d9e35dc7941760ba7dcb79b094b88522d10acfa0884092ba87",
-    "data/catalog/mapping_review.csv": "778d6a66b39e20043861da716f295dfc55baddb3045ad1e427c9ed2077d6f267",
-    "data/eval/dev.jsonl": "bae2f4e48f49790fbb01f0dddd0efe09dd3eab9932e02f71f3e67e77ef75cfe1",
-    "data/eval/test.jsonl": "372b9daa4780f170b90712d433a2a3626df31da6fec62614bc1330e6ffefdad4",
+    "data/catalog/catalog.json": "f8ec81aacd0ecbad322c1795c54d94c781d2ba30c1514b674ceec7d10be423f7",
+    "data/catalog/mapping_review.csv": "d8febebdde5c8233201990348514c05aa1a364c9f037f8887c060ba8906b2d08",
+    "data/eval/dev.jsonl": "4b84927035bc48a967d6e3f19583820297caa39dedb0e126f36c112727a0a8b0",
+    "data/eval/test.jsonl": "7803d5d1fa7f18e4befcf4671891768d3b122052e2ff7bb4c1358d8964049ac2",
     "prompts/aliases_system.txt": "bf9e6043dd80af8bc35641d9378d05cb04535f5705c787bdce191e7cd1c0354f",
-    "prompts/classify_system.txt": "5f8f0f5821f32a91e2aba611d77363ce75493843bb0d4bd96a358d3bf73ad56b",
+    "prompts/classify_system.txt": "38e919cc41869b63c44f012204e8ec6547fd64a7b7289fb99b15b1faead022d3",
     "prompts/classify_user.txt": "8cc0afdfa93a7067143928f9cee6e76396dde4d898c9764891fb0e88c416b4dc",
-    "data/demo/recordings.jsonl": "a243a163221daf1bd9cc7f83c9925376109a05d8ebb4d30d2d3ad6d58dd9d099"
+    "data/demo/recordings.jsonl": "28c6473177cc39e0fabc470f07c6e9d3710a0ada94a7f630f785e7206474604a"
   },
   "environment": {
-    "python": "3.12.0",
+    "python": "3.12.10",
     "platform": "Windows-11-10.0.26200-SP0",
     "packages": {
       "pandas": "3.1.0",
@@ -291,7 +305,7 @@
       "langgraph": "1.2.16",
       "openai": "3.37.0"
     },
-    "git_commit": "294c072ac4a51fff661ebfa712f859bba6617e87"
+    "git_commit": "1a116d6b93543db39ae1533802b5ea58cfd0611d"
   },
   "outputs": [
     "outputs/forecast_2025.csv",

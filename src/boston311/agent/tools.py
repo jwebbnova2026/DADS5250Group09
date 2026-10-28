@@ -26,6 +26,20 @@ def department_label(entry: CatalogEntry) -> str:
     return f"no single department (most often {usual_department_name(entry)})"
 
 
+def overlapping_partner(type_name: str) -> str | None:
+    """The other type of this type's overlapping pair, or None if it has none.
+
+    See ``config.OVERLAPPING_TYPE_PAIRS``: pairs that describe the same problem
+    but route differently, which the data cannot tell apart.
+    """
+    for a, b in config.OVERLAPPING_TYPE_PAIRS:
+        if type_name == a:
+            return b
+        if type_name == b:
+            return a
+    return None
+
+
 def retrieve_candidates(retriever: Retriever, catalog: dict[str, CatalogEntry], text: str) -> tuple[list[dict], float]:
     """Top-k candidate types for ``text`` as plain dicts, plus the best score.
 
@@ -60,7 +74,7 @@ def queue_sentence(queue: str | None, status: QueueStatus) -> str:
 
 
 def route_text(entry: CatalogEntry, department: str, queue: str | None, status: QueueStatus) -> str:
-    """The templated reply for a routed request (spec 5.7: templated, never promises)."""
+    """The templated reply for a routed request (spec 4.7: templated, never promises)."""
     dept_name = config.DEPARTMENTS[department].name
     return (
         f"This looks like a \"{entry.type}\" request, handled by {dept_name}. "

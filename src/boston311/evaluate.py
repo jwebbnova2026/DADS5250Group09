@@ -1,4 +1,4 @@
-"""Evaluate the intake assistant on the dev and test sets (spec 5.8).
+"""Evaluate the intake assistant on the dev and test sets (spec 4.8).
 
 The test set (40 messages) measures the final system and is never used for
 tuning. The dev set (18 separate messages) is used for prompt and gate
@@ -121,7 +121,7 @@ def metrics_table(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def retrieval_recall(items: list[dict], k: int = config.RETRIEVAL_TOP_K) -> pd.DataFrame:
-    """Candidate recall@k with and without aliases (spec 5.6; dev set only).
+    """Candidate recall@k with and without aliases (spec 4.6; dev set only).
 
     Recall@k = share of items whose acceptable type appears among the top-k
     retrieved candidates. For items with a clarification answer, the search

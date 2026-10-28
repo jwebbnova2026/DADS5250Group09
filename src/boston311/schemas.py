@@ -4,9 +4,9 @@ Pydantic models are Python classes whose fields have declared types. Pydantic
 checks the types when an object is created and can describe the model as a
 JSON schema. We use them for two kinds of contract:
 
-* **Staffing output** (spec section 5.5): :class:`StaffingRow`, one row per
+* **Staffing output** (spec section 4.5): :class:`StaffingRow`, one row per
   department x month x scenario x plan.
-* **Intake assistant** (spec section 5.7): what the language model must
+* **Intake assistant** (spec section 4.7): what the language model must
   return (:class:`ClassificationProposal`) and what the code decides
   (:class:`IntakeResult`). The LLM is forced to answer in exactly the
   ``ClassificationProposal`` shape ("structured output"), so the code never
@@ -20,7 +20,7 @@ from enum import Enum
 from pydantic import BaseModel, Field
 
 # ---------------------------------------------------------------------------
-# Staffing output (spec 5.5)
+# Staffing output (spec 4.5)
 # ---------------------------------------------------------------------------
 
 
@@ -81,7 +81,7 @@ class StaffingRow(BaseModel):
 
 
 # ---------------------------------------------------------------------------
-# Intake assistant (spec 5.7)
+# Intake assistant (spec 4.7)
 # ---------------------------------------------------------------------------
 
 
@@ -151,7 +151,7 @@ class Decision(str, Enum):
 
 
 class QueueStatus(str, Enum):
-    """How precisely a routed type identifies its queue (two-tier rule, spec 5.6)."""
+    """How precisely a routed type identifies its queue (two-tier rule, spec 4.6)."""
 
     EXACT = "exact"  # one queue handles at least 90% of the type
     ASSIGNED_BY_LOCATION = "assigned_by_location"  # district / region queues chosen by address

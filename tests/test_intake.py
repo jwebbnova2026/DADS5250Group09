@@ -4,7 +4,7 @@ No test here calls the real model: a FakeModel returns scripted proposals,
 and the offline replay test uses the committed recordings. So these tests
 need no network and no API key (spec check 2).
 
-Covers spec section 6 (failure behavior) and check 6 (routing only through
+Covers spec section 5 (failure behavior) and check 6 (routing only through
 approved official mappings).
 """
 
@@ -20,7 +20,7 @@ from pydantic import ValidationError
 
 from boston311 import config, evaluate, llm
 from boston311.agent import IntakeAssistant
-from boston311.catalog import APPROVED, REJECTED, load_catalog
+from boston311.catalog import APPROVED, PROVISIONAL, REJECTED, load_catalog
 from boston311.llm import ClassifierFailure, LiveModel, MissingAPIKeyError, OfflineModel, RecordingStore
 from boston311.retrieval import Retriever
 from boston311.schemas import ClassificationProposal, Decision, QueueStatus
@@ -115,7 +115,10 @@ def test_rejected_mapping_never_routes(catalog):
 
 
 def test_provisional_requires_flag(catalog, monkeypatch):
-    entry = catalog[type_id_of(catalog, "Parking Enforcement")]
+    # Use a provisional copy: the real entry has since been approved in review.
+    entry = copy.deepcopy(catalog[type_id_of(catalog, "Parking Enforcement")])
+    entry.department_status = PROVISIONAL
+    entry.queue_status_review = PROVISIONAL
     monkeypatch.setattr(config, "ACCEPT_PROVISIONAL_APPROVALS", False)
     assert entry.route()[0] is None
     approved = copy.deepcopy(entry)
@@ -226,6 +229,36 @@ def test_unmapped_type_triage(catalog, retriever):
     assert r.decision is Decision.TRIAGE and r.type_id == pothole and "most often Public Works" in r.triage_reason
 
 
+# Overlapping official types (decided 2026-10-27): when the model picks one
+# type of a pair and the other one was also retrieved, the data cannot say
+# which is right, so a person routes it instead of the code picking one.
+
+
+def test_overlap_pairs_name_real_types(catalog):
+    names = {e.type for e in catalog.values()}
+    for pair in config.OVERLAPPING_TYPE_PAIRS:
+        assert len(pair) == 2 and set(pair) <= names
+
+
+def test_overlap_pair_triage_when_partner_retrieved(catalog, retriever):
+    sidewalk = type_id_of(catalog, "Sidewalk Repair")
+    r = assistant(catalog, retriever, FakeModel(proposal(sidewalk))).run(
+        "The sidewalk on my street is all cracked and the slabs are uneven."
+    )
+    assert type_id_of(catalog, "Sidewalk Repair (Make Safe)") in r.candidate_ids  # the partner was retrieved
+    assert r.decision is Decision.TRIAGE and r.type_id == sidewalk
+    assert "overlapping official types" in r.triage_reason
+
+
+def test_overlap_pair_routes_when_partner_not_retrieved(catalog, retriever, monkeypatch):
+    # A made-up pair whose second type cannot be retrieved for this message.
+    monkeypatch.setattr(config, "OVERLAPPING_TYPE_PAIRS", (("Parking Enforcement", "Cemetery Maintenance Request"),))
+    pe = type_id_of(catalog, "Parking Enforcement")
+    r = assistant(catalog, retriever, FakeModel(proposal(pe))).run("A car is blocking my driveway")
+    assert type_id_of(catalog, "Cemetery Maintenance Request") not in r.candidate_ids
+    assert r.decision is Decision.ROUTE
+
+
 def test_clarify_once_then_route_without_rerunning_the_model(catalog, retriever):
     light = type_id_of(catalog, "Street Light Outages")
     model = FakeModel(proposal(None, ambiguous=True, question="Is it a street light?"), proposal(light))
@@ -268,10 +301,23 @@ def test_multiple_issues_ask_first(catalog, retriever):
 
 
 def test_retrieval_gate_asks_for_detail(catalog, retriever):
-    pe = type_id_of(catalog, "Parking Enforcement")
-    model = FakeModel(proposal(pe))
-    r = assistant(catalog, retriever, model, gate=0.99).run("A car is blocking my driveway")
+    # The model picks a candidate that is NOT the top retrieval hit, so the
+    # two signals disagree and the gate applies.
+    message = "A car is blocking my driveway"
+    second = retriever.search(message)[1].type_id
+    model = FakeModel(proposal(second))
+    r = assistant(catalog, retriever, model, gate=0.99).run(message)
     assert r.decision is Decision.CLARIFY
+
+
+def test_agreement_with_top_candidate_skips_gate(catalog, retriever):
+    # Agreement rule (decided 2026-10-28): the model's clear pick is also the
+    # top retrieval hit, so a weak retrieval score alone does not force a question.
+    message = "A car is blocking my driveway"
+    top = retriever.search(message)[0].type_id
+    assert top == type_id_of(catalog, "Parking Enforcement")
+    r = assistant(catalog, retriever, FakeModel(proposal(top)), gate=0.99).run(message)
+    assert r.decision is Decision.ROUTE and r.department == "BTDT"
 
 
 def test_model_failure_triage(catalog, retriever):
@@ -281,7 +327,7 @@ def test_model_failure_triage(catalog, retriever):
 
 
 # ---------------------------------------------------------------------------
-# LLM wrapper failure behavior (spec 6)
+# LLM wrapper failure behavior (spec 5)
 # ---------------------------------------------------------------------------
 
 

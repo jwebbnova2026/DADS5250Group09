@@ -1,6 +1,6 @@
 """Seeded synthetic 2025 workloads, including coupled sensitivity scenarios.
 
-Spec section 5.3. A *workload* is the full list of requests for 2025: for
+Spec section 4.3. A *workload* is the full list of requests for 2025: for
 each request its department, type, arrival day, target class, and target day.
 The simulator then serves this list.
 
@@ -142,7 +142,7 @@ class History:
 
 
 class WindowSampler:
-    """Draws target windows using the spec's fallback chain (spec 5.3).
+    """Draws target windows using the spec's fallback chain (spec 4.3).
 
     For a request of type T in department D:
     1. use T's own valid windows if T has at least 50 of them;

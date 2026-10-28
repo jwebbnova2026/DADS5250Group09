@@ -1,6 +1,6 @@
 """Load the 2023 and 2024 Boston 311 files and turn them into planning inputs.
 
-Spec section 5.1. The pipeline has three stages:
+Spec section 4.1. The pipeline has three stages:
 
 1. **Fetch** (``fetch_year``): ask the data.boston.gov CKAN API where a year's
    CSV lives, download it once into ``data/raw/`` and record its metadata
@@ -36,7 +36,7 @@ from boston311 import config
 
 
 class MissingColumnError(ValueError):
-    """Raised when a source file lacks a required column (spec section 6).
+    """Raised when a source file lacks a required column (spec section 5).
 
     The message names the missing column(s) so the cause is obvious.
     """
@@ -55,7 +55,7 @@ class DataSourceError(RuntimeError):
 class SourceFile:
     """Where one year's raw CSV came from and what we got.
 
-    These fields go into the run manifest (spec section 5.9) so anyone can
+    These fields go into the run manifest (spec section 4.9) so anyone can
     check that a rerun used byte-for-byte the same input.
     """
 
@@ -168,7 +168,7 @@ def fetch_year(year: int, *, force: bool = False) -> SourceFile:
 # Stage 2: load and clean
 # ---------------------------------------------------------------------------
 
-# Target classes (spec section 5.3). Every historical request falls in exactly
+# Target classes (spec section 4.3). Every historical request falls in exactly
 # one of these, decided by comparing the *calendar dates* of its target and
 # open timestamps (time of day is ignored):
 #   valid            - has a target date on or after the open date
@@ -246,7 +246,7 @@ def clean_requests(raw: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
     df["target_date"] = df["sla_target_dt"].dt.normalize()
     df["window_days"] = (df["target_date"] - df["open_date"]).dt.days
 
-    # 4. Target class, following the table in spec section 5.3.
+    # 4. Target class, following the table in spec section 4.3.
     df["target_class"] = np.select(
         [df["target_date"].isna(), df["window_days"] < 0],
         [TARGET_MISSING, TARGET_INVALID],
@@ -339,18 +339,18 @@ def build_processed_tables(all_rows: pd.DataFrame) -> dict[str, pd.DataFrame]:
     # Routing evidence for the catalog: for every in-scope type, how many of
     # its requests (in ALL departments, including out-of-scope ones) went to
     # each department and queue. Shares must use all departments, otherwise a
-    # type mostly handled elsewhere would look 100% in-scope (spec 5.6).
+    # type mostly handled elsewhere would look 100% in-scope (spec 4.6).
     routed = all_rows[all_rows["type"].isin(types["type"])].merge(types, on="type")
     tables["type_queue_counts"] = (
         routed.groupby(["type_id", "department", "queue"]).size().rename("requests").reset_index()
     )
 
     # Historical service statistics per type (shown to residents labeled as
-    # "historical", spec 5.6), over the four departments only.
+    # "historical", spec 4.6), over the four departments only.
     tables["type_service_stats"] = _service_stats(scope, ["type_id"])
 
     # The most common case titles per type, used only as context when drafting
-    # aliases (spec 5.6). We keep the top 10 per type, and only titles used at
+    # aliases (spec 4.6). We keep the top 10 per type, and only titles used at
     # least 3 times: rarer titles are mostly one-off typing or internal codes
     # and add noise rather than useful wording.
     titles = scope.dropna(subset=["case_title"]).groupby(["type_id", "case_title"]).size().rename("requests")
@@ -406,7 +406,7 @@ def _service_stats(df: pd.DataFrame, keys: list[str], *, with_median: bool = Tru
 
 
 def reconciliation_report(all_rows: pd.DataFrame, counts_by_year: dict[int, dict]) -> dict:
-    """Summarize what was loaded, removed, and kept (spec section 5.1).
+    """Summarize what was loaded, removed, and kept (spec section 4.1).
 
     Includes the comparison of our 2024 counts against the project page's
     stated totals. A mismatch does not stop the pipeline, but it is reported

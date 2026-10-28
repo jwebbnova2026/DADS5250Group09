@@ -1,4 +1,4 @@
-<!-- [AI-authored: Codex] Independent follow-up review; no implementation fixes made. -->
+<!-- Independent follow-up review; no implementation fixes made. -->
 # Code review — October 23, 2026, round 2
 
 Reviewed commit: `01630ca7b870cdeb5239a30a486fb1f76dca0897`. The working tree was clean at the start. This review checks the repair changes since the original review of `d1d1c7d`, against the unchanged architecture and the acceptance criteria in [the first review](code_review_2026-10-23.md).

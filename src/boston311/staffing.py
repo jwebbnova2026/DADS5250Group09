@@ -1,6 +1,6 @@
 """Staffing policy (the core heuristic), the fixed baseline, and cost accounting.
 
-Spec section 5.4. Read this module in three parts:
+Spec section 4.4. Read this module in three parts:
 
 1. **Plans.** A plan is, for each department and month, three numbers:
    hires ordered, release notices given, and Parks seasonal crews. Everything
@@ -57,7 +57,7 @@ from boston311.workload import Workload
 UNLIMITED = 10**9
 
 # ---------------------------------------------------------------------------
-# Typed errors (spec section 6)
+# Typed errors (spec section 5)
 # ---------------------------------------------------------------------------
 
 
@@ -153,8 +153,8 @@ def validate_department_plan(plan: DepartmentPlan) -> None:
 
     * exactly one decision per month, January to December;
     * no negative hires, notices, or seasonal crews;
-    * seasonal crews only for Parks, April to October (spec 6);
-    * **terminal rules** (spec 5.4, "applied to every plan"): no hire orders
+    * seasonal crews only for Parks, April to October (spec 5);
+    * **terminal rules** (spec 4.4, "applied to every plan"): no hire orders
       after the start of October, no release notices after the start of
       August;
     * never fewer than ``config.MIN_REGULAR_CREWS`` regular crews.
@@ -291,7 +291,7 @@ class Projector:
         return 1 - overdue / due
 
     def seasonal_needed(self, head: int, month: int, regular: int) -> int:
-        """Spec 5.4 step 2 (service-floor rule, DECIDED 2026-10-23): Parks
+        """Spec 4.4 step 2 (service-floor rule, DECIDED 2026-10-23): Parks
         seasonal crews for month t.
 
         Use the fewest seasonal crews S such that the projected on-time rate
@@ -338,7 +338,7 @@ class Projector:
         Seasonal crews: if a month appears in ``seasonal_fixed`` that number
         is used (the planner passes the S_t it already chose for the current
         month); otherwise the seasonal rule is applied to the projected queue
-        at the start of that month (spec 5.4 step 3, "the seasonal rule
+        at the start of that month (spec 4.4 step 3, "the seasonal rule
         applied to future Parks in-season months").
         """
         seasonal_fixed = seasonal_fixed or {}
@@ -355,7 +355,7 @@ class Projector:
 
 
 # ---------------------------------------------------------------------------
-# The heuristic planner (spec 5.4)
+# The heuristic planner (spec 4.4)
 # ---------------------------------------------------------------------------
 
 
@@ -365,7 +365,7 @@ def shortage_crews(open_start: int, arrivals: int, capacity: int, crew_month_cap
 
 
 def hires_from_shortages(dept: str, t: int, shortage_next: int, shortage_after: int) -> tuple[int, str]:
-    """The pure hiring rule (spec 5.4 steps 3-4), given the two shortages.
+    """The pure hiring rule (spec 4.4 steps 3-4), given the two shortages.
 
     * No hire orders after the start of October (terminal rule).
     * Hire only if *both* productive months t+1 and t+2 are short by at least
@@ -387,7 +387,7 @@ def hires_from_shortages(dept: str, t: int, shortage_next: int, shortage_after: 
 
 
 def _hire_decision(proj: Projector, head: int, t: int, n: int, s_t: int) -> tuple[int, str]:
-    """Spec 5.4 steps 3-4: how many crews to hire at the start of month t.
+    """Spec 4.4 steps 3-4: how many crews to hire at the start of month t.
 
     Projects months t, t+1, t+2 with today's workforce (no new hires or
     releases; seasonal rule applied to future Parks in-season months). For
@@ -421,7 +421,7 @@ def release_window_cost(dept: str, month_t: MonthProjection, later: list[MonthPr
 def release_passes(
     keep: list[MonthProjection], cut: list[MonthProjection], keep_cost: float, cut_cost: float
 ) -> bool:
-    """The three release tests (spec 5.4 step 5) for one candidate.
+    """The three release tests (spec 4.4 step 5) for one candidate.
 
     ``keep`` and ``cut`` are the projections of months t+1 .. t+4 without and
     with the release. The candidate passes only if, compared with keeping
@@ -438,7 +438,7 @@ def release_passes(
 
 
 def _release_decision(proj: Projector, head: int, t: int, n: int, s_t: int) -> tuple[int, str]:
-    """Spec 5.4 step 5: how many crews to give notice at the start of month t.
+    """Spec 4.4 step 5: how many crews to give notice at the start of month t.
 
     Compares, over months t .. t+4, the no-release projection with a
     projection where ``k`` crews leave from month t+1, for every
@@ -511,7 +511,7 @@ def make_plan(planning_workload: Workload) -> Plan:
     """Make and freeze the heuristic plan from the planning workload only.
 
     This function's only data input is the planning workload: it is never
-    given an evaluation workload or an evaluation queue (spec 5.4, E15).
+    given an evaluation workload or an evaluation queue (spec 4.4, E15).
     """
     if planning_workload.name != "planning":
         raise ValueError(
@@ -531,7 +531,7 @@ def make_plan(planning_workload: Workload) -> Plan:
 
 @dataclass(frozen=True)
 class YearEnd:
-    """What remains at the end of December 31, 2025 (spec 5.5), per department."""
+    """What remains at the end of December 31, 2025 (spec 4.5), per department."""
 
     department: str
     costs_accrued: float
@@ -611,7 +611,7 @@ def score_department(
 
 
 def year_end_report(result: SimResult, dept_plan: DepartmentPlan, costs_accrued: float) -> YearEnd:
-    """Classify what is still open at the end of the simulated year (spec 5.5).
+    """Classify what is still open at the end of the simulated year (spec 4.5).
 
     ``result`` must be a full-year simulation starting from an empty queue
     (head_start = 0), so it covers every request.
@@ -738,7 +738,7 @@ def seasonal_frontier(workloads: dict[str, Workload], targets: tuple[float, ...]
 
 
 # ---------------------------------------------------------------------------
-# Full-dataset reconciliation (spec section 9, check 8)
+# Full-dataset reconciliation (spec section 8, check 8)
 # ---------------------------------------------------------------------------
 
 

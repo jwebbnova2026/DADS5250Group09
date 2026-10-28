@@ -38,7 +38,7 @@ OUTPUTS_DIR = REPO_ROOT / "outputs"  # tables, figures, run manifests
 PROMPTS_DIR = REPO_ROOT / "prompts"  # prompt templates (plain text)
 
 # ---------------------------------------------------------------------------
-# Source data (spec section 5.1)
+# Source data (spec section 4.1)
 # ---------------------------------------------------------------------------
 # The data is fetched at run time through the CKAN API of Analyze Boston
 # (data.boston.gov). CKAN is the open-source catalogue software the city uses;
@@ -55,12 +55,12 @@ RESOURCE_IDS: dict[int, str] = {
 DATA_YEARS: tuple[int, ...] = (2023, 2024)
 # The year we plan for (DECIDED, spec section 3).
 PLAN_YEAR = 2025
-# Forecasting must never look past this date (spec section 9, check 5).
+# Forecasting must never look past this date (spec section 8, check 5).
 TRAINING_CUTOFF = "2024-12-31"
 
-# Columns we keep from the 30-column source file (spec section 5.1). If any
+# Columns we keep from the 30-column source file (spec section 4.1). If any
 # is missing, data.py raises an error that names the missing column
-# (spec section 6, "Missing data column").
+# (spec section 5, "Missing data column").
 REQUIRED_COLUMNS: tuple[str, ...] = (
     "case_enquiry_id",
     "open_dt",
@@ -79,7 +79,7 @@ REQUIRED_COLUMNS: tuple[str, ...] = (
 # ("Allston / Brighton"). For the neighborhood equity analysis only (spec
 # deliverable 6) we merge those into the combined label, and treat a blank or
 # the citywide label "Boston" as "Unspecified". DEFAULT, documented in
-# docs/decisions.md. Labels not listed here are kept exactly as they are.
+# spec section 11.3. Labels not listed here are kept exactly as they are.
 NEIGHBORHOOD_ALIASES: dict[str, str] = {
     "Allston": "Allston / Brighton",
     "Brighton": "Allston / Brighton",
@@ -125,7 +125,7 @@ class Department:
 
     @property
     def capacity_per_crew_month(self) -> int:
-        """Requests one crew can close in a month ("C" in spec section 5.4)."""
+        """Requests one crew can close in a month ("C" in spec section 4.4)."""
         return self.capacity_per_crew_day * SERVICE_DAYS_PER_MONTH
 
 
@@ -156,7 +156,7 @@ LONG_OVERDUE_PENALTY = 100  # extra dollars, once, if still open 30 days after t
 LONG_OVERDUE_DAYS = 30
 
 # ---------------------------------------------------------------------------
-# Staffing-policy rules (DEFAULT unless noted, spec section 5.4)
+# Staffing-policy rules (DEFAULT unless noted, spec section 4.4)
 # ---------------------------------------------------------------------------
 # DECIDED (default, configurable): trainees are paid during their training
 # month. Set to False to test the other interpretation of the project page.
@@ -172,7 +172,7 @@ RELEASE_LOOKAHEAD_MONTHS = 4
 MIN_REGULAR_CREWS = 1
 # Parks orders no permanent hire whose first productive month is April-October.
 PARKS_BLOCK_IN_SEASON_PERMANENT_HIRES = True
-# Parks seasonal crews (DECIDED 2026-10-23, spec 5.4 step 2): each in-season
+# Parks seasonal crews (DECIDED 2026-10-23, spec 4.4 step 2): each in-season
 # month, use the fewest seasonal crews that keep the projected on-time rate of
 # that month's due requests at or above this target. 0.93 is Parks' own 2024
 # on-time rate from the project page ("no worse than last year"). The
@@ -181,7 +181,7 @@ PARKS_BLOCK_IN_SEASON_PERMANENT_HIRES = True
 SEASONAL_ON_TIME_TARGET = 0.93
 
 # ---------------------------------------------------------------------------
-# Workload generation (DEFAULT, spec section 5.3)
+# Workload generation (DEFAULT, spec section 4.3)
 # ---------------------------------------------------------------------------
 # Two independent random streams. The planning stream builds the only workload
 # the planner may see; the evaluation stream builds the workloads used to score
@@ -190,7 +190,7 @@ PLANNING_SEED = 20250101
 EVALUATION_SEED = 20251231
 # A request type needs at least this many historical valid target windows to
 # use its own distribution; otherwise we fall back to the department's pool,
-# then to the pooled windows of all four departments (spec section 5.3).
+# then to the pooled windows of all four departments (spec section 4.3).
 MIN_WINDOW_SAMPLES = 50
 
 # Sensitivity scenarios. Factors are exact fractions (not floats) so that
@@ -199,7 +199,7 @@ SCENARIO_FACTORS: dict[str, Fraction] = {
     "plus20": Fraction(6, 5),
     "minus20": Fraction(4, 5),
 }
-# Snowstorm spike (DEFAULT, spec section 5.4): Public Works arrivals are tripled
+# Snowstorm spike (DEFAULT, spec section 4.4): Public Works arrivals are tripled
 # on February 10-12, 2025. "Tripled" means each affected type-day cell gets two
 # extra requests for every base request, so its count becomes 3x the base.
 SPIKE_DEPT = "PWDx"
@@ -210,9 +210,9 @@ SPIKE_MULTIPLIER = 3
 SCENARIOS: tuple[str, ...] = ("base", "plus20", "minus20", "spike")
 
 # ---------------------------------------------------------------------------
-# Catalog and routing (DEFAULT, spec section 5.6)
+# Catalog and routing (DEFAULT, spec section 4.6)
 # ---------------------------------------------------------------------------
-# Two-tier mapping rule (DECIDED 2026-10-22, spec 5.6). Shares are computed
+# Two-tier mapping rule (DECIDED 2026-10-22, spec 4.6). Shares are computed
 # over ALL of a type's 2023-2024 requests, in every department.
 #   Tier 1: if one in-scope department handled at least this share, the
 #           type -> department mapping is nominated for human review.
@@ -234,23 +234,36 @@ MIN_ALL_REQUESTS_SHARE = 0.50
 # names containing one of these words), else "assigned_by_department".
 LOCATION_QUEUE_SHARE = 0.50
 LOCATION_QUEUE_WORDS: tuple[str, ...] = ("District", "Region")
-# Mapping review statuses recorded in data/catalog/catalog.json. For this
-# build Claude provisionally approved every nomination; the team replaces
-# "provisional" with "approved" or "rejected" after review. Routing treats
-# "provisional" as approved only while this flag is True.
-ACCEPT_PROVISIONAL_APPROVALS = True
+# Mapping review statuses recorded in data/catalog/catalog.json. A new
+# nomination starts as "provisional"; review replaces it with "approved" or
+# "rejected". Routing treats "provisional" as approved only while this flag
+# is True. It is False since the 2026-10-27 review left no mapping
+# provisional, so only reviewed approvals route.
+ACCEPT_PROVISIONAL_APPROVALS = False
+# Pairs of official types that describe the same problem but route
+# differently (DECIDED 2026-10-27, team review). Nothing in the data tells
+# them apart, so if the model picks one type of a pair while the other was
+# also retrieved, the request goes to TRIAGE and a person routes it, rather
+# than the code silently picking one department. Names, not IDs, because IDs
+# follow alphabetical order and could shift.
+OVERLAPPING_TYPE_PAIRS: tuple[tuple[str, str], ...] = (
+    ("Contractor Complaints", "Contractors Complaint"),  # unmapped vs Inspectional Services
+    ("Work Hours-Loud Noise Complaints", "Working Beyond Hours"),  # Public Works vs Inspectional Services
+    ("Sidewalk Repair", "Sidewalk Repair (Make Safe)"),  # Public Works vs unmapped
+)
 # Historical service statistics are shown only if a type has at least this many
 # relevant requests; otherwise the response says "unavailable".
 MIN_STATS_SAMPLE = 30
 
 # ---------------------------------------------------------------------------
-# Retrieval and LLM (DEFAULT, spec sections 5.6, 5.7, 6)
+# Retrieval and LLM (DEFAULT, spec sections 4.6, 4.7, 5)
 # ---------------------------------------------------------------------------
 RETRIEVAL_TOP_K = 8  # how many candidate types the classifier is shown
-# Retrieval gate (spec 5.7): auto-route only if the best retrieval score is at
+# Retrieval gate (spec 4.7): auto-route only if the best retrieval score is at
 # least this. Below it, the message shares too few words with any official
 # type to trust, so the assistant asks for more detail instead. Tuned on the
-# dev set only (see docs/decisions.md); never on the test set.
+# dev set only (spec 11.3). The agreement rule skips the gate when the
+# model's pick is also retrieval's top candidate (spec 4.7, 11.4).
 RETRIEVAL_GATE_MIN_SCORE = 0.15
 
 LLM_PROVIDER = "openai"  # DECIDED (Q4)
@@ -265,15 +278,15 @@ LLM_SEED = 5250
 LLM_TIMEOUT_SECONDS = 60
 # Bounded retries for timeouts and rate limits before the request goes to TRIAGE.
 LLM_MAX_TRANSIENT_RETRIES = 2
-# Malformed structured output gets exactly one retry, then TRIAGE (spec section 6).
+# Malformed structured output gets exactly one retry, then TRIAGE (spec section 5).
 LLM_MAX_MALFORMED_RETRIES = 1
 
 # Version labels recorded in the run manifest so a reader can tell exactly
 # which prompt and catalog produced a result. Bump them when you edit those.
-PROMPT_VERSION = "classify-v2"
+PROMPT_VERSION = "classify-v3"
 ALIAS_PROMPT_VERSION = "aliases-v2"
 CATALOG_VERSION = "catalog-v2"
 
-# Demo modes (spec section 5.9). "live" calls the model API and records the
+# Demo modes (spec section 4.9). "live" calls the model API and records the
 # answers; "offline" replays the recorded answers with no network or key.
 MODES: tuple[str, ...] = ("live", "offline")

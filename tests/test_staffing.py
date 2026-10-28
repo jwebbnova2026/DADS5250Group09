@@ -1,6 +1,6 @@
-"""Tests for the staffing heuristic, cost accounting, and reconciliation (spec 5.4).
+"""Tests for the staffing heuristic, cost accounting, and reconciliation (spec 4.4).
 
-Hand-calculated examples from spec section 9: E1-E7, E5b, E5c, E13, E15,
+Hand-calculated examples from spec section 8: E1-E7, E5b, E5c, E13, E15,
 E16, plus the full-dataset reconciliation (check 8) on every plan and
 scenario.
 """
@@ -179,7 +179,7 @@ def test_e7_seasonal_capacity_and_cost():
 
 
 # ---------------------------------------------------------------------------
-# Parks seasonal service floor (spec 5.4 step 2, decided 2026-10-23)
+# Parks seasonal service floor (spec 4.4 step 2, decided 2026-10-23)
 # ---------------------------------------------------------------------------
 
 

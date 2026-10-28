@@ -5,16 +5,16 @@ Usage (repository root, virtual environment active):
     python scripts/build_catalog.py             # mappings only; keeps existing aliases and reviews
     python scripts/build_catalog.py --aliases   # also draft missing aliases with the LLM (live, needs a key)
 
-Drafted aliases are saved with alias_status "provisional". A person (for this
-build, Claude acting as provisional reviewer) then reads every one, edits as
-needed in catalog.json, and records the review in docs/decisions.md.
+Drafted aliases are saved with alias_status "provisional". A reviewer then
+reads every one, edits as needed in catalog.json, and records the review in
+docs/architecture.md, section 11.
 """
 
 from __future__ import annotations
 
 import argparse
 
-from boston311 import catalog, config
+from boston311 import catalog
 from boston311.llm import LiveModel, RecordingStore, read_prompt
 from boston311.schemas import AliasBatch
 
@@ -45,7 +45,6 @@ def main() -> None:
                 e.description = item.description.strip()
                 e.aliases = [a.strip() for a in item.aliases if a.strip()][:8]
                 e.alias_status = "provisional"
-                e.alias_source = f"llm:{config.LLM_MODEL}/{config.ALIAS_PROMPT_VERSION}"
             print(f"drafted aliases for {len(out.items)} types")
 
     catalog.save_catalog(entries)

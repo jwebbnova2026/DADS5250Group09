@@ -1,20 +1,21 @@
-<!-- [AI-authored: Claude] Reviewer entry point for branch Zero_Shot_Attempt_1, written 2026-10-23. -->
+<!-- Reviewer entry point, written 2026-10-23, updated 2026-10-28. -->
 # Review guide
 
-This guide is the starting point for reviewing the zero-shot build on branch `Zero_Shot_Attempt_1`. It tells you what to read, how to check that the results reproduce, where each requirement is implemented and tested, what differs from the original spec, and where bugs are most likely to hide.
+This guide is the starting point for reviewing the finished prototype. It tells you what to read, how to check that the results reproduce, where each requirement is implemented and tested, what differs from the original spec, and where bugs are most likely to hide.
 
 **Ground rules for the review**
 
-- `docs/architecture.md` is the authority. It is the frozen spec v5.1, plus the changes the team approved during the build.
-- `docs/decisions.md` records every one of those changes with its evidence and date. It also records the data audit and the implementation choices made where the spec was silent.
+- `docs/architecture.md` is the authority. It is the frozen spec v5.1, plus the changes the team approved during the build. Its section 11 lists those changes with their evidence and dates, the data audit, the implementation choices made where the spec was silent, the test-set disclosure, and the catalog review outcome.
+- `demo.ipynb` is the analysis deliverable: every result, with its interpretation and limitations.
 - Anything this guide summarizes is stated in full in one of those two files. If this guide disagrees with them, they win.
-- Code locations are given as file and function names; search for the function. This guide was last updated after the repair of Astra's review findings R1–R6 (section 7).
+- Code locations are given as file and function names; search for the function. This guide was last updated after the catalog review, the overlapping-types and agreement rules, and the documentation consolidation (2026-10-28).
 
 ## 1. Read in this order
 
-1. [architecture.md](architecture.md), sections 2, 5.3, 5.4, 5.6, 5.7 and 9. These sections contain the GIVEN rules, the simulator, the policy, routing, the agent, and the acceptance checks.
-2. [decisions.md](decisions.md): the data audit, Parks seasonal rule, provisional reviews, implementation notes, and spec changes.
-3. The code, in dependency order:
+1. [architecture.md](architecture.md), sections 2, 4.3, 4.4, 4.6, 4.7 and 8. These sections contain the GIVEN rules, the simulator, the policy, routing, the agent, and the acceptance checks.
+2. [architecture.md](architecture.md), section 11: the approved changes, data audit, implementation decisions, test-set disclosure, and catalog review.
+3. [demo.ipynb](../demo.ipynb): the executed analysis, from the problem statement to the limitations.
+4. The code, in dependency order:
    1. `config.py`
    2. `data.py`
    3. `forecast.py`
@@ -39,7 +40,7 @@ Everything below runs offline, with no API key and no network, from the reposito
 python -m pytest -q
 ```
 
-Expected: `141 passed` (about 30 seconds).
+Expected: `145 passed` (about one minute).
 
 ```bash
 python scripts/run_all.py
@@ -57,7 +58,7 @@ Expected: no changes, because every CSV and figure is byte-identical to the comm
 python -m nbconvert --to notebook --execute --inplace demo.ipynb
 ```
 
-Expected: no errors, and the notebook saves its own manifest under `outputs/manifests/` (gitignored). Afterwards, run `git checkout -- demo.ipynb` to discard the re-execution, which only changes timestamps and the manifest cell.
+Expected: no errors, and the notebook saves its own manifest under `outputs/manifests/` (gitignored). The committed notebook is already executed offline, so a re-execution should change only timestamps and the manifest cell's output; run `git checkout -- demo.ipynb` to discard it.
 
 Headline numbers you should see (`outputs/scenario_summary.csv` and `outputs/intake_metrics.csv`):
 
@@ -66,7 +67,7 @@ Headline numbers you should see (`outputs/scenario_summary.csv` and `outputs/int
 | Frozen plan, base scenario: total cost / on-time / open Dec 31 | $16,394,440 / 89.5% / 1,441 |
 | Baseline (January crews), base scenario | $19,474,180 / 22.4% / 27,579 |
 | Parks under the frozen plan | $1,862,860 / 95.4% on time / 42 seasonal crew-months |
-| Intake test set (40 items) | decision 40/40, type 33/34, auto-route precision 29/30 |
+| Intake test set (40 items) | decision 40/40, type 33/34, department 29/29, auto-route precision 28/29 |
 | Intake dev set (18 items) | decision 18/18, type 15/15, precision 12/12 |
 
 Optional checks that need network or a key:
@@ -78,7 +79,7 @@ Optional checks that need network or a key:
 
 Code paths are under `src/boston311/`. Tests are under `tests/`.
 
-### Acceptance examples (spec section 9)
+### Acceptance examples (spec section 8)
 
 | Spec | Implemented in | Tested by |
 |---|---|---|
@@ -100,20 +101,20 @@ Code paths are under `src/boston311/`. Tests are under `tests/`.
 | **E16** long-deadline Parks work | `Projector.seasonal_needed`, `hires_from_shortages` Parks block | `test_e16_long_deadline_parks_work_carries_forward` |
 | **E17** scenario coupling | `workload.py` `build_plus_scenario`, `build_minus_scenario`, `build_spike_scenario`, `largest_remainder` | `test_e17_*` (subset, superset, exact totals, spike tripling, cell monotonicity), `test_largest_remainder_spec_example` ([1,3,7] with totals 5 and 6) |
 
-### General checks (spec section 9)
+### General checks (spec section 8)
 
 | Spec | Where | Tested by |
 |---|---|---|
-| **1** fresh install; notebook runs from a restarted kernel | README Setup; `requirements.lock` | Manual. A clean venv built from `requirements.lock` passed the tests and executed the notebook on 2026-10-22. After later changes the notebook was re-executed with `nbconvert` (a fresh kernel) on 2026-10-23, using Miniconda's Jupyter and the `boston311` kernel |
+| **1** fresh install; notebook runs from a restarted kernel | README Setup; `requirements.lock` | Manual. On 2026-10-28 a new venv built from `requirements.lock` on Python 3.12.10 passed all 145 tests, `run_all.py` reproduced every committed output byte for byte, and the notebook executed with no errors in a fresh `boston311` kernel. On that Windows machine `nbconvert --execute` stopped with "Kernel didn't respond in 60 seconds" because its client connects before the kernel is listening; starting the kernel first, waiting 15 seconds, and executing through `nbclient` (the engine `nbconvert` uses) worked |
 | **2** offline mode with no network or secrets | `llm.py` `OfflineModel`, `RecordingStore` | `test_intake.py::test_offline_replay_covers_every_eval_item`; the notebook executes with `OPENAI_API_KEY` unset |
 | **3** 48 rows per scenario; flow and cost identities | `staffing.py` `score_plan`, `reconciliation_failures` | `test_full_reconciliation` (8 plan × scenario combinations) |
 | **4** same seed and scenario → identical workloads across plans | By construction: both plans are scored on the same `Workload` object (`scripts/run_all.py`, notebook section 5) | Indirectly only, through `test_full_reconciliation`. No test asserts object identity |
 | **5** forecast never reads past Dec 2024 | `forecast.forecast_2025`; `data.build_all` raises on later dates | `test_forecast_never_reads_past_2024` |
 | **6** routing only through approved mappings | `catalog.py` `CatalogEntry.route`, `_approved`; `agent/nodes.py` `decide` | `test_rejected_mapping_never_routes`, `test_provisional_requires_flag`, `test_unmapped_type_triage` |
-| **7** every section 6 condition (table below) | | |
+| **7** every section 5 condition (table below) | | |
 | **8** full-dataset reconciliation | `reconciliation_failures`: flow, workforce, seasonal, cost identities, and per-request penalty counts | `test_full_reconciliation`; plus `test_simulate.py::test_fast_simulator_matches_naive_reference_on_real_workload`, a literal deque transcription of the daily order of events, compared on about 18,600 real-sized requests |
 
-### Failure behavior (spec section 6)
+### Failure behavior (spec section 5)
 
 | Condition | Where | Tested by |
 |---|---|---|
@@ -133,35 +134,39 @@ Code paths are under `src/boston311/`. Tests are under `tests/`.
 
 | Spec | Where | Tested by |
 |---|---|---|
-| 5.1 data reconciliation against the page | `data.reconciliation_report`; `data/processed/reconciliation.json` | `test_2024_counts_reconcile_with_project_page` |
-| 5.2 seasonal naive forecast and backtest | `forecast.py` | `test_forecast_is_seasonal_naive_from_2024`, `test_backtest_reports_every_department` |
-| 5.3 arrivals match the forecast exactly | `workload.allocate_to_cells` | `test_arrivals_match_forecast_exactly`, `test_largest_remainder_*`, `test_round_half_up` |
-| 5.3 class shares reproduced per type | `_draw_attributes` | `test_generated_class_shares_track_history` (statistical, ±0.005) |
-| 5.4 seasonal service floor (changed) | `Projector.month_on_time_rate`, `seasonal_needed` | `test_seasonal_floor_uses_fewest_crews_meeting_target`, `test_seasonal_floor_falls_back_to_best_possible_rate`, `test_seasonal_rule_only_for_parks_in_season`, `test_seasonal_frontier_is_ordered_and_restores_config` |
-| 5.6 two-tier mapping rule (changed) | `catalog.build_mappings` | `test_mappings_follow_the_two_tier_rule`, `test_audit_examples` |
-| 5.6 retrieval, recall with and without aliases | `retrieval.py`, `evaluate.retrieval_recall` | `test_retrieval_tolerates_misspelling`, `test_aliases_improve_recall_on_dev` |
-| 5.7 one clarification via interrupt, no API calls on resume | `nodes.clarify`, `agent/graph.py` | `test_clarify_once_then_route_without_rerunning_the_model`, `test_multiple_issues_ask_first`, `test_reused_thread_id_starts_clean` |
-| 5.7 retrieval gate | `nodes.decide`; `config.RETRIEVAL_GATE_MIN_SCORE` | `test_retrieval_gate_asks_for_detail` |
-| 5.4 terminal rules apply to every plan; plans cannot be edited after validation | `staffing.validate_department_plan`, frozen `DepartmentPlan`, re-check in `score_department` | `test_hire_orders_after_october_are_rejected`, `test_release_notices_after_august_are_rejected`, `test_last_allowed_months_are_valid`, `test_plan_cannot_be_edited_after_validation`, `test_scoring_revalidates_the_plan` |
-| 5.7 templated response, never claims submission | `agent/tools.py` `route_text`, `DEMO_NOTICE` | `test_route`, `test_assigned_by_location_label` |
-| 5.6 / 5.7 historical statistics: "unavailable" for small samples, each statistic gated on its own sample | `catalog.historical_stats_text` | `test_median_hidden_when_too_few_closed`, `test_median_boundary_at_min_sample`, `test_on_time_hidden_when_too_few_with_target`, `test_all_statistics_unavailable` |
-| 5.8 metrics (clarification counted when asked) | `evaluate.metrics`, `evaluate.run_set`, `IntakeResult.questions_asked` | `test_metrics_on_a_tiny_frame`, `test_clarification_rate_counts_questions_asked` |
-| 5.9 recordings: key and provenance include model, reasoning effort, seed, schema | `llm.recording_key`, `llm.schema_id`, `RecordingStore.put`; `scripts/migrate_recordings_v2.py` | `test_recording_key_depends_on_generation_settings_and_schema`, `test_changed_seed_is_a_cache_miss`, `test_record_stores_the_settings_used`, `test_committed_recordings_have_verifiable_provenance` |
-| 5.9 run manifest, one JSON file per run (CLI and notebook) | `manifest.build_manifest`, `manifest.write_manifest`; notebook section 9 | `test_manifest_records_inputs_seeds_and_model`, `test_sources_are_pinned`, `test_notebook_manifest_cell_writes_a_manifest`, `test_write_manifest_never_overwrites` |
+| 4.1 data reconciliation against the page | `data.reconciliation_report`; `data/processed/reconciliation.json` | `test_2024_counts_reconcile_with_project_page` |
+| 4.2 seasonal naive forecast and backtest | `forecast.py` | `test_forecast_is_seasonal_naive_from_2024`, `test_backtest_reports_every_department` |
+| 4.3 arrivals match the forecast exactly | `workload.allocate_to_cells` | `test_arrivals_match_forecast_exactly`, `test_largest_remainder_*`, `test_round_half_up` |
+| 4.3 class shares reproduced per type | `_draw_attributes` | `test_generated_class_shares_track_history` (statistical, ±0.005) |
+| 4.4 seasonal service floor (changed) | `Projector.month_on_time_rate`, `seasonal_needed` | `test_seasonal_floor_uses_fewest_crews_meeting_target`, `test_seasonal_floor_falls_back_to_best_possible_rate`, `test_seasonal_rule_only_for_parks_in_season`, `test_seasonal_frontier_is_ordered_and_restores_config` |
+| 4.6 two-tier mapping rule (changed) | `catalog.build_mappings` | `test_mappings_follow_the_two_tier_rule`, `test_audit_examples` |
+| 4.6 retrieval, recall with and without aliases | `retrieval.py`, `evaluate.retrieval_recall` | `test_retrieval_tolerates_misspelling`, `test_aliases_improve_recall_on_dev` |
+| 4.7 one clarification via interrupt, no API calls on resume | `nodes.clarify`, `agent/graph.py` | `test_clarify_once_then_route_without_rerunning_the_model`, `test_multiple_issues_ask_first`, `test_reused_thread_id_starts_clean` |
+| 4.7 retrieval gate, and the agreement rule that skips it | `nodes.decide`; `config.RETRIEVAL_GATE_MIN_SCORE` | `test_retrieval_gate_asks_for_detail`, `test_agreement_with_top_candidate_skips_gate` |
+| 4.6 / 4.7 overlapping types go to TRIAGE | `nodes.decide`; `config.OVERLAPPING_TYPE_PAIRS` | `test_overlap_pairs_name_real_types`, `test_overlap_pair_triage_when_partner_retrieved`, `test_overlap_pair_routes_when_partner_not_retrieved` |
+| 4.4 terminal rules apply to every plan; plans cannot be edited after validation | `staffing.validate_department_plan`, frozen `DepartmentPlan`, re-check in `score_department` | `test_hire_orders_after_october_are_rejected`, `test_release_notices_after_august_are_rejected`, `test_last_allowed_months_are_valid`, `test_plan_cannot_be_edited_after_validation`, `test_scoring_revalidates_the_plan` |
+| 4.7 templated response, never claims submission | `agent/tools.py` `route_text`, `DEMO_NOTICE` | `test_route`, `test_assigned_by_location_label` |
+| 4.6 / 4.7 historical statistics: "unavailable" for small samples, each statistic gated on its own sample | `catalog.historical_stats_text` | `test_median_hidden_when_too_few_closed`, `test_median_boundary_at_min_sample`, `test_on_time_hidden_when_too_few_with_target`, `test_all_statistics_unavailable` |
+| 4.8 metrics (clarification counted when asked) | `evaluate.metrics`, `evaluate.run_set`, `IntakeResult.questions_asked` | `test_metrics_on_a_tiny_frame`, `test_clarification_rate_counts_questions_asked` |
+| 4.9 recordings: key and provenance include model, reasoning effort, seed, schema | `llm.recording_key`, `llm.schema_id`, `RecordingStore.put`; `scripts/migrate_recordings_v2.py` | `test_recording_key_depends_on_generation_settings_and_schema`, `test_changed_seed_is_a_cache_miss`, `test_record_stores_the_settings_used`, `test_committed_recordings_have_verifiable_provenance` |
+| 4.9 run manifest, one JSON file per run (CLI and notebook) | `manifest.build_manifest`, `manifest.write_manifest`; notebook section 9 | `test_manifest_records_inputs_seeds_and_model`, `test_sources_are_pinned`, `test_notebook_manifest_cell_writes_a_manifest`, `test_write_manifest_never_overwrites` |
 | Deliverable 6, neighborhood equity | `equity.py` | `test_equity_expected_on_time_sums_to_actual_per_department`, `test_equity_covers_every_department_and_flags_small_groups` |
 
 ## 4. Deviations from the original spec v5.1
 
-Each deviation is approved by John and recorded in `decisions.md`, with the spec text updated:
+Each deviation is approved by John and recorded in architecture section 11.1, with the spec text updated:
 
-1. **Two-tier intake routing** (spec 5.6–5.8, 9, 10.2).
+1. **Two-tier intake routing** (spec 4.6–4.8, 8, 10.2).
    - **Change:** route to a department when one handles at least 90% of a type's requests. Name an exact queue only when one queue has at least 90%. Otherwise label the queue `assigned_by_location` or `assigned_by_department`.
    - **Why:** about 18% of volume goes to district or region queues, which depend on location.
-2. **INFO referral queues** are left out of the share denominator, with a guard that the mapped department must hold at least 50% of *all* the type's requests (spec 5.6).
-3. **Parks seasonal rule.** The original rule removed every avoidable miss. The new rule is a **93% monthly on-time service floor**, with fallback to the best reachable rate (spec 5.4 step 2, the plain-language rules, E16, and 10.2). Two cost-only rules were tested and rejected; the evidence is in `outputs/parks_seasonal_frontier.csv`.
-4. **Q5 ownership** corrected (John and Adam on the build). The **exposure view** was added to the stretch list.
+2. **INFO referral queues** are left out of the share denominator, with a guard that the mapped department must hold at least 50% of *all* the type's requests (spec 4.6).
+3. **Parks seasonal rule.** The original rule removed every avoidable miss. The new rule is a **93% monthly on-time service floor**, with fallback to the best reachable rate (spec 4.4 step 2, the plain-language rules, E16, and 10.2). Two cost-only rules were tested and rejected; the evidence is in `outputs/parks_seasonal_frontier.csv`.
+4. **Overlapping types** (spec 4.6, 4.7, 5). If the model picks one type of a listed pair and the other was also retrieved, the request goes to TRIAGE (`config.OVERLAPPING_TYPE_PAIRS`).
+5. **Scope rule narrowed** (`classify-v3`, spec 4.7). Emergencies are situations needing police, fire, or an ambulance; a hazard such as a tree that may fall stays in scope.
+6. **Agreement rule** (spec 4.7). The retrieval gate does not apply when the model's clear, in-scope pick is also retrieval's top candidate. It was prompted by test example t13 (spec 11.4).
+7. **Q5 ownership** corrected (John and Adam on the build). The **exposure view** was added to the stretch list.
 
-Additions and choices where the spec was silent (`decisions.md` → *Implementation notes for reviewers*):
+Additions and choices where the spec was silent (architecture section 11.3):
 
 - **Added module:** `equity.py`.
 - **Added scripts:** `build_data.py`, `build_catalog.py`, `build_eval_sets.py`, `run_all.py`.
@@ -220,18 +225,16 @@ These are ordered by how much depends on them and how easy a subtle error would 
 
 ## 6. Known limitations and open items
 
-- **Pending team review:**
-  - the provisional mappings (`data/catalog/mapping_review.csv`) and aliases (`catalog.json`);
-  - the AI-written test and dev messages. The same AI wrote the aliases and the messages, a possible source of optimistic accuracy. The test set was run once, after tuning on the dev set only.
-- **Synthetic evaluation:** the plan is scored on synthetic workloads, not real 2025 requests. The challenge's costs and penalties are assumptions.
-- **Volume-based hiring:** the hiring rule counts long-deadline requests in its shortage. It is safe with the 93% floor, but a weaker seasonal rule can trigger large October hires (see `decisions.md`).
-- **No releases occur.** As a result, Public Works and Inspectional Services run at about 60% utilization in Q4. This follows from the "no notices after August" rule and is discussed in `report.md`.
+- **Catalog review (2026-10-27):** every nominated mapping is approved or rejected (`data/catalog/mapping_review.csv`). Wording for 10 types is still provisional and is still indexed for retrieval, and the scooter/moped overlap between Abandoned Bicycle and Abandoned Vehicles is unresolved. Approval checks consistency with the routing data, not the city's service eligibility. See architecture section 11.5.
+- **Evaluation sets:** the test and dev messages were not written independently of the catalog aliases, a possible source of optimistic accuracy. The test set was run once after dev-set tuning, six labels were corrected in the review, and the agreement rule was prompted by test example t13 (architecture section 11.4).
+- **Synthetic evaluation:** the plan is scored on synthetic workloads from one planning seed and one evaluation seed, not on real 2025 requests. The challenge's costs and penalties are assumptions.
+- **Volume-based hiring:** the hiring rule counts long-deadline requests in its shortage. It is safe with the 93% floor, but a weaker seasonal rule can trigger large October hires (architecture section 4.4).
+- **No releases occur.** As a result, Public Works and Inspectional Services run at about 60% utilization in Q4. This follows from the "no notices after August" rule and is discussed in the notebook, section 4.
 - **Frontier wobble:** neighbouring targets can swap order on cost, because the planner fully re-plans for each target.
-- **Spec 10.4 logistics** are still open: the Q&A forum check on pandas and scikit-learn, an owner for `authorship.md`, and a code-freeze date.
 
 ## 7. Repairs after the 2026-10-23 review
 
-Astra's review of `d1d1c7d` is in [code_review_2026-10-23.md](code_review_2026-10-23.md). Each finding was repaired on branch `repair/astra-review`. Astra's follow-up review of `01630ca`, [code_review_2026-10-23_round2.md](code_review_2026-10-23_round2.md), closed R2–R6 and found R1 partially fixed (R1a), which was then repaired the same way.
+The code review of `d1d1c7d` is in [code_review_2026-10-23.md](code_review_2026-10-23.md). Each finding was repaired on branch `repair/astra-review`. The follow-up review of `01630ca`, [code_review_2026-10-23_round2.md](code_review_2026-10-23_round2.md), closed R2–R6 and found R1 partially fixed (R1a), which was then repaired the same way.
 
 Each repair followed the same steps:
 1. Write the regression test first and confirm it fails.
