@@ -141,6 +141,8 @@ flowchart LR
 
 Course techniques used: **prompt engineering**, **structured output** (Pydantic + strict JSON schema), **RAG** (retrieval over the official catalog), **LangChain**, and a **LangGraph agent** with an interrupt-based clarification. No other agent frameworks are used.
 
+RAG retrieval uses TF-IDF (scikit-learn) over the 163 official request types rather than embeddings and a vector store. The catalog is small, TF-IDF runs offline and deterministically (so recorded model answers replay exactly), and with the reviewed aliases it put the correct type among the 8 candidates for every dev-set message that has one (`outputs/retrieval_recall_dev.csv`; spec section 5.6). pandas, numpy, scikit-learn, and matplotlib are ordinary data libraries, not agent frameworks.
+
 ## Authorship
 
 Team: John Baldwin, Nicholas Maar, Adam Jaroudi, and Andrew Lai.
