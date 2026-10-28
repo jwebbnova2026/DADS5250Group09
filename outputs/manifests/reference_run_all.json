@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-28T14:51:52+00:00",
+  "created_utc": "2026-10-28T16:43:31+00:00",
   "mode": "offline",
   "sources": [
     {
@@ -106,7 +106,7 @@
     "catalog_version": "catalog-v2"
   },
   "parameters": {
-    "ACCEPT_PROVISIONAL_APPROVALS": true,
+    "ACCEPT_PROVISIONAL_APPROVALS": false,
     "ALIAS_PROMPT_VERSION": "aliases-v2",
     "CATALOG_VERSION": "catalog-v2",
     "CKAN_API_BASE": "https://data.boston.gov/api/3/action",
@@ -305,7 +305,7 @@
       "langgraph": "1.2.16",
       "openai": "3.37.0"
     },
-    "git_commit": "389bf693558c13bc0f7de1405dfbb671aec1db32"
+    "git_commit": "1a116d6b93543db39ae1533802b5ea58cfd0611d"
   },
   "outputs": [
     "outputs/forecast_2025.csv",
