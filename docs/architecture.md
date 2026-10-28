@@ -131,7 +131,7 @@ The simulator exists because penalties depend on deadlines. Every plan, includin
 - If a month has fewer than 21 weekdays, Saturdays are added in date order, earliest first, until there are 21.
 - If a month has more than 21 weekdays, the weekdays after the 21st are non-service days.
 - Holidays are ignored.
-- This is a modeling calendar, labeled as synthetic in the report.
+- This is a modeling calendar, labeled as synthetic in the notebook.
 
 **Workloads:**
 - A workload is the full list of generated requests for 2025: arrival day, type, target class, and target day.
@@ -230,7 +230,7 @@ The planning function receives no evaluation workload and no evaluation queue.
    - Project months t through t+2 with the scheduled workforce, no new hires or releases, and the seasonal rule applied to future Parks in-season months.
    - For each productive month m = t+1 and m = t+2, compute shortage_m = ceil(max(0, open at start of m + arrivals in m - capacity in m) / C), using the actual projected residual workload after seasonal crews.
    - If both shortages are at least 1, order h = min(shortage_(t+1), shortage_(t+2)) hires. They train in month t and are productive from month t+1.
-4. **Parks permanent-hire restriction (explicit heuristic policy):** Parks orders no permanent hires whose first productive month falls in April to October. In-season residual work carries forward; off-season shortfalls can still trigger hires through rule 3. Rationale: for a new permanent crew that is later released after the compared service period, seasonal staffing is cheaper over any in-season span (see cost derivations). This does not prove seasonal staffing is always cheaper than retaining a permanent hire for continuing work. The report states this qualification; the model is not expanded to resolve it.
+4. **Parks permanent-hire restriction (explicit heuristic policy):** Parks orders no permanent hires whose first productive month falls in April to October. In-season residual work carries forward; off-season shortfalls can still trigger hires through rule 3. Rationale: for a new permanent crew that is later released after the compared service period, seasonal staffing is cheaper over any in-season span (see cost derivations). This does not prove seasonal staffing is always cheaper than retaining a permanent hire for continuing work. The notebook states this qualification; the model is not expanded to resolve it.
 5. **Release decision**, only if no hire was ordered this month and t is August or earlier:
    - For n = 1, 2, and so on, keeping at least 1 crew, compare a projection with N_t - n crews from month t+1 against the no-release projection, over months t through t+4.
    - A candidate n passes only if all three hold:
@@ -428,7 +428,7 @@ boston311-crew-planner/
 - intake agent
 - test and dev sets
 - manifest, package, and offline mode
-- report, README, and notebook
+- README and the executed notebook, which is the analysis and justification report
 
 **Stretch:**
 - 2025 holdout

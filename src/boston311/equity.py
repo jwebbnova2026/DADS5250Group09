@@ -21,7 +21,7 @@ department). This is called indirect standardization:
 A neighborhood well below its own expectation (a negative gap) is a real
 signal worth investigating; a low raw rate with a zero gap is just its mix.
 
-Limits (stated in the report): this is descriptive, not causal. Differences
+Limits (stated in the notebook): this is descriptive, not causal. Differences
 can come from how requests are reported (app vs. phone, employee vs.
 resident) as well as from how they are served, and there is no population
 data, so nothing here is per resident. On-time uses the city's own flag over

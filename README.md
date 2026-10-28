@@ -118,7 +118,7 @@ flowchart LR
         CL <--> LLM["llm.py<br/>live: gpt-6.1-sol<br/>offline: recordings"]
         OUT --> EV["evaluate.py<br/>dev + test sets"]
     end
-    ROWS --> NB["demo.ipynb, outputs/, report"]
+    ROWS --> NB["demo.ipynb and outputs/"]
     EV --> NB
     PROC --> EQ["equity.py<br/>neighborhood equity"] --> NB
 ```

@@ -2,7 +2,7 @@
 
 # A plain-language guide to the Boston 311 Crew Planner
 
-This guide is for anyone who wants to understand and follow this project without knowing how to code: teammates working on the report or video, graders, or anyone curious. You do not need to read or change any code. You only need to know where to look and what the numbers mean.
+This guide is for anyone who wants to understand and follow this project without knowing how to code: teammates working on the video, graders, or anyone curious. You do not need to read or change any code. You only need to know where to look and what the numbers mean.
 
 **Contents**
 
