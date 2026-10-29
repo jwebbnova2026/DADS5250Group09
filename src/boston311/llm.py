@@ -2,14 +2,17 @@
 
 Spec sections 3, 4.7, 4.9, and 5.
 
-Live mode calls OpenAI (model ``config.LLM_MODEL``) through LangChain's
-``ChatOpenAI``. It forces the model to answer in the exact shape of a
-Pydantic class ("structured output") and records every answer to
-``data/demo/recordings.jsonl``.
+Live mode makes a fresh OpenAI request (model ``config.LLM_MODEL``) through
+LangChain's ``ChatOpenAI`` every time, even for an input that was recorded
+before. It forces the model to answer in the exact shape of a Pydantic class
+("structured output") and appends every successful answer to
+``data/demo/recordings.jsonl``. Live results may differ between runs.
 
 Offline mode makes no network calls and needs no API key. It replays the
-recorded answers. A message that was never recorded cannot be classified
-offline; the assistant then sends it to TRIAGE and says why.
+latest recorded answer for each input. A message that was never recorded
+cannot be classified offline; the assistant then sends it to TRIAGE and says
+why. Recordings live in that file, so restarting the kernel does not erase
+them.
 
 Recording keys and provenance
 -----------------------------
@@ -21,11 +24,10 @@ it:
   hash of its JSON schema);
 * the exact text sent to the model.
 
-If any of these change, old recordings no longer match. Offline mode then
-reports "no recording" and live mode calls the model again, so a stale answer
-can never be replayed silently. Each recording also stores those settings
-next to the answer, so its provenance can be checked without trusting the
-current configuration.
+If any of these change, old recordings no longer match, so offline mode
+reports "no recording" and a stale answer can never be replayed silently.
+Each recording also stores those settings next to the answer, so its
+provenance can be checked without trusting the current configuration.
 
 Failure handling (spec 5)
 -------------------------
@@ -83,8 +85,9 @@ MALFORMED_ERRORS: tuple[type[Exception], ...] = (
     # A complete reply whose content is not JSON, or not a valid instance of
     # the schema: the SDK validates it with pydantic inside the call and raises
     # this before LangChain can return a parser result (review finding R1a).
-    # It is caught ONLY around the model call (see LiveModel.ask), so a
-    # corrupt *recorded* answer is never retried as if it were a fresh reply.
+    # It is caught ONLY around the model call (see LiveModel.ask). A corrupt
+    # *recorded* answer is only ever read offline (OfflineModel.ask), where it
+    # raises without a retry.
     ValidationError,
 )
 # Anything else from the API (400 bad request, 401 bad key, 404 unknown model,
@@ -237,7 +240,7 @@ class OfflineModel:
 
 
 class LiveModel:
-    """Calls the OpenAI model through LangChain and records every answer."""
+    """Calls the OpenAI model through LangChain for every request and records each answer."""
 
     mode = "live"
 
@@ -266,12 +269,10 @@ class LiveModel:
         self.llm = llm
 
     def ask(self, kind: str, system: str, user: str, schema: type[T]) -> T:
-        # Reuse a recording if this exact request was already answered, so
-        # rerunning live mode does not pay twice for the same question.
+        # Live mode always makes a fresh request, even if this exact input was
+        # recorded before; the answer is then recorded under the same key, and
+        # offline mode replays the latest recording for a key.
         key = recording_key(kind, system, user, schema, self.settings)
-        rec = self.store.get(key)
-        if rec is not None:
-            return schema.model_validate(rec["output"])
 
         # json_schema + strict: OpenAI guarantees the reply matches the schema.
         structured = self.llm.with_structured_output(schema, method="json_schema", strict=True, include_raw=True)

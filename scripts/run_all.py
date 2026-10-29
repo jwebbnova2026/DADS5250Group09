@@ -3,7 +3,7 @@
 Usage (repository root, virtual environment active):
 
     python scripts/run_all.py              # offline: replays recorded model answers (no key, no network)
-    python scripts/run_all.py --mode live  # calls the model for anything not yet recorded
+    python scripts/run_all.py --mode live  # fresh model calls for every input; appends the answers
 
 Steps: forecast -> workloads -> frozen plan -> score plan and baseline on all
 four scenarios (with full reconciliation checks) -> intake evaluation ->

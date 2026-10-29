@@ -48,12 +48,14 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
 
 ### Run it
 
-* **No API key needed.** The default mode is `offline`, which replays the model answers recorded during the live run.
-* **Execute the notebook from a fresh kernel:**
+* **No API key needed.** The default mode is `offline`: it replays saved model responses and requires no API key.
+* **Execute the notebook from a fresh kernel.** Open `demo.ipynb` in VS Code or Jupyter, check that the kernel is **Python (boston311)**, and choose *Run All*. It takes about a minute and a half and needs no API key. Or from the command line:
 
   ```bash
   python -m nbconvert --to notebook --execute --inplace demo.ipynb
   ```
+
+  On some Windows machines this command stops with "Kernel didn't respond in 60 seconds". That comes from `nbconvert` starting the kernel, not from the notebook. If you see it, run the notebook from VS Code or Jupyter instead; the results are identical.
 
 * **Or run everything and write all tables, figures, and a run manifest to `outputs/`:**
 
@@ -61,7 +63,7 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
   python scripts/run_all.py
   ```
 
-* **Run the tests (145, no network or key):**
+* **Run the tests (148, no network or key):**
 
   ```bash
   python -m pytest -q
@@ -72,7 +74,7 @@ python -m ipykernel install --user --name boston311 --display-name "Python (bost
 1. Copy `.env.example` to `.env` and set `OPENAI_API_KEY`. The `.env` file is gitignored.
 2. Set `MODE = "live"` in the notebook's first code cell, or run `python scripts/run_all.py --mode live`.
 
-Live mode calls `gpt-6.1-sol`, but only for inputs that have no recording yet, so reset kernel and run all cells.
+Live mode makes fresh OpenAI requests to `gpt-6.1-sol` and records successful responses in `data/demo/recordings.jsonl`. Live results may differ between runs. The recordings are a file, so restarting the kernel does not erase them; after changing `MODE`, restart the kernel and run all cells so every output comes from the same mode. A live run appends responses that offline mode then replays, so review `git diff data/demo/recordings.jsonl` before committing.
 
 ### Rebuild the data (optional)
 
@@ -141,7 +143,7 @@ flowchart LR
 
 Course techniques used: **prompt engineering**, **structured output** (Pydantic + strict JSON schema), **RAG** (retrieval over the official catalog), **LangChain**, and a **LangGraph agent** with an interrupt-based clarification. No other agent frameworks are used.
 
-RAG retrieval uses TF-IDF (scikit-learn) over the 163 official request types rather than embeddings and a vector store. The catalog is small, TF-IDF runs offline and deterministically (so recorded model answers replay exactly), and with the reviewed aliases it put the correct type among the 8 candidates for every dev-set message that has one (`outputs/retrieval_recall_dev.csv`; spec section 4.6). pandas, numpy, scikit-learn, and matplotlib are ordinary data libraries, not agent frameworks.
+RAG retrieval uses TF-IDF (scikit-learn) over the 163 official request types rather than embeddings and a vector store. The catalog is small, TF-IDF provides deterministic, offline retrieval, and with the reviewed aliases it put the correct type among the 8 candidates for every dev-set message that has one (`outputs/retrieval_recall_dev.csv`; spec section 4.6). Saved model responses, not the retriever, are what make offline demonstrations reproducible. pandas, numpy, scikit-learn, and matplotlib are ordinary data libraries, not agent frameworks.
 
 ## Authorship
 

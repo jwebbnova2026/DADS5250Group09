@@ -515,15 +515,19 @@ def test_real_wrapper_repeated_invalid_reply_fails_as_malformed(tmp_path, bad, c
     assert r.decision is Decision.TRIAGE and "malformed" in r.triage_reason and calls["n"] == 2
 
 
-def test_corrupt_recording_is_not_retried_as_a_fresh_reply(tmp_path, catalog, retriever):
+def test_corrupt_recording_is_not_retried_as_a_fresh_reply(tmp_path):
     """A stored answer that no longer fits the schema is a data problem, not a
-    model reply: no API call is made to 'retry' it, and the intake triages."""
+    model reply. Offline it raises without any retry; live mode never reads it,
+    makes a fresh call, and the new answer is what offline replays next."""
     model, calls = mocked_live_model(tmp_path, [VALID])
     key = llm.recording_key("classify", "sys", "user", ClassificationProposal, model.settings)
     model.store.put(key, "classify", "user", {"type_id": 123}, None, settings=model.settings, schema=ClassificationProposal)
     with pytest.raises(ValidationError):
-        model.ask("classify", "sys", "user", ClassificationProposal)
+        OfflineModel(RecordingStore(tmp_path / "r.jsonl")).ask("classify", "sys", "user", ClassificationProposal)
     assert calls["n"] == 0
+    assert model.ask("classify", "sys", "user", ClassificationProposal).type_id == "T082" and calls["n"] == 1
+    replay = OfflineModel(RecordingStore(tmp_path / "r.jsonl")).ask("classify", "sys", "user", ClassificationProposal)
+    assert replay.type_id == "T082"
 
 
 def test_real_wrapper_truncation_ends_in_triage_not_a_crash(tmp_path, catalog, retriever):
@@ -548,18 +552,55 @@ def test_recording_key_depends_on_generation_settings_and_schema(monkeypatch):
     assert llm.recording_key("classify", "sys", "user", ClassificationProposal) != base
 
 
-def test_changed_seed_is_a_cache_miss(tmp_path, monkeypatch):
-    good = {"parsed": proposal("T082"), "parsing_error": None, "raw": None}
-    store = RecordingStore(tmp_path / "r.jsonl")
-    first = FakeStructured([good])
-    LiveModel(store, llm=FakeChat(first)).ask("classify", "sys", "user", ClassificationProposal)
-    same = FakeStructured([good])
-    LiveModel(store, llm=FakeChat(same)).ask("classify", "sys", "user", ClassificationProposal)
-    assert (first.calls, same.calls) == (1, 0)  # identical settings replay without a call
-    monkeypatch.setattr(config, "LLM_SEED", config.LLM_SEED + 1)
-    changed = FakeStructured([good])
-    LiveModel(store, llm=FakeChat(changed)).ask("classify", "sys", "user", ClassificationProposal)
-    assert changed.calls == 1  # a changed seed must call the model again
+def answer(type_id):
+    return {"parsed": proposal(type_id), "parsing_error": None, "raw": None}
+
+
+def recorded_outputs(path):
+    return [json.loads(line)["output"]["type_id"] for line in path.read_text(encoding="utf-8").splitlines()]
+
+
+def test_live_calls_the_model_even_when_a_recording_exists(tmp_path):
+    path = tmp_path / "r.jsonl"
+    LiveModel(RecordingStore(path), llm=FakeChat(FakeStructured([answer("T082")]))).ask(
+        "classify", "sys", "user", ClassificationProposal)
+    structured = FakeStructured([answer("T050")])
+    out = LiveModel(RecordingStore(path), llm=FakeChat(structured)).ask("classify", "sys", "user", ClassificationProposal)
+    assert structured.calls == 1 and out.type_id == "T050"  # the fresh answer, not the recording
+
+
+def test_repeated_live_request_calls_the_model_again(tmp_path):
+    structured = FakeStructured([answer("T082"), answer("T082")])
+    model = LiveModel(RecordingStore(tmp_path / "r.jsonl"), llm=FakeChat(structured))
+    model.ask("classify", "sys", "user", ClassificationProposal)
+    model.ask("classify", "sys", "user", ClassificationProposal)
+    assert structured.calls == 2
+
+
+def test_successful_live_responses_are_recorded(tmp_path, monkeypatch):
+    path = tmp_path / "r.jsonl"
+    model = LiveModel(RecordingStore(path), llm=FakeChat(FakeStructured([answer("T082"), answer("T050")])))
+    model.ask("classify", "sys", "user", ClassificationProposal)
+    model.ask("classify", "sys", "user", ClassificationProposal)
+    assert recorded_outputs(path) == ["T082", "T050"]  # every success is appended
+    monkeypatch.setattr(llm.time, "sleep", lambda s: None)
+    failing = LiveModel(RecordingStore(path), llm=FakeChat(FakeStructured([_timeout()] * (config.LLM_MAX_TRANSIENT_RETRIES + 1))))
+    with pytest.raises(ClassifierFailure):
+        failing.ask("classify", "sys", "other user", ClassificationProposal)
+    assert recorded_outputs(path) == ["T082", "T050"]  # a failure records nothing
+
+
+def test_offline_replays_the_latest_response_without_calling_the_model(tmp_path, monkeypatch):
+    path = tmp_path / "r.jsonl"
+    live = LiveModel(RecordingStore(path), llm=FakeChat(FakeStructured([answer("T082"), answer("T050")])))
+    live.ask("classify", "sys", "user", ClassificationProposal)
+    live.ask("classify", "sys", "user", ClassificationProposal)
+    # Offline needs no key and builds no model client.
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.setattr(llm, "load_dotenv", lambda *a, **k: None)
+    offline = llm.get_model("offline", RecordingStore(path))
+    assert isinstance(offline, OfflineModel) and not hasattr(offline, "llm")
+    assert offline.ask("classify", "sys", "user", ClassificationProposal).type_id == "T050"
 
 
 def test_record_stores_the_settings_used(tmp_path):

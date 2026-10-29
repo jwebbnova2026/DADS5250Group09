@@ -321,8 +321,9 @@ Each StaffingRow (one per department per month per scenario) separates events fr
 ### 4.9 Run manifest and demo modes
 
 - One JSON manifest per run: sources, retrieval dates, hashes, exclusions, training cutoff, scenario seeds, parameters, model, prompt, and catalog versions, mode, and output paths.
-- **Live mode** needs an API key.
-- **Offline mode** replays recorded outputs, visibly labeled.
+- **Live mode** needs an API key. It makes a fresh model request for every input, with no recording lookup, and appends each successful response to `data/demo/recordings.jsonl`. Live results may differ between runs.
+- **Offline mode** is replay-only: it replays the latest recorded response for each input, never calls the model, and needs no key. An input with no recording goes to TRIAGE. Results are visibly labeled with the mode.
+- **Published results use recorded responses.** The committed notebook and every intake metric in `outputs/` come from an offline run over the recordings. A live run appends new responses, which offline mode then replays, so adopting them means rerunning the evaluation and refreshing the metrics and narrative.
 
 ## 5. Failure behavior
 
@@ -551,6 +552,7 @@ This section is the record of what the team approved after the freeze and of the
 
 | Date | Change | Why | Decided by |
 |---|---|---|---|
+| 2026-10-28 | Live mode bypasses recording lookup: every live request calls the model and records the response; offline remains replay-only (section 4.9) | Live mode previously returned an existing recording for a matching input, so a "live" demonstration could silently show recorded answers. Published metrics are unaffected, because they come from offline replay of the committed recordings | John |
 | 2026-10-28 | Agreement rule: the retrieval gate does not apply when the model's clear, in-scope pick is also the top-ranked retrieval candidate (section 4.7). The 0.15 threshold is unchanged | The gate exists to stop auto-routing when a message matches no official type well. When the model and retrieval independently agree on the same top type, a low score mostly reflects wording such as misspellings ("streetlite"). The trade-off is reliance on the model flagging out-of-scope messages, which it did for every out-of-scope dev and test message. Prompted by test example t13 (section 11.4) | John |
 | 2026-10-27 | Overlapping types go to TRIAGE: if the model picks one type of a listed pair and the other was also retrieved, a person routes it (sections 4.6, 4.7, 5; `config.OVERLAPPING_TYPE_PAIRS`). Test example t22 and dev example d15 expect TRIAGE | Contractor Complaints / Contractors Complaint, Work Hours-Loud Noise Complaints / Working Beyond Hours, and Sidewalk Repair / Sidewalk Repair (Make Safe) describe the same problem but route differently (or one routes and one does not). Nothing in the data tells them apart, and the earlier prompt rule ("pick the first" near-duplicate) made the outcome depend on retrieval order. A code rule is deterministic and testable | John |
 | 2026-10-27 | Classifier prompt rule 4 narrowed (`classify-v3`): "emergencies" means situations needing police, fire, or an ambulance; a hazard reported to a city department, such as a tree that may fall, stays in scope (section 4.7) | The old rule excluded all "emergencies", contradicting the approved Tree Emergencies type ("pose an immediate danger") and test example t12. The new wording matches the reviewed Carbon Monoxide and Fire in Food Establishment descriptions, which send active alarms and fires out of scope | John |
@@ -573,7 +575,7 @@ This section is the record of what the team approved after the freeze and of the
 
 These are choices made where the spec was silent. None changes a GIVEN rule or a staffing decision rule.
 
-- **Model:** `gpt-6.1-sol` rejects any temperature but the default, so it runs at low reasoning effort with `seed=5250`. Exact reproducibility comes from offline replay of `data/demo/recordings.jsonl`. A recording's key covers the model, reasoning effort, seed, response schema, prompt and catalog versions, and the exact input, so a stale recording is never replayed. Recordings made before the key included reasoning effort, seed, and schema were migrated with provenance backfilled from git evidence (`scripts/migrate_recordings_v2.py`).
+- **Model:** `gpt-6.1-sol` rejects any temperature but the default, so it runs at low reasoning effort with `seed=5250`. Exact reproducibility comes from offline replay of `data/demo/recordings.jsonl`; live mode always makes fresh requests (section 4.9). A recording's key covers the model, reasoning effort, seed, response schema, prompt and catalog versions, and the exact input, so a stale recording is never replayed. Recordings made before the key included reasoning effort, seed, and schema were migrated with provenance backfilled from git evidence (`scripts/migrate_recordings_v2.py`).
 - **Tuning, dev set only:**
   - The alias prompt moved to `aliases-v2` after dev recall missed everyday synonyms ("lamp post", "recliner").
   - The classify prompt moved to `classify-v2`, adding rules for near-duplicate types and for not re-asking a location. `classify-v3` is the scope change in section 11.1.

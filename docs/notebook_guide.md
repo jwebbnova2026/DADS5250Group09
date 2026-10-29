@@ -90,7 +90,7 @@ You can skip this section and come back to it when a word is unfamiliar.
 **Run words**
 
 * **Offline mode.** The default. The notebook replays AI answers that were recorded during a real live run, so it needs no internet and no API key, and gives the same results every time.
-* **Live mode.** The notebook calls OpenAI for real. It needs an API key (a private password for the OpenAI service) and is only used for messages that have no recording yet.
+* **Live mode.** The notebook calls OpenAI for real. It needs an API key (a private password for the OpenAI service). Every message gets a fresh answer, and each answer is saved, so live results can differ from run to run. The saved answers are kept in a file, so restarting the notebook does not erase them.
 * **Manifest.** A receipt for a run, listing exactly which data, settings, and software versions were used.
 
 ---
@@ -192,7 +192,7 @@ Each part below matches a heading in the notebook. For each one: the question it
 **The first code cell** loads the project's tools and sets `MODE = "offline"`. Its only output is one line:
 
 ```
-mode: offline | model: gpt-6.1-sol | prompt: classify-v2 | catalog: catalog-v2
+mode: offline | model: gpt-6.1-sol | prompt: classify-v3 | catalog: catalog-v2
 ```
 
 This confirms the notebook is replaying recorded AI answers and names the exact AI model, prompt version, and catalog version used. If this cell instead shows an error saying `boston311` is not installed, see [section 6](#6-if-something-goes-wrong).

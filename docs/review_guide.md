@@ -40,7 +40,7 @@ Everything below runs offline, with no API key and no network, from the reposito
 python -m pytest -q
 ```
 
-Expected: `145 passed` (about one minute).
+Expected: `148 passed` (about one minute).
 
 ```bash
 python scripts/run_all.py
@@ -73,7 +73,7 @@ Headline numbers you should see (`outputs/scenario_summary.csv` and `outputs/int
 Optional checks that need network or a key:
 
 - `python scripts/build_data.py` downloads the two source files (about 370 MB) through the CKAN API and rebuilds `data/processed/`. The tables should come out identical while the city's files are unchanged; the manifest records their MD5 checksums.
-- Setting `MODE = "live"` in the notebook needs `OPENAI_API_KEY` in `.env`. Live mode reuses recordings for any input it has already seen.
+- Setting `MODE = "live"` in the notebook needs `OPENAI_API_KEY` in `.env`. Live mode makes fresh OpenAI requests and records successful responses, so live results may differ between runs. It does not reuse recordings; only offline mode replays them.
 
 ## 3. Requirement → code → test map
 
@@ -148,7 +148,8 @@ Code paths are under `src/boston311/`. Tests are under `tests/`.
 | 4.7 templated response, never claims submission | `agent/tools.py` `route_text`, `DEMO_NOTICE` | `test_route`, `test_assigned_by_location_label` |
 | 4.6 / 4.7 historical statistics: "unavailable" for small samples, each statistic gated on its own sample | `catalog.historical_stats_text` | `test_median_hidden_when_too_few_closed`, `test_median_boundary_at_min_sample`, `test_on_time_hidden_when_too_few_with_target`, `test_all_statistics_unavailable` |
 | 4.8 metrics (clarification counted when asked) | `evaluate.metrics`, `evaluate.run_set`, `IntakeResult.questions_asked` | `test_metrics_on_a_tiny_frame`, `test_clarification_rate_counts_questions_asked` |
-| 4.9 recordings: key and provenance include model, reasoning effort, seed, schema | `llm.recording_key`, `llm.schema_id`, `RecordingStore.put`; `scripts/migrate_recordings_v2.py` | `test_recording_key_depends_on_generation_settings_and_schema`, `test_changed_seed_is_a_cache_miss`, `test_record_stores_the_settings_used`, `test_committed_recordings_have_verifiable_provenance` |
+| 4.9 recordings: key and provenance include model, reasoning effort, seed, schema | `llm.recording_key`, `llm.schema_id`, `RecordingStore.put`; `scripts/migrate_recordings_v2.py` | `test_recording_key_depends_on_generation_settings_and_schema`, `test_record_stores_the_settings_used`, `test_committed_recordings_have_verifiable_provenance` |
+| 4.9 live mode always calls the model and records each success; offline replays the latest recording and never calls it | `llm.py` `LiveModel.ask`, `OfflineModel.ask`, `RecordingStore` | `test_live_calls_the_model_even_when_a_recording_exists`, `test_repeated_live_request_calls_the_model_again`, `test_successful_live_responses_are_recorded`, `test_offline_replays_the_latest_response_without_calling_the_model`, `test_corrupt_recording_is_not_retried_as_a_fresh_reply` |
 | 4.9 run manifest, one JSON file per run (CLI and notebook) | `manifest.build_manifest`, `manifest.write_manifest`; notebook section 9 | `test_manifest_records_inputs_seeds_and_model`, `test_sources_are_pinned`, `test_notebook_manifest_cell_writes_a_manifest`, `test_write_manifest_never_overwrites` |
 | Deliverable 6, neighborhood equity | `equity.py` | `test_equity_expected_on_time_sums_to_actual_per_department`, `test_equity_covers_every_department_and_flags_small_groups` |
 
